@@ -29,6 +29,20 @@
 
 #### 2. 启动方式（二选一）
 
+**首先**，修改**autoMaaNikke.bat**和**startnikke.ahk**相应的文件路径地址。
+
+**autoMaaNikke.bat**修改如下图所示位置，**保证与你的启动器地址相同**：
+
+![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-11-32-51-a76763e2c1f6829df0b97a64b394ec6c.png)
+
+**startnikke.ahk**修改如下图所示位置，共两处。
+
+![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-11-34-47-67a7a43df4d42830ce8c0dc1234c7a9c.png)
+
+![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-11-34-55-e68cecd1c06e95809ee2756047364c0f.png)
+
+红框内改为你下载后解压的**MaaNikke.exe之前**的文件路径地址。
+
 - **方式一：手动直接运行批处理**  
   右键以**管理员身份**运行 `autoMaaNikke.bat`。
 
@@ -81,4 +95,4 @@
 - [MaaFramework](https://github.com/MaaXYZ/MaaFramework)
 - [MaaPipelineEditor](https://github.com/kqcoxn/MaaPipelineEditor)
 
-感谢各位开发者的无私贡献，让我的工作得以顺利进行。![]()
+感谢各位开发者的无私贡献，让我的工作得以顺利进行。
