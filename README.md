@@ -33,13 +33,13 @@
 
 **autoMaaNikke.bat**修改如下图所示位置，**保证与你的启动器地址相同**：
 
-![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-11-32-51-a76763e2c1f6829df0b97a64b394ec6c.png)
+![](Assets/md_image/bd729a7ddfce5062d01583fc650e3cb00f1cf54a.png)
 
 **startnikke.ahk**修改如下图所示位置，共两处。
 
-![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-11-34-47-67a7a43df4d42830ce8c0dc1234c7a9c.png)
+![](Assets/md_image/2f9f934aa6c6d78a9c9138407d4f48af2bff0d2a.png)
 
-![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-11-34-55-e68cecd1c06e95809ee2756047364c0f.png)
+![](Assets/md_image/acd0c2fdc0a4b72d1e8527636763be57a625d5aa.png)
 
 红框内改为你下载后解压的**MaaNikke.exe之前**的文件路径地址。
 
@@ -50,7 +50,7 @@
   
   1. 打开 **任务计划程序**（开始 → Windows 管理工具 → 任务计划程序）。
      
-     ![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-10-53-00-image.png)  
+       ![](Assets/md_image/e8f71f1ee30a54e671b370c250a3fa1eee3cc2ed.png)
   
   2. 点击 **创建基本任务**。  
   
@@ -66,17 +66,19 @@
   
   8. 右键刚刚创建的任务，选择 **属性**。
      
-     ![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-10-53-17-image.png)  
+       ![](Assets/md_image/ae9624fd06081257730d28905aca691dc33c062a.png)
   
   9. 勾选 **最高权限运行**。
      
-     ![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-10-53-23-image.png)
+     ![](Assets/md_image/0b099737d8ae9a8c4399efa9d4073f58b4572d4e.png)
 
 #### 3. 配置 MaaNikke
 
 打开 `MaaNikke.exe`，进入 **设置 → 启动设置 → 启动后操作**，勾选 **仅启动脚本**  
 
-> （因为 Nikke 必须由 WeGame 启动，此处选择“启动游戏”无效）![](C:\Users\da270\AppData\Roaming\marktext\images\2026-05-05-10-54-40-image.png)
+> （因为 Nikke 必须由 WeGame 启动，此处选择“启动游戏”无效）
+> 
+> ![](Assets/md_image/7aeec279bc7511845d2db02668cbb10cd86e8bb5.png)
 
 #### 4. 可选设置（更省心）
 
