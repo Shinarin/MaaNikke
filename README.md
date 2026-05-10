@@ -9,6 +9,24 @@
 
 ---
 
+## 基础设置
+
+1、过场动画需改为简化版或者关闭。
+
+<img src="Assets/md_image/2026-05-09-19-12-32-image.png" title="" alt="" width="404">
+
+2、画质修改如下，**务必！！！**
+
+<img src="Assets/md_image/2026-05-09-19-13-55-image.png" title="" alt="" width="413">
+
+3、动态壁纸播放建议关闭，防止莫名其妙的bug出现。
+
+<img src="Assets/md_image/2026-05-09-19-14-21-image.png" title="" alt="" width="411">
+
+4、在使用MaaNikke前，先手完成过一次每日。
+
+5、**务必战斗模式默认开启自动**
+
 ## 使用方法
 
 本程序提供两种方案，请根据需求选择。
