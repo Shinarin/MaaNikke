@@ -1,0 +1,33 @@
+{
+    "$__mpe_config_stopgame": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1777635649420,
+            "isModifiedExternally": false,
+            "filePath": "G:\\MAAnikke\\resource\\pipeline\\stopgame.json",
+            "savedViewport": {
+                "x": 765,
+                "y": 261,
+                "zoom": 1.15
+            },
+            "filename": "stopgame",
+            "version": "v1.4.3"
+        }
+    },
+    "StopGame": {
+        "doc": "关闭游戏",
+        "max_hit": 1,
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.tencent.nikke"
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 12,
+                "y": 12
+            }
+        }
+    }
+}

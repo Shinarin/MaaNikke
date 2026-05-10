@@ -1,0 +1,921 @@
+{
+    "$__mpe_config_inquiryandgift": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778409148661,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\inquiryandgift.json",
+            "savedViewport": {
+                "x": -127,
+                "y": -709,
+                "zoom": 0.99
+            },
+            "filename": "inquiryandgift",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_anchor_startinquirygift_inquiryandgift": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4928,
+                "y": 1049
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_inquiryandgift": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1119,
+                "y": 1692
+            }
+        }
+    },
+    "$__mpe_group_咨询_inquiryandgift": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1570,
+                "y": 405
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "affinityrankup",
+                "affinityup",
+                "baseinquiry",
+                "chat",
+                "confirminquiry",
+                "confirminquiry2",
+                "confirminquiry3",
+                "exitchat",
+                "finishinquiry",
+                "inquiryfinish",
+                "quickinquiry"
+            ],
+            "width": 1413,
+            "height": 826
+        }
+    },
+    "$__mpe_group_送礼_inquiryandgift": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3107,
+                "y": 542
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "affinityrankup2",
+                "basicgift",
+                "checksendgift",
+                "choosegift",
+                "claimsendgift",
+                "exitgift",
+                "gift",
+                "highestaffinity",
+                "sendgift"
+            ],
+            "width": 1751,
+            "height": 675
+        }
+    },
+    "affinityrankup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "追加能力值"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    867,
+                    579,
+                    136,
+                    73
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "gift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1088,
+                "y": 388
+            }
+        }
+    },
+    "affinityrankup2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "追加能力值"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    927,
+                    566,
+                    82,
+                    52
+                ]
+            }
+        },
+        "repeat": 5,
+        "next": [
+            "exitgift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1292,
+                "y": 173
+            }
+        }
+    },
+    "affinityup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "好感度提升"
+                ]
+            }
+        },
+        "next": [
+            "gift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1031,
+                "y": 209
+            }
+        }
+    },
+    "baseinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    637,
+                    564,
+                    173,
+                    65
+                ],
+                "expected": [
+                    "咨询"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirminquiry2",
+            "finishinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 19,
+                "y": 591
+            }
+        }
+    },
+    "basicgift": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    489,
+                    349,
+                    43,
+                    45
+                ]
+            }
+        },
+        "next": [
+            "sendgift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 508,
+                "y": 503
+            }
+        }
+    },
+    "chat": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "自动",
+                    "记录"
+                ]
+            }
+        },
+        "next": [
+            "affinityup",
+            "affinityrankup",
+            "[JumpBack]exitchat"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 532,
+                "y": 462
+            }
+        }
+    },
+    "checkinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    556,
+                    52,
+                    168,
+                    39
+                ],
+                "expected": [
+                    "咨询"
+                ]
+            }
+        },
+        "pre_wait_freezes": 2000,
+        "anchor": "startinquirygift",
+        "next": [
+            "nikke1",
+            "nikke2",
+            "nikke3",
+            "1keytoinquiry",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 795,
+                "y": 886
+            }
+        }
+    },
+    "checknikkes": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    426,
+                    115,
+                    287,
+                    71
+                ],
+                "template": [
+                    "inquiryandgift/nikkes.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 315,
+                "y": 588
+            }
+        }
+    },
+    "checksendgift": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    575,
+                    82,
+                    141,
+                    40
+                ],
+                "expected": [
+                    "送礼"
+                ]
+            }
+        },
+        "next": [
+            "choosegift",
+            "basicgift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 293,
+                "y": 250
+            }
+        }
+    },
+    "choosegift": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/basicgift1.png",
+                    "inquiryandgift/basicgift2.png",
+                    "inquiryandgift/basicgift3.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "sendgift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 609,
+                "y": 225
+            }
+        }
+    },
+    "claimsendgift": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "affinityrankup2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1074,
+                "y": 505
+            }
+        }
+    },
+    "confirminquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "affinityup",
+            "affinityrankup",
+            "confirminquiry3"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 330,
+                "y": 42
+            }
+        }
+    },
+    "confirminquiry2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "chat"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 276,
+                "y": 459
+            }
+        }
+    },
+    "confirminquiry3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "affinityup",
+            "gift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 802,
+                "y": 41
+            }
+        }
+    },
+    "exitchat": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    619,
+                    529,
+                    22,
+                    22
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 829,
+                "y": 652
+            }
+        }
+    },
+    "exitgift": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "back.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]startinquirygift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1396,
+                "y": 467
+            }
+        }
+    },
+    "finishinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "已完成今日咨询",
+                    "已完成"
+                ]
+            }
+        },
+        "next": [
+            "gift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 378,
+                "y": 656
+            }
+        }
+    },
+    "gift": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/gift.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checksendgift",
+            "highestaffinity"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 23,
+                "y": 245
+            }
+        }
+    },
+    "highestaffinity": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    510,
+                    306,
+                    235,
+                    95
+                ],
+                "expected": [
+                    "最高等级",
+                    "彼此的唯一"
+                ]
+            }
+        },
+        "next": [
+            "exitgift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 301,
+                "y": 41
+            }
+        }
+    },
+    "inquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "咨询"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "next": [
+            "checkinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 504,
+                "y": 924
+            }
+        }
+    },
+    "inquiryandgift": {
+        "doc": "开始妮姬咨询和送礼",
+        "next": [
+            "nikkes_inquiryandgift",
+            "[JumpBack]intonikkes",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -209,
+                "y": 918
+            }
+        }
+    },
+    "inquiryfinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "已完成今日咨询",
+                    "已完成"
+                ]
+            }
+        },
+        "next": [
+            "gift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 333,
+                "y": 283
+            }
+        }
+    },
+    "intonikkes": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    452,
+                    625,
+                    86,
+                    87
+                ],
+                "template": [
+                    "inquiryandgift/intonikkes.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checknikkes"
+        ],
+        "on_error": [
+            "inquiryandgift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 35,
+                "y": 572
+            }
+        }
+    },
+    "nikke1": {
+        "max_hit": 1,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    119,
+                    217,
+                    271,
+                    51
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "quickinquiry",
+            "baseinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1107,
+                "y": 498
+            }
+        }
+    },
+    "nikke2": {
+        "max_hit": 1,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    506,
+                    217,
+                    278,
+                    51
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "quickinquiry",
+            "baseinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1109,
+                "y": 753
+            }
+        }
+    },
+    "nikke3": {
+        "max_hit": 1,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    875,
+                    220,
+                    293,
+                    49
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "quickinquiry",
+            "baseinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1110,
+                "y": 1061
+            }
+        }
+    },
+    "nikkes_inquiryandgift": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    434,
+                    114,
+                    278,
+                    68
+                ],
+                "template": [
+                    "inquiryandgift/nikkes.png"
+                ]
+            }
+        },
+        "next": [
+            "inquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 197,
+                "y": 917
+            }
+        }
+    },
+    "quickinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    636,
+                    518,
+                    173,
+                    51
+                ],
+                "expected": [
+                    "快速咨询"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirminquiry",
+            "inquiryfinish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 26,
+                "y": 273
+            }
+        }
+    },
+    "sendgift": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/sendgift.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "claimsendgift",
+            "affinityrankup2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 794,
+                "y": 474
+            }
+        }
+    },
+    "1keytoinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1176,
+                    650,
+                    100,
+                    57
+                ],
+                "expected": [
+                    "批量咨询"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "click1keytoinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1116,
+                "y": 1316
+            }
+        }
+    },
+    "click1keytoinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    726,
+                    601,
+                    114,
+                    55
+                ],
+                "expected": [
+                    "批量咨询"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "confirm1keytoinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1399,
+                "y": 1315
+            }
+        }
+    },
+    "confirm1keytoinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    650,
+                    423,
+                    153,
+                    54
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "finish1keytoinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1691,
+                "y": 1312
+            }
+        }
+    },
+    "finish1keytoinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击进行下一步",
+                    "点击进行",
+                    "进行下一步"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "close1keytoinquiry"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1970,
+                "y": 1343
+            }
+        }
+    },
+    "close1keytoinquiry": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    725,
+                    654,
+                    127,
+                    58
+                ],
+                "expected": [
+                    "关闭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]startinquirygift"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2251,
+                "y": 1330
+            }
+        }
+    }
+}

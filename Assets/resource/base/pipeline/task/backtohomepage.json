@@ -1,0 +1,307 @@
+{
+    "$__mpe_config_backtohomepage": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778382385286,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\backtohomepage.json",
+            "savedViewport": {
+                "x": 873,
+                "y": 296,
+                "zoom": 0.33
+            },
+            "filename": "backtohomepage",
+            "version": "v1.5.2"
+        }
+    },
+    "PopupPromotion": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击关闭画面"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 465,
+                "y": 475
+            }
+        }
+    },
+    "backtohomepage": {
+        "next": [
+            "homepagebuttom",
+            "homepagebuttom2",
+            "goback2",
+            "goback",
+            "clickclaim",
+            "jumpover2",
+            "jumpover",
+            "PopupPromotion",
+            "nextto",
+            "feibifalshsale",
+            "[JumpBack]isfighting"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -83,
+                "y": -215
+            }
+        }
+    },
+    "clickclaim": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取",
+                    "点击继续",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 466,
+                "y": 79
+            }
+        }
+    },
+    "goback": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "返回"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 468,
+                "y": -371
+            }
+        }
+    },
+    "goback2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1,
+                    645,
+                    155,
+                    67
+                ],
+                "template": [
+                    "back.png",
+                    "x.png",
+                    "simroom/exitsimroom.png",
+                    "dispatchboard/exitdispatch.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 743,
+                "y": -379
+            }
+        }
+    },
+    "homepagebuttom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1,
+                    645,
+                    155,
+                    67
+                ],
+                "template": [
+                    "homebutton1.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 468,
+                "y": 238
+            }
+        }
+    },
+    "homepagebuttom2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    612,
+                    675,
+                    56,
+                    40
+                ],
+                "expected": [
+                    "大厅"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 859,
+                "y": 224
+            }
+        }
+    },
+    "isfighting": {
+        "doc": "正在战斗，等待结束",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    93,
+                    58
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "pre_delay": 30000,
+        "$__mpe_code": {
+            "position": {
+                "x": 468,
+                "y": -213
+            }
+        }
+    },
+    "jumpover": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "跳过"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 467,
+                "y": -539
+            }
+        }
+    },
+    "jumpover2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 469,
+                "y": -701
+            }
+        }
+    },
+    "nextto": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击任意处"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 463,
+                "y": 646
+            }
+        }
+    },
+    "endfeibiflashsale": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 743,
+                "y": 819
+            }
+        }
+    },
+    "feibifalshsale": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同时出现的礼包"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    507,
+                    617,
+                    176,
+                    67
+                ]
+            }
+        },
+        "next": [
+            "endfeibiflashsale"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 452,
+                "y": 810
+            }
+        }
+    }
+}

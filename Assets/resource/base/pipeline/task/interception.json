@@ -1,0 +1,560 @@
+{
+    "$__mpe_config_interception": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1777938834844,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\interception.json",
+            "savedViewport": {
+                "x": -2724,
+                "y": 314,
+                "zoom": 0.49
+            },
+            "filename": "interception",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_interception": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7356,
+                "y": 268
+            }
+        }
+    },
+    "$__mpe_external_checkfight_interception": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7659,
+                "y": 249
+            }
+        }
+    },
+    "$__mpe_group_可选类别，用override改写enable值_interception": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5907,
+                "y": -198
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "anomoly",
+                "basic"
+            ],
+            "width": 324,
+            "height": 758
+        }
+    },
+    "3battle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "已超出进入次数",
+                    "已超出"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7053,
+                "y": 220
+            }
+        }
+    },
+    "anomoly": {
+        "enabled": true,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    765,
+                    628,
+                    48,
+                    51
+                ]
+            }
+        },
+        "repeat": 4,
+        "repeat_delay": 500,
+        "post_wait_freezes": 2000,
+        "next": [
+            "boss",
+            "[JumpBack]change"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 62,
+                "y": 53
+            }
+        }
+    },
+    "arkinterception": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkarkinterception2"
+        ],
+        "on_error": [
+            "interception"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4890,
+                "y": -409
+            }
+        }
+    },
+    "arkinterception2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "ark.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkarkinterception2"
+        ],
+        "on_error": [
+            "interception"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4896,
+                "y": -238
+            }
+        }
+    },
+    "basic": {
+        "enabled": false,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    684,
+                    626,
+                    53,
+                    52
+                ]
+            }
+        },
+        "repeat": 4,
+        "repeat_delay": 500,
+        "post_wait_freezes": 2000,
+        "next": [
+            "target"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 54,
+                "y": 401
+            }
+        }
+    },
+    "battleend": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击任意处"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "quickbattle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7611,
+                "y": -404
+            }
+        }
+    },
+    "battling": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    4,
+                    96,
+                    67
+                ],
+                "expected": [
+                    "AUTO"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7649,
+                "y": 51
+            }
+        }
+    },
+    "boss": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    562,
+                    489,
+                    155,
+                    74
+                ],
+                "expected": [
+                    "克拉肯"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    575,
+                    570,
+                    128,
+                    36
+                ]
+            }
+        },
+        "next": [
+            "quickbattle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6383,
+                "y": -196
+            }
+        }
+    },
+    "cannotquick": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "每日至少"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "enterbattle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7043,
+                "y": -71
+            }
+        }
+    },
+    "change": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    728,
+                    259,
+                    66,
+                    69
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6382,
+                "y": 15
+            }
+        }
+    },
+    "checkarkinterception": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    7,
+                    15,
+                    56,
+                    29
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "next": [
+            "checkinterception",
+            "[JumpBack]intointerception",
+            "[JumpBack]intointerception2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4990,
+                "y": 11
+            }
+        }
+    },
+    "checkarkinterception2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    7,
+                    15,
+                    56,
+                    29
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5177,
+                "y": -424
+            }
+        }
+    },
+    "checkinterception": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "剩余拦截次数",
+                    "剩余拦截",
+                    "拦截次数"
+                ]
+            }
+        },
+        "next": [
+            "anomoly",
+            "basic"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5571,
+                "y": 11
+            }
+        }
+    },
+    "checkinterception2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "剩余拦截次数",
+                    "剩余拦截",
+                    "拦截次数"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5565,
+                "y": 240
+            }
+        }
+    },
+    "enterbattle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 10000,
+        "next": [
+            "battleend",
+            "[JumpBack]battling",
+            "[JumpBack]checkfight",
+            "[JumpBack]continuefightinterception"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7320,
+                "y": -70
+            }
+        }
+    },
+    "interception": {
+        "next": [
+            "checkarkinterception",
+            "[JumpBack]arkinterception",
+            "[JumpBack]arkinterception2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4627,
+                "y": 24
+            }
+        }
+    },
+    "intointerception": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "拦截战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkinterception2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5285,
+                "y": 107
+            }
+        }
+    },
+    "intointerception2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": ""
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkinterception2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5284,
+                "y": 310
+            }
+        }
+    },
+    "quickbattle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    642,
+                    582,
+                    193,
+                    55
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "cannotquick",
+            "battleend",
+            "3battle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6758,
+                "y": -64
+            }
+        }
+    },
+    "target": {
+        "doc": "暂定为普通拦截战的特殊目标，目前不做详细区分",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    571,
+                    477,
+                    232,
+                    114
+                ]
+            }
+        },
+        "next": [
+            "quickbattle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6356,
+                "y": 256
+            }
+        }
+    },
+    "continuefightinterception": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    556,
+                    30,
+                    163,
+                    88
+                ],
+                "expected": [
+                    "暂停"
+                ]
+            }
+        },
+        "next": [
+            "exitcontinuefightinterception"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7634,
+                "y": -185
+            }
+        }
+    },
+    "exitcontinuefightinterception": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7922,
+                "y": -191
+            }
+        }
+    }
+}

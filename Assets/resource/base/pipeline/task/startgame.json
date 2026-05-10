@@ -1,0 +1,361 @@
+{
+    "$__mpe_config_startgame": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778323176916,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\startgame.json",
+            "savedViewport": {
+                "x": 545,
+                "y": 304,
+                "zoom": 0.87
+            },
+            "filename": "startgame",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_group_公告_startgame": {
+        "$__mpe_code": {
+            "position": {
+                "x": 190,
+                "y": -54
+            },
+            "color": "green",
+            "childrenLabels": [
+                "aweeknoagain",
+                "checkaweeknoagain",
+                "exitaweeknoagain",
+                "findnotice"
+            ],
+            "width": 1090,
+            "height": 289
+        }
+    },
+    "$__mpe_group_更新_startgame": {
+        "$__mpe_code": {
+            "position": {
+                "x": 199,
+                "y": -424
+            },
+            "color": "green",
+            "childrenLabels": [
+                "confirmupdating",
+                "updategame",
+                "updateyes"
+            ],
+            "width": 908,
+            "height": 278
+        }
+    },
+    "$__mpe_group_账号登录_startgame": {
+        "$__mpe_code": {
+            "position": {
+                "x": 192,
+                "y": 261
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "signin",
+                "stoptask"
+            ],
+            "width": 658,
+            "height": 300
+        }
+    },
+    "aweeknoagain": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "一周内",
+                    "不再显示",
+                    "一周内不再显示"
+                ]
+            }
+        },
+        "next": [
+            "checkaweeknoagain"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 303,
+                "y": 73
+            }
+        }
+    },
+    "checkaweeknoagain": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    483,
+                    533,
+                    10,
+                    10
+                ]
+            }
+        },
+        "next": [
+            "exitaweeknoagain"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 573,
+                "y": 70
+            }
+        }
+    },
+    "clickstart": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    563,
+                    537,
+                    149,
+                    63
+                ],
+                "expected": [
+                    "点击开始",
+                    "点击",
+                    "开始"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 100,
+        "$__mpe_code": {
+            "position": {
+                "x": 1321,
+                "y": -178
+            }
+        }
+    },
+    "confirmupdating": {
+        "doc": "正在更新游戏，等待中",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "正在下载",
+                    "下载状态推送"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 656,
+                "y": 62
+            }
+        }
+    },
+    "exitaweeknoagain": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 851,
+                "y": 38
+            }
+        }
+    },
+    "findnotice": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "亲爱的指挥官"
+                ]
+            }
+        },
+        "next": [
+            "aweeknoagain"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 22,
+                "y": 74
+            }
+        }
+    },
+    "kehuzhongxin": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    61,
+                    60,
+                    225
+                ],
+                "expected": [
+                    "客户中心",
+                    "客户",
+                    "中心"
+                ]
+            }
+        },
+        "next": [
+            "clickstart",
+            "findnotice",
+            "confirmupdating",
+            "updategame",
+            "signin"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -147,
+                "y": -152
+            }
+        }
+    },
+    "homepagesign2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "lianmeng.png",
+                    "dailyrewards/task.png",
+                    "claimmail/mail.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -146,
+                "y": 41
+            }
+        }
+    },
+    "signin": {
+        "doc": "请先自行在模拟器登录一遍",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "微信登陆",
+                    "QQ登陆"
+                ]
+            }
+        },
+        "next": [
+            "stoptask"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 36,
+                "y": 59
+            }
+        }
+    },
+    "startgame": {
+        "doc": "启动国服nikke",
+        "timeout": 600000,
+        "next": [
+            "[JumpBack]kehuzhongxin",
+            "homepagesign2",
+            "homepagesign"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -512,
+                "y": -104
+            }
+        }
+    },
+    "stoptask": {
+        "action": {
+            "type": "StopTask"
+        },
+        "focus": {
+            "Node.Action.Starting": {
+                "content": "请先登录，推荐QQ无需扫码",
+                "display": "notification"
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 381,
+                "y": 67
+            }
+        }
+    },
+    "updategame": {
+        "doc": "游戏需更新",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "下载游戏",
+                    "后台下载"
+                ]
+            }
+        },
+        "next": [
+            "updateyes"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 22,
+                "y": 57
+            }
+        }
+    },
+    "updateyes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmupdating"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 306,
+                "y": 70
+            }
+        }
+    },
+    "homepagesign": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    613,
+                    655,
+                    56,
+                    57
+                ],
+                "expected": [
+                    "大厅"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -155,
+                "y": 270
+            }
+        }
+    }
+}

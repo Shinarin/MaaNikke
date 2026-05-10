@@ -1,0 +1,299 @@
+{
+    "$__mpe_config_dispatchboard": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778110585673,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\dispatchboard.json",
+            "savedViewport": {
+                "x": 515,
+                "y": 482,
+                "zoom": 0.76
+            },
+            "filename": "dispatchboard",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_dispatchboard": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1887,
+                "y": 394
+            }
+        }
+    },
+    "$__mpe_group_一键派遣任务_dispatchboard": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1187,
+                "y": -81
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "dispatch",
+                "dispatchall",
+                "exitdispatch",
+                "nothingdispatch"
+            ],
+            "width": 916,
+            "height": 409
+        }
+    },
+    "$__mpe_group_领取派遣奖励_dispatchboard": {
+        "$__mpe_code": {
+            "position": {
+                "x": 549,
+                "y": -96
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "claimall"
+            ],
+            "width": 555,
+            "height": 385
+        }
+    },
+    "checkdispatchboard": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    482,
+                    88,
+                    112,
+                    41
+                ],
+                "expected": [
+                    "派遣公告栏"
+                ]
+            }
+        },
+        "next": [
+            "claimall"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 255,
+                "y": 37
+            }
+        }
+    },
+    "claimall": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    702,
+                    575,
+                    110,
+                    56
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "dispatchall"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 167,
+                "y": 81
+            }
+        }
+    },
+    "dispatch": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "dispatchboard/dispatch.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "exitdispatch"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 316,
+                "y": 50
+            }
+        }
+    },
+    "dispatchall": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    582,
+                    580,
+                    118,
+                    54
+                ],
+                "expected": [
+                    "全部派遣"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "nothingdispatch",
+            "dispatch"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 22,
+                "y": 132
+            }
+        }
+    },
+    "dispatchboard": {
+        "doc": "开始派遣公告栏",
+        "next": [
+            "checkdispatchboard",
+            "[JumpBack]intodispatchboard",
+            "[JumpBack]intodispatchboard2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -208,
+                "y": 50
+            }
+        }
+    },
+    "exitdispatch": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "dispatchboard/exitdispatch.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 644,
+                "y": 116
+            }
+        }
+    },
+    "intodispatchboard": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "expected": [
+                    "派遣",
+                    "公告栏"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "checkdispatchboard2"
+        ],
+        "on_error": [
+            "dispatchboard"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -33,
+                "y": -533
+            }
+        }
+    },
+    "intodispatchboard2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "dispatchboard/intodispatchboard.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "checkdispatchboard2"
+        ],
+        "on_error": [
+            "dispatchboard"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -26,
+                "y": -278
+            }
+        }
+    },
+    "nothingdispatch": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "没有可进行"
+                ]
+            }
+        },
+        "next": [
+            "exitdispatch"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 319,
+                "y": 241
+            }
+        }
+    },
+    "checkdispatchboard2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    482,
+                    88,
+                    112,
+                    41
+                ],
+                "expected": [
+                    "派遣公告栏"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 260,
+                "y": -516
+            }
+        }
+    }
+}

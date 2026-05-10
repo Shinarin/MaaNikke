@@ -1,0 +1,592 @@
+{
+    "$__mpe_config_arena": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778280205843,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\arena.json",
+            "savedViewport": {
+                "x": -6724,
+                "y": 493,
+                "zoom": 1.14
+            },
+            "filename": "arena",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_anchor_arenafightagain_arena": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7103,
+                "y": -228
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_arena": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4995,
+                "y": 234
+            }
+        }
+    },
+    "arena": {
+        "next": [
+            "checkarkarena",
+            "[JumpBack]arkarena",
+            "[JumpBack]arkarena2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3743,
+                "y": -352
+            }
+        }
+    },
+    "arenafight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进入战斗"
+                ],
+                "index": 2
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "arenafightagain",
+        "next": [
+            "isauto",
+            "notauto",
+            "nochance"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5904,
+                "y": -378
+            }
+        }
+    },
+    "arkarena": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkarkarena2"
+        ],
+        "on_error": [
+            "arena"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4025,
+                "y": -718
+            }
+        }
+    },
+    "arkarena2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkarkarena2"
+        ],
+        "on_error": [
+            "arena"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4020,
+                "y": -535
+            }
+        }
+    },
+    "checkarena": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    8,
+                    87,
+                    48
+                ],
+                "expected": [
+                    "竞技场"
+                ]
+            }
+        },
+        "pre_wait_freezes": 2000,
+        "next": [
+            "[JumpBack]newbiearena",
+            "[JumpBack]specialarena",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4682,
+                "y": -379
+            }
+        }
+    },
+    "checkarkarena": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    8,
+                    87,
+                    48
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "next": [
+            "checkarena",
+            "[JumpBack]intoarena",
+            "[JumpBack]intoarena2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4366,
+                "y": -365
+            }
+        }
+    },
+    "checkarkarena2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    8,
+                    87,
+                    48
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 4358,
+                "y": -729
+            }
+        }
+    },
+    "claimspecialarenareward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    601,
+                    92,
+                    78,
+                    26
+                ],
+                "expected": [
+                    "特殊竞技场"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    13,
+                    54,
+                    -24,
+                    7
+                ]
+            }
+        },
+        "next": [
+            "claimspecialarenareward2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5296,
+                "y": 127
+            }
+        }
+    },
+    "claimspecialarenareward2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    651,
+                    625,
+                    119,
+                    42
+                ],
+                "expected": [
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 4,
+        "repeat_delay": 500,
+        "next": [
+            "exitclaimspecialarenareward2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5578,
+                "y": 121
+            }
+        }
+    },
+    "costdiamonds": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "消耗资金"
+                ]
+            }
+        },
+        "next": [
+            "fightback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6541,
+                "y": -5
+            }
+        }
+    },
+    "exitclaimspecialarenareward2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    921,
+                    490,
+                    209,
+                    127
+                ]
+            }
+        },
+        "repeat": 6,
+        "repeat_delay": 500,
+        "next": [
+            "arenafight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5865,
+                "y": 112
+            }
+        }
+    },
+    "exitfightarena": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 7081,
+                "y": -24
+            }
+        }
+    },
+    "fightback": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "exitfightarena"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6818,
+                "y": -23
+            }
+        }
+    },
+    "finishfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击进行下一步",
+                    "点击进行"
+                ]
+            }
+        },
+        "pre_wait_freezes": 2000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]arenafightagain"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6830,
+                "y": -274
+            }
+        }
+    },
+    "havenotopen": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "赛季已结束",
+                    "敬请期待",
+                    "下个赛季"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5312,
+                "y": -236
+            }
+        }
+    },
+    "intoarena": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    701,
+                    504,
+                    79,
+                    39
+                ],
+                "expected": [
+                    "竞技场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 4637,
+                "y": -127
+            }
+        }
+    },
+    "intoarena2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "arena/intoarena.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 4652,
+                "y": -630
+            }
+        }
+    },
+    "intoarenafight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "finishfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6550,
+                "y": -273
+            }
+        }
+    },
+    "isauto": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    497,
+                    564,
+                    115,
+                    57
+                ],
+                "expected": [
+                    "ON"
+                ]
+            }
+        },
+        "next": [
+            "intoarenafight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6251,
+                "y": -251
+            }
+        }
+    },
+    "newbiearena": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    467,
+                    355,
+                    76,
+                    62
+                ],
+                "expected": [
+                    "新人竞技场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "arenafight",
+            "havenotopen"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4994,
+                "y": -446
+            }
+        }
+    },
+    "nochance": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "币不足",
+                    "通知"
+                ]
+            }
+        },
+        "next": [
+            "costdiamonds"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6249,
+                "y": -7
+            }
+        }
+    },
+    "notauto": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    497,
+                    564,
+                    115,
+                    57
+                ],
+                "expected": [
+                    "OFF"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "intoarenafight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6249,
+                "y": -467
+            }
+        }
+    },
+    "specialarena": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    654,
+                    358,
+                    65,
+                    53
+                ],
+                "expected": [
+                    "特殊竞技场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "claimspecialarenareward",
+            "havenotopen"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4987,
+                "y": -142
+            }
+        }
+    }
+}

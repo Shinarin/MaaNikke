@@ -1,0 +1,163 @@
+{
+    "$__mpe_config_claimmail": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778056669227,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\claimmail.json",
+            "savedViewport": {
+                "x": -5291,
+                "y": 1086,
+                "zoom": 0.86
+            },
+            "filename": "claimmail",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_claimmail": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8105,
+                "y": -688
+            }
+        }
+    },
+    "checkmail": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    593,
+                    77,
+                    95,
+                    42
+                ],
+                "expected": [
+                    "邮箱"
+                ]
+            }
+        },
+        "next": [
+            "claimthings"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7181,
+                "y": -894
+            }
+        }
+    },
+    "claimmail": {
+        "next": [
+            "checkmail",
+            "[JumpBack]clickmail",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6678,
+                "y": -842
+            }
+        }
+    },
+    "claimthings": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 6,
+        "repeat_delay": 500,
+        "next": [
+            "endmail"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7518,
+                "y": -892
+            }
+        }
+    },
+    "clickmail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1206,
+                    4,
+                    45,
+                    44
+                ],
+                "template": [
+                    "claimmail/mail.png",
+                    "claimmail/mail2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "on_error": [
+            "claimmail"
+        ],
+        "next": [
+            "checkmail2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6932,
+                "y": -1153
+            }
+        }
+    },
+    "endmail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7799,
+                "y": -1050
+            }
+        }
+    },
+    "checkmail2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    593,
+                    77,
+                    95,
+                    42
+                ],
+                "expected": [
+                    "邮箱"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7219,
+                "y": -1121
+            }
+        }
+    }
+}

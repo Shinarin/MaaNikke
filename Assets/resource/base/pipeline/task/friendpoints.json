@@ -1,0 +1,199 @@
+{
+    "$__mpe_config_friendpoints": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778057503979,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\friendpoints.json",
+            "savedViewport": {
+                "x": -584,
+                "y": 473,
+                "zoom": 1.14
+            },
+            "filename": "friendpoints",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_friendpoints": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2024,
+                "y": 238
+            }
+        }
+    },
+    "checkfriendwin": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "friendpoints/friendwin.png"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "next": [
+            "sendpoints"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 751,
+                "y": -74
+            }
+        }
+    },
+    "checkfriendwin2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "friendpoints/friendwin.png"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 755,
+                "y": -412
+            }
+        }
+    },
+    "confirmpointswap": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "exitpointswap"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1452,
+                "y": -41
+            }
+        }
+    },
+    "exitpointswap": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1757,
+                "y": -52
+            }
+        }
+    },
+    "friendbutton": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "好友"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkfriendwin2"
+        ],
+        "on_error": [
+            "friendpoints"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 423,
+                "y": -380
+            }
+        }
+    },
+    "friendbutton2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "friendpoints/friend.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkfriendwin2"
+        ],
+        "on_error": [
+            "friendpoints"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 428,
+                "y": -212
+            }
+        }
+    },
+    "friendpoints": {
+        "doc": "开始好友点数收发",
+        "next": [
+            "checkfriendwin",
+            "[JumpBack]friendbutton",
+            "[JumpBack]friendbutton2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 167,
+                "y": -50
+            }
+        }
+    },
+    "sendpoints": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    667,
+                    571,
+                    152,
+                    68
+                ],
+                "expected": [
+                    "赠送"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmpointswap"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1142,
+                "y": -58
+            }
+        }
+    }
+}

@@ -1,0 +1,535 @@
+{
+    "$__mpe_config_outpostdefense": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778403216714,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\outpostdefense.json",
+            "savedViewport": {
+                "x": -371,
+                "y": 1078,
+                "zoom": 1.12
+            },
+            "filename": "outpostdefense",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_outpostdefense": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2575,
+                "y": -411
+            }
+        }
+    },
+    "$__mpe_group_分组_outpostdefense": {
+        "$__mpe_code": {
+            "position": {
+                "x": 694,
+                "y": -1256
+            },
+            "color": "green",
+            "childrenLabels": [
+                "cancelcleansweep",
+                "checkfreecleaning",
+                "checkfreecleaning2",
+                "cleaning",
+                "clickcleaning",
+                "clickcleaning2",
+                "freecleansweep",
+                "spenddiamondstocleaning",
+                "spenddiamondstocleansweep"
+            ],
+            "width": 1163,
+            "height": 876
+        }
+    },
+    "$__mpe_group_前哨基地领取奖励_outpostdefense": {
+        "$__mpe_code": {
+            "position": {
+                "x": 363,
+                "y": -340
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "clicknoreward",
+                "confirmgetreward",
+                "getreward",
+                "noreward"
+            ],
+            "width": 845,
+            "height": 411
+        }
+    },
+    "cancelcleansweep": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "exitoutpostdefense"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 664,
+                "y": 424
+            }
+        }
+    },
+    "checkfreecleaning": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    608,
+                    537,
+                    190,
+                    29
+                ],
+                "template": [
+                    "outpostdefense/spendzuan.png"
+                ]
+            }
+        },
+        "inverse": true,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "cleaning"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 307,
+                "y": 574
+            }
+        }
+    },
+    "checkfreecleaning2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    588,
+                    526,
+                    219,
+                    49
+                ],
+                "template": [
+                    "outpostdefense/spendzuan.png"
+                ]
+            }
+        },
+        "next": [
+            "cancelcleansweep"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 303,
+                "y": 345
+            }
+        }
+    },
+    "checkoutpostdefense": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "防御前哨基地"
+                ]
+            }
+        },
+        "next": [
+            "notimereward",
+            "[JumpBack]getreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 116,
+                "y": -514
+            }
+        }
+    },
+    "checkoutpostdefense2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "防御前哨基地"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 21,
+                "y": -949
+            }
+        }
+    },
+    "cleaning": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    611,
+                    537,
+                    185,
+                    28
+                ],
+                "expected": [
+                    "进行歼灭"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "clickcleaning"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 588,
+                "y": 597
+            }
+        }
+    },
+    "clickcleaning": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "exitoutpostdefense"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 875,
+                "y": 711
+            }
+        }
+    },
+    "clickcleaning2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "spenddiamondstocleansweep",
+            "exitoutpostdefense"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 845,
+                "y": 164
+            }
+        }
+    },
+    "clicknoreward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 590,
+                "y": 62
+            }
+        }
+    },
+    "confirmgetreward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 319,
+                "y": 260
+            }
+        }
+    },
+    "exitoutpostdefense": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1097,
+                    629,
+                    51,
+                    36
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2322,
+                "y": -664
+            }
+        }
+    },
+    "freecleansweep": {
+        "enabled": true,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "一举歼灭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkfreecleaning2",
+            "checkfreecleaning"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 30,
+                "y": 499
+            }
+        }
+    },
+    "getreward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "获得奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "noreward",
+            "confirmgetreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 30,
+                "y": 63
+            }
+        }
+    },
+    "intooutpostdefense": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    295,
+                    579,
+                    126,
+                    66
+                ],
+                "template": [
+                    "outpostdefense/intooutpostdefense1b.png",
+                    "outpostdefense/intooutpostdefense1.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkoutpostdefense2"
+        ],
+        "on_error": [
+            "outpostdefense"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -280,
+                "y": -957
+            }
+        }
+    },
+    "intooutpostdefense2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    295,
+                    579,
+                    126,
+                    66
+                ],
+                "template": [
+                    "outpostdefense/intooutpostdefense2.png",
+                    "outpostdefense/intooutpostdefense2b.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkoutpostdefense2"
+        ],
+        "on_error": [
+            "outpostdefense"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -273,
+                "y": -714
+            }
+        }
+    },
+    "noreward": {
+        "doc": "前哨基地无奖励",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "无可获得"
+                ]
+            }
+        },
+        "next": [
+            "clicknoreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 318,
+                "y": 53
+            }
+        }
+    },
+    "notimereward": {
+        "doc": "前哨基地无奖励",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "expected": [
+                    "目前没有获得"
+                ]
+            }
+        },
+        "next": [
+            "freecleansweep",
+            "spenddiamondstocleansweep"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 395,
+                "y": -656
+            }
+        }
+    },
+    "outpostdefense": {
+        "doc": "开始前哨防御领取",
+        "next": [
+            "checkoutpostdefense",
+            "[JumpBack]intooutpostdefense",
+            "[JumpBack]intooutpostdefense2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -522,
+                "y": -414
+            }
+        }
+    },
+    "spenddiamondstocleaning": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "进行歼灭"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "clickcleaning2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 544,
+                "y": 120
+            }
+        }
+    },
+    "spenddiamondstocleansweep": {
+        "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "一举歼灭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "spenddiamondstocleaning"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 45,
+                "y": 162
+            }
+        }
+    }
+}

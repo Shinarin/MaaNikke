@@ -1,0 +1,419 @@
+{
+    "$__mpe_config_freeshopdaily": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778413350272,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\freeshopdaily.json",
+            "savedViewport": {
+                "x": 623,
+                "y": 692,
+                "zoom": 0.37
+            },
+            "filename": "freeshopdaily",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1727,
+                "y": -3
+            }
+        }
+    },
+    "0zuanpay": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    72,
+                    348,
+                    111,
+                    177
+                ],
+                "expected": [
+                    "100%"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirm0zuanpay"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 289,
+                "y": -258
+            }
+        }
+    },
+    "0zuanpayend": {
+        "doc": "0钻购完成",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    80,
+                    360,
+                    98,
+                    144
+                ],
+                "template": [
+                    "payshop/shouqing.png"
+                ]
+            }
+        },
+        "next": [
+            "freeshoprefresh",
+            "freeshoprefresh2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 107,
+                "y": -578
+            }
+        }
+    },
+    "confirm0zuanpay": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "dailyshopfree/0zuanpay.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirm0zuanpay2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": -250
+            }
+        }
+    },
+    "confirm0zuanpay2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 861,
+                "y": -247
+            }
+        }
+    },
+    "freeshopdaily": {
+        "doc": "0钻购开始",
+        "next": [
+            "intoshop",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -543,
+                "y": -453
+            }
+        }
+    },
+    "intoshop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "gameshop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]0zuanpay",
+            "0zuanpayend"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -205,
+                "y": -481
+            }
+        }
+    },
+    "freeshoprefresh": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    221,
+                    300,
+                    55,
+                    49
+                ],
+                "template": [
+                    "dailyshopfree/freeshoprefresh.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    223,
+                    320,
+                    17,
+                    14
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "next": [
+            "confirmfreeshoprefresh"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 406,
+                "y": -613
+            }
+        }
+    },
+    "confirmfreeshoprefresh": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    656,
+                    438,
+                    145,
+                    25
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]0zuanpay",
+            "exchangejjc",
+            "notexchangejjc"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 699,
+                "y": -580
+            }
+        }
+    },
+    "exchangejjc": {
+        "enabled": false,
+        "next": [
+            "intojjcshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1135,
+                "y": -944
+            }
+        }
+    },
+    "freeshoprefresh2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    221,
+                    300,
+                    55,
+                    49
+                ],
+                "template": [
+                    "dailyshopfree/freeshoprefresh.png"
+                ]
+            }
+        },
+        "inverse": true,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    223,
+                    320,
+                    17,
+                    14
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "next": [
+            "exchangejjc",
+            "notexchangejjc"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 402,
+                "y": -999
+            }
+        }
+    },
+    "notexchangejjc": {
+        "enabled": true,
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1137,
+                "y": -747
+            }
+        }
+    },
+    "intojjcshop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "dailyshopfree/jjcshop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "rate_limit": 1000,
+        "next": [
+            "[JumpBack]codebook",
+            "[JumpBack]copgearforge",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1466,
+                "y": -972
+            }
+        }
+    },
+    "codebook": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "dailyshopfree/codebook.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1846,
+                "y": -1085
+            }
+        }
+    },
+    "copgearforge": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "dailyshopfree/copgearforge.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1851,
+                "y": -852
+            }
+        }
+    },
+    "confirmjjcshopping": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    652,
+                    575,
+                    102,
+                    35
+                ],
+                "expected": [
+                    "购买"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2169,
+                "y": -931
+            }
+        }
+    },
+    "confirmjjcshopping2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    563,
+                    410,
+                    154,
+                    54
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 2441,
+                "y": -948
+            }
+        }
+    }
+}

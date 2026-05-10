@@ -1,0 +1,292 @@
+{
+    "$__mpe_config_gearup": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778280538456,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\gearup.json",
+            "savedViewport": {
+                "x": -2960,
+                "y": 439,
+                "zoom": 0.75
+            },
+            "filename": "gearup",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_gearup": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6429,
+                "y": 317
+            }
+        }
+    },
+    "checkitembar": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    445,
+                    43,
+                    165,
+                    70
+                ],
+                "expected": [
+                    "库存"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "next": [
+            "gear"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4391,
+                "y": 44
+            }
+        }
+    },
+    "checkitembar2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    445,
+                    43,
+                    165,
+                    70
+                ],
+                "expected": [
+                    "库存"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 4407,
+                "y": -442
+            }
+        }
+    },
+    "clickgear": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    72,
+                    169,
+                    40,
+                    43
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5201,
+                "y": 311
+            }
+        }
+    },
+    "confirmup": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "gearup/gearup.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 10,
+        "next": [
+            "exitgearup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5836,
+                "y": 3
+            }
+        }
+    },
+    "exitgearup": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6152,
+                "y": 68
+            }
+        }
+    },
+    "gear": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    585,
+                    106,
+                    72,
+                    43
+                ],
+                "expected": [
+                    "装备"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "gearexpup",
+            "[JumpBack]clickgear"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4719,
+                "y": 27
+            }
+        }
+    },
+    "gearexp": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    491,
+                    364,
+                    42,
+                    44
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 1000,
+        "next": [
+            "confirmup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5502,
+                "y": 10
+            }
+        }
+    },
+    "gearexpup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    466,
+                    433,
+                    355,
+                    209
+                ],
+                "expected": [
+                    "升级"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "gearexp"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5189,
+                "y": -12
+            }
+        }
+    },
+    "gearup": {
+        "next": [
+            "checkitembar",
+            "[JumpBack]itembar",
+            "[JumpBack]itembar2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3823,
+                "y": 75
+            }
+        }
+    },
+    "itembar": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "gearup/itembar.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "checkitembar2"
+        ],
+        "on_error": [
+            "gearup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4122,
+                "y": -535
+            }
+        }
+    },
+    "itembar2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    679,
+                    630,
+                    68,
+                    81
+                ],
+                "expected": [
+                    "物品栏"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "checkitembar2"
+        ],
+        "on_error": [
+            "gearup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4111,
+                "y": -241
+            }
+        }
+    }
+}

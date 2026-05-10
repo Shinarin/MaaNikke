@@ -1,0 +1,286 @@
+{
+    "$__mpe_config_teamrecruit": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1777938448000,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\teamrecruit.json",
+            "savedViewport": {
+                "x": -240,
+                "y": 633,
+                "zoom": 0.86
+            },
+            "filename": "teamrecruit",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_teamrecruit": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2540,
+                "y": -20
+            }
+        }
+    },
+    "checkteamrecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    573,
+                    69,
+                    104,
+                    36
+                ],
+                "expected": [
+                    "积分商店"
+                ]
+            }
+        },
+        "next": [
+            "friendpointrecruit",
+            "[JumpBack]recruitswiep"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 953,
+                "y": -312
+            }
+        }
+    },
+    "checkteamrecruit2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    573,
+                    69,
+                    104,
+                    36
+                ],
+                "expected": [
+                    "积分商店"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 949,
+                "y": -751
+            }
+        }
+    },
+    "confirmrecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2269,
+                "y": -302
+            }
+        }
+    },
+    "friendpointrecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    557,
+                    513,
+                    167,
+                    55
+                ],
+                "expected": [
+                    "社交点数招募",
+                    "社交点数",
+                    "点数招募"
+                ]
+            }
+        },
+        "next": [
+            "friendrecruitstart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1295,
+                "y": -315
+            }
+        }
+    },
+    "friendrecruitstart": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    456,
+                    555,
+                    190,
+                    70
+                ],
+                "template": [
+                    "teamrecruit/teamrecruitstart.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "recruitover",
+            "[JumpBack]jumprecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1616,
+                "y": -321
+            }
+        }
+    },
+    "intoteamrecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    749,
+                    630,
+                    72,
+                    84
+                ],
+                "expected": [
+                    "队员招募"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkteamrecruit2"
+        ],
+        "on_error": [
+            "teamrecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 652,
+                "y": -748
+            }
+        }
+    },
+    "intoteamrecruit2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "teamrecruit/teamrecruit.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkteamrecruit2"
+        ],
+        "on_error": [
+            "teamrecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 658,
+                "y": -546
+            }
+        }
+    },
+    "jumprecruit": {
+        "max_hit": 100,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1213,
+                    12,
+                    47,
+                    16
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1991,
+                "y": -85
+            }
+        }
+    },
+    "recruitover": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    647,
+                    624,
+                    155,
+                    74
+                ],
+                "expected": [
+                    "再招募"
+                ]
+            }
+        },
+        "next": [
+            "confirmrecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1970,
+                "y": -316
+            }
+        }
+    },
+    "recruitswiep": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "teamrecruit/recruitswiep.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1290,
+                "y": -59
+            }
+        }
+    },
+    "teamrecruit": {
+        "next": [
+            "checkteamrecruit",
+            "[JumpBack]intoteamrecruit",
+            "[JumpBack]intoteamrecruit2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 372,
+                "y": -295
+            }
+        }
+    }
+}

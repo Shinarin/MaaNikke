@@ -1,0 +1,439 @@
+{
+    "$__mpe_config_payshop": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1777945936691,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\payshop.json",
+            "savedViewport": {
+                "x": 235,
+                "y": 942,
+                "zoom": 1
+            },
+            "filename": "payshop",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_payshop": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2683,
+                "y": 26
+            }
+        }
+    },
+    "$__mpe_group_getpack_payshop": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2071,
+                "y": -269
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "clickfreebutton",
+                "confirmclickfree"
+            ],
+            "width": 566,
+            "height": 238
+        }
+    },
+    "$__mpe_group_每周_payshop": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1458,
+                "y": -652
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "weekly",
+                "weeklyend"
+            ],
+            "width": 615,
+            "height": 338
+        }
+    },
+    "$__mpe_group_每日_payshop": {
+        "$__mpe_code": {
+            "position": {
+                "x": 891,
+                "y": -645
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "daily",
+                "dailyend"
+            ],
+            "width": 537,
+            "height": 300
+        }
+    },
+    "$__mpe_group_每月_payshop": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2089,
+                "y": -644
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "monthly",
+                "monthlyend"
+            ],
+            "width": 594,
+            "height": 300
+        }
+    },
+    "basicpack": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "payshop/basicpack.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "daily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 613,
+                "y": -586
+            }
+        }
+    },
+    "checkpayshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    11,
+                    81,
+                    31
+                ],
+                "expected": [
+                    "付费商店"
+                ]
+            }
+        },
+        "next": [
+            "basicpack"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 284,
+                "y": -505
+            }
+        }
+    },
+    "checkpayshop2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    11,
+                    81,
+                    31
+                ],
+                "expected": [
+                    "付费商店"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 271,
+                "y": -867
+            }
+        }
+    },
+    "clickfreebutton": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    9,
+                    242,
+                    128,
+                    237
+                ],
+                "expected": [
+                    "免费礼包",
+                    "免费"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmclickfree"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 33,
+                "y": 53
+            }
+        }
+    },
+    "confirmclickfree": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 311,
+                "y": 46
+            }
+        }
+    },
+    "daily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1,
+                    179,
+                    538,
+                    59
+                ],
+                "expected": [
+                    "每日"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "dailyend",
+            "[JumpBack]clickfreebutton"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 18,
+                "y": 67
+            }
+        }
+    },
+    "dailyend": {
+        "doc": "每日免费礼包已领取",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    25,
+                    331,
+                    103,
+                    51
+                ],
+                "template": [
+                    "payshop/shouqing.png"
+                ]
+            }
+        },
+        "next": [
+            "weekly"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 301,
+                "y": 36
+            }
+        }
+    },
+    "intopayshop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "payshop/payshop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkpayshop2"
+        ],
+        "on_error": [
+            "payshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -32,
+                "y": -873
+            }
+        }
+    },
+    "intopayshop2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    318,
+                    432,
+                    101,
+                    30
+                ],
+                "expected": [
+                    "付费商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkpayshop2"
+        ],
+        "on_error": [
+            "payshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -21,
+                "y": -653
+            }
+        }
+    },
+    "monthly": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1,
+                    179,
+                    538,
+                    59
+                ],
+                "expected": [
+                    "每月"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "monthlyend",
+            "[JumpBack]clickfreebutton"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 20,
+                "y": 124
+            }
+        }
+    },
+    "monthlyend": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    25,
+                    331,
+                    103,
+                    51
+                ],
+                "template": [
+                    "payshop/shouqing.png"
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 336,
+                "y": 56
+            }
+        }
+    },
+    "payshop": {
+        "doc": "领取钻石礼包",
+        "next": [
+            "checkpayshop",
+            "[JumpBack]intopayshop",
+            "[JumpBack]intopayshop2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -325,
+                "y": -500
+            }
+        }
+    },
+    "weekly": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1,
+                    179,
+                    538,
+                    59
+                ],
+                "expected": [
+                    "每周"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "weeklyend",
+            "[JumpBack]clickfreebutton"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 32,
+                "y": 105
+            }
+        }
+    },
+    "weeklyend": {
+        "doc": "每周免费礼包已领取",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    25,
+                    331,
+                    103,
+                    51
+                ],
+                "template": [
+                    "payshop/shouqing.png"
+                ]
+            }
+        },
+        "next": [
+            "monthly"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 341,
+                "y": 54
+            }
+        }
+    }
+}

@@ -1,0 +1,332 @@
+{
+    "$__mpe_config_gengshengguan": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778197845291,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\gengshengguan.json",
+            "savedViewport": {
+                "x": -5461,
+                "y": 1071,
+                "zoom": 0.75
+            },
+            "filename": "gengshengguan",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_anchor_gengshengdone_gengshengguan": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9164,
+                "y": -566
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_gengshengguan": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8729,
+                "y": -149
+            }
+        }
+    },
+    "checkdone1": {
+        "max_hit": 1,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    716,
+                    450,
+                    119,
+                    28
+                ]
+            }
+        },
+        "next": [
+            "checkdone2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8728,
+                "y": -398
+            }
+        }
+    },
+    "checkdone2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    714,
+                    493,
+                    123,
+                    30
+                ]
+            }
+        },
+        "next": [
+            "checkdone3"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9031,
+                "y": -378
+            }
+        }
+    },
+    "checkdone3": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    701,
+                    534,
+                    145,
+                    37
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9340,
+                "y": -384
+            }
+        }
+    },
+    "checknikkes_gengsheng": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/nikkes.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7893,
+                "y": -1146
+            }
+        }
+    },
+    "findgengshengdone": {
+        "anchor": "gengshengdone",
+        "next": [
+            "finishgengsheng1",
+            "finishgengsheng2",
+            "finishgengsheng3",
+            "[JumpBack]checkdone1",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8380,
+                "y": -839
+            }
+        }
+    },
+    "finishgengsheng1": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    705,
+                    461,
+                    145,
+                    24
+                ],
+                "expected": [
+                    "完成"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 5000,
+        "timeout": 4000,
+        "next": [
+            "[JumpBack]suddenevent",
+            "[Anchor]gengshengdone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8724,
+                "y": -1370
+            }
+        }
+    },
+    "finishgengsheng2": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    706,
+                    503,
+                    145,
+                    24
+                ],
+                "expected": [
+                    "完成"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 5000,
+        "timeout": 4000,
+        "next": [
+            "[JumpBack]suddenevent",
+            "[Anchor]gengshengdone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8724,
+                "y": -1062
+            }
+        }
+    },
+    "finishgengsheng3": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    703,
+                    546,
+                    146,
+                    24
+                ],
+                "expected": [
+                    "完成"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 5000,
+        "timeout": 4000,
+        "next": [
+            "[JumpBack]suddenevent",
+            "[Anchor]gengshengdone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8724,
+                "y": -724
+            }
+        }
+    },
+    "gengshengguan": {
+        "next": [
+            "nikkes_gengshengguan",
+            "[JumpBack]intonikkes_gengsheng",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7402,
+                "y": -843
+            }
+        }
+    },
+    "intogengshengguan": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1,
+                    52,
+                    147,
+                    68
+                ],
+                "expected": [
+                    "更生"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 4000,
+        "next": [
+            "findgengshengdone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8062,
+                "y": -878
+            }
+        }
+    },
+    "intonikkes_gengsheng": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/intonikkes.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checknikkes_gengsheng"
+        ],
+        "on_error": [
+            "gengshengguan"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7618,
+                "y": -1161
+            }
+        }
+    },
+    "nikkes_gengshengguan": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/nikkes.png"
+                ]
+            }
+        },
+        "next": [
+            "intogengshengguan"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7736,
+                "y": -868
+            }
+        }
+    },
+    "suddenevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "跳过",
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9092,
+                "y": -1359
+            }
+        }
+    }
+}

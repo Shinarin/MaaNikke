@@ -1,0 +1,702 @@
+{
+    "$__mpe_config_climbtower": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1778393395155,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\climbtower.json",
+            "savedViewport": {
+                "x": -8090,
+                "y": 1618,
+                "zoom": 1.09
+            },
+            "filename": "climbtower",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8431,
+                "y": -56
+            }
+        }
+    },
+    "arkclimbtower": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    9,
+                    6,
+                    76,
+                    44
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "next": [
+            "intotower",
+            "intotower2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5801,
+                "y": -540
+            }
+        }
+    },
+    "arkclimbtower2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    9,
+                    6,
+                    76,
+                    44
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5792,
+                "y": -921
+            }
+        }
+    },
+    "checkfight": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    93,
+                    58
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "pre_wait_freezes": 5000,
+        "$__mpe_code": {
+            "position": {
+                "x": 7681,
+                "y": -512
+            }
+        }
+    },
+    "choosetower": {
+        "next": [
+            "intounlimittower",
+            "coptower1",
+            "coptower2",
+            "coptower3",
+            "coptower4"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6551,
+                "y": -475
+            }
+        }
+    },
+    "climbtower": {
+        "next": [
+            "arkclimbtower",
+            "[JumpBack]intoarktower",
+            "[JumpBack]intoarktower2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5155,
+                "y": -514
+            }
+        }
+    },
+    "continuefighttower": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "继续游戏",
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7910,
+                "y": -691
+            }
+        }
+    },
+    "coptower1": {
+        "enabled": true,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    745,
+                    441,
+                    76,
+                    176
+                ]
+            }
+        },
+        "next": [
+            "intofight",
+            "noopencoptower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6849,
+                "y": -492
+            }
+        }
+    },
+    "endflashsale": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8633,
+                "y": -1303
+            }
+        }
+    },
+    "exittower": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7954,
+                "y": -177
+            }
+        }
+    },
+    "falshsale": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同时出现的礼包"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    507,
+                    617,
+                    176,
+                    67
+                ]
+            }
+        },
+        "next": [
+            "endflashsale"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8349,
+                "y": -1317
+            }
+        }
+    },
+    "fightend": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击任意处"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 3000,
+        "next": [
+            "notunlimittower",
+            "isunlimittower",
+            "nochancefighttower2"
+        ],
+        "on_error": [
+            "[JumpBack]falshsale"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7704,
+                "y": -1287
+            }
+        }
+    },
+    "intoarktower": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "825,423,159,103"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "arkclimbtower2"
+        ],
+        "on_error": [
+            "climbtower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5490,
+                "y": -900
+            }
+        }
+    },
+    "intoarktower2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "ark.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "arkclimbtower2"
+        ],
+        "on_error": [
+            "climbtower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5483,
+                "y": -690
+            }
+        }
+    },
+    "intofight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    661,
+                    632,
+                    193,
+                    74
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "pre_wait_freezes": 2000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "fightend",
+            "notowerchance",
+            "[JumpBack]continuefighttower",
+            "towerfailed",
+            "[JumpBack]checkfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7370,
+                "y": -515
+            }
+        }
+    },
+    "intotower": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    705,
+                    288,
+                    127,
+                    49
+                ],
+                "expected": [
+                    "无限之塔"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "choosetower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6157,
+                "y": -679
+            }
+        }
+    },
+    "intotower2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "tower/tower.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "choosetower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6159,
+                "y": -409
+            }
+        }
+    },
+    "intounlimittower": {
+        "enabled": false,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    699,
+                    219,
+                    121,
+                    130
+                ],
+                "expected": [
+                    "无限之塔"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "intofight",
+            "[JumpBack]checkintounlimittower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6844,
+                "y": -740
+            }
+        }
+    },
+    "nochancefighttower": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    560,
+                    573,
+                    159,
+                    55
+                ],
+                "expected": [
+                    "剩余次数"
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8503,
+                "y": -1071
+            }
+        }
+    },
+    "nochancefighttower2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    940,
+                    242,
+                    121,
+                    103
+                ]
+            }
+        },
+        "repeat": 5,
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8242,
+                "y": -889
+            }
+        }
+    },
+    "notowerchance": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "上限"
+                ]
+            }
+        },
+        "next": [
+            "exittower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7679,
+                "y": -177
+            }
+        }
+    },
+    "towerfailed": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    198,
+                    358,
+                    122
+                ],
+                "expected": [
+                    "战败"
+                ]
+            }
+        },
+        "pre_wait_freezes": 2000,
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">爬塔失败</span>"
+        },
+        "next": [
+            "towerfailedback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7658,
+                "y": -891
+            }
+        }
+    },
+    "towerfailedback": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "next": [
+            "nochancefighttower2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7963,
+                "y": -870
+            }
+        }
+    },
+    "isunlimittower": {
+        "enabled": false,
+        "max_hit": 1,
+        "next": [
+            "[JumpBack]falshsale",
+            "intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8006,
+                "y": -1527
+            }
+        }
+    },
+    "notunlimittower": {
+        "enabled": true,
+        "next": [
+            "[JumpBack]falshsale",
+            "isfullcoptower",
+            "nochancefighttower2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7997,
+                "y": -1287
+            }
+        }
+    },
+    "checkintounlimittower": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    604,
+                    263,
+                    71,
+                    76
+                ]
+            }
+        },
+        "post_wait_freezes": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 7191,
+                "y": -804
+            }
+        }
+    },
+    "coptower2": {
+        "enabled": true,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    653,
+                    460,
+                    68,
+                    142
+                ]
+            }
+        },
+        "next": [
+            "intofight",
+            "noopencoptower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6851,
+                "y": -250
+            }
+        }
+    },
+    "isfullcoptower": {
+        "enabled": false,
+        "next": [
+            "intofight",
+            "nochancefighttower",
+            "[JumpBack]falshsale"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7961,
+                "y": -1065
+            }
+        }
+    },
+    "coptower3": {
+        "enabled": false,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    558,
+                    445,
+                    73,
+                    157
+                ]
+            }
+        },
+        "next": [
+            "intofight",
+            "noopencoptower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6861,
+                "y": 8
+            }
+        }
+    },
+    "coptower4": {
+        "enabled": false,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    463,
+                    420,
+                    70,
+                    195
+                ]
+            }
+        },
+        "next": [
+            "intofight",
+            "noopencoptower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6857,
+                "y": 227
+            }
+        }
+    },
+    "noopencoptower": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "未开放"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "next": [
+            "choosetower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7383,
+                "y": 13
+            }
+        }
+    }
+}

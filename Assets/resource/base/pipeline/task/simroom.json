@@ -1,0 +1,358 @@
+{
+    "$__mpe_config_simroom": {
+        "$__mpe_code": {
+            "prefix": "",
+            "lastSyncTime": 1777938065073,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke\\resource\\base\\pipeline\\task\\simroom.json",
+            "savedViewport": {
+                "x": -3716,
+                "y": 463,
+                "zoom": 0.86
+            },
+            "filename": "simroom",
+            "version": "v1.5.2"
+        }
+    },
+    "$__mpe_external_backtohomepage_simroom": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6453,
+                "y": 300
+            }
+        }
+    },
+    "arksimroom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    825,
+                    423,
+                    159,
+                    103
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkarksimroom2"
+        ],
+        "on_error": [
+            "simroom"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4596,
+                "y": -390
+            }
+        }
+    },
+    "arksimroom2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "ark.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checkarksimroom2"
+        ],
+        "on_error": [
+            "simroom"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4596,
+                "y": -197
+            }
+        }
+    },
+    "checkarksimroom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    8,
+                    87,
+                    48
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "next": [
+            "intosimroom",
+            "intosimroom2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4816,
+                "y": 12
+            }
+        }
+    },
+    "checkarksimroom2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    8,
+                    87,
+                    48
+                ],
+                "expected": [
+                    "方舟"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 4867,
+                "y": -383
+            }
+        }
+    },
+    "exitsimroom": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "simroom/exitsimroom.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "simroomtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6189,
+                "y": 25
+            }
+        }
+    },
+    "exitsimroom2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "exitsimroom"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6179,
+                "y": -223
+            }
+        }
+    },
+    "intosimroom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "模拟室"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "startsim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5083,
+                "y": -119
+            }
+        }
+    },
+    "intosimroom2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "simroom/simroom.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "startsim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5080,
+                "y": 112
+            }
+        }
+    },
+    "quicksim": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    632,
+                    577,
+                    206,
+                    73
+                ],
+                "expected": [
+                    "快速模拟"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "simend",
+            "simhaddone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5638,
+                "y": 28
+            }
+        }
+    },
+    "simend": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "模拟结束"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "exitsimroom"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5915,
+                "y": 38
+            }
+        }
+    },
+    "simhaddone": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    553,
+                    367,
+                    185,
+                    46
+                ],
+                "expected": [
+                    "不再显示"
+                ]
+            }
+        },
+        "next": [
+            "exitsimroom2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5894,
+                "y": -221
+            }
+        }
+    },
+    "simroom": {
+        "next": [
+            "checkarksimroom",
+            "[JumpBack]arksimroom",
+            "[JumpBack]arksimroom2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4357,
+                "y": 52
+            }
+        }
+    },
+    "simroomtohomepage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "homebutton1.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6471,
+                "y": 24
+            }
+        }
+    },
+    "startsim": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    561,
+                    384,
+                    159,
+                    75
+                ],
+                "expected": [
+                    "开始模拟"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "quicksim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5340,
+                "y": 9
+            }
+        }
+    }
+}
