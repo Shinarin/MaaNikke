@@ -102,6 +102,10 @@
 
 在 **设置 → 启动设置** 中，将 **结束后操作** 设为 **关闭目标程序和本程序**，实现全自动关闭。
 
+## 2.0.0 更新
+- 添加了 Python 的 agent，移动文件时需替换 `agent`、`interface`、`resource` 这三个文件（建议先删除原文件再复制）。
+- **新版务必安装 Python，安装时请务必勾选 “Add Python to PATH”，将 Python 添加到环境变量，否则程序可能无法正常运行。**  
+  Python 3.13.13 下载地址：<https://www.python.org/ftp/python/3.13.13/python-3.13.13-amd64.exe>
 ---
 
 ### 最终效果
