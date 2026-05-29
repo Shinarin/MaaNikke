@@ -58,20 +58,6 @@
 
 #### 2. 启动方式（二选一）
 
-**首先**，修改**autoMaaNikke.bat**和**startnikke.ahk**相应的文件路径地址。
-
-**autoMaaNikke.bat**修改如下图所示位置，**保证与你的启动器地址相同**：
-
-![](Assets/md_image/bd729a7ddfce5062d01583fc650e3cb00f1cf54a.png)
-
-**startnikke.ahk**修改如下图所示位置，共两处。
-
-![](Assets/md_image/2f9f934aa6c6d78a9c9138407d4f48af2bff0d2a.png)
-
-![](Assets/md_image/acd0c2fdc0a4b72d1e8527636763be57a625d5aa.png)
-
-红框内改为你下载后解压的**MaaNikke.exe之前**的文件路径地址。
-
 - **方式一：手动直接运行批处理**  
   右键以**管理员身份**运行 `autoMaaNikke.bat`。
 
