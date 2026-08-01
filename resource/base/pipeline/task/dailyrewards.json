@@ -1,0 +1,325 @@
+{
+    "$__mpe_config_dailyrewards": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781480215768,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\dailyrewards.json",
+            "savedViewport": {
+                "x": -7687,
+                "y": 1149,
+                "zoom": 1
+            },
+            "filename": "dailyrewards",
+            "version": "v1.6.1"
+        }
+    },
+    "$__mpe_external_backtohomepage_dailyrewards": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9671,
+                "y": -267
+            }
+        }
+    },
+    "$__mpe_external_rebelroad_dailyrewards": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9684,
+                "y": -788
+            }
+        }
+    },
+    "checkclaimrewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8966,
+                "y": -1144
+            }
+        }
+    },
+    "checkintodailytask": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    550,
+                    44,
+                    162,
+                    65
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "next": [
+            "claimrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7753,
+                "y": -835
+            }
+        }
+    },
+    "checkintodailytask2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    550,
+                    44,
+                    162,
+                    65
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7625,
+                "y": -1384
+            }
+        }
+    },
+    "claimrewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 6,
+        "repeat_delay": 500,
+        "next": [
+            "[JumpBack]checkclaimrewards",
+            "weeklytask"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8044,
+                "y": -854
+            }
+        }
+    },
+    "claimrewards2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 6,
+        "repeat_delay": 500,
+        "next": [
+            "[JumpBack]checkclaimrewards",
+            "quitmail"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8716,
+                "y": -843
+            }
+        }
+    },
+    "dailyrewards": {
+        "next": [
+            "checkintodailytask",
+            "[JumpBack]dailytask2",
+            "[JumpBack]dailytask",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7042,
+                "y": -812
+            }
+        }
+    },
+    "dailytask": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1165,
+                    120,
+                    112,
+                    277
+                ],
+                "template": [
+                    "dailyrewards/task.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkintodailytask2",
+            "dailytask"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7251,
+                "y": -1390
+            }
+        }
+    },
+    "dailytask2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1192,
+                    134,
+                    85,
+                    320
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkintodailytask2",
+            "dailytask2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7371,
+                "y": -1067
+            }
+        }
+    },
+    "limitedeventback": {
+        "next": [
+            "[JumpBack]rebelroad",
+            "[JumpBack]morelimitedevent",
+            "[JumpBack]returncheck",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9339,
+                "y": -807
+            }
+        }
+    },
+    "morelimitedevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    112,
+                    214,
+                    278
+                ],
+                "expected": [
+                    "更多"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9677,
+                "y": -1047
+            }
+        }
+    },
+    "quitmail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "limitedeventback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9020,
+                "y": -829
+            }
+        }
+    },
+    "returncheck": {
+        "max_hit": 3,
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9681,
+                "y": -544
+            }
+        }
+    },
+    "weeklytask": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    457,
+                    92,
+                    371,
+                    87
+                ],
+                "expected": [
+                    "每周任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "claimrewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8361,
+                "y": -822
+            }
+        }
+    }
+}

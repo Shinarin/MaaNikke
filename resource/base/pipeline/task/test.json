@@ -1,0 +1,339 @@
+{
+    "11111": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "挑战",
+                    "threshold": 0.7
+                },
+                "roi": [
+                    425,
+                    430,
+                    435,
+                    274
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "testanchor",
+        "$__mpe_code": {
+            "position": {
+                "x": 8379,
+                "y": -471
+            }
+        }
+    },
+    "$__mpe_config_test": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781340739848,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\test.json",
+            "savedViewport": {
+                "x": -17036,
+                "y": -341,
+                "zoom": 2
+            },
+            "filename": "test",
+            "version": "v1.6.1"
+        }
+    },
+    "$__mpe_anchor_testanchor_test": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9439,
+                "y": -817
+            }
+        }
+    },
+    "act1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    629,
+                    599,
+                    260,
+                    119
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9150,
+                "y": -1115
+            }
+        }
+    },
+    "act2": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "MarkStageCleared"
+            }
+        },
+        "next": [
+            "[Anchor]testanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8806,
+                "y": -851
+            }
+        }
+    },
+    "reco1": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "NumberedTargetReco",
+                "custom_recognition_param": {
+                    "end": 12,
+                    "prefix": "1-",
+                    "start": 1
+                },
+                "roi": [
+                    325,
+                    127,
+                    690,
+                    482
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "act1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8807,
+                "y": -1137
+            }
+        }
+    },
+    "新建节点2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    306,
+                    27,
+                    672,
+                    676
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8313,
+                "y": -732
+            }
+        }
+    },
+    "新建节点3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    304,
+                    20,
+                    676,
+                    690
+                ],
+                "expected": [
+                    "返回"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8880,
+                "y": -583
+            }
+        }
+    },
+    "test": {
+        "next": [
+            "新建节点9"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8336,
+                "y": 229
+            }
+        }
+    },
+    "新建节点5": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    448,
+                    620,
+                    385,
+                    98
+                ],
+                "expected": [
+                    "妮姬"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "_loopback",
+        "next": [
+            "新建节点6"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8663,
+                "y": -151
+            }
+        }
+    },
+    "新建节点6": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "LoopBack",
+                "custom_action_param": {}
+            }
+        },
+        "next": [
+            "新建节点7"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8975,
+                "y": -136
+            }
+        }
+    },
+    "新建节点7": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    463,
+                    615,
+                    363,
+                    97
+                ],
+                "expected": [
+                    "招募"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9274,
+                "y": -126
+            }
+        }
+    },
+    "新建节点9": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "NumberedTargetReco",
+                "custom_recognition_param": {
+                    "prefix": "1-",
+                    "start": 1,
+                    "end": 12
+                }
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    820,
+                    545,
+                    56,
+                    32
+                ],
+                "end": [
+                    [
+                        839,
+                        244,
+                        100,
+                        36
+                    ]
+                ]
+            }
+        },
+        "anchor": "_loopback",
+        "next": [
+            "新建节点10"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8701,
+                "y": 199
+            }
+        }
+    },
+    "新建节点10": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "LoopBack",
+                "custom_action_param": {
+                    "max_loops": 3
+                }
+            }
+        },
+        "next": [
+            "新建节点11"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9079,
+                "y": 261
+            }
+        }
+    },
+    "新建节点11": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "GetMarkStage"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9435,
+                "y": 275
+            }
+        }
+    }
+}

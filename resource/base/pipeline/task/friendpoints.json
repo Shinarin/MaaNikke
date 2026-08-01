@@ -1,0 +1,247 @@
+{
+    "$__mpe_config_friendpoints": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781277218637,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\friendpoints.json",
+            "savedViewport": {
+                "x": 303,
+                "y": 513,
+                "zoom": 0.76
+            },
+            "filename": "friendpoints",
+            "version": "v1.6.1"
+        }
+    },
+    "$__mpe_external_backtohomepage_friendpoints": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2024,
+                "y": 238
+            }
+        }
+    },
+    "checkfriendwin": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    557,
+                    71,
+                    182,
+                    42
+                ],
+                "template": [
+                    "friendpoints/friendwin.png"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "next": [
+            "confirmpointswap",
+            "confirmpointswap2",
+            "[JumpBack]sendpoints"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 751,
+                "y": -74
+            }
+        }
+    },
+    "checkfriendwin2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    557,
+                    71,
+                    182,
+                    42
+                ],
+                "template": [
+                    "friendpoints/friendwin.png"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 755,
+                "y": -412
+            }
+        }
+    },
+    "confirmpointswap": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "无法获得",
+                    "已完成"
+                ]
+            }
+        },
+        "next": [
+            "exitpointswap"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1315,
+                "y": -181
+            }
+        }
+    },
+    "confirmpointswap2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    566,
+                    435,
+                    147,
+                    32
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "exitpointswap"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1324,
+                "y": -6
+            }
+        }
+    },
+    "exitpointswap": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1757,
+                "y": -52
+            }
+        }
+    },
+    "friendbutton": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1175,
+                    144,
+                    104,
+                    303
+                ],
+                "expected": [
+                    "好友"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkfriendwin2",
+            "friendbutton"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 408,
+                "y": -583
+            }
+        }
+    },
+    "friendbutton2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1181,
+                    144,
+                    94,
+                    324
+                ],
+                "template": [
+                    "friendpoints/friend.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkfriendwin2",
+            "friendbutton2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 406,
+                "y": -283
+            }
+        }
+    },
+    "friendpoints": {
+        "doc": "开始好友点数收发",
+        "next": [
+            "checkfriendwin",
+            "[JumpBack]friendbutton",
+            "[JumpBack]friendbutton2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 167,
+                "y": -50
+            }
+        }
+    },
+    "sendpoints": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    667,
+                    571,
+                    152,
+                    68
+                ],
+                "expected": [
+                    "赠送"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1333,
+                "y": 239
+            }
+        }
+    }
+}

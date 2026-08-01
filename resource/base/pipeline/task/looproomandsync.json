@@ -1,0 +1,935 @@
+{
+    "$__mpe_config_looproomandsync": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781532173625,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\looproomandsync.json",
+            "savedViewport": {
+                "x": -8827,
+                "y": 1908,
+                "zoom": 1.5
+            },
+            "filename": "looproomandsync",
+            "version": "v1.6.1"
+        }
+    },
+    "$__mpe_external_backtohomepage_looproomandsync": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7116,
+                "y": -174
+            }
+        }
+    },
+    "$__mpe_group_同步器_looproomandsync": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8867,
+                "y": -516
+            },
+            "color": "green",
+            "childrenLabels": [
+                "autochoose",
+                "checkusebox",
+                "claimsynclevelup",
+                "closebox",
+                "notusebox2",
+                "startenhance",
+                "startenhance2",
+                "syncback",
+                "syncback2",
+                "synclevelup",
+                "synclevelup2",
+                "synclevelupback",
+                "usebox"
+            ],
+            "width": 2845,
+            "height": 910
+        }
+    },
+    "$__mpe_group_是否使用时间道具_looproomandsync": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8467,
+                "y": -522
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "autousetimebox",
+                "dontautousetimebox"
+            ],
+            "width": 304,
+            "height": 711
+        }
+    },
+    "1keyup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1106,
+                    645,
+                    168,
+                    63
+                ],
+                "expected": [
+                    "升级"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "confirm1keyup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8195,
+                "y": -982
+            }
+        }
+    },
+    "autochoose": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    533,
+                    532,
+                    117,
+                    50
+                ],
+                "expected": [
+                    "自动选择"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "startenhance",
+            "startenhance2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9742,
+                "y": -328
+            }
+        }
+    },
+    "autousetimebox": {
+        "enabled": true,
+        "next": [
+            "checkusebox",
+            "usebox"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8496,
+                "y": -468
+            }
+        }
+    },
+    "checkcompound": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    597,
+                    606,
+                    92,
+                    51
+                ],
+                "expected": [
+                    "指挥中心"
+                ]
+            }
+        },
+        "next": [
+            "startlooproom",
+            "startsync",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6842,
+                "y": -1080
+            }
+        }
+    },
+    "checkcompound2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    597,
+                    606,
+                    92,
+                    51
+                ],
+                "expected": [
+                    "指挥中心"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7017,
+                "y": -1442
+            }
+        }
+    },
+    "checkusebox": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "looproomandsync/sync2.png"
+                ]
+            }
+        },
+        "next": [
+            "autochoose"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9246,
+                "y": -237
+            }
+        }
+    },
+    "claimsynclevelup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    497,
+                    398,
+                    297,
+                    110
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "syncback",
+            "claimsynclevelup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10631,
+                "y": -134
+            }
+        }
+    },
+    "closebox": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "looproomandsync/sync2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    766,
+                    403,
+                    26,
+                    13
+                ]
+            }
+        },
+        "next": [
+            "autochoose"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9250,
+                "y": 160
+            }
+        }
+    },
+    "confirm1keyup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "confirm1keyup2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8481,
+                "y": -958
+            }
+        }
+    },
+    "confirm1keyup2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "looproomback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8773,
+                "y": -936
+            }
+        }
+    },
+    "dontautousetimebox": {
+        "enabled": false,
+        "next": [
+            "notusebox2",
+            "closebox"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8510,
+                "y": -50
+            }
+        }
+    },
+    "enhance": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    573,
+                    110,
+                    127,
+                    103
+                ],
+                "expected": [
+                    "增强"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "autousetimebox",
+            "dontautousetimebox"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8137,
+                "y": -407
+            }
+        }
+    },
+    "intocompound": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    268,
+                    503,
+                    219,
+                    101
+                ],
+                "expected": [
+                    "前哨基地"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 200,
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkcompound2",
+            "intocompound"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6713,
+                "y": -1500
+            }
+        }
+    },
+    "intolooproom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    700,
+                    622,
+                    54,
+                    34
+                ],
+                "expected": [
+                    "循环室"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    711,
+                    596,
+                    31,
+                    34
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "intolooproomyes",
+            "intolooproom"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7593,
+                "y": -1130
+            }
+        }
+    },
+    "intolooproom2": {
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "roi": [
+                    696,
+                    576,
+                    67,
+                    78
+                ],
+                "template": [
+                    "looproomandsync/looproom.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "intolooproomyes",
+            "intolooproom2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7583,
+                "y": -833
+            }
+        }
+    },
+    "intolooproomyes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    636,
+                    645,
+                    186,
+                    73
+                ],
+                "expected": [
+                    "进入"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "1keyup",
+            "no1keyup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7900,
+                "y": -996
+            }
+        }
+    },
+    "intosync": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    525,
+                    607,
+                    52,
+                    44
+                ],
+                "expected": [
+                    "同步器"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    533,
+                    596,
+                    39,
+                    36
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "intosyncyes",
+            "intosync"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7569,
+                "y": -509
+            }
+        }
+    },
+    "intosync2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "looproomandsync/sync.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "intosyncyes",
+            "intosync2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7577,
+                "y": -220
+            }
+        }
+    },
+    "intosyncyes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    636,
+                    645,
+                    186,
+                    73
+                ],
+                "expected": [
+                    "进入"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "enhance"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7853,
+                "y": -419
+            }
+        }
+    },
+    "looproomandsync": {
+        "next": [
+            "checkcompound",
+            "[JumpBack]intocompound",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6455,
+                "y": -1057
+            }
+        }
+    },
+    "looproomback": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "back.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "looproomback2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9076,
+                "y": -986
+            }
+        }
+    },
+    "looproomback2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "返回",
+                    "关闭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "looproomandsync"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9410,
+                "y": -939
+            }
+        }
+    },
+    "no1keyup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1106,
+                    645,
+                    168,
+                    63
+                ],
+                "expected": [
+                    "升级"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "looproomback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8460,
+                "y": -1288
+            }
+        }
+    },
+    "notusebox2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "looproomandsync/sync1.png"
+                ]
+            }
+        },
+        "next": [
+            "autochoose"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9255,
+                "y": -39
+            }
+        }
+    },
+    "startenhance": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    529,
+                    152,
+                    53
+                ],
+                "expected": [
+                    "开始增强"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "synclevelup2",
+            "synclevelup",
+            "startenhance"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10031,
+                "y": -470
+            }
+        }
+    },
+    "startenhance2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/sendgift.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "synclevelup2",
+            "synclevelup",
+            "startenhance2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10021,
+                "y": -213
+            }
+        }
+    },
+    "startlooproom": {
+        "max_hit": 1,
+        "rate_limit": 1000,
+        "next": [
+            "intolooproom",
+            "intolooproom2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7199,
+                "y": -1088
+            }
+        }
+    },
+    "startsync": {
+        "max_hit": 1,
+        "rate_limit": 1000,
+        "next": [
+            "intosync",
+            "intosync2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7228,
+                "y": -485
+            }
+        }
+    },
+    "syncback": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "back.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                463,
+                423,
+                349,
+                214
+            ]
+        },
+        "next": [
+            "syncback2",
+            "syncback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10972,
+                "y": -385
+            }
+        }
+    },
+    "syncback2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    486,
+                    663,
+                    138,
+                    43
+                ],
+                "expected": [
+                    "返回",
+                    "关闭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "looproomandsync"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11264,
+                "y": -389
+            }
+        }
+    },
+    "synclevelup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    465,
+                    247,
+                    358,
+                    166
+                ],
+                "expected": [
+                    "LEVEL UP",
+                    "LEVEL",
+                    "UP"
+                ]
+            }
+        },
+        "next": [
+            "claimsynclevelup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10316,
+                "y": -157
+            }
+        }
+    },
+    "synclevelup2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    465,
+                    247,
+                    358,
+                    166
+                ],
+                "expected": [
+                    "材料不足"
+                ]
+            }
+        },
+        "next": [
+            "synclevelupback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10327,
+                "y": -410
+            }
+        }
+    },
+    "synclevelupback": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    776,
+                    86,
+                    43,
+                    36
+                ],
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "syncback",
+            "synclevelupback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10629,
+                "y": -438
+            }
+        }
+    },
+    "usebox": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "looproomandsync/sync1.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    768,
+                    406,
+                    22,
+                    9
+                ]
+            }
+        },
+        "next": [
+            "autochoose"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9238,
+                "y": -462
+            }
+        }
+    }
+}

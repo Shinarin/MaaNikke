@@ -1,0 +1,902 @@
+{
+    "$__mpe_config_bigevent": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1785078773775,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\bigevent.json",
+            "savedViewport": {
+                "x": -1898,
+                "y": 131,
+                "zoom": 1
+            },
+            "filename": "bigevent",
+            "version": "v1.7.4"
+        }
+    },
+    "$__mpe_anchor_bigevent_anchor_bigevent": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4895,
+                "y": 12
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_bigevent": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1170,
+                "y": 1888
+            }
+        }
+    },
+    "$__mpe_sticker_便签_bigevent": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3193,
+                "y": -15
+            },
+            "content": "",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "bigevent": {
+        "anchor": "bigevent_anchor",
+        "next": [
+            "bigevent_claimreward",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -156,
+                "y": 190
+            }
+        }
+    },
+    "bigevent_11noopen": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    402,
+                    271,
+                    431,
+                    186
+                ],
+                "expected": [
+                    "解锁条件"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]bigevent_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3501,
+                "y": -197
+            }
+        }
+    },
+    "bigevent_checkintoevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]bigevent_quickfight_checkdate",
+            "bigevent_claimrewards",
+            "claimbigevent_claimrewards",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 877,
+                "y": 182
+            }
+        }
+    },
+    "bigevent_checkintoevent2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "活动",
+                    "地区"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 881,
+                "y": -147
+            }
+        }
+    },
+    "bigevent_checkintoeventreturn": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    774,
+                    553,
+                    247,
+                    121
+                ],
+                "template": [
+                    "exchange.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 570,
+                "y": 357
+            }
+        }
+    },
+    "bigevent_choosestory": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    412,
+                    483,
+                    463,
+                    190
+                ],
+                "template": [
+                    "bigevent/beautyfullshot/beautyfullshot_story2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2018,
+                "y": 367
+            }
+        }
+    },
+    "bigevent_claimreward": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "homepagesign",
+                    "homepagesign2"
+                ]
+            }
+        },
+        "next": [
+            "bigevent_checkintoevent",
+            "[JumpBack]bigevent_into",
+            "[JumpBack]bigevent_checkintoeventreturn",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 276,
+                "y": 191
+            }
+        }
+    },
+    "bigevent_clickhard": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    746,
+                    673,
+                    35,
+                    21
+                ]
+            }
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "bigevent_swipe"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2608,
+                "y": 85
+            }
+        }
+    },
+    "bigevent_eventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "bigevent_clickhard"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 44
+            }
+        }
+    },
+    "bigevent_into11": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    418,
+                    362,
+                    431,
+                    245
+                ],
+                "expected": [
+                    "Repeat",
+                    "peat",
+                    "Repe",
+                    "REPEAT",
+                    "PEAT",
+                    "REPE"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "bigevent_11noopen",
+            "bigevent_startquickfight",
+            "bigevent_into11"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3183,
+                "y": 139
+            }
+        }
+    },
+    "bigevent_quickfight": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "bigevent_storyevent",
+            "[JumpBack]bigevent_choosestory"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1635,
+                "y": 128
+            }
+        }
+    },
+    "bigevent_quickfight_checkdate": {
+        "max_hit": 1,
+        "next": [
+            "bigevent_quickfight",
+            "bigevent_quickfight_skip"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1284,
+                "y": 123
+            }
+        }
+    },
+    "bigevent_quickfight_skip": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1631,
+                "y": -53
+            }
+        }
+    },
+    "bigevent_quickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    454,
+                    325,
+                    70
+                ],
+                "expected": [
+                    "MAX"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "next": [
+            "bigevent_startquickfightmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3808,
+                "y": 165
+            }
+        }
+    },
+    "bigevent_rewards": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1181,
+                    89,
+                    98,
+                    128
+                ],
+                "template": [
+                    "bigevent/beautyfullshot/beautyfullshot_mission.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "bigevent_rewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1660,
+                "y": 593
+            }
+        }
+    },
+    "bigevent_rewards2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1191,
+                    112,
+                    86,
+                    168
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "bigevent_rewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1663,
+                "y": 872
+            }
+        }
+    },
+    "bigevent_rewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    451,
+                    589,
+                    377,
+                    93
+                ],
+                "expected": [
+                    "全部领取",
+                    "全部",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 10,
+        "repeat_delay": 500,
+        "next": [
+            "bigevent_rewardsend",
+            "bigevent_claimrewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1979,
+                "y": 641
+            }
+        }
+    },
+    "bigevent_rewardsend": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "homebutton1.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "next": [
+            "[Anchor]bigevent_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2307,
+                "y": 843
+            }
+        }
+    },
+    "bigevent_storyevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "剧情活动"
+                ]
+            }
+        },
+        "next": [
+            "bigevent_eventstage",
+            "[JumpBack]bigevent_intoeventstage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2035,
+                "y": -30
+            }
+        }
+    },
+    "bigevent_swipe": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    588,
+                    544,
+                    124,
+                    27
+                ],
+                "end": [
+                    [
+                        597,
+                        241,
+                        97,
+                        35
+                    ]
+                ],
+                "duration": [
+                    500
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "bigevent_into11",
+            "[JumpBack]bigevent_into11_retry",
+            "bigevent_cantinto11"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2884,
+                "y": 52
+            }
+        }
+    },
+    "claimbigevent_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "claimbigevent_intoqiandao",
+            "[JumpBack]claimbigevent_qiandao"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1291,
+                "y": 1157
+            }
+        }
+    },
+    "claimbigevent_intoqiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    280,
+                    9,
+                    730,
+                    706
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "[Anchor]bigevent_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1666,
+                "y": 1139
+            }
+        }
+    },
+    "claimbigevent_qiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    418,
+                    464,
+                    461,
+                    217
+                ],
+                "expected": [
+                    "签到印章",
+                    "签到印",
+                    "到印章"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1672,
+                "y": 1511
+            }
+        }
+    },
+    "bigevent_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "bigevent_rewards",
+            "bigevent_rewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1286,
+                "y": 599
+            }
+        }
+    },
+    "bigevent_claimrewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    525,
+                    313,
+                    273,
+                    320
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "bigevent_rewardsend"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2296,
+                "y": 580
+            }
+        }
+    },
+    "endbigevent_quickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "首次",
+                    "不足"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]bigevent_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3810,
+                "y": -46
+            }
+        }
+    },
+    "bigevent_into": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    762,
+                    426,
+                    289,
+                    243
+                ],
+                "template": [
+                    "bigevent/beautyfullshot/beautyfullshot_into.png",
+                    "bigevent/beautyfullshot/beautyfullshot_into2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    838,
+                    597,
+                    107,
+                    18
+                ]
+            }
+        },
+        "next": [
+            "bigevent_checkintoevent2",
+            "bigevent_into"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 555,
+                "y": -198
+            }
+        }
+    },
+    "bigevent_intoeventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    356,
+                    28,
+                    577,
+                    671
+                ],
+                "expected": [
+                    "Enter",
+                    "剩余时间"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2318,
+                "y": 301
+            }
+        }
+    },
+    "bigevent_intoquickfight": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    696,
+                    364,
+                    105,
+                    213
+                ],
+                "template": [
+                    "limitedevent/oldtales/oldtalesquickfight.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "bigevent_intoquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2869,
+                "y": -341
+            }
+        }
+    },
+    "bigevent_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "endbigevent_quickfight",
+            "bigevent_quickfightmax",
+            "bigevent_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3509,
+                "y": 145
+            }
+        }
+    },
+    "bigevent_startquickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    525,
+                    323,
+                    59
+                ],
+                "expected": [
+                    "进行战斗",
+                    "战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "startbigevent_quickfightmaxconfirm"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4119,
+                "y": 188
+            }
+        }
+    },
+    "startbigevent_quickfightmaxconfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    538,
+                    590,
+                    207,
+                    89
+                ],
+                "expected": [
+                    "点击任意处",
+                    "任意处进行",
+                    "ESC"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]bigevent_anchor",
+            "startbigevent_quickfightmaxconfirm"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4434,
+                "y": 175
+            }
+        }
+    },
+    "bigevent_cantinto11": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    418,
+                    362,
+                    431,
+                    245
+                ],
+                "expected": [
+                    "Repeat",
+                    "peat",
+                    "Repe"
+                ]
+            }
+        },
+        "inverse": true,
+        "$__mpe_code": {
+            "position": {
+                "x": 3200,
+                "y": 639
+            }
+        }
+    },
+    "bigevent_into11_retry": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 3199,
+                "y": 429
+            }
+        }
+    }
+}

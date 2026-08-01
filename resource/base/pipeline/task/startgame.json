@@ -1,0 +1,442 @@
+{
+    "$__mpe_config_startgame": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1784561188503,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\startgame.json",
+            "savedViewport": {
+                "x": -301,
+                "y": 356,
+                "zoom": 1
+            },
+            "filename": "startgame",
+            "version": "v1.7.4"
+        }
+    },
+    "$__mpe_external_backtohomepage_startgame": {
+        "$__mpe_code": {
+            "position": {
+                "x": -144,
+                "y": 654
+            }
+        }
+    },
+    "$__mpe_group_公告_startgame": {
+        "$__mpe_code": {
+            "position": {
+                "x": 190,
+                "y": -54
+            },
+            "color": "green",
+            "childrenLabels": [
+                "aweeknoagain",
+                "checkaweeknoagain",
+                "exitaweeknoagain",
+                "findnotice"
+            ],
+            "width": 1090,
+            "height": 289
+        }
+    },
+    "$__mpe_group_更新_startgame": {
+        "$__mpe_code": {
+            "position": {
+                "x": 199,
+                "y": -424
+            },
+            "color": "green",
+            "childrenLabels": [
+                "confirmupdating",
+                "updategame",
+                "updateyes"
+            ],
+            "width": 908,
+            "height": 318
+        }
+    },
+    "$__mpe_group_账号登录_startgame": {
+        "$__mpe_code": {
+            "position": {
+                "x": 192,
+                "y": 261
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "signin",
+                "stoptask_signin"
+            ],
+            "width": 658,
+            "height": 300
+        }
+    },
+    "aweeknoagain": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "一周内",
+                    "不再显示",
+                    "一周内不再显示"
+                ]
+            }
+        },
+        "next": [
+            "checkaweeknoagain"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 493,
+                "y": 19
+            }
+        }
+    },
+    "checkaweeknoagain": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    483,
+                    533,
+                    10,
+                    10
+                ]
+            }
+        },
+        "next": [
+            "exitaweeknoagain"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 763,
+                "y": 16
+            }
+        }
+    },
+    "clickstart": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    531,
+                    513,
+                    231,
+                    122
+                ],
+                "expected": [
+                    "点击开始",
+                    "点击",
+                    "开始"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 100,
+        "$__mpe_code": {
+            "position": {
+                "x": 1331,
+                "y": -225
+            }
+        }
+    },
+    "confirmupdating": {
+        "doc": "正在更新游戏，等待中",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "正在下载",
+                    "下载状态推送"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 855,
+                "y": -362
+            }
+        }
+    },
+    "exitaweeknoagain": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1041,
+                "y": -16
+            }
+        }
+    },
+    "findnotice": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "亲爱的指挥官"
+                ]
+            }
+        },
+        "next": [
+            "aweeknoagain"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 212,
+                "y": 20
+            }
+        }
+    },
+    "homepagesign": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    613,
+                    655,
+                    56,
+                    57
+                ],
+                "expected": [
+                    "大厅"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -149,
+                "y": 253
+            }
+        }
+    },
+    "homepagesign2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "lianmeng.png",
+                    "dailyrewards/task.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -146,
+                "y": 41
+            }
+        }
+    },
+    "homepagesign3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "30天补给",
+                    "活动公告"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -147,
+                "y": 462
+            }
+        }
+    },
+    "isdowning": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "正在维护",
+                    "维护中"
+                ]
+            }
+        },
+        "next": [
+            "stoptask_isdowning"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 230,
+                "y": 598
+            }
+        }
+    },
+    "kehuzhongxin": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    61,
+                    60,
+                    225
+                ],
+                "expected": [
+                    "客户中心",
+                    "客户",
+                    "中心"
+                ]
+            }
+        },
+        "timeout": 600000,
+        "next": [
+            "clickstart",
+            "findnotice",
+            "confirmupdating",
+            "updategame",
+            "signin",
+            "isdowning",
+            "startgame_back"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -141,
+                "y": -267
+            }
+        }
+    },
+    "signin": {
+        "doc": "请先自行在模拟器登录一遍",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "微信登陆",
+                    "QQ登陆"
+                ]
+            }
+        },
+        "next": [
+            "stoptask_signin"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 228,
+                "y": 320
+            }
+        }
+    },
+    "startgame": {
+        "doc": "启动国服nikke",
+        "timeout": 600000,
+        "next": [
+            "[JumpBack]kehuzhongxin",
+            "homepagesign2",
+            "homepagesign",
+            "homepagesign3",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -512,
+                "y": -104
+            }
+        }
+    },
+    "startgame_back": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 241,
+                "y": 851
+            }
+        }
+    },
+    "stoptask_isdowning": {
+        "action": {
+            "type": "StopTask"
+        },
+        "focus": {
+            "Node.Action.Starting": {
+                "content": "正在维护中",
+                "display": "notification"
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 578,
+                "y": 589
+            }
+        }
+    },
+    "stoptask_signin": {
+        "action": {
+            "type": "StopTask"
+        },
+        "focus": {
+            "Node.Action.Starting": {
+                "content": "请先登录，推荐QQ无需扫码",
+                "display": "notification"
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 574,
+                "y": 331
+            }
+        }
+    },
+    "updategame": {
+        "doc": "游戏需更新",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "后台下载",
+                    "建议在",
+                    "是否继续"
+                ]
+            }
+        },
+        "next": [
+            "updateyes"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 221,
+                "y": -379
+            }
+        }
+    },
+    "updateyes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 521,
+                "y": -351
+            }
+        }
+    }
+}

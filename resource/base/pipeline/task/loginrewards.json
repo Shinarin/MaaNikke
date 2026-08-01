@@ -1,0 +1,340 @@
+{
+    "$__mpe_config_loginrewards": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1784419195617,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\loginrewards.json",
+            "savedViewport": {
+                "x": -98,
+                "y": 80,
+                "zoom": 0.83
+            },
+            "filename": "loginrewards",
+            "version": "v1.7.4"
+        }
+    },
+    "$__mpe_external_backtohomepage_loginrewards": {
+        "$__mpe_code": {
+            "position": {
+                "x": -109,
+                "y": -154
+            }
+        }
+    },
+    "$__mpe_group_月卡奖励_loginrewards": {
+        "$__mpe_code": {
+            "position": {
+                "x": 420,
+                "y": -859
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "clickmooncard",
+                "mooncard"
+            ],
+            "width": 653,
+            "height": 285
+        }
+    },
+    "$__mpe_group_限时登录奖励_loginrewards": {
+        "$__mpe_code": {
+            "position": {
+                "x": 387,
+                "y": -47
+            },
+            "color": "purple",
+            "childrenLabels": [
+                "claimlogineventreward",
+                "claimlogineventreward2",
+                "clickclaimreward",
+                "clicktoback",
+                "logineventreward",
+                "logineventreward_return"
+            ],
+            "width": 1617,
+            "height": 1014
+        }
+    },
+    "claimlogineventreward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "全部领取",
+                    "点击领取",
+                    "确定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "clickclaimreward",
+            "clicktoback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 710,
+                "y": -3
+            }
+        }
+    },
+    "claimlogineventreward2": {
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "template": [
+                    "signevent/爱丽丝兔女郎/待领取.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "clicktoback",
+            "clickclaimreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 699,
+                "y": 308
+            }
+        }
+    },
+    "clickclaimreward": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取",
+                    "领取奖励",
+                    "跳过"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "clicktoback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 982,
+                "y": 166
+            }
+        }
+    },
+    "clickclosebutton": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 764,
+                "y": -521
+            }
+        }
+    },
+    "clickmooncard": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取",
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 776,
+                "y": -808
+            }
+        }
+    },
+    "clicktoback": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1420,
+                "y": 201
+            }
+        }
+    },
+    "eventnotice_orc": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    418,
+                    17,
+                    454,
+                    171
+                ],
+                "expected": [
+                    "活动公告",
+                    "系统公告",
+                    "一周内"
+                ]
+            }
+        },
+        "next": [
+            "clickclosebutton"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 410,
+                "y": -511
+            }
+        }
+    },
+    "eventnotice_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "notice.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1100,
+                "y": -507
+            }
+        }
+    },
+    "logineventreward": {
+        "doc": "检测到连续登录活动",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "活动期间",
+                    "累计登录",
+                    "剩余时间"
+                ]
+            }
+        },
+        "pre_wait_freezes": 2000,
+        "rate_limit": 2000,
+        "next": [
+            "claimlogineventreward",
+            "claimlogineventreward2",
+            "[JumpBack]logineventreward_return",
+            "clicktoback"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 410,
+                "y": 210
+            }
+        }
+    },
+    "logineventreward_return": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 700,
+                "y": 645
+            }
+        }
+    },
+    "loginrewards": {
+        "timeout": 10000,
+        "next": [
+            "[JumpBack]eventnotice_orc",
+            "[JumpBack]logineventreward",
+            "[JumpBack]mooncard",
+            "[JumpBack]loginrewards_goon",
+            "[JumpBack]loginrewardsreturn",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -109,
+                "y": -483
+            }
+        }
+    },
+    "loginrewards_goon": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击继续",
+                    "跳过",
+                    "确认",
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 432,
+                "y": -1040
+            }
+        }
+    },
+    "loginrewardsreturn": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 174,
+                "y": 127
+            }
+        }
+    },
+    "mooncard": {
+        "doc": "检测到月卡奖励",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "30天补给品",
+                    "30天"
+                ]
+            }
+        },
+        "next": [
+            "clickmooncard"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 440,
+                "y": -805
+            }
+        }
+    }
+}

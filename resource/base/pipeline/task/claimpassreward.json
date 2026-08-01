@@ -1,0 +1,570 @@
+{
+    "$__mpe_config_claimpassreward": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1785364707872,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
+            "savedViewport": {
+                "x": 405,
+                "y": 876,
+                "zoom": 0.66
+            },
+            "filename": "claimpassreward",
+            "version": "v1.7.4"
+        }
+    },
+    "$__mpe_anchor_claimpassreward_anchor_claimpassreward": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2476,
+                "y": -879
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_claimpassreward": {
+        "$__mpe_code": {
+            "position": {
+                "x": 594,
+                "y": 166
+            }
+        }
+    },
+    "2pass": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1109,
+                    91,
+                    70,
+                    73
+                ],
+                "template": [
+                    "exchange.png"
+                ],
+                "threshold": [
+                    0.7
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]2pass_click",
+            "[JumpBack]2pass_claim",
+            "[JumpBack]checkexchangepass_return",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3,
+                "y": -1294
+            }
+        }
+    },
+    "2pass_claim": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1145,
+                    70,
+                    133,
+                    77
+                ],
+                "template": [
+                    "redpoint2.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -75,
+                    28,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "clickpasstask"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 424,
+                "y": -1398
+            }
+        }
+    },
+    "2pass_click": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "exchange.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 446,
+                "y": -1063
+            }
+        }
+    },
+    "3pass": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1111,
+                    90,
+                    65,
+                    67
+                ],
+                "template": [
+                    "3pass.png"
+                ],
+                "threshold": [
+                    0.7
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "[JumpBack]3pass_open",
+            "[JumpBack]3pass_click",
+            "[JumpBack]checkexchangepass_return",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 21,
+                "y": -694
+            }
+        }
+    },
+    "3pass_claim": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1227,
+                    64,
+                    53,
+                    197
+                ],
+                "template": [
+                    "redpoint2.png",
+                    "redpoint.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -75,
+                    26,
+                    0,
+                    0
+                ]
+            }
+        },
+        "timeout": 10000,
+        "next": [
+            "clickpasstask"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 748,
+                "y": -780
+            }
+        }
+    },
+    "3pass_click": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1115,
+                    95,
+                    46,
+                    54
+                ],
+                "template": [
+                    "3pass.png"
+                ]
+            }
+        },
+        "pre_wait_freezes": 2000,
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 469,
+                "y": -408
+            }
+        }
+    },
+    "3pass_open": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1058,
+                    90,
+                    123,
+                    73
+                ],
+                "template": [
+                    "3passopen.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "timeout": 10000,
+        "next": [
+            "3pass_claim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 470,
+                "y": -770
+            }
+        }
+    },
+    "canclaimpassreward": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1263,
+                    86,
+                    17,
+                    22
+                ],
+                "template": [
+                    "redpoint.png",
+                    "redpoint2.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -530,
+                "y": -434
+            }
+        }
+    },
+    "canexchangepass": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1140,
+                    106,
+                    13,
+                    15
+                ],
+                "template": [
+                    "redpoint.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -794,
+                "y": -441
+            }
+        }
+    },
+    "checkexchangepass": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "canclaimpassreward",
+                    "canexchangepass"
+                ]
+            }
+        },
+        "timeout": 10000,
+        "next": [
+            "2pass",
+            "3pass"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -238,
+                "y": -844
+            }
+        }
+    },
+    "checkexchangepass_back": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "post_delay": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 609,
+                "y": -132
+            }
+        }
+    },
+    "checkexchangepass_return": {
+        "max_hit": 5,
+        "next": [
+            "checkexchangepass_back"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 307,
+                "y": -134
+            }
+        }
+    },
+    "checkexchangepassreturn": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": -249,
+                "y": -588
+            }
+        }
+    },
+    "checkinhomepage": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "homepagesign2",
+                    "homepagesign"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    622,
+                    647,
+                    41,
+                    55
+                ]
+            }
+        },
+        "repeat": 4,
+        "timeout": 5000,
+        "next": [
+            "checkexchangepass",
+            "[JumpBack]checkexchangepassreturn",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -572,
+                "y": -873
+            }
+        }
+    },
+    "claimallpassexp": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    472,
+                    648,
+                    345,
+                    42
+                ],
+                "expected": [
+                    "全部领取",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "clickpassrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1286,
+                "y": -957
+            }
+        }
+    },
+    "claimallpassrewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    472,
+                    648,
+                    345,
+                    42
+                ],
+                "expected": [
+                    "全部领取",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "exitpass"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1868,
+                "y": -955
+            }
+        }
+    },
+    "claimpassreward": {
+        "anchor": "claimpassreward_anchor",
+        "next": [
+            "checkinhomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -1039,
+                "y": -853
+            }
+        }
+    },
+    "clickpassrewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    459,
+                    215,
+                    364,
+                    42
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "claimallpassrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1573,
+                "y": -930
+            }
+        }
+    },
+    "clickpasstask": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    459,
+                    215,
+                    364,
+                    42
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "claimallpassexp"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1008,
+                "y": -928
+            }
+        }
+    },
+    "exitpass": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    459,
+                    215,
+                    364,
+                    42
+                ],
+                "expected": [
+                    "奖励",
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1070,
+                    552,
+                    92,
+                    60
+                ]
+            }
+        },
+        "repeat": 2,
+        "next": [
+            "[Anchor]claimpassreward_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2140,
+                "y": -951
+            }
+        }
+    }
+}

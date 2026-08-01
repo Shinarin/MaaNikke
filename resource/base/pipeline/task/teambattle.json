@@ -1,0 +1,576 @@
+{
+    "$__mpe_config_teambattle": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1784418666733,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\teambattle.json",
+            "savedViewport": {
+                "x": -2849,
+                "y": 482,
+                "zoom": 1.26
+            },
+            "filename": "teambattle",
+            "version": "v1.7.4"
+        }
+    },
+    "$__mpe_anchor_teambattlestart_teambattle": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3274,
+                "y": -452
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_teambattle": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1598,
+                "y": 434
+            }
+        }
+    },
+    "$__mpe_external_checkfight_teambattle": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3027,
+                "y": 1
+            }
+        }
+    },
+    "$__mpe_external_morelimitedevent_teambattle": {
+        "$__mpe_code": {
+            "position": {
+                "x": 326,
+                "y": -152
+            }
+        }
+    },
+    "checkinteambattleroom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    521,
+                    44,
+                    222,
+                    94
+                ],
+                "expected": [
+                    "协同作战"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 3022,
+                "y": 85
+            }
+        }
+    },
+    "checkteambattle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    84,
+                    44
+                ],
+                "expected": [
+                    "协同作战",
+                    "协同",
+                    "作战"
+                ]
+            }
+        },
+        "anchor": "teambattlestart",
+        "next": [
+            "notimetoteambattle",
+            "[JumpBack]teambattlematching",
+            "teambattlepre",
+            "[JumpBack]teambattlematch"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 676,
+                "y": -170
+            }
+        }
+    },
+    "checkteambattle2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    84,
+                    44
+                ],
+                "expected": [
+                    "协同作战",
+                    "协同",
+                    "作战"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 706,
+                "y": -766
+            }
+        }
+    },
+    "checkteambattleopen": {
+        "max_hit": 5,
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 233,
+                "y": 355
+            }
+        }
+    },
+    "confirmteambattlematching": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    569,
+                    437,
+                    189,
+                    26
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1300,
+                "y": -385
+            }
+        }
+    },
+    "exitteambattle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    551,
+                    602,
+                    168,
+                    77
+                ],
+                "expected": [
+                    "点击任意处",
+                    "任意处",
+                    "ESC"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]teambattlestart",
+            "exitteambattle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3029,
+                "y": -298
+            }
+        }
+    },
+    "intoteambattle": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    6,
+                    116,
+                    181,
+                    272
+                ],
+                "template": [
+                    "teambattle/teambattle.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkteambattle2",
+            "intoteambattle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 315,
+                "y": -511
+            }
+        }
+    },
+    "intoteambattle2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    6,
+                    116,
+                    181,
+                    272
+                ],
+                "expected": [
+                    "协同作战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkteambattle2",
+            "intoteambattle2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 313,
+                "y": -805
+            }
+        }
+    },
+    "notimetoteambattle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    473,
+                    239,
+                    340,
+                    171
+                ],
+                "expected": [
+                    "已超出每日游戏奖励次数",
+                    "已超出",
+                    "游戏奖励次数"
+                ]
+            }
+        },
+        "next": [
+            "shutteambattlepre"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 981,
+                "y": -617
+            }
+        }
+    },
+    "shutteambattlepre": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    453,
+                    395,
+                    198,
+                    108
+                ],
+                "expected": [
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1314,
+                "y": -614
+            }
+        }
+    },
+    "teambattle": {
+        "next": [
+            "teambattle_checkhomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -338,
+                "y": -140
+            }
+        }
+    },
+    "teambattle_checkhomepage": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "homepagesign",
+                    "homepagesign2"
+                ]
+            }
+        },
+        "next": [
+            "checkteambattle",
+            "[JumpBack]intoteambattle2",
+            "[JumpBack]intoteambattle",
+            "[JumpBack]morelimitedevent",
+            "[JumpBack]checkteambattleopen",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -7,
+                "y": -162
+            }
+        }
+    },
+    "teambattleaccept": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    659,
+                    466,
+                    128,
+                    33
+                ],
+                "expected": [
+                    "接受"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 40000,
+        "next": [
+            "teambattleinfo"
+        ],
+        "on_error": [
+            "[Anchor]teambattlestart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1696,
+                "y": -248
+            }
+        }
+    },
+    "teambattleaccept2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "teambattle/accept.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 40000,
+        "next": [
+            "teambattleinfo"
+        ],
+        "on_error": [
+            "[Anchor]teambattlestart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1695,
+                "y": 76
+            }
+        }
+    },
+    "teambattleinfo": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    34,
+                    95,
+                    48
+                ],
+                "expected": [
+                    "作战信息"
+                ]
+            }
+        },
+        "next": [
+            "teambattleselectnikke"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2066,
+                "y": -246
+            }
+        }
+    },
+    "teambattlematch": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1093,
+                    526,
+                    169,
+                    77
+                ],
+                "expected": [
+                    "开始匹配"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1022,
+                "y": -19
+            }
+        }
+    },
+    "teambattlematching": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    530,
+                    267,
+                    198,
+                    98
+                ],
+                "expected": [
+                    "正在配对中"
+                ]
+            }
+        },
+        "next": [
+            "confirmteambattlematching"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 988,
+                "y": -381
+            }
+        }
+    },
+    "teambattlepre": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    429,
+                    236,
+                    379,
+                    203
+                ],
+                "expected": [
+                    "协同作战",
+                    "已完成匹配"
+                ]
+            }
+        },
+        "next": [
+            "teambattleaccept",
+            "teambattleaccept2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1326,
+                "y": -145
+            }
+        }
+    },
+    "teambattlepre2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    582,
+                    664,
+                    118,
+                    29
+                ],
+                "expected": [
+                    "准备"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 120000,
+        "next": [
+            "exitteambattle",
+            "[JumpBack]checkfight",
+            "[JumpBack]checkinteambattleroom"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2699,
+                "y": -260
+            }
+        }
+    },
+    "teambattleselectnikke": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    34,
+                    95,
+                    48
+                ],
+                "expected": [
+                    "作战信息"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    43,
+                    438,
+                    35,
+                    38
+                ]
+            }
+        },
+        "repeat": 5,
+        "next": [
+            "teambattlepre2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2396,
+                "y": -274
+            }
+        }
+    }
+}

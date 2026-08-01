@@ -1,0 +1,806 @@
+{
+    "$__mpe_config_lianmengtuxi": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781343947453,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\lianmengtuxi.json",
+            "savedViewport": {
+                "x": -7,
+                "y": 307,
+                "zoom": 0.57
+            },
+            "filename": "lianmengtuxi",
+            "version": "v1.6.1"
+        }
+    },
+    "$__mpe_external_backtohomepage_lianmengtuxi": {
+        "$__mpe_code": {
+            "position": {
+                "x": 851,
+                "y": 594
+            }
+        }
+    },
+    "$__mpe_external_isfighting_lianmengtuxi": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1613,
+                "y": -144
+            }
+        }
+    },
+    "$__mpe_group_分组_lianmengtuxi": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1836,
+                "y": 95
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "lianmengzhan_cantfight0",
+                "lianmengzhan_cantfight1",
+                "lianmengzhan_team2",
+                "lianmengzhan_team3",
+                "lianmengzhan_team4",
+                "lianmengzhan_team5",
+                "lianmengzhan_cantfight2",
+                "lianmengzhan_cantfight3",
+                "lianmengzhan_cantfight4"
+            ],
+            "width": 798,
+            "height": 1216
+        }
+    },
+    "checklianmeng": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    5,
+                    85,
+                    47
+                ],
+                "expected": [
+                    "联盟"
+                ]
+            }
+        },
+        "next": [
+            "checkraid",
+            "checkraid2",
+            "intoraid"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 240,
+                "y": -186
+            }
+        }
+    },
+    "checklianmeng2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    5,
+                    85,
+                    47
+                ],
+                "expected": [
+                    "联盟"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 233,
+                "y": -469
+            }
+        }
+    },
+    "checkraid": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "lianmengzhan/lianmengzhannoopen.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 534,
+                "y": 397
+            }
+        }
+    },
+    "checkraid2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "结算中",
+                    "最终结算",
+                    "结算完毕"
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 530,
+                "y": 181
+            }
+        }
+    },
+    "claimtuxirewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    437,
+                    433,
+                    425,
+                    168
+                ],
+                "expected": [
+                    "跳过结算画面",
+                    "跳过结算",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1078,
+                "y": -900
+            }
+        }
+    },
+    "intolianmeng": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1214,
+                    259,
+                    62,
+                    55
+                ],
+                "expected": [
+                    "联盟"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checklianmeng2",
+            "intolianmeng"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -99,
+                "y": -471
+            }
+        }
+    },
+    "intolianmeng2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1183,
+                    149,
+                    90,
+                    244
+                ],
+                "template": [
+                    "lianmengzhan/lianmengzhann.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "checklianmeng2",
+            "intolianmeng2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -92,
+                "y": -783
+            }
+        }
+    },
+    "intoraid": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    592,
+                    574,
+                    91,
+                    39
+                ],
+                "expected": [
+                    "联盟突袭",
+                    "突袭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "lianmengtuxihaveend",
+            "[JumpBack]tuxirewards",
+            "lianmengzhan_chooseboss"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 532,
+                "y": -195
+            }
+        }
+    },
+    "liangmengzhan_fight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    651,
+                    645,
+                    197,
+                    71
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "liangmengzhan_nofighttimes",
+            "lianmengzhan_cantfight1",
+            "liangmengzhan_havenotopen",
+            "liangmengzhan_fightfinish",
+            "[JumpBack]isfighting"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1240,
+                "y": -178
+            }
+        }
+    },
+    "liangmengzhan_fightfinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    559,
+                    609,
+                    182,
+                    69
+                ],
+                "expected": [
+                    "点击任意"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "lianmengzhan_chooseboss"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1608,
+                "y": -656
+            }
+        }
+    },
+    "liangmengzhan_nofighttimes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "已超过"
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1610,
+                "y": -385
+            }
+        }
+    },
+    "lianmengtuxi": {
+        "next": [
+            "checklianmeng",
+            "[JumpBack]intolianmeng",
+            "[JumpBack]backtohomepage",
+            "[JumpBack]intolianmeng2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -369,
+                "y": -167
+            }
+        }
+    },
+    "lianmengtuxihaveend": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    319,
+                    357,
+                    90
+                ],
+                "expected": [
+                    "已结束",
+                    "敬请期待"
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 867,
+                "y": -448
+            }
+        }
+    },
+    "lianmengzhan_cantfight0": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    516,
+                    341,
+                    248,
+                    39
+                ],
+                "roi_offset": [
+                    -52,
+                    200,
+                    105,
+                    -11
+                ],
+                "expected": [
+                    "无法"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "liangmengzhan_fight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2409,
+                "y": 143
+            }
+        }
+    },
+    "lianmengzhan_cantfight1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    516,
+                    341,
+                    248,
+                    39
+                ],
+                "roi_offset": [
+                    -52,
+                    200,
+                    105,
+                    -11
+                ],
+                "expected": [
+                    "无法"
+                ]
+            }
+        },
+        "next": [
+            "lianmengzhan_team2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1866,
+                "y": 147
+            }
+        }
+    },
+    "lianmengzhan_chooseboss": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    561,
+                    498,
+                    157,
+                    36
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "liangmengzhan_fight",
+            "[JumpBack]lianmengzhan_claimrewards",
+            "[JumpBack]otherbutton"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 877,
+                "y": -184
+            }
+        }
+    },
+    "lianmengzhan_chooseboss2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    571,
+                    495,
+                    147,
+                    40
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1431,
+                "y": 356
+            }
+        }
+    },
+    "lianmengzhan_claimrewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认",
+                    "确定",
+                    "点击领取",
+                    "点击任意",
+                    "点击关闭",
+                    "继续"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "lianmengzhan_chooseboss2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1119,
+                "y": 385
+            }
+        }
+    },
+    "lianmengzhan_team2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    597,
+                    475,
+                    223,
+                    38
+                ],
+                "expected": [
+                    "02"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "lianmengzhan_cantfight2",
+            "lianmengzhan_cantfight0"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2125,
+                "y": 292
+            }
+        }
+    },
+    "lianmengzhan_team3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    597,
+                    475,
+                    223,
+                    38
+                ],
+                "expected": [
+                    "03"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "lianmengzhan_cantfight3",
+            "lianmengzhan_cantfight0"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2131,
+                "y": 579
+            }
+        }
+    },
+    "lianmengzhan_team4": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    597,
+                    475,
+                    223,
+                    38
+                ],
+                "expected": [
+                    "04"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "lianmengzhan_cantfight4",
+            "lianmengzhan_cantfight0"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2131,
+                "y": 814
+            }
+        }
+    },
+    "lianmengzhan_team5": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    597,
+                    475,
+                    223,
+                    38
+                ],
+                "expected": [
+                    "05"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "lianmengzhan_cantfight0",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2136,
+                "y": 1068
+            }
+        }
+    },
+    "otherbutton": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    748,
+                    357,
+                    114,
+                    163
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "lianmengzhan_chooseboss2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1138,
+                "y": 107
+            }
+        }
+    },
+    "tuxirewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    433,
+                    114,
+                    419,
+                    466
+                ],
+                "expected": [
+                    "奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    552,
+                    644,
+                    176,
+                    51
+                ]
+            }
+        },
+        "next": [
+            "claimtuxirewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 784,
+                "y": -927
+            }
+        }
+    },
+    "liangmengzhan_havenotopen": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "预计开始"
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1544,
+                "y": 72
+            }
+        }
+    },
+    "lianmengzhan_cantfight2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    516,
+                    341,
+                    248,
+                    39
+                ],
+                "roi_offset": [
+                    -52,
+                    200,
+                    105,
+                    -11
+                ],
+                "expected": [
+                    "无法"
+                ]
+            }
+        },
+        "next": [
+            "lianmengzhan_team3"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1863,
+                "y": 438
+            }
+        }
+    },
+    "lianmengzhan_cantfight3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    516,
+                    341,
+                    248,
+                    39
+                ],
+                "roi_offset": [
+                    -52,
+                    200,
+                    105,
+                    -11
+                ],
+                "expected": [
+                    "无法"
+                ]
+            }
+        },
+        "next": [
+            "lianmengzhan_team4"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1856,
+                "y": 681
+            }
+        }
+    },
+    "lianmengzhan_cantfight4": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    516,
+                    341,
+                    248,
+                    39
+                ],
+                "roi_offset": [
+                    -52,
+                    200,
+                    105,
+                    -11
+                ],
+                "expected": [
+                    "无法"
+                ]
+            }
+        },
+        "next": [
+            "lianmengzhan_team5"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1857,
+                "y": 951
+            }
+        }
+    }
+}

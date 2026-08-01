@@ -1,0 +1,26 @@
+{
+    // ============================================================
+    // MaaNikke 项目 VS Code 配置
+    // ============================================================
+    //
+    // MPE 配置 ($__mpe_*) 告警消除方案：
+    // 见项目根目录 maatools.config.mts，通过 check.override 忽略 mpe-config 检测。
+    // 参考: https://github.com/neko-para/maa-support-extension/issues/74
+    // ============================================================
+
+    // --- Maa Pipeline Support 扩展 ---
+    "maa.outputLevel": "error",
+
+    // --- 搜索排除 ---
+    "search.exclude": {
+        "**/logs": true,
+        "**/temp": true
+    },
+    "python-envs.pythonProjects": [
+        {
+            "path": ".",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ]
+}

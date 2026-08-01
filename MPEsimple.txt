@@ -1,0 +1,12 @@
+
+irm https://raw.githubusercontent.com/kqcoxn/MaaPipelineEditor/main/tools/install.ps1 | iex
+
+
+
+./mpelb
+
+./mpelb --portable
+
+./mpelb config set-lib maafw\bin
+
+./mpelb config set-resource resource\base

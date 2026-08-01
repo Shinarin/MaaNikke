@@ -1,0 +1,424 @@
+{
+    "$__mpe_config_teamrecruit": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1784155786271,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\teamrecruit.json",
+            "savedViewport": {
+                "x": -83,
+                "y": 849,
+                "zoom": 1
+            },
+            "filename": "teamrecruit",
+            "version": "v1.7.4"
+        }
+    },
+    "$__mpe_external_backtohomepage_teamrecruit": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1303,
+                "y": 495
+            }
+        }
+    },
+    "checkteamrecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    573,
+                    69,
+                    104,
+                    36
+                ],
+                "expected": [
+                    "积分商店"
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "next": [
+            "[JumpBack]dailyfreecruit",
+            "friendpointrecruit",
+            "[JumpBack]recruitswiep",
+            "[JumpBack]checkteamrecruit_return",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 953,
+                "y": -312
+            }
+        }
+    },
+    "checkteamrecruit2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    573,
+                    69,
+                    104,
+                    36
+                ],
+                "expected": [
+                    "积分商店"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 965,
+                "y": -749
+            }
+        }
+    },
+    "checkteamrecruit_return": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 1303,
+                "y": 277
+            }
+        }
+    },
+    "confirmrecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2802,
+                "y": -291
+            }
+        }
+    },
+    "dailyfreecruit": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    421,
+                    552,
+                    449,
+                    84
+                ],
+                "expected": [
+                    "每日免费1次",
+                    "每日免费"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "next": [
+            "disablefriendpointrecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1302,
+                "y": -583
+            }
+        }
+    },
+    "disablefriendpointrecruit": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "friendpointrecruit"
+                }
+            }
+        },
+        "next": [
+            "recruitswiepResetCount"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1601,
+                "y": -571
+            }
+        }
+    },
+    "friendpointrecruit": {
+        "enabled": true,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    557,
+                    513,
+                    167,
+                    55
+                ],
+                "expected": [
+                    "社交点数招募",
+                    "社交点数",
+                    "点数招募"
+                ]
+            }
+        },
+        "next": [
+            "friendrecruitstart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1297,
+                "y": -318
+            }
+        }
+    },
+    "friendrecruitstart": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    456,
+                    555,
+                    190,
+                    70
+                ],
+                "template": [
+                    "teamrecruit/teamrecruitstart.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "next": [
+            "jumprecruit",
+            "friendrecruitstart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1616,
+                "y": -312
+            }
+        }
+    },
+    "intoteamrecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    749,
+                    630,
+                    72,
+                    84
+                ],
+                "expected": [
+                    "队员招募"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "checkteamrecruit2",
+            "intoteamrecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 639,
+                "y": -838
+            }
+        }
+    },
+    "intoteamrecruit2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "teamrecruit/teamrecruit.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "checkteamrecruit2",
+            "intoteamrecruit2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 643,
+                "y": -536
+            }
+        }
+    },
+    "jumprecruit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1200,
+                    8,
+                    77,
+                    28
+                ],
+                "expected": [
+                    "跳过"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "recruitover2",
+            "recruitover",
+            "jumprecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2199,
+                "y": -305
+            }
+        }
+    },
+    "recruitover": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    647,
+                    624,
+                    155,
+                    74
+                ],
+                "expected": [
+                    "再招募"
+                ]
+            }
+        },
+        "next": [
+            "confirmrecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2479,
+                "y": -296
+            }
+        }
+    },
+    "recruitover2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    647,
+                    624,
+                    155,
+                    74
+                ],
+                "expected": [
+                    "不足"
+                ]
+            }
+        },
+        "next": [
+            "confirmrecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2550,
+                "y": -527
+            }
+        }
+    },
+    "recruitswiep": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1143,
+                    268,
+                    136,
+                    195
+                ],
+                "template": [
+                    "teamrecruit/recruitswiep.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1297,
+                "y": -41
+            }
+        }
+    },
+    "recruitswiepResetCount": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "recruitswiep"
+                    ],
+                    "strict": false
+                }
+            }
+        },
+        "next": [
+            "jumprecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1900,
+                "y": -574
+            }
+        }
+    },
+    "startteamrecruit": {
+        "next": [
+            "checkteamrecruit",
+            "[JumpBack]intoteamrecruit",
+            "[JumpBack]intoteamrecruit2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 372,
+                "y": -295
+            }
+        }
+    },
+    "teamrecruit": {
+        "next": [
+            "startteamrecruit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 34,
+                "y": -294
+            }
+        }
+    }
+}

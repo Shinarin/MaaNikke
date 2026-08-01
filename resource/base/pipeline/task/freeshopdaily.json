@@ -1,0 +1,1474 @@
+{
+    "$__mpe_config_freeshopdaily": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781277194097,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\freeshopdaily.json",
+            "savedViewport": {
+                "x": 1773,
+                "y": 1223,
+                "zoom": 1.32
+            },
+            "filename": "freeshopdaily",
+            "version": "v1.6.1"
+        }
+    },
+    "$__mpe_anchor_checkinmallanchor1_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": -599,
+                "y": 659
+            }
+        }
+    },
+    "$__mpe_anchor_checkinmallanchor2_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": -490,
+                "y": 2032
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": -658,
+                "y": -55
+            }
+        }
+    },
+    "$__mpe_group_普通商店_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": -273,
+                "y": -1549
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "0zuanpay",
+                "0zuanpayend",
+                "0zuanpayend2",
+                "basicshopstart",
+                "checkinbasicshop",
+                "confirm0zuanpay",
+                "confirm0zuanpay2",
+                "confirmfreeshoprefresh",
+                "freeshoprefresh",
+                "freeshoprefresh2",
+                "intobasicshop"
+            ],
+            "width": 2426,
+            "height": 1051
+        }
+    },
+    "$__mpe_group_竞技场商店_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": -224,
+                "y": 269
+            },
+            "color": "green",
+            "childrenLabels": [
+                "arenashopcodebook",
+                "arenashopcopgearforge",
+                "arenashopdiancode",
+                "arenashopfengcode",
+                "arenashophuocode",
+                "arenashopshuicode",
+                "arenashopstart",
+                "arenashopwucode",
+                "checkinarenashop",
+                "confirmjjcshopping",
+                "confirmjjcshopping2",
+                "endcheckinarenashop",
+                "endcheckinarenashop_return",
+                "intoarenashop",
+                "confirmjjcshopping3"
+            ],
+            "width": 2451,
+            "height": 1640
+        }
+    },
+    "$__mpe_group_联盟商店_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": -216,
+                "y": 1986
+            },
+            "color": "purple",
+            "childrenLabels": [
+                "checkinscrapshop",
+                "confirmscrapshopping",
+                "confirmscrapshopping2",
+                "endcheckinscrapshop",
+                "endcheckinscrapshop_return",
+                "intoscrapshop",
+                "scrapshopdiamonds",
+                "scrapshopmax",
+                "scrapshopmax2",
+                "scrapshopredeyes1h",
+                "scrapshopredeyes2h",
+                "scrapshopstart",
+                "confirmscrapshopping3"
+            ],
+            "width": 2437,
+            "height": 1172
+        }
+    },
+    "$__mpe_group_躯体标签_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": -225,
+                "y": -457
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "bodytagshopmax",
+                "bodytagshoppay",
+                "bodytagshoppay_finish",
+                "bodytagshopping2",
+                "bodytagshoppping",
+                "bodytagshopstart",
+                "checkinbodytagshop",
+                "intobodytagshop"
+            ],
+            "width": 2006,
+            "height": 676
+        }
+    },
+    "0zuanpay": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    72,
+                    348,
+                    111,
+                    177
+                ],
+                "expected": [
+                    "100%"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirm0zuanpay"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 640,
+                "y": -752
+            }
+        }
+    },
+    "0zuanpayend": {
+        "doc": "0钻购完成",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    80,
+                    360,
+                    98,
+                    144
+                ],
+                "template": [
+                    "payshop/shouqing.png"
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "next": [
+            "freeshoprefresh",
+            "freeshoprefresh2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 552,
+                "y": -1106
+            }
+        }
+    },
+    "0zuanpayend2": {
+        "doc": "0钻购完成",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    80,
+                    360,
+                    98,
+                    144
+                ],
+                "template": [
+                    "payshop/shouqing.png"
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1615,
+                "y": -1118
+            }
+        }
+    },
+    "arenashopcodebook": {
+        "enabled": false,
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    52,
+                    306,
+                    1227,
+                    360
+                ],
+                "template": [
+                    "freeshopdaily/codebook.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 902,
+                "y": 330
+            }
+        }
+    },
+    "arenashopcopgearforge": {
+        "enabled": false,
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    52,
+                    306,
+                    1227,
+                    360
+                ],
+                "template": [
+                    "freeshopdaily/copgearforge.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 906,
+                "y": 628
+            }
+        }
+    },
+    "arenashopdiancode": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    52,
+                    306,
+                    1227,
+                    360
+                ],
+                "template": [
+                    "freeshopdaily/diancode.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 912,
+                "y": 1228
+            }
+        }
+    },
+    "arenashopfengcode": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    52,
+                    306,
+                    1227,
+                    360
+                ],
+                "template": [
+                    "freeshopdaily/fengcode.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 907,
+                "y": 948
+            }
+        }
+    },
+    "arenashophuocode": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    52,
+                    306,
+                    1227,
+                    360
+                ],
+                "template": [
+                    "freeshopdaily/huocode.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 919,
+                "y": 1562
+            }
+        }
+    },
+    "arenashopshuicode": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    52,
+                    306,
+                    1227,
+                    360
+                ],
+                "template": [
+                    "freeshopdaily/shuicode.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1226,
+                "y": 1461
+            }
+        }
+    },
+    "arenashopstart": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "checkinarenashop",
+            "[JumpBack]intoarenashop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -184,
+                "y": 324
+            }
+        }
+    },
+    "arenashopwucode": {
+        "enabled": false,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    52,
+                    306,
+                    1227,
+                    360
+                ],
+                "template": [
+                    "freeshopdaily/wucode.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1222,
+                "y": 1052
+            }
+        }
+    },
+    "basicshopstart": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "checkinbasicshop",
+            "[JumpBack]intobasicshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -239,
+                "y": -1086
+            }
+        }
+    },
+    "bodytagshopmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    721,
+                    401,
+                    84,
+                    81
+                ],
+                "expected": [
+                    "MAX"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 2,
+        "next": [
+            "bodytagshoppping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 881,
+                "y": -385
+            }
+        }
+    },
+    "bodytagshoppay": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    72,
+                    348,
+                    111,
+                    177
+                ],
+                "expected": [
+                    "40%SALE",
+                    "40%",
+                    "SALE"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "bodytagshopmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 601,
+                "y": -388
+            }
+        }
+    },
+    "bodytagshoppay_finish": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    72,
+                    348,
+                    111,
+                    177
+                ],
+                "template": [
+                    "payshop/shouqing.png"
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 604,
+                "y": -90
+            }
+        }
+    },
+    "bodytagshopping2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    220,
+                    346,
+                    347
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1452,
+                "y": -385
+            }
+        }
+    },
+    "bodytagshoppping": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    652,
+                    575,
+                    102,
+                    35
+                ],
+                "expected": [
+                    "购买"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "bodytagshopping2",
+            "bodytagshopping3"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1144,
+                "y": -367
+            }
+        }
+    },
+    "bodytagshopstart": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "checkinbodytagshop",
+            "[JumpBack]intobodytagshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -207,
+                "y": -397
+            }
+        }
+    },
+    "checkinarenashop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    42,
+                    238,
+                    214,
+                    75
+                ],
+                "expected": [
+                    "竞技场商店"
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "next": [
+            "[JumpBack]arenashopfengcode",
+            "[JumpBack]arenashopdiancode",
+            "[JumpBack]arenashophuocode",
+            "[JumpBack]arenashopwucode",
+            "[JumpBack]arenashopshuicode",
+            "[JumpBack]arenashopcodebook",
+            "[JumpBack]arenashopcopgearforge",
+            "[JumpBack]endcheckinarenashop_return",
+            "endcheckinarenashop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 397,
+                "y": 348
+            }
+        }
+    },
+    "checkinbasicshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    42,
+                    238,
+                    214,
+                    75
+                ],
+                "expected": [
+                    "普通商店"
+                ]
+            }
+        },
+        "next": [
+            "0zuanpayend",
+            "[JumpBack]0zuanpay"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 164,
+                "y": -1087
+            }
+        }
+    },
+    "checkinbodytagshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    42,
+                    238,
+                    214,
+                    75
+                ],
+                "expected": [
+                    "躯体标签商店",
+                    "躯体标签"
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "next": [
+            "bodytagshoppay",
+            "bodytagshoppay_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 306,
+                "y": -400
+            }
+        }
+    },
+    "checkinmall": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    100,
+                    60
+                ],
+                "expected": [
+                    "百货商店"
+                ]
+            }
+        },
+        "anchor": [
+            "checkinmallanchor1",
+            "checkinmallanchor2"
+        ],
+        "next": [
+            "[JumpBack]basicshopstart",
+            "[JumpBack]arenashopstart",
+            "[JumpBack]scrapshopstart",
+            "[JumpBack]bodytagshopstart",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -670,
+                "y": -442
+            }
+        }
+    },
+    "checkinmall2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    100,
+                    60
+                ],
+                "expected": [
+                    "百货商店"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -653,
+                "y": -833
+            }
+        }
+    },
+    "checkinscrapshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    42,
+                    238,
+                    214,
+                    75
+                ],
+                "expected": [
+                    "废铁商店"
+                ]
+            }
+        },
+        "rate_limit": 1000,
+        "next": [
+            "[JumpBack]scrapshopdiamonds",
+            "[JumpBack]scrapshopredeyes1h",
+            "[JumpBack]scrapshopredeyes2h",
+            "[JumpBack]endcheckinscrapshop_return",
+            "endcheckinscrapshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 431,
+                "y": 2089
+            }
+        }
+    },
+    "confirm0zuanpay": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "freeshopdaily/0zuanpay.png"
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirm0zuanpay2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 948,
+                "y": -760
+            }
+        }
+    },
+    "confirm0zuanpay2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1253,
+                "y": -726
+            }
+        }
+    },
+    "confirmfreeshoprefresh": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    656,
+                    438,
+                    145,
+                    25
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]0zuanpay",
+            "0zuanpayend2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1261,
+                "y": -1104
+            }
+        }
+    },
+    "confirmjjcshopping": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    652,
+                    575,
+                    102,
+                    35
+                ],
+                "expected": [
+                    "购买"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmjjcshopping2",
+            "confirmjjcshopping3"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1288,
+                "y": 490
+            }
+        }
+    },
+    "confirmjjcshopping2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    482,
+                    217,
+                    343,
+                    388
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1670,
+                "y": 485
+            }
+        }
+    },
+    "confirmscrapshopping": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    652,
+                    575,
+                    102,
+                    35
+                ],
+                "expected": [
+                    "购买"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "confirmscrapshopping2",
+            "confirmscrapshopping3"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1538,
+                "y": 2227
+            }
+        }
+    },
+    "confirmscrapshopping2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    220,
+                    346,
+                    347
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1835,
+                "y": 2200
+            }
+        }
+    },
+    "endcheckinarenashop": {
+        "$__mpe_code": {
+            "position": {
+                "x": 387,
+                "y": 952
+            }
+        }
+    },
+    "endcheckinarenashop_return": {
+        "max_hit": 1,
+        "$__mpe_code": {
+            "position": {
+                "x": 516,
+                "y": 730
+            }
+        }
+    },
+    "endcheckinscrapshop": {
+        "$__mpe_code": {
+            "position": {
+                "x": 423,
+                "y": 2694
+            }
+        }
+    },
+    "endcheckinscrapshop_return": {
+        "max_hit": 1,
+        "$__mpe_code": {
+            "position": {
+                "x": 428,
+                "y": 2472
+            }
+        }
+    },
+    "freeshopdaily": {
+        "doc": "0钻购开始",
+        "next": [
+            "checkinmall",
+            "[JumpBack]intoshop",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -1241,
+                "y": -460
+            }
+        }
+    },
+    "freeshoprefresh": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    221,
+                    300,
+                    55,
+                    49
+                ],
+                "template": [
+                    "freeshopdaily/freeshoprefresh.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    73,
+                    319,
+                    166,
+                    15
+                ]
+            }
+        },
+        "next": [
+            "confirmfreeshoprefresh"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 892,
+                "y": -1130
+            }
+        }
+    },
+    "freeshoprefresh2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    221,
+                    300,
+                    55,
+                    49
+                ],
+                "template": [
+                    "freeshopdaily/freeshoprefresh.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "inverse": true,
+        "$__mpe_code": {
+            "position": {
+                "x": 881,
+                "y": -1498
+            }
+        }
+    },
+    "intoarenashop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    254,
+                    58,
+                    365
+                ],
+                "template": [
+                    "freeshopdaily/arenashop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 104,
+                "y": 529
+            }
+        }
+    },
+    "intobasicshop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    254,
+                    58,
+                    365
+                ],
+                "template": [
+                    "freeshopdaily/basicshop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 47,
+                "y": -852
+            }
+        }
+    },
+    "intobodytagshop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    254,
+                    58,
+                    365
+                ],
+                "template": [
+                    "freeshopdaily/bodytagshop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 48,
+                "y": -297
+            }
+        }
+    },
+    "intoscrapshop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    254,
+                    58,
+                    365
+                ],
+                "template": [
+                    "freeshopdaily/scrapshop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 127,
+                "y": 2208
+            }
+        }
+    },
+    "intoshop": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "gameshop.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    331,
+                    480,
+                    100,
+                    27
+                ]
+            }
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkinmall2",
+            "intoshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -988,
+                "y": -873
+            }
+        }
+    },
+    "scrapshopdiamonds": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    65,
+                    341,
+                    1212,
+                    314
+                ],
+                "template": [
+                    "freeshopdaily/gameshopdiamonds.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "scrapshopmax",
+            "scrapshopmax2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 886,
+                "y": 2080
+            }
+        }
+    },
+    "scrapshopmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    721,
+                    401,
+                    84,
+                    81
+                ],
+                "expected": [
+                    "MAX"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 2,
+        "next": [
+            "confirmscrapshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1240,
+                "y": 2389
+            }
+        }
+    },
+    "scrapshopmax2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    721,
+                    401,
+                    84,
+                    81
+                ],
+                "expected": [
+                    "MAX"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "confirmscrapshopping"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1242,
+                "y": 2103
+            }
+        }
+    },
+    "scrapshopredeyes1h": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    65,
+                    341,
+                    1212,
+                    314
+                ],
+                "template": [
+                    "freeshopdaily/redeyes1h.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "scrapshopmax",
+            "scrapshopmax2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 889,
+                "y": 2401
+            }
+        }
+    },
+    "scrapshopredeyes2h": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    65,
+                    341,
+                    1212,
+                    314
+                ],
+                "template": [
+                    "freeshopdaily/redeyes2h.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "scrapshopmax",
+            "scrapshopmax2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 896,
+                "y": 2785
+            }
+        }
+    },
+    "scrapshopstart": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "checkinscrapshop",
+            "[JumpBack]intoscrapshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -178,
+                "y": 2084
+            }
+        }
+    },
+    "confirmjjcshopping3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    401,
+                    233,
+                    469,
+                    279
+                ],
+                "expected": [
+                    "不足",
+                    "资金不足",
+                    "道具不足"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1665,
+                "y": 779
+            }
+        }
+    },
+    "confirmscrapshopping3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    401,
+                    233,
+                    469,
+                    279
+                ],
+                "expected": [
+                    "不足",
+                    "资金不足",
+                    "道具不足"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1835,
+                "y": 2496
+            }
+        }
+    },
+    "bodytagshopping3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    401,
+                    233,
+                    469,
+                    279
+                ],
+                "expected": [
+                    "不足",
+                    "资金不足",
+                    "道具不足"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1453,
+                "y": -97
+            }
+        }
+    }
+}

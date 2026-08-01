@@ -1,0 +1,694 @@
+{
+  "interface_version": 2,
+  "custom_title": "MaaNikke",
+  "name": "MaaNikke",
+  "version": "2.1.4",
+  "url": "https://github.com/Shinarin/MaaNikke",
+
+
+
+  "controller": [
+    {
+      "name": "桌面端",
+      "label": "PC",
+      "type": "Win32",
+      "win32": {
+        "class_regex": "UnityWndClass",
+        "window_regex": "胜利女神.*新的希望",
+        "screencap": "FramePool",
+        "mouse": "SendMessageWithCursorPos",
+        "keyboard": "SendMessageWithCursorPos"
+      }
+    }
+  ],
+
+
+
+  "resource": [
+    {
+      "name": "国服",
+      "path": [
+        "resource/base"
+      ]
+    }
+  ],
+  "agent": {
+      "child_exec": "python",
+      "child_args": [
+        "-u",
+        "./agent/main.py"
+      ]
+    },
+  
+
+
+
+
+
+
+  "task": [
+    {
+      "name": "启动游戏",
+      "entry": "startgame",
+      "default_check": true,
+      "description": "游戏启动后，到进入主页大厅这一段过程"
+    },
+    {
+      "name": "领取登录奖励",
+      "entry": "loginrewards",
+      "default_check": true,
+      "description": "进入大厅页面后，领取月卡及登陆奖励"
+    },
+    {
+      "name": "付费商店领取",
+      "entry": "payshop",
+      "default_check": true,
+      "description": "付费商店每日、每周、每月的免费钻石领取"
+    },
+    {
+      "name": "道具商店每日购买",
+      "entry": "freeshopdaily",
+      "default_check": true,
+      "description": "游戏道具商店每日折扣商品购买",
+      "option":[
+        "是否兑换普通商店道具",
+        "是否兑换竞技场通用道具",
+        "是否兑换躯体标签商店道具",
+        "是否兑换废铁商店道具"
+      ]
+    },
+    {
+      "name": "前哨防御",
+      "entry": "outpostdefense",
+      "default_check": true,
+      "description": "睡醒了",
+      "option":[
+        "是否使用钻石进行一举歼灭"
+      ]
+    },
+    {
+      "name": "派遣公告栏",
+      "entry": "dispatchboard",
+      "default_check": true,
+      "description": "自动领取自动派遣，需解锁自动派遣功能"
+    },
+    {
+      "name": "咨询和送礼",
+      "entry": "inquiryandgift",
+      "default_check": true,
+      "description": "需要手动咨询送礼的三个妮姬请收藏至顶端,其他可快速咨询的妮姬会一键批量咨询送礼"
+    },
+    {
+      "name": "装备升级",
+      "entry": "gearup",
+      "default_check": true,
+      "description": "无法指定升级某个装备，仓库里至少有一个未满级装备"
+    },
+    {
+      "name": "好友点数收取赠送",
+      "entry": "friendpoints",
+      "default_check": true,
+      "description": "如任务名"
+    },
+    {
+      "name": "社交点招募",
+      "entry": "teamrecruit",
+      "default_check": true,
+      "description": "为完成更生馆任务和每日任务"
+    },
+    {
+      "name": "模拟室",
+      "entry": "simroom",
+      "default_check": true,
+      "description": "需打完最后一个模拟室，解锁一键快速模拟通关"
+    },
+    {
+      "name": "竞技场",
+      "entry": "arena",
+      "default_check": true,
+      "description": "纯自动，请先配好队",
+      "option":[
+        "特殊竞技场只领取奖励"
+      ]
+    },
+    {
+      "name": "拦截战",
+      "entry": "interception",
+      "default_check": true,
+      "description": "目前只打肯boss，暂时不考虑其他",
+      "option":[
+        "是否周一手操boss战",
+        "特殊拦截战boss"
+      ]
+    },
+    {
+      "name": "爬塔",
+      "entry": "climbtower",
+      "default_check": true,
+      "description": "若选择不打满企业满3次，每次只会按优先级选其中一个企业塔，未开启时段会跳到下一个企业塔进行爬塔，以此类推。企业塔的优先级：朝圣者/超标准>泰特拉>米西利斯>极乐净土",
+      "option":[
+        "无限之塔",
+        "企业塔"
+      ]
+    },
+    {
+      "name": "每日每周奖励领取",
+      "entry": "dailyrewards",
+      "default_check": true,
+      "description": "包含反叛之路的每日每周奖励领取"
+    },
+    {
+      "name": "邮件领取",
+      "entry": "claimmail",
+      "default_check": true,
+      "description": "如任务名"
+    },
+    {
+      "name": "同步器和循环室",
+      "entry": "looproomandsync",
+      "default_check": true,
+      "description": "如任务名",
+      "option":[
+        "是否使用时间盒子道具"
+      ]
+    },
+    {
+      "name": "协同作战",
+      "entry": "teambattle",
+      "default_check": true,
+      "description": "打满三次，可能不稳定，可选可不选，出错了也不影响每日"
+    },
+    {
+      "name": "联盟突袭beta",
+      "entry": "lianmengtuxi",
+      "default_check": false,
+      "description": "不稳定，可选可不选，出错了也不影响每日"
+    },
+    {
+      "name": "更生馆",
+      "entry": "gengshengguan",
+      "default_check": true,
+      "description": "更生馆目前问题比较多，识别困难，如无必要推荐不勾选.因特定节点会有对话弹出，故识别时间较长，耐心等待即可"
+    },
+    {
+      "name": "限时活动(boomtheghost)",
+      "entry": "boomtheghost",
+      "default_check": true,
+      "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼"
+    },
+    {
+      "name": "PASS奖励领取",
+      "entry": "claimpassreward",
+      "default_check": true,
+      "description": "如任务名"
+    },
+    {
+      "name": "test",
+      "entry": "test",
+      "default_check": false,
+      "description": "测试用，勿选"
+     }
+
+
+  ],
+
+
+
+
+"option":{
+  "是否使用钻石进行一举歼灭":{
+    "type": "switch", 
+    "description":"默认关闭，关闭后只进行每日免费的一次歼灭",
+    "default_case":"No",
+    "cases":[
+      {"name":"No",
+        "pipeline_override": {
+          "spenddiamondstocleansweep": {"enabled": false},
+          "freecleansweep": {"enabled": true}
+        }
+      },
+      {"name":"Yes",
+        "pipeline_override": {
+          "spenddiamondstocleansweep": {"enabled": true},
+          "freecleansweep": {"enabled": false}
+        },
+      "option":[
+        "连续歼灭次数"
+        ]
+      }
+    ]
+  },
+  "连续歼灭次数":{
+    "type": "select",  
+    "label": "连续歼灭次数", 
+    "description":"此处歼灭次数包含每日免费的一次", 
+    "cases": [  
+      { "name": "1", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":1}
+        }
+      },
+      { "name": "2", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":2}
+        }
+      }, 
+      { "name": "3", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":3}
+        }
+      }, 
+      { "name": "4", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":4}
+        }
+      }, 
+      { "name": "5", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":5}
+        }
+      }, 
+      { "name": "6", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":6}
+        }
+      }, 
+      { "name": "7", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":7}
+        }
+      }, 
+      { "name": "8", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":8}
+        }
+      }, 
+      { "name": "9", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":9}
+        }
+      }, 
+      { "name": "10", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":10}
+        }
+      }, 
+      { "name": "11", 
+        "pipeline_override": {
+          "spenddiamondstocleaning":{"max_hit":11}
+        }
+      }  
+      
+    ] 
+  },
+  "无限之塔":{
+    "type":"switch",
+    "description":"注意！！！此功能服务于每日任务，有额外无限爬塔需求还请手操",
+    "cases":[
+      {
+        "name":"No",
+        "pipeline_override":{
+          "intounlimittower":{"enabled":false},
+          "isunlimittower":{"enabled":false}
+        }
+      },
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "intounlimittower":{"enabled":true},
+          "isunlimittower":{"enabled":true}
+        },
+        "option":[
+          "无限之塔爬塔次数"
+        ]
+      }
+    ]
+  },
+  "无限之塔爬塔次数":{
+    "type":"input",
+    "description":"默认爬一次，此为每日执行次数，建议不要太高，会拉长每日任务时间",
+    "inputs":[
+      {
+        "name":"climbunlimittowertimes",
+        "label": "输入次数",
+        "description":"请输入整数",
+        "default":"1",
+        "pipeline_type":"int",
+        "verify":"^\\d+$",
+        "pattern_msg":"请输入整数",
+        "pipeline_override":{
+          "unlimittowertimes":{"max_hit":"{climbunlimittowertimes}"}
+        }
+      }
+    ]
+  },
+  "企业塔":{
+    "type":"switch",
+    "description":"",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "intocoptower":{"enabled":true},
+          "iscoptower":{"enabled":true}
+        },
+        "option":[
+        "是否打满企业塔",
+        "朝圣者/超标准",
+        "泰特拉",
+        "米西利斯",
+        "极乐净土"
+      ]
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "intocoptower":{"enabled":false},
+          "iscoptower":{"enabled":false}
+        }
+      }
+    ]
+  },
+  "是否打满企业塔":{
+    "type":"switch",
+    "description":"默认关闭，每天只爬一次，打开后每天爬满所有开启的企业塔3次。注意！后期爬塔可能失败会导致每日任务不能完成",
+    "cases":[
+      {
+        "name":"No",
+        "pipeline_override":{
+          "isfullcoptower":{"enabled":false}
+        }
+      },
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "isfullcoptower":{"enabled":true}
+        }
+      }
+    ]
+  },
+  "朝圣者/超标准":{
+    "type":"switch",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "coptower1":{"enabled":true}
+        }
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "coptower1":{"enabled":false}
+        }
+      }
+    ]
+  },
+  "泰特拉":{
+    "type":"switch",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "coptower2":{"enabled":true}
+        }
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "coptower2":{"enabled":false}
+        }
+      }
+    ]
+  },
+  "米西利斯":{
+    "type":"switch",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "coptower3":{"enabled":true}
+        }
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "coptower3":{"enabled":false}
+        }
+      }
+      
+    ]
+  },
+  "极乐净土":{
+    "type":"switch",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "coptower4":{"enabled":true}
+        }
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "coptower4":{"enabled":false}
+        }
+      }
+      
+    ]
+  },
+  "是否使用时间盒子道具":{
+    "type":"switch",
+    "description":"打开后会检测是否使用时间盒子。请注意：若关闭，则会顺从系统之前的默认状态！",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "autousetimebox":{"enabled":true},
+          "dontautousetimebox":{"enabled":false}
+        }
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "autousetimebox":{"enabled":false},
+          "dontautousetimebox":{"enabled":true}
+        }
+      }
+    ]
+  },
+  "是否兑换普通商店道具":{
+    "type":"switch",
+    "description":"游戏道具商店每日100%折扣商品购买",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "basicshopstart":{"enabled":true}
+        }
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "basicshopstart":{"enabled":false}
+        }
+      }
+    ]
+  },
+  "是否兑换躯体标签商店道具":{
+    "type":"switch",
+    "description":"躯体标签商店每日折扣商品购买",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "bodytagshopstart":{"enabled":true}
+        }
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "bodytagshopstart":{"enabled":false}
+        }
+      }
+    ]
+  },
+  "是否兑换竞技场通用道具":{
+    "type":"switch",
+    "description":"各类代码，代码手册选择宝箱，企业装备熔炉",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "arenashopstart":{"enabled":true}
+        },
+        "option":[
+          "选择需要兑换的竞技场商店道具"
+        ]
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "arenashopstart":{"enabled":false}
+        }
+      }
+    ]
+  },
+  "选择需要兑换的竞技场商店道具":{
+    "type":"checkbox",
+    "description":"请选择需要兑换的竞技场商店道具，未选择的将不会兑换",
+    "default_case":[
+      "风代码",
+      "火代码",
+      "电代码",
+      "物理代码",
+      "水代码",
+      "代码手册宝箱",
+      "企业装备熔炉"
+    ],
+    "cases":[
+      {
+        "name":"风代码",
+        "pipeline_override":{
+          "arenashopfengcode":{"enabled":true}
+        }
+      },
+      {
+        "name":"火代码",
+        "pipeline_override":{
+          "arenashophuocode":{"enabled":true}
+        }
+      },
+      {
+        "name":"电代码",
+        "pipeline_override":{
+          "arenashopdiancode":{"enabled":true}
+        }
+      },
+      {
+        "name":"物理代码",
+        "pipeline_override":{
+          "arenashopwucode":{"enabled":true}
+        }
+      },
+      {
+        "name":"水代码",
+        "pipeline_override":{
+          "arenashopshuicode":{"enabled":true}
+        }
+      },
+       {
+        "name":"代码手册宝箱",
+        "pipeline_override":{
+          "arenashopcodebook":{"enabled":true}
+        }
+      },
+      {
+        "name":"企业装备熔炉",
+        "pipeline_override":{
+          "arenashopcopgearforge":{"enabled":true}
+        }
+       }
+      ]
+  },
+
+  "是否兑换废铁商店道具":{
+    "type":"switch",
+    "description":"钻石、红眼道具1h和2h",
+    "cases":[
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "scrapshopstart":{"enabled":true}
+        }
+      },
+      {
+        "name":"No",
+        "pipeline_override":{
+          "scrapshopstart":{"enabled":false}
+        }
+      }
+    ]
+  },
+  "特殊竞技场只领取奖励":{
+    "type":"switch",
+    "description":"开启后，特殊竞技场将不会进行战斗",
+    "cases":[
+      {
+        "name":"No",
+        "pipeline_override":{
+          "checkspecialarenafight":{"enabled":true}
+        }
+      },
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "checkspecialarenafight":{"enabled":false}
+        }
+      }
+    ]
+  },
+  "是否周一手操boss战":{
+    "type":"switch",
+    "description":"开启后，周一会手操进行boss战斗，其他时间正常自动",
+    "cases":[
+      {
+        "name":"No",
+        "pipeline_override":{
+          "interception_checkweekday_off":{"enabled":true},
+          "interception_checkweekday_on":{"enabled":false}
+        }
+      },
+      {
+        "name":"Yes",
+        "pipeline_override":{
+          "interception_checkweekday_off":{"enabled":false},
+          "interception_checkweekday_on":{"enabled":true}
+        }
+      }
+     ]
+  },
+  "特殊拦截战boss":{
+    "type":"select",
+    "description":"选择特定的boss战斗，默认是克拉肯，其他boss战斗可能会因为识别问题导致失败率较高，请谨慎选择",
+    "cases":[
+      {
+        "name":"克拉肯",
+        "pipeline_override":{
+          "interceptionboss":{"expected":"克拉肯"}
+        }
+      },
+      {
+        "name":"镜像容器",
+        "pipeline_override":{
+          "interceptionboss":{"expected":"镜像容器"}
+        }
+      },
+      {
+        "name":"茵迪维利亚",
+        "pipeline_override":{
+          "interceptionboss":{"expected":"茵迪维利亚"}
+        }
+      },
+      {
+        "name":"过激派",
+        "pipeline_override":{
+          "interceptionboss":{"expected":"过激派"}
+        }
+      },
+      {
+        "name":"死神",
+        "pipeline_override":{
+          "interceptionboss":{"expected":"死神"}
+        }
+      }
+    ]
+  }
+
+
+
+}
+
+
+
+}

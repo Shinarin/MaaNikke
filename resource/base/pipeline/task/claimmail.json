@@ -1,0 +1,175 @@
+{
+    "$__mpe_config_claimmail": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781275956793,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimmail.json",
+            "savedViewport": {
+                "x": -5530,
+                "y": 1152,
+                "zoom": 0.87
+            },
+            "filename": "claimmail",
+            "version": "v1.6.1"
+        }
+    },
+    "$__mpe_external_backtohomepage_claimmail": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8022,
+                "y": -454
+            }
+        }
+    },
+    "checkmail": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    569,
+                    55,
+                    159,
+                    97
+                ],
+                "expected": [
+                    "邮箱"
+                ]
+            }
+        },
+        "next": [
+            "claimthings"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7183,
+                "y": -874
+            }
+        }
+    },
+    "checkmail2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    565,
+                    60,
+                    163,
+                    85
+                ],
+                "expected": [
+                    "邮箱"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7257,
+                "y": -1112
+            }
+        }
+    },
+    "claimmail": {
+        "next": [
+            "checkmail",
+            "[JumpBack]clickmail",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6678,
+                "y": -842
+            }
+        }
+    },
+    "claimthings": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    593,
+                    541,
+                    252,
+                    135
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 6,
+        "repeat_delay": 500,
+        "next": [
+            "endmail"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7517,
+                "y": -893
+            }
+        }
+    },
+    "clickmail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1206,
+                    4,
+                    45,
+                    44
+                ],
+                "template": [
+                    "claimmail/mail.png",
+                    "claimmail/mail2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkmail2",
+            "clickmail"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6932,
+                "y": -1153
+            }
+        }
+    },
+    "endmail": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    709,
+                    28,
+                    179,
+                    154
+                ],
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7778,
+                "y": -885
+            }
+        }
+    }
+}

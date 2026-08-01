@@ -1,0 +1,296 @@
+{
+    "$__mpe_config_gearup": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781277408969,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\gearup.json",
+            "savedViewport": {
+                "x": -3047,
+                "y": 351,
+                "zoom": 0.76
+            },
+            "filename": "gearup",
+            "version": "v1.6.1"
+        }
+    },
+    "$__mpe_external_backtohomepage_gearup": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6429,
+                "y": 317
+            }
+        }
+    },
+    "checkitembar": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    445,
+                    43,
+                    165,
+                    70
+                ],
+                "expected": [
+                    "库存"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "next": [
+            "gear"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4388,
+                "y": 22
+            }
+        }
+    },
+    "checkitembar2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    445,
+                    43,
+                    165,
+                    70
+                ],
+                "expected": [
+                    "库存"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 4423,
+                "y": -614
+            }
+        }
+    },
+    "clickgear": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    72,
+                    169,
+                    40,
+                    43
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 5196,
+                "y": 285
+            }
+        }
+    },
+    "confirmup": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "gearup/gearup.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 10,
+        "next": [
+            "exitgearup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5832,
+                "y": 3
+            }
+        }
+    },
+    "exitgearup": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "x.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6152,
+                "y": 68
+            }
+        }
+    },
+    "gear": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    585,
+                    106,
+                    72,
+                    43
+                ],
+                "expected": [
+                    "装备"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "gearexpup",
+            "[JumpBack]clickgear"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4719,
+                "y": 27
+            }
+        }
+    },
+    "gearexp": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    491,
+                    364,
+                    42,
+                    44
+                ]
+            }
+        },
+        "repeat": 2,
+        "repeat_delay": 1000,
+        "next": [
+            "confirmup"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5502,
+                "y": 10
+            }
+        }
+    },
+    "gearexpup": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    466,
+                    433,
+                    355,
+                    209
+                ],
+                "expected": [
+                    "升级"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "gearexp"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5185,
+                "y": -26
+            }
+        }
+    },
+    "gearup": {
+        "next": [
+            "checkitembar",
+            "[JumpBack]itembar",
+            "[JumpBack]itembar2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3823,
+                "y": 75
+            }
+        }
+    },
+    "itembar": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    642,
+                    601,
+                    140,
+                    114
+                ],
+                "template": [
+                    "gearup/itembar.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkitembar2",
+            "itembar"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4117,
+                "y": -647
+            }
+        }
+    },
+    "itembar2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    648,
+                    610,
+                    121,
+                    103
+                ],
+                "expected": [
+                    "物品栏"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checkitembar2",
+            "itembar2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4141,
+                "y": -244
+            }
+        }
+    }
+}

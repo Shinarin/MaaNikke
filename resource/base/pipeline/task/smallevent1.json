@@ -1,0 +1,932 @@
+{
+    "$__mpe_config_smallevent1": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1781341949173,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\smallevent1.json",
+            "savedViewport": {
+                "x": -6365,
+                "y": 572,
+                "zoom": 0.65
+            },
+            "filename": "smallevent1",
+            "version": "v1.6.1"
+        }
+    },
+    "smallevent1_hard_return": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "LoopBack",
+                "custom_action_param": {
+                    "max_loops": 2
+                }
+            }
+        },
+        "next": [
+            "smallevent1_swipestage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10193,
+                "y": -240
+            }
+        }
+    },
+    "smallevent1_swipestage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "加成奖励妮姬"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    531,
+                    496,
+                    238,
+                    52
+                ],
+                "end": [
+                    [
+                        575,
+                        247,
+                        136,
+                        52
+                    ]
+                ]
+            }
+        },
+        "repeat": 3,
+        "next": [
+            "smallevent1_intostage",
+            "[JumpBack]smallevent1_swipestage_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10468,
+                "y": -272
+            }
+        }
+    },
+    "smallevent1_swipestage_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "加成奖励妮姬"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    572,
+                    261,
+                    143,
+                    63
+                ],
+                "end": [
+                    [
+                        575,
+                        247,
+                        136,
+                        52
+                    ]
+                ]
+            }
+        },
+        "repeat": 3,
+        "$__mpe_code": {
+            "position": {
+                "x": 10760,
+                "y": 77
+            }
+        }
+    },
+    "smallevent1_noquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    379,
+                    269,
+                    550,
+                    227
+                ],
+                "expected": [
+                    "首次通关",
+                    "首次"
+                ]
+            }
+        },
+        "next": [
+            "smallevent1_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11030,
+                "y": -75
+            }
+        }
+    },
+    "$__mpe_anchor_smallevent1_intostage_anchor_smallevent1": {
+        "$__mpe_code": {
+            "position": {
+                "x": 11440,
+                "y": -639
+            }
+        }
+    },
+    "$__mpe_anchor_smallevent1_stagestart_anchor_smallevent1": {
+        "$__mpe_code": {
+            "position": {
+                "x": 12625,
+                "y": 36
+            }
+        }
+    },
+    "$__mpe_anchor_smallevent1anchor_smallevent1": {
+        "$__mpe_code": {
+            "position": {
+                "x": 13209,
+                "y": 411
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_smallevent1": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9468,
+                "y": 953
+            }
+        }
+    },
+    "$__mpe_external_isfighting_smallevent1": {
+        "$__mpe_code": {
+            "position": {
+                "x": 12214,
+                "y": 29
+            }
+        }
+    },
+    "smallevent1": {
+        "doc": "赌博活动",
+        "enabled": true,
+        "anchor": "smallevent1anchor",
+        "next": [
+            "smallevent1_athomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8076,
+                "y": -602
+            }
+        }
+    },
+    "smallevent1_athomepage": {
+        "next": [
+            "smallevent1_into",
+            "smallevent1_exchange"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8427,
+                "y": -567
+            }
+        }
+    },
+    "smallevent1_checkeventpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    6,
+                    8,
+                    90,
+                    57
+                ],
+                "expected": [
+                    "剧情活动"
+                ]
+            }
+        },
+        "next": [
+            "smallevent1_stage",
+            "smallevent1_mission",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9004,
+                "y": -592
+            }
+        }
+    },
+    "smallevent1_checkmission1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "smallevent1_claimrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9870,
+                "y": 194
+            }
+        }
+    },
+    "smallevent1_checkmission2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "limitedevent/eventsmissionbuttom_greenbg.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "smallevent1_claimrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9864,
+                "y": 493
+            }
+        }
+    },
+    "smallevent1_claimrewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    417,
+                    504,
+                    477,
+                    200
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10205,
+                "y": 564
+            }
+        }
+    },
+    "smallevent1_exchange": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    904,
+                    580,
+                    132,
+                    98
+                ],
+                "template": [
+                    "limitedevent/eventsexchange.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8742,
+                "y": -293
+            }
+        }
+    },
+    "smallevent1_finish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    526,
+                    528,
+                    238,
+                    168
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步",
+                    "ESC"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]smallevent1anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12956,
+                "y": -204
+            }
+        }
+    },
+    "smallevent1_hard": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    303,
+                    560,
+                    696,
+                    151
+                ],
+                "expected": [
+                    "HARD",
+                    "HAR",
+                    "ARD",
+                    "RD",
+                    "AR",
+                    "HA"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "_loopback",
+        "next": [
+            "smallevent1_notopen",
+            "smallevent1_hard_return"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9955,
+                "y": -610
+            }
+        }
+    },
+    "smallevent1_into": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    756,
+                    506,
+                    268,
+                    167
+                ],
+                "template": [
+                    "limitedevent/jinxplayer/jinxplayer.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "smallevent1_checkeventpage",
+            "smallevent1_into"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8743,
+                "y": -604
+            }
+        }
+    },
+    "smallevent1_intostage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "limitedevent/stagesexchange_greenbg.png",
+                    "exchange.png",
+                    "limitedevent/stagesexchange.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "pre_wait_freezes": 10000,
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "smallevent1_intostage_anchor",
+        "next": [
+            "smallevent1_notopenstage",
+            "smallevent1_intofight",
+            "smallevent1_intostage",
+            "smallevent1_noquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10756,
+                "y": -323
+            }
+        }
+    },
+    "smallevent1_intotage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "ENTER"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "smallevent1_hard",
+            "smallevent1_intotage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9677,
+                "y": -579
+            }
+        }
+    },
+    "smallevent1_jumpstory": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    968,
+                    4,
+                    309,
+                    73
+                ],
+                "expected": [
+                    "跳过",
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 12214,
+                "y": 216
+            }
+        }
+    },
+    "smallevent1_mission": {
+        "max_hit": 1,
+        "next": [
+            "smallevent1_checkmission1",
+            "smallevent1_checkmission2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9437,
+                "y": 328
+            }
+        }
+    },
+    "smallevent1_nextstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1069,
+                    604,
+                    208,
+                    108
+                ],
+                "expected": [
+                    "下一关卡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "smallevent1_nochance1",
+            "[Anchor]smallevent1_stagestart_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12208,
+                "y": -218
+            }
+        }
+    },
+    "smallevent1_nochance1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    444,
+                    280,
+                    436,
+                    143
+                ],
+                "expected": [
+                    "道具不足"
+                ]
+            }
+        },
+        "next": [
+            "smallevent1_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12619,
+                "y": -213
+            }
+        }
+    },
+    "smallevent1_nochance2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    420,
+                    284,
+                    406,
+                    162
+                ],
+                "expected": [
+                    "道具不足"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]smallevent1anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11585,
+                "y": 14
+            }
+        }
+    },
+    "smallevent1_normal": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    303,
+                    560,
+                    696,
+                    151
+                ],
+                "expected": [
+                    "NORMAL",
+                    "NORM",
+                    "RMAL",
+                    "NOR",
+                    "MAL"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 10671,
+                "y": -595
+            }
+        }
+    },
+    "smallevent1_notopen": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    364,
+                    279,
+                    626,
+                    179
+                ],
+                "expected": [
+                    "解锁条件"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "smallevent1_normal"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10380,
+                "y": -574
+            }
+        }
+    },
+    "smallevent1_notopenstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    364,
+                    279,
+                    626,
+                    179
+                ],
+                "expected": [
+                    "解锁条件",
+                    "条件"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]smallevent1_intostage_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11100,
+                "y": -694
+            }
+        }
+    },
+    "smallevent1_stage": {
+        "max_hit": 1,
+        "next": [
+            "smallevent1_intotage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9345,
+                "y": -578
+            }
+        }
+    },
+    "smallevent1_stagestart": {
+        "anchor": "smallevent1_stagestart_anchor",
+        "next": [
+            "smallevent1_nextstage",
+            "[JumpBack]isfighting",
+            "[JumpBack]smallevent1_jumpstory"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11828,
+                "y": -220
+            }
+        }
+    },
+    "smallevent1_intofight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    594,
+                    466,
+                    111
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]新建节点28",
+            "smallevent1_nochance2",
+            "smallevent1_intofight",
+            "smallevent1_stagestart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11284,
+                "y": -240
+            }
+        }
+    },
+    "新建节点28": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    436,
+                    290,
+                    444,
+                    165
+                ],
+                "expected": [
+                    "未编队",
+                    "无法进入"
+                ]
+            }
+        },
+        "next": [
+            "新建节点29"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11541,
+                "y": -527
+            }
+        }
+    },
+    "新建节点29": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "noteam.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "新建节点30"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11802,
+                "y": -550
+            }
+        }
+    },
+    "新建节点30": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    8,
+                    301,
+                    780,
+                    236
+                ],
+                "expected": [
+                    "40%"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "新建节点31"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12119,
+                "y": -513
+            }
+        }
+    },
+    "新建节点31": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    8,
+                    300,
+                    780,
+                    235
+                ],
+                "expected": [
+                    "40%",
+                    "30%"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "新建节点31_副本1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12413,
+                "y": -512
+            }
+        }
+    },
+    "新建节点31_副本1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    8,
+                    301,
+                    780,
+                    236
+                ],
+                "expected": [
+                    "40%",
+                    "30%"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "新建节点32"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12692,
+                "y": -515
+            }
+        }
+    },
+    "新建节点32": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    999,
+                    612,
+                    280,
+                    104
+                ],
+                "expected": [
+                    "自动编队"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "新建节点33"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 13012,
+                "y": -517
+            }
+        }
+    },
+    "新建节点33": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    999,
+                    612,
+                    280,
+                    104
+                ],
+                "expected": [
+                    "保存"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 13312,
+                "y": -504
+            }
+        }
+    }
+}

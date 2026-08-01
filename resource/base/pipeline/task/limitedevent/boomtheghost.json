@@ -1,0 +1,1219 @@
+{
+    "$__mpe_config_boomtheghost": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1785366551304,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\boomtheghost.json",
+            "savedViewport": {
+                "x": 423,
+                "y": -503,
+                "zoom": 0.37
+            },
+            "filename": "boomtheghost",
+            "version": "v1.7.4"
+        }
+    },
+    "boomtheghost_intoerroreventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    460,
+                    128,
+                    360,
+                    477
+                ],
+                "expected": [
+                    "帮助",
+                    "关于",
+                    "剧情活动"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1000,
+                    488,
+                    86,
+                    78
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2319,
+                "y": 314
+            }
+        }
+    },
+    "$__mpe_anchor_boomtheghost_anchor_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 4917,
+                "y": 190
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1161,
+                "y": 2473
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3682,
+                "y": 1816
+            }
+        }
+    },
+    "$__mpe_sticker_boomtheghost_便签1_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 562,
+                "y": -352
+            },
+            "content": "这里需要适配活动图标",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_boomtheghost_便签2_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1296,
+                "y": -544
+            },
+            "content": "这里需要适配关卡1按钮",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_boomtheghost_便签3_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1835,
+                "y": 333
+            },
+            "content": "这里需要适配关卡图标",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_boomtheghost_便签4_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2614,
+                "y": -67
+            },
+            "content": "这里需要适配困难按钮",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_boomtheghost_便签5_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3197,
+                "y": -20
+            },
+            "content": "这里需要适配",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_boomtheghost_便签6_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1561,
+                "y": 1027
+            },
+            "content": "这里需要适配活动任务",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_boomtheghost_便签7_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1783,
+                "y": 817
+            },
+            "content": "这里需要适配活动任务",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_boomtheghost_便签8_boomtheghost": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2883,
+                "y": 2161
+            },
+            "content": "这里需要适配活动任务",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "boomtheghost": {
+        "anchor": "boomtheghost_anchor",
+        "next": [
+            "boomtheghost_claimreward",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -156,
+                "y": 198
+            }
+        }
+    },
+    "boomtheghost_11noopen": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    402,
+                    271,
+                    431,
+                    186
+                ],
+                "expected": [
+                    "解锁条件"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]boomtheghost_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3501,
+                "y": -197
+            }
+        }
+    },
+    "boomtheghost_cantinto11": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    418,
+                    362,
+                    431,
+                    245
+                ],
+                "expected": [
+                    "Repeat",
+                    "peat",
+                    "Repe",
+                    "REPEAT",
+                    "PEAT",
+                    "REPE",
+                    "repeat",
+                    "repe",
+                    "peat",
+                    "1-11"
+                ]
+            }
+        },
+        "inverse": true,
+        "$__mpe_code": {
+            "position": {
+                "x": 3200,
+                "y": 639
+            }
+        }
+    },
+    "boomtheghost_checkintoevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]boomtheghost_quickfight_checkdate",
+            "claimboomtheghost_claimrewards",
+            "boomtheghost_claimrewards",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 877,
+                "y": 182
+            }
+        }
+    },
+    "boomtheghost_checkintoevent2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "活动",
+                    "地区"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 881,
+                "y": -147
+            }
+        }
+    },
+    "boomtheghost_checkintoeventreturn": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    774,
+                    553,
+                    247,
+                    121
+                ],
+                "template": [
+                    "exchange.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 570,
+                "y": 357
+            }
+        }
+    },
+    "boomtheghost_choosestory": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    415,
+                    485,
+                    449,
+                    189
+                ],
+                "template": [
+                    "bigevent/boomtheghost/boomtheghost_story1.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1979,
+                "y": 239
+            }
+        }
+    },
+    "boomtheghost_claimreward": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "homepagesign",
+                    "homepagesign2"
+                ]
+            }
+        },
+        "next": [
+            "boomtheghost_checkintoevent",
+            "[JumpBack]boomtheghost_into",
+            "[JumpBack]boomtheghost_checkintoeventreturn",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 276,
+                "y": 191
+            }
+        }
+    },
+    "boomtheghost_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "boomtheghost_rewards",
+            "boomtheghost_rewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1277,
+                "y": 1114
+            }
+        }
+    },
+    "boomtheghost_claimrewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    525,
+                    313,
+                    273,
+                    320
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "boomtheghost_claimrewardsdailypage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2315,
+                "y": 1037
+            }
+        }
+    },
+    "boomtheghost_claimrewardsdailypage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    450,
+                    30,
+                    376,
+                    576
+                ],
+                "expected": [
+                    "剩余时间",
+                    "每日任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    983,
+                    515,
+                    128,
+                    78
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "boomtheghost_findshopbuttom",
+            "boomtheghost_claimrewardsdailypage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2312,
+                "y": 1310
+            }
+        }
+    },
+    "boomtheghost_claimshop": {
+        "max_hit": 1,
+        "next": [
+            "boomtheghost_inshop",
+            "[JumpBack]boomtheghost_intoshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2675,
+                "y": 1764
+            }
+        }
+    },
+    "boomtheghost_claimshoprewards": {
+        "max_hit": 1,
+        "next": [
+            "limitedeventshop_claim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3391,
+                "y": 1767
+            }
+        }
+    },
+    "boomtheghost_clickhard": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    746,
+                    673,
+                    35,
+                    21
+                ]
+            }
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "boomtheghost_swipe"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2608,
+                "y": 85
+            }
+        }
+    },
+    "boomtheghost_end": {
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3392,
+                "y": 2068
+            }
+        }
+    },
+    "boomtheghost_eventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "boomtheghost_clickhard"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2318,
+                "y": -150
+            }
+        }
+    },
+    "boomtheghost_findshopbuttom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    421,
+                    477,
+                    431,
+                    186
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "next": [
+            "boomtheghost_claimshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2702,
+                "y": 1144
+            }
+        }
+    },
+    "boomtheghost_inshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    4,
+                    8,
+                    84,
+                    59
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]boomtheghost_claimshoprewards",
+            "boomtheghost_end"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3035,
+                "y": 1773
+            }
+        }
+    },
+    "boomtheghost_into": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    762,
+                    426,
+                    289,
+                    243
+                ],
+                "template": [
+                    "bigevent/boomtheghost/boomtheghost1.png",
+                    "bigevent/boomtheghost/boomtheghost2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    838,
+                    597,
+                    107,
+                    18
+                ]
+            }
+        },
+        "next": [
+            "boomtheghost_checkintoevent2",
+            "boomtheghost_into"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 555,
+                "y": -198
+            }
+        }
+    },
+    "boomtheghost_into11": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    412,
+                    357,
+                    428,
+                    311
+                ],
+                "expected": [
+                    "Repeat",
+                    "peat",
+                    "Repe",
+                    "REPEAT",
+                    "PEAT",
+                    "REPE",
+                    "repeat",
+                    "repe",
+                    "peat",
+                    "1-11"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "boomtheghost_11noopen",
+            "boomtheghost_startquickfight",
+            "boomtheghost_into11"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3189,
+                "y": 130
+            }
+        }
+    },
+    "boomtheghost_into11_retry": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 3199,
+                "y": 429
+            }
+        }
+    },
+    "boomtheghost_intoeventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    356,
+                    28,
+                    577,
+                    671
+                ],
+                "expected": [
+                    "Enter",
+                    "剩余时间"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2315,
+                "y": 90
+            }
+        }
+    },
+    "boomtheghost_intoquickfight": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    696,
+                    364,
+                    105,
+                    213
+                ],
+                "template": [
+                    "limitedevent/oldtales/oldtalesquickfight.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 2869,
+                "y": -341
+            }
+        }
+    },
+    "boomtheghost_intoshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    421,
+                    477,
+                    431,
+                    186
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 3043,
+                "y": 2022
+            }
+        }
+    },
+    "boomtheghost_quickfight": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "boomtheghost_storyevent",
+            "[JumpBack]boomtheghost_choosestory"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1569,
+                "y": 51
+            }
+        }
+    },
+    "boomtheghost_quickfight_checkdate": {
+        "max_hit": 1,
+        "next": [
+            "boomtheghost_textstory2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1198,
+                "y": 126
+            }
+        }
+    },
+    "boomtheghost_quickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    454,
+                    325,
+                    70
+                ],
+                "expected": [
+                    "MAX"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "next": [
+            "boomtheghost_startquickfightmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3808,
+                "y": 165
+            }
+        }
+    },
+    "boomtheghost_rewards": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1181,
+                    89,
+                    98,
+                    128
+                ],
+                "template": [
+                    "bigevent/boomtheghost/boomtheghost_event.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "boomtheghost_rewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1651,
+                "y": 1108
+            }
+        }
+    },
+    "boomtheghost_rewards2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1191,
+                    112,
+                    86,
+                    168
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "boomtheghost_rewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1654,
+                "y": 1387
+            }
+        }
+    },
+    "boomtheghost_rewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    451,
+                    589,
+                    377,
+                    93
+                ],
+                "expected": [
+                    "全部领取",
+                    "全部",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 10,
+        "repeat_delay": 500,
+        "next": [
+            "boomtheghost_claimrewardsdailypage",
+            "boomtheghost_claimrewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1970,
+                "y": 1139
+            }
+        }
+    },
+    "boomtheghost_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "endboomtheghost_quickfight",
+            "boomtheghost_quickfightmax",
+            "boomtheghost_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3509,
+                "y": 145
+            }
+        }
+    },
+    "boomtheghost_startquickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    525,
+                    323,
+                    59
+                ],
+                "expected": [
+                    "进行战斗",
+                    "战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "startboomtheghost_quickfightmaxconfirm"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4122,
+                "y": 158
+            }
+        }
+    },
+    "boomtheghost_story2noopen": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    415,
+                    246,
+                    446,
+                    200
+                ],
+                "expected": [
+                    "后开放",
+                    "需要通关"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "boomtheghost_quickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1732,
+                "y": -389
+            }
+        }
+    },
+    "boomtheghost_story2return": {
+        "max_hit": 3,
+        "$__mpe_code": {
+            "position": {
+                "x": 1713,
+                "y": -610
+            }
+        }
+    },
+    "boomtheghost_storyevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "剧情活动"
+                ]
+            }
+        },
+        "next": [
+            "boomtheghost_eventstage",
+            "[JumpBack]boomtheghost_intoeventstage",
+            "[JumpBack]boomtheghost_intoerroreventstage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1987,
+                "y": -50
+            }
+        }
+    },
+    "boomtheghost_swipe": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    588,
+                    544,
+                    124,
+                    27
+                ],
+                "end": [
+                    [
+                        597,
+                        241,
+                        97,
+                        35
+                    ]
+                ],
+                "duration": [
+                    500
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "boomtheghost_into11",
+            "[JumpBack]boomtheghost_into11_retry",
+            "boomtheghost_cantinto11"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2881,
+                "y": 51
+            }
+        }
+    },
+    "boomtheghost_textstory2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    459,
+                    569,
+                    69,
+                    12
+                ]
+            }
+        },
+        "next": [
+            "boomtheghost_story2noopen",
+            "boomtheghost_storyevent",
+            "boomtheghost_textstory2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1288,
+                "y": -388
+            }
+        }
+    },
+    "claimboomtheghost_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "claimboomtheghost_intoqiandao",
+            "[JumpBack]claimboomtheghost_qiandao"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1238,
+                "y": 517
+            }
+        }
+    },
+    "claimboomtheghost_intoqiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    280,
+                    9,
+                    730,
+                    706
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "[Anchor]boomtheghost_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1598,
+                "y": 472
+            }
+        }
+    },
+    "claimboomtheghost_qiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    418,
+                    464,
+                    461,
+                    217
+                ],
+                "expected": [
+                    "签到印章",
+                    "签到印",
+                    "到印章"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1599,
+                "y": 806
+            }
+        }
+    },
+    "endboomtheghost_quickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "首次",
+                    "不足"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]boomtheghost_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3810,
+                "y": -46
+            }
+        }
+    },
+    "startboomtheghost_quickfightmaxconfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    538,
+                    590,
+                    207,
+                    89
+                ],
+                "expected": [
+                    "点击任意处",
+                    "任意处进行",
+                    "ESC"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]boomtheghost_anchor",
+            "startboomtheghost_quickfightmaxconfirm"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4434,
+                "y": 175
+            }
+        }
+    }
+}

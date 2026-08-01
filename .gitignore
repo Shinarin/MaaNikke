@@ -1,0 +1,25 @@
+# ============================================================
+# MaaNikke 仓库白名单（默认全部忽略，只放行需要上传的内容）
+# ============================================================
+
+# ---- 默认全部忽略 ----
+*
+!*/
+
+# ---- 放行要上传的内容 ----
+!.vscode/**
+!agent/**
+!Assets/**
+!resource/**
+!interface.json
+!autoMaaNikke.bat
+!startnikke.ahk
+!MPEsimple.txt
+!README.md
+!LICENSE
+!.gitignore
+
+# ---- 放行目录内仍要排除的 ----
+__pycache__/
+*.py[cod]
+agent/.deps/

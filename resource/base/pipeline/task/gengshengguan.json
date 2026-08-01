@@ -1,0 +1,361 @@
+{
+    "$__mpe_config_gengshengguan": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1785192815502,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\gengshengguan.json",
+            "savedViewport": {
+                "x": -5358,
+                "y": 890,
+                "zoom": 0.72
+            },
+            "filename": "gengshengguan",
+            "version": "v1.7.4"
+        }
+    },
+    "$__mpe_anchor_gengshengdone_gengshengguan": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9162,
+                "y": -688
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_gengshengguan": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8530,
+                "y": 598
+            }
+        }
+    },
+    "checknikkes_gengsheng": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/nikkes.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8019,
+                "y": -1251
+            }
+        }
+    },
+    "checkreturn": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 8713,
+                "y": -486
+            }
+        }
+    },
+    "findgengshengdone": {
+        "anchor": "gengshengdone",
+        "next": [
+            "finishgengsheng1",
+            "finishgengsheng2",
+            "finishgengsheng3",
+            "[JumpBack]checkreturn",
+            "[JumpBack]newgscharater",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8357,
+                "y": -856
+            }
+        }
+    },
+    "finish_ocr": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "完成"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9458,
+                "y": -1033
+            }
+        }
+    },
+    "finish_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "gengshengguan/zise_yes.png",
+                    "gengshengguan/yellow_yes.png",
+                    "gengshengguan/blue_yes.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9453,
+                "y": -865
+            }
+        }
+    },
+    "finishgengsheng1": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "finish_ocr",
+                    "finish_pic"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 5000,
+        "next": [
+            "[JumpBack]suddenevent",
+            "[Anchor]gengshengdone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8698,
+                "y": -1313
+            }
+        }
+    },
+    "finishgengsheng2": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "finish_ocr",
+                    "finish_pic"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 5000,
+        "next": [
+            "[JumpBack]suddenevent",
+            "[Anchor]gengshengdone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8707,
+                "y": -1026
+            }
+        }
+    },
+    "finishgengsheng3": {
+        "max_hit": 1,
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "finish_ocr",
+                    "finish_pic"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 5000,
+        "next": [
+            "[JumpBack]suddenevent",
+            "[Anchor]gengshengdone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8712,
+                "y": -743
+            }
+        }
+    },
+    "gengshengguan": {
+        "next": [
+            "nikkes_gengshengguan",
+            "[JumpBack]intonikkes_gengsheng",
+            "[JumpBack]intonikkes_gengsheng2",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7402,
+                "y": -843
+            }
+        }
+    },
+    "intogengshengguan": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1,
+                    52,
+                    147,
+                    68
+                ],
+                "expected": [
+                    "更生"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 4000,
+        "next": [
+            "findgengshengdone"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8062,
+                "y": -878
+            }
+        }
+    },
+    "intonikkes_gengsheng": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    443,
+                    617,
+                    98,
+                    99
+                ],
+                "template": [
+                    "inquiryandgift/intonikkes.png",
+                    "inquiryandgift/intonikkes2.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checknikkes_gengsheng",
+            "intonikkes_gengsheng"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7701,
+                "y": -1580
+            }
+        }
+    },
+    "intonikkes_gengsheng2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    443,
+                    617,
+                    98,
+                    99
+                ],
+                "expected": [
+                    "妮姬"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "checknikkes_gengsheng",
+            "intonikkes_gengsheng2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7712,
+                "y": -1174
+            }
+        }
+    },
+    "newgscharater": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    366,
+                    495,
+                    530,
+                    217
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8719,
+                "y": -315
+            }
+        }
+    },
+    "nikkes_gengshengguan": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "inquiryandgift/nikkes.png"
+                ]
+            }
+        },
+        "next": [
+            "intogengshengguan"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7736,
+                "y": -868
+            }
+        }
+    },
+    "suddenevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "跳过",
+                    "取消",
+                    "点击领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9131,
+                "y": -1205
+            }
+        }
+    }
+}
