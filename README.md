@@ -12,6 +12,7 @@
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)]()
 [![Python](https://img.shields.io/badge/python-3.10%2B-3776AB.svg?logo=python&logoColor=white)]()
 [![MaaFramework](https://img.shields.io/badge/MaaFramework-5.10.2-brightgreen.svg)](https://github.com/MaaXYZ/MaaFramework)
+[![下载最新版](https://img.shields.io/badge/download-最新版本-orange.svg)](https://github.com/Shinarin/MaaNikke/releases/latest)
 
 </div>
 
@@ -63,6 +64,8 @@
 版本更新时替换 `agent`、`interface.json`、`resource` 这三个文件（建议先删除原文件再复制）。
 
 ## 🚀 使用方法
+
+> 📥 **下载**：完整程序（含 GUI，解压即用）请前往 [**Releases**](https://github.com/Shinarin/MaaNikke/releases/latest) 下载最新版本；本仓库仅包含自定义层源码（agent / resource / interface），适合二次开发或手动更新。
 
 本程序提供两种方案，请根据需求选择。
 
