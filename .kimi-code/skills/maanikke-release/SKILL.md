@@ -17,11 +17,12 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
 - changelog 文件：`resource/announcement/Changelog.md`，**最新版本条目置顶**。
 - 版本字段：`interface.json` 的 `"version"`。注意 `"interface_version": 2` 是协议号，**绝不要动**。
 - 模板文件夹：`F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-v2.x.x`（完整程序：exe、libs、runtimes、plugins、MaaAgentBinary、Assets、bat 等，唯独缺 agent/resource/interface.json）。
+- 构建与产物位置：构建文件夹和 zip 都直接生成在 `F:\MaaNikke历史版本备份\` 内（与 v2.1.0~v2.1.6 的存放习惯一致），**不要放在项目根目录**。
 - 同步目录：`C:\other\MaaNikke`（打包时把 agent/resource/interface.json 也复制一份到这里，**只复制，不做任何其他操作**）。
 - zip 命名：`MaaNikke-win-x86_64-v<新版本>.zip`（连字符、win-x86_64，与历史一致）。
 - zip 结构：根目录直接平铺 interface.json、agent、resource、MaaNikke.exe、libs 等共 16 个顶层条目，**含目录条目**（保留空目录），不多套一层文件夹。参照物：`F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-v2.1.5.zip`。
 - 打包工具：Git Bash 的 tar 是 GNU tar，**造不了 zip**；用 Python zipfile（已实测）。
-- 产物（构建文件夹 + zip）留在项目根目录；`.gitignore` 是白名单模式，天然不会被提交。
+- `.gitignore` 已含 `MaaNikke-win-x86_64-v*/` 排除规则（兜底，防止构建产物误入项目被提交）。
 - GitHub：仓库 `Shinarin/MaaNikke`，本机**无 gh CLI**；用 `git credential fill` 取 token 调 REST API（token 已验证有 `repo` scope，可建 Release）。token 严禁打印/写文件。
 - QQ 群发送步骤：用户已明确**取消**，不执行。
 
@@ -35,29 +36,29 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
    - 条目之间空行；新旧版本块之间以 `---` 分隔
 3. `interface.json` 的 `version` 同步改为新版本号。
 
-## 第二步：复制模板到项目根目录并改名
+## 第二步：在 F 盘备份目录复制模板并改名
 
 ```bash
-cp -r "F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-v2.x.x" "MaaNikke-win-x86_64-v<新版本>"
+cp -r "F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-v2.x.x" "F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-v<新版本>"
 ```
 
 ## 第三步：补足三件套、同步到 C:\other\MaaNikke、打包
 
 ```bash
-cp -r agent resource "MaaNikke-win-x86_64-v<新版本>/"
-cp interface.json "MaaNikke-win-x86_64-v<新版本>/"
-find "MaaNikke-win-x86_64-v<新版本>" -type d -name __pycache__ -prune -exec rm -rf {} +
+cp -r agent resource "F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-v<新版本>/"
+cp interface.json "F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-v<新版本>/"
+find "F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-v<新版本>" -type d -name __pycache__ -prune -exec rm -rf {} +
 
 # 同样的三件套同步一份到 C:\other\MaaNikke（只复制，不做删除、打包等任何其他操作）
 cp -r agent resource "C:/other/MaaNikke/"
 cp interface.json "C:/other/MaaNikke/"
 ```
 
-用 Python 打包（walk 时对 subdirs 也 z.write，以写入目录条目、保留空目录）：
+用 Python 打包（walk 时对 subdirs 也 z.write，以写入目录条目、保留空目录；zip 也生成在 F 盘备份目录）：
 
 ```python
 import zipfile, os
-src = 'MaaNikke-win-x86_64-v<新版本>'
+src = 'F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-v<新版本>'
 out = src + '.zip'
 with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
     for root, subdirs, files in os.walk(src):
@@ -69,11 +70,11 @@ with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
             z.write(p, os.path.relpath(p, src))
 ```
 
-打包后校验：`testzip()` 返回 None；顶层条目 16 个、无嵌套同名文件夹；体积约 110MB。参考值：v2.1.6 演练为 733 条目 / 111.2MB。
+打包后校验：`testzip()` 返回 None；顶层条目 16 个、无嵌套同名文件夹；体积约 110MB。参考值：v2.1.6 为 733 条目 / 116,558,718 字节。
 
 ## 第四步：push
 
-1. `git add -A --dry-run` 先核对白名单（应只有 agent/、resource/、interface.json、.kimi-code/、README.md 等项目文件，绝无 exe/dll/logs/config）。
+1. `git add -A --dry-run` 先核对白名单（应只有 agent/、resource/、interface.json、.kimi-code/、README.md 等项目文件，绝无 exe/dll/logs/config 及构建产物）。
 2. 提交信息用中文，如 `chore: release vX.Y.Z`，然后 `git push origin main`。
 
 ## 第五步：GitHub Release
@@ -103,7 +104,7 @@ curl -s -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
 ```bash
 curl -s -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
   -H "Content-Type: application/zip" --retry 3 \
-  --data-binary @"MaaNikke-win-x86_64-vX.Y.Z.zip" \
+  --data-binary @"F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-vX.Y.Z.zip" \
   "https://uploads.github.com/repos/Shinarin/MaaNikke/releases/<id>/assets?name=MaaNikke-win-x86_64-vX.Y.Z.zip"
 ```
 
@@ -117,5 +118,5 @@ curl -s -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
 
 - 任一步失败：**停下报告**，不要蛮干重试；push 和 Release 都是对外操作。
 - 中文路径全程双引号；Python 打印中文前设 `PYTHONIOENCODING=utf-8`（Windows 控制台 GBK 会乱码）。
-- 构建文件夹与 zip 用完后留在项目根目录（用户要求，按历史版本习惯摆放），不要删、不要移到 F 盘。
+- 构建文件夹与 zip 只放 `F:\MaaNikke历史版本备份`，**不要**放项目根目录，也不要在打包后移动（直接在 F 盘构建）。
 - 同步 `C:\other\MaaNikke` 只做复制动作，**不要**在那里删 __pycache__、不要打包、不要做版本控制操作。
