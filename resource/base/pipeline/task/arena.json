@@ -3,50 +3,23 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1781418885078,
+            "lastSyncTime": 1785856295180,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\arena.json",
             "savedViewport": {
-                "x": -7590,
-                "y": 574,
-                "zoom": 1.14
+                "x": -7437,
+                "y": 745,
+                "zoom": 1.06
             },
             "filename": "arena",
-            "version": "v1.6.1"
-        }
-    },
-    "havechance": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    420,
-                    471,
-                    266,
-                    173
-                ],
-                "expected": [
-                    "变更编队",
-                    "快速战斗"
-                ]
-            }
-        },
-        "next": [
-            "notauto",
-            "isauto"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6815,
-                "y": -395
-            }
+            "version": "v1.7.4"
         }
     },
     "$__mpe_anchor_arenafightagain_arena": {
         "$__mpe_code": {
             "position": {
-                "x": 8157,
-                "y": -280
+                "x": 8521,
+                "y": -405
             }
         }
     },
@@ -100,6 +73,31 @@
             "position": {
                 "x": 6508,
                 "y": -423
+            }
+        }
+    },
+    "arenafight_end": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    699,
+                    555,
+                    185,
+                    132
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]arenafightagain"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8214,
+                "y": -456
             }
         }
     },
@@ -263,8 +261,8 @@
     "checkspecialarenafight_skip": {
         "$__mpe_code": {
             "position": {
-                "x": 6184,
-                "y": 159
+                "x": 6188,
+                "y": 172
             }
         }
     },
@@ -442,17 +440,63 @@
                 ]
             }
         },
-        "pre_wait_freezes": 2000,
+        "pre_wait_freezes": 500,
         "action": {
             "type": "Click"
         },
         "next": [
-            "[Anchor]arenafightagain"
+            "arenafight_end",
+            "finishfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7884,
-                "y": -326
+                "x": 7929,
+                "y": -469
+            }
+        }
+    },
+    "finishfight_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击进行下一步",
+                    "点击进行"
+                ]
+            }
+        },
+        "inverse": true,
+        "$__mpe_code": {
+            "position": {
+                "x": 7937,
+                "y": -211
+            }
+        }
+    },
+    "havechance": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    420,
+                    471,
+                    266,
+                    173
+                ],
+                "expected": [
+                    "变更编队",
+                    "快速战斗"
+                ]
+            }
+        },
+        "next": [
+            "notauto",
+            "isauto"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6815,
+                "y": -395
             }
         }
     },
@@ -542,13 +586,15 @@
         "action": {
             "type": "Click"
         },
+        "timeout": 60000,
         "next": [
-            "finishfight"
+            "finishfight",
+            "[JumpBack]finishfight_re"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7604,
-                "y": -318
+                "x": 7616,
+                "y": -460
             }
         }
     },

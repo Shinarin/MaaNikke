@@ -26,6 +26,7 @@ from maa.agent.agent_server import AgentServer
 from maa.context import Context
 from maa.custom_action import CustomAction
 from utils.params import parse_params
+from custom.reco.my_reco import datebase_add, datebase_clear, datebase_get
 
 import datetime
 
@@ -622,6 +623,67 @@ class LoopBack(CustomAction):
             context.override_next(key, original)
             self._counters[key] = 0
 
+        return CustomAction.RunResult(success=True)
+
+
+# =====================================================================
+# Action 10: addrecodatebase —— 日期临时字段 +1
+# =====================================================================
+@AgentServer.custom_action("addrecodatebase")
+class AddRecoDateBase(CustomAction):
+    """
+    将 recodatebase 写入的日期临时字段日部分 +1（如 1-7 → 1-8）；
+    唯独当前值为 1-12 时改为 -1（得 1-11）。
+    字段不存在时视为默认值 "1-1"（+1 得 "1-2"）；
+    格式异常（非 "月-日" 数字）时不改动。始终返回成功。无参数。
+
+    Pipeline JSON 引用示例:
+    {
+        "action": "Custom",
+        "custom_action": "addrecodatebase"
+    }
+    """
+
+    def run(
+        self,
+        context: Context,
+        argv: CustomAction.RunArg,
+    ) -> CustomAction.RunResult:
+        old = datebase_get()
+        new = datebase_add()
+        if new == old:
+            print(f"[addrecodatebase] 字段保持 {old}（格式异常未改动）")
+        else:
+            print(f"[addrecodatebase] {old} → {new}")
+        return CustomAction.RunResult(success=True)
+
+
+# =====================================================================
+# Action 11: clearrecodatebase —— 清除日期临时字段
+# =====================================================================
+@AgentServer.custom_action("clearrecodatebase")
+class ClearRecoDateBase(CustomAction):
+    """
+    将 recodatebase 的日期临时字段重置为默认值 "1-1"
+    （重置而非删除，字段全程存在、不留空缺）。始终返回成功。无参数。
+
+    Pipeline JSON 引用示例:
+    {
+        "action": "Custom",
+        "custom_action": "clearrecodatebase"
+    }
+    """
+
+    def run(
+        self,
+        context: Context,
+        argv: CustomAction.RunArg,
+    ) -> CustomAction.RunResult:
+        old = datebase_get()
+        if datebase_clear():
+            print(f"[clearrecodatebase] 临时字段 {old} 已重置为默认值 1-1")
+        else:
+            print("[clearrecodatebase] 临时字段已是默认值 1-1")
         return CustomAction.RunResult(success=True)
 
 

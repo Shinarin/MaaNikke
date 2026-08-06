@@ -2,7 +2,7 @@
   "interface_version": 2,
   "custom_title": "MaaNikke",
   "name": "MaaNikke",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "url": "https://github.com/Shinarin/MaaNikke",
 
 
@@ -193,6 +193,12 @@
     {
       "name": "限时活动(boomtheghost)",
       "entry": "boomtheghost",
+      "default_check": true,
+      "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼"
+    },
+    {
+      "name": "限时活动(killthelord)",
+      "entry": "killthelord",
       "default_check": true,
       "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼"
     },

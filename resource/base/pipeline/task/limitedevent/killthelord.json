@@ -1,396 +1,21 @@
 {
-    "$__mpe_config_boomtheghost": {
+    "$__mpe_config_killthelord": {
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786027454631,
+            "lastSyncTime": 1786027578989,
             "isModifiedExternally": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\boomtheghost.json",
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\killthelord.json",
             "savedViewport": {
-                "x": -1049,
-                "y": 136,
-                "zoom": 0.86
+                "x": -2714,
+                "y": -516,
+                "zoom": 1.14
             },
-            "filename": "boomtheghost",
+            "filename": "killthelord",
             "version": "v1.7.4"
         }
     },
-    "$__mpe_anchor_anchor_boomtheghost_checklatestevent_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 3263,
-                "y": 405
-            }
-        }
-    },
-    "$__mpe_anchor_anchor_boomtheghost_intofightpage_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 9624,
-                "y": 363
-            }
-        }
-    },
-    "$__mpe_anchor_boomtheghost_stagestart_anchor_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7469,
-                "y": 813
-            }
-        }
-    },
-    "$__mpe_anchor_boomtheghostanchor_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 8283,
-                "y": -408
-            }
-        }
-    },
-    "$__mpe_external_backtohomepage_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1102,
-                "y": 2776
-            }
-        }
-    },
-    "$__mpe_external_limitedeventshop_claim_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2302,
-                "y": 1742
-            }
-        }
-    },
-    "$__mpe_sticker_boomtheghost_便签1_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 562,
-                "y": -339
-            },
-            "content": "这里需要适配活动图标",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_boomtheghost_便签2_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1296,
-                "y": -544
-            },
-            "content": "这里需要适配关卡1按钮",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_boomtheghost_便签3_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1835,
-                "y": 333
-            },
-            "content": "这里需要适配关卡图标",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_boomtheghost_便签4_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2614,
-                "y": -67
-            },
-            "content": "这里需要适配困难按钮",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_boomtheghost_便签6_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1561,
-                "y": 1027
-            },
-            "content": "这里需要适配活动任务",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_boomtheghost_便签7_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1783,
-                "y": 817
-            },
-            "content": "这里需要适配活动任务",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_boomtheghost_便签8_boomtheghost": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1503,
-                "y": 2087
-            },
-            "content": "这里需要适配活动任务",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "boomtheghost": {
-        "anchor": "boomtheghostanchor",
-        "next": [
-            "boomtheghost_checkhomepage",
-            "[JumpBack]backtohomepage"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": -156,
-                "y": 198
-            }
-        }
-    },
-    "boomtheghost_0item_count": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    398,
-                    3,
-                    517,
-                    715
-                ],
-                "expected": [
-                    "0/5",
-                    "015"
-                ]
-            }
-        },
-        "next": [
-            "[Anchor]boomtheghostanchor"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8055,
-                "y": 765
-            }
-        }
-    },
-    "boomtheghost_12_have_end": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    453,
-                    234,
-                    387,
-                    428
-                ],
-                "expected": [
-                    "Access Denied",
-                    "Access",
-                    "Denied",
-                    "ACCESS DENIED",
-                    "ACCESS",
-                    "DENIED"
-                ]
-            }
-        },
-        "inverse": true,
-        "next": [
-            "boomtheghost_into11"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3613,
-                "y": 517
-            }
-        }
-    },
-    "boomtheghost_12_no_end": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    404,
-                    128,
-                    479,
-                    566
-                ],
-                "expected": [
-                    "Access Denied",
-                    "Access",
-                    "Denied",
-                    "ACCESS DENIED",
-                    "ACCESS",
-                    "DENIED"
-                ]
-            }
-        },
-        "timeout": 40000,
-        "next": [
-            "boomtheghost_canintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3590,
-                "y": -155
-            }
-        }
-    },
-    "boomtheghost_12_no_end_return": {
-        "max_hit": 2,
-        "$__mpe_code": {
-            "position": {
-                "x": 3599,
-                "y": 162
-            }
-        }
-    },
-    "boomtheghost_add1": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    65,
-                    415,
-                    27,
-                    40
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_add2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6700,
-                "y": 1242
-            }
-        }
-    },
-    "boomtheghost_add2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    155,
-                    404,
-                    35,
-                    54
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_add3"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6983,
-                "y": 1244
-            }
-        }
-    },
-    "boomtheghost_add3": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    260,
-                    403,
-                    25,
-                    65
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_add4"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7257,
-                "y": 1246
-            }
-        }
-    },
-    "boomtheghost_add4": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1186,
-                    414,
-                    29,
-                    51
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_add5"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7548,
-                "y": 1249
-            }
-        }
-    },
-    "boomtheghost_add5": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1083,
-                    403,
-                    38,
-                    75
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_saveteam"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7848,
-                "y": 1252
-            }
-        }
-    },
-    "boomtheghost_addnikkes": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "noteam.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "next": [
-            "boomtheghost_add1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6394,
-                "y": 1206
-            }
-        }
-    },
-    "boomtheghost_addrecodatebase": {
+    "killthelord_addrecodatebase": {
         "action": {
             "type": "Custom",
             "param": {
@@ -398,32 +23,66 @@
             }
         },
         "next": [
-            "boomtheghost_swipelittle"
+            "killthelord_swipelittle"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4752,
-                "y": -356
+                "x": 4021,
+                "y": 285
             }
         }
     },
-    "boomtheghost_canintoevent": {
-        "recognition": {
-            "type": "Custom",
+    "killthelord_swipelittle": {
+        "action": {
+            "type": "Swipe",
             "param": {
-                "custom_recognition": "recodatebase",
-                "custom_recognition_param": {
-                    "preprocess_scale": 3,
-                    "threshold": 0.8
-                },
-                "roi": [
-                    423,
-                    128,
-                    468,
-                    590
+                "begin": [
+                    600,
+                    520,
+                    80,
+                    1
+                ],
+                "end": [
+                    [
+                        608,
+                        440,
+                        70,
+                        1
+                    ]
+                ],
+                "end_hold": [
+                    500
                 ]
             }
         },
+        "next": [
+            "killthelord_intocanintoevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4293,
+                "y": 266
+            }
+        }
+    },
+    "killthelord_clearrecodatebase": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clearrecodatebase"
+            }
+        },
+        "next": [
+            "killthelord_sweipdown"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7904,
+                "y": 963
+            }
+        }
+    },
+    "killthelord_resweip": {
         "action": {
             "type": "Swipe",
             "param": {
@@ -446,30 +105,360 @@
                 ]
             }
         },
+        "$__mpe_code": {
+            "position": {
+                "x": 3130,
+                "y": 390
+            }
+        }
+    },
+    "$__mpe_anchor_anchor_killthelord_intofightpage_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9038,
+                "y": 979
+            }
+        }
+    },
+    "$__mpe_anchor_anchor_killthelord_checklatestevent_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2476,
+                "y": 1053
+            }
+        }
+    },
+    "$__mpe_anchor_killthelord_stagestart_anchor_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6661,
+                "y": 1396
+            }
+        }
+    },
+    "$__mpe_anchor_killthelordanchor_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7503,
+                "y": 388
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 972,
+                "y": 3350
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2307,
+                "y": 2296
+            }
+        }
+    },
+    "$__mpe_sticker_killthelord_便签4_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1846,
+                "y": 836
+            },
+            "content": "这里需要适配困难按钮",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "$__mpe_sticker_killthelord_便签8_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1681,
+                "y": 2565
+            },
+            "content": "这里需要适配活动任务",
+            "color": "yellow",
+            "width": 200,
+            "height": 160
+        }
+    },
+    "killthelord": {
+        "doc": "",
+        "enabled": true,
+        "anchor": "killthelordanchor",
+        "next": [
+            "killthelord_checkhomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -259,
+                "y": 658
+            }
+        }
+    },
+    "killthelord_0item_count": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    398,
+                    3,
+                    517,
+                    715
+                ],
+                "expected": [
+                    "0/5",
+                    "015"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]killthelordanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7257,
+                "y": 1441
+            }
+        }
+    },
+    "killthelord_12_have_end": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    453,
+                    234,
+                    387,
+                    428
+                ],
+                "expected": [
+                    "Access Denied",
+                    "Access",
+                    "Denied",
+                    "ACCESS DENIED",
+                    "ACCESS",
+                    "DENIED"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "killthelord_into11"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2773,
+                "y": 1160
+            }
+        }
+    },
+    "killthelord_12_no_end": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    128,
+                    479,
+                    566
+                ],
+                "expected": [
+                    "Access Denied",
+                    "Access",
+                    "Denied",
+                    "ACCESS DENIED",
+                    "ACCESS",
+                    "DENIED"
+                ]
+            }
+        },
+        "timeout": 40000,
+        "next": [
+            "killthelord_canintoevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2803,
+                "y": 493
+            }
+        }
+    },
+    "killthelord_12_no_end_return": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 2812,
+                "y": 810
+            }
+        }
+    },
+    "killthelord_add1": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    65,
+                    415,
+                    27,
+                    40
+                ]
+            }
+        },
+        "next": [
+            "killthelord_add2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5913,
+                "y": 1890
+            }
+        }
+    },
+    "killthelord_add2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    155,
+                    404,
+                    35,
+                    54
+                ]
+            }
+        },
+        "next": [
+            "killthelord_add3"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6196,
+                "y": 1892
+            }
+        }
+    },
+    "killthelord_add3": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    260,
+                    403,
+                    25,
+                    65
+                ]
+            }
+        },
+        "next": [
+            "killthelord_add4"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6470,
+                "y": 1894
+            }
+        }
+    },
+    "killthelord_add4": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1186,
+                    414,
+                    29,
+                    51
+                ]
+            }
+        },
+        "next": [
+            "killthelord_add5"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6761,
+                "y": 1897
+            }
+        }
+    },
+    "killthelord_add5": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1083,
+                    403,
+                    38,
+                    75
+                ]
+            }
+        },
+        "next": [
+            "killthelord_saveteam"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7061,
+                "y": 1900
+            }
+        }
+    },
+    "killthelord_addnikkes": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "noteam.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "killthelord_add1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5607,
+                "y": 1854
+            }
+        }
+    },
+    "killthelord_canintoevent": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "recodatebase",
+                "custom_recognition_param": {
+                    "preprocess_scale": 3,
+                    "threshold": 0.3,
+                    "action_node": "killthelord_resweip"
+                },
+                "roi": [
+                    423,
+                    128,
+                    468,
+                    590
+                ]
+            }
+        },
         "timeout": 60000,
         "next": [
-            "boomtheghost_intocanintoevent"
+            "killthelord_intocanintoevent"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3916,
-                "y": -25
+                "x": 3129,
+                "y": 623
             }
         }
     },
-    "boomtheghost_challenge": {
-        "max_hit": 1,
-        "next": [
-            "boomtheghost_intochallenge"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1261,
-                "y": 2439
-            }
-        }
-    },
-    "boomtheghost_challengefight": {
+    "killthelord_challengefight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -488,18 +477,18 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_checkchallengefinish",
-            "[JumpBack]boomtheghost_challengeisfighting",
-            "boomtheghost_challengefight"
+            "killthelord_checkchallengefinish",
+            "[JumpBack]killthelord_challengeisfighting",
+            "killthelord_challengefight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2655,
-                "y": 2488
+                "x": 2663,
+                "y": 2994
             }
         }
     },
-    "boomtheghost_challengeisfighting": {
+    "killthelord_challengeisfighting": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -516,12 +505,12 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 3014,
-                "y": 2755
+                "x": 3022,
+                "y": 3261
             }
         }
     },
-    "boomtheghost_checkchallengefinish": {
+    "killthelord_checkchallengefinish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -545,12 +534,61 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3007,
-                "y": 2506
+                "x": 3015,
+                "y": 3011
             }
         }
     },
-    "boomtheghost_checkfinish": {
+    "killthelord_checkeventpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    6,
+                    8,
+                    90,
+                    57
+                ],
+                "expected": [
+                    "剧情活动"
+                ]
+            }
+        },
+        "next": [
+            "killthelord_stage",
+            "killthelord_mission",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 669,
+                "y": 668
+            }
+        }
+    },
+    "killthelord_checkeventpage1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    6,
+                    8,
+                    90,
+                    57
+                ],
+                "expected": [
+                    "剧情活动"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 662,
+                "y": 445
+            }
+        }
+    },
+    "killthelord_checkfinish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -567,18 +605,18 @@
             }
         },
         "next": [
-            "boomtheghost_nextstage",
-            "[JumpBack]boomtheghost_nextstage_return",
-            "boomtheghost_no_nextstage"
+            "killthelord_nextstage",
+            "[JumpBack]killthelord_nextstage_return",
+            "killthelord_no_nextstage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6681,
-                "y": 322
+                "x": 5894,
+                "y": 970
             }
         }
     },
-    "boomtheghost_checkhomepage": {
+    "killthelord_checkhomepage": {
         "recognition": {
             "type": "And",
             "param": {
@@ -589,101 +627,18 @@
             }
         },
         "next": [
-            "boomtheghost_checkintoevent",
-            "[JumpBack]boomtheghost_into",
-            "[JumpBack]boomtheghost_checkintoeventreturn",
-            "backtohomepage"
+            "killthelord_checkeventpage",
+            "[JumpBack]killthelord_into",
+            "[JumpBack]killthelord_exchange"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 271,
-                "y": 196
+                "x": 91,
+                "y": 683
             }
         }
     },
-    "boomtheghost_checkintoevent": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    6,
-                    102,
-                    39
-                ],
-                "expected": [
-                    "活动地区",
-                    "地区"
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_quickfight_checkdate",
-            "claimboomtheghost_claimrewards",
-            "boomtheghost_claimrewards",
-            "backtohomepage"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 877,
-                "y": 182
-            }
-        }
-    },
-    "boomtheghost_checkintoevent2": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    6,
-                    102,
-                    39
-                ],
-                "expected": [
-                    "活动地区",
-                    "活动",
-                    "地区"
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 881,
-                "y": -147
-            }
-        }
-    },
-    "boomtheghost_checkintoeventreturn": {
-        "max_hit": 5,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    774,
-                    553,
-                    247,
-                    121
-                ],
-                "template": [
-                    "exchange.png"
-                ],
-                "threshold": [
-                    0.8
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 570,
-                "y": 357
-            }
-        }
-    },
-    "boomtheghost_checklatestevent": {
+    "killthelord_checklatestevent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -698,45 +653,67 @@
                 ]
             }
         },
-        "anchor": "anchor_boomtheghost_checklatestevent",
+        "anchor": "anchor_killthelord_checklatestevent",
         "next": [
-            "boomtheghost_12_no_end",
-            "[JumpBack]boomtheghost_12_no_end_return",
-            "boomtheghost_12_have_end"
+            "killthelord_12_no_end",
+            "[JumpBack]killthelord_12_no_end_return",
+            "killthelord_12_have_end"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3246,
-                "y": 67
+                "x": 2470,
+                "y": 730
             }
         }
     },
-    "boomtheghost_choosestory": {
+    "killthelord_checkmission1": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
-                "roi": [
-                    415,
-                    485,
-                    449,
-                    189
-                ],
-                "template": [
-                    "bigevent/boomtheghost/boomtheghost_story1.png"
+                "expected": [
+                    "任务"
                 ]
             }
         },
+        "pre_wait_freezes": 1000,
         "action": {
             "type": "Click"
         },
+        "next": [
+            "killthelord_claimrewards"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 1979,
-                "y": 239
+                "x": 1540,
+                "y": 1476
             }
         }
     },
-    "boomtheghost_cjeckeventpage": {
+    "killthelord_checkmission2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "limitedevent/eventsmissionbuttom_greenbg.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "killthelord_claimrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1543,
+                "y": 1747
+            }
+        }
+    },
+    "killthelord_cjeckeventpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -752,30 +729,48 @@
             }
         },
         "next": [
-            "boomtheghost_0item_count",
-            "boomtheghost_item_count"
+            "killthelord_0item_count",
+            "killthelord_item_count"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8021,
-                "y": 313
+                "x": 7183,
+                "y": 961
             }
         }
     },
-    "boomtheghost_claimrewards": {
-        "max_hit": 1,
+    "killthelord_claimrewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    417,
+                    504,
+                    477,
+                    200
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 10,
+        "repeat_delay": 500,
         "next": [
-            "boomtheghost_rewards",
-            "boomtheghost_rewards2"
+            "killthelord_claimrewardsdaily",
+            "killthelord_claimrewardsdailypage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1277,
-                "y": 1114
+                "x": 1898,
+                "y": 1460
             }
         }
     },
-    "boomtheghost_claimrewardsdaily": {
+    "killthelord_claimrewardsdaily": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -796,17 +791,17 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_claimrewardsdailypage",
-            "boomtheghost_claimrewardsdaily"
+            "killthelord_claimrewardsdailypage",
+            "killthelord_claimrewardsdaily"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2315,
-                "y": 1037
+                "x": 2228,
+                "y": 1489
             }
         }
     },
-    "boomtheghost_claimrewardsdailypage": {
+    "killthelord_claimrewardsdailypage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -835,83 +830,96 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "boomtheghost_findshopbuttom",
-            "boomtheghost_claimrewardsdailypage"
+            "killthelord_findshopbuttom"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2312,
-                "y": 1310
+                "x": 2219,
+                "y": 1788
             }
         }
     },
-    "boomtheghost_claimshop": {
+    "killthelord_claimshop": {
         "max_hit": 1,
         "next": [
-            "boomtheghost_inshop",
-            "[JumpBack]boomtheghost_intoshop"
+            "killthelord_inshop",
+            "[JumpBack]killthelord_intoshop"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1295,
-                "y": 1690
+                "x": 1282,
+                "y": 2238
             }
         }
     },
-    "boomtheghost_claimshoprewards": {
+    "killthelord_claimshoprewards": {
         "max_hit": 1,
         "next": [
             "limitedeventshop_claim"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2011,
-                "y": 1693
+                "x": 1985,
+                "y": 2240
             }
         }
     },
-    "boomtheghost_clearrecodatebase": {
-        "action": {
-            "type": "Custom",
+    "killthelord_clickhard1": {
+        "recognition": {
+            "type": "OCR",
             "param": {
-                "custom_action": "clearrecodatebase"
+                "roi": [
+                    636,
+                    606,
+                    222,
+                    113
+                ],
+                "expected": [
+                    "Hard",
+                    "HARD"
+                ]
             }
         },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
         "next": [
-            "boomtheghost_sweipdown"
+            "killthelord_swipestage_re"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8688,
-                "y": 323
+                "x": 1835,
+                "y": 507
             }
         }
     },
-    "boomtheghost_clickhard": {
+    "killthelord_clickhard2": {
         "action": {
             "type": "Click",
             "param": {
                 "target": [
-                    746,
-                    673,
-                    35,
-                    21
+                    776,
+                    672,
+                    8,
+                    8
                 ]
             }
         },
         "repeat": 5,
         "repeat_delay": 500,
         "next": [
-            "boomtheghost_swipe"
+            "killthelord_swipestage_re"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2608,
-                "y": 85
+                "x": 1837,
+                "y": 931
             }
         }
     },
-    "boomtheghost_comfirmchallenge": {
+    "killthelord_comfirmchallenge": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -927,18 +935,16 @@
             }
         },
         "next": [
-            "boomtheghost_havechalengechance2",
-            "[JumpBack]boomtheghost_havechalengechance2_return",
-            "backtohomepage"
+            "killthelord_havechalengechance2"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1933,
-                "y": 2437
+                "x": 1941,
+                "y": 2943
             }
         }
     },
-    "boomtheghost_end": {
+    "killthelord_end": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -961,17 +967,19 @@
                 ]
             }
         },
+        "post_wait_freezes": 500,
         "next": [
-            "boomtheghost_challenge"
+            "killthelord_intochallenge",
+            "killthelord_end"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1994,
-                "y": 2017
+                "x": 2001,
+                "y": 2523
             }
         }
     },
-    "boomtheghost_event1_cannot_re": {
+    "killthelord_event1_cannot_re": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -988,16 +996,16 @@
             }
         },
         "next": [
-            "boomtheghost_addrecodatebase"
+            "killthelord_addrecodatebase"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4453,
-                "y": -367
+                "x": 3740,
+                "y": 274
             }
         }
     },
-    "boomtheghost_eventstage": {
+    "killthelord_eventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1013,16 +1021,46 @@
             }
         },
         "next": [
-            "boomtheghost_clickhard"
+            "killthelord_clickhard1",
+            "killthelord_clickhard2"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2318,
-                "y": -150
+                "x": 1562,
+                "y": 689
             }
         }
     },
-    "boomtheghost_findshopbuttom": {
+    "killthelord_exchange": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    904,
+                    580,
+                    132,
+                    98
+                ],
+                "template": [
+                    "limitedevent/eventsexchange.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 372,
+                "y": 864
+            }
+        }
+    },
+    "killthelord_findshopbuttom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1038,16 +1076,16 @@
             }
         },
         "next": [
-            "boomtheghost_claimshop"
+            "killthelord_claimshop"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2687,
-                "y": 1303
+                "x": 2575,
+                "y": 1755
             }
         }
     },
-    "boomtheghost_finish": {
+    "killthelord_finish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1068,18 +1106,18 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_cjeckeventpage",
-            "[JumpBack]boomtheghost_jumpstory",
-            "[JumpBack]boomtheghost_finish_click"
+            "killthelord_cjeckeventpage",
+            "[JumpBack]killthelord_jumpstory",
+            "[JumpBack]killthelord_finish_click"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7653,
-                "y": 316
+                "x": 6866,
+                "y": 964
             }
         }
     },
-    "boomtheghost_finish_click": {
+    "killthelord_finish_click": {
         "action": {
             "type": "Click",
             "param": {
@@ -1093,12 +1131,29 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 7783,
-                "y": 649
+                "x": 6996,
+                "y": 1297
             }
         }
     },
-    "boomtheghost_havechalengechance1": {
+    "killthelord_hard_return": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "LoopBack",
+                "custom_action_param": {
+                    "max_loops": 2
+                }
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2182,
+                "y": 50
+            }
+        }
+    },
+    "killthelord_havechalengechance1": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1121,12 +1176,12 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 2302,
-                "y": 2982
+                "x": 2331,
+                "y": 3268
             }
         }
     },
-    "boomtheghost_havechalengechance2": {
+    "killthelord_havechalengechance2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1146,25 +1201,17 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_challengefight"
+            "killthelord_challengefight",
+            "killthelord_havechalengechance2"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2293,
-                "y": 2433
+                "x": 2320,
+                "y": 2937
             }
         }
     },
-    "boomtheghost_havechalengechance2_return": {
-        "max_hit": 5,
-        "$__mpe_code": {
-            "position": {
-                "x": 2294,
-                "y": 2690
-            }
-        }
-    },
-    "boomtheghost_inshop": {
+    "killthelord_inshop": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1180,55 +1227,47 @@
             }
         },
         "next": [
-            "[JumpBack]boomtheghost_claimshoprewards",
-            "boomtheghost_end"
+            "[JumpBack]killthelord_claimshoprewards",
+            "killthelord_end"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1655,
-                "y": 1699
+                "x": 1673,
+                "y": 2241
             }
         }
     },
-    "boomtheghost_into": {
+    "killthelord_into": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    762,
-                    426,
-                    289,
-                    243
+                    756,
+                    506,
+                    268,
+                    167
                 ],
                 "template": [
-                    "bigevent/boomtheghost/boomtheghost1.png",
-                    "bigevent/boomtheghost/boomtheghost2.png"
+                    "limitedevent/killthelord/killthelord.png"
                 ]
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    838,
-                    597,
-                    107,
-                    18
-                ]
-            }
+            "type": "Click"
         },
         "next": [
-            "boomtheghost_checkintoevent2",
-            "boomtheghost_into"
+            "killthelord_checkeventpage1",
+            "[JumpBack]killthelord_intofirst",
+            "killthelord_into"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 555,
-                "y": -198
+                "x": 368,
+                "y": 286
             }
         }
     },
-    "boomtheghost_into11": {
+    "killthelord_into11": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1247,17 +1286,17 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_startquickfight",
-            "boomtheghost_into11"
+            "killthelord_startquickfight",
+            "killthelord_into11"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4560,
-                "y": 536
+                "x": 3717,
+                "y": 1188
             }
         }
     },
-    "boomtheghost_into11event": {
+    "killthelord_into11event": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1277,23 +1316,24 @@
             "type": "Click"
         },
         "next": [
-            "[Anchor]anchor_boomtheghost_intofightpage"
+            "[Anchor]anchor_killthelord_intofightpage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9280,
-                "y": 298
+                "x": 8744,
+                "y": 905
             }
         }
     },
-    "boomtheghost_intocanintoevent": {
+    "killthelord_intocanintoevent": {
+        "max_hit": 5,
         "recognition": {
             "type": "Custom",
             "param": {
                 "custom_recognition": "userecodatebase",
                 "custom_recognition_param": {
                     "preprocess_scale": 3,
-                    "threshold": 0.8
+                    "threshold": 0.3
                 },
                 "roi": [
                     429,
@@ -1307,17 +1347,18 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_event1_cannot_re",
-            "boomtheghost_intofightpage"
+            "killthelord_event1_cannot_re",
+            "killthelord_intofightpage",
+            "killthelord_intocanintoevent"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4310,
-                "y": 17
+                "x": 3518,
+                "y": 658
             }
         }
     },
-    "boomtheghost_intochallenge": {
+    "killthelord_intochallenge": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1336,17 +1377,17 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_comfirmchallenge",
-            "boomtheghost_intochallenge"
+            "killthelord_comfirmchallenge",
+            "killthelord_intochallenge"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1578,
-                "y": 2435
+                "x": 1586,
+                "y": 2941
             }
         }
     },
-    "boomtheghost_intoerroreventstage": {
+    "killthelord_intoerroreventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1375,12 +1416,42 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 2320,
-                "y": 360
+                "x": 1554,
+                "y": 1230
             }
         }
     },
-    "boomtheghost_intofight": {
+    "killthelord_intoeventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    356,
+                    28,
+                    577,
+                    671
+                ],
+                "expected": [
+                    "Enter",
+                    "ENTER",
+                    "ENTE",
+                    "NTER",
+                    "Ente",
+                    "nter"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1555,
+                "y": 990
+            }
+        }
+    },
+    "killthelord_intofight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1399,19 +1470,19 @@
             "type": "Click"
         },
         "next": [
-            "[JumpBack]boomtheghost_noteam",
-            "boomtheghost_nochance2",
-            "boomtheghost_intofight",
-            "boomtheghost_stagestart"
+            "[JumpBack]killthelord_noteam",
+            "killthelord_nochance2",
+            "killthelord_intofight",
+            "killthelord_stagestart"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5878,
-                "y": 304
+                "x": 5024,
+                "y": 950
             }
         }
     },
-    "boomtheghost_intofightpage": {
+    "killthelord_intofightpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1426,53 +1497,52 @@
                 ]
             }
         },
-        "anchor": "anchor_boomtheghost_intofightpage",
+        "anchor": "anchor_killthelord_intofightpage",
         "next": [
-            "boomtheghost_startquickfight",
-            "boomtheghost_no_startquickfight"
+            "killthelord_startquickfight",
+            "killthelord_no_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4636,
-                "y": 193
+                "x": 3879,
+                "y": 847
             }
         }
     },
-    "boomtheghost_intoquickfight": {
+    "killthelord_intofirst": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    696,
-                    364,
-                    105,
-                    213
+                    1005,
+                    1,
+                    266,
+                    59
                 ],
-                "template": [
-                    "limitedevent/oldtales/oldtalesquickfight.png"
+                "expected": [
+                    "跳过"
                 ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 2869,
-                "y": -341
+                "x": 677,
+                "y": 201
             }
         }
     },
-    "boomtheghost_intoshop": {
+    "killthelord_intoshop": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    421,
-                    477,
-                    431,
-                    186
+                    331,
+                    1,
+                    579,
+                    717
                 ],
                 "expected": [
                     "商店"
@@ -1484,12 +1554,12 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1625,
-                "y": 2003
+                "x": 1667,
+                "y": 2644
             }
         }
     },
-    "boomtheghost_isfighting": {
+    "killthelord_isfighting": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1506,12 +1576,12 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6688,
-                "y": 577
+                "x": 5901,
+                "y": 1225
             }
         }
     },
-    "boomtheghost_item_count": {
+    "killthelord_item_count": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1528,16 +1598,16 @@
         },
         "inverse": true,
         "next": [
-            "boomtheghost_clearrecodatebase"
+            "killthelord_clearrecodatebase"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8360,
-                "y": 299
+                "x": 7503,
+                "y": 933
             }
         }
     },
-    "boomtheghost_jumpstory": {
+    "killthelord_jumpstory": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1558,12 +1628,25 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6663,
-                "y": 832
+                "x": 5876,
+                "y": 1480
             }
         }
     },
-    "boomtheghost_nextstage": {
+    "killthelord_mission": {
+        "max_hit": 1,
+        "next": [
+            "killthelord_checkmission1",
+            "killthelord_checkmission2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1102,
+                "y": 1588
+            }
+        }
+    },
+    "killthelord_nextstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1584,27 +1667,27 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_nochance1",
-            "boomtheghost_nextstage",
-            "[Anchor]boomtheghost_stagestart_anchor"
+            "killthelord_nochance1",
+            "killthelord_nextstage",
+            "[Anchor]killthelord_stagestart_anchor"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7025,
-                "y": 318
+                "x": 6238,
+                "y": 966
             }
         }
     },
-    "boomtheghost_nextstage_return": {
+    "killthelord_nextstage_return": {
         "max_hit": 5,
         "$__mpe_code": {
             "position": {
-                "x": 7028,
-                "y": 590
+                "x": 6241,
+                "y": 1238
             }
         }
     },
-    "boomtheghost_no_nextstage": {
+    "killthelord_no_nextstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1621,16 +1704,16 @@
         },
         "inverse": true,
         "next": [
-            "boomtheghost_finish"
+            "killthelord_finish"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7020,
-                "y": 800
+                "x": 6233,
+                "y": 1448
             }
         }
     },
-    "boomtheghost_no_startquickfight": {
+    "killthelord_no_startquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1647,16 +1730,16 @@
         },
         "inverse": true,
         "next": [
-            "boomtheghost_intofight"
+            "killthelord_intofight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5091,
-                "y": 485
+                "x": 4304,
+                "y": 1133
             }
         }
     },
-    "boomtheghost_nochance1": {
+    "killthelord_nochance1": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1672,16 +1755,16 @@
             }
         },
         "next": [
-            "boomtheghost_finish"
+            "killthelord_finish"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7321,
-                "y": 319
+                "x": 6534,
+                "y": 967
             }
         }
     },
-    "boomtheghost_nochance2": {
+    "killthelord_nochance2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1697,16 +1780,16 @@
             }
         },
         "next": [
-            "[Anchor]boomtheghostanchor"
+            "[Anchor]killthelordanchor"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6136,
-                "y": -36
+                "x": 5349,
+                "y": 612
             }
         }
     },
-    "boomtheghost_noquickfight": {
+    "killthelord_noquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1723,16 +1806,46 @@
             }
         },
         "next": [
-            "boomtheghost_intofight"
+            "killthelord_intofight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5344,
-                "y": 216
+                "x": 4633,
+                "y": 864
             }
         }
     },
-    "boomtheghost_noteam": {
+    "killthelord_normal": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    303,
+                    560,
+                    696,
+                    151
+                ],
+                "expected": [
+                    "NORMAL",
+                    "NORM",
+                    "RMAL",
+                    "NOR",
+                    "MAL"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 1929,
+                "y": 47
+            }
+        }
+    },
+    "killthelord_noteam": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1749,42 +1862,66 @@
             }
         },
         "next": [
-            "boomtheghost_addnikkes"
+            "killthelord_addnikkes"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6119,
-                "y": 1241
+                "x": 5332,
+                "y": 1889
             }
         }
     },
-    "boomtheghost_quickfight": {
-        "enabled": true,
-        "max_hit": 1,
-        "next": [
-            "boomtheghost_storyevent",
-            "[JumpBack]boomtheghost_choosestory"
-        ],
+    "killthelord_notopen": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    364,
+                    279,
+                    626,
+                    179
+                ],
+                "expected": [
+                    "解锁条件"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "$__mpe_code": {
             "position": {
-                "x": 1569,
-                "y": 51
+                "x": 1671,
+                "y": 58
             }
         }
     },
-    "boomtheghost_quickfight_checkdate": {
-        "max_hit": 1,
-        "next": [
-            "boomtheghost_textstory2"
-        ],
+    "killthelord_notopenstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    364,
+                    279,
+                    626,
+                    179
+                ],
+                "expected": [
+                    "解锁条件",
+                    "条件",
+                    "无法重复",
+                    "重复通关"
+                ]
+            }
+        },
         "$__mpe_code": {
             "position": {
-                "x": 1198,
-                "y": 126
+                "x": 2751,
+                "y": 33
             }
         }
     },
-    "boomtheghost_quickfightmax": {
+    "killthelord_quickfightmax": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1804,16 +1941,16 @@
         },
         "repeat": 3,
         "next": [
-            "boomtheghost_startquickfightmax"
+            "killthelord_startquickfightmax"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5501,
-                "y": -423
+                "x": 4714,
+                "y": 225
             }
         }
     },
-    "boomtheghost_quickfightmaxconfirm": {
+    "killthelord_quickfightmaxconfirm": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1835,105 +1972,16 @@
             "type": "Click"
         },
         "next": [
-            "[Anchor]boomtheghostanchor"
+            "[Anchor]killthelordanchor"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6101,
-                "y": -430
+                "x": 5314,
+                "y": 218
             }
         }
     },
-    "boomtheghost_rewards": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    1181,
-                    89,
-                    98,
-                    128
-                ],
-                "template": [
-                    "bigevent/boomtheghost/boomtheghost_event.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "boomtheghost_rewardsdaily"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1651,
-                "y": 1108
-            }
-        }
-    },
-    "boomtheghost_rewards2": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    1191,
-                    112,
-                    86,
-                    168
-                ],
-                "expected": [
-                    "任务"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "boomtheghost_rewardsdaily"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1654,
-                "y": 1387
-            }
-        }
-    },
-    "boomtheghost_rewardsdaily": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    451,
-                    589,
-                    377,
-                    93
-                ],
-                "expected": [
-                    "全部领取",
-                    "全部",
-                    "领取"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "repeat": 10,
-        "repeat_delay": 500,
-        "next": [
-            "boomtheghost_claimrewardsdailypage",
-            "boomtheghost_claimrewardsdaily"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1976,
-                "y": 1186
-            }
-        }
-    },
-    "boomtheghost_saveteam": {
+    "killthelord_saveteam": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1952,31 +2000,43 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_intofight"
+            "killthelord_intofight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8145,
-                "y": 1255
+                "x": 7358,
+                "y": 1903
             }
         }
     },
-    "boomtheghost_stagestart": {
-        "anchor": "boomtheghost_stagestart_anchor",
+    "killthelord_stage": {
+        "max_hit": 1,
+        "next": [
+            "killthelord_storyevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 963,
+                "y": 691
+            }
+        }
+    },
+    "killthelord_stagestart": {
+        "anchor": "killthelord_stagestart_anchor",
         "timeout": 40000,
         "next": [
-            "boomtheghost_checkfinish",
-            "[JumpBack]boomtheghost_isfighting",
-            "[JumpBack]boomtheghost_jumpstory"
+            "killthelord_checkfinish",
+            "[JumpBack]killthelord_isfighting",
+            "[JumpBack]killthelord_jumpstory"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6296,
-                "y": 306
+                "x": 5569,
+                "y": 952
             }
         }
     },
-    "boomtheghost_startquickfight": {
+    "killthelord_startquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1995,19 +2055,19 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_noquickfight",
-            "boomtheghost_quickfightmax",
-            "boomtheghost_nochance2",
-            "boomtheghost_startquickfight"
+            "killthelord_noquickfight",
+            "killthelord_quickfightmax",
+            "killthelord_nochance2",
+            "killthelord_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4988,
-                "y": 210
+                "x": 4307,
+                "y": 858
             }
         }
     },
-    "boomtheghost_startquickfightmax": {
+    "killthelord_startquickfightmax": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2027,54 +2087,16 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_quickfightmaxconfirm"
+            "killthelord_quickfightmaxconfirm"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5789,
-                "y": -409
+                "x": 5002,
+                "y": 239
             }
         }
     },
-    "boomtheghost_story2noopen": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    415,
-                    246,
-                    446,
-                    200
-                ],
-                "expected": [
-                    "后开放",
-                    "需要通关"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "boomtheghost_quickfight"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1732,
-                "y": -389
-            }
-        }
-    },
-    "boomtheghost_story2return": {
-        "max_hit": 3,
-        "$__mpe_code": {
-            "position": {
-                "x": 1713,
-                "y": -610
-            }
-        }
-    },
-    "boomtheghost_storyevent": {
+    "killthelord_storyevent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2090,18 +2112,18 @@
             }
         },
         "next": [
-            "boomtheghost_eventstage",
-            "[JumpBack]boomtheghost_intoeventstage",
-            "[JumpBack]boomtheghost_intoerroreventstage"
+            "killthelord_eventstage",
+            "[JumpBack]killthelord_intoeventstage",
+            "[JumpBack]killthelord_intoerroreventstage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1987,
-                "y": -50
+                "x": 1245,
+                "y": 674
             }
         }
     },
-    "boomtheghost_sweipdown": {
+    "killthelord_sweipdown": {
         "action": {
             "type": "Swipe",
             "param": {
@@ -2126,24 +2148,24 @@
         },
         "repeat": 2,
         "next": [
-            "boomtheghost_into11event"
+            "killthelord_into11event"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8971,
-                "y": 281
+                "x": 8379,
+                "y": 899
             }
         }
     },
-    "boomtheghost_swipe": {
+    "killthelord_swipestage_re": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    6,
-                    102,
-                    39
+                    3,
+                    3,
+                    75,
+                    52
                 ],
                 "expected": [
                     "活动关卡"
@@ -2154,52 +2176,17 @@
             "type": "Swipe",
             "param": {
                 "begin": [
-                    588,
-                    544,
-                    124,
-                    27
+                    578,
+                    566,
+                    170,
+                    46
                 ],
                 "end": [
                     [
-                        597,
-                        241,
-                        97,
-                        35
-                    ]
-                ],
-                "duration": [
-                    500
-                ]
-            }
-        },
-        "repeat": 3,
-        "repeat_delay": 500,
-        "next": [
-            "boomtheghost_checklatestevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2881,
-                "y": 51
-            }
-        }
-    },
-    "boomtheghost_swipelittle": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    600,
-                    520,
-                    80,
-                    1
-                ],
-                "end": [
-                    [
-                        608,
-                        440,
-                        70,
-                        1
+                        575,
+                        247,
+                        136,
+                        52
                     ]
                 ],
                 "end_hold": [
@@ -2207,138 +2194,14 @@
                 ]
             }
         },
+        "repeat": 3,
         "next": [
-            "boomtheghost_intocanintoevent"
+            "killthelord_checklatestevent"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5038,
-                "y": -376
-            }
-        }
-    },
-    "boomtheghost_textstory2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    459,
-                    569,
-                    69,
-                    12
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_story2noopen",
-            "boomtheghost_storyevent",
-            "boomtheghost_textstory2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1288,
-                "y": -388
-            }
-        }
-    },
-    "claimboomtheghost_claimrewards": {
-        "max_hit": 1,
-        "next": [
-            "claimboomtheghost_intoqiandao",
-            "[JumpBack]claimboomtheghost_qiandao"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1238,
-                "y": 517
-            }
-        }
-    },
-    "claimboomtheghost_intoqiandao": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    280,
-                    9,
-                    730,
-                    706
-                ],
-                "expected": [
-                    "全部领取"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "repeat": 5,
-        "repeat_delay": 500,
-        "next": [
-            "[Anchor]boomtheghostanchor"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1598,
-                "y": 472
-            }
-        }
-    },
-    "claimboomtheghost_qiandao": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    418,
-                    464,
-                    461,
-                    217
-                ],
-                "expected": [
-                    "签到印章",
-                    "签到印",
-                    "到印章"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 1599,
-                "y": 806
-            }
-        }
-    },
-    "boomtheghost_intoeventstage": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    356,
-                    28,
-                    577,
-                    671
-                ],
-                "expected": [
-                    "Enter",
-                    "ENTER",
-                    "ENTE",
-                    "NTER",
-                    "Ente",
-                    "nter",
-                    "剩余时间"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2314,
-                "y": 152
+                "x": 2204,
+                "y": 709
             }
         }
     }

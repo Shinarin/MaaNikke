@@ -8,6 +8,7 @@
 
 # ---- 放行要上传的内容 ----
 !.vscode/**
+!.kimi-code/**
 !agent/**
 !Assets/**
 !resource/**
@@ -18,8 +19,12 @@
 !README.md
 !LICENSE
 !.gitignore
+!AGENTS.md
 
 # ---- 放行目录内仍要排除的 ----
 __pycache__/
 *.py[cod]
 agent/.deps/
+
+# ---- 发版构建产物（文件夹与 zip 只留本地，不上传） ----
+MaaNikke-win-x86_64-v*/

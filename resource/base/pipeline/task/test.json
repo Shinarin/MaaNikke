@@ -1,338 +1,146 @@
 {
-    "11111": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "RotatedOCR",
-                "custom_recognition_param": {
-                    "expected": "挑战",
-                    "threshold": 0.7
-                },
-                "roi": [
-                    425,
-                    430,
-                    435,
-                    274
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "anchor": "testanchor",
-        "$__mpe_code": {
-            "position": {
-                "x": 8379,
-                "y": -471
-            }
-        }
-    },
     "$__mpe_config_test": {
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1781340739848,
+            "lastSyncTime": 1786018301528,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\test.json",
             "savedViewport": {
-                "x": -17036,
-                "y": -341,
-                "zoom": 2
+                "x": -6760,
+                "y": -507,
+                "zoom": 0.86
             },
             "filename": "test",
-            "version": "v1.6.1"
+            "version": "v1.7.4"
         }
     },
-    "$__mpe_anchor_testanchor_test": {
+    "$__mpe_external_killthelord_test": {
         "$__mpe_code": {
             "position": {
-                "x": 9439,
-                "y": -817
-            }
-        }
-    },
-    "act1": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    629,
-                    599,
-                    260,
-                    119
-                ],
-                "expected": [
-                    "进入战斗"
-                ]
-            }
-        },
-        "pre_wait_freezes": 1000,
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 9150,
-                "y": -1115
-            }
-        }
-    },
-    "act2": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "MarkStageCleared"
-            }
-        },
-        "next": [
-            "[Anchor]testanchor"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8806,
-                "y": -851
-            }
-        }
-    },
-    "reco1": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "NumberedTargetReco",
-                "custom_recognition_param": {
-                    "end": 12,
-                    "prefix": "1-",
-                    "start": 1
-                },
-                "roi": [
-                    325,
-                    127,
-                    690,
-                    482
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "act1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8807,
-                "y": -1137
-            }
-        }
-    },
-    "新建节点2": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    306,
-                    27,
-                    672,
-                    676
-                ],
-                "expected": [
-                    "商店"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 8313,
-                "y": -732
-            }
-        }
-    },
-    "新建节点3": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    304,
-                    20,
-                    676,
-                    690
-                ],
-                "expected": [
-                    "返回"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 8880,
-                "y": -583
+                "x": 8375,
+                "y": 1119
             }
         }
     },
     "test": {
         "next": [
-            "新建节点9"
+            "killthelord"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8336,
-                "y": 229
+                "x": 8124,
+                "y": 902
             }
         }
     },
-    "新建节点5": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    448,
-                    620,
-                    385,
-                    98
-                ],
-                "expected": [
-                    "妮姬"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "anchor": "_loopback",
-        "next": [
-            "新建节点6"
-        ],
+    "$__mpe_external_smallevent1_test": {
         "$__mpe_code": {
             "position": {
-                "x": 8663,
-                "y": -151
+                "x": 8677,
+                "y": 260
             }
         }
     },
-    "新建节点6": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "LoopBack",
-                "custom_action_param": {}
-            }
-        },
-        "next": [
-            "新建节点7"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8975,
-                "y": -136
-            }
-        }
-    },
-    "新建节点7": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    463,
-                    615,
-                    363,
-                    97
-                ],
-                "expected": [
-                    "招募"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 9274,
-                "y": -126
-            }
-        }
-    },
-    "新建节点9": {
+    "smallevent1_canintoevent_副本54": {
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "NumberedTargetReco",
+                "custom_recognition": "recodatebase",
                 "custom_recognition_param": {
-                    "prefix": "1-",
-                    "start": 1,
-                    "end": 12
-                }
+                    "threshold": 0.3,
+                    "preprocess_scale": 3,
+                    "action_node": "test_datebase_swipe"
+                },
+                "roi": [
+                    423,
+                    128,
+                    468,
+                    590
+                ]
             }
         },
+        "action": {
+            "type": "DoNothing"
+        },
+        "timeout": 60000,
+        "next": [
+            "smallevent1_intocanintoevent_副本55"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8682,
+                "y": 833
+            }
+        }
+    },
+    "test_datebase_swipe": {
         "action": {
             "type": "Swipe",
             "param": {
                 "begin": [
-                    820,
-                    545,
-                    56,
-                    32
+                    576,
+                    250,
+                    132,
+                    13
                 ],
                 "end": [
                     [
-                        839,
-                        244,
-                        100,
-                        36
+                        553,
+                        587,
+                        225,
+                        17
                     ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        }
+    },
+    "smallevent1_intocanintoevent_副本55": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "userecodatebase",
+                "custom_recognition_param": {
+                    "threshold": 0.3,
+                    "preprocess_scale": 3
+                },
+                "roi": [
+                    429,
+                    127,
+                    428,
+                    592
                 ]
             }
         },
-        "anchor": "_loopback",
-        "next": [
-            "新建节点10"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8701,
-                "y": 199
-            }
-        }
-    },
-    "新建节点10": {
         "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "LoopBack",
-                "custom_action_param": {
-                    "max_loops": 3
-                }
-            }
+            "type": "Click"
         },
-        "next": [
-            "新建节点11"
-        ],
         "$__mpe_code": {
             "position": {
-                "x": 9079,
-                "y": 261
+                "x": 9009,
+                "y": 909
             }
         }
     },
-    "新建节点11": {
+    "新建节点33": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "GetMarkStage"
+                    "1-11"
                 ]
             }
         },
+        "action": {
+            "type": "Click"
+        },
         "$__mpe_code": {
             "position": {
-                "x": 9435,
-                "y": 275
+                "x": 9059,
+                "y": 1260
             }
         }
     }

@@ -2,10 +2,11 @@
 maanikke_agent 启动入口
 
 用法:
-    python main.py <socket_id> [socket_id=<socket_id>] [instance_id=...] [instance_name=...]
+    python main.py <socket_id>
 
-    GUI 实际会同时传位置参数和 key=value 参数（key=value 在后），
-    解析规则：优先取 socket_id= 前缀的值，其次取第一个位置参数。
+    MFAA 实际 argv 只有位置参数 socket_id（实证见 logs/ 中 agent stdout 的
+    sys.argv 打印）；实例信息经 MFA_INSTANCE_ID / MFA_INSTANCE_NAME / PI_*
+    环境变量传递。解析仍兼容 socket_id= 前缀形式（防御性，适配其他 Client）。
 
 运行流程:
     1. 设定 CWD → 项目根目录
@@ -204,7 +205,7 @@ _CUSTOM_DEPS = {
     "Pillow": {
         "import_name": "PIL",
         "pip_name": "Pillow",
-        "used_by": "RotatedOCR（旋转文字识别）",
+        "used_by": "RotatedOCR / recodatebase / userecodatebase（图像处理）",
     },
     # 后续如有新依赖在此追加，格式相同
     # "opencv-python": {
@@ -298,10 +299,10 @@ def main():
     print(f"[maanikke] sys.argv = {sys.argv}", flush=True)
 
     # --- 从命令行获取 socket_id（MAA 主进程传入的 IPC 标识） ---
-    # GUI 实际传参格式:
-    #   python -u main.py <id> socket_id=<id> instance_id=default instance_name=配置 1
-    # 不能用 sys.argv[-1]（会取到 instance_name=...）：
-    # 优先取 socket_id= 前缀的值，其次取第一个位置参数（兼容旧调用方式）。
+    # MFAA 实际传参: python -u main.py <id>（仅位置参数 socket_id，已实证）；
+    # GUI 日志 "Agent 启动命令：... socket_id=<id> instance_id=..." 中的
+    # key=value 部分只是日志展示，不在 argv 中。
+    # 保留 socket_id= 前缀解析作为兼容兜底（其他 Client 可能以此形式传参）。
     socket_id = ""
     for arg in sys.argv[1:]:
         if arg.startswith("socket_id="):

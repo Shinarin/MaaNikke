@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1785078773775,
+            "lastSyncTime": 1786018303064,
             "isModifiedExternally": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\bigevent.json",
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\bigevent.json",
             "savedViewport": {
-                "x": -1898,
-                "y": 131,
-                "zoom": 1
+                "x": -427,
+                "y": -76,
+                "zoom": 0.51
             },
             "filename": "bigevent",
             "version": "v1.7.4"
@@ -78,6 +78,31 @@
             "position": {
                 "x": 3501,
                 "y": -197
+            }
+        }
+    },
+    "bigevent_cantinto11": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    418,
+                    362,
+                    431,
+                    245
+                ],
+                "expected": [
+                    "Repeat",
+                    "peat",
+                    "Repe"
+                ]
+            }
+        },
+        "inverse": true,
+        "$__mpe_code": {
+            "position": {
+                "x": 3200,
+                "y": 639
             }
         }
     },
@@ -211,6 +236,49 @@
             }
         }
     },
+    "bigevent_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "bigevent_rewards",
+            "bigevent_rewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1286,
+                "y": 599
+            }
+        }
+    },
+    "bigevent_claimrewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    525,
+                    313,
+                    273,
+                    320
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "bigevent_rewardsend"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2296,
+                "y": 580
+            }
+        }
+    },
     "bigevent_clickhard": {
         "action": {
             "type": "Click",
@@ -260,6 +328,44 @@
             }
         }
     },
+    "bigevent_into": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    762,
+                    426,
+                    289,
+                    243
+                ],
+                "template": [
+                    "bigevent/beautyfullshot/beautyfullshot_into.png",
+                    "bigevent/beautyfullshot/beautyfullshot_into2.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    838,
+                    597,
+                    107,
+                    18
+                ]
+            }
+        },
+        "next": [
+            "bigevent_checkintoevent2",
+            "bigevent_into"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 555,
+                "y": -198
+            }
+        }
+    },
     "bigevent_into11": {
         "recognition": {
             "type": "OCR",
@@ -292,6 +398,70 @@
             "position": {
                 "x": 3183,
                 "y": 139
+            }
+        }
+    },
+    "bigevent_into11_retry": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 3199,
+                "y": 429
+            }
+        }
+    },
+    "bigevent_intoeventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    356,
+                    28,
+                    577,
+                    671
+                ],
+                "expected": [
+                    "Enter",
+                    "剩余时间"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2318,
+                "y": 301
+            }
+        }
+    },
+    "bigevent_intoquickfight": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    696,
+                    364,
+                    105,
+                    213
+                ],
+                "template": [
+                    "limitedevent/oldtales/oldtalesquickfight.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "bigevent_intoquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2869,
+                "y": -341
             }
         }
     },
@@ -471,6 +641,65 @@
             }
         }
     },
+    "bigevent_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "endbigevent_quickfight",
+            "bigevent_quickfightmax",
+            "bigevent_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3509,
+                "y": 145
+            }
+        }
+    },
+    "bigevent_startquickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    525,
+                    323,
+                    59
+                ],
+                "expected": [
+                    "进行战斗",
+                    "战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "startbigevent_quickfightmaxconfirm"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4119,
+                "y": 188
+            }
+        }
+    },
     "bigevent_storyevent": {
         "recognition": {
             "type": "OCR",
@@ -618,49 +847,6 @@
             }
         }
     },
-    "bigevent_claimrewards": {
-        "max_hit": 1,
-        "next": [
-            "bigevent_rewards",
-            "bigevent_rewards2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1286,
-                "y": 599
-            }
-        }
-    },
-    "bigevent_claimrewardsdaily": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    525,
-                    313,
-                    273,
-                    320
-                ],
-                "expected": [
-                    "点击领取奖励",
-                    "点击领取",
-                    "领取奖励"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "bigevent_rewardsend"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2296,
-                "y": 580
-            }
-        }
-    },
     "endbigevent_quickfight": {
         "recognition": {
             "type": "OCR",
@@ -678,158 +864,6 @@
             "position": {
                 "x": 3810,
                 "y": -46
-            }
-        }
-    },
-    "bigevent_into": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    762,
-                    426,
-                    289,
-                    243
-                ],
-                "template": [
-                    "bigevent/beautyfullshot/beautyfullshot_into.png",
-                    "bigevent/beautyfullshot/beautyfullshot_into2.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    838,
-                    597,
-                    107,
-                    18
-                ]
-            }
-        },
-        "next": [
-            "bigevent_checkintoevent2",
-            "bigevent_into"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 555,
-                "y": -198
-            }
-        }
-    },
-    "bigevent_intoeventstage": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    356,
-                    28,
-                    577,
-                    671
-                ],
-                "expected": [
-                    "Enter",
-                    "剩余时间"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2318,
-                "y": 301
-            }
-        }
-    },
-    "bigevent_intoquickfight": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    696,
-                    364,
-                    105,
-                    213
-                ],
-                "template": [
-                    "limitedevent/oldtales/oldtalesquickfight.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "next": [
-            "bigevent_intoquickfight"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2869,
-                "y": -341
-            }
-        }
-    },
-    "bigevent_startquickfight": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    649,
-                    574,
-                    221,
-                    87
-                ],
-                "expected": [
-                    "快速战斗"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "endbigevent_quickfight",
-            "bigevent_quickfightmax",
-            "bigevent_startquickfight"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3509,
-                "y": 145
-            }
-        }
-    },
-    "bigevent_startquickfightmax": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    479,
-                    525,
-                    323,
-                    59
-                ],
-                "expected": [
-                    "进行战斗",
-                    "战斗"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "startbigevent_quickfightmaxconfirm"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4119,
-                "y": 188
             }
         }
     },
@@ -862,40 +896,6 @@
             "position": {
                 "x": 4434,
                 "y": 175
-            }
-        }
-    },
-    "bigevent_cantinto11": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    418,
-                    362,
-                    431,
-                    245
-                ],
-                "expected": [
-                    "Repeat",
-                    "peat",
-                    "Repe"
-                ]
-            }
-        },
-        "inverse": true,
-        "$__mpe_code": {
-            "position": {
-                "x": 3200,
-                "y": 639
-            }
-        }
-    },
-    "bigevent_into11_retry": {
-        "max_hit": 5,
-        "$__mpe_code": {
-            "position": {
-                "x": 3199,
-                "y": 429
             }
         }
     }
