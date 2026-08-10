@@ -3,23 +3,23 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1781479313182,
+            "lastSyncTime": 1786362489864,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\climbtower.json",
             "savedViewport": {
-                "x": -1142,
-                "y": 587,
-                "zoom": 0.25
+                "x": -7718,
+                "y": 1326,
+                "zoom": 0.87
             },
             "filename": "climbtower",
-            "version": "v1.6.1"
+            "version": "v1.7.6"
         }
     },
     "$__mpe_anchor_choosetoweranchor2_climbtower": {
         "$__mpe_code": {
             "position": {
-                "x": 10697,
-                "y": -216
+                "x": 11471,
+                "y": -179
             }
         }
     },
@@ -34,16 +34,16 @@
     "$__mpe_anchor_climbtower_intofight_anchor_climbtower": {
         "$__mpe_code": {
             "position": {
-                "x": 10813,
-                "y": -1423
+                "x": 10799,
+                "y": -1392
             }
         }
     },
     "$__mpe_external_backtohomepage_climbtower": {
         "$__mpe_code": {
             "position": {
-                "x": 10039,
-                "y": 28
+                "x": 10028,
+                "y": 117
             }
         }
     },
@@ -78,6 +78,18 @@
             ],
             "width": 372,
             "height": 1096
+        }
+    },
+    "1timescoptower": {
+        "enabled": true,
+        "next": [
+            "[Anchor]choosetoweranchor2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 11096,
+                "y": -226
+            }
         }
     },
     "arkclimbtower": {
@@ -187,8 +199,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7360,
-                "y": -1057
+                "x": 7372,
+                "y": -1082
             }
         }
     },
@@ -308,8 +320,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 10120,
-                "y": -708
+                "x": 10113,
+                "y": -712
             }
         }
     },
@@ -353,8 +365,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8836,
-                "y": -535
+                "x": 8830,
+                "y": -506
             }
         }
     },
@@ -387,7 +399,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 8510,
-                "y": -521
+                "y": -509
             }
         }
     },
@@ -425,7 +437,11 @@
                     122
                 ],
                 "expected": [
-                    "战败"
+                    "战败",
+                    "逾时",
+                    "OPERATIONFAILED",
+                    "FAILED",
+                    "OPERATION"
                 ]
             }
         },
@@ -438,8 +454,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9159,
-                "y": -451
+                "x": 9151,
+                "y": -470
             }
         }
     },
@@ -457,8 +473,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9430,
-                "y": -400
+                "x": 9420,
+                "y": -365
             }
         }
     },
@@ -482,6 +498,26 @@
             }
         }
     },
+    "closeclimbcoptower": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableNode",
+                "custom_action_param": {
+                    "node_name": "1timescoptower"
+                }
+            }
+        },
+        "next": [
+            "confirmfightend"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9088,
+                "y": -1098
+            }
+        }
+    },
     "closeclimbingtower": {
         "action": {
             "type": "Custom",
@@ -493,12 +529,13 @@
             }
         },
         "next": [
-            "[Anchor]choosetoweranchor2"
+            "1timescoptower",
+            "backtohomepage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 10398,
-                "y": -266
+                "x": 10753,
+                "y": -234
             }
         }
     },
@@ -595,8 +632,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 10479,
-                "y": -1476
+                "x": 10475,
+                "y": -1461
             }
         }
     },
@@ -617,8 +654,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 10128,
-                "y": -1454
+                "x": 10106,
+                "y": -1456
             }
         }
     },
@@ -764,6 +801,7 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
                 "x": 10947,
@@ -800,7 +838,51 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "expected": ""
+                "roi": [
+                    506,
+                    525,
+                    295,
+                    160
+                ],
+                "expected": [
+                    "剩余次数"
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]flashsale",
+            "exittower_flashsale",
+            "exittower_no_flashsale"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10114,
+                "y": -265
+            }
+        }
+    },
+    "exittower_flashsale": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    506,
+                    525,
+                    295,
+                    160
+                ],
+                "expected": [
+                    "剩余次数"
+                ]
             }
         },
         "action": {
@@ -816,8 +898,34 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 10126,
-                "y": -263
+                "x": 10450,
+                "y": -240
+            }
+        }
+    },
+    "exittower_no_flashsale": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    506,
+                    525,
+                    295,
+                    160
+                ],
+                "expected": [
+                    "剩余次数"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "closeclimbingtower"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10458,
+                "y": 43
             }
         }
     },
@@ -845,8 +953,16 @@
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    328,
+                    22,
+                    584,
+                    682
+                ],
                 "expected": [
-                    "同时出现的礼包"
+                    "同时出现的礼包",
+                    "SALE",
+                    "选择一个购买"
                 ]
             }
         },
@@ -856,8 +972,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 10361,
-                "y": -1859
+                "x": 10358,
+                "y": -1875
             }
         }
     },
@@ -941,8 +1057,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6809,
-                "y": -498
+                "x": 6807,
+                "y": -516
             }
         }
     },
@@ -971,8 +1087,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 10125,
-                "y": -1269
+                "x": 10110,
+                "y": -1235
             }
         }
     },
@@ -1080,12 +1196,12 @@
         "enabled": true,
         "next": [
             "isfullcoptower",
-            "confirmfightend"
+            "closeclimbcoptower"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9377,
-                "y": -1463
+                "x": 9375,
+                "y": -1458
             }
         }
     },
@@ -1134,8 +1250,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9646,
-                "y": -1724
+                "x": 9649,
+                "y": -1731
             }
         }
     },
@@ -1208,8 +1324,17 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9710,
-                "y": -438
+                "x": 9707,
+                "y": -439
+            }
+        }
+    },
+    "nochancefighttower_confirm": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 9784,
+                "y": -905
             }
         }
     },
@@ -1271,17 +1396,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8003,
-                "y": -1017
-            }
-        }
-    },
-    "nochancefighttower_confirm": {
-        "max_hit": 5,
-        "$__mpe_code": {
-            "position": {
-                "x": 9784,
-                "y": -905
+                "x": 8075,
+                "y": -1040
             }
         }
     }

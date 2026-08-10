@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786027454631,
+            "lastSyncTime": 1786316903941,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\boomtheghost.json",
             "savedViewport": {
-                "x": -1049,
-                "y": 136,
-                "zoom": 0.86
+                "x": -7280,
+                "y": -755,
+                "zoom": 1.74
             },
             "filename": "boomtheghost",
-            "version": "v1.7.4"
+            "version": "v1.7.5"
         }
     },
     "$__mpe_anchor_anchor_boomtheghost_checklatestevent_boomtheghost": {
@@ -81,7 +81,7 @@
                 "x": 1296,
                 "y": -544
             },
-            "content": "这里需要适配关卡1按钮",
+            "content": "这里需要适配关卡2按钮",
             "color": "yellow",
             "width": 200,
             "height": 160
@@ -90,8 +90,8 @@
     "$__mpe_sticker_boomtheghost_便签3_boomtheghost": {
         "$__mpe_code": {
             "position": {
-                "x": 1835,
-                "y": 333
+                "x": 1824,
+                "y": 339
             },
             "content": "这里需要适配关卡图标",
             "color": "yellow",
@@ -414,7 +414,7 @@
                 "custom_recognition": "recodatebase",
                 "custom_recognition_param": {
                     "preprocess_scale": 3,
-                    "threshold": 0.8
+                    "threshold": 0.3
                 },
                 "roi": [
                     423,
@@ -459,9 +459,6 @@
     },
     "boomtheghost_challenge": {
         "max_hit": 1,
-        "next": [
-            "boomtheghost_intochallenge"
-        ],
         "$__mpe_code": {
             "position": {
                 "x": 1261,
@@ -962,7 +959,8 @@
             }
         },
         "next": [
-            "boomtheghost_challenge"
+            "boomtheghost_intochallenge",
+            "boomtheghost_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -1293,7 +1291,7 @@
                 "custom_recognition": "userecodatebase",
                 "custom_recognition_param": {
                     "preprocess_scale": 3,
-                    "threshold": 0.8
+                    "threshold": 0.3
                 },
                 "roi": [
                     429,
@@ -1377,6 +1375,36 @@
             "position": {
                 "x": 2320,
                 "y": 360
+            }
+        }
+    },
+    "boomtheghost_intoeventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    356,
+                    28,
+                    577,
+                    671
+                ],
+                "expected": [
+                    "Enter",
+                    "ENTER",
+                    "ENTE",
+                    "NTER",
+                    "Ente",
+                    "nter"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2322,
+                "y": 140
             }
         }
     },
@@ -2308,37 +2336,6 @@
             "position": {
                 "x": 1599,
                 "y": 806
-            }
-        }
-    },
-    "boomtheghost_intoeventstage": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    356,
-                    28,
-                    577,
-                    671
-                ],
-                "expected": [
-                    "Enter",
-                    "ENTER",
-                    "ENTE",
-                    "NTER",
-                    "Ente",
-                    "nter",
-                    "剩余时间"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2314,
-                "y": 152
             }
         }
     }

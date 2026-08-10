@@ -28,7 +28,7 @@
 | Python 包 `maafw` | **==5.10.2**（锁定；已装任意 5.x 则复用） | `agent/main.py` 自动安装与校验 |
 | Python | ≥ 3.10（代码使用 `str \| None` 等 3.10+ 语法） | 启动时强制检查 |
 | Pillow | 任意近期版本 | 仅 RotatedOCR 使用，启动时自动装 |
-| interface.json | `interface_version: 2`，资源版本 2.1.4 | ProjectInterfaceV2 协议 |
+| interface.json | `interface_version: 2`，资源版本 2.1.7 | ProjectInterfaceV2 协议 |
 
 ## 3. 目录结构（开发相关部分）
 
@@ -270,7 +270,7 @@ class MyReco(CustomRecognition):
 | `override_pipeline({node: {k: v}})` | 覆盖节点参数；**影响整个任务**（context 是引用） |
 | `override_next(name, [next...])` | 改节点后继；传 `[]` = 掐断任务线（条件终止的惯用手法） |
 | `clone() -> Context` | 克隆独立上下文，override 只影响自身（重试场景关键） |
-| `get_anchor(name) -> str|None` / `set_anchor(name, node)` | 锚点 ↔ 节点名（v5.1+） |
+| `get_anchor(name) -> str|None` / `set_anchor(name, node)` | 锚点 ↔ 节点名（v5.1+）。锚点在节点执行动作后才注册（未执行不存在），同名锚点后执行的覆盖先执行的 |
 | `get_node_data(name) -> dict|None` | 读节点当前定义 |
 | `get_hit_count(name)` / `clear_hit_count(name)` | 节点命中计数读写（配合 max_hit） |
 | `tasker.controller` | 直接控制设备，如 `context.tasker.controller.post_click(x, y).wait()` |
@@ -294,7 +294,7 @@ class MyReco(CustomRecognition):
 | `CheckDate` | 按日期列表决定继续/掐断（可 inverse） | `dates: []`, `inverse` | — |
 | `RetryTask` | 子任务失败重试，每次 `context.clone()` 全新上下文 | `task`, `max_retry`, `fallback` | 文档内有完整接入教程（见该类 docstring） |
 | `DisableAnchorNode` | 禁用锚点当前指向的节点 | `anchor` | climbtower |
-| `LoopBack` | 循环回跳锚点 `_loopback` 标记的入口节点 N 次 | `max_loops` | smallevent1 |
+| `LoopBack` | 固定次数循环闸门：前 `max_loops` 次经过回跳 `_loopback` 锚点入口，第 N+1 次恢复自身 next 放行（完整用法见该类 docstring） | `max_loops` | 未接线（smallevent1/killthelord 的 hard_return 节点挂名但无 next 链引用、无 `_loopback` 锚点声明，当前不生效） |
 | `addrecodatebase` | 日期临时字段日部分 +1（唯独 1-12 改为 -1 得 1-11；缺省视为 1-1，+1 得 1-2） | 无 | — |
 | `clearrecodatebase` | 日期临时字段重置为默认值 1-1（重置非删除，不留空缺） | 无 | — |
 
@@ -307,11 +307,11 @@ class MyReco(CustomRecognition):
 
 **`recodatebase` / `userecodatebase`**：日期字段识别组合，经模块级"临时字段"（`_RECO_TEMP_STORE`，默认 `"1-1"`，模块加载即初始化、清除即重置为默认值，全程不留空缺）协作；+1 / 重置由 custom action `addrecodatebase` / `clearrecodatebase` 显式执行，三者共用 my_reco.py 的 `datebase_get/set/add/clear()` 辅助函数：
 - `recodatebase`：分两轮在节点 roi 内 OCR 扫描，**第 1 轮 1-12→1-6、第 2 轮 1-7→1-1**（1-7/1-6 边界重叠属刻意双保险）；每个字段两段式：先用原图识别 `triesperimage` 次（默认 5），未命中再用处理后图识别同样次数；命中即停止扫描并写入临时字段。第 1 轮全未命中则 `context.run_action(action_node)` 手动执行一次独立动作节点（如滑动刷新），重新截图扫第 2 轮；第 2 轮后无论命中与否都返回成功。**跳过 action 采用"扫描节点与动作节点分离"方案：pipeline 中本节点 action 固定写 DoNothing，刷新动作放进 `action_node` 参数指向的独立节点（不进 next 链）——全程零 override_pipeline，节点可无限次循环重入**（旧方案 override 为 DoNothing 会污染整个任务，循环重入时刷新失效，已废弃）。未配 `action_node` 时第 2 轮沿用旧图。参数：`threshold` / `triesperimage` / `action_node` / `post_action_wait` / `preprocess` / `preprocess_scale` / `binarize`。
-- `userecodatebase`：以临时字段为 expected 做 OCR，**只读不清除**（清除由 `clearrecodatebase` action 在 pipeline 显式执行）。**交替识别：每次 analyze 调用只用一张图识别一次，原图与处理后图逐次轮换；识别次数不设上限，未命中时由框架按节点 timeout 反复调用**（需自行在节点配置 timeout）。参数：`threshold` / `preprocess` / `preprocess_scale` / `binarize`。
+- `userecodatebase`：以识别字段为 expected 做 OCR：参数 `targetnode` 写了就只识别该字段（与临时字段无关），不写用临时字段；**只读不清除**（清除由 `clearrecodatebase` action 在 pipeline 显式执行）。**交替识别：每次 analyze 调用只用一张图识别一次，原图与处理后图逐次轮换；识别次数不设上限，未命中时由框架按节点 timeout 反复调用**（需自行在节点配置 timeout）。参数：`targetnode` / `threshold` / `preprocess` / `preprocess_scale` / `binarize`。
 
 两者共用 Pillow 前处理管线（`_preprocess_for_ocr`，默认开启）：**灰度 → LANCZOS 上采样 → autocontrast 对比度拉伸 → Otsu 二值化 + 自动反色**（深底浅字转黑字白底），目的是让数字/字母更醒目、抹掉背景干扰；每轮扫描只处理一次，命中 box 会 ÷缩放倍数映射回原图。Otsu 阈值为 numpy 实现（`_otsu_threshold`），不依赖 OpenCV。
 
-实测调参建议（默认参数为通用取向）：OCR 反而变差（字体渐变/描边被二值化吃掉）先试 `binarize: false`；漏识别降 `threshold`（如 0.7）；字特别小把 `preprocess_scale` 提到 3。
+实测调参建议（默认参数为通用取向）：OCR 反而变差（字体渐变/描边被二值化吃掉）先试 `binarize: false`；漏识别则再降 `threshold`（如 0.2）；字特别小把 `preprocess_scale` 提到 3。
 
 ### 10.3 Sinks（`custom/sink/my_sink.py`，4 个全注册）
 

@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1781278145487,
+            "lastSyncTime": 1786316585513,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\inquiryandgift.json",
             "savedViewport": {
-                "x": 476,
-                "y": -269,
+                "x": -1147,
+                "y": -252,
                 "zoom": 0.87
             },
             "filename": "inquiryandgift",
-            "version": "v1.6.1"
+            "version": "v1.7.5"
         }
     },
     "$__mpe_anchor_startinquirygift_inquiryandgift": {
@@ -185,8 +185,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2596,
-                "y": 615
+                "x": 2607,
+                "y": 601
             }
         }
     },
@@ -506,8 +506,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1895,
-                "y": 448
+                "x": 1906,
+                "y": 396
             }
         }
     },
@@ -559,8 +559,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2324,
-                "y": 450
+                "x": 2345,
+                "y": 406
             }
         }
     },
@@ -687,8 +687,9 @@
             "type": "Click"
         },
         "next": [
+            "highestaffinity",
             "checksendgift",
-            "highestaffinity"
+            "gift"
         ],
         "$__mpe_code": {
             "position": {

@@ -3,121 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786027578989,
+            "lastSyncTime": 1786361716182,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\killthelord.json",
             "savedViewport": {
-                "x": -2714,
-                "y": -516,
-                "zoom": 1.14
+                "x": -9506,
+                "y": -1042,
+                "zoom": 1.21
             },
             "filename": "killthelord",
-            "version": "v1.7.4"
-        }
-    },
-    "killthelord_addrecodatebase": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "addrecodatebase"
-            }
-        },
-        "next": [
-            "killthelord_swipelittle"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4021,
-                "y": 285
-            }
-        }
-    },
-    "killthelord_swipelittle": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    600,
-                    520,
-                    80,
-                    1
-                ],
-                "end": [
-                    [
-                        608,
-                        440,
-                        70,
-                        1
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "next": [
-            "killthelord_intocanintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4293,
-                "y": 266
-            }
-        }
-    },
-    "killthelord_clearrecodatebase": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "clearrecodatebase"
-            }
-        },
-        "next": [
-            "killthelord_sweipdown"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7904,
-                "y": 963
-            }
-        }
-    },
-    "killthelord_resweip": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    576,
-                    250,
-                    132,
-                    13
-                ],
-                "end": [
-                    [
-                        553,
-                        587,
-                        225,
-                        17
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 3130,
-                "y": 390
-            }
-        }
-    },
-    "$__mpe_anchor_anchor_killthelord_intofightpage_killthelord": {
-        "$__mpe_code": {
-            "position": {
-                "x": 9038,
-                "y": 979
-            }
+            "version": "v1.7.6"
         }
     },
     "$__mpe_anchor_anchor_killthelord_checklatestevent_killthelord": {
@@ -125,6 +20,14 @@
             "position": {
                 "x": 2476,
                 "y": 1053
+            }
+        }
+    },
+    "$__mpe_anchor_anchor_killthelord_intofightpage_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9008,
+                "y": 989
             }
         }
     },
@@ -246,13 +149,14 @@
             }
         },
         "inverse": true,
+        "timeout": 40000,
         "next": [
             "killthelord_into11"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2773,
-                "y": 1160
+                "x": 2796,
+                "y": 1162
             }
         }
     },
@@ -429,15 +333,32 @@
             }
         }
     },
+    "killthelord_addrecodatebase": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "addrecodatebase"
+            }
+        },
+        "next": [
+            "killthelord_swipelittle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4021,
+                "y": 285
+            }
+        }
+    },
     "killthelord_canintoevent": {
         "recognition": {
             "type": "Custom",
             "param": {
                 "custom_recognition": "recodatebase",
                 "custom_recognition_param": {
+                    "action_node": "killthelord_resweip",
                     "preprocess_scale": 3,
-                    "threshold": 0.3,
-                    "action_node": "killthelord_resweip"
+                    "threshold": 0.3
                 },
                 "roi": [
                     423,
@@ -483,8 +404,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2663,
-                "y": 2994
+                "x": 2652,
+                "y": 2937
             }
         }
     },
@@ -864,6 +785,23 @@
             }
         }
     },
+    "killthelord_clearrecodatebase": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clearrecodatebase"
+            }
+        },
+        "next": [
+            "killthelord_sweipdown"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7904,
+                "y": 963
+            }
+        }
+    },
     "killthelord_clickhard1": {
         "recognition": {
             "type": "OCR",
@@ -935,7 +873,9 @@
             }
         },
         "next": [
-            "killthelord_havechalengechance2"
+            "killthelord_havechalengechance",
+            "[JumpBack]killthelord_havechalengechance_return",
+            "backtohomepage"
         ],
         "$__mpe_code": {
             "position": {
@@ -1153,6 +1093,36 @@
             }
         }
     },
+    "killthelord_havechalengechance": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    399,
+                    168,
+                    474,
+                    538
+                ],
+                "expected": [
+                    "CHALLENGE STAGE",
+                    "CHALLENGE"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "killthelord_challengefight",
+            "killthelord_havechalengechance"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 2937
+            }
+        }
+    },
     "killthelord_havechalengechance1": {
         "recognition": {
             "type": "TemplateMatch",
@@ -1176,38 +1146,17 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 2331,
-                "y": 3268
+                "x": 2326,
+                "y": 3614
             }
         }
     },
-    "killthelord_havechalengechance2": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    399,
-                    168,
-                    474,
-                    538
-                ],
-                "expected": [
-                    "CHALLENGE STAGE",
-                    "CHALLENGE"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "killthelord_challengefight",
-            "killthelord_havechalengechance2"
-        ],
+    "killthelord_havechalengechance_return": {
+        "max_hit": 15,
         "$__mpe_code": {
             "position": {
-                "x": 2320,
-                "y": 2937
+                "x": 2319,
+                "y": 3215
             }
         }
     },
@@ -1269,16 +1218,17 @@
     },
     "killthelord_into11": {
         "recognition": {
-            "type": "OCR",
+            "type": "Custom",
             "param": {
+                "custom_recognition": "userecodatebase",
+                "custom_recognition_param": {
+                    "targetnode": "1-11"
+                },
                 "roi": [
                     431,
                     338,
                     422,
                     263
-                ],
-                "expected": [
-                    "1-11"
                 ]
             }
         },
@@ -1298,16 +1248,17 @@
     },
     "killthelord_into11event": {
         "recognition": {
-            "type": "OCR",
+            "type": "Custom",
             "param": {
+                "custom_recognition": "userecodatebase",
+                "custom_recognition_param": {
+                    "targetnode": "1-11"
+                },
                 "roi": [
                     421,
                     436,
                     444,
                     198
-                ],
-                "expected": [
-                    "1-11"
                 ]
             }
         },
@@ -1320,8 +1271,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8744,
-                "y": 905
+                "x": 8683,
+                "y": 927
             }
         }
     },
@@ -1602,8 +1553,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7503,
-                "y": 933
+                "x": 7531,
+                "y": 943
             }
         }
     },
@@ -1981,6 +1932,36 @@
             }
         }
     },
+    "killthelord_resweip": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    576,
+                    250,
+                    132,
+                    13
+                ],
+                "end": [
+                    [
+                        553,
+                        587,
+                        225,
+                        17
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 3130,
+                "y": 390
+            }
+        }
+    },
     "killthelord_saveteam": {
         "recognition": {
             "type": "OCR",
@@ -2147,13 +2128,47 @@
             }
         },
         "repeat": 2,
+        "timeout": 40000,
         "next": [
             "killthelord_into11event"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8379,
-                "y": 899
+                "x": 8365,
+                "y": 909
+            }
+        }
+    },
+    "killthelord_swipelittle": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    600,
+                    520,
+                    80,
+                    1
+                ],
+                "end": [
+                    [
+                        608,
+                        440,
+                        70,
+                        1
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "next": [
+            "killthelord_intocanintoevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4293,
+                "y": 266
             }
         }
     },

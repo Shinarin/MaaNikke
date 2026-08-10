@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786018301528,
+            "lastSyncTime": 1786361707692,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\test.json",
             "savedViewport": {
-                "x": -6760,
-                "y": -507,
-                "zoom": 0.86
+                "x": -7587,
+                "y": -386,
+                "zoom": 1
             },
             "filename": "test",
-            "version": "v1.7.4"
+            "version": "v1.7.6"
         }
     },
     "$__mpe_external_killthelord_test": {
@@ -20,17 +20,6 @@
             "position": {
                 "x": 8375,
                 "y": 1119
-            }
-        }
-    },
-    "test": {
-        "next": [
-            "killthelord"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8124,
-                "y": 902
             }
         }
     },
@@ -42,15 +31,40 @@
             }
         }
     },
+    "killthelord_into11_副本56": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "userecodatebase",
+                "custom_recognition_param": {
+                    "targetnode": "1-11"
+                },
+                "roi": [
+                    431,
+                    338,
+                    422,
+                    263
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8270,
+                "y": 546
+            }
+        }
+    },
     "smallevent1_canintoevent_副本54": {
         "recognition": {
             "type": "Custom",
             "param": {
                 "custom_recognition": "recodatebase",
                 "custom_recognition_param": {
-                    "threshold": 0.3,
                     "preprocess_scale": 3,
-                    "action_node": "test_datebase_swipe"
+                    "threshold": 0.3
                 },
                 "roi": [
                     423,
@@ -60,21 +74,6 @@
                 ]
             }
         },
-        "action": {
-            "type": "DoNothing"
-        },
-        "timeout": 60000,
-        "next": [
-            "smallevent1_intocanintoevent_副本55"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8682,
-                "y": 833
-            }
-        }
-    },
-    "test_datebase_swipe": {
         "action": {
             "type": "Swipe",
             "param": {
@@ -96,6 +95,16 @@
                     500
                 ]
             }
+        },
+        "timeout": 60000,
+        "next": [
+            "smallevent1_intocanintoevent_副本55"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8682,
+                "y": 833
+            }
         }
     },
     "smallevent1_intocanintoevent_副本55": {
@@ -104,8 +113,8 @@
             "param": {
                 "custom_recognition": "userecodatebase",
                 "custom_recognition_param": {
-                    "threshold": 0.3,
-                    "preprocess_scale": 3
+                    "preprocess_scale": 3,
+                    "threshold": 0.3
                 },
                 "roi": [
                     429,
@@ -125,6 +134,17 @@
             }
         }
     },
+    "test": {
+        "next": [
+            "killthelord_into11_副本56"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7935,
+                "y": 573
+            }
+        }
+    },
     "新建节点33": {
         "recognition": {
             "type": "OCR",
@@ -141,6 +161,22 @@
             "position": {
                 "x": 9059,
                 "y": 1260
+            }
+        }
+    },
+    "新建节点35": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8413,
+                "y": 900
             }
         }
     }

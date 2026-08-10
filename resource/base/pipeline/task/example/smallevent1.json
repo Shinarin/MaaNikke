@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786026908889,
+            "lastSyncTime": 1786110624759,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\smallevent1.json",
             "savedViewport": {
-                "x": -545,
-                "y": -406,
-                "zoom": 0.8
+                "x": -1837,
+                "y": -769,
+                "zoom": 0.65
             },
             "filename": "smallevent1",
             "version": "v1.7.4"
@@ -18,8 +18,8 @@
     "$__mpe_anchor_anchor_smallevent1_checklatestevent_smallevent1": {
         "$__mpe_code": {
             "position": {
-                "x": 2476,
-                "y": 1053
+                "x": 2474,
+                "y": 1097
             }
         }
     },
@@ -149,6 +149,7 @@
             }
         },
         "inverse": true,
+        "timeout": 40000,
         "next": [
             "smallevent1_into11"
         ],
@@ -332,42 +333,38 @@
             }
         }
     },
+    "smallevent1_addrecodatebase": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "addrecodatebase"
+            }
+        },
+        "next": [
+            "smallevent1_swipelittle"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3965,
+                "y": 293
+            }
+        }
+    },
     "smallevent1_canintoevent": {
         "recognition": {
             "type": "Custom",
             "param": {
                 "custom_recognition": "recodatebase",
                 "custom_recognition_param": {
+                    "action_node": "smallevent1_resweip",
                     "preprocess_scale": 3,
-                    "threshold": 0.8
+                    "threshold": 0.3
                 },
                 "roi": [
                     423,
                     128,
                     468,
                     590
-                ]
-            }
-        },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    576,
-                    250,
-                    132,
-                    13
-                ],
-                "end": [
-                    [
-                        553,
-                        587,
-                        225,
-                        17
-                    ]
-                ],
-                "end_hold": [
-                    500
                 ]
             }
         },
@@ -578,6 +575,7 @@
             }
         },
         "anchor": "anchor_smallevent1_checklatestevent",
+        "timeout": 60000,
         "next": [
             "smallevent1_12_no_end",
             "[JumpBack]smallevent1_12_no_end_return",
@@ -585,7 +583,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2470,
+                "x": 2471,
                 "y": 730
             }
         }
@@ -785,6 +783,23 @@
             "position": {
                 "x": 1985,
                 "y": 2240
+            }
+        }
+    },
+    "smallevent1_clearrecodatebase": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clearrecodatebase"
+            }
+        },
+        "next": [
+            "smallevent1_sweipdown"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7901,
+                "y": 971
             }
         }
     },
@@ -1057,8 +1072,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6996,
-                "y": 1297
+                "x": 7079,
+                "y": 1262
             }
         }
     },
@@ -1137,6 +1152,15 @@
             }
         }
     },
+    "smallevent1_havechalengechance2_return": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 2310,
+                "y": 3217
+            }
+        }
+    },
     "smallevent1_inshop": {
         "recognition": {
             "type": "OCR",
@@ -1195,16 +1219,15 @@
     },
     "smallevent1_into11": {
         "recognition": {
-            "type": "OCR",
+            "type": "Custom",
             "param": {
+                "custom_recognition": "serecodatebase",
+                "custom_recognition_param": "{field\": \"1-11\"}",
                 "roi": [
                     431,
                     338,
                     422,
                     263
-                ],
-                "expected": [
-                    "1-11"
                 ]
             }
         },
@@ -1224,16 +1247,15 @@
     },
     "smallevent1_into11event": {
         "recognition": {
-            "type": "OCR",
+            "type": "Custom",
             "param": {
+                "custom_recognition": "serecodatebase",
+                "custom_recognition_param": "{field\": \"1-11\"}",
                 "roi": [
                     421,
                     436,
                     444,
                     198
-                ],
-                "expected": [
-                    "1-11"
                 ]
             }
         },
@@ -1258,7 +1280,7 @@
                 "custom_recognition": "userecodatebase",
                 "custom_recognition_param": {
                     "preprocess_scale": 3,
-                    "threshold": 0.8
+                    "threshold": 0.3
                 },
                 "roi": [
                     429,
@@ -1362,8 +1384,7 @@
                     "ENTE",
                     "NTER",
                     "Ente",
-                    "nter",
-                    "剩余时间"
+                    "nter"
                 ]
             }
         },
@@ -1741,36 +1762,6 @@
             }
         }
     },
-    "smallevent1_normal": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    303,
-                    560,
-                    696,
-                    151
-                ],
-                "expected": [
-                    "NORMAL",
-                    "NORM",
-                    "RMAL",
-                    "NOR",
-                    "MAL"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "repeat": 5,
-        "$__mpe_code": {
-            "position": {
-                "x": 1929,
-                "y": 47
-            }
-        }
-    },
     "smallevent1_noteam": {
         "recognition": {
             "type": "OCR",
@@ -1842,8 +1833,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 2751,
-                "y": 33
+                "x": 1924,
+                "y": 59
             }
         }
     },
@@ -1904,6 +1895,36 @@
             "position": {
                 "x": 5314,
                 "y": 218
+            }
+        }
+    },
+    "smallevent1_resweip": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    576,
+                    250,
+                    132,
+                    13
+                ],
+                "end": [
+                    [
+                        553,
+                        587,
+                        225,
+                        17
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 3124,
+                "y": 385
             }
         }
     },
@@ -2073,6 +2094,7 @@
             }
         },
         "repeat": 2,
+        "timeout": 40000,
         "next": [
             "smallevent1_into11event"
         ],
@@ -2080,6 +2102,39 @@
             "position": {
                 "x": 8185,
                 "y": 930
+            }
+        }
+    },
+    "smallevent1_swipelittle": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    600,
+                    520,
+                    80,
+                    1
+                ],
+                "end": [
+                    [
+                        608,
+                        440,
+                        70,
+                        1
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "next": [
+            "smallevent1_intocanintoevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4251,
+                "y": 273
             }
         }
     },
@@ -2129,82 +2184,6 @@
             "position": {
                 "x": 2204,
                 "y": 709
-            }
-        }
-    },
-    "smallevent1_clearrecodatebase": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "clearrecodatebase"
-            }
-        },
-        "next": [
-            "smallevent1_sweipdown"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7901,
-                "y": 971
-            }
-        }
-    },
-    "smallevent1_addrecodatebase": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "addrecodatebase"
-            }
-        },
-        "next": [
-            "smallevent1_swipelittle"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3965,
-                "y": 293
-            }
-        }
-    },
-    "smallevent1_swipelittle": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    600,
-                    520,
-                    80,
-                    1
-                ],
-                "end": [
-                    [
-                        608,
-                        440,
-                        70,
-                        1
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "next": [
-            "smallevent1_intocanintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4251,
-                "y": 273
-            }
-        }
-    },
-    "smallevent1_havechalengechance2_return": {
-        "max_hit": 5,
-        "$__mpe_code": {
-            "position": {
-                "x": 2310,
-                "y": 3217
             }
         }
     }

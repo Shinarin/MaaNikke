@@ -3,22 +3,22 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1785364707872,
+            "lastSyncTime": 1786362039026,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
             "savedViewport": {
-                "x": 405,
-                "y": 876,
-                "zoom": 0.66
+                "x": 1195,
+                "y": 638,
+                "zoom": 0.36
             },
             "filename": "claimpassreward",
-            "version": "v1.7.4"
+            "version": "v1.7.6"
         }
     },
     "$__mpe_anchor_claimpassreward_anchor_claimpassreward": {
         "$__mpe_code": {
             "position": {
-                "x": 2476,
+                "x": 2750,
                 "y": -879
             }
         }
@@ -44,10 +44,14 @@
                 "template": [
                     "exchange.png"
                 ],
+                "method": 3,
                 "threshold": [
                     0.7
                 ]
             }
+        },
+        "action": {
+            "type": "Click"
         },
         "next": [
             "[JumpBack]2pass_click",
@@ -102,7 +106,7 @@
         }
     },
     "2pass_click": {
-        "max_hit": 3,
+        "max_hit": 5,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -116,7 +120,7 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 446,
+                "x": 430,
                 "y": -1063
             }
         }
@@ -135,16 +139,16 @@
                     "3pass.png"
                 ],
                 "threshold": [
-                    0.7
+                    0.8
                 ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 2000,
+        "rate_limit": 1000,
         "next": [
-            "[JumpBack]3pass_open",
+            "3pass_open",
             "[JumpBack]3pass_click",
             "[JumpBack]checkexchangepass_return",
             "backtohomepage"
@@ -188,12 +192,44 @@
         },
         "timeout": 10000,
         "next": [
+            "3pass_claim_resent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 740,
+                "y": -778
+            }
+        }
+    },
+    "3pass_claim_resent": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "3pass_claim_return"
+                    ],
+                    "strict": false
+                }
+            }
+        },
+        "next": [
             "clickpasstask"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 748,
-                "y": -780
+                "x": 989,
+                "y": -708
+            }
+        }
+    },
+    "3pass_claim_return": {
+        "max_hit": 20,
+        "$__mpe_code": {
+            "position": {
+                "x": 755,
+                "y": -401
             }
         }
     },
@@ -209,10 +245,12 @@
                 ],
                 "template": [
                     "3pass.png"
+                ],
+                "threshold": [
+                    0.8
                 ]
             }
         },
-        "pre_wait_freezes": 2000,
         "action": {
             "type": "Click"
         },
@@ -237,13 +275,15 @@
                     "3passopen.png"
                 ],
                 "threshold": [
-                    0.8
+                    0.9
                 ]
             }
         },
         "timeout": 10000,
         "next": [
-            "3pass_claim"
+            "3pass_claim",
+            "[JumpBack]3pass_claim_return",
+            "backtohomepage"
         ],
         "$__mpe_code": {
             "position": {
@@ -424,7 +464,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1286,
+                "x": 1573,
                 "y": -957
             }
         }
@@ -455,8 +495,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1868,
-                "y": -955
+                "x": 2128,
+                "y": -960
             }
         }
     },
@@ -496,7 +536,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1573,
+                "x": 1846,
                 "y": -930
             }
         }
@@ -524,7 +564,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1008,
+                "x": 1281,
                 "y": -928
             }
         }
@@ -556,14 +596,15 @@
                 ]
             }
         },
-        "repeat": 2,
+        "repeat": 5,
+        "repeat_delay": 200,
         "next": [
             "[Anchor]claimpassreward_anchor"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2140,
-                "y": -951
+                "x": 2397,
+                "y": -958
             }
         }
     }

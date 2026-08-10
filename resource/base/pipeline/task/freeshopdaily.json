@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1781277194097,
+            "lastSyncTime": 1786316050530,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\freeshopdaily.json",
             "savedViewport": {
-                "x": 1773,
-                "y": 1223,
-                "zoom": 1.32
+                "x": 514,
+                "y": 795,
+                "zoom": 0.53
             },
             "filename": "freeshopdaily",
-            "version": "v1.6.1"
+            "version": "v1.7.5"
         }
     },
     "$__mpe_anchor_checkinmallanchor1_freeshopdaily": {
@@ -82,10 +82,10 @@
                 "checkinarenashop",
                 "confirmjjcshopping",
                 "confirmjjcshopping2",
+                "confirmjjcshopping3",
                 "endcheckinarenashop",
                 "endcheckinarenashop_return",
-                "intoarenashop",
-                "confirmjjcshopping3"
+                "intoarenashop"
             ],
             "width": 2451,
             "height": 1640
@@ -102,6 +102,7 @@
                 "checkinscrapshop",
                 "confirmscrapshopping",
                 "confirmscrapshopping2",
+                "confirmscrapshopping3",
                 "endcheckinscrapshop",
                 "endcheckinscrapshop_return",
                 "intoscrapshop",
@@ -110,8 +111,7 @@
                 "scrapshopmax2",
                 "scrapshopredeyes1h",
                 "scrapshopredeyes2h",
-                "scrapshopstart",
-                "confirmscrapshopping3"
+                "scrapshopstart"
             ],
             "width": 2437,
             "height": 1172
@@ -215,7 +215,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 1615,
-                "y": -1118
+                "y": -1100
             }
         }
     },
@@ -578,6 +578,31 @@
             }
         }
     },
+    "bodytagshopping3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    401,
+                    233,
+                    469,
+                    279
+                ],
+                "expected": [
+                    "不足",
+                    "资金不足",
+                    "道具不足"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1453,
+                "y": -97
+            }
+        }
+    },
     "bodytagshoppping": {
         "recognition": {
             "type": "OCR",
@@ -858,7 +883,8 @@
         "post_wait_freezes": 1000,
         "next": [
             "[JumpBack]0zuanpay",
-            "0zuanpayend2"
+            "0zuanpayend2",
+            "confirmfreeshoprefresh"
         ],
         "$__mpe_code": {
             "position": {
@@ -924,6 +950,31 @@
             }
         }
     },
+    "confirmjjcshopping3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    401,
+                    233,
+                    469,
+                    279
+                ],
+                "expected": [
+                    "不足",
+                    "资金不足",
+                    "道具不足"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1665,
+                "y": 779
+            }
+        }
+    },
     "confirmscrapshopping": {
         "recognition": {
             "type": "OCR",
@@ -978,6 +1029,31 @@
             "position": {
                 "x": 1835,
                 "y": 2200
+            }
+        }
+    },
+    "confirmscrapshopping3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    401,
+                    233,
+                    469,
+                    279
+                ],
+                "expected": [
+                    "不足",
+                    "资金不足",
+                    "道具不足"
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1835,
+                "y": 2496
             }
         }
     },
@@ -1052,15 +1128,16 @@
             "type": "Click",
             "param": {
                 "target": [
-                    73,
-                    319,
-                    166,
-                    15
+                    77,
+                    323,
+                    159,
+                    9
                 ]
             }
         },
         "next": [
-            "confirmfreeshoprefresh"
+            "confirmfreeshoprefresh",
+            "freeshoprefresh"
         ],
         "$__mpe_code": {
             "position": {
@@ -1393,81 +1470,6 @@
             "position": {
                 "x": -178,
                 "y": 2084
-            }
-        }
-    },
-    "confirmjjcshopping3": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    401,
-                    233,
-                    469,
-                    279
-                ],
-                "expected": [
-                    "不足",
-                    "资金不足",
-                    "道具不足"
-                ]
-            }
-        },
-        "post_wait_freezes": 1000,
-        "$__mpe_code": {
-            "position": {
-                "x": 1665,
-                "y": 779
-            }
-        }
-    },
-    "confirmscrapshopping3": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    401,
-                    233,
-                    469,
-                    279
-                ],
-                "expected": [
-                    "不足",
-                    "资金不足",
-                    "道具不足"
-                ]
-            }
-        },
-        "post_wait_freezes": 1000,
-        "$__mpe_code": {
-            "position": {
-                "x": 1835,
-                "y": 2496
-            }
-        }
-    },
-    "bodytagshopping3": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    401,
-                    233,
-                    469,
-                    279
-                ],
-                "expected": [
-                    "不足",
-                    "资金不足",
-                    "道具不足"
-                ]
-            }
-        },
-        "post_wait_freezes": 1000,
-        "$__mpe_code": {
-            "position": {
-                "x": 1453,
-                "y": -97
             }
         }
     }

@@ -469,7 +469,7 @@ class RecoDateBase(CustomRecognition):
 
     ── 自定义参数（custom_recognition_param） ──
     {
-        "threshold": 0.8,          // 可选，OCR 置信度，默认 0.8
+        "threshold": 0.3,          // 可选，OCR 置信度，默认 0.3
         "triesperimage": 5,        // 可选，每个字段每张图的 OCR 次数，默认 5
         "action_node": "xxx_swipe",// 可选，首轮未命中时手动执行的独立动作节点名
         "post_action_wait": 1000,  // 可选，手动 action 后等待毫秒数，默认 1000
@@ -483,7 +483,7 @@ class RecoDateBase(CustomRecognition):
     ── 实测建议 ──
     默认参数为通用取向。游戏里实测时：
     1. 若 OCR 反而变差（如字体带渐变/描边被二值化吃掉），先试 "binarize": false
-    2. 漏识别则降 threshold（如 0.7）
+    2. 漏识别则再降 threshold（如 0.2）
     3. 字特别小可把 preprocess_scale 提到 3
 
     ── Pipeline JSON ──
@@ -517,7 +517,7 @@ class RecoDateBase(CustomRecognition):
     ) -> CustomRecognition.AnalyzeResult:
         # ── 1. 解析参数 ──
         params = parse_params(argv.custom_recognition_param)
-        threshold = float(params.get("threshold", 0.8))
+        threshold = float(params.get("threshold", 0.3))
         tries_per_image = max(1, int(params.get("triesperimage", 5)))
         action_node = str(params.get("action_node", "")).strip()
         post_action_wait = int(params.get("post_action_wait", 1000))
@@ -600,8 +600,10 @@ class RecoDateBase(CustomRecognition):
 @AgentServer.custom_recognition("userecodatebase")
 class UseRecoDateBase(CustomRecognition):
     """
-    以临时字段（recodatebase 写入，默认 "1-1"）为 expected 在 roi 内做 OCR。
-    只读识别，命中后不清除临时字段；+1 / 清除由 custom action
+    以识别字段为 expected 在 roi 内做 OCR：参数 targetnode 写了就只识别该字段
+    （与临时字段无关，如 targetnode="1-11" 时即使临时字段是 1-6 也识别 1-11）；
+    不写则用临时字段（recodatebase 写入，默认 "1-1"）。
+    只读识别，命中后不清除临时字段；+1 / 重置由 custom action
     addrecodatebase / clearrecodatebase 在 pipeline 中显式执行。
 
     ── 识别方式 ──
@@ -612,7 +614,8 @@ class UseRecoDateBase(CustomRecognition):
 
     ── 自定义参数（custom_recognition_param） ──
     {
-        "threshold": 0.8,          // 可选，OCR 置信度，默认 0.8
+        "targetnode": "",          // 可选，指定识别字段（如 "1-11"），与临时字段无关；不写用临时字段
+        "threshold": 0.3,          // 可选，OCR 置信度，默认 0.3
         "preprocess": true,        // 可选，OCR 前图像前处理总开关，默认 true
         "preprocess_scale": 2,     // 可选，前处理上采样倍数，默认 2
         "binarize": true           // 可选，前处理是否 Otsu 二值化+自动反色，默认 true
@@ -645,11 +648,16 @@ class UseRecoDateBase(CustomRecognition):
         argv: CustomRecognition.AnalyzeArg,
     ) -> CustomRecognition.AnalyzeResult:
         params = parse_params(argv.custom_recognition_param)
-        threshold = float(params.get("threshold", 0.8))
+        threshold = float(params.get("threshold", 0.3))
         preprocess = bool(params.get("preprocess", True))
         preprocess_scale = int(params.get("preprocess_scale", 2))
         binarize = bool(params.get("binarize", True))
-        expected = datebase_get()
+        # ── 识别字段：targetnode 参数优先（与临时字段无关），否则用临时字段 ──
+        expected = str(params.get("targetnode", "")).strip()
+        expected_from = "指定字段"
+        if not expected:
+            expected = datebase_get()
+            expected_from = "临时字段"
 
         # ── 裁剪 ROI ──
         clamped = _clamp_roi(argv.image, argv.roi)
@@ -672,17 +680,17 @@ class UseRecoDateBase(CustomRecognition):
         else:
             img_for_ocr, scale = roi_crop, 1
 
-        # ── OCR 识别临时字段 ──
+        # ── OCR 识别目标字段 ──
         box = _run_ocr(context, img_for_ocr, expected, threshold)
         if box is None:
-            print(f"[userecodatebase] 未命中({src}): {expected}")
+            print(f"[userecodatebase] 未命中({src}, {expected_from}): {expected}")
             return CustomRecognition.AnalyzeResult(box=None, detail={})
 
         # ── 命中：只读，不清除临时字段（清除由 clearrecodatebase action 负责） ──
-        print(f"[userecodatebase] 命中({src}) {expected}")
+        print(f"[userecodatebase] 命中({src}, {expected_from}) {expected}")
         # 处理后图的 box 需 ÷scale 还原，原图 scale=1 不受影响 → +ROI 偏移映射回原图
         return CustomRecognition.AnalyzeResult(
             box=(int(box.x / scale + x), int(box.y / scale + y),
                  int(box.w / scale), int(box.h / scale)),
-            detail={"matched": expected, "source": src},
+            detail={"matched": expected, "source": src, "expected_from": expected_from},
         )

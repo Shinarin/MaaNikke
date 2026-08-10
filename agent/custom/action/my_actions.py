@@ -562,25 +562,59 @@ class DisableAnchorNode(CustomAction):
 @AgentServer.custom_action("LoopBack")
 class LoopBack(CustomAction):
     """
-    循环回跳：max_loops 次内跳回入口，耗尽后继续 next。
+    固定次数循环闸门：流程每经过本节点一次计一次数，前 max_loops 次把流程
+    回跳到锚点 `_loopback` 标记的入口节点，第 max_loops+1 次恢复自身 next 放行。
 
-    【唯一配置】入口节点加一行 `"anchor": "_loopback"`
-    其他什么都不用写。
+    【用途】"无脑固定刷 N 遍"的场景（如活动困难关刷满次数再走后续流程）。
+    与原生 max_hit 的区别：max_hit 数"识别命中次数"、耗满后该节点被跳过属
+    被动退出，适合"条件还在就继续"的条件循环；LoopBack 数"经过次数"、主动
+    override_next 改路，与画面识别无关，适合固定次数循环。
 
-    ── Pipeline JSON ──
+    【次数语义】max_loops 是"回跳次数"而非总次数：循环体共执行 max_loops+1
+    遍（初始 1 遍 + 回跳 N 遍）。想刷 2 次关卡就写 max_loops: 1。
+
+    【跳转目标不在参数里】
+    - 回跳目标 = 声明了 "anchor": "_loopback" 的节点（get_anchor 反查）；
+    - 放行去向 = 本节点自己的 next（首次经过时自动保存，放行时恢复；不配
+      next 则放行即掐断任务线）。
+    换任务复用时只需把 anchor 挪到新入口节点，本节点一个字不用改。
+
+    【配置三步】
+    1. 循环入口节点加一行 "anchor": "_loopback"（其余不变）；
+    2. 循环体末尾放本节点，配 max_loops 和放行后的 next；
+    3. 循环体最后一环的 next 指向本节点，接进链。
+
+    ── Pipeline JSON（新版嵌套格式）──
     "my_entry": {
         "anchor": "_loopback",
-        "recognition": "OCR",
-        "expected": "确认",
-        "action": "Click",
-        "next": ["loop_check"]
+        "recognition": { "type": "OCR", "param": { "expected": "确认" } },
+        "action": { "type": "Click" },
+        "next": ["loop_body"]
     },
     "loop_check": {
-        "action": "Custom",
-        "custom_action": "LoopBack",
-        "custom_action_param": { "max_loops": 3 },
-        "next": ["下一个任务"]
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "LoopBack",
+                "custom_action_param": { "max_loops": 1 }
+            }
+        },
+        "next": ["循环结束后的节点"]
     }
+
+    【锚点语义（官方 3.1 协议）】
+    - 锚点在节点"识别命中并执行动作后"才注册（无论动作成败），没执行过就不存在；
+    - 多节点可声明同名锚点，后执行的覆盖先执行的。
+    因此 `_loopback` 必须只给唯一的入口节点——循环路径上的其他节点若也声明，
+    会把锚点抢过去，回跳目标被悄悄换掉。
+
+    【注意】
+    - 计数器/保存的 next 是类变量，任务中途停止会残留半截状态；每次跑任务是
+      新 agent 进程，实际无碍。
+    - max_loops 传非数字会抛 ValueError 导致节点失败。
+    - 现状（本项目）：smallevent1_hard_return / killthelord_hard_return 挂着本
+      action，但没有任何 next 链引用这两个节点，且全资源无节点声明 _loopback
+      ——当前不会执行；即使执行也只会打印警告空转。要启用按上面三步接线即可。
     """
 
     _counters: dict[str, int] = {}
