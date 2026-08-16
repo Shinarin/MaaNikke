@@ -10,6 +10,7 @@ from importlib import import_module
 # ============================================================
 RECO_MODULES = (
     "my_reco",  # ← 用户自定义 reco 文件
+    "stagenum",  # ← 关卡号识别（STAGE LIST 1-N）
 )
 
 

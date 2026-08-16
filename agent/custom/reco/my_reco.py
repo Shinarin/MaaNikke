@@ -236,9 +236,11 @@ def _map_to_original(
     # 将文字中心平移到旋转中心原点 → 反方向旋转 → 再平移到裁剪图中心
     dx = rcx - rot_cx
     dy = rcy - rot_cy
-    rad_neg = math.radians(-angle)
-    cx_crop = dx * math.cos(rad_neg) - dy * math.sin(rad_neg) + crop_cx
-    cy_crop = dx * math.sin(rad_neg) + dy * math.cos(rad_neg) + crop_cy
+    # PIL rotate(angle) 是视觉逆时针；y 向下坐标系下"旋转图→裁剪图"的逆映射为
+    # R(θ)ᵀ = [[cosθ, -sinθ], [sinθ, cosθ]]，θ 取 angle 本身（取反会把坐标镜像到另一侧）
+    rad = math.radians(angle)
+    cx_crop = dx * math.cos(rad) - dy * math.sin(rad) + crop_cx
+    cy_crop = dx * math.sin(rad) + dy * math.cos(rad) + crop_cy
 
     # ── 3. +ROI 偏移：裁剪图 → 原始截图 ──
     ox = cx_crop + roi_x - rw / 2.0

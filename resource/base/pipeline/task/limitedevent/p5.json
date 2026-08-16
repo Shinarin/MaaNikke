@@ -1,32 +1,21 @@
 {
-    "$__mpe_config_boomtheghost": {
+    "$__mpe_config_p5": {
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786638328735,
+            "lastSyncTime": 1786853500174,
             "isModifiedExternally": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\boomtheghost.json",
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\p5.json",
             "savedViewport": {
-                "x": -1837,
-                "y": -33,
-                "zoom": 0.7
+                "x": -999,
+                "y": -465,
+                "zoom": 1.06
             },
-            "filename": "boomtheghost",
+            "filename": "p5",
             "version": "v1.7.6"
         }
     },
-    "boomtheghost_error": {
-        "next": [
-            "[Anchor]boomtheghostanchor"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4344,
-                "y": 1000
-            }
-        }
-    },
-    "$__mpe_anchor_anchor_boomtheghost_checklatestevent_boomtheghost": {
+    "$__mpe_anchor_anchor_p5_checklatestevent_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 3249,
@@ -34,7 +23,7 @@
             }
         }
     },
-    "$__mpe_anchor_anchor_boomtheghost_intofightpage_boomtheghost": {
+    "$__mpe_anchor_anchor_p5_intofightpage_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 9624,
@@ -42,15 +31,15 @@
             }
         }
     },
-    "$__mpe_anchor_boomtheghost_stagestart_anchor_boomtheghost": {
+    "$__mpe_anchor_p5_stagestart_anchor_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 7469,
-                "y": 813
+                "x": 7282,
+                "y": 190
             }
         }
     },
-    "$__mpe_anchor_boomtheghostanchor_boomtheghost": {
+    "$__mpe_anchor_p5anchor_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 8283,
@@ -58,7 +47,7 @@
             }
         }
     },
-    "$__mpe_external_backtohomepage_boomtheghost": {
+    "$__mpe_external_backtohomepage_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 1102,
@@ -66,7 +55,7 @@
             }
         }
     },
-    "$__mpe_external_limitedeventshop_claim_boomtheghost": {
+    "$__mpe_external_limitedeventshop_claim_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 2302,
@@ -74,7 +63,7 @@
             }
         }
     },
-    "$__mpe_sticker_boomtheghost_便签1_boomtheghost": {
+    "$__mpe_sticker_p5_便签1_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 562,
@@ -86,7 +75,7 @@
             "height": 160
         }
     },
-    "$__mpe_sticker_boomtheghost_便签2_boomtheghost": {
+    "$__mpe_sticker_p5_便签2_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 1296,
@@ -98,23 +87,23 @@
             "height": 160
         }
     },
-    "$__mpe_sticker_boomtheghost_便签3_boomtheghost": {
+    "$__mpe_sticker_p5_便签3_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 1824,
-                "y": 339
+                "x": 1827,
+                "y": 292
             },
-            "content": "这里需要适配关卡图标",
+            "content": "这里需要适配story2位置",
             "color": "yellow",
             "width": 200,
             "height": 160
         }
     },
-    "$__mpe_sticker_boomtheghost_便签4_boomtheghost": {
+    "$__mpe_sticker_p5_便签4_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 2614,
-                "y": -67
+                "x": 2619,
+                "y": 124
             },
             "content": "这里需要适配困难按钮",
             "color": "yellow",
@@ -122,7 +111,7 @@
             "height": 160
         }
     },
-    "$__mpe_sticker_boomtheghost_便签6_boomtheghost": {
+    "$__mpe_sticker_p5_便签6_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 1561,
@@ -134,11 +123,11 @@
             "height": 160
         }
     },
-    "$__mpe_sticker_boomtheghost_便签7_boomtheghost": {
+    "$__mpe_sticker_p5_便签7_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 1783,
-                "y": 817
+                "x": 1764,
+                "y": 815
             },
             "content": "这里需要适配活动任务",
             "color": "yellow",
@@ -146,7 +135,7 @@
             "height": 160
         }
     },
-    "$__mpe_sticker_boomtheghost_便签8_boomtheghost": {
+    "$__mpe_sticker_p5_便签8_p5": {
         "$__mpe_code": {
             "position": {
                 "x": 1503,
@@ -158,10 +147,80 @@
             "height": 160
         }
     },
-    "boomtheghost": {
-        "anchor": "boomtheghostanchor",
+    "claimp5_claimrewards": {
+        "max_hit": 1,
         "next": [
-            "boomtheghost_checkhomepage",
+            "claimp5_intoqiandao",
+            "[JumpBack]claimp5_qiandao"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1238,
+                "y": 517
+            }
+        }
+    },
+    "claimp5_intoqiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    280,
+                    9,
+                    730,
+                    706
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "[Anchor]p5anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1598,
+                "y": 472
+            }
+        }
+    },
+    "claimp5_qiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    716,
+                    510,
+                    141,
+                    129
+                ],
+                "expected": [
+                    "签到印章",
+                    "签到印",
+                    "到印章"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1599,
+                "y": 806
+            }
+        }
+    },
+    "p5": {
+        "anchor": "p5anchor",
+        "next": [
+            "p5_checkhomepage",
             "[JumpBack]backtohomepage"
         ],
         "$__mpe_code": {
@@ -171,24 +230,25 @@
             }
         }
     },
-    "boomtheghost_0item_count": {
+    "p5_0item_count": {
         "recognition": {
-            "type": "OCR",
+            "type": "Custom",
             "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
                 "roi": [
                     398,
                     3,
                     517,
                     715
-                ],
-                "expected": [
-                    "0/5",
-                    "015"
                 ]
             }
         },
         "next": [
-            "[Anchor]boomtheghostanchor"
+            "[Anchor]p5anchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -197,7 +257,7 @@
             }
         }
     },
-    "boomtheghost_12_have_end": {
+    "p5_12_have_end": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -213,22 +273,26 @@
                     "Denied",
                     "ACCESS DENIED",
                     "ACCESS",
-                    "DENIED"
+                    "DENIED",
+                    " \\?"
                 ]
             }
         },
         "inverse": true,
         "next": [
-            "boomtheghost_into11"
+            "p5_into11"
+        ],
+        "on_error": [
+            "p5_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3691,
-                "y": 529
+                "x": 3695,
+                "y": 543
             }
         }
     },
-    "boomtheghost_12_no_end": {
+    "p5_12_no_end": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -244,13 +308,17 @@
                     "Denied",
                     "ACCESS DENIED",
                     "ACCESS",
-                    "DENIED"
+                    "DENIED",
+                    " \\?"
                 ]
             }
         },
         "timeout": 40000,
         "next": [
-            "boomtheghost_canintoevent"
+            "p5_canintoevent"
+        ],
+        "on_error": [
+            "p5_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -259,219 +327,36 @@
             }
         }
     },
-    "boomtheghost_12_no_end_return": {
+    "p5_12_no_end_return": {
         "max_hit": 2,
         "$__mpe_code": {
             "position": {
-                "x": 3599,
-                "y": 162
+                "x": 3588,
+                "y": 158
             }
         }
     },
-    "boomtheghost_add1": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    65,
-                    415,
-                    27,
-                    40
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_add2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6700,
-                "y": 1242
-            }
-        }
-    },
-    "boomtheghost_add2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    155,
-                    404,
-                    35,
-                    54
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_add3"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6983,
-                "y": 1244
-            }
-        }
-    },
-    "boomtheghost_add3": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    260,
-                    403,
-                    25,
-                    65
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_add4"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7257,
-                "y": 1246
-            }
-        }
-    },
-    "boomtheghost_add4": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1186,
-                    414,
-                    29,
-                    51
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_add5"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7548,
-                "y": 1249
-            }
-        }
-    },
-    "boomtheghost_add5": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1083,
-                    403,
-                    38,
-                    75
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_saveteam"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7848,
-                "y": 1252
-            }
-        }
-    },
-    "boomtheghost_addnikkes": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "noteam.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "next": [
-            "boomtheghost_add1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6394,
-                "y": 1206
-            }
-        }
-    },
-    "boomtheghost_addrecodatebase": {
+    "p5_addrecodatebase": {
         "action": {
             "type": "Custom",
             "param": {
-                "custom_action": "addrecodatebase"
+                "custom_action": "stagematchdel"
             }
         },
         "next": [
-            "boomtheghost_swipelittle"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4752,
-                "y": -356
-            }
-        }
-    },
-    "boomtheghost_canintoevent": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "recodatebase",
-                "custom_recognition_param": {
-                    "preprocess_scale": 3,
-                    "threshold": 0.3
-                },
-                "roi": [
-                    423,
-                    128,
-                    468,
-                    590
-                ]
-            }
-        },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    576,
-                    250,
-                    132,
-                    13
-                ],
-                "end": [
-                    [
-                        553,
-                        587,
-                        225,
-                        17
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "timeout": 60000,
-        "next": [
-            "boomtheghost_intocanintoevent"
+            "p5_canintoevent"
         ],
         "on_error": [
-            "boomtheghost_error"
+            "p5_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3916,
-                "y": -25
+                "x": 4618,
+                "y": -284
             }
         }
     },
-    "boomtheghost_challengefight": {
+    "p5_challengefight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -489,10 +374,11 @@
         "action": {
             "type": "Click"
         },
+        "timeout": 60000,
         "next": [
-            "boomtheghost_checkchallengefinish",
-            "[JumpBack]boomtheghost_challengeisfighting",
-            "boomtheghost_challengefight"
+            "p5_checkchallengefinish",
+            "[JumpBack]p5_challengeisfighting",
+            "p5_challengefight"
         ],
         "$__mpe_code": {
             "position": {
@@ -501,7 +387,7 @@
             }
         }
     },
-    "boomtheghost_challengeisfighting": {
+    "p5_challengeisfighting": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -523,7 +409,7 @@
             }
         }
     },
-    "boomtheghost_checkchallengefinish": {
+    "p5_checkchallengefinish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -552,7 +438,7 @@
             }
         }
     },
-    "boomtheghost_checkfinish": {
+    "p5_checkfinish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -569,9 +455,9 @@
             }
         },
         "next": [
-            "boomtheghost_nextstage",
-            "[JumpBack]boomtheghost_nextstage_return",
-            "boomtheghost_no_nextstage"
+            "p5_nextstage",
+            "[JumpBack]p5_nextstage_return",
+            "p5_no_nextstage"
         ],
         "$__mpe_code": {
             "position": {
@@ -580,7 +466,7 @@
             }
         }
     },
-    "boomtheghost_checkhomepage": {
+    "p5_checkhomepage": {
         "recognition": {
             "type": "And",
             "param": {
@@ -591,10 +477,10 @@
             }
         },
         "next": [
-            "boomtheghost_checkintoevent",
-            "[JumpBack]boomtheghost_into",
-            "[JumpBack]boomtheghost_checkintoevent_skip",
-            "[JumpBack]boomtheghost_checkintoeventreturn",
+            "p5_checkintoevent",
+            "[JumpBack]p5_into",
+            "[JumpBack]p5_checkintoevent_skip",
+            "[JumpBack]p5_checkintoeventreturn",
             "backtohomepage"
         ],
         "$__mpe_code": {
@@ -604,7 +490,7 @@
             }
         }
     },
-    "boomtheghost_checkintoevent": {
+    "p5_checkintoevent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -621,9 +507,9 @@
             }
         },
         "next": [
-            "boomtheghost_quickfight_checkdate",
-            "claimboomtheghost_claimrewards",
-            "boomtheghost_claimrewards",
+            "p5_quickfight_checkdate",
+            "claimp5_claimrewards",
+            "p5_claimrewards",
             "backtohomepage"
         ],
         "$__mpe_code": {
@@ -633,7 +519,7 @@
             }
         }
     },
-    "boomtheghost_checkintoevent2": {
+    "p5_checkintoevent2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -657,7 +543,34 @@
             }
         }
     },
-    "boomtheghost_checkintoeventreturn": {
+    "p5_checkintoevent_skip": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1178,
+                    4,
+                    98,
+                    49
+                ],
+                "expected": [
+                    "Skip",
+                    "skip",
+                    "SKIP"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 573,
+                "y": 302
+            }
+        }
+    },
+    "p5_checkintoeventreturn": {
         "max_hit": 5,
         "recognition": {
             "type": "TemplateMatch",
@@ -681,12 +594,12 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 605,
-                "y": 634
+                "x": 574,
+                "y": 769
             }
         }
     },
-    "boomtheghost_checklatestevent": {
+    "p5_checklatestevent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -701,45 +614,39 @@
                 ]
             }
         },
-        "anchor": "anchor_boomtheghost_checklatestevent",
+        "anchor": "anchor_p5_checklatestevent",
         "next": [
-            "boomtheghost_12_no_end",
-            "[JumpBack]boomtheghost_12_no_end_return",
-            "boomtheghost_12_have_end"
+            "p5_12_no_end",
+            "[JumpBack]p5_12_no_end_return",
+            "p5_12_have_end"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3246,
-                "y": 67
+                "x": 3239,
+                "y": 82
             }
         }
     },
-    "boomtheghost_choosestory": {
-        "recognition": {
-            "type": "TemplateMatch",
+    "p5_choosestory": {
+        "action": {
+            "type": "Click",
             "param": {
-                "roi": [
-                    415,
-                    485,
-                    449,
-                    189
-                ],
-                "template": [
-                    "bigevent/boomtheghost/boomtheghost_story1.png"
+                "target": [
+                    487,
+                    543,
+                    46,
+                    12
                 ]
             }
         },
-        "action": {
-            "type": "Click"
-        },
         "$__mpe_code": {
             "position": {
-                "x": 1979,
-                "y": 239
+                "x": 1986,
+                "y": 205
             }
         }
     },
-    "boomtheghost_cjeckeventpage": {
+    "p5_cjeckeventpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -755,8 +662,8 @@
             }
         },
         "next": [
-            "boomtheghost_0item_count",
-            "boomtheghost_item_count"
+            "p5_0item_count",
+            "p5_item_count"
         ],
         "$__mpe_code": {
             "position": {
@@ -765,11 +672,11 @@
             }
         }
     },
-    "boomtheghost_claimrewards": {
+    "p5_claimrewards": {
         "max_hit": 1,
         "next": [
-            "boomtheghost_rewards",
-            "boomtheghost_rewards2"
+            "p5_rewards",
+            "p5_rewards2"
         ],
         "$__mpe_code": {
             "position": {
@@ -778,7 +685,7 @@
             }
         }
     },
-    "boomtheghost_claimrewardsdaily": {
+    "p5_claimrewardsdaily": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -799,8 +706,8 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_claimrewardsdailypage",
-            "boomtheghost_claimrewardsdaily"
+            "p5_claimrewardsdailypage",
+            "p5_claimrewardsdaily"
         ],
         "$__mpe_code": {
             "position": {
@@ -809,7 +716,7 @@
             }
         }
     },
-    "boomtheghost_claimrewardsdailypage": {
+    "p5_claimrewardsdailypage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -838,8 +745,8 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "boomtheghost_findshopbuttom",
-            "boomtheghost_claimrewardsdailypage"
+            "p5_findshopbuttom",
+            "p5_claimrewardsdailypage"
         ],
         "$__mpe_code": {
             "position": {
@@ -848,11 +755,11 @@
             }
         }
     },
-    "boomtheghost_claimshop": {
+    "p5_claimshop": {
         "max_hit": 1,
         "next": [
-            "boomtheghost_inshop",
-            "[JumpBack]boomtheghost_intoshop"
+            "p5_inshop",
+            "[JumpBack]p5_intoshop"
         ],
         "$__mpe_code": {
             "position": {
@@ -861,7 +768,7 @@
             }
         }
     },
-    "boomtheghost_claimshoprewards": {
+    "p5_claimshoprewards": {
         "max_hit": 1,
         "next": [
             "limitedeventshop_claim"
@@ -873,15 +780,15 @@
             }
         }
     },
-    "boomtheghost_clearrecodatebase": {
+    "p5_clearrecodatebase": {
         "action": {
             "type": "Custom",
             "param": {
-                "custom_action": "clearrecodatebase"
+                "custom_action": "stagematchclear"
             }
         },
         "next": [
-            "boomtheghost_sweipdown"
+            "p5_sweipdown"
         ],
         "$__mpe_code": {
             "position": {
@@ -890,7 +797,7 @@
             }
         }
     },
-    "boomtheghost_clickhard": {
+    "p5_clickhard2": {
         "action": {
             "type": "Click",
             "param": {
@@ -905,16 +812,16 @@
         "repeat": 5,
         "repeat_delay": 500,
         "next": [
-            "boomtheghost_swipe"
+            "p5_swipe"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2608,
-                "y": 85
+                "x": 2607,
+                "y": 221
             }
         }
     },
-    "boomtheghost_comfirmchallenge": {
+    "p5_comfirmchallenge": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -930,8 +837,8 @@
             }
         },
         "next": [
-            "boomtheghost_havechalengechance2",
-            "[JumpBack]boomtheghost_havechalengechance2_return",
+            "p5_havechalengechance2",
+            "[JumpBack]p5_havechalengechance2_return",
             "backtohomepage"
         ],
         "$__mpe_code": {
@@ -941,7 +848,7 @@
             }
         }
     },
-    "boomtheghost_end": {
+    "p5_end": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -965,8 +872,8 @@
             }
         },
         "next": [
-            "boomtheghost_intochallenge",
-            "boomtheghost_end"
+            "p5_intochallenge",
+            "p5_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -975,7 +882,18 @@
             }
         }
     },
-    "boomtheghost_event1_cannot_re": {
+    "p5_error": {
+        "next": [
+            "[Anchor]p5anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4265,
+                "y": 986
+            }
+        }
+    },
+    "p5_cannot_re": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -987,21 +905,25 @@
                 ],
                 "expected": [
                     "无法重复",
-                    "重复通关"
+                    "重复通关",
+                    "解锁条件"
                 ]
             }
         },
+        "on_error": [
+            "p5_error"
+        ],
         "next": [
-            "boomtheghost_addrecodatebase"
+            "p5_addrecodatebase"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4453,
-                "y": -367
+                "x": 4328,
+                "y": -301
             }
         }
     },
-    "boomtheghost_eventstage": {
+    "p5_eventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1017,7 +939,9 @@
             }
         },
         "next": [
-            "boomtheghost_clickhard"
+            "p5_clickhard",
+            "[JumpBack]p5_clickhard_return",
+            "p5_clickhard2"
         ],
         "$__mpe_code": {
             "position": {
@@ -1026,7 +950,7 @@
             }
         }
     },
-    "boomtheghost_findshopbuttom": {
+    "p5_findshopbuttom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1042,7 +966,7 @@
             }
         },
         "next": [
-            "boomtheghost_claimshop"
+            "p5_claimshop"
         ],
         "$__mpe_code": {
             "position": {
@@ -1051,7 +975,7 @@
             }
         }
     },
-    "boomtheghost_finish": {
+    "p5_finish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1072,9 +996,9 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_cjeckeventpage",
-            "[JumpBack]boomtheghost_jumpstory",
-            "[JumpBack]boomtheghost_finish_click"
+            "p5_cjeckeventpage",
+            "[JumpBack]p5_jumpstory",
+            "[JumpBack]p5_finish_click"
         ],
         "$__mpe_code": {
             "position": {
@@ -1083,7 +1007,7 @@
             }
         }
     },
-    "boomtheghost_finish_click": {
+    "p5_finish_click": {
         "action": {
             "type": "Click",
             "param": {
@@ -1097,40 +1021,12 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 7783,
-                "y": 649
+                "x": 7791,
+                "y": 565
             }
         }
     },
-    "boomtheghost_havechalengechance1": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "limitedevent/challengebasicticket.png",
-                    "limitedevent/challengepresummon.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    -80,
-                    0,
-                    0,
-                    0
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2302,
-                "y": 2982
-            }
-        }
-    },
-    "boomtheghost_havechalengechance2": {
+    "p5_havechalengechance2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1150,7 +1046,7 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_challengefight"
+            "p5_challengefight"
         ],
         "$__mpe_code": {
             "position": {
@@ -1159,7 +1055,7 @@
             }
         }
     },
-    "boomtheghost_havechalengechance2_return": {
+    "p5_havechalengechance2_return": {
         "max_hit": 5,
         "$__mpe_code": {
             "position": {
@@ -1168,7 +1064,7 @@
             }
         }
     },
-    "boomtheghost_inshop": {
+    "p5_inshop": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1184,8 +1080,8 @@
             }
         },
         "next": [
-            "[JumpBack]boomtheghost_claimshoprewards",
-            "boomtheghost_end"
+            "[JumpBack]p5_claimshoprewards",
+            "p5_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -1194,7 +1090,7 @@
             }
         }
     },
-    "boomtheghost_into": {
+    "p5_into": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1205,8 +1101,6 @@
                     243
                 ],
                 "template": [
-                    "bigevent/boomtheghost/boomtheghost1.png",
-                    "bigevent/boomtheghost/boomtheghost2.png",
                     "limitedevent/P5/p5.png"
                 ]
             }
@@ -1223,8 +1117,8 @@
             }
         },
         "next": [
-            "boomtheghost_checkintoevent2",
-            "boomtheghost_into"
+            "p5_checkintoevent2",
+            "p5_into"
         ],
         "$__mpe_code": {
             "position": {
@@ -1233,13 +1127,13 @@
             }
         }
     },
-    "boomtheghost_into11": {
+    "p5_into11": {
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "userecodatebase",
+                "custom_recognition": "stagenum",
                 "custom_recognition_param": {
-                    "targetnode": "1-11"
+                    "expected": "1-11"
                 },
                 "roi": [
                     431,
@@ -1253,32 +1147,32 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_startquickfight",
-            "boomtheghost_into11"
+            "p5_intofightpage",
+            "p5_into11"
         ],
         "on_error": [
-            "boomtheghost_error"
+            "p5_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4520,
-                "y": 535
+                "x": 4382,
+                "y": 536
             }
         }
     },
-    "boomtheghost_into11event": {
+    "p5_into11event": {
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "userecodatebase",
+                "custom_recognition": "stagenum",
                 "custom_recognition_param": {
-                    "targetnode": "1-11"
+                    "expected": "1-11"
                 },
                 "roi": [
-                    421,
-                    436,
-                    444,
-                    198
+                    431,
+                    338,
+                    422,
+                    263
                 ]
             }
         },
@@ -1287,53 +1181,16 @@
             "type": "Click"
         },
         "next": [
-            "[Anchor]anchor_boomtheghost_intofightpage"
-        ],
-        "on_error": [
-            "boomtheghost_error"
+            "[Anchor]anchor_p5_intofightpage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9280,
-                "y": 298
+                "x": 9281,
+                "y": 288
             }
         }
     },
-    "boomtheghost_intocanintoevent": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "userecodatebase",
-                "custom_recognition_param": {
-                    "preprocess_scale": 3,
-                    "threshold": 0.3
-                },
-                "roi": [
-                    429,
-                    127,
-                    428,
-                    592
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "boomtheghost_event1_cannot_re",
-            "boomtheghost_intofightpage"
-        ],
-        "on_error": [
-            "boomtheghost_error"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4310,
-                "y": 17
-            }
-        }
-    },
-    "boomtheghost_intochallenge": {
+    "p5_intochallenge": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1352,8 +1209,8 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_comfirmchallenge",
-            "boomtheghost_intochallenge"
+            "p5_comfirmchallenge",
+            "p5_intochallenge"
         ],
         "$__mpe_code": {
             "position": {
@@ -1362,7 +1219,7 @@
             }
         }
     },
-    "boomtheghost_intoerroreventstage": {
+    "p5_intoerroreventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1396,7 +1253,7 @@
             }
         }
     },
-    "boomtheghost_intoeventstage": {
+    "p5_intoeventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1426,7 +1283,7 @@
             }
         }
     },
-    "boomtheghost_intofight": {
+    "p5_intofight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1445,10 +1302,10 @@
             "type": "Click"
         },
         "next": [
-            "[JumpBack]boomtheghost_noteam",
-            "boomtheghost_nochance2",
-            "boomtheghost_intofight",
-            "boomtheghost_stagestart"
+            "[JumpBack]p5_noteam",
+            "p5_nochance2",
+            "p5_intofight",
+            "p5_stagestart"
         ],
         "$__mpe_code": {
             "position": {
@@ -1457,7 +1314,7 @@
             }
         }
     },
-    "boomtheghost_intofightpage": {
+    "p5_intofightpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1472,45 +1329,20 @@
                 ]
             }
         },
-        "anchor": "anchor_boomtheghost_intofightpage",
+        "anchor": "anchor_p5_intofightpage",
+        "post_wait_freezes": 500,
         "next": [
-            "boomtheghost_startquickfight",
-            "boomtheghost_no_startquickfight"
+            "p5_startquickfight",
+            "p5_no_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4636,
-                "y": 193
+                "x": 4689,
+                "y": 215
             }
         }
     },
-    "boomtheghost_intoquickfight": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    696,
-                    364,
-                    105,
-                    213
-                ],
-                "template": [
-                    "limitedevent/oldtales/oldtalesquickfight.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "$__mpe_code": {
-            "position": {
-                "x": 2869,
-                "y": -341
-            }
-        }
-    },
-    "boomtheghost_intoshop": {
+    "p5_intoshop": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1535,7 +1367,7 @@
             }
         }
     },
-    "boomtheghost_isfighting": {
+    "p5_isfighting": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1557,25 +1389,26 @@
             }
         }
     },
-    "boomtheghost_item_count": {
+    "p5_item_count": {
         "recognition": {
-            "type": "OCR",
+            "type": "Custom",
             "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
                 "roi": [
                     398,
                     3,
                     517,
                     715
-                ],
-                "expected": [
-                    "0/5",
-                    "015"
                 ]
             }
         },
         "inverse": true,
         "next": [
-            "boomtheghost_clearrecodatebase"
+            "p5_clearrecodatebase"
         ],
         "$__mpe_code": {
             "position": {
@@ -1584,7 +1417,7 @@
             }
         }
     },
-    "boomtheghost_jumpstory": {
+    "p5_jumpstory": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1610,7 +1443,7 @@
             }
         }
     },
-    "boomtheghost_nextstage": {
+    "p5_nextstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1631,9 +1464,9 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_nochance1",
-            "boomtheghost_nextstage",
-            "[Anchor]boomtheghost_stagestart_anchor"
+            "p5_nochance1",
+            "p5_nextstage",
+            "[Anchor]p5_stagestart_anchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1642,7 +1475,7 @@
             }
         }
     },
-    "boomtheghost_nextstage_return": {
+    "p5_nextstage_return": {
         "max_hit": 5,
         "$__mpe_code": {
             "position": {
@@ -1651,7 +1484,7 @@
             }
         }
     },
-    "boomtheghost_no_nextstage": {
+    "p5_no_nextstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1668,7 +1501,7 @@
         },
         "inverse": true,
         "next": [
-            "boomtheghost_finish"
+            "p5_finish"
         ],
         "$__mpe_code": {
             "position": {
@@ -1677,7 +1510,7 @@
             }
         }
     },
-    "boomtheghost_no_startquickfight": {
+    "p5_no_startquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1694,16 +1527,16 @@
         },
         "inverse": true,
         "next": [
-            "boomtheghost_intofight"
+            "p5_intofight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5091,
-                "y": 485
+                "x": 4996,
+                "y": 488
             }
         }
     },
-    "boomtheghost_nochance1": {
+    "p5_nochance1": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1719,16 +1552,16 @@
             }
         },
         "next": [
-            "boomtheghost_finish"
+            "p5_finish"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7321,
-                "y": 319
+                "x": 7333,
+                "y": 326
             }
         }
     },
-    "boomtheghost_nochance2": {
+    "p5_nochance2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1744,7 +1577,7 @@
             }
         },
         "next": [
-            "[Anchor]boomtheghostanchor"
+            "[Anchor]p5anchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1753,7 +1586,7 @@
             }
         }
     },
-    "boomtheghost_noquickfight": {
+    "p5_noquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1770,16 +1603,16 @@
             }
         },
         "next": [
-            "boomtheghost_intofight"
+            "p5_intofight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5344,
-                "y": 216
+                "x": 5398,
+                "y": 225
             }
         }
     },
-    "boomtheghost_noteam": {
+    "p5_noteam": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1796,7 +1629,7 @@
             }
         },
         "next": [
-            "boomtheghost_addnikkes"
+            "event_noteam"
         ],
         "$__mpe_code": {
             "position": {
@@ -1805,12 +1638,12 @@
             }
         }
     },
-    "boomtheghost_quickfight": {
+    "p5_quickfight": {
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "boomtheghost_storyevent",
-            "[JumpBack]boomtheghost_choosestory"
+            "p5_storyevent",
+            "[JumpBack]p5_choosestory"
         ],
         "$__mpe_code": {
             "position": {
@@ -1819,10 +1652,10 @@
             }
         }
     },
-    "boomtheghost_quickfight_checkdate": {
+    "p5_quickfight_checkdate": {
         "max_hit": 1,
         "next": [
-            "boomtheghost_textstory2"
+            "p5_textstory2"
         ],
         "$__mpe_code": {
             "position": {
@@ -1831,7 +1664,7 @@
             }
         }
     },
-    "boomtheghost_quickfightmax": {
+    "p5_quickfightmax": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1851,7 +1684,7 @@
         },
         "repeat": 3,
         "next": [
-            "boomtheghost_startquickfightmax"
+            "p5_startquickfightmax"
         ],
         "$__mpe_code": {
             "position": {
@@ -1860,7 +1693,7 @@
             }
         }
     },
-    "boomtheghost_quickfightmaxconfirm": {
+    "p5_quickfightmaxconfirm": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1882,7 +1715,7 @@
             "type": "Click"
         },
         "next": [
-            "[Anchor]boomtheghostanchor"
+            "[Anchor]p5anchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1891,7 +1724,7 @@
             }
         }
     },
-    "boomtheghost_rewards": {
+    "p5_rewards": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1902,7 +1735,7 @@
                     128
                 ],
                 "template": [
-                    "bigevent/boomtheghost/boomtheghost_event.png"
+                    "limitedevent/P5/p5_mission.png"
                 ]
             }
         },
@@ -1910,7 +1743,7 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_rewardsdaily"
+            "p5_rewardsdaily"
         ],
         "$__mpe_code": {
             "position": {
@@ -1919,7 +1752,7 @@
             }
         }
     },
-    "boomtheghost_rewards2": {
+    "p5_rewards2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1938,7 +1771,7 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_rewardsdaily"
+            "p5_rewardsdaily"
         ],
         "$__mpe_code": {
             "position": {
@@ -1947,7 +1780,7 @@
             }
         }
     },
-    "boomtheghost_rewardsdaily": {
+    "p5_rewardsdaily": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1970,8 +1803,8 @@
         "repeat": 10,
         "repeat_delay": 500,
         "next": [
-            "boomtheghost_claimrewardsdailypage",
-            "boomtheghost_claimrewardsdaily"
+            "p5_claimrewardsdailypage",
+            "p5_claimrewardsdaily"
         ],
         "$__mpe_code": {
             "position": {
@@ -1980,41 +1813,13 @@
             }
         }
     },
-    "boomtheghost_saveteam": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    999,
-                    612,
-                    280,
-                    104
-                ],
-                "expected": [
-                    "保存"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "boomtheghost_intofight"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8145,
-                "y": 1255
-            }
-        }
-    },
-    "boomtheghost_stagestart": {
-        "anchor": "boomtheghost_stagestart_anchor",
+    "p5_stagestart": {
+        "anchor": "p5_stagestart_anchor",
         "timeout": 40000,
         "next": [
-            "boomtheghost_checkfinish",
-            "[JumpBack]boomtheghost_isfighting",
-            "[JumpBack]boomtheghost_jumpstory"
+            "p5_checkfinish",
+            "[JumpBack]p5_isfighting",
+            "[JumpBack]p5_jumpstory"
         ],
         "$__mpe_code": {
             "position": {
@@ -2023,7 +1828,7 @@
             }
         }
     },
-    "boomtheghost_startquickfight": {
+    "p5_startquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2042,10 +1847,10 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_noquickfight",
-            "boomtheghost_quickfightmax",
-            "boomtheghost_nochance2",
-            "boomtheghost_startquickfight"
+            "p5_noquickfight",
+            "p5_quickfightmax",
+            "p5_nochance2",
+            "p5_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
@@ -2054,7 +1859,7 @@
             }
         }
     },
-    "boomtheghost_startquickfightmax": {
+    "p5_startquickfightmax": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2074,7 +1879,7 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_quickfightmaxconfirm"
+            "p5_quickfightmaxconfirm"
         ],
         "$__mpe_code": {
             "position": {
@@ -2083,7 +1888,7 @@
             }
         }
     },
-    "boomtheghost_story2noopen": {
+    "p5_story2noopen": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2103,25 +1908,16 @@
             "type": "Click"
         },
         "next": [
-            "boomtheghost_quickfight"
+            "p5_quickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1732,
-                "y": -389
+                "x": 1742,
+                "y": -395
             }
         }
     },
-    "boomtheghost_story2return": {
-        "max_hit": 3,
-        "$__mpe_code": {
-            "position": {
-                "x": 1713,
-                "y": -610
-            }
-        }
-    },
-    "boomtheghost_storyevent": {
+    "p5_storyevent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2137,9 +1933,9 @@
             }
         },
         "next": [
-            "boomtheghost_eventstage",
-            "[JumpBack]boomtheghost_intoeventstage",
-            "[JumpBack]boomtheghost_intoerroreventstage"
+            "p5_eventstage",
+            "[JumpBack]p5_intoeventstage",
+            "[JumpBack]p5_intoerroreventstage"
         ],
         "$__mpe_code": {
             "position": {
@@ -2148,7 +1944,7 @@
             }
         }
     },
-    "boomtheghost_sweipdown": {
+    "p5_sweipdown": {
         "action": {
             "type": "Swipe",
             "param": {
@@ -2173,7 +1969,10 @@
         },
         "repeat": 2,
         "next": [
-            "boomtheghost_into11event"
+            "p5_into11event"
+        ],
+        "on_error": [
+            "p5_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -2182,7 +1981,7 @@
             }
         }
     },
-    "boomtheghost_swipe": {
+    "p5_swipe": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2222,49 +2021,16 @@
         "repeat": 3,
         "repeat_delay": 500,
         "next": [
-            "boomtheghost_checklatestevent"
+            "p5_checklatestevent"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2881,
-                "y": 51
+                "x": 2898,
+                "y": 43
             }
         }
     },
-    "boomtheghost_swipelittle": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    600,
-                    520,
-                    80,
-                    1
-                ],
-                "end": [
-                    [
-                        608,
-                        440,
-                        70,
-                        1
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "next": [
-            "boomtheghost_intocanintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 5038,
-                "y": -376
-            }
-        }
-    },
-    "boomtheghost_textstory2": {
+    "p5_textstory2": {
         "action": {
             "type": "Click",
             "param": {
@@ -2277,9 +2043,9 @@
             }
         },
         "next": [
-            "boomtheghost_story2noopen",
-            "boomtheghost_storyevent",
-            "boomtheghost_textstory2"
+            "p5_story2noopen",
+            "p5_storyevent",
+            "p5_textstory2"
         ],
         "$__mpe_code": {
             "position": {
@@ -2288,31 +2054,70 @@
             }
         }
     },
-    "claimboomtheghost_claimrewards": {
-        "max_hit": 1,
+    "p5_canintoevent": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagematch",
+                "custom_recognition_param": {
+                    "expected": [
+                        "1-12",
+                        "1-11",
+                        "1-10",
+                        "1-9",
+                        "1-8",
+                        "1-7",
+                        "1-6",
+                        "1-5",
+                        "1-4",
+                        "1-3",
+                        "1-2",
+                        "1-1"
+                    ],
+                    "tries_per_field": 1,
+                    "action_node": "limitedevent_resweip"
+                },
+                "roi": [
+                    395,
+                    160,
+                    496,
+                    488
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
         "next": [
-            "claimboomtheghost_intoqiandao",
-            "[JumpBack]claimboomtheghost_qiandao"
+            "p5_cannot_re",
+            "p5_intofightpage",
+            "p5_canintoevent"
+        ],
+        "on_error": [
+            "p5_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1238,
-                "y": 517
+                "x": 3949,
+                "y": -176
             }
         }
     },
-    "claimboomtheghost_intoqiandao": {
+    "p5_clickhard": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    280,
-                    9,
-                    730,
-                    706
+                    429,
+                    529,
+                    449,
+                    182
                 ],
                 "expected": [
-                    "全部领取"
+                    "hard",
+                    "Hard",
+                    "HARD"
                 ]
             }
         },
@@ -2322,78 +2127,29 @@
         "repeat": 5,
         "repeat_delay": 500,
         "next": [
-            "[Anchor]boomtheghostanchor"
+            "p5_swipe"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1598,
-                "y": 472
+                "x": 2620,
+                "y": -403
             }
         }
     },
-    "claimboomtheghost_qiandao": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    418,
-                    464,
-                    461,
-                    217
-                ],
-                "expected": [
-                    "签到印章",
-                    "签到印",
-                    "到印章"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
+    "p5_clickhard_return": {
+        "max_hit": 5,
         "$__mpe_code": {
             "position": {
-                "x": 1599,
-                "y": 806
+                "x": 2618,
+                "y": -69
             }
         }
     },
-    "$__mpe_sticker_boomtheghost_便签9_boomtheghost": {
+    "$__mpe_external_event_noteam_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 3958,
-                "y": -140
-            },
-            "content": "修改关卡名",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "boomtheghost_checkintoevent_skip": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    1178,
-                    4,
-                    98,
-                    49
-                ],
-                "expected": [
-                    "Skip",
-                    "skip",
-                    "SKIP"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 581,
-                "y": 390
+                "x": 6434,
+                "y": 1290
             }
         }
     }

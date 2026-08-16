@@ -3,12 +3,12 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786361716182,
+            "lastSyncTime": 1786853280937,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\killthelord.json",
             "savedViewport": {
-                "x": -9506,
-                "y": -1042,
+                "x": 135,
+                "y": -338,
                 "zoom": 1.21
             },
             "filename": "killthelord",
@@ -153,6 +153,9 @@
         "next": [
             "killthelord_into11"
         ],
+        "on_error": [
+            "p5_error_副本5"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 2796,
@@ -184,6 +187,9 @@
         "next": [
             "killthelord_canintoevent"
         ],
+        "on_error": [
+            "p5_error_副本5"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 2803,
@@ -200,153 +206,23 @@
             }
         }
     },
-    "killthelord_add1": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    65,
-                    415,
-                    27,
-                    40
-                ]
-            }
-        },
-        "next": [
-            "killthelord_add2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 5913,
-                "y": 1890
-            }
-        }
-    },
-    "killthelord_add2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    155,
-                    404,
-                    35,
-                    54
-                ]
-            }
-        },
-        "next": [
-            "killthelord_add3"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6196,
-                "y": 1892
-            }
-        }
-    },
-    "killthelord_add3": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    260,
-                    403,
-                    25,
-                    65
-                ]
-            }
-        },
-        "next": [
-            "killthelord_add4"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6470,
-                "y": 1894
-            }
-        }
-    },
-    "killthelord_add4": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1186,
-                    414,
-                    29,
-                    51
-                ]
-            }
-        },
-        "next": [
-            "killthelord_add5"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6761,
-                "y": 1897
-            }
-        }
-    },
-    "killthelord_add5": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1083,
-                    403,
-                    38,
-                    75
-                ]
-            }
-        },
-        "next": [
-            "killthelord_saveteam"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7061,
-                "y": 1900
-            }
-        }
-    },
-    "killthelord_addnikkes": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "noteam.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "next": [
-            "killthelord_add1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 5607,
-                "y": 1854
-            }
-        }
-    },
     "killthelord_addrecodatebase": {
         "action": {
             "type": "Custom",
             "param": {
-                "custom_action": "addrecodatebase"
+                "custom_action": "stagematchdel"
             }
         },
         "next": [
-            "killthelord_swipelittle"
+            "killthelord_canintoevent"
+        ],
+        "on_error": [
+            "p5_error_副本5"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4021,
-                "y": 285
+                "x": 3806,
+                "y": 389
             }
         }
     },
@@ -354,11 +230,24 @@
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "recodatebase",
+                "custom_recognition": "stagematch",
                 "custom_recognition_param": {
-                    "action_node": "killthelord_resweip",
-                    "preprocess_scale": 3,
-                    "threshold": 0.3
+                    "expected": [
+                        "1-12",
+                        "1-11",
+                        "1-10",
+                        "1-9",
+                        "1-8",
+                        "1-7",
+                        "1-6",
+                        "1-5",
+                        "1-4",
+                        "1-3",
+                        "1-2",
+                        "1-1"
+                    ],
+                    "tries_per_field": 1,
+                    "action_node": "limitedevent_resweip"
                 },
                 "roi": [
                     423,
@@ -370,12 +259,17 @@
         },
         "timeout": 60000,
         "next": [
-            "killthelord_intocanintoevent"
+            "killthelord_cannot_re",
+            "killthelord_intofightpage",
+            "killthelord_canintoevent"
+        ],
+        "on_error": [
+            "p5_error_副本5"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3129,
-                "y": 623
+                "x": 3143,
+                "y": 487
             }
         }
     },
@@ -789,7 +683,7 @@
         "action": {
             "type": "Custom",
             "param": {
-                "custom_action": "clearrecodatebase"
+                "custom_action": "stagematchclear"
             }
         },
         "next": [
@@ -919,7 +813,7 @@
             }
         }
     },
-    "killthelord_event1_cannot_re": {
+    "killthelord_cannot_re": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -931,17 +825,21 @@
                 ],
                 "expected": [
                     "无法重复",
-                    "重复通关"
+                    "重复通关",
+                    "解锁条件"
                 ]
             }
         },
         "next": [
             "killthelord_addrecodatebase"
         ],
+        "on_error": [
+            "p5_error_副本5"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 3740,
-                "y": 274
+                "x": 3476,
+                "y": 382
             }
         }
     },
@@ -1076,23 +974,6 @@
             }
         }
     },
-    "killthelord_hard_return": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "LoopBack",
-                "custom_action_param": {
-                    "max_loops": 2
-                }
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2182,
-                "y": 50
-            }
-        }
-    },
     "killthelord_havechalengechance": {
         "recognition": {
             "type": "OCR",
@@ -1120,34 +1001,6 @@
             "position": {
                 "x": 2320,
                 "y": 2937
-            }
-        }
-    },
-    "killthelord_havechalengechance1": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "limitedevent/challengebasicticket.png",
-                    "limitedevent/challengepresummon.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    -80,
-                    0,
-                    0,
-                    0
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2326,
-                "y": 3614
             }
         }
     },
@@ -1220,9 +1073,9 @@
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "userecodatebase",
+                "custom_recognition": "stagenum",
                 "custom_recognition_param": {
-                    "targetnode": "1-11"
+                    "expected": "1-11"
                 },
                 "roi": [
                     431,
@@ -1239,6 +1092,9 @@
             "killthelord_startquickfight",
             "killthelord_into11"
         ],
+        "on_error": [
+            "p5_error_副本5"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 3717,
@@ -1250,9 +1106,9 @@
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "userecodatebase",
+                "custom_recognition": "stagenum",
                 "custom_recognition_param": {
-                    "targetnode": "1-11"
+                    "expected": "1-11"
                 },
                 "roi": [
                     421,
@@ -1273,39 +1129,6 @@
             "position": {
                 "x": 8683,
                 "y": 927
-            }
-        }
-    },
-    "killthelord_intocanintoevent": {
-        "max_hit": 5,
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "userecodatebase",
-                "custom_recognition_param": {
-                    "preprocess_scale": 3,
-                    "threshold": 0.3
-                },
-                "roi": [
-                    429,
-                    127,
-                    428,
-                    592
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "killthelord_event1_cannot_re",
-            "killthelord_intofightpage",
-            "killthelord_intocanintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3518,
-                "y": 658
             }
         }
     },
@@ -1766,36 +1589,6 @@
             }
         }
     },
-    "killthelord_normal": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    303,
-                    560,
-                    696,
-                    151
-                ],
-                "expected": [
-                    "NORMAL",
-                    "NORM",
-                    "RMAL",
-                    "NOR",
-                    "MAL"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "repeat": 5,
-        "$__mpe_code": {
-            "position": {
-                "x": 1929,
-                "y": 47
-            }
-        }
-    },
     "killthelord_noteam": {
         "recognition": {
             "type": "OCR",
@@ -1813,62 +1606,12 @@
             }
         },
         "next": [
-            "killthelord_addnikkes"
+            "event_noteam"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 5332,
                 "y": 1889
-            }
-        }
-    },
-    "killthelord_notopen": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    364,
-                    279,
-                    626,
-                    179
-                ],
-                "expected": [
-                    "解锁条件"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 1671,
-                "y": 58
-            }
-        }
-    },
-    "killthelord_notopenstage": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    364,
-                    279,
-                    626,
-                    179
-                ],
-                "expected": [
-                    "解锁条件",
-                    "条件",
-                    "无法重复",
-                    "重复通关"
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2751,
-                "y": 33
             }
         }
     },
@@ -1929,64 +1672,6 @@
             "position": {
                 "x": 5314,
                 "y": 218
-            }
-        }
-    },
-    "killthelord_resweip": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    576,
-                    250,
-                    132,
-                    13
-                ],
-                "end": [
-                    [
-                        553,
-                        587,
-                        225,
-                        17
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 3130,
-                "y": 390
-            }
-        }
-    },
-    "killthelord_saveteam": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    999,
-                    612,
-                    280,
-                    104
-                ],
-                "expected": [
-                    "保存"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "killthelord_intofight"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7358,
-                "y": 1903
             }
         }
     },
@@ -2132,43 +1817,13 @@
         "next": [
             "killthelord_into11event"
         ],
+        "on_error": [
+            "p5_error_副本5"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 8365,
                 "y": 909
-            }
-        }
-    },
-    "killthelord_swipelittle": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    600,
-                    520,
-                    80,
-                    1
-                ],
-                "end": [
-                    [
-                        608,
-                        440,
-                        70,
-                        1
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "next": [
-            "killthelord_intocanintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4293,
-                "y": 266
             }
         }
     },
@@ -2217,6 +1872,25 @@
             "position": {
                 "x": 2204,
                 "y": 709
+            }
+        }
+    },
+    "p5_error_副本5": {
+        "next": [
+            "[Anchor]killthelordanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3560,
+                "y": 1602
+            }
+        }
+    },
+    "$__mpe_external_event_noteam_killthelord": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1941
             }
         }
     }

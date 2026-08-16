@@ -17,9 +17,13 @@
 !startnikke.ahk
 !MPEsimple.txt
 !README.md
+!DEVELOPMENT.md
+!DEVLOG.md
 !LICENSE
 !.gitignore
 !AGENTS.md
+!DEVELOPMENT.md
+!DEVLOG.md
 
 # ---- 放行目录内仍要排除的 ----
 __pycache__/
@@ -28,3 +32,6 @@ agent/.deps/
 
 # ---- 发版构建产物（文件夹与 zip 只留本地，不上传） ----
 MaaNikke-win-x86_64-v*/
+
+# superpowers 技能工作区（临时产物，不入库）
+.superpowers/

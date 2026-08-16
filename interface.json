@@ -2,7 +2,7 @@
   "interface_version": 2,
   "custom_title": "MaaNikke",
   "name": "MaaNikke",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "url": "https://github.com/Shinarin/MaaNikke",
 
 
@@ -191,8 +191,8 @@
       "description": "更生馆目前问题比较多，识别困难，如无必要推荐不勾选.因特定节点会有对话弹出，故识别时间较长，耐心等待即可"
     },
     {
-      "name": "限时活动(boomtheghost)",
-      "entry": "boomtheghost",
+      "name": "限时活动(p5)",
+      "entry": "p5",
       "default_check": true,
       "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼"
     },
@@ -213,7 +213,13 @@
       "entry": "test",
       "default_check": false,
       "description": "测试用，勿选"
-     }
+     },
+    {
+      "name": "test2",
+      "entry": "test2",
+      "default_check": false,
+      "description": "测试用，勿选"
+    }
 
 
   ],

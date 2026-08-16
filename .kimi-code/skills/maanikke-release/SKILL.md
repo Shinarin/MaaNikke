@@ -1,6 +1,6 @@
 ---
 name: maanikke-release
-description: MaaNikke 发版流程。仅当用户同时给出 changelog 内容并明确要求 push/发版时执行完整流程（改 changelog 与版本号 → 复制模板打包 zip → 同步三件套到 C:\other\MaaNikke → git push → 创建 GitHub Release 并上传 zip）；用户只说 push 而未提供 changelog 内容时，只做普通 git push，不触发本流程。
+description: MaaNikke 发版流程。当用户明确要求 push/发版/打包上传时执行完整流程（changelog = 用户给的内容优先 + DEVLOG 未发布区条目过滤改写合并，用户没给就只用 DEVLOG 总结 → 写入 Changelog.md → DEVLOG 封存新版本线、版本号 +1 → 复制模板打包 zip → 同步三件套到 C:\other\MaaNikke → git push → 创建 GitHub Release 并上传 zip）；用户只说 push 而无发版意图时，只做普通 git push，不触发本流程（DEVLOG 也不动）。
 whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、发版、release、打包上传时触发
 ---
 
@@ -8,13 +8,14 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
 
 ## 触发判定（最先做）
 
-- 用户**同时**给出 changelog 内容 + 明确 push/发版指令 → 执行完整流程（第一至第五步）。
-- 用户只说 push、没给 changelog 内容 → 只做 `git add -A && git commit && git push`，**不要**改版本号、不要打包、不要发 Release。
+- 用户明确要求 push/发版/打包上传 → 执行完整流程（第一至第五步）。changelog 来源：**用户给的内容优先**；用户没给 changelog 内容时，**只用 `DEVLOG.md` `[未发布]` 区条目的用户向改写总结**（过滤规则见第一步），不再因缺 changelog 而退化为普通 push。
+- 用户只说 push、语境无发版意图 → 只做 `git add -A && git commit && git push`，**不要**改版本号、不要打包、不要发 Release，**也不要动 DEVLOG.md**（版本线封存只在发版时做）。
 
 ## 已验证的关键事实（直接采用，勿重复验证）
 
 - 项目根：`C:/other/MaaNikke_dev`，Windows + Git Bash 环境。
-- changelog 文件：`resource/announcement/Changelog.md`，**最新版本条目置顶**。
+- changelog 文件：`resource/announcement/Changelog.md`（用户向），**最新版本条目置顶**。
+- 开发留痕文件：`DEVLOG.md`（开发向），结构为：头部规则说明 → `## [未发布]` 区 → `---` → 各版本线（新上旧下）。平时每次改动由会话随手记录在未发布区；本流程负责发版时的合并与封存。
 - 版本字段：`interface.json` 的 `"version"`。注意 `"interface_version": 2` 是协议号，**绝不要动**。
 - 模板文件夹：`F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-v2.x.x`（完整程序：exe、libs、runtimes、plugins、MaaAgentBinary、Assets、bat 等，唯独缺 agent/resource/interface.json）。
 - 构建与产物位置：构建文件夹和 zip 都直接生成在 `F:\MaaNikke历史版本备份\` 内（与 v2.1.0~v2.1.6 的存放习惯一致），**不要放在项目根目录**。
@@ -26,15 +27,18 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
 - GitHub：仓库 `Shinarin/MaaNikke`，本机**无 gh CLI**；用 `git credential fill` 取 token 调 REST API（token 已验证有 `repo` scope，可建 Release）。token 严禁打印/写文件。
 - QQ 群发送步骤：用户已明确**取消**，不执行。
 
-## 第一步：changelog + 版本号
+## 第一步：changelog + DEVLOG 封存 + 版本号
 
 1. 读 `interface.json` 的 `version`，末位 +1；每段只能 0-9，逢 9 向左进位：`2.1.9→2.2.0`、`2.9.9→3.0.0`。
-2. 把用户输入转成 md，仿照文件内旧条目风格，插到 `Changelog.md` 顶部第一个 `---` 之后（即最新条目位置）：
+2. Changelog.md 条目 = **用户给的 changelog 内容 + DEVLOG.md `[未发布]` 区条目的用户向改写**，两者合并去重后，插到 `Changelog.md` 顶部第一个 `---` 之后（即最新条目位置）：
+   - DEVLOG 过滤规则：剔除 `[文档]`/`[调查]` 条目和纯内部改动（重构、注释、skill、脚本、配置等用户无感知的）；只保留**用户可感知**的新增/修复/优化，用用户语言重写——**不要出现代码细节、文件名、内部机制**。
+   - 用户给的内容优先；DEVLOG 改写条目与其重复时以用户表述为准。
    - 版本标题：`## [vX.Y.Z] - YYYY-MM-DD`（日期用 `date +%F` 取真实当前日期，别信会话时间）
    - 分类小节按内容选用：`### 🚀 新增 & 优化` / `### 🔧 优化` / `### 🐛 修复`
    - 条目格式：`- <emoji> **加粗标题**  `（两空格换行）+ 缩进的一句描述
    - 条目之间空行；新旧版本块之间以 `---` 分隔
-3. `interface.json` 的 `version` 同步改为新版本号。
+3. DEVLOG.md 封存：把 `## [未发布]` 标题改为 `## vX.Y.Z - YYYY-MM-DD`（条目原样保留在线下，不删不改），并在头部规则说明之后重建空的 `## [未发布]` 区（保留 `---` 分隔结构，新上旧下）。
+4. `interface.json` 的 `version` 同步改为新版本号。
 
 ## 第二步：在 F 盘备份目录复制模板并改名
 

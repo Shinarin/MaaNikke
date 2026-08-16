@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786361707692,
+            "lastSyncTime": 1786850547807,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\test.json",
             "savedViewport": {
-                "x": -7587,
-                "y": -386,
-                "zoom": 1
+                "x": -7767,
+                "y": -179,
+                "zoom": 0.99
             },
             "filename": "test",
             "version": "v1.7.6"
@@ -28,6 +28,34 @@
             "position": {
                 "x": 8677,
                 "y": 260
+            }
+        }
+    },
+    "StageLabelTextColor": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "method": 4,
+                "lower": [
+                    [
+                        222,
+                        225,
+                        227
+                    ]
+                ],
+                "upper": [
+                    [
+                        255,
+                        255,
+                        255
+                    ]
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9530,
+                "y": 467
             }
         }
     },
@@ -52,8 +80,78 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 8270,
-                "y": 546
+                "x": 8584,
+                "y": 472
+            }
+        }
+    },
+    "killthelord_into11_副本56_副本1": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagematch",
+                "custom_recognition_param": {
+                    "action_node": "bigenent_resweip",
+                    "expected": [
+                        "1-12",
+                        "1-11",
+                        "1-10",
+                        "1-9",
+                        "1-8",
+                        "1-7",
+                        "1-6",
+                        "1-5",
+                        "1-4",
+                        "1-3",
+                        "1-2",
+                        "1-1"
+                    ],
+                    "tries_per_field": 1
+                },
+                "roi": [
+                    395,
+                    160,
+                    496,
+                    488
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "$__mpe_code": {
+            "position": {
+                "x": 8261,
+                "y": 166
+            }
+        }
+    },
+    "p5_0item_count_副本2": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
+                "roi": [
+                    398,
+                    3,
+                    517,
+                    715
+                ]
+            }
+        },
+        "inverse": true,
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8267,
+                "y": -117
             }
         }
     },
@@ -134,21 +232,124 @@
             }
         }
     },
-    "test": {
-        "next": [
-            "killthelord_into11_副本56"
-        ],
+    "stagematch_ordertest": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagematch",
+                "custom_recognition_param": {
+                    "expected": [
+                        "1-11",
+                        "1-10"
+                    ],
+                    "rounds": 2,
+                    "tries_per_field": 3
+                },
+                "roi": [
+                    400,
+                    150,
+                    460,
+                    450
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 20000,
         "$__mpe_code": {
             "position": {
-                "x": 7935,
-                "y": 573
+                "x": 8257,
+                "y": 491
             }
         }
     },
-    "新建节点33": {
+    "test": {
+        "next": [
+            "p5_0item_count_副本2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7938,
+                "y": -29
+            }
+        }
+    },
+    "test1": {
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    458,
+                    212,
+                    350,
+                    401
+                ],
+                "expected": [
+                    "EVENT"
+                ],
+                "color_filter": "StageLabelTextColor",
+                "order_by": "Vertical",
+                "index": 1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9186,
+                "y": 454
+            }
+        }
+    },
+    "test2": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7771,
+                "y": 599
+            }
+        }
+    },
+    "test3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    580,
+                    217,
+                    122,
+                    59
+                ],
+                "expected": [
+                    "H"
+                ],
+                "replace": [
+                    [
+                        "origin",
+                        "target"
+                    ]
+                ],
+                "threshold": 0.3
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8882,
+                "y": 467
+            }
+        }
+    },
+    "新建节点1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    417,
+                    198,
+                    523,
+                    469
+                ],
                 "expected": [
                     "1-11"
                 ]
@@ -159,8 +360,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 9059,
-                "y": 1260
+                "x": 7994,
+                "y": 451
             }
         }
     },
