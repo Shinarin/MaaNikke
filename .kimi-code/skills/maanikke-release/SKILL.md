@@ -103,16 +103,20 @@ curl -s -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
 
 从返回取 `id` 和 `html_url`。**tag 已存在会返回 422 —— 停下报告用户，不要删除重建、不要强试。**
 
-3. 上传 zip（约 110MB，网络差时耐心等，`--retry 3`）：
+3. 上传 zip（约 113MB，后台任务执行；**去掉 `-s` 静默、保留 `-S`**，curl 进度条会写入任务输出日志，用户想看实时进度可运行 `/tasks` 打开后台任务面板查看）：
 
 ```bash
-curl -s -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
-  -H "Content-Type: application/zip" --retry 3 \
+curl -S -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
+  -H "Content-Type: application/zip" \
+  --connect-timeout 30 --speed-limit 10240 --speed-time 30 \
+  --retry 8 --retry-all-errors --retry-delay 5 \
   --data-binary @"F:/MaaNikke历史版本备份/MaaNikke-win-x86_64-vX.Y.Z.zip" \
   "https://uploads.github.com/repos/Shinarin/MaaNikke/releases/<id>/assets?name=MaaNikke-win-x86_64-vX.Y.Z.zip"
 ```
 
-4. 校验返回的 asset `size` 与本地 zip 字节数一致。
+断流检测参数含义：速度 <10KB/s 持续 30s 主动断开并重试（v2.1.8 实测有效）。上传中断后 GitHub 会残留 `state=starter` 的占位 asset（页面不可见，同名重传会 422），重传前必须先查 asset 列表并 DELETE 占位：`GET/DELETE /repos/Shinarin/MaaNikke/releases/assets/<asset_id>`。
+
+4. 校验返回的 asset `size` 与本地 zip 字节数一致、`state` 为 `uploaded`。
 
 ## 汇报内容
 
