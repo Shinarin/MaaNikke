@@ -16,6 +16,12 @@
 
 ---
 
+## v2.1.9 - 2026-08-19
+
+- 2026-08-19 [优化] juveniledays.json 内 smallevent 前缀批量改名为 juveniledays（179 处：节点 key、next/on_error/[JumpBack]/[Anchor] 引用、anchor 字段、`$__mpe_anchor_*`/`$__mpe_sticker_*` 键一并同步；图片模板路径未动，本就以 juveniledays 命名）；消除与 example/smallevent.json 的全局重名冲突，校验脚本全绿（涉及：resource/base/pipeline/task/limitedevent/juveniledays.json）
+
+---
+
 ## v2.1.8 - 2026-08-16
 
 - 2026-08-16 [修复] RotatedOCR 命中后点击位置偏移：`_map_to_original` 逆旋转方向取反，非 0° 命中坐标被镜像（±44° 偏差近百像素）；修正后合成图数值回归全角度误差 ≤1.4px。另修复 test.json 一处字符串式 `custom_recognition_param`（涉及：agent/custom/reco/my_reco.py、resource/base/pipeline/task/test.json）

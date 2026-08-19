@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786853223941,
+            "lastSyncTime": 1787145789145,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\limitedevent.json",
             "savedViewport": {
-                "x": -681,
-                "y": 474,
-                "zoom": 0.2
+                "x": -4935,
+                "y": 367,
+                "zoom": 0.57
             },
             "filename": "limitedevent",
             "version": "v1.7.6"
@@ -18,8 +18,8 @@
     "$__mpe_anchor_limitedeventshop_claim_anchor_limitedevent": {
         "$__mpe_code": {
             "position": {
-                "x": 10618,
-                "y": -43
+                "x": 10734,
+                "y": -8
             }
         }
     },
@@ -31,7 +31,7 @@
             }
         }
     },
-    "$__mpe_group_分组_limitedevent": {
+    "$__mpe_group_event_noteam_limitedevent": {
         "$__mpe_code": {
             "position": {
                 "x": 8938,
@@ -39,13 +39,13 @@
             },
             "color": "blue",
             "childrenLabels": [
+                "event_noteam",
                 "event_noteam_add1",
                 "event_noteam_add2",
                 "event_noteam_add3_",
                 "event_noteam_add4",
                 "event_noteam_add5",
                 "event_noteam_addnikkes",
-                "event_noteam",
                 "event_noteam_saveteam"
             ],
             "width": 2590,
@@ -97,6 +97,190 @@
             }
         }
     },
+    "event_noteam": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    436,
+                    290,
+                    444,
+                    165
+                ],
+                "expected": [
+                    "未编队",
+                    "无法进入"
+                ]
+            }
+        },
+        "next": [
+            "event_noteam_addnikkes"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9129,
+                "y": 1010
+            }
+        }
+    },
+    "event_noteam_add1": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    65,
+                    415,
+                    27,
+                    40
+                ]
+            }
+        },
+        "next": [
+            "event_noteam_add2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9710,
+                "y": 1011
+            }
+        }
+    },
+    "event_noteam_add2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    155,
+                    404,
+                    35,
+                    54
+                ]
+            }
+        },
+        "next": [
+            "event_noteam_add3_"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9993,
+                "y": 1013
+            }
+        }
+    },
+    "event_noteam_add3_": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    260,
+                    403,
+                    25,
+                    65
+                ]
+            }
+        },
+        "next": [
+            "event_noteam_add4"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10267,
+                "y": 1015
+            }
+        }
+    },
+    "event_noteam_add4": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1186,
+                    414,
+                    29,
+                    51
+                ]
+            }
+        },
+        "next": [
+            "event_noteam_add5"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10558,
+                "y": 1018
+            }
+        }
+    },
+    "event_noteam_add5": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1083,
+                    403,
+                    38,
+                    75
+                ]
+            }
+        },
+        "next": [
+            "event_noteam_saveteam"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 10858,
+                "y": 1021
+            }
+        }
+    },
+    "event_noteam_addnikkes": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "noteam.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "event_noteam_add1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9404,
+                "y": 975
+            }
+        }
+    },
+    "event_noteam_saveteam": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    999,
+                    612,
+                    280,
+                    104
+                ],
+                "expected": [
+                    "保存"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 11155,
+                "y": 1024
+            }
+        }
+    },
     "limitedevent_checkhomepage": {
         "recognition": {
             "type": "And",
@@ -114,6 +298,36 @@
             }
         }
     },
+    "limitedevent_resweip": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    576,
+                    250,
+                    132,
+                    13
+                ],
+                "end": [
+                    [
+                        553,
+                        587,
+                        225,
+                        17
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 11055,
+                "y": 409
+            }
+        }
+    },
     "limitedeventshop_claim": {
         "anchor": "limitedeventshop_claim_anchor",
         "next": [
@@ -126,8 +340,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8924,
-                "y": -137
+                "x": 9040,
+                "y": -102
             }
         }
     },
@@ -148,8 +362,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9283,
-                "y": -284
+                "x": 9399,
+                "y": -249
             }
         }
     },
@@ -180,8 +394,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9916,
-                "y": -266
+                "x": 10032,
+                "y": -231
             }
         }
     },
@@ -189,8 +403,8 @@
         "max_hit": 3,
         "$__mpe_code": {
             "position": {
-                "x": 10327,
-                "y": 329
+                "x": 10443,
+                "y": 364
             }
         }
     },
@@ -221,8 +435,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9919,
-                "y": 18
+                "x": 10035,
+                "y": 53
             }
         }
     },
@@ -259,8 +473,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9616,
-                "y": -170
+                "x": 9732,
+                "y": -135
             }
         }
     },
@@ -288,16 +502,16 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 10322,
-                "y": 17
+                "x": 10438,
+                "y": 52
             }
         }
     },
     "limitedeventshop_claim_end": {
         "$__mpe_code": {
             "position": {
-                "x": 8933,
-                "y": 240
+                "x": 9049,
+                "y": 275
             }
         }
     },
@@ -319,8 +533,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 10356,
-                "y": -282
+                "x": 10472,
+                "y": -247
             }
         }
     },
@@ -341,8 +555,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9283,
-                "y": -510
+                "x": 9399,
+                "y": -475
             }
         }
     },
@@ -364,8 +578,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9285,
-                "y": 197
+                "x": 9401,
+                "y": 232
             }
         }
     },
@@ -386,8 +600,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9283,
-                "y": -51
+                "x": 9399,
+                "y": -16
             }
         }
     },
@@ -395,8 +609,8 @@
         "max_hit": 3,
         "$__mpe_code": {
             "position": {
-                "x": 9288,
-                "y": 532
+                "x": 9395,
+                "y": 552
             }
         }
     },
@@ -736,218 +950,31 @@
             }
         }
     },
-    "event_noteam_add1": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    65,
-                    415,
-                    27,
-                    40
-                ]
-            }
-        },
-        "next": [
-            "event_noteam_add2"
-        ],
+    "$__mpe_group_limitedeventshop_claim_limitedevent": {
         "$__mpe_code": {
             "position": {
-                "x": 9710,
-                "y": 1011
-            }
-        }
-    },
-    "event_noteam_add2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    155,
-                    404,
-                    35,
-                    54
-                ]
-            }
-        },
-        "next": [
-            "event_noteam_add3_"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 9993,
-                "y": 1013
-            }
-        }
-    },
-    "event_noteam_add3_": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    260,
-                    403,
-                    25,
-                    65
-                ]
-            }
-        },
-        "next": [
-            "event_noteam_add4"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 10267,
-                "y": 1015
-            }
-        }
-    },
-    "event_noteam_add4": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1186,
-                    414,
-                    29,
-                    51
-                ]
-            }
-        },
-        "next": [
-            "event_noteam_add5"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 10558,
-                "y": 1018
-            }
-        }
-    },
-    "event_noteam_add5": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1083,
-                    403,
-                    38,
-                    75
-                ]
-            }
-        },
-        "next": [
-            "event_noteam_saveteam"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 10858,
-                "y": 1021
-            }
-        }
-    },
-    "event_noteam_addnikkes": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "noteam.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "next": [
-            "event_noteam_add1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 9404,
-                "y": 975
-            }
-        }
-    },
-    "event_noteam": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    436,
-                    290,
-                    444,
-                    165
-                ],
-                "expected": [
-                    "未编队",
-                    "无法进入"
-                ]
-            }
-        },
-        "next": [
-            "event_noteam_addnikkes"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 9129,
-                "y": 1010
-            }
-        }
-    },
-    "event_noteam_saveteam": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    999,
-                    612,
-                    280,
-                    104
-                ],
-                "expected": [
-                    "保存"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 11155,
-                "y": 1024
-            }
-        }
-    },
-    "limitedevent_resweip": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    576,
-                    250,
-                    132,
-                    13
-                ],
-                "end": [
-                    [
-                        553,
-                        587,
-                        225,
-                        17
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 11055,
-                "y": 409
-            }
+                "x": 8960,
+                "y": -519
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "limitedeventshop_claim_anchor",
+                "limitedeventshop_claim",
+                "limitedeventshop_claim_basicticket",
+                "limitedeventshop_claim_claim1",
+                "limitedeventshop_claim_claim1_return",
+                "limitedeventshop_claim_claim2",
+                "limitedeventshop_claim_clickmax",
+                "limitedeventshop_claim_comfirm",
+                "limitedeventshop_claim_end",
+                "limitedeventshop_claim_nocoin",
+                "limitedeventshop_claim_premiumticket",
+                "limitedeventshop_claim_redeyes",
+                "limitedeventshop_claim_redeyesbox2h",
+                "limitedeventshop_claim_return"
+            ],
+            "width": 2059,
+            "height": 1270
         }
     }
 }

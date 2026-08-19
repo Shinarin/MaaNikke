@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786850547807,
+            "lastSyncTime": 1787138784142,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\test.json",
             "savedViewport": {
-                "x": -7767,
-                "y": -179,
-                "zoom": 0.99
+                "x": -6847,
+                "y": 502,
+                "zoom": 0.92
             },
             "filename": "test",
             "version": "v1.7.6"
@@ -82,48 +82,6 @@
             "position": {
                 "x": 8584,
                 "y": 472
-            }
-        }
-    },
-    "killthelord_into11_副本56_副本1": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagematch",
-                "custom_recognition_param": {
-                    "action_node": "bigenent_resweip",
-                    "expected": [
-                        "1-12",
-                        "1-11",
-                        "1-10",
-                        "1-9",
-                        "1-8",
-                        "1-7",
-                        "1-6",
-                        "1-5",
-                        "1-4",
-                        "1-3",
-                        "1-2",
-                        "1-1"
-                    ],
-                    "tries_per_field": 1
-                },
-                "roi": [
-                    395,
-                    160,
-                    496,
-                    488
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 60000,
-        "$__mpe_code": {
-            "position": {
-                "x": 8261,
-                "y": 166
             }
         }
     },
@@ -232,46 +190,14 @@
             }
         }
     },
-    "stagematch_ordertest": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagematch",
-                "custom_recognition_param": {
-                    "expected": [
-                        "1-11",
-                        "1-10"
-                    ],
-                    "rounds": 2,
-                    "tries_per_field": 3
-                },
-                "roi": [
-                    400,
-                    150,
-                    460,
-                    450
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "timeout": 20000,
-        "$__mpe_code": {
-            "position": {
-                "x": 8257,
-                "y": 491
-            }
-        }
-    },
     "test": {
         "next": [
-            "p5_0item_count_副本2"
+            "smallevent_canintoevent_副本7"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7938,
-                "y": -29
+                "x": 8193,
+                "y": -290
             }
         }
     },
@@ -378,6 +304,45 @@
             "position": {
                 "x": 8413,
                 "y": 900
+            }
+        }
+    },
+    "smallevent_canintoevent_副本7": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagematch",
+                "custom_recognition_param": {
+                    "action_node": "limitedevent_resweip",
+                    "expected": [
+                        "1-12",
+                        "1-11",
+                        "1-10",
+                        "1-9",
+                        "1-8",
+                        "1-7",
+                        "1-6",
+                        "1-5",
+                        "1-4",
+                        "1-3",
+                        "1-2",
+                        "1-1"
+                    ],
+                    "tries_per_field": 2
+                },
+                "roi": [
+                    423,
+                    128,
+                    468,
+                    590
+                ]
+            }
+        },
+        "timeout": 60000,
+        "$__mpe_code": {
+            "position": {
+                "x": 8514,
+                "y": -333
             }
         }
     }

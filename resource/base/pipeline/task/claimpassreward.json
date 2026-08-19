@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786362039026,
+            "lastSyncTime": 1787144829827,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
             "savedViewport": {
-                "x": 1195,
-                "y": 638,
-                "zoom": 0.36
+                "x": -322,
+                "y": 1059,
+                "zoom": 1.31
             },
             "filename": "claimpassreward",
             "version": "v1.7.6"
@@ -32,6 +32,7 @@
         }
     },
     "2pass": {
+        "doc": "不能低于0.85了",
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -46,7 +47,7 @@
                 ],
                 "method": 3,
                 "threshold": [
-                    0.7
+                    0.85
                 ]
             }
         },
@@ -139,7 +140,7 @@
                     "3pass.png"
                 ],
                 "threshold": [
-                    0.8
+                    0.85
                 ]
             }
         },
@@ -155,8 +156,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 21,
-                "y": -694
+                "x": 22,
+                "y": -695
             }
         }
     },
@@ -307,7 +308,7 @@
                     "redpoint2.png"
                 ],
                 "threshold": [
-                    0.9
+                    0.85
                 ]
             }
         },
@@ -323,16 +324,17 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    1140,
-                    106,
-                    13,
-                    15
+                    1132,
+                    98,
+                    28,
+                    26
                 ],
                 "template": [
-                    "redpoint.png"
+                    "redpoint.png",
+                    "redpoint2.png"
                 ],
                 "threshold": [
-                    0.9
+                    0.85
                 ]
             }
         },

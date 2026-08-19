@@ -1,53 +1,53 @@
 {
-    "$__mpe_config_smallevent1": {
+    "$__mpe_config_juveniledays": {
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786110624759,
+            "lastSyncTime": 1787145950896,
             "isModifiedExternally": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\smallevent1.json",
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\juveniledays.json",
             "savedViewport": {
-                "x": -1837,
-                "y": -769,
-                "zoom": 0.65
+                "x": -2907,
+                "y": 27,
+                "zoom": 0.75
             },
-            "filename": "smallevent1",
-            "version": "v1.7.4"
+            "filename": "juveniledays",
+            "version": "v1.7.6"
         }
     },
-    "$__mpe_anchor_anchor_smallevent1_checklatestevent_smallevent1": {
+    "$__mpe_anchor_anchor_juveniledays_checklatestevent_juveniledays": {
         "$__mpe_code": {
             "position": {
-                "x": 2474,
-                "y": 1097
+                "x": 2476,
+                "y": 1053
             }
         }
     },
-    "$__mpe_anchor_anchor_smallevent1_intofightpage_smallevent1": {
+    "$__mpe_anchor_anchor_juveniledays_intofightpage_juveniledays": {
         "$__mpe_code": {
             "position": {
-                "x": 8801,
-                "y": 1016
+                "x": 9008,
+                "y": 989
             }
         }
     },
-    "$__mpe_anchor_smallevent1_stagestart_anchor_smallevent1": {
+    "$__mpe_anchor_juveniledays_stagestart_anchor_juveniledays": {
         "$__mpe_code": {
             "position": {
-                "x": 6699,
-                "y": 1373
+                "x": 6661,
+                "y": 1396
             }
         }
     },
-    "$__mpe_anchor_smallevent1anchor_smallevent1": {
+    "$__mpe_anchor_juveniledaysanchor_juveniledays": {
         "$__mpe_code": {
             "position": {
-                "x": 7523,
-                "y": 513
+                "x": 7503,
+                "y": 388
             }
         }
     },
-    "$__mpe_external_backtohomepage_smallevent1": {
+    "$__mpe_external_backtohomepage_juveniledays": {
         "$__mpe_code": {
             "position": {
                 "x": 972,
@@ -55,7 +55,15 @@
             }
         }
     },
-    "$__mpe_external_limitedeventshop_claim_smallevent1": {
+    "$__mpe_external_event_noteam_juveniledays": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1941
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_juveniledays": {
         "$__mpe_code": {
             "position": {
                 "x": 2307,
@@ -63,7 +71,7 @@
             }
         }
     },
-    "$__mpe_sticker_smallevent1_便签4_smallevent1": {
+    "$__mpe_sticker_juveniledays_便签4_juveniledays": {
         "$__mpe_code": {
             "position": {
                 "x": 1846,
@@ -75,7 +83,7 @@
             "height": 160
         }
     },
-    "$__mpe_sticker_smallevent1_便签8_smallevent1": {
+    "$__mpe_sticker_juveniledays_便签8_juveniledays": {
         "$__mpe_code": {
             "position": {
                 "x": 1681,
@@ -87,12 +95,12 @@
             "height": 160
         }
     },
-    "smallevent1": {
+    "juveniledays": {
         "doc": "",
         "enabled": true,
-        "anchor": "smallevent1anchor",
+        "anchor": "juveniledaysanchor",
         "next": [
-            "smallevent1_checkhomepage",
+            "juveniledays_checkhomepage",
             "[JumpBack]backtohomepage"
         ],
         "$__mpe_code": {
@@ -102,7 +110,7 @@
             }
         }
     },
-    "smallevent1_0item_count": {
+    "juveniledays_0item_count": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -119,16 +127,16 @@
             }
         },
         "next": [
-            "[Anchor]smallevent1anchor"
+            "[Anchor]juveniledaysanchor"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7269,
-                "y": 1413
+                "x": 7257,
+                "y": 1441
             }
         }
     },
-    "smallevent1_12_have_end": {
+    "juveniledays_12_have_end": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -151,16 +159,19 @@
         "inverse": true,
         "timeout": 40000,
         "next": [
-            "smallevent1_into11"
+            "juveniledays_into11"
+        ],
+        "on_error": [
+            "juveniledays_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2826,
-                "y": 1166
+                "x": 2796,
+                "y": 1162
             }
         }
     },
-    "smallevent1_12_no_end": {
+    "juveniledays_12_no_end": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -180,9 +191,12 @@
                 ]
             }
         },
-        "timeout": 40000,
+        "timeout": 60000,
         "next": [
-            "smallevent1_canintoevent"
+            "juveniledays_canintoevent"
+        ],
+        "on_error": [
+            "juveniledays_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -191,174 +205,57 @@
             }
         }
     },
-    "smallevent1_12_no_end_return": {
+    "juveniledays_12_no_end_return": {
         "max_hit": 2,
         "$__mpe_code": {
             "position": {
-                "x": 2812,
-                "y": 810
+                "x": 2802,
+                "y": 835
             }
         }
     },
-    "smallevent1_add1": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    65,
-                    415,
-                    27,
-                    40
-                ]
-            }
-        },
-        "next": [
-            "smallevent1_add2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 5913,
-                "y": 1890
-            }
-        }
-    },
-    "smallevent1_add2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    155,
-                    404,
-                    35,
-                    54
-                ]
-            }
-        },
-        "next": [
-            "smallevent1_add3"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6196,
-                "y": 1892
-            }
-        }
-    },
-    "smallevent1_add3": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    260,
-                    403,
-                    25,
-                    65
-                ]
-            }
-        },
-        "next": [
-            "smallevent1_add4"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6470,
-                "y": 1894
-            }
-        }
-    },
-    "smallevent1_add4": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1186,
-                    414,
-                    29,
-                    51
-                ]
-            }
-        },
-        "next": [
-            "smallevent1_add5"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 6761,
-                "y": 1897
-            }
-        }
-    },
-    "smallevent1_add5": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1083,
-                    403,
-                    38,
-                    75
-                ]
-            }
-        },
-        "next": [
-            "smallevent1_saveteam"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7061,
-                "y": 1900
-            }
-        }
-    },
-    "smallevent1_addnikkes": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "noteam.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "next": [
-            "smallevent1_add1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 5607,
-                "y": 1854
-            }
-        }
-    },
-    "smallevent1_addrecodatebase": {
+    "juveniledays_addrecodatebase": {
         "action": {
             "type": "Custom",
             "param": {
-                "custom_action": "addrecodatebase"
+                "custom_action": "stagematchdel"
             }
         },
         "next": [
-            "smallevent1_swipelittle"
+            "juveniledays_canintoevent"
+        ],
+        "on_error": [
+            "juveniledays_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3965,
-                "y": 293
+                "x": 3799,
+                "y": 379
             }
         }
     },
-    "smallevent1_canintoevent": {
+    "juveniledays_canintoevent": {
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "recodatebase",
+                "custom_recognition": "stagematch",
                 "custom_recognition_param": {
-                    "action_node": "smallevent1_resweip",
-                    "preprocess_scale": 3,
-                    "threshold": 0.3
+                    "action_node": "limitedevent_resweip",
+                    "expected": [
+                        "1-12",
+                        "1-11",
+                        "1-10",
+                        "1-9",
+                        "1-8",
+                        "1-7",
+                        "1-6",
+                        "1-5",
+                        "1-4",
+                        "1-3",
+                        "1-2",
+                        "1-1"
+                    ],
+                    "tries_per_field": 2
                 },
                 "roi": [
                     423,
@@ -368,18 +265,55 @@
                 ]
             }
         },
-        "timeout": 60000,
+        "pre_wait_freezes": 500,
+        "action": {
+            "type": "Click"
+        },
         "next": [
-            "smallevent1_intocanintoevent"
+            "juveniledays_cannot_re",
+            "juveniledays_intofightpage"
+        ],
+        "on_error": [
+            "juveniledays_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3129,
-                "y": 623
+                "x": 3130,
+                "y": 481
             }
         }
     },
-    "smallevent1_challengefight": {
+    "juveniledays_cannot_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    445,
+                    284,
+                    404,
+                    154
+                ],
+                "expected": [
+                    "无法重复",
+                    "重复通关",
+                    "解锁条件"
+                ]
+            }
+        },
+        "next": [
+            "juveniledays_addrecodatebase"
+        ],
+        "on_error": [
+            "juveniledays_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3450,
+                "y": 365
+            }
+        }
+    },
+    "juveniledays_challengefight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -398,18 +332,18 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_checkchallengefinish",
-            "[JumpBack]smallevent1_challengeisfighting",
-            "smallevent1_challengefight"
+            "juveniledays_checkchallengefinish",
+            "[JumpBack]juveniledays_challengeisfighting",
+            "juveniledays_challengefight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2663,
-                "y": 2994
+                "x": 2652,
+                "y": 2937
             }
         }
     },
-    "smallevent1_challengeisfighting": {
+    "juveniledays_challengeisfighting": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -431,7 +365,7 @@
             }
         }
     },
-    "smallevent1_checkchallengefinish": {
+    "juveniledays_checkchallengefinish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -460,7 +394,7 @@
             }
         }
     },
-    "smallevent1_checkeventpage": {
+    "juveniledays_checkeventpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -476,8 +410,8 @@
             }
         },
         "next": [
-            "smallevent1_stage",
-            "smallevent1_mission",
+            "juveniledays_stage",
+            "juveniledays_mission",
             "backtohomepage"
         ],
         "$__mpe_code": {
@@ -487,7 +421,7 @@
             }
         }
     },
-    "smallevent1_checkeventpage1": {
+    "juveniledays_checkeventpage1": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -509,7 +443,7 @@
             }
         }
     },
-    "smallevent1_checkfinish": {
+    "juveniledays_checkfinish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -526,9 +460,9 @@
             }
         },
         "next": [
-            "smallevent1_nextstage",
-            "[JumpBack]smallevent1_nextstage_return",
-            "smallevent1_no_nextstage"
+            "juveniledays_nextstage",
+            "[JumpBack]juveniledays_nextstage_return",
+            "juveniledays_no_nextstage"
         ],
         "$__mpe_code": {
             "position": {
@@ -537,7 +471,7 @@
             }
         }
     },
-    "smallevent1_checkhomepage": {
+    "juveniledays_checkhomepage": {
         "recognition": {
             "type": "And",
             "param": {
@@ -548,9 +482,9 @@
             }
         },
         "next": [
-            "smallevent1_checkeventpage",
-            "[JumpBack]smallevent1_into",
-            "[JumpBack]smallevent1_exchange"
+            "juveniledays_checkeventpage",
+            "[JumpBack]juveniledays_into",
+            "[JumpBack]juveniledays_exchange"
         ],
         "$__mpe_code": {
             "position": {
@@ -559,7 +493,7 @@
             }
         }
     },
-    "smallevent1_checklatestevent": {
+    "juveniledays_checklatestevent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -574,21 +508,20 @@
                 ]
             }
         },
-        "anchor": "anchor_smallevent1_checklatestevent",
-        "timeout": 60000,
+        "anchor": "anchor_juveniledays_checklatestevent",
         "next": [
-            "smallevent1_12_no_end",
-            "[JumpBack]smallevent1_12_no_end_return",
-            "smallevent1_12_have_end"
+            "juveniledays_12_no_end",
+            "[JumpBack]juveniledays_12_no_end_return",
+            "juveniledays_12_have_end"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2471,
+                "x": 2470,
                 "y": 730
             }
         }
     },
-    "smallevent1_checkmission1": {
+    "juveniledays_checkmission1": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -602,7 +535,7 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_claimrewards"
+            "juveniledays_claimrewards"
         ],
         "$__mpe_code": {
             "position": {
@@ -611,7 +544,7 @@
             }
         }
     },
-    "smallevent1_checkmission2": {
+    "juveniledays_checkmission2": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -626,7 +559,7 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_claimrewards"
+            "juveniledays_claimrewards"
         ],
         "$__mpe_code": {
             "position": {
@@ -635,7 +568,7 @@
             }
         }
     },
-    "smallevent1_cjeckeventpage": {
+    "juveniledays_cjeckeventpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -651,17 +584,17 @@
             }
         },
         "next": [
-            "smallevent1_0item_count",
-            "smallevent1_item_count"
+            "juveniledays_0item_count",
+            "juveniledays_item_count"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7234,
+                "x": 7183,
                 "y": 961
             }
         }
     },
-    "smallevent1_claimrewards": {
+    "juveniledays_claimrewards": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -682,8 +615,8 @@
         "repeat": 10,
         "repeat_delay": 500,
         "next": [
-            "smallevent1_claimrewardsdaily",
-            "smallevent1_claimrewardsdailypage"
+            "juveniledays_claimrewardsdaily",
+            "juveniledays_claimrewardsdailypage"
         ],
         "$__mpe_code": {
             "position": {
@@ -692,7 +625,7 @@
             }
         }
     },
-    "smallevent1_claimrewardsdaily": {
+    "juveniledays_claimrewardsdaily": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -713,8 +646,8 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_claimrewardsdailypage",
-            "smallevent1_claimrewardsdaily"
+            "juveniledays_claimrewardsdailypage",
+            "juveniledays_claimrewardsdaily"
         ],
         "$__mpe_code": {
             "position": {
@@ -723,7 +656,7 @@
             }
         }
     },
-    "smallevent1_claimrewardsdailypage": {
+    "juveniledays_claimrewardsdailypage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -752,7 +685,7 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "smallevent1_findshopbuttom"
+            "juveniledays_findshopbuttom"
         ],
         "$__mpe_code": {
             "position": {
@@ -761,11 +694,11 @@
             }
         }
     },
-    "smallevent1_claimshop": {
+    "juveniledays_claimshop": {
         "max_hit": 1,
         "next": [
-            "smallevent1_inshop",
-            "[JumpBack]smallevent1_intoshop"
+            "juveniledays_inshop",
+            "[JumpBack]juveniledays_intoshop"
         ],
         "$__mpe_code": {
             "position": {
@@ -774,7 +707,7 @@
             }
         }
     },
-    "smallevent1_claimshoprewards": {
+    "juveniledays_claimshoprewards": {
         "max_hit": 1,
         "next": [
             "limitedeventshop_claim"
@@ -786,24 +719,24 @@
             }
         }
     },
-    "smallevent1_clearrecodatebase": {
+    "juveniledays_clearrecodatebase": {
         "action": {
             "type": "Custom",
             "param": {
-                "custom_action": "clearrecodatebase"
+                "custom_action": "stagematchclear"
             }
         },
         "next": [
-            "smallevent1_sweipdown"
+            "juveniledays_sweipdown"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7901,
-                "y": 971
+                "x": 7904,
+                "y": 963
             }
         }
     },
-    "smallevent1_clickhard1": {
+    "juveniledays_clickhard1": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -825,7 +758,7 @@
         "repeat": 5,
         "repeat_delay": 500,
         "next": [
-            "smallevent1_swipestage_re"
+            "juveniledays_swipestage_re"
         ],
         "$__mpe_code": {
             "position": {
@@ -834,7 +767,7 @@
             }
         }
     },
-    "smallevent1_clickhard2": {
+    "juveniledays_clickhard2": {
         "action": {
             "type": "Click",
             "param": {
@@ -849,7 +782,7 @@
         "repeat": 5,
         "repeat_delay": 500,
         "next": [
-            "smallevent1_swipestage_re"
+            "juveniledays_swipestage_re"
         ],
         "$__mpe_code": {
             "position": {
@@ -858,7 +791,7 @@
             }
         }
     },
-    "smallevent1_comfirmchallenge": {
+    "juveniledays_comfirmchallenge": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -874,18 +807,18 @@
             }
         },
         "next": [
-            "smallevent1_havechalengechance2",
-            "[JumpBack]smallevent1_havechalengechance2_return",
+            "juveniledays_havechalengechance",
+            "[JumpBack]juveniledays_havechalengechance_return",
             "backtohomepage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1935,
-                "y": 2942
+                "x": 1941,
+                "y": 2943
             }
         }
     },
-    "smallevent1_end": {
+    "juveniledays_end": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -910,8 +843,8 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "smallevent1_intochallenge",
-            "smallevent1_end"
+            "juveniledays_intochallenge",
+            "juveniledays_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -920,33 +853,18 @@
             }
         }
     },
-    "smallevent1_event1_cannot_re": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    445,
-                    284,
-                    404,
-                    154
-                ],
-                "expected": [
-                    "无法重复",
-                    "重复通关"
-                ]
-            }
-        },
+    "juveniledays_error": {
         "next": [
-            "smallevent1_addrecodatebase"
+            "[Anchor]juveniledaysanchor"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3667,
-                "y": 281
+                "x": 3560,
+                "y": 1602
             }
         }
     },
-    "smallevent1_eventstage": {
+    "juveniledays_eventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -962,8 +880,8 @@
             }
         },
         "next": [
-            "smallevent1_clickhard1",
-            "smallevent1_clickhard2"
+            "juveniledays_clickhard1",
+            "juveniledays_clickhard2"
         ],
         "$__mpe_code": {
             "position": {
@@ -972,7 +890,7 @@
             }
         }
     },
-    "smallevent1_exchange": {
+    "juveniledays_exchange": {
         "max_hit": 5,
         "recognition": {
             "type": "TemplateMatch",
@@ -996,20 +914,20 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 372,
-                "y": 864
+                "x": 388,
+                "y": 1167
             }
         }
     },
-    "smallevent1_findshopbuttom": {
+    "juveniledays_findshopbuttom": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    421,
-                    477,
-                    431,
-                    186
+                    249,
+                    247,
+                    655,
+                    455
                 ],
                 "expected": [
                     "商店"
@@ -1017,7 +935,7 @@
             }
         },
         "next": [
-            "smallevent1_claimshop"
+            "juveniledays_claimshop"
         ],
         "$__mpe_code": {
             "position": {
@@ -1026,7 +944,7 @@
             }
         }
     },
-    "smallevent1_finish": {
+    "juveniledays_finish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1047,9 +965,9 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_cjeckeventpage",
-            "[JumpBack]smallevent1_jumpstory",
-            "[JumpBack]smallevent1_finish_click"
+            "juveniledays_cjeckeventpage",
+            "[JumpBack]juveniledays_jumpstory",
+            "[JumpBack]juveniledays_finish_click"
         ],
         "$__mpe_code": {
             "position": {
@@ -1058,7 +976,7 @@
             }
         }
     },
-    "smallevent1_finish_click": {
+    "juveniledays_finish_click": {
         "action": {
             "type": "Click",
             "param": {
@@ -1072,57 +990,12 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 7079,
-                "y": 1262
+                "x": 6996,
+                "y": 1297
             }
         }
     },
-    "smallevent1_hard_return": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "LoopBack",
-                "custom_action_param": {
-                    "max_loops": 2
-                }
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2182,
-                "y": 50
-            }
-        }
-    },
-    "smallevent1_havechalengechance1": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "limitedevent/challengebasicticket.png",
-                    "limitedevent/challengepresummon.png"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    -80,
-                    0,
-                    0,
-                    0
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 2310,
-                "y": 3432
-            }
-        }
-    },
-    "smallevent1_havechalengechance2": {
+    "juveniledays_havechalengechance": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1142,26 +1015,26 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_challengefight",
-            "smallevent1_havechalengechance2"
+            "juveniledays_challengefight",
+            "juveniledays_havechalengechance"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2312,
-                "y": 2933
+                "x": 2320,
+                "y": 2937
             }
         }
     },
-    "smallevent1_havechalengechance2_return": {
-        "max_hit": 5,
+    "juveniledays_havechalengechance_return": {
+        "max_hit": 15,
         "$__mpe_code": {
             "position": {
-                "x": 2310,
-                "y": 3217
+                "x": 2319,
+                "y": 3215
             }
         }
     },
-    "smallevent1_inshop": {
+    "juveniledays_inshop": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1177,8 +1050,8 @@
             }
         },
         "next": [
-            "[JumpBack]smallevent1_claimshoprewards",
-            "smallevent1_end"
+            "[JumpBack]juveniledays_claimshoprewards",
+            "juveniledays_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -1187,7 +1060,7 @@
             }
         }
     },
-    "smallevent1_into": {
+    "juveniledays_into": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1198,7 +1071,7 @@
                     167
                 ],
                 "template": [
-                    "limitedevent/killthelord/killthelord.png"
+                    "limitedevent/juveniledays/juveniledays_into.png"
                 ]
             }
         },
@@ -1206,9 +1079,9 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_checkeventpage1",
-            "[JumpBack]smallevent1_intofirst",
-            "smallevent1_into"
+            "juveniledays_checkeventpage1",
+            "[JumpBack]juveniledays_intofirst",
+            "juveniledays_into"
         ],
         "$__mpe_code": {
             "position": {
@@ -1217,12 +1090,14 @@
             }
         }
     },
-    "smallevent1_into11": {
+    "juveniledays_into11": {
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "serecodatebase",
-                "custom_recognition_param": "{field\": \"1-11\"}",
+                "custom_recognition": "stagenum",
+                "custom_recognition_param": {
+                    "expected": "1-11"
+                },
                 "roi": [
                     431,
                     338,
@@ -1235,22 +1110,27 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_startquickfight",
-            "smallevent1_into11"
+            "juveniledays_startquickfight",
+            "juveniledays_into11"
+        ],
+        "on_error": [
+            "juveniledays_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3773,
-                "y": 1185
+                "x": 3717,
+                "y": 1188
             }
         }
     },
-    "smallevent1_into11event": {
+    "juveniledays_into11event": {
         "recognition": {
             "type": "Custom",
             "param": {
-                "custom_recognition": "serecodatebase",
-                "custom_recognition_param": "{field\": \"1-11\"}",
+                "custom_recognition": "stagenum",
+                "custom_recognition_param": {
+                    "expected": "1-11"
+                },
                 "roi": [
                     421,
                     436,
@@ -1264,48 +1144,16 @@
             "type": "Click"
         },
         "next": [
-            "[Anchor]anchor_smallevent1_intofightpage"
+            "[Anchor]anchor_juveniledays_intofightpage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8493,
-                "y": 946
+                "x": 8683,
+                "y": 927
             }
         }
     },
-    "smallevent1_intocanintoevent": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "userecodatebase",
-                "custom_recognition_param": {
-                    "preprocess_scale": 3,
-                    "threshold": 0.3
-                },
-                "roi": [
-                    429,
-                    127,
-                    428,
-                    592
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "smallevent1_event1_cannot_re",
-            "smallevent1_intofightpage",
-            "smallevent1_intocanintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3524,
-                "y": 665
-            }
-        }
-    },
-    "smallevent1_intochallenge": {
+    "juveniledays_intochallenge": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1324,8 +1172,8 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_comfirmchallenge",
-            "smallevent1_intochallenge"
+            "juveniledays_comfirmchallenge",
+            "juveniledays_intochallenge"
         ],
         "$__mpe_code": {
             "position": {
@@ -1334,7 +1182,7 @@
             }
         }
     },
-    "smallevent1_intoerroreventstage": {
+    "juveniledays_intoerroreventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1363,12 +1211,12 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1555,
-                "y": 1235
+                "x": 1554,
+                "y": 1230
             }
         }
     },
-    "smallevent1_intoeventstage": {
+    "juveniledays_intoeventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1398,7 +1246,7 @@
             }
         }
     },
-    "smallevent1_intofight": {
+    "juveniledays_intofight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1417,19 +1265,19 @@
             "type": "Click"
         },
         "next": [
-            "[JumpBack]smallevent1_noteam",
-            "smallevent1_nochance2",
-            "smallevent1_intofight",
-            "smallevent1_stagestart"
+            "[JumpBack]juveniledays_noteam",
+            "juveniledays_nochance2",
+            "juveniledays_intofight",
+            "juveniledays_stagestart"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5092,
-                "y": 952
+                "x": 5033,
+                "y": 962
             }
         }
     },
-    "smallevent1_intofightpage": {
+    "juveniledays_intofightpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1444,19 +1292,19 @@
                 ]
             }
         },
-        "anchor": "anchor_smallevent1_intofightpage",
+        "anchor": "anchor_juveniledays_intofightpage",
         "next": [
-            "smallevent1_startquickfight",
-            "smallevent1_no_startquickfight"
+            "juveniledays_startquickfight",
+            "juveniledays_no_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3850,
-                "y": 842
+                "x": 3879,
+                "y": 847
             }
         }
     },
-    "smallevent1_intofirst": {
+    "juveniledays_intofirst": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1467,7 +1315,8 @@
                     59
                 ],
                 "expected": [
-                    "跳过"
+                    "跳过",
+                    "skip"
                 ]
             }
         },
@@ -1481,7 +1330,7 @@
             }
         }
     },
-    "smallevent1_intoshop": {
+    "juveniledays_intoshop": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1506,7 +1355,7 @@
             }
         }
     },
-    "smallevent1_isfighting": {
+    "juveniledays_isfighting": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1528,7 +1377,7 @@
             }
         }
     },
-    "smallevent1_item_count": {
+    "juveniledays_item_count": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1545,16 +1394,16 @@
         },
         "inverse": true,
         "next": [
-            "smallevent1_clearrecodatebase"
+            "juveniledays_clearrecodatebase"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7573,
-                "y": 948
+                "x": 7531,
+                "y": 943
             }
         }
     },
-    "smallevent1_jumpstory": {
+    "juveniledays_jumpstory": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1566,7 +1415,12 @@
                 ],
                 "expected": [
                     "跳过",
-                    "取消"
+                    "取消",
+                    "X",
+                    "x",
+                    "skip",
+                    "Skip",
+                    "SKIP"
                 ]
             }
         },
@@ -1580,11 +1434,11 @@
             }
         }
     },
-    "smallevent1_mission": {
+    "juveniledays_mission": {
         "max_hit": 1,
         "next": [
-            "smallevent1_checkmission1",
-            "smallevent1_checkmission2"
+            "juveniledays_checkmission1",
+            "juveniledays_checkmission2"
         ],
         "$__mpe_code": {
             "position": {
@@ -1593,7 +1447,7 @@
             }
         }
     },
-    "smallevent1_nextstage": {
+    "juveniledays_nextstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1614,9 +1468,9 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_nochance1",
-            "smallevent1_nextstage",
-            "[Anchor]smallevent1_stagestart_anchor"
+            "juveniledays_nochance1",
+            "juveniledays_nextstage",
+            "[Anchor]juveniledays_stagestart_anchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1625,7 +1479,7 @@
             }
         }
     },
-    "smallevent1_nextstage_return": {
+    "juveniledays_nextstage_return": {
         "max_hit": 5,
         "$__mpe_code": {
             "position": {
@@ -1634,7 +1488,7 @@
             }
         }
     },
-    "smallevent1_no_nextstage": {
+    "juveniledays_no_nextstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1651,7 +1505,7 @@
         },
         "inverse": true,
         "next": [
-            "smallevent1_finish"
+            "juveniledays_finish"
         ],
         "$__mpe_code": {
             "position": {
@@ -1660,7 +1514,7 @@
             }
         }
     },
-    "smallevent1_no_startquickfight": {
+    "juveniledays_no_startquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1677,7 +1531,7 @@
         },
         "inverse": true,
         "next": [
-            "smallevent1_intofight"
+            "juveniledays_intofight"
         ],
         "$__mpe_code": {
             "position": {
@@ -1686,7 +1540,7 @@
             }
         }
     },
-    "smallevent1_nochance1": {
+    "juveniledays_nochance1": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1702,7 +1556,7 @@
             }
         },
         "next": [
-            "smallevent1_finish"
+            "juveniledays_finish"
         ],
         "$__mpe_code": {
             "position": {
@@ -1711,7 +1565,7 @@
             }
         }
     },
-    "smallevent1_nochance2": {
+    "juveniledays_nochance2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1727,7 +1581,7 @@
             }
         },
         "next": [
-            "[Anchor]smallevent1anchor"
+            "[Anchor]juveniledaysanchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1736,7 +1590,7 @@
             }
         }
     },
-    "smallevent1_noquickfight": {
+    "juveniledays_noquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1753,16 +1607,16 @@
             }
         },
         "next": [
-            "smallevent1_intofight"
+            "juveniledays_intofight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4557,
+                "x": 4633,
                 "y": 864
             }
         }
     },
-    "smallevent1_noteam": {
+    "juveniledays_noteam": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1779,7 +1633,7 @@
             }
         },
         "next": [
-            "smallevent1_addnikkes"
+            "event_noteam"
         ],
         "$__mpe_code": {
             "position": {
@@ -1788,57 +1642,7 @@
             }
         }
     },
-    "smallevent1_notopen": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    364,
-                    279,
-                    626,
-                    179
-                ],
-                "expected": [
-                    "解锁条件"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 1671,
-                "y": 58
-            }
-        }
-    },
-    "smallevent1_notopenstage": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    364,
-                    279,
-                    626,
-                    179
-                ],
-                "expected": [
-                    "解锁条件",
-                    "条件",
-                    "无法重复",
-                    "重复通关"
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 1924,
-                "y": 59
-            }
-        }
-    },
-    "smallevent1_quickfightmax": {
+    "juveniledays_quickfightmax": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1849,7 +1653,8 @@
                     70
                 ],
                 "expected": [
-                    "MAX"
+                    "MAX",
+                    "MA"
                 ]
             }
         },
@@ -1858,7 +1663,7 @@
         },
         "repeat": 3,
         "next": [
-            "smallevent1_startquickfightmax"
+            "juveniledays_startquickfightmax"
         ],
         "$__mpe_code": {
             "position": {
@@ -1867,7 +1672,7 @@
             }
         }
     },
-    "smallevent1_quickfightmaxconfirm": {
+    "juveniledays_quickfightmaxconfirm": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1889,7 +1694,7 @@
             "type": "Click"
         },
         "next": [
-            "[Anchor]smallevent1anchor"
+            "[Anchor]juveniledaysanchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1898,68 +1703,10 @@
             }
         }
     },
-    "smallevent1_resweip": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    576,
-                    250,
-                    132,
-                    13
-                ],
-                "end": [
-                    [
-                        553,
-                        587,
-                        225,
-                        17
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 3124,
-                "y": 385
-            }
-        }
-    },
-    "smallevent1_saveteam": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    999,
-                    612,
-                    280,
-                    104
-                ],
-                "expected": [
-                    "保存"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "smallevent1_intofight"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7358,
-                "y": 1903
-            }
-        }
-    },
-    "smallevent1_stage": {
+    "juveniledays_stage": {
         "max_hit": 1,
         "next": [
-            "smallevent1_storyevent"
+            "juveniledays_storyevent"
         ],
         "$__mpe_code": {
             "position": {
@@ -1968,22 +1715,22 @@
             }
         }
     },
-    "smallevent1_stagestart": {
-        "anchor": "smallevent1_stagestart_anchor",
+    "juveniledays_stagestart": {
+        "anchor": "juveniledays_stagestart_anchor",
         "timeout": 40000,
         "next": [
-            "smallevent1_checkfinish",
-            "[JumpBack]smallevent1_isfighting",
-            "[JumpBack]smallevent1_jumpstory"
+            "juveniledays_checkfinish",
+            "[JumpBack]juveniledays_isfighting",
+            "[JumpBack]juveniledays_jumpstory"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5509,
-                "y": 954
+                "x": 5569,
+                "y": 952
             }
         }
     },
-    "smallevent1_startquickfight": {
+    "juveniledays_startquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2002,19 +1749,19 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_noquickfight",
-            "smallevent1_quickfightmax",
-            "smallevent1_nochance2",
-            "smallevent1_startquickfight"
+            "juveniledays_noquickfight",
+            "juveniledays_quickfightmax",
+            "juveniledays_nochance2",
+            "juveniledays_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4202,
+                "x": 4307,
                 "y": 858
             }
         }
     },
-    "smallevent1_startquickfightmax": {
+    "juveniledays_startquickfightmax": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2034,7 +1781,7 @@
             "type": "Click"
         },
         "next": [
-            "smallevent1_quickfightmaxconfirm"
+            "juveniledays_quickfightmaxconfirm"
         ],
         "$__mpe_code": {
             "position": {
@@ -2043,7 +1790,7 @@
             }
         }
     },
-    "smallevent1_storyevent": {
+    "juveniledays_storyevent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2059,9 +1806,9 @@
             }
         },
         "next": [
-            "smallevent1_eventstage",
-            "[JumpBack]smallevent1_intoeventstage",
-            "[JumpBack]smallevent1_intoerroreventstage"
+            "juveniledays_eventstage",
+            "[JumpBack]juveniledays_intoeventstage",
+            "[JumpBack]juveniledays_intoerroreventstage"
         ],
         "$__mpe_code": {
             "position": {
@@ -2070,7 +1817,7 @@
             }
         }
     },
-    "smallevent1_sweipdown": {
+    "juveniledays_sweipdown": {
         "action": {
             "type": "Swipe",
             "param": {
@@ -2096,49 +1843,19 @@
         "repeat": 2,
         "timeout": 40000,
         "next": [
-            "smallevent1_into11event"
+            "juveniledays_into11event"
+        ],
+        "on_error": [
+            "juveniledays_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8185,
-                "y": 930
+                "x": 8365,
+                "y": 909
             }
         }
     },
-    "smallevent1_swipelittle": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    600,
-                    520,
-                    80,
-                    1
-                ],
-                "end": [
-                    [
-                        608,
-                        440,
-                        70,
-                        1
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "next": [
-            "smallevent1_intocanintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 4251,
-                "y": 273
-            }
-        }
-    },
-    "smallevent1_swipestage_re": {
+    "juveniledays_swipestage_re": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -2176,9 +1893,8 @@
             }
         },
         "repeat": 3,
-        "repeat_delay": 500,
         "next": [
-            "smallevent1_checklatestevent"
+            "juveniledays_checklatestevent"
         ],
         "$__mpe_code": {
             "position": {

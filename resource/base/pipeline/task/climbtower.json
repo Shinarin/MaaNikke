@@ -3,16 +3,48 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786633677210,
+            "lastSyncTime": 1787142150699,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\climbtower.json",
             "savedViewport": {
-                "x": -6617,
-                "y": 1237,
-                "zoom": 0.76
+                "x": -7505,
+                "y": 506,
+                "zoom": 0.82
             },
             "filename": "climbtower",
             "version": "v1.7.6"
+        }
+    },
+    "$__mpe_anchor_choosetoweranchor2_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 11471,
+                "y": -179
+            }
+        }
+    },
+    "$__mpe_anchor_choosetoweranchor_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7650,
+                "y": -702
+            }
+        }
+    },
+    "$__mpe_anchor_climbtower_intofight_anchor_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10799,
+                "y": -1392
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10028,
+                "y": 117
+            }
         }
     },
     "$__mpe_group_菲比的坑爹商店_climbtower": {
@@ -46,38 +78,6 @@
             ],
             "width": 372,
             "height": 1096
-        }
-    },
-    "$__mpe_anchor_choosetoweranchor2_climbtower": {
-        "$__mpe_code": {
-            "position": {
-                "x": 11471,
-                "y": -179
-            }
-        }
-    },
-    "$__mpe_anchor_choosetoweranchor_climbtower": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7650,
-                "y": -702
-            }
-        }
-    },
-    "$__mpe_anchor_climbtower_intofight_anchor_climbtower": {
-        "$__mpe_code": {
-            "position": {
-                "x": 10799,
-                "y": -1392
-            }
-        }
-    },
-    "$__mpe_external_backtohomepage_climbtower": {
-        "$__mpe_code": {
-            "position": {
-                "x": 10028,
-                "y": 117
-            }
         }
     },
     "1timescoptower": {
@@ -844,7 +844,8 @@
                     160
                 ],
                 "expected": [
-                    "剩余次数"
+                    "剩余次数",
+                    "无限之塔"
                 ]
             }
         },
@@ -880,7 +881,8 @@
                     160
                 ],
                 "expected": [
-                    "剩余次数"
+                    "剩余次数",
+                    "无限之塔"
                 ]
             }
         },
@@ -913,7 +915,8 @@
                     160
                 ],
                 "expected": [
-                    "剩余次数"
+                    "剩余次数",
+                    "无限之塔"
                 ]
             }
         },

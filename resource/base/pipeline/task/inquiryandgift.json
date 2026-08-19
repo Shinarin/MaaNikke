@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786316585513,
+            "lastSyncTime": 1787143889966,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\inquiryandgift.json",
             "savedViewport": {
-                "x": -1147,
-                "y": -252,
-                "zoom": 0.87
+                "x": -1766,
+                "y": -1627,
+                "zoom": 1.39
             },
             "filename": "inquiryandgift",
-            "version": "v1.7.5"
+            "version": "v1.7.6"
         }
     },
     "$__mpe_anchor_startinquirygift_inquiryandgift": {
@@ -418,8 +418,8 @@
             "type": "Click"
         },
         "next": [
-            "confirm1keytoinquiry",
-            "notimestoinquiry"
+            "notimestoinquiry",
+            "confirm1keytoinquiry"
         ],
         "$__mpe_code": {
             "position": {
@@ -451,8 +451,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2002,
-                "y": 1786
+                "x": 1995,
+                "y": 1821
             }
         }
     },
@@ -481,8 +481,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1771,
-                "y": 1322
+                "x": 1740,
+                "y": 1251
             }
         }
     },
@@ -646,8 +646,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2129,
-                "y": 1254
+                "x": 2127,
+                "y": 1265
             }
         }
     },
@@ -668,8 +668,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1867,
-                "y": 1062
+                "x": 1871,
+                "y": 1051
             }
         }
     },
@@ -969,8 +969,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1708,
-                "y": 1765
+                "x": 1711,
+                "y": 1808
             }
         }
     },

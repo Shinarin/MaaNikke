@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786316050530,
+            "lastSyncTime": 1787145901830,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\freeshopdaily.json",
             "savedViewport": {
-                "x": 514,
-                "y": 795,
-                "zoom": 0.53
+                "x": 851,
+                "y": -613,
+                "zoom": 0.43
             },
             "filename": "freeshopdaily",
-            "version": "v1.7.5"
+            "version": "v1.7.6"
         }
     },
     "$__mpe_anchor_checkinmallanchor1_freeshopdaily": {
@@ -478,7 +478,8 @@
                     81
                 ],
                 "expected": [
-                    "MAX"
+                    "MAX",
+                    "MA"
                 ]
             }
         },
@@ -1349,7 +1350,8 @@
                     81
                 ],
                 "expected": [
-                    "MAX"
+                    "MAX",
+                    "MA"
                 ]
             }
         },
