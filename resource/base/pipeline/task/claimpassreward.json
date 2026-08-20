@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787228973879,
+            "lastSyncTime": 1787267364258,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
             "savedViewport": {
-                "x": 1179,
-                "y": 749,
-                "zoom": 0.57
+                "x": -409,
+                "y": 1153,
+                "zoom": 1
             },
             "filename": "claimpassreward",
-            "version": "v1.7.6"
+            "version": "v1.8.0"
         }
     },
     "$__mpe_anchor_claimpassreward_anchor_claimpassreward": {
@@ -191,7 +191,6 @@
                 ]
             }
         },
-        "timeout": 10000,
         "next": [
             "3pass_claim_resent"
         ],
@@ -220,8 +219,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 989,
-                "y": -708
+                "x": 1010,
+                "y": -747
             }
         }
     },
@@ -229,7 +228,7 @@
         "max_hit": 20,
         "$__mpe_code": {
             "position": {
-                "x": 755,
+                "x": 738,
                 "y": -401
             }
         }
@@ -255,10 +254,11 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 469,
-                "y": -408
+                "x": 470,
+                "y": -401
             }
         }
     },
@@ -280,7 +280,7 @@
                 ]
             }
         },
-        "timeout": 10000,
+        "post_wait_freezes": 1000,
         "next": [
             "3pass_claim",
             "[JumpBack]3pass_claim_return",
@@ -288,8 +288,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 470,
-                "y": -770
+                "x": 484,
+                "y": -768
             }
         }
     },
@@ -415,17 +415,6 @@
                 ]
             }
         },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    622,
-                    647,
-                    41,
-                    55
-                ]
-            }
-        },
         "repeat": 4,
         "timeout": 5000,
         "next": [
@@ -435,8 +424,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": -572,
-                "y": -873
+                "x": -571,
+                "y": -869
             }
         }
     },
