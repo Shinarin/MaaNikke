@@ -2,7 +2,7 @@
   "interface_version": 2,
   "custom_title": "MaaNikke",
   "name": "MaaNikke",
-  "version": "2.1.9",
+  "version": "2.2.0",
   "url": "https://github.com/Shinarin/MaaNikke",
 
 
@@ -177,6 +177,12 @@
       "entry": "teambattle",
       "default_check": true,
       "description": "打满三次，可能不稳定，可选可不选，出错了也不影响每日"
+    },
+    {
+      "name": "单人突击",
+      "entry": "soloraid",
+      "default_check": true,
+      "description": "如题"
     },
     {
       "name": "联盟突袭beta",

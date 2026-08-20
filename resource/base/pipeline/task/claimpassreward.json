@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787144829827,
+            "lastSyncTime": 1787228973879,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
             "savedViewport": {
-                "x": -322,
-                "y": 1059,
-                "zoom": 1.31
+                "x": 1179,
+                "y": 749,
+                "zoom": 0.57
             },
             "filename": "claimpassreward",
             "version": "v1.7.6"
@@ -140,7 +140,7 @@
                     "3pass.png"
                 ],
                 "threshold": [
-                    0.85
+                    0.9
                 ]
             }
         },
@@ -308,7 +308,7 @@
                     "redpoint2.png"
                 ],
                 "threshold": [
-                    0.85
+                    0.7
                 ]
             }
         },
@@ -334,7 +334,7 @@
                     "redpoint2.png"
                 ],
                 "threshold": [
-                    0.85
+                    0.7
                 ]
             }
         },

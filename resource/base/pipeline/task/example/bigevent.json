@@ -212,7 +212,10 @@
                     "ACCESS DENIED",
                     "ACCESS",
                     "DENIED",
-                    " \\?"
+                    " \\?",
+                    "NONE",
+                    "None",
+                    "none"
                 ]
             }
         },
@@ -247,7 +250,10 @@
                     "ACCESS DENIED",
                     "ACCESS",
                     "DENIED",
-                    " \\?"
+                    " \\?",
+                    "NONE",
+                    "None",
+                    "none"
                 ]
             }
         },

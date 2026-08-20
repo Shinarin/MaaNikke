@@ -16,6 +16,15 @@
 
 ---
 
+## v2.2.0 - 2026-08-20
+
+- 2026-08-20 [优化] stagematch 临时数据库语义改为"确认删除制"（用户实机验证后提出）：命中字段标记为"最近待确认"——替换式单标记（新命中顶掉旧标记）且标记不妨碍识别（未删除字段每轮仍全扫，点击未生效/战斗未完成等未确认场景自动重试，根治原"标记即跳过"导致点击未生效时该关被永久跳过的问题）；仅后续节点明确确认未开放/已通关时 stagematchdel 才删除当前标记（至多一个，不再批量删）；db_remaining 语义变为未删除字段总数；DB 生命周期单测链重排并新增单标记替换断言，全绿（涉及：agent/custom/reco/stagenum.py、tools/stagenum_test/test_stagenum_units.py、DEVELOPMENT.md）
+- 2026-08-20 [优化] 同步 juveniledays 的 OCR 词条：bigevent/smallevent/p5 三个文件的 `_12_have_end`、`_12_no_end` 节点 expected 末尾各补 `NONE`/`None`/`none` 三条（共 6 节点），校验脚本全绿（涉及：resource/base/pipeline/task/example/bigevent.json、example/smallevent.json、limitedevent/p5.json）
+- 2026-08-20 [优化] stagenum 尾段兜底扩展纯数字无前缀形态（小活动页 STAGE LIST 关卡号显示 `01`~`12`，实机截图确认）：整框纯数字且 ≥2 位时按 int==expected 尾段命中（`01`≡`1-1`、`12`≡`1-12`，expected 仍统一写 `1-x`，无需开关，1-x 页与纯数字页通吃）；一位纯数字不认，防 `5/5`/`6天8小时` 类文本拆框误中；纯数字 `11`/`12` 与 `1-1`/`1-2` 丢分隔符形态存在文本层歧义，由 stagematch 长号码优先的既定顺序消解（旧断言同步改写）；单测加纯数字尾段断言组 + 小活动页读数集成用例，全绿（涉及：agent/custom/reco/stagenum.py、tools/stagenum_test/test_stagenum_units.py、DEVELOPMENT.md）
+- 2026-08-20 [新增] tools/stagenum_test/grab_window.py：临时调试工具，maafw Win32Controller 直连游戏窗口截图（后台窗口可截），存 shots/game.png（涉及：tools/stagenum_test/）
+
+---
+
 ## v2.1.9 - 2026-08-19
 
 - 2026-08-19 [优化] juveniledays.json 内 smallevent 前缀批量改名为 juveniledays（179 处：节点 key、next/on_error/[JumpBack]/[Anchor] 引用、anchor 字段、`$__mpe_anchor_*`/`$__mpe_sticker_*` 键一并同步；图片模板路径未动，本就以 juveniledays 命名）；消除与 example/smallevent.json 的全局重名冲突，校验脚本全绿（涉及：resource/base/pipeline/task/limitedevent/juveniledays.json）

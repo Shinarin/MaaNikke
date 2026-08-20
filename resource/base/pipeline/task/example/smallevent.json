@@ -152,7 +152,10 @@
                     "Denied",
                     "ACCESS DENIED",
                     "ACCESS",
-                    "DENIED"
+                    "DENIED",
+                    "NONE",
+                    "None",
+                    "none"
                 ]
             }
         },
@@ -187,7 +190,10 @@
                     "Denied",
                     "ACCESS DENIED",
                     "ACCESS",
-                    "DENIED"
+                    "DENIED",
+                    "NONE",
+                    "None",
+                    "none"
                 ]
             }
         },

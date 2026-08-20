@@ -4,7 +4,8 @@
 ============================================================
 
 给定较宽 roi（整行或整个列表区域），自动定位关卡号并识别，
-归一化匹配 expected（"1-01" 与 "1-1" 互通）。
+归一化匹配 expected（"1-01" 与 "1-1" 互通；小活动页 STAGE LIST 的
+纯数字 "01"~"12" 无前缀形态按尾段适配，expected 仍写 "1-x"）。
 
 det-first 两级流程：对 roi 整图跑一次框架 OCR（不带 expected），
 det 框 + rec 文本直接做归一化匹配（严格 / 宽松 / 尾段兜底）；
@@ -67,10 +68,14 @@ def stages_equal_loose(candidate: str, expected: str) -> bool:
     （否则 "EVEIT HI" 剥掉字母得 "111" 会误中）；数字串必须完全相等
     （"HI"≠"1-11"、"HII"≠"1-1"，位数对不上不算）。
 
-    尾段兜底：候选严格解析不出关卡号、且映射后仍带分隔符时，允许候选
-    数字串 == expected 末段——兜底前导 "1" 被 det 丢掉（选中行实测
-    读作 "-11"/"-09"）。"1-1" 能严格解析走不到这里，不会误中 "1-11"；
-    无分隔符的纯数字串（"H"→"1"）不认尾段，位数信息不足。"""
+    尾段兜底（候选严格解析不出关卡号时才走，"1-1" 能严格解析走不到这里，
+    不会误中 "1-11"），两种形态：
+    1. 映射后带分隔符：数字串 int == expected 末段——兜底前导 "1" 被 det
+       丢掉（选中行实测读作 "-11"/"-09"）；
+    2. 整框纯数字（strip 后全是数字）且 ≥2 位：int == expected 末段——
+       小活动页 STAGE LIST 显示 "01"~"12" 无前缀（"01"≡"1-1"、"12"≡"1-12"）。
+       一位纯数字（"5"/"6"）不认：防 "5/5"、"6天8小时" 这类计数/时间文本
+       拆框后误中尾段。"""
     if not candidate:
         return False
     mapped = candidate.translate(_CONFUSE_AS_ONE)
@@ -80,10 +85,16 @@ def stages_equal_loose(candidate: str, expected: str) -> bool:
     a, b = _digits(mapped), _digits(expected)
     if a and b and a == b:
         return True
-    if parse_stage(candidate) is None and any(ch in _LOOSE_SEP for ch in mapped):
-        tail = parse_stage(expected)
-        if a and tail is not None and int(a) == tail[1]:
-            return True
+    if parse_stage(candidate) is not None:
+        return False
+    tail = parse_stage(expected)
+    if not a or tail is None:
+        return False
+    if any(ch in _LOOSE_SEP for ch in mapped):  # 带分隔符尾段："-11"≡"1-11"
+        return int(a) == tail[1]
+    s = mapped.strip()
+    if s.isdigit() and len(s) >= 2:             # 纯数字尾段："01"≡"1-1"
+        return int(s) == tail[1]
     return False
 
 
@@ -300,7 +311,8 @@ class StageNum(CustomRecognition):
     stage-0 整图直配：对 roi 跑一次框架 OCR（不带 expected，det 框 + rec
     文本全部由框架产出），逐条文本做归一化匹配——严格（parse_stage，
     "1-04 √ Clear" 这类合并文本也能抠出 "1-04"）→ 宽松（斜体 "1" 误读
-    字归一，"HII"≈"1-11"）→ 尾段兜底（前导 "1" 丢失，"-11"≈"1-11"）。
+    字归一，"HII"≈"1-11"）→ 尾段兜底（前导 "1" 丢失 "-11"≈"1-11"；
+    整框纯数字无前缀 "01"≡"1-1"、"12"≡"1-12"）。
     stage-1 框内兜底：对没匹配上且含数字/形近字的框，紧裁剪（pad 3px）
     先原图重读，再按 variants 顺序做黑字白底提取图重读。
     命中即把 box 映射回原图坐标返回；全部不匹配 → 未命中，框架按 timeout 重试。
@@ -331,8 +343,10 @@ class StageNum(CustomRecognition):
     ── 注意 ──
     1. 定位完全交给 det 模型：与关卡号的位置、字体、背景（立绘/斜纹）无关，
        roi 给整个列表区域即可，列表滚动也能命中。
-    2. 已知歧义（接受）：候选剥掉分隔符后数字串相等即中，"-11" 也会中
-       "1-1"；stagematch 按字段顺序轮巡，长号码优先命中可规避。
+    2. 已知歧义（接受，均由 stagematch 按字段顺序轮巡、长号码优先命中规避）：
+       候选剥掉分隔符后数字串相等即中，"-11" 也会中 "1-1"；纯数字 "11"/"12"
+       同时是 "1-1"/"1-2" 的连字符丢失形态与 "1-11"/"1-12" 的纯数字尾段形态，
+       文本层面无法区分，同帧长号码行正常显示时会先正确命中、轮不到歧义框。
     """
 
     def analyze(
@@ -365,7 +379,8 @@ def _fresh_screenshot(context: Context, fallback: np.ndarray) -> np.ndarray:
 # =====================================================================
 # 结构：{"fields": [...], "marked": {...}}
 #   fields —— 建库时 expected 的入库顺序（去重），识别顺序与之保持一致
-#   marked —— 已命中、等待 stagematchdel 删除的字段集合
+#   marked —— "最近命中待确认"字段（替换式单标记：新命中顶掉旧标记；
+#             标记不妨碍识别，仅 stagematchdel 确认后才会真正删除）
 # None 表示库不存在（未建库 / 已被 stagematchclear 清空）
 _STAGE_DB: dict | None = None
 
@@ -377,16 +392,18 @@ def _db_init(fields: list[str]) -> None:
 
 
 def _db_pending() -> list[str]:
-    """库中仍可识别的字段（未标记未删除，保持入库顺序）；无库返回 []。"""
+    """库中可识别字段（未删除的全部字段，保持入库顺序）；无库返回 []。
+    已标记字段仍参与识别——标记只是"待确认"记录，确认删除权在 stagematchdel。"""
     if _STAGE_DB is None:
         return []
-    return [f for f in _STAGE_DB["fields"] if f not in _STAGE_DB["marked"]]
+    return list(_STAGE_DB["fields"])
 
 
 def _db_mark(field: str) -> None:
-    """标记字段（stagematch 命中时调用）。"""
+    """把字段标记为"最近命中待确认"（替换式：新标记顶掉旧标记，
+    旧字段恢复为普通字段）。单标记保证 stagematchdel 只删"刚确认的那关"。"""
     if _STAGE_DB is not None:
-        _STAGE_DB["marked"].add(field)
+        _STAGE_DB["marked"] = {field}
 
 
 def stagedb_fields() -> list[str]:
@@ -395,7 +412,8 @@ def stagedb_fields() -> list[str]:
 
 
 def stagedb_del() -> list[str]:
-    """删除全部被标记字段并清空标记集，返回删除列表（保持入库顺序）。
+    """删除当前被标记字段（替换式单标记，至多一个）并清空标记，
+    返回删除列表（保持入库顺序）。
 
     无库或无标记字段为空操作（幂等）。
     """
@@ -427,13 +445,13 @@ class StageMatch(CustomRecognition):
     1. 临时数据库不存在 → 以本节点 expected 按序建库（去重）；
        已存在 → 忽略本节点 expected，沿用库中剩余字段（库优先）
     2. for 轮次 in 1..rounds:
-         for 字段 in 库中未标记字段（识别顺序 = 建库时 expected 顺序）:
+         for 字段 in 库中全部未删除字段（识别顺序 = 建库时 expected 顺序）:
              for 尝试 in 1..tries_per_field:
                  重新截图 → 调 stagenum 引擎识别该字段
-                 命中 → 标记该字段（待 stagematchdel 删除）→ 返回词组 box
+                 命中 → 标记为"最近待确认"（替换旧标记）→ 返回词组 box
              全空 → 下一字段
          一轮全空 → 执行 action_node（不填跳过）→ 等 post_action_wait → 下一轮
-    3. 库中字段全部完成（全被删除/标记）→ 未命中（pipeline 退出信号）
+    3. 库中字段全部被删除 → 未命中（pipeline 退出信号）
     全轮皆空 → 未命中，框架按节点 timeout 重试
 
     ※ 每次识别前都重新截图（post_screencap）：同图重试结果确定性相同无意义，
@@ -441,10 +459,12 @@ class StageMatch(CustomRecognition):
       （如滑动列表露出其他关卡），不配时各轮差异仅来自画面自身动态。
 
     ── 临时数据库（进程内存态，agent 子进程结束即销毁，无残留）──
-    命中只标记不删除：pipeline 在关卡动作之后放 stagematchdel 删除被标记
-    字段，stagematch 再次进入就只识别剩余字段；一轮刷完（或流程收尾）放
-    stagematchclear 整库清空，下次进入重新建库。标记未删除时再次进入会
-    跳过已标记字段（防重复命中同一关卡）。
+    命中即把字段标记为"最近待确认"——**替换式单标记**（新命中顶掉旧标记，
+    旧字段恢复普通），且**标记不妨碍识别**（未删除的字段每轮都会重新扫）。
+    只有 pipeline 后续节点明确确认该关"未开放/已通关"（如识别到"无法重复
+    通关"弹窗）时，才放 stagematchdel 把当前标记字段真正删除；点击未生效、
+    战斗未完成等未确认场景，字段留在库里下轮还会再被识别重试。一轮刷完
+    （或流程收尾）放 stagematchclear 整库清空，下次进入重新建库。
 
     ── 自定义参数（custom_recognition_param，直接写对象） ──
     {
@@ -475,7 +495,7 @@ class StageMatch(CustomRecognition):
 
     ── 注意 ──
     1. detail 中 matched 为命中的字段名，OCR 原文在 ocr_text，
-       db_remaining 为命中后库内剩余可识别字段数。
+       db_remaining 为库内未删除字段总数（标记不减少该值，删除才减）。
     2. 独立动作节点写法与 recodatebase 相同：不进任何 next 链，仅供
        action_node 手动调用。
     3. 临时数据库与 my_reco 的 datebase 体系代码完全独立，互不影响。
@@ -546,7 +566,7 @@ class StageMatch(CustomRecognition):
                                   "db_remaining": len(_db_pending())}
                         print(f"[stagematch] ✅ 命中 {field}（第 {round_i} 轮第 {try_i} 试，"
                               f"OCR {info.get('matched')!r} score={info.get('score', 0):.2f}，"
-                              f"已标记待删，库剩余 {detail['db_remaining']}）→ {box}")
+                              f"已标记为最近待确认，库未删除剩 {detail['db_remaining']}）→ {box}")
                         return CustomRecognition.AnalyzeResult(box=box, detail=detail)
                 print(f"[stagematch] 字段 {field} 第 {round_i} 轮 {tries} 试全空")
             print(f"[stagematch] 第 {round_i} 轮全部字段未命中")
@@ -562,16 +582,18 @@ class StageMatch(CustomRecognition):
 
 
 # =====================================================================
-# Action: stagematchdel —— 删除临时数据库中被标记（已命中）的字段
+# Action: stagematchdel —— 删除临时数据库中当前被标记的字段
 # =====================================================================
 @AgentServer.custom_action("stagematchdel")
 class StageMatchDel(CustomAction):
     """
-    删除 stagematch 临时数据库中所有被标记的字段（保持剩余字段入库顺序）。
+    删除 stagematch 临时数据库中当前被标记的字段（替换式单标记，至多一个，
+    保持剩余字段入库顺序）。
 
-    典型用法：stagematch 命中某关卡后只标记不删除，pipeline 在该关卡的
-    后续动作（进关/战斗/返回列表）完成之后放本 action，stagematch 再次
-    进入时就只识别剩余字段。无库或无标记字段时为空操作（幂等），
+    典型用法：stagematch 命中某关卡只是把它标记为"最近待确认"（不妨碍
+    识别）；pipeline 在后续节点明确确认该关"未开放/已通关"（如识别到
+    "无法重复通关"弹窗）之后放本 action，把该字段真正删除，stagematch
+    再次进入时就少一个字段。无库或无标记字段时为空操作（幂等），
     始终返回成功。无参数。
 
     Pipeline JSON 引用示例:

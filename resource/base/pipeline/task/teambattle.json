@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1784418666733,
+            "lastSyncTime": 1787235025962,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\teambattle.json",
             "savedViewport": {
-                "x": -2849,
-                "y": 482,
-                "zoom": 1.26
+                "x": 479,
+                "y": 435,
+                "zoom": 1.14
             },
             "filename": "teambattle",
-            "version": "v1.7.4"
+            "version": "v1.7.6"
         }
     },
     "$__mpe_anchor_teambattlestart_teambattle": {
@@ -36,14 +36,6 @@
             "position": {
                 "x": 3027,
                 "y": 1
-            }
-        }
-    },
-    "$__mpe_external_morelimitedevent_teambattle": {
-        "$__mpe_code": {
-            "position": {
-                "x": 326,
-                "y": -152
             }
         }
     },
@@ -334,7 +326,7 @@
             "checkteambattle",
             "[JumpBack]intoteambattle2",
             "[JumpBack]intoteambattle",
-            "[JumpBack]morelimitedevent",
+            "[JumpBack]teambattle_morelimitedevent",
             "[JumpBack]checkteambattleopen",
             "backtohomepage"
         ],
@@ -570,6 +562,31 @@
             "position": {
                 "x": 2396,
                 "y": -274
+            }
+        }
+    },
+    "teambattle_morelimitedevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    112,
+                    214,
+                    278
+                ],
+                "expected": [
+                    "更多"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 363,
+                "y": 127
             }
         }
     }

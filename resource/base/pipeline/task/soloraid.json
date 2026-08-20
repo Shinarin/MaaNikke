@@ -1,0 +1,828 @@
+{
+    "$__mpe_config_soloraid": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1787240128991,
+            "isModifiedExternally": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\soloraid.json",
+            "savedViewport": {
+                "x": -5126,
+                "y": 167,
+                "zoom": 0.66
+            },
+            "filename": "soloraid",
+            "version": "v1.8.0"
+        }
+    },
+    "soloraid": {
+        "next": [
+            "soloraid_checkhomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5444,
+                "y": -252
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_soloraid": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7527,
+                "y": 340
+            }
+        }
+    },
+    "soloraid_checksoloraid": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    84,
+                    44
+                ],
+                "expected": [
+                    "单人突击",
+                    "突击",
+                    "单人"
+                ]
+            }
+        },
+        "anchor": "soloraid_checksoloraid_anchor",
+        "next": [
+            "soloraid_quickfight",
+            "[JumpBack]soloraid_challenge_win",
+            "soloraid_fightpage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6569,
+                "y": -250
+            }
+        }
+    },
+    "soloraid_checksoloraid2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    84,
+                    44
+                ],
+                "expected": [
+                    "单人突击",
+                    "突击",
+                    "单人"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6635,
+                "y": -860
+            }
+        }
+    },
+    "soloraid_checksoloraidopen": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 6162,
+                "y": 261
+            }
+        }
+    },
+    "soloraid_intosoloraid2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    6,
+                    116,
+                    181,
+                    272
+                ],
+                "template": [
+                    "soloraid/soloraid.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "soloraid_checksoloraid2",
+            "soloraid_intosoloraid2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6244,
+                "y": -605
+            }
+        }
+    },
+    "soloraid_intosoloraid": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    6,
+                    116,
+                    181,
+                    272
+                ],
+                "expected": [
+                    "单人突击",
+                    "单人",
+                    "突击"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "soloraid_checksoloraid2",
+            "soloraid_intosoloraid"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6242,
+                "y": -899
+            }
+        }
+    },
+    "soloraid_checkhomepage": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "homepagesign",
+                    "homepagesign2"
+                ]
+            }
+        },
+        "next": [
+            "soloraid_checksoloraid",
+            "[JumpBack]soloraid_intosoloraid",
+            "[JumpBack]soloraid_intosoloraid2",
+            "[JumpBack]soloraid_morelimitedevent",
+            "[JumpBack]soloraid_checksoloraidopen",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5922,
+                "y": -256
+            }
+        }
+    },
+    "soloraid_morelimitedevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    112,
+                    214,
+                    278
+                ],
+                "expected": [
+                    "更多"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6293,
+                "y": 33
+            }
+        }
+    },
+    "soloraid_quickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    407,
+                    419,
+                    496,
+                    216
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "soloraid_quickfight_no",
+            "soloraid_quickfight",
+            "[JumpBack]soloraid_challenge_win",
+            "soloraid_havetimes"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7033,
+                "y": -218
+            }
+        }
+    },
+    "soloraid_quickfight_no": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "快速战斗在通关相应关卡后即可使用",
+                    "通关相应关卡",
+                    "快速战斗在通关",
+                    "即可使用"
+                ]
+            }
+        },
+        "next": [
+            "soloraid_challenge",
+            "[JumpBack]soloraid_challenge_win"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7386,
+                "y": -193
+            }
+        }
+    },
+    "soloraid_challenge": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    436,
+                    433,
+                    410,
+                    200
+                ],
+                "expected": [
+                    "挑战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "soloraid_challenge_checktimes",
+            "soloraid_challenge",
+            "[JumpBack]soloraid_challenge_win",
+            "soloraid_notimes"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7756,
+                "y": -189
+            }
+        }
+    },
+    "soloraid_challenge_checktimes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    495,
+                    162,
+                    273,
+                    196
+                ],
+                "expected": [
+                    "消耗挑战次数"
+                ]
+            }
+        },
+        "next": [
+            "soloraid_challenge_checkgight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8103,
+                "y": -176
+            }
+        }
+    },
+    "soloraid_challenge_checkgight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    629,
+                    357,
+                    239,
+                    149
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "soloraid_intofight",
+            "soloraid_challenge_checkgight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8467,
+                "y": -169
+            }
+        }
+    },
+    "soloraid_intofight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    633,
+                    564,
+                    247,
+                    111
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "soloraid_finish",
+            "[JumpBack]soloraid_infighting",
+            "soloraid_noteams",
+            "soloraid_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8802,
+                "y": -185
+            }
+        }
+    },
+    "soloraid_infighting": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    165,
+                    73
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9359,
+                "y": 85
+            }
+        }
+    },
+    "soloraid_finish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    398,
+                    426,
+                    514,
+                    290
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步",
+                    "ESC"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[Anchor]soloraid_checksoloraid_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9362,
+                "y": -150
+            }
+        }
+    },
+    "soloraid_challenge_win": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    428,
+                    163,
+                    450,
+                    184
+                ],
+                "expected": [
+                    "ENEMY",
+                    "DEFEATED",
+                    "已消灭"
+                ]
+            }
+        },
+        "next": [
+            "soloraid_challenge_yes"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8260,
+                "y": -499
+            }
+        }
+    },
+    "soloraid_challenge_yes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    496,
+                    401,
+                    335,
+                    165
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8608,
+                "y": -488
+            }
+        }
+    },
+    "$__mpe_anchor_soloraid_checksoloraid_anchor_soloraid": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9839,
+                "y": -104
+            }
+        }
+    },
+    "soloraid_havetimes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    477,
+                    285,
+                    329,
+                    241
+                ],
+                "expected": [
+                    "剩余次数",
+                    "快速战斗"
+                ]
+            }
+        },
+        "next": [
+            "soloraid_max"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7481,
+                "y": 108
+            }
+        }
+    },
+    "soloraid_intofight2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    599,
+                    458,
+                    248,
+                    152
+                ],
+                "expected": [
+                    "进行战斗"
+                ]
+            }
+        },
+        "next": [
+            "soloraid_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8344,
+                "y": 127
+            }
+        }
+    },
+    "soloraid_max": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    721,
+                    500,
+                    20,
+                    15
+                ]
+            }
+        },
+        "repeat": 2,
+        "next": [
+            "soloraid_intofight2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7876,
+                "y": 110
+            }
+        }
+    },
+    "soloraid_fightpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    409,
+                    281,
+                    462,
+                    182
+                ],
+                "expected": [
+                    "放弃战斗"
+                ]
+            }
+        },
+        "next": [
+            "soloraid_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7040,
+                "y": -512
+            }
+        }
+    },
+    "soloraid_team1": {
+        "enabled": true,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    586,
+                    440,
+                    256,
+                    75
+                ],
+                "expected": [
+                    "01"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "soloraid_team_anchor",
+        "next": [
+            "soloraid_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9442,
+                "y": 483
+            }
+        }
+    },
+    "soloraid_team2": {
+        "enabled": true,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    586,
+                    440,
+                    256,
+                    75
+                ],
+                "expected": [
+                    "02"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "soloraid_team_anchor",
+        "next": [
+            "soloraid_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9440,
+                "y": 700
+            }
+        }
+    },
+    "soloraid_team3": {
+        "enabled": true,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    586,
+                    440,
+                    256,
+                    75
+                ],
+                "expected": [
+                    "03"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "soloraid_team_anchor",
+        "next": [
+            "soloraid_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9438,
+                "y": 900
+            }
+        }
+    },
+    "soloraid_team4": {
+        "enabled": true,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    586,
+                    440,
+                    256,
+                    75
+                ],
+                "expected": [
+                    "04"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "soloraid_team_anchor",
+        "next": [
+            "soloraid_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9452,
+                "y": 1100
+            }
+        }
+    },
+    "soloraid_team5": {
+        "enabled": true,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    586,
+                    440,
+                    256,
+                    75
+                ],
+                "expected": [
+                    "05"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": "soloraid_team_anchor",
+        "next": [
+            "soloraid_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9466,
+                "y": 1319
+            }
+        }
+    },
+    "soloraid_noteams": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    436,
+                    303,
+                    406,
+                    109
+                ],
+                "roi_offset": [
+                    10,
+                    193,
+                    -4,
+                    -14
+                ],
+                "expected": [
+                    "部队中包含无法选择的妮姬。请编入其他妮姬",
+                    "包含无法选择",
+                    "编入其他妮姬",
+                    "无法选择"
+                ]
+            }
+        },
+        "next": [
+            "soloraid_nextteams"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8871,
+                "y": 500
+            }
+        }
+    },
+    "soloraid_nextteams": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "DisableAnchorNode",
+                "custom_action_param": {
+                    "anchor": "soloraid_team_anchor"
+                }
+            }
+        },
+        "next": [
+            "soloraid_team1",
+            "soloraid_team2",
+            "soloraid_team3",
+            "soloraid_team4",
+            "soloraid_team5"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9139,
+                "y": 505
+            }
+        }
+    },
+    "soloraid_notimes": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    447,
+                    279,
+                    389,
+                    159
+                ],
+                "expected": [
+                    "已超过进入次数",
+                    "已超过",
+                    "进入次数"
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8135,
+                "y": 415
+            }
+        }
+    }
+}

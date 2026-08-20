@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787145392379,
+            "lastSyncTime": 1787238084270,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\p5.json",
             "savedViewport": {
-                "x": -3038,
-                "y": 481,
-                "zoom": 0.65
+                "x": -757,
+                "y": 228,
+                "zoom": 0.46
             },
             "filename": "p5",
             "version": "v1.7.6"
@@ -58,8 +58,8 @@
     "$__mpe_external_event_noteam_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 6434,
-                "y": 1290
+                "x": 6533,
+                "y": 1283
             }
         }
     },
@@ -74,8 +74,8 @@
     "$__mpe_sticker_p5_便签1_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 562,
-                "y": -339
+                "x": 571,
+                "y": -323
             },
             "content": "这里需要适配活动图标",
             "color": "yellow",
@@ -159,12 +159,13 @@
         "max_hit": 1,
         "next": [
             "claimp5_intoqiandao",
+            "[JumpBack]claimp5_qiandao_wuchu",
             "[JumpBack]claimp5_qiandao"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1238,
-                "y": 517
+                "x": 1235,
+                "y": 512
             }
         }
     },
@@ -193,8 +194,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1598,
-                "y": 472
+                "x": 1589,
+                "y": 427
             }
         }
     },
@@ -218,10 +219,11 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 500,
         "$__mpe_code": {
             "position": {
-                "x": 1599,
-                "y": 806
+                "x": 1598,
+                "y": 789
             }
         }
     },
@@ -282,11 +284,15 @@
                     "ACCESS DENIED",
                     "ACCESS",
                     "DENIED",
-                    " \\?"
+                    "\\?",
+                    "NONE",
+                    "None",
+                    "none"
                 ]
             }
         },
         "inverse": true,
+        "timeout": 40000,
         "next": [
             "p5_into11"
         ],
@@ -317,7 +323,10 @@
                     "ACCESS DENIED",
                     "ACCESS",
                     "DENIED",
-                    " \\?"
+                    " \\?",
+                    "NONE",
+                    "None",
+                    "none"
                 ]
             }
         },
@@ -395,10 +404,10 @@
                 ]
             }
         },
-        "pre_wait_freezes": 500,
         "action": {
             "type": "Click"
         },
+        "post_delay": 500,
         "next": [
             "p5_cannot_re",
             "p5_intofightpage",
@@ -1015,6 +1024,7 @@
                 ]
             }
         },
+        "post_wait_freezes": 500,
         "next": [
             "p5_intochallenge",
             "p5_end"
@@ -1220,15 +1230,7 @@
             }
         },
         "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    838,
-                    597,
-                    107,
-                    18
-                ]
-            }
+            "type": "Click"
         },
         "next": [
             "p5_checkintoevent2",
@@ -1236,8 +1238,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 555,
-                "y": -198
+                "x": 559,
+                "y": -187
             }
         }
     },
@@ -1415,6 +1417,7 @@
         "action": {
             "type": "Click"
         },
+        "timeout": 60000,
         "next": [
             "[JumpBack]p5_noteam",
             "p5_nochance2",
@@ -1423,8 +1426,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5878,
-                "y": 304
+                "x": 5815,
+                "y": 322
             }
         }
     },
@@ -1543,7 +1546,12 @@
                 ],
                 "expected": [
                     "跳过",
-                    "取消"
+                    "取消",
+                    "X",
+                    "x",
+                    "SKIP",
+                    "Skip",
+                    "skip"
                 ]
             }
         },
@@ -1552,8 +1560,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6663,
-                "y": 832
+                "x": 6700,
+                "y": 1076
             }
         }
     },
@@ -1747,8 +1755,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6119,
-                "y": 1241
+                "x": 6055,
+                "y": 1234
             }
         }
     },
@@ -1857,13 +1865,15 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 500,
         "next": [
-            "p5_rewardsdaily"
+            "p5_rewardsdaily",
+            "p5_rewards"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1651,
-                "y": 1108
+                "x": 1673,
+                "y": 1082
             }
         }
     },
@@ -1885,8 +1895,10 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 500,
         "next": [
-            "p5_rewardsdaily"
+            "p5_rewardsdaily",
+            "p5_rewards2"
         ],
         "$__mpe_code": {
             "position": {
@@ -1929,17 +1941,28 @@
         }
     },
     "p5_stagestart": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "p5_isfighting",
+                    "p5_isfighting2",
+                    "p5_jumpstory"
+                ]
+            }
+        },
         "anchor": "p5_stagestart_anchor",
-        "timeout": 40000,
+        "timeout": 60000,
         "next": [
             "p5_checkfinish",
             "[JumpBack]p5_isfighting",
+            "[JumpBack]p5_isfighting2",
             "[JumpBack]p5_jumpstory"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 6296,
-                "y": 306
+                "y": 308
             }
         }
     },
@@ -2080,6 +2103,7 @@
             }
         },
         "repeat": 2,
+        "timeout": 40000,
         "next": [
             "p5_into11event"
         ],
@@ -2178,6 +2202,56 @@
             "position": {
                 "x": 1288,
                 "y": -388
+            }
+        }
+    },
+    "p5_isfighting2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    192,
+                    87
+                ],
+                "expected": [
+                    "LSHIFT",
+                    "LSHFT",
+                    "TAB"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6687,
+                "y": 821
+            }
+        }
+    },
+    "claimp5_qiandao_wuchu": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    339,
+                    503,
+                    365
+                ],
+                "expected": [
+                    "确定",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1970,
+                "y": 677
             }
         }
     }

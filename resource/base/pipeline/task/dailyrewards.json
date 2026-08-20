@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1781480215768,
+            "lastSyncTime": 1787234943727,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\dailyrewards.json",
             "savedViewport": {
-                "x": -7687,
-                "y": 1149,
-                "zoom": 1
+                "x": -8319,
+                "y": 1204,
+                "zoom": 0.99
             },
             "filename": "dailyrewards",
-            "version": "v1.6.1"
+            "version": "v1.7.6"
         }
     },
     "$__mpe_external_backtohomepage_dailyrewards": {
