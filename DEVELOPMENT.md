@@ -215,7 +215,7 @@ ACTION_MODULES = ("my_actions", "你的新文件不含.py")
 
 ### 8.4 utils
 
-- `parse_params(raw: str|None, *required_keys) -> dict`：解析 `custom_action_param` / `custom_recognition_param`。**注意绑定层传给 Python 的是 JSON 字符串**（pipeline 里写对象，到 Python 是 str），必须过 `parse_params`；空串/None 返回 `{}`（除非有必填键）；格式错误抛 `ValueError`。
+- `parse_params(raw: str|None, *required_keys) -> dict`：解析 `custom_action_param` / `custom_recognition_param`。**注意绑定层传给 Python 的是 JSON 字符串**（pipeline 里写对象，到 Python 是 str），必须过 `parse_params`；空串/None 返回 `{}`（除非有必填键）；**框架对缺省的 param 会传 JSON null（字符串 `"null"`），同样按无参返回 `{}`**；格式错误抛 `ValueError`。
 - `runtime_paths`：`get_runtime_paths()` 取 config/resource/debug 目录，冻结 dataclass，import 时即按文件位置初始化一次，`bootstrap` 再按真实项目根重配。
 
 ## 9. Python Agent API 速查（官方绑定，maafw 5.x）
@@ -302,14 +302,14 @@ class MyReco(CustomRecognition):
 
 ## 10. 本项目已注册 custom 组件清单
 
-### 10.1 Actions（`custom/action/my_actions.py`，共 11 个）
+### 10.1 Actions（`custom/action/my_actions.py`，共 12 个）
 
 | 名称 | 作用 | 关键参数 | 实际使用处 |
 |---|---|---|---|
 | `DisableNode` | 禁用指定节点 | `node_name` | climbtower / outpostdefense |
 | `NodeOverride` | 批量 override 任意节点参数 | 整个 param 即 override 表 | — |
 | `ResetCount` | 清除节点命中计数（配 max_hit 循环用） | `nodes: []`, `strict` | climbtower / smallevent1 |
-| `SubTask` | 顺序执行多个子任务 | `sub: []`, `continue`, `strict` | — |
+| `SubTask` | 顺序执行多个子任务（移植自 M9A `agent/custom/action/general.py`；失败判定与原版一致——`run_task` 返回 None 静默放过不计失败、不触碰本节点 next，但默认参数不同：本项目默认尽力而为） | `sub: []`（必填）, `continue`（默认 true）, `strict`（默认 false） | limitedevent |
 | `CheckWeekday` | 命中指定星期则掐断 next（0=周一） | `days: []` | interception（周一手操 boss） |
 | `CheckDate` | 按日期列表决定继续/掐断（可 inverse） | `dates: []`, `inverse` | — |
 | `RetryTask` | 子任务失败重试，每次 `context.clone()` 全新上下文 | `task`, `max_retry`, `fallback` | 文档内有完整接入教程（见该类 docstring） |
@@ -317,6 +317,7 @@ class MyReco(CustomRecognition):
 | `LoopBack` | 固定次数循环闸门：前 `max_loops` 次经过回跳 `_loopback` 锚点入口，第 N+1 次恢复自身 next 放行（完整用法见该类 docstring） | `max_loops` | 未接线（smallevent1/killthelord 的 hard_return 节点挂名但无 next 链引用、无 `_loopback` 锚点声明，当前不生效） |
 | `addrecodatebase` | 日期临时字段日部分 +1（唯独 1-12 改为 -1 得 1-11；缺省视为 1-1，+1 得 1-2） | 无 | — |
 | `clearrecodatebase` | 日期临时字段重置为默认值 1-1（重置非删除，不留空缺） | 无 | — |
+| `NextBurst` | 挂在父节点 action 槽位的 next 突发扫描：next1 连试 `tries` 次（每次重截图）全空再扫 next2…；命中即把命中者提到 next 队首交还框架原生进入，一轮全空不 override、交还原生轮巡 | `tries`(5), `delay`(200), `nodes`(可选，默认读本节点 next) | 某试截图抛 RuntimeError 按当次未命中 continue，不掀桌 |
 
 共同约定：返回 `CustomAction.RunResult(success=...)`；掐断任务线统一用 `context.override_next(argv.node_name, [])`。
 
@@ -339,7 +340,7 @@ class MyReco(CustomRecognition):
 
 ### 10.3 Sinks（`custom/sink/my_sink.py`，4 个全注册）
 
-`AppTaskerSink`（任务开始/完成/失败+耗时）、`AppControllerSink`（仅打印 Failed）、`AppResourceSink`（Starting/Failed）、`AppContextSink`（仅打印节点级 Starting/Failed，防刷屏）。输出全部走 print → 进 GUI 日志 `[src=Agent]` 通道。
+`AppTaskerSink`（任务开始/完成/失败+耗时）、`AppControllerSink`（仅打印 Failed）、`AppResourceSink`（Starting/Failed）、`AppContextSink`（仅打印节点级 Starting/Failed，防刷屏）。输出全部走 print → 进 GUI 日志 `[src=Agent]` 通道。**`context.run_task()` 子任务的内部节点同样触发 context sink**（`[Node] ▶` 流完整，实测验证），子任务归属定位靠该节点流；SubTask（M9A 版）本身只在子任务失败时打 `[SubTask]` 日志。但注意原生日志里 `run_task` 内层任务无 `Tasker.Task.*` 包装事件，MaaLogAnalyzer 任务视图归不进去（见 §13 第 15 条）。
 
 ## 11. 新增 custom 组件开发流程
 
@@ -359,7 +360,7 @@ class MyReco(CustomRecognition):
 ## 13. 已知事实与坑（改动前必读）
 
 1. **argv 真相**：子进程 argv 只有 `[脚本路径, socket_id]`；实例信息走 `MFA_INSTANCE_*` / `PI_*` 环境变量（§6.3）。`main.py` 兼容解析两种形式是防御性冗余。
-2. **custom param 是字符串**：绑定层把 param 序列化成 JSON 字符串传给 Python，必须 `parse_params`；直接 `argv.custom_action_param["k"]` 会炸。
+2. **custom param 是字符串**：绑定层把 param 序列化成 JSON 字符串传给 Python，必须 `parse_params`；直接 `argv.custom_action_param["k"]` 会炸。缺省 param 时框架传的是 JSON null（字符串 `"null"`），`parse_params` 已兼容为 `{}`。
 3. **内嵌字符串式 param 易出错**：pipeline 里 `custom_action_param` 也可以写成转义后的 JSON 字符串（而非对象），字符串里多一个逗号就是非法 JSON（smallevent1.json 曾因此导致 `ResetCount` 必败，已修复）。新增节点建议直接写对象形式。
 4. **版本锁定**：`maafw==5.10.2` 与 GUI 原生库对齐；验收放宽到任意 5.x 是因为 MaaAgentBinary IPC 协议冻结。升 6.x 前必须重新评估。
 5. **CWD 依赖**：MFAA 以项目根为 CWD 启动子进程，main.py 再次强制 `chdir` 到项目根；管线内相对路径、模板图加载都依赖这一点，不要在 agent 里再改 CWD。
@@ -372,6 +373,7 @@ class MyReco(CustomRecognition):
 12. **节点批量改名时 MPE 便签（sticker）键名一并替换**：`$__mpe_sticker_<任务名>_便签N_<文件名>` 键中嵌入的任务名字段要同步改为新名，否则 MPE 编辑器里便签与原任务的对应关系丢失。
 13. **游戏加载期"截图超时+全黑"是环境现象，不是代码 bug**（2026-08-07 实证）：游戏重启/启动后的加载阶段（黑屏、不 Present 新帧）被连接时，FramePool 拿不到新帧会等满约 2 秒帧超时并返回残留黑帧（MFAA 日志报 `截图用时过长：2008ms(FramePool)`），还可能误触发 PseudoMinimizeHelper 施加伪最小化；游戏加载完成后自愈（同一窗口恢复 23ms）。遇到时先确认游戏是否已进大厅再排查代码。另：不要多开 MaaNikke 实例（含 dev/release 两份同时跑），会造成热键互斥锁与配置文件锁冲突。
 14. **识别子结果的 box 是 list 不是 Rect**（2026-08-15 实证）：`RecognitionDetail.filtered_results` / `all_results` / `best_result` 里的结果项（如 OCRResult）由绑定层 `ResultType(**raw_result)` 构造，dataclass 不做类型转换，JSON 原样透传——其 `box` 字段实为 list `[x,y,w,h]`，`.x/.y` 访问会炸 `AttributeError: 'list' object has no attribute 'x'`（在 ctypes 回调里变成 "Exception ignored" 静默吞栈）。取 box 用 `stagenum.py` 的 `_box_xywh()` 兼容写法（同时支持 list 与 Rect 对象）。
+15. **`run_task` 内层任务不发 `Tasker.Task.*` 事件**（2026-08-22 实证）：`context.run_task` 启动的子任务有独立 task_id，节点级事件（PipelineNode/Recognition/Action，含完整 details JSON）照常全部进原生日志，但**没有 `Tasker.Task.Starting/Succeeded` 包装**（仅外层 posted 任务有；实测 debug/maafw.log 里 task 200000001/200000003 有、内层 200000002 无）。MaaLogAnalyzer 按任务分段展示，内层节点事件归不进任何任务 → 任务视图看不到子任务节点。这是**上游未实现的行为而非版本锁定问题**：上游 issue [MaaXYZ/MaaFramework#900](https://github.com/MaaXYZ/MaaFramework/issues/900)（2025-11-30 起 open，无修复进展）；main 分支（>5.13.0-beta.2）`Context::run_task` 源码仍无 Tasker 通知（注释自述"context 的子任务没有 Pending 状态，直接就是 Running"）。且运行时原生库随 MFAA 发布，非 pip 侧可升——即便上游修好也要等 MFAA 更新内置框架。排查子任务：用 GUI 日志 `[Node]`/`[SubTask]` 行（齐全），或 MaaLogAnalyzer 的全文搜索视图（全文索引不受任务分段影响）。要任务视图完整识别，子流程须改为 GUI 任务列表顺序勾选执行（每个都是完整 Tasker 任务）。
 
 ## 14. 参考资料
 

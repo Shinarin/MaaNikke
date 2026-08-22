@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787238148537,
+            "lastSyncTime": 1787382611670,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\juveniledays.json",
             "savedViewport": {
-                "x": -1835,
-                "y": -625,
-                "zoom": 0.86
+                "x": -335,
+                "y": -1368,
+                "zoom": 0.57
             },
             "filename": "juveniledays",
-            "version": "v1.7.6"
+            "version": "v1.8.0"
         }
     },
     "$__mpe_anchor_anchor_juveniledays_checklatestevent_juveniledays": {
@@ -281,7 +281,8 @@
         "next": [
             "juveniledays_cannot_re",
             "juveniledays_intofightpage",
-            "juveniledays_canintoevent"
+            "[JumpBack]juveniledays_canintoevent_return",
+            "juveniledays_canintoevent_retry"
         ],
         "on_error": [
             "juveniledays_error"
@@ -396,7 +397,7 @@
             "type": "Click"
         },
         "next": [
-            "backtohomepage"
+            "claimpassreward"
         ],
         "$__mpe_code": {
             "position": {
@@ -643,15 +644,18 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    525,
-                    313,
-                    273,
-                    320
+                    466,
+                    307,
+                    347,
+                    330
                 ],
                 "expected": [
                     "点击领取奖励",
                     "点击领取",
-                    "领取奖励"
+                    "领取奖励",
+                    "确认",
+                    "确定",
+                    "取消"
                 ]
             }
         },
@@ -823,7 +827,7 @@
         "next": [
             "juveniledays_havechalengechance",
             "[JumpBack]juveniledays_havechalengechance_return",
-            "backtohomepage"
+            "claimpassreward"
         ],
         "$__mpe_code": {
             "position": {
@@ -1040,7 +1044,7 @@
         }
     },
     "juveniledays_havechalengechance_return": {
-        "max_hit": 15,
+        "max_hit": 10,
         "$__mpe_code": {
             "position": {
                 "x": 2319,
@@ -1191,8 +1195,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1586,
-                "y": 2941
+                "x": 1568,
+                "y": 2945
             }
         }
     },
@@ -1253,10 +1257,11 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 1555,
-                "y": 990
+                "x": 1554,
+                "y": 968
             }
         }
     },
@@ -1364,6 +1369,7 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
                 "x": 1667,
@@ -1390,6 +1396,30 @@
             "position": {
                 "x": 5901,
                 "y": 1225
+            }
+        }
+    },
+    "juveniledays_isfighting2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    192,
+                    87
+                ],
+                "expected": [
+                    "LSHIFT",
+                    "LSHFT",
+                    "TAB"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5902,
+                "y": 1506
             }
         }
     },
@@ -1932,27 +1962,42 @@
             }
         }
     },
-    "juveniledays_isfighting2": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    192,
-                    87
-                ],
-                "expected": [
-                    "LSHIFT",
-                    "LSHFT",
-                    "TAB"
-                ]
-            }
-        },
+    "juveniledays_canintoevent_return": {
+        "max_hit": 2,
         "$__mpe_code": {
             "position": {
-                "x": 5902,
-                "y": 1506
+                "x": 3451,
+                "y": 99
+            }
+        }
+    },
+    "juveniledays_canintoevent_retry": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "juveniledays_canintoevent_return"
+                    ]
+                }
+            }
+        },
+        "next": [
+            "juveniledays_canintoevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3114,
+                "y": 116
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_juveniledays": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2253,
+                "y": 3615
             }
         }
     }

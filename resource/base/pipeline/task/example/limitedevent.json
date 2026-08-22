@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787145789145,
+            "lastSyncTime": 1787381398737,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\limitedevent.json",
             "savedViewport": {
-                "x": -4935,
-                "y": 367,
-                "zoom": 0.57
+                "x": -7301,
+                "y": -1197,
+                "zoom": 0.86
             },
             "filename": "limitedevent",
-            "version": "v1.7.6"
+            "version": "v1.8.0"
         }
     },
     "$__mpe_anchor_limitedeventshop_claim_anchor_limitedevent": {
@@ -50,6 +50,33 @@
             ],
             "width": 2590,
             "height": 609
+        }
+    },
+    "$__mpe_group_limitedeventshop_claim_limitedevent": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8960,
+                "y": -519
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "limitedeventshop_claim_anchor",
+                "limitedeventshop_claim",
+                "limitedeventshop_claim_basicticket",
+                "limitedeventshop_claim_claim1",
+                "limitedeventshop_claim_claim1_return",
+                "limitedeventshop_claim_claim2",
+                "limitedeventshop_claim_clickmax",
+                "limitedeventshop_claim_comfirm",
+                "limitedeventshop_claim_end",
+                "limitedeventshop_claim_nocoin",
+                "limitedeventshop_claim_premiumticket",
+                "limitedeventshop_claim_redeyes",
+                "limitedeventshop_claim_redeyesbox2h",
+                "limitedeventshop_claim_return"
+            ],
+            "width": 2059,
+            "height": 1270
         }
     },
     "$__mpe_group_反叛之路_limitedevent": {
@@ -950,31 +977,85 @@
             }
         }
     },
-    "$__mpe_group_limitedeventshop_claim_limitedevent": {
+    "limitedevent": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "SubTask",
+                "custom_action_param": {
+                    "sub": [
+                        "limitedevent_p5",
+                        "limitedevent_juveniledays",
+                        "limitedevent_1"
+                    ]
+                }
+            }
+        },
         "$__mpe_code": {
             "position": {
-                "x": 8960,
-                "y": -519
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "limitedeventshop_claim_anchor",
-                "limitedeventshop_claim",
-                "limitedeventshop_claim_basicticket",
-                "limitedeventshop_claim_claim1",
-                "limitedeventshop_claim_claim1_return",
-                "limitedeventshop_claim_claim2",
-                "limitedeventshop_claim_clickmax",
-                "limitedeventshop_claim_comfirm",
-                "limitedeventshop_claim_end",
-                "limitedeventshop_claim_nocoin",
-                "limitedeventshop_claim_premiumticket",
-                "limitedeventshop_claim_redeyes",
-                "limitedeventshop_claim_redeyesbox2h",
-                "limitedeventshop_claim_return"
-            ],
-            "width": 2059,
-            "height": 1270
+                "x": 8909,
+                "y": 1640
+            }
+        }
+    },
+    "limitedevent_p5": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "p5"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9380,
+                "y": 1463
+            }
+        }
+    },
+    "limitedevent_juveniledays": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "juveniledays"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 9382,
+                "y": 1705
+            }
+        }
+    },
+    "limitedevent_1": {
+        "enabled": true,
+        "max_hit": 1,
+        "$__mpe_code": {
+            "position": {
+                "x": 9378,
+                "y": 1984
+            }
+        }
+    },
+    "$__mpe_external_p5_limitedevent": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9702,
+                "y": 1517
+            }
+        }
+    },
+    "$__mpe_external_juveniledays_limitedevent": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9704,
+                "y": 1763
+            }
+        }
+    },
+    "limitedevent_end": {
+        "$__mpe_code": {
+            "position": {
+                "x": 9376,
+                "y": 2201
+            }
         }
     }
 }

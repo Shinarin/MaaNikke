@@ -29,6 +29,7 @@ from utils.params import parse_params
 from custom.reco.my_reco import datebase_add, datebase_clear, datebase_get
 
 import datetime
+import time
 
 
 # =====================================================================
@@ -187,14 +188,33 @@ class ResetCount(CustomAction):
 @AgentServer.custom_action("SubTask")
 class SubTask(CustomAction):
     """
-    按顺序批量执行子任务。
+    按顺序执行子任务（同步阻塞：每个子任务整条管线跑完才轮到下一个）。
+    移植自 M9A（agent/custom/action/general.py 的 SubTask）；失败判定与原版一致，
+    默认参数不同：原版默认一败即停+整体失败，本项目默认尽力而为。
 
     参数格式:
     {
-        "sub": ["任务名1", "任务名2"],   # 子任务名称列表
-        "continue": false,               # 可选，任一失败后是否继续后续，默认 false
-        "strict": true                   # 可选，任一失败时是否视为整体失败，默认 true
+        "sub": ["任务名1", "任务名2"],   # 必填，非空子任务名称列表
+        "continue": true,                # 可选，任一失败后是否继续后续，默认 true
+        "strict": false                  # 可选，任一失败时本节点是否视为失败，默认 false
     }
+
+    失败判定（记一次子任务失败）:
+      - 任务名无效（非字符串 / 空串）
+      - 子任务执行后 status.failed（其内部节点失败且未被它自己的 on_error 兜住）
+      注意：run_task 返回 None（任务不存在 / 启动失败）时静默放过，不计失败
+      ——与 M9A 原版行为一致。
+
+    continue / strict 组合效果（默认 continue=true, strict=false，
+    即全部跑完、永远成功走 next 的尽力而为模式）:
+      continue=true,  strict=false: 全部跑完，永远成功走 next —— 尽力而为（默认）
+      continue=true,  strict=true : 全部跑完，最后统一算失败 —— 先全试再算账
+      continue=false, strict=true : 一败即停，节点整体失败 —— 快速失败
+      continue=false, strict=false: 一败即停，但节点算成功 —— 跑到哪算哪
+
+    本组件不触碰本节点 next：子任务全部跑完后，框架照常走 next。
+    子任务内部节点的 [Node] ▶/❌ 日志照常输出（context sink 对 run_task
+    内部节点同样生效）；本组件只在出错时打 [SubTask] 日志。
 
     Pipeline JSON 引用示例:
     {
@@ -202,9 +222,10 @@ class SubTask(CustomAction):
         "custom_action": "SubTask",
         "custom_action_param": {
             "sub": ["TaskA", "TaskB"],
-            "continue": false,
-            "strict": true
-        }
+            "continue": true,
+            "strict": false
+        },
+        "next": ["全部执行完后去的节点"]
     }
     """
 
@@ -213,7 +234,6 @@ class SubTask(CustomAction):
         context: Context,
         argv: CustomAction.RunArg,
     ) -> CustomAction.RunResult:
-        # 解析参数
         try:
             param = parse_params(argv.custom_action_param)
         except ValueError as e:
@@ -222,26 +242,26 @@ class SubTask(CustomAction):
 
         sub = param.get("sub", None)
         if not isinstance(sub, list) or not sub:
-            print("[SubTask] 缺少有效的 sub 任务列表")
+            print("[SubTask] sub 必填，且必须是非空任务名列表")
             return CustomAction.RunResult(success=False)
 
-        # 关键决策参数：控制失败行为
-        continue_on_failure = bool(param.get("continue", False))
-        strict = bool(param.get("strict", True))
+        # 关键决策参数：控制失败行为（默认尽力而为：全跑完、永远成功走 next）
+        continue_on_failure = bool(param.get("continue", True))
+        strict = bool(param.get("strict", False))
         has_sub_failure = False
 
         for index, task_name in enumerate(sub):
             if not isinstance(task_name, str) or not task_name:
-                print(f"[SubTask] 无效任务名 sub[{index}]: {task_name!r}")
+                print(f"[SubTask] ❌ 无效任务名 sub[{index}]: {task_name!r}")
                 has_sub_failure = True
                 if not continue_on_failure:
                     break  # 不继续则终止循环
                 continue
 
-            # 执行子任务
             task_detail = context.run_task(task_name)
+            # run_task 返回 None（任务不存在 / 启动失败）时静默放过，与 M9A 原版一致
             if task_detail and task_detail.status.failed:
-                print(f"[SubTask] 子任务失败: index={index}, task={task_name}")
+                print(f"[SubTask] ❌ 子任务运行失败: index={index}, task={task_name}")
                 has_sub_failure = True
                 if not continue_on_failure:
                     break  # 不继续则终止循环
@@ -739,3 +759,133 @@ class ClearRecoDateBase(CustomAction):
 #     "custom_action": "YourActionName",
 #     "custom_action_param": { ... }
 # }
+
+
+# =====================================================================
+# Action 12: NextBurst —— next 候选突发扫描（挂在父节点，候选零改动）
+# =====================================================================
+@AgentServer.custom_action("NextBurst")
+class NextBurst(CustomAction):
+    """
+    next 候选突发扫描：挂在"被识别节点的前一个节点"（父节点）的 action 槽位，
+    候选节点完全不用改。
+
+    框架节点生命周期是 action → 截图 → 识别 next 列表。本 action 在框架进入
+    next 识别阶段之前，先对（本节点的）next 列表做一轮突发扫描：
+    next1 最多连续识别 tries 次（每次重新截图），全未命中再扫 next2，以此类推；
+    所有候选都试完 tries 次仍全空 = 一个循环结束。
+
+    ── 自定义参数（custom_action_param） ──
+    {
+        "tries": 5,          // 可选，每个候选最多识别次数，默认 5
+        "delay": 200,        // 可选，第 2 试起每次尝试前的等待毫秒，默认 200
+        "nodes": ["A", "B"]  // 可选，指定扫描列表；不写则自动读取本节点自己的 next
+    }
+
+    ── 命中后的交接 ──
+    某候选命中：override_next(本节点, [命中候选, ...其余候选原序])——只把命中者
+    提到队首、其余候选保留不丢，然后返回成功。框架随后照常"截图 → 识别 next"，
+    命中者第一个被识别、当即进入，后续链完全原生；万一确认时画面已变导致没再命中，
+    框架也能继续轮巡其余候选直到 timeout → on_error。
+    （副作用：override 对整个任务生效，本任务内该节点 next 顺序自此变为命中者优先。）
+
+    ── 全空（循环结束）──
+    不做任何 override 直接返回成功：交还框架对原 next 列表做原生轮巡
+    （一轮一截图、每候选一次），直到本节点 timeout → on_error。
+    父节点每次被执行时本组件只跑一轮突发扫描。
+
+    ── 候选列表解析（与框架 next 语义对齐） ──
+    支持字符串、"[JumpBack]名"（识别时剥前缀，交接时保留原形）、
+    "[Anchor]锚点名"（经 get_anchor 解析，未设置则跳过，与框架语义一致）、
+    对象形式 {"name": ..., "jump_back"/"anchor": ...}。
+
+    ── 注意 ──
+    - 候选若 disabled / max_hit 用尽，run_recognition 返回 None，按未命中处理（白扫 tries 次）。
+    - 挂在已有真实 action 的节点上会顶替原 action；这种情况建议在父节点前插一个
+      recognition=DirectHit + action=本组件 的中转节点。
+    - 耗时 ≈ Σ tries × (delay+截图+识别)；每试前检查 tasker.stopping，停止立即返回。
+    - 某试截图抛 RuntimeError（加载期不产帧等瞬态故障）按当次未命中处理、
+      continue 进下一试（循环自带重拍），日志打 ⚠，不再掀桌。
+    - 日志前缀 [NextBurst]。
+
+    ── Pipeline JSON ──
+    "父节点": {
+        "recognition": ...,
+        "action": { "type": "Custom", "param": {
+            "custom_action": "NextBurst",
+            "custom_action_param": { "tries": 5, "delay": 200 }
+        }},
+        "next": ["候选A", "候选B", "候选C"],   // 候选节点一律不动
+        "timeout": 30000
+    }
+    """
+
+    def run(
+        self,
+        context: Context,
+        argv: CustomAction.RunArg,
+    ) -> CustomAction.RunResult:
+        params = parse_params(argv.custom_action_param)
+        tries = max(1, int(params.get("tries", 5)))
+        delay = max(0, int(params.get("delay", 200)))
+
+        # ── 候选列表：nodes 参数优先，否则读本节点自己的 next ──
+        nodes_param = params.get("nodes")
+        if nodes_param:
+            entries = list(nodes_param)
+        else:
+            data = context.get_node_data(argv.node_name) or {}
+            entries = list(data.get("next") or [])
+        if not entries:
+            print("[NextBurst] 无候选节点，直接交还框架")
+            return CustomAction.RunResult(success=True)
+
+        # ── 突发扫描：next1 连试 tries 次 → next2 → ... ──
+        for idx, entry in enumerate(entries):
+            name = _resolve_next_entry(context, entry)
+            if not name:
+                print(f"[NextBurst] 跳过无法解析的候选: {entry!r}")
+                continue
+            for i in range(1, tries + 1):
+                if context.tasker.stopping:
+                    print("[NextBurst] 任务停止中，提前返回")
+                    return CustomAction.RunResult(success=True)
+                if i > 1 and delay > 0:
+                    time.sleep(delay / 1000)
+                controller = context.tasker.controller
+                try:
+                    controller.post_screencap().wait()
+                    img = controller.cached_image
+                except RuntimeError as e:
+                    print(f"[NextBurst] ⚠ 第 {i}/{tries} 试截图失败: {e}，按未命中处理")
+                    continue
+                detail = context.run_recognition(name, img)
+                if detail is not None and detail.hit and detail.box is not None:
+                    # 命中：把该候选提到 next 队首（其余保留），交还框架原生进入
+                    new_next = [entry] + entries[:idx] + entries[idx + 1:]
+                    context.override_next(argv.node_name, new_next)
+                    print(f"[NextBurst] 命中(第 {i}/{tries} 试): {name}，已提到 next 队首")
+                    return CustomAction.RunResult(success=True)
+            print(f"[NextBurst] {name} {tries} 试全空")
+
+        # ── 一个循环结束（全空）：不 override，交还框架原生轮巡 ──
+        print("[NextBurst] 一轮循环结束（全空），交还框架原生轮巡")
+        return CustomAction.RunResult(success=True)
+
+
+def _resolve_next_entry(context: Context, entry) -> str | None:
+    """把 next 条目解析成可识别的节点名；解析不出（如未设置的 [Anchor]）返回 None。"""
+    if isinstance(entry, str):
+        if entry.startswith("[JumpBack]"):
+            return entry[len("[JumpBack]"):] or None
+        if entry.startswith("[Anchor]"):
+            return context.get_anchor(entry[len("[Anchor]"):])
+        return entry
+    if isinstance(entry, dict):
+        name = entry.get("name")
+        if not name:
+            return None
+        if entry.get("anchor"):  # {"name": "锚点名", "anchor": true} 形式
+            return context.get_anchor(str(name))
+        return str(name)
+    return None

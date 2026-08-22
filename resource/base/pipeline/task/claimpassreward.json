@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787267364258,
+            "lastSyncTime": 1787368068329,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
             "savedViewport": {
-                "x": -409,
-                "y": 1153,
-                "zoom": 1
+                "x": 616,
+                "y": 977,
+                "zoom": 0.65
             },
             "filename": "claimpassreward",
             "version": "v1.8.0"
@@ -38,14 +38,14 @@
             "param": {
                 "roi": [
                     1109,
-                    91,
+                    78,
                     70,
-                    73
+                    87
                 ],
                 "template": [
-                    "exchange.png"
+                    "2pass.png"
                 ],
-                "method": 3,
+                "green_mask": true,
                 "threshold": [
                     0.85
                 ]
@@ -54,6 +54,7 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "next": [
             "[JumpBack]2pass_click",
             "[JumpBack]2pass_claim",
@@ -111,14 +112,21 @@
         "recognition": {
             "type": "TemplateMatch",
             "param": {
+                "roi": [
+                    1109,
+                    78,
+                    70,
+                    87
+                ],
                 "template": [
-                    "exchange.png"
+                    "2pass.png"
                 ]
             }
         },
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
                 "x": 430,

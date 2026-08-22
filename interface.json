@@ -2,7 +2,7 @@
   "interface_version": 2,
   "custom_title": "MaaNikke",
   "name": "MaaNikke",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "url": "https://github.com/Shinarin/MaaNikke",
 
 
@@ -219,13 +219,7 @@
       "entry": "test",
       "default_check": false,
       "description": "测试用，勿选"
-     },
-    {
-      "name": "test2",
-      "entry": "test2",
-      "default_check": false,
-      "description": "测试用，勿选"
-    }
+     }
 
 
   ],
@@ -702,6 +696,12 @@
       }
     ]
   }
+
+
+
+  
+
+
 
 
 

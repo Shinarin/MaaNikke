@@ -12,7 +12,7 @@ def parse_params(raw: str | None, *required_keys: str) -> dict:
         required_keys: 必须存在的字段名
 
     Returns:
-        解析后的 dict（raw 为空时返回空 dict）
+        解析后的 dict（raw 为空或为 JSON null 时返回空 dict）
 
     Raises:
         ValueError: JSON 格式错误、非对象类型、或缺少必填字段
@@ -25,6 +25,9 @@ def parse_params(raw: str | None, *required_keys: str) -> dict:
         params = json.loads(raw)
     except json.JSONDecodeError as e:
         raise ValueError(f"JSON解析失败: {e}") from e
+    if params is None:
+        # 框架对缺省的 custom param 传的是 JSON null（字符串 "null"），视为无参数
+        params = {}
     if not isinstance(params, dict):
         raise ValueError(f"参数必须是对象，得到: {type(params).__name__}")
     if required_keys:

@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787238084270,
+            "lastSyncTime": 1787384071851,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\p5.json",
             "savedViewport": {
-                "x": -757,
-                "y": 228,
-                "zoom": 0.46
+                "x": -687,
+                "y": -1460,
+                "zoom": 0.66
             },
             "filename": "p5",
-            "version": "v1.7.6"
+            "version": "v1.8.0"
         }
     },
     "$__mpe_anchor_anchor_p5_checklatestevent_p5": {
@@ -227,6 +227,32 @@
             }
         }
     },
+    "claimp5_qiandao_wuchu": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    339,
+                    503,
+                    365
+                ],
+                "expected": [
+                    "确定",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1970,
+                "y": 677
+            }
+        }
+    },
     "p5": {
         "anchor": "p5anchor",
         "next": [
@@ -368,8 +394,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4618,
-                "y": -284
+                "x": 4718,
+                "y": -225
             }
         }
     },
@@ -411,7 +437,8 @@
         "next": [
             "p5_cannot_re",
             "p5_intofightpage",
-            "p5_canintoevent"
+            "[JumpBack]p5_canintoevent_return",
+            "p5_canintoevent_retry"
         ],
         "on_error": [
             "p5_error"
@@ -448,8 +475,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4328,
-                "y": -301
+                "x": 4339,
+                "y": -242
             }
         }
     },
@@ -526,7 +553,7 @@
             "type": "Click"
         },
         "next": [
-            "backtohomepage"
+            "claimpassreward"
         ],
         "$__mpe_code": {
             "position": {
@@ -636,7 +663,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 881,
-                "y": -147
+                "y": -153
             }
         }
     },
@@ -802,15 +829,18 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    525,
-                    313,
-                    273,
-                    320
+                    466,
+                    307,
+                    347,
+                    330
                 ],
                 "expected": [
                     "点击领取奖励",
                     "点击领取",
-                    "领取奖励"
+                    "领取奖励",
+                    "确认",
+                    "确定",
+                    "取消"
                 ]
             }
         },
@@ -992,7 +1022,7 @@
         "next": [
             "p5_havechalengechance2",
             "[JumpBack]p5_havechalengechance2_return",
-            "backtohomepage"
+            "claimpassreward"
         ],
         "$__mpe_code": {
             "position": {
@@ -1180,7 +1210,7 @@
         }
     },
     "p5_havechalengechance2_return": {
-        "max_hit": 5,
+        "max_hit": 10,
         "$__mpe_code": {
             "position": {
                 "x": 2294,
@@ -1262,6 +1292,7 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 500,
         "next": [
             "p5_intofightpage",
             "p5_into11"
@@ -1326,6 +1357,7 @@
         },
         "next": [
             "p5_comfirmchallenge",
+            "[JumpBack]p5_comfirmchallenge2",
             "p5_intochallenge"
         ],
         "$__mpe_code": {
@@ -1392,10 +1424,11 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 2322,
-                "y": 140
+                "x": 2316,
+                "y": 120
             }
         }
     },
@@ -1477,6 +1510,7 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
                 "x": 1625,
@@ -1503,6 +1537,30 @@
             "position": {
                 "x": 6688,
                 "y": 577
+            }
+        }
+    },
+    "p5_isfighting2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    192,
+                    87
+                ],
+                "expected": [
+                    "LSHIFT",
+                    "LSHFT",
+                    "TAB"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6687,
+                "y": 821
             }
         }
     },
@@ -2205,44 +2263,20 @@
             }
         }
     },
-    "p5_isfighting2": {
+    "p5_comfirmchallenge2": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    0,
-                    0,
-                    192,
-                    87
+                    547,
+                    223,
+                    293,
+                    227
                 ],
-                "expected": [
-                    "LSHIFT",
-                    "LSHFT",
-                    "TAB"
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 6687,
-                "y": 821
-            }
-        }
-    },
-    "claimp5_qiandao_wuchu": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    406,
-                    339,
-                    503,
-                    365
+                "template": [
+                    "limitedevent/P5/p5_intochallenge.png"
                 ],
-                "expected": [
-                    "确定",
-                    "确认"
-                ]
+                "green_mask": true
             }
         },
         "action": {
@@ -2250,8 +2284,47 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1970,
-                "y": 677
+                "x": 1938,
+                "y": 2734
+            }
+        }
+    },
+    "p5_canintoevent_return": {
+        "max_hit": 1,
+        "$__mpe_code": {
+            "position": {
+                "x": 4290,
+                "y": -486
+            }
+        }
+    },
+    "p5_canintoevent_retry": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "p5_canintoevent_return"
+                    ]
+                }
+            }
+        },
+        "next": [
+            "p5_canintoevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3946,
+                "y": -480
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2265,
+                "y": 3232
             }
         }
     }

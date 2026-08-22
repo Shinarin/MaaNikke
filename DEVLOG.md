@@ -16,6 +16,21 @@
 
 ---
 
+## v2.2.2 - 2026-08-22
+
+- 2026-08-22 [优化] SubTask 默认参数调整为 `continue=true / strict=false`（尽力而为：子任务失败仍全部跑完、节点算成功走 next），与 M9A 原版默认（一败即停+整体失败）区分；失败判定等其余语义仍与 M9A 一致；limitedevent 节点既有显式参数与新默认相同，无需改动（涉及：agent/custom/action/my_actions.py、DEVELOPMENT.md）
+- 2026-08-22 [优化] SubTask 还原为 M9A 原版语义（移植自 M9A `agent/custom/action/general.py`）：`sub` 改为必填非空列表，砍掉"缺省取本节点 next 当列表"的自动模式及配套 `override_next` 清空；默认参数回归原版——`continue` 默认 false（一败即停）、`strict` 默认 true（任一失败则节点整体失败走 on_error）；`run_task` 返回 None（任务不存在/启动失败）恢复为静默放过不计失败；砍掉 ▶/✅/❌ 边界日志与末尾汇总，只在出错时打 `[SubTask]`；limitedevent 节点同步适配：三个子任务挪入显式 `sub` 列表，显式写 `continue:true, strict:false` 保持原"尽力而为"行为，next 改指 `limitedevent_end` 收尾（涉及：agent/custom/action/my_actions.py、resource/base/pipeline/task/example/limitedevent.json、DEVELOPMENT.md）
+- 2026-08-22 [调查] SubTask 子任务在 MaaLogAnalyzer 任务视图不可见的根因查明：`run_task` 内层任务有独立 task_id，节点级事件（PipelineNode/Recognition/Action，含完整 details JSON）照常全部进原生日志，但框架不为内层任务发 `Tasker.Task.Starting/Succeeded` 包装事件（实测 debug/maafw.log：task 200000001/200000003 有、内层 200000002 无）；MaaLogAnalyzer 按任务分段展示，内层节点事件归不进任何任务故不显示——框架原生行为，agent 侧无法补发。缓解路径：GUI 日志 `[Node]`/`[SubTask]` 行齐全；工具全文搜索视图可搜到子任务事件；要任务视图完整识别需把子流程改为 GUI 任务列表顺序勾选执行。后续查证：上游 issue MaaXYZ/MaaFramework#900（2025-11-30 起 open 无修复进展），main 分支（>5.13.0-beta.2）Context::run_task 源码仍无 Tasker 通知——**非版本锁定问题，升级 maafw 也解决不了**，且运行时原生库随 MFAA 发布非 pip 可升。§13 新增第 15 条坑点，§10.3 与 SubTask docstring 同步标注（涉及：DEVELOPMENT.md、agent/custom/action/my_actions.py）
+- 2026-08-22 [优化] SubTask 增子任务边界日志：每个子任务开始（`▶ i/N`）/完成（`✅ +耗时`）/失败（`❌ +耗时`）逐条打印，末尾汇总"已执行 x/N，失败 y"——实测确认 `run_task` 子任务内部节点的 `[Node]` 日志经 context sink 照常完整输出（用户误以为不显示），但节点流里缺子任务归属边界，现 grep `[SubTask]` 即可定位每个子任务的结局；11 场景测试全过；DEVELOPMENT.md §10.3 同步补充 sink 覆盖事实（涉及：agent/custom/action/my_actions.py、DEVELOPMENT.md）
+- 2026-08-22 [修复] SubTask 自动模式兼容框架规范化的 next 条目：`get_node_data` 返回的 `next` 实为 `[{"name": ..., "anchor": ..., "jump_back": ...}]` 对象列表（非字符串列表），此前全部判为"无效任务名"跳过 → 默认 continue/strict 下节点秒成功、清空 next，任务"刚点开始即结束"（limitedevent 实测暴露）；现复用 NextBurst 的 `_resolve_next_entry` 解析（字符串 / [JumpBack] / [Anchor] / 对象形式通吃），全解析不出才报错；测试补对象形式场景，11 场景全过（涉及：agent/custom/action/my_actions.py、temp/test_subtask.py、DEVELOPMENT.md）
+- 2026-08-22 [修复] `parse_params` 兼容框架对缺省 custom param 传 JSON null（字符串 `"null"`）：此前 `json.loads("null")` 得 None，一律抛"参数必须是对象：NoneType"，导致**所有不写 param 的 custom 节点必败**（SubTask 挂 limitedevent 节点自动模式实测暴露，CheckWeekday 无参调用等同陷阱）；现 null 按无参返回 `{}`，必填键场景仍抛"缺少必填字段"；DEVELOPMENT.md §8.4/§13.2 同步补充该事实；测试补 `"null"` 场景，10 场景全过（涉及：agent/utils/params.py、temp/test_subtask.py、DEVELOPMENT.md）
+- 2026-08-22 [优化] SubTask：`sub` 缺省时自动取本节点当前 `next` 作为子任务列表（兼容 str/list），跑完 `override_next` 清空本节点 next 防框架二次执行（自动模式下子任务跑完即任务线收尾）；默认参数翻转——`continue` 默认 true（失败后继续跑完）、`strict` 默认 false（有失败节点仍算成功走 next）；`run_task` 返回 None（任务不存在/启动失败）由静默放过改为计入失败；docstring 补失败判定与四组合效果说明；fake-context 单测 9 场景通过（涉及：agent/custom/action/my_actions.py、DEVELOPMENT.md、temp/test_subtask.py）
+- 2026-08-22 [优化] NextBurst 截图失败兜底：某试 `post_screencap`/`cached_image` 抛 RuntimeError 时按当次未命中处理、`continue` 进下一试（循环自带重拍，瞬态截图故障不再掀桌）；同日删除 `multitry` custom reco（本日早些时候新增、未发版即撤——确定用不到，NextBurst 挂父节点的形态已覆盖其场景；其文档条目与单测一并移除，DEVLOG 原 [新增] multitry 条目同步撤下，防误进发版 changelog）（涉及：agent/custom/action/my_actions.py、agent/custom/reco/my_reco.py、DEVELOPMENT.md、temp/test_burst_screencap.py）
+- 2026-08-22 [修复] NextBurst 重截图调用由 `controller.screencap()` 改为 `post_screencap().wait()`+`cached_image`——`Controller` 类本无 `screencap` 方法（那是 `CustomControllerAgent` 自定义控制器接口的抽象方法），原写法运行时会 AttributeError（Pylance reportAttributeAccessIssue 报错属实）；与 recodatebase/stagenum 既有写法对齐（涉及：agent/custom/action/my_actions.py）
+- 2026-08-22 [新增] `NextBurst` custom action：挂在父节点 action 槽位的 next 候选突发扫描（候选节点零改动）——next1 连试 `tries` 次（默认 5，每次重截图）全空再扫 next2……；命中即 `override_next` 把命中者提到队首（其余候选保留）交还框架原生进入，一轮全空不 override、交还原生轮巡至 timeout→on_error；候选默认读 `get_node_data(本节点).next`（支持 [JumpBack]/[Anchor]/对象形式），也可用 `nodes` 参数指定；每试前查 `tasker.stopping`；fake-context 单测通过（涉及：agent/custom/action/my_actions.py、DEVELOPMENT.md）
+
+---
+
 ## v2.2.1 - 2026-08-21
 
 ---

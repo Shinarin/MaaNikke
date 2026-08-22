@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787265101674,
+            "lastSyncTime": 1787358516250,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\soloraid.json",
             "savedViewport": {
-                "x": -5345,
-                "y": 313,
-                "zoom": 1
+                "x": -6233,
+                "y": 318,
+                "zoom": 0.95
             },
             "filename": "soloraid",
             "version": "v1.8.0"
@@ -26,8 +26,8 @@
     "$__mpe_external_backtohomepage_soloraid": {
         "$__mpe_code": {
             "position": {
-                "x": 7527,
-                "y": 340
+                "x": 7405,
+                "y": 348
             }
         }
     },
@@ -70,8 +70,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7756,
-                "y": -189
+                "x": 7753,
+                "y": -227
             }
         }
     },
@@ -623,8 +623,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8135,
-                "y": 415
+                "x": 8120,
+                "y": 521
             }
         }
     },
@@ -647,6 +647,7 @@
             "type": "Click"
         },
         "next": [
+            "soloraid_notimes",
             "soloraid_quickfight_no",
             "soloraid_quickfight",
             "[JumpBack]soloraid_challenge_win",
