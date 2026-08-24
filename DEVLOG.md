@@ -16,6 +16,10 @@
 
 ---
 
+## v2.2.3 - 2026-08-24
+
+---
+
 ## v2.2.2 - 2026-08-22
 
 - 2026-08-22 [优化] SubTask 默认参数调整为 `continue=true / strict=false`（尽力而为：子任务失败仍全部跑完、节点算成功走 next），与 M9A 原版默认（一败即停+整体失败）区分；失败判定等其余语义仍与 M9A 一致；limitedevent 节点既有显式参数与新默认相同，无需改动（涉及：agent/custom/action/my_actions.py、DEVELOPMENT.md）

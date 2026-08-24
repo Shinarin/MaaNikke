@@ -3,16 +3,16 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1784419195617,
+            "lastSyncTime": 1787396749030,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\loginrewards.json",
             "savedViewport": {
-                "x": -98,
-                "y": 80,
-                "zoom": 0.83
+                "x": 516,
+                "y": 502,
+                "zoom": 0.65
             },
             "filename": "loginrewards",
-            "version": "v1.7.4"
+            "version": "v1.8.0"
         }
     },
     "$__mpe_external_backtohomepage_loginrewards": {
@@ -41,8 +41,8 @@
     "$__mpe_group_限时登录奖励_loginrewards": {
         "$__mpe_code": {
             "position": {
-                "x": 387,
-                "y": -47
+                "x": 402,
+                "y": -273
             },
             "color": "purple",
             "childrenLabels": [
@@ -78,8 +78,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 710,
-                "y": -3
+                "x": 725,
+                "y": -229
             }
         }
     },
@@ -102,8 +102,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 699,
-                "y": 308
+                "x": 714,
+                "y": 82
             }
         }
     },
@@ -127,8 +127,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 982,
-                "y": 166
+                "x": 997,
+                "y": -60
             }
         }
     },
@@ -144,7 +144,7 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 500,
         "$__mpe_code": {
             "position": {
                 "x": 764,
@@ -184,8 +184,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1420,
-                "y": 201
+                "x": 1435,
+                "y": -25
             }
         }
     },
@@ -254,8 +254,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 410,
-                "y": 210
+                "x": 425,
+                "y": -16
             }
         }
     },
@@ -263,8 +263,8 @@
         "max_hit": 5,
         "$__mpe_code": {
             "position": {
-                "x": 700,
-                "y": 645
+                "x": 715,
+                "y": 419
             }
         }
     },
@@ -275,6 +275,7 @@
             "[JumpBack]logineventreward",
             "[JumpBack]mooncard",
             "[JumpBack]loginrewards_goon",
+            "[JumpBack]loginevent_newchare",
             "[JumpBack]loginrewardsreturn",
             "backtohomepage"
         ],
@@ -308,7 +309,7 @@
         }
     },
     "loginrewardsreturn": {
-        "max_hit": 5,
+        "max_hit": 3,
         "$__mpe_code": {
             "position": {
                 "x": 174,
@@ -334,6 +335,51 @@
             "position": {
                 "x": 440,
                 "y": -805
+            }
+        }
+    },
+    "loginevent_newchare": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    464,
+                    154,
+                    354,
+                    506
+                ],
+                "expected": [
+                    "全新角色"
+                ]
+            }
+        },
+        "next": [
+            "loginevent_newchare_end"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 434,
+                "y": 874
+            }
+        }
+    },
+    "loginevent_newchare_end": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1075,
+                    458,
+                    44,
+                    65
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 860,
+                "y": 877
             }
         }
     }

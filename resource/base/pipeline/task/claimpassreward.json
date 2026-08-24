@@ -3,23 +3,24 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787368068329,
+            "lastSyncTime": 1787567848491,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
             "savedViewport": {
-                "x": 616,
-                "y": 977,
-                "zoom": 0.65
+                "x": 1260,
+                "y": 1443,
+                "zoom": 1.5
             },
             "filename": "claimpassreward",
-            "version": "v1.8.0"
+            "version": "v1.8.1"
         }
     },
     "$__mpe_anchor_claimpassreward_anchor_claimpassreward": {
         "$__mpe_code": {
             "position": {
-                "x": 2750,
-                "y": -879
+                "x": 3247,
+                "y": -865
             }
         }
     },
@@ -423,7 +424,6 @@
                 ]
             }
         },
-        "repeat": 4,
         "timeout": 5000,
         "next": [
             "checkexchangepass",
@@ -598,12 +598,36 @@
         "repeat": 5,
         "repeat_delay": 200,
         "next": [
-            "[Anchor]claimpassreward_anchor"
+            "pass_claim_resent"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 2397,
                 "y": -958
+            }
+        }
+    },
+    "pass_claim_resent": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "checkexchangepass_return",
+                        "checkexchangepass_return"
+                    ],
+                    "strict": false
+                }
+            }
+        },
+        "next": [
+            "[Anchor]claimpassreward_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2806,
+                "y": -907
             }
         }
     }

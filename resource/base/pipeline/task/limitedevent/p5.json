@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787384071851,
+            "lastSyncTime": 1787568048179,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\p5.json",
             "savedViewport": {
-                "x": -687,
-                "y": -1460,
-                "zoom": 0.66
+                "x": -7449,
+                "y": -1197,
+                "zoom": 2.18
             },
             "filename": "p5",
-            "version": "v1.8.0"
+            "version": "v1.8.1"
         }
     },
     "$__mpe_anchor_anchor_p5_checklatestevent_p5": {
@@ -52,6 +53,14 @@
             "position": {
                 "x": 1102,
                 "y": 2776
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2265,
+                "y": 3232
             }
         }
     },
@@ -122,8 +131,8 @@
     "$__mpe_sticker_p5_便签6_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 1561,
-                "y": 1027
+                "x": 1528,
+                "y": 1073
             },
             "content": "这里需要适配活动任务",
             "color": "yellow",
@@ -134,8 +143,8 @@
     "$__mpe_sticker_p5_便签7_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 1764,
-                "y": 815
+                "x": 1798,
+                "y": 825
             },
             "content": "这里需要适配活动任务",
             "color": "yellow",
@@ -447,6 +456,37 @@
             "position": {
                 "x": 3949,
                 "y": -176
+            }
+        }
+    },
+    "p5_canintoevent_retry": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "p5_canintoevent_return"
+                    ]
+                }
+            }
+        },
+        "next": [
+            "p5_canintoevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3946,
+                "y": -480
+            }
+        }
+    },
+    "p5_canintoevent_return": {
+        "max_hit": 1,
+        "$__mpe_code": {
+            "position": {
+                "x": 4290,
+                "y": -486
             }
         }
     },
@@ -1031,6 +1071,32 @@
             }
         }
     },
+    "p5_comfirmchallenge2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    547,
+                    223,
+                    293,
+                    227
+                ],
+                "template": [
+                    "limitedevent/P5/p5_intochallenge.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1938,
+                "y": 2734
+            }
+        }
+    },
     "p5_end": {
         "recognition": {
             "type": "OCR",
@@ -1529,7 +1595,8 @@
                     49
                 ],
                 "template": [
-                    "fighting.png"
+                    "fighting.png",
+                    "fighting2.png"
                 ]
             }
         },
@@ -1597,10 +1664,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    968,
-                    4,
-                    309,
-                    73
+                    1193,
+                    0,
+                    85,
+                    60
                 ],
                 "expected": [
                     "跳过",
@@ -2170,8 +2237,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8971,
-                "y": 281
+                "x": 8963,
+                "y": 267
             }
         }
     },
@@ -2260,71 +2327,6 @@
             "position": {
                 "x": 1288,
                 "y": -388
-            }
-        }
-    },
-    "p5_comfirmchallenge2": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    547,
-                    223,
-                    293,
-                    227
-                ],
-                "template": [
-                    "limitedevent/P5/p5_intochallenge.png"
-                ],
-                "green_mask": true
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 1938,
-                "y": 2734
-            }
-        }
-    },
-    "p5_canintoevent_return": {
-        "max_hit": 1,
-        "$__mpe_code": {
-            "position": {
-                "x": 4290,
-                "y": -486
-            }
-        }
-    },
-    "p5_canintoevent_retry": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "ResetCount",
-                "custom_action_param": {
-                    "nodes": [
-                        "p5_canintoevent_return"
-                    ]
-                }
-            }
-        },
-        "next": [
-            "p5_canintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3946,
-                "y": -480
-            }
-        }
-    },
-    "$__mpe_external_claimpassreward_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2265,
-                "y": 3232
             }
         }
     }

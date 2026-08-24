@@ -3,13 +3,13 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787382611670,
+            "lastSyncTime": 1787384995294,
             "isModifiedExternally": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\juveniledays.json",
             "savedViewport": {
-                "x": -335,
-                "y": -1368,
-                "zoom": 0.57
+                "x": -986,
+                "y": -556,
+                "zoom": 0.99
             },
             "filename": "juveniledays",
             "version": "v1.8.0"
@@ -1456,10 +1456,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    968,
-                    4,
-                    309,
-                    73
+                    1193,
+                    0,
+                    85,
+                    60
                 ],
                 "expected": [
                     "跳过",
