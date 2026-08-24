@@ -14,6 +14,8 @@
 
 ## [未发布]
 
+- 2026-08-24 [新增] 合并 PR #5（ashi-koki）：新增 `autoMaaNikke.py`——`autoMaaNikke.bat` 的 Python 等价实现，供只接受 .py 的脚本调度器（如 OneDragon ScriptChainer）接入任务链；行为与 bat 一致：管理员校验 → startnikke.ahk 拉起游戏并轮询 nikke.exe → 守候 MaaNikke.exe 退出；进程名精确匹配，比 bat 的子串匹配更严谨；发版模板同步收录该文件，zip 顶层条目数 16→17（涉及：autoMaaNikke.py、F 盘发版模板、.kimi-code/skills/maanikke-release/SKILL.md）
+
 ---
 
 ## v2.2.3 - 2026-08-24

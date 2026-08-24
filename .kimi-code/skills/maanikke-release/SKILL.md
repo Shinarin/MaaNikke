@@ -17,11 +17,11 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
 - changelog 文件：`resource/announcement/Changelog.md`（用户向），**最新版本条目置顶**。
 - 开发留痕文件：`DEVLOG.md`（开发向），结构为：头部规则说明 → `## [未发布]` 区 → `---` → 各版本线（新上旧下）。平时每次改动由会话随手记录在未发布区；本流程负责发版时的合并与封存。
 - 版本字段：`interface.json` 的 `"version"`。注意 `"interface_version": 2` 是协议号，**绝不要动**。
-- 模板文件夹：`F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-v2.x.x`（完整程序：exe、libs、runtimes、plugins、MaaAgentBinary、Assets、bat 等，唯独缺 agent/resource/interface.json）。
+- 模板文件夹：`F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-v2.x.x`（完整程序：exe、libs、runtimes、plugins、MaaAgentBinary、Assets、autoMaaNikke.bat/.py 等，唯独缺 agent/resource/interface.json）。
 - 构建与产物位置：构建文件夹和 zip 都直接生成在 `F:\MaaNikke历史版本备份\` 内（与 v2.1.0~v2.1.6 的存放习惯一致），**不要放在项目根目录**。
 - 同步目录：`C:\other\MaaNikke`（打包时把 agent/resource/interface.json 也复制一份到这里，**只复制，不做任何其他操作**）。
 - zip 命名：`MaaNikke-win-x86_64-v<新版本>.zip`（连字符、win-x86_64，与历史一致）。
-- zip 结构：根目录直接平铺 interface.json、agent、resource、MaaNikke.exe、libs 等共 16 个顶层条目，**含目录条目**（保留空目录），不多套一层文件夹。参照物：`F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-v2.1.5.zip`。
+- zip 结构：根目录直接平铺 interface.json、agent、resource、MaaNikke.exe、libs 等共 17 个顶层条目，**含目录条目**（保留空目录），不多套一层文件夹。参照物：`F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-v2.1.5.zip`。
 - 打包工具：Git Bash 的 tar 是 GNU tar，**造不了 zip**；用 Python zipfile（已实测）。
 - `.gitignore` 已含 `MaaNikke-win-x86_64-v*/` 排除规则（兜底，防止构建产物误入项目被提交）。
 - GitHub：仓库 `Shinarin/MaaNikke`，本机**无 gh CLI**；用 `git credential fill` 取 token 调 REST API（token 已验证有 `repo` scope，可建 Release）。token 严禁打印/写文件。
@@ -74,7 +74,7 @@ with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
             z.write(p, os.path.relpath(p, src))
 ```
 
-打包后校验：`testzip()` 返回 None；顶层条目 16 个、无嵌套同名文件夹；体积约 110MB。参考值：v2.1.6 为 733 条目 / 116,558,718 字节。
+打包后校验：`testzip()` 返回 None；顶层条目 17 个、无嵌套同名文件夹；体积约 110MB。参考值：v2.1.6 为 733 条目 / 116,558,718 字节。
 
 ## 第四步：push
 
