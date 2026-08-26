@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787358516250,
+            "lastSyncTime": 1787785219118,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\soloraid.json",
             "savedViewport": {
-                "x": -6233,
-                "y": 318,
-                "zoom": 0.95
+                "x": -4953,
+                "y": 342,
+                "zoom": 0.76
             },
             "filename": "soloraid",
-            "version": "v1.8.0"
+            "version": "v1.9.0"
         }
     },
     "$__mpe_anchor_soloraid_checksoloraid_anchor_soloraid": {
@@ -614,7 +615,9 @@
                 "expected": [
                     "已超过进入次数",
                     "已超过",
-                    "进入次数"
+                    "进入次数",
+                    "最终结算",
+                    "目前正在最终"
                 ]
             }
         },

@@ -3,24 +3,32 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787385445131,
+            "lastSyncTime": 1787698434951,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\limitedevent.json",
             "savedViewport": {
-                "x": -10228,
-                "y": 436,
-                "zoom": 1.09
+                "x": -10158,
+                "y": -198,
+                "zoom": 1
             },
             "filename": "limitedevent",
-            "version": "v1.8.0"
+            "version": "v1.9.0"
         }
     },
-    "limitedeventshop_claim_return2": {
-        "max_hit": 2,
+    "$__mpe_anchor_limitedeventshop_claim_anchor_limitedevent": {
         "$__mpe_code": {
             "position": {
-                "x": 9352,
-                "y": 918
+                "x": 10672,
+                "y": -39
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_limitedevent": {
+        "$__mpe_code": {
+            "position": {
+                "x": 12318,
+                "y": -693
             }
         }
     },
@@ -53,7 +61,6 @@
             },
             "color": "blue",
             "childrenLabels": [
-                "limitedeventshop_claim_return2",
                 "limitedeventshop_claim_anchor",
                 "limitedeventshop_claim",
                 "limitedeventshop_claim_basicticket",
@@ -67,7 +74,8 @@
                 "limitedeventshop_claim_premiumticket",
                 "limitedeventshop_claim_redeyes",
                 "limitedeventshop_claim_redeyesbox2h",
-                "limitedeventshop_claim_return"
+                "limitedeventshop_claim_return",
+                "limitedeventshop_claim_return2"
             ],
             "width": 2059,
             "height": 1735
@@ -97,22 +105,6 @@
             ],
             "width": 3352,
             "height": 657
-        }
-    },
-    "$__mpe_anchor_limitedeventshop_claim_anchor_limitedevent": {
-        "$__mpe_code": {
-            "position": {
-                "x": 10672,
-                "y": -39
-            }
-        }
-    },
-    "$__mpe_external_backtohomepage_limitedevent": {
-        "$__mpe_code": {
-            "position": {
-                "x": 12318,
-                "y": -693
-            }
         }
     },
     "checkclaimrewards_rebelroad": {
@@ -358,6 +350,8 @@
                 ]
             }
         },
+        "repeat": 2,
+        "repeat_delay": 500,
         "$__mpe_code": {
             "position": {
                 "x": 11055,
@@ -658,6 +652,15 @@
             "position": {
                 "x": 9351,
                 "y": 415
+            }
+        }
+    },
+    "limitedeventshop_claim_return2": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 9352,
+                "y": 918
             }
         }
     },

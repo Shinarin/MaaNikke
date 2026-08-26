@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787568048179,
+            "lastSyncTime": 1787699366576,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\p5.json",
             "savedViewport": {
-                "x": -7449,
-                "y": -1197,
-                "zoom": 2.18
+                "x": -251,
+                "y": 248,
+                "zoom": 0.35
             },
             "filename": "p5",
-            "version": "v1.8.1"
+            "version": "v1.9.0"
         }
     },
     "$__mpe_anchor_anchor_p5_checklatestevent_p5": {
@@ -365,7 +365,7 @@
                 ]
             }
         },
-        "timeout": 60000,
+        "timeout": 300000,
         "next": [
             "p5_canintoevent"
         ],
@@ -429,7 +429,7 @@
                         "1-2",
                         "1-1"
                     ],
-                    "tries_per_field": 1
+                    "tries_per_field": 2
                 },
                 "roi": [
                     395,
@@ -471,6 +471,7 @@
                 }
             }
         },
+        "timeout": 300000,
         "next": [
             "p5_canintoevent"
         ],
@@ -483,6 +484,9 @@
     },
     "p5_canintoevent_return": {
         "max_hit": 1,
+        "next": [
+            "p5_canintoevent_return2"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 4290,
@@ -2327,6 +2331,25 @@
             "position": {
                 "x": 1288,
                 "y": -388
+            }
+        }
+    },
+    "p5_canintoevent_return2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1116,
+                    312,
+                    63,
+                    124
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 4571,
+                "y": -478
             }
         }
     }

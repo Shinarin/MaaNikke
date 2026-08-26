@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787384995294,
+            "lastSyncTime": 1787699309108,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\juveniledays.json",
             "savedViewport": {
-                "x": -986,
-                "y": -556,
-                "zoom": 0.99
+                "x": -1370,
+                "y": -66,
+                "zoom": 0.8
             },
             "filename": "juveniledays",
-            "version": "v1.8.0"
+            "version": "v1.9.0"
         }
     },
     "$__mpe_anchor_anchor_juveniledays_checklatestevent_juveniledays": {
@@ -52,6 +53,14 @@
             "position": {
                 "x": 972,
                 "y": 3350
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_juveniledays": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2253,
+                "y": 3615
             }
         }
     },
@@ -200,7 +209,7 @@
                 ]
             }
         },
-        "timeout": 60000,
+        "timeout": 300000,
         "next": [
             "juveniledays_canintoevent"
         ],
@@ -264,13 +273,13 @@
                         "1-2",
                         "1-1"
                     ],
-                    "tries_per_field": 1
+                    "tries_per_field": 2
                 },
                 "roi": [
                     423,
                     128,
-                    468,
-                    590
+                    435,
+                    485
                 ]
             }
         },
@@ -291,6 +300,60 @@
             "position": {
                 "x": 3130,
                 "y": 481
+            }
+        }
+    },
+    "juveniledays_canintoevent_retry": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "juveniledays_canintoevent_return"
+                    ]
+                }
+            }
+        },
+        "timeout": 300000,
+        "next": [
+            "juveniledays_canintoevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3114,
+                "y": 116
+            }
+        }
+    },
+    "juveniledays_canintoevent_return": {
+        "max_hit": 2,
+        "next": [
+            "juveniledays_canintoevent_return2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3451,
+                "y": 99
+            }
+        }
+    },
+    "juveniledays_canintoevent_return2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1116,
+                    312,
+                    63,
+                    124
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 3755,
+                "y": 118
             }
         }
     },
@@ -1959,45 +2022,6 @@
             "position": {
                 "x": 2204,
                 "y": 709
-            }
-        }
-    },
-    "juveniledays_canintoevent_return": {
-        "max_hit": 2,
-        "$__mpe_code": {
-            "position": {
-                "x": 3451,
-                "y": 99
-            }
-        }
-    },
-    "juveniledays_canintoevent_retry": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "ResetCount",
-                "custom_action_param": {
-                    "nodes": [
-                        "juveniledays_canintoevent_return"
-                    ]
-                }
-            }
-        },
-        "next": [
-            "juveniledays_canintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3114,
-                "y": 116
-            }
-        }
-    },
-    "$__mpe_external_claimpassreward_juveniledays": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2253,
-                "y": 3615
             }
         }
     }

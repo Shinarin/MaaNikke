@@ -14,6 +14,11 @@
 
 ## [未发布]
 
+---
+
+## v2.2.4 - 2026-08-27
+
+- 2026-08-25 [文档] 完善 README 使用文档：新增"程序组成"文件清单与启动链图解；autoMaaNikke.bat/.py、startnikke.ahk、DependencySetup bat 四个脚本逐一详解（流程、重试逻辑、launcher_cache.txt 缓存机制、ahk 可调参数表）；功能列表按 interface.json 展开为任务说明+可配置选项明细表；新增常见问题 FAQ（运行库缺失、路径缓存重建、WeGame 改版调按钮比例、加载期截图全黑等）（涉及：README.md）
 - 2026-08-24 [新增] 合并 PR #5（ashi-koki）：新增 `autoMaaNikke.py`——`autoMaaNikke.bat` 的 Python 等价实现，供只接受 .py 的脚本调度器（如 OneDragon ScriptChainer）接入任务链；行为与 bat 一致：管理员校验 → startnikke.ahk 拉起游戏并轮询 nikke.exe → 守候 MaaNikke.exe 退出；进程名精确匹配，比 bat 的子串匹配更严谨；发版模板同步收录该文件，zip 顶层条目数 16→17（涉及：autoMaaNikke.py、F 盘发版模板、.kimi-code/skills/maanikke-release/SKILL.md）
 
 ---
