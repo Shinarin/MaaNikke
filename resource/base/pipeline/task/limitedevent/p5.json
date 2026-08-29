@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787699366576,
+            "lastSyncTime": 1787967536398,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\p5.json",
             "savedViewport": {
-                "x": -251,
-                "y": 248,
+                "x": -234,
+                "y": -96,
                 "zoom": 0.35
             },
             "filename": "p5",
-            "version": "v1.9.0"
+            "version": "v1.9.1"
         }
     },
     "$__mpe_anchor_anchor_p5_checklatestevent_p5": {
@@ -80,88 +80,18 @@
             }
         }
     },
-    "$__mpe_sticker_p5_便签1_p5": {
+    "$__mpe_group_兜底_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 571,
-                "y": -323
+                "x": 4249,
+                "y": 1205
             },
-            "content": "这里需要适配活动图标",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_p5_便签2_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1296,
-                "y": -544
-            },
-            "content": "这里需要适配关卡2按钮",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_p5_便签3_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1868,
-                "y": 316
-            },
-            "content": "这里需要适配story2位置",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_p5_便签4_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2619,
-                "y": 124
-            },
-            "content": "这里需要适配困难按钮",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_p5_便签6_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1528,
-                "y": 1073
-            },
-            "content": "这里需要适配活动任务",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_p5_便签7_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1798,
-                "y": 825
-            },
-            "content": "这里需要适配活动任务",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_p5_便签8_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1503,
-                "y": 2087
-            },
-            "content": "这里需要适配活动任务",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
+            "color": "blue",
+            "childrenLabels": [
+                "p5_into11_error"
+            ],
+            "width": 400,
+            "height": 381
         }
     },
     "claimp5_claimrewards": {
@@ -231,8 +161,8 @@
         "post_wait_freezes": 500,
         "$__mpe_code": {
             "position": {
-                "x": 1598,
-                "y": 789
+                "x": 1585,
+                "y": 785
             }
         }
     },
@@ -332,7 +262,7 @@
             "p5_into11"
         ],
         "on_error": [
-            "p5_error"
+            "p5_into11_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -395,6 +325,7 @@
                 "custom_action": "stagematchdel"
             }
         },
+        "timeout": 300000,
         "next": [
             "p5_canintoevent"
         ],
@@ -429,6 +360,7 @@
                         "1-2",
                         "1-1"
                     ],
+                    "stagepre": "limitedevent_stagepre",
                     "tries_per_field": 2
                 },
                 "roi": [
@@ -491,6 +423,25 @@
             "position": {
                 "x": 4290,
                 "y": -486
+            }
+        }
+    },
+    "p5_canintoevent_return2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1116,
+                    312,
+                    63,
+                    124
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 4571,
+                "y": -478
             }
         }
     },
@@ -824,8 +775,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1986,
-                "y": 205
+                "x": 1973,
+                "y": 263
             }
         }
     },
@@ -996,7 +947,9 @@
                 "expected": [
                     "hard",
                     "Hard",
-                    "HARD"
+                    "HARD",
+                    "ARD",
+                    "HAR"
                 ]
             }
         },
@@ -1034,8 +987,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2607,
-                "y": 221
+                "x": 2618,
+                "y": 202
             }
         }
     },
@@ -1338,8 +1291,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 559,
-                "y": -187
+                "x": 544,
+                "y": -132
             }
         }
     },
@@ -1349,7 +1302,8 @@
             "param": {
                 "custom_recognition": "stagenum",
                 "custom_recognition_param": {
-                    "expected": "1-11"
+                    "expected": "1-11",
+                    "stagepre": "limitedevent_stagepre"
                 },
                 "roi": [
                     431,
@@ -1367,13 +1321,40 @@
             "p5_intofightpage",
             "p5_into11"
         ],
-        "on_error": [
-            "p5_error"
+        "$__mpe_code": {
+            "position": {
+                "x": 4356,
+                "y": 545
+            }
+        }
+    },
+    "p5_into11_error": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    528,
+                    207,
+                    85,
+                    449
+                ],
+                "expected": [
+                    "CLEAR"
+                ],
+                "order_by": "Vertical",
+                "index": -2
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "p5_intofightpage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4382,
-                "y": 536
+                "x": 4335,
+                "y": 1277
             }
         }
     },
@@ -1583,8 +1564,8 @@
         "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 1625,
-                "y": 2003
+                "x": 1568,
+                "y": 2040
             }
         }
     },
@@ -1630,8 +1611,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6687,
-                "y": 821
+                "x": 6686,
+                "y": 835
             }
         }
     },
@@ -1689,8 +1670,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6700,
-                "y": 1076
+                "x": 6689,
+                "y": 1065
             }
         }
     },
@@ -1714,6 +1695,7 @@
         "action": {
             "type": "Click"
         },
+        "timeout": 60000,
         "next": [
             "p5_nochance1",
             "p5_nextstage",
@@ -1721,8 +1703,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7025,
-                "y": 318
+                "x": 7030,
+                "y": 287
             }
         }
     },
@@ -2001,8 +1983,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1673,
-                "y": 1082
+                "x": 1634,
+                "y": 1108
             }
         }
     },
@@ -2146,7 +2128,8 @@
             "type": "Click"
         },
         "next": [
-            "p5_quickfightmaxconfirm"
+            "p5_quickfightmaxconfirm",
+            "p5_startquickfightmax"
         ],
         "$__mpe_code": {
             "position": {
@@ -2251,10 +2234,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    6,
-                    102,
-                    39
+                    3,
+                    3,
+                    75,
+                    52
                 ],
                 "expected": [
                     "活动关卡"
@@ -2329,28 +2312,107 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1288,
-                "y": -388
+                "x": 1280,
+                "y": -365
             }
         }
     },
-    "p5_canintoevent_return2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1116,
-                    312,
-                    63,
-                    124
-                ]
-            }
-        },
+    "$__mpe_group_适配活动图标_p5": {
         "$__mpe_code": {
             "position": {
-                "x": 4571,
-                "y": -478
-            }
+                "x": 452,
+                "y": -169
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_into"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配关卡2按钮_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1188,
+                "y": -400
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_textstory2"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配story2位置_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1943,
+                "y": 213
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_choosestory"
+            ],
+            "width": 278,
+            "height": 272
+        }
+    },
+    "$__mpe_group_适配困难按钮_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2593,
+                "y": 141
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_clickhard2"
+            ],
+            "width": 273,
+            "height": 356
+        }
+    },
+    "$__mpe_group_适配活动任务_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1570,
+                "y": 743
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "claimp5_qiandao"
+            ],
+            "width": 256,
+            "height": 290
+        }
+    },
+    "$__mpe_group_适配活动任务图标_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1598,
+                "y": 1068
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_rewards"
+            ],
+            "width": 297,
+            "height": 398
+        }
+    },
+    "$__mpe_group_适配商店_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1485,
+                "y": 1985
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_intoshop"
+            ],
+            "width": 400,
+            "height": 300
         }
     }
 }

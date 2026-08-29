@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787699309108,
+            "lastSyncTime": 1787967328759,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\juveniledays.json",
             "savedViewport": {
-                "x": -1370,
-                "y": -66,
-                "zoom": 0.8
+                "x": 474,
+                "y": 54,
+                "zoom": 0.35
             },
             "filename": "juveniledays",
-            "version": "v1.9.0"
+            "version": "v1.9.1"
         }
     },
     "$__mpe_anchor_anchor_juveniledays_checklatestevent_juveniledays": {
@@ -35,8 +35,8 @@
     "$__mpe_anchor_juveniledays_stagestart_anchor_juveniledays": {
         "$__mpe_code": {
             "position": {
-                "x": 6661,
-                "y": 1396
+                "x": 6513,
+                "y": 850
             }
         }
     },
@@ -80,28 +80,18 @@
             }
         }
     },
-    "$__mpe_sticker_juveniledays_便签4_juveniledays": {
+    "$__mpe_group_兜底_juveniledays": {
         "$__mpe_code": {
             "position": {
-                "x": 1846,
-                "y": 836
+                "x": 3447,
+                "y": 1818
             },
-            "content": "这里需要适配困难按钮",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
-        }
-    },
-    "$__mpe_sticker_juveniledays_便签8_juveniledays": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1681,
-                "y": 2565
-            },
-            "content": "这里需要适配活动任务",
-            "color": "yellow",
-            "width": 200,
-            "height": 160
+            "color": "blue",
+            "childrenLabels": [
+                "juveniledays_into11_error"
+            ],
+            "width": 400,
+            "height": 381
         }
     },
     "juveniledays": {
@@ -176,7 +166,7 @@
             "juveniledays_into11"
         ],
         "on_error": [
-            "juveniledays_error"
+            "juveniledays_into11_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -239,6 +229,7 @@
                 "custom_action": "stagematchdel"
             }
         },
+        "timeout": 300000,
         "next": [
             "juveniledays_canintoevent"
         ],
@@ -273,6 +264,7 @@
                         "1-2",
                         "1-1"
                     ],
+                    "stagepre": "limitedevent_stagepre",
                     "tries_per_field": 2
                 },
                 "roi": [
@@ -867,8 +859,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1837,
-                "y": 931
+                "x": 1876,
+                "y": 935
             }
         }
     },
@@ -1166,8 +1158,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 368,
-                "y": 286
+                "x": 300,
+                "y": 248
             }
         }
     },
@@ -1177,7 +1169,8 @@
             "param": {
                 "custom_recognition": "stagenum",
                 "custom_recognition_param": {
-                    "expected": "1-11"
+                    "expected": "1-11",
+                    "stagepre": "limitedevent_stagepre"
                 },
                 "roi": [
                     431,
@@ -1194,13 +1187,40 @@
             "juveniledays_startquickfight",
             "juveniledays_into11"
         ],
-        "on_error": [
-            "juveniledays_error"
+        "$__mpe_code": {
+            "position": {
+                "x": 3685,
+                "y": 1264
+            }
+        }
+    },
+    "juveniledays_into11_error": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    528,
+                    207,
+                    85,
+                    449
+                ],
+                "expected": [
+                    "CLEAR"
+                ],
+                "order_by": "Vertical",
+                "index": -2
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "juveniledays_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3717,
-                "y": 1188
+                "x": 3535,
+                "y": 1858
             }
         }
     },
@@ -1435,8 +1455,8 @@
         "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 1667,
-                "y": 2644
+                "x": 1613,
+                "y": 2580
             }
         }
     },
@@ -1578,6 +1598,7 @@
         "action": {
             "type": "Click"
         },
+        "timeout": 60000,
         "next": [
             "juveniledays_nochance1",
             "juveniledays_nextstage",
@@ -1804,6 +1825,7 @@
         "action": {
             "type": "Click"
         },
+        "repeat": 5,
         "next": [
             "[Anchor]juveniledaysanchor"
         ],
@@ -1838,7 +1860,7 @@
             }
         },
         "anchor": "juveniledays_stagestart_anchor",
-        "timeout": 40000,
+        "timeout": 60000,
         "next": [
             "juveniledays_checkfinish",
             "[JumpBack]juveniledays_isfighting",
@@ -1903,7 +1925,8 @@
             "type": "Click"
         },
         "next": [
-            "juveniledays_quickfightmaxconfirm"
+            "juveniledays_quickfightmaxconfirm",
+            "juveniledays_startquickfightmax"
         ],
         "$__mpe_code": {
             "position": {
@@ -2023,6 +2046,48 @@
                 "x": 2204,
                 "y": 709
             }
+        }
+    },
+    "$__mpe_group_适配_juveniledays": {
+        "$__mpe_code": {
+            "position": {
+                "x": 158,
+                "y": 127
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "juveniledays_into"
+            ],
+            "width": 437,
+            "height": 466
+        }
+    },
+    "$__mpe_group_适配困难按钮_juveniledays": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1841,
+                "y": 884
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "juveniledays_clickhard2"
+            ],
+            "width": 290,
+            "height": 348
+        }
+    },
+    "$__mpe_group_适配活动任务_juveniledays": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1535,
+                "y": 2529
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "juveniledays_intoshop"
+            ],
+            "width": 400,
+            "height": 300
         }
     }
 }

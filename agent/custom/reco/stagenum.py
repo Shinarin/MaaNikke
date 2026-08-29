@@ -12,10 +12,19 @@ det 框 + rec 文本直接做归一化匹配（严格 / 宽松 / 尾段兜底）
 没匹配上的含数字框再做框内紧裁剪重读（原图 + 黑字白底提取图）。
 定位完全交给 det 模型，与关卡号的位置、字体、背景无关。
 
-同文件另有：stagematch（顺序轮巡 + 进程内存态临时数据库）与
-custom action stagematchdel（删除被标记字段）/ stagematchclear（清空数据库）。
+同文件另有：stagematch（顺序轮巡 + 进程内存态临时数据库）、
+custom action stagematchdel（删除被标记字段）/ stagematchclear（清空数据库）、
+stagepre（锚点字段识别器 + 锚点配置载体：识别节点 param 写
+"stagepre": "<节点名>" 即在原识别流程上叠加"数字框须邻近锚点框"的
+空间过滤兜底——锚点检出时用它消歧，锚点未检出时降级为无过滤原流程，
+不取代、不阻断原识别）。
+
+错配防护（2026-08-27 收紧）：纯 2 位数字只按 int==expected 尾段匹配，
+"11"/"12"/"10" 不会中 1-1、"12" 不会中 1-2；数字串全等仅保留 ≥3 位
+（"HII"→"111"≡"1-11" 的旧页艺术字兜底）。
 """
 
+import json
 import re
 import time
 
@@ -63,10 +72,10 @@ _LOOSE_SEP = "-—–_./,·:：'"
 
 def stages_equal_loose(candidate: str, expected: str) -> bool:
     """宽松比较：候选先归一斜体 "1" 的误读字（I/l/|/!/i/H→'1'），再比
-    纯数字串——同时兜底连字符丢失（"11"≈"1-1"）与整串字形误读
-    （"HII"→"111"≈"1-11"）。两道保险：映射后残留其它字母直接出局
-    （否则 "EVEIT HI" 剥掉字母得 "111" 会误中）；数字串必须完全相等
-    （"HI"≠"1-11"、"HII"≠"1-1"，位数对不上不算）。
+    数字串——**仅 ≥3 位保留数字串全等**（"HII"→"111"≡"1-11" 的整串字形
+    误读兜底）。2 位纯数字不再走全等："11"/"12"/"10" 绝不中 1-1、"12"
+    绝不中 1-2（丢分隔符形态与纯数字尾段形态文本层不可分，宁漏勿错；
+    空间消歧交给 stagepre 锚点过滤）。映射后残留其它字母直接出局。
 
     尾段兜底（候选严格解析不出关卡号时才走，"1-1" 能严格解析走不到这里，
     不会误中 "1-11"），两种形态：
@@ -83,7 +92,7 @@ def stages_equal_loose(candidate: str, expected: str) -> bool:
            for ch in mapped):
         return False
     a, b = _digits(mapped), _digits(expected)
-    if a and b and a == b:
+    if a and b and len(a) >= 3 and a == b:      # 数字串全等仅 ≥3 位（"111"≡"1-11"）
         return True
     if parse_stage(candidate) is not None:
         return False
@@ -96,6 +105,89 @@ def stages_equal_loose(candidate: str, expected: str) -> bool:
     if s.isdigit() and len(s) >= 2:             # 纯数字尾段："01"≡"1-1"
         return int(s) == tail[1]
     return False
+
+
+# =====================================================================
+# stagepre 锚点过滤（数字框必须邻近锚点字段框，空间消歧防错配）
+# =====================================================================
+def _reading_order(results: list) -> list:
+    """OCR 结果按阅读顺序（y 主 x 次）排序，保证遍历/取首个的确定性。"""
+    return sorted(results, key=lambda r: (r[2][1], r[2][0]))
+
+
+def _anchors_in(results: list, fields: list[str]) -> list[tuple[int, int, int, int]]:
+    """OCR 结果中匹配锚点字段的框。锚点是普通文字：contains 匹配、
+    大小写不敏感（"Q加成奖励妮姬" 可中 "加成奖励妮姬"），不走关卡号解析。"""
+    lows = [f.lower() for f in fields]
+    return [box for text, _, box in results
+            if any(f in (text or "").lower() for f in lows)]
+
+
+def _near_anchor(box, anchor_boxes: list, max_dist: int) -> bool:
+    """数字框是否邻近某个锚点框：横向行带（y 区间相交且水平间距 ≤ max_dist）
+    或纵向列带（x 区间相交且垂直间距 ≤ max_dist），取最近锚点判定。"""
+    bx, by, bw, bh = box
+    for ax, ay, aw, ah in anchor_boxes:
+        if by < ay + ah and ay < by + bh:            # y 相交 → 横向邻居
+            if max(0, max(ax - (bx + bw), bx - (ax + aw))) <= max_dist:
+                return True
+        elif bx < ax + aw and ax < bx + bw:          # x 相交 → 纵向邻居
+            if max(0, max(ay - (by + bh), by - (ay + ah))) <= max_dist:
+                return True
+    return False
+
+
+def _extract_stagepre_cfg(data: dict) -> dict | None:
+    """从 stagepre 节点定义提取锚点配置 {fields, max_dist}。
+    兼容 v2 嵌套（recognition.param.custom_recognition_param）与平铺两种形状；
+    custom_recognition_param 误写成 JSON 字符串时尝试解析，非法 JSON 返回 None。"""
+    cpp = None
+    reco = data.get("recognition")
+    if isinstance(reco, dict):
+        param = reco.get("param")
+        if isinstance(param, dict):
+            cpp = param.get("custom_recognition_param")
+    if cpp is None:
+        cpp = data.get("custom_recognition_param")
+    if isinstance(cpp, str):
+        try:
+            cpp = json.loads(cpp)
+        except ValueError:
+            return None
+    if not isinstance(cpp, dict) or not cpp:
+        return None
+    raw = cpp.get("expected")
+    fields = [str(v).strip() for v in (raw if isinstance(raw, list) else [raw])
+              if str(v).strip()]
+    if not fields:
+        return None
+    return {"fields": fields, "max_dist": int(cpp.get("max_dist", 300))}
+
+
+def _load_stagepre_cfg(context: Context, params: dict):
+    """读取 params["stagepre"] 指向的 stagepre 节点的锚点配置。
+
+    返回 None  = 未配置（调用方保持无过滤旧行为）；
+    返回 False = 配置了但节点缺失/无有效字段（调用方应未命中兜底，
+                 防配置笔误静默退回无过滤）；
+    返回 dict  = {fields: [...], max_dist: int}。"""
+    node = str(params.get("stagepre", "")).strip()
+    if not node:
+        return None
+    try:
+        data = context.get_node_data(node)
+    except Exception as e:
+        print(f"[stagenum] ⚠ stagepre 节点 {node!r} 定义读取失败: {e}，本帧不识别")
+        return False
+    if not isinstance(data, dict):
+        print(f"[stagenum] ⚠ stagepre 节点 {node!r} 不存在，本帧不识别")
+        return False
+    cfg = _extract_stagepre_cfg(data)
+    if cfg is None:
+        print(f"[stagenum] ⚠ stagepre 节点 {node!r} 的 custom_recognition_param 无有效 expected"
+              "（应为对象或合法 JSON 字符串），本帧不识别")
+        return False
+    return cfg
 
 
 def _otsu_threshold(gray: np.ndarray) -> int:
@@ -212,7 +304,8 @@ def _parse_engine_params(params: dict) -> dict:
 
 def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
                    threshold=0.3, variants=("otsu", "dark", "bright"),
-                   bright_min=220, dark_max=60) -> "tuple[tuple[int,int,int,int], dict] | None":
+                   bright_min=220, dark_max=60,
+                   anchor: dict | None = None) -> "tuple[tuple[int,int,int,int], dict] | None":
     """单字段完整识别（stagenum 引擎核心，StageNum/StageMatch 共用）。
 
     det-first 两级流程：
@@ -222,6 +315,15 @@ def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
     先原图重读、再按 variants 顺序做提取图（黑字白底）重读。
     日志前缀 [stagenum]（引擎层日志）。命中返回 ((x,y,w,h), detail)；
     未命中返回 None。
+
+    anchor（可选，{"fields": [...], "max_dist": int}，来自 stagepre 节点）：
+    在原识别流程之上叠加空间过滤兜底——先按阅读顺序排序全部框；本帧
+    锚点字段有检出时，只保留邻近某个锚点框（横向行带/纵向列带，间距
+    ≤ max_dist）的框参与匹配与框内重读（防 "825/5" 这类杂散数字错配），
+    且含锚点字段的框同时作为关卡号候选做"锚点尾段"匹配（剥字母数字串
+    int==expected 尾段，1 位也认——EVENT x 关卡标题形态，尾段比对自带
+    消歧）；锚点全部未检出时**降级为无过滤原流程**（锚点是增强兜底而非
+    前置闸门，锚点字段 OCR 不稳的页面不会被卡死）。
     """
     clamped = _clamp_roi(image, roi)
     if clamped is None:
@@ -236,11 +338,43 @@ def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
             return "宽松"
         return None
 
-    results = _ocr_texts(context, roi_crop, threshold)
+    results = _reading_order(_ocr_texts(context, roi_crop, threshold))
+
+    anchor_fields_lower: list[str] = []   # 非空 = 本帧锚点已检出
+    if anchor is not None:
+        anchor_boxes = _anchors_in(results, anchor["fields"])
+        if not anchor_boxes:
+            print(f"[stagenum] 锚点字段 {anchor['fields']} 本帧全部未检出，"
+                  f"降级为无过滤识别（锚点仅作兜底增强）")
+        else:
+            anchor_fields_lower = [f.lower() for f in anchor["fields"]]
+            before = len(results)
+            results = [r for r in results
+                       if _near_anchor(r[2], anchor_boxes, anchor["max_dist"])]
+            print(f"[stagenum] 锚点过滤：{before} 框 → {len(results)} 框"
+                  f"（锚点 {len(anchor_boxes)} 个）")
+
+    expected_stage = parse_stage(expected)
+
+    def anchor_tail(text: str) -> bool:
+        """锚点框数字尾段匹配：本帧锚点已检出、且文本含锚点字段时，该框
+        同时作为关卡号候选——剥字母后的数字串按 int==expected 尾段匹配
+        （1 位数字也认）。EVENT x 关卡标题形态：锚点字段本身即关卡号担保，
+        不受"单位数纯数字防计数误中"限制；尾段比对自带消歧
+        （"EVENT 1"→1≠11 不中 1-11，"EVENT 12"→12 中 1-12）。"""
+        if not anchor_fields_lower or expected_stage is None:
+            return False
+        low = (text or "").lower()
+        if not any(f in low for f in anchor_fields_lower):
+            return False
+        d = _digits(text)
+        return bool(d) and int(d) == expected_stage[1]
 
     # stage-0：整图 OCR 结果直接匹配
     for text, score, (bx, by, bw, bh) in results:
         how = match(text)
+        if not how and anchor_tail(text):
+            how = "锚点尾段"
         if how:
             orig = (x0 + bx, y0 + by, bw, bh)
             print(f"[stagenum] ✅ 命中 {expected}（整图/{how}，"
@@ -320,6 +454,8 @@ class StageNum(CustomRecognition):
     ── 自定义参数（custom_recognition_param，直接写对象） ──
     {
         "expected": "1-11",        // 必填，目标关卡号（与 1-01 等写法互通）
+        "stagepre": "xxx_pre",     // 可选，stagepre 节点名；填写后启用锚点
+                                   // 空间过滤（配置取自该节点的 expected/max_dist）
         "threshold": 0.3,          // 可选，OCR 置信度，默认 0.3
         "variants": "otsu,dark,bright",  // 可选，stage-1 提取图变体顺序
         "bright_min": 220,         // 可选，亮字提取阈值
@@ -343,10 +479,10 @@ class StageNum(CustomRecognition):
     ── 注意 ──
     1. 定位完全交给 det 模型：与关卡号的位置、字体、背景（立绘/斜纹）无关，
        roi 给整个列表区域即可，列表滚动也能命中。
-    2. 已知歧义（接受，均由 stagematch 按字段顺序轮巡、长号码优先命中规避）：
-       候选剥掉分隔符后数字串相等即中，"-11" 也会中 "1-1"；纯数字 "11"/"12"
-       同时是 "1-1"/"1-2" 的连字符丢失形态与 "1-11"/"1-12" 的纯数字尾段形态，
-       文本层面无法区分，同帧长号码行正常显示时会先正确命中、轮不到歧义框。
+    2. 错配防护（2026-08-27 收紧）：纯 2 位数字只按 int==expected 尾段匹配，
+       "11"/"12"/"10" 不会中 1-1、"12" 不会中 1-2；丢分隔符歧义不再靠
+       stagematch 长号码优先兜底，改由 stagepre 锚点空间过滤消歧
+       （锚点为叠加兜底：检出时消歧，未检出时降级无过滤原流程）。
     """
 
     def analyze(
@@ -359,8 +495,89 @@ class StageNum(CustomRecognition):
         if parse_stage(expected) is None:
             print(f"[stagenum] expected 缺失或格式非法: {expected!r}（需要形如 '1-11'）")
             return CustomRecognition.AnalyzeResult(box=None, detail={})
+        anchor = _load_stagepre_cfg(context, params)
+        if anchor is False:
+            return CustomRecognition.AnalyzeResult(box=None, detail={})
         return _wrap(_recognize_one(context, argv.image, argv.roi, expected,
-                                    **_parse_engine_params(params)))
+                                    anchor=anchor, **_parse_engine_params(params)))
+
+
+# =====================================================================
+# stagepre —— 锚点字段识别器 + stage 系列的锚点配置载体
+# =====================================================================
+@AgentServer.custom_recognition("stagepre")
+class StagePre(CustomRecognition):
+    """
+    锚点字段识别：对 roi 跑一次框架 OCR，contains 匹配 expected 锚点字段
+    （普通文字匹配，大小写不敏感，不做关卡号解析），命中返回阅读顺序
+    （y 主 x 次）第一个锚点框。
+
+    另一个身份是 stagenum/stagematch 的锚点配置载体：识别节点的 param 写
+    "stagepre": "<本节点名>"，运行时经 context.get_node_data 取本节点
+    custom_recognition_param 的 expected/max_dist，在原识别流程上叠加
+    "数字框须邻近锚点框（横向行带/纵向列带，间距 ≤ max_dist）"的
+    空间过滤兜底——文本层分不清的 "11"/"12" 歧义由卡片锚点的位置关系
+    消歧；本帧锚点全部未检出时降级为无过滤原流程（增强兜底而非前置
+    闸门，锚点字段 OCR 不稳的页面不会被卡死）。
+
+    ── 自定义参数（custom_recognition_param，直接写对象） ──
+    {
+        "expected": ["NONE", "CLEAR"],  // 必填（字符串或数组），卡片级锚点文字
+        "max_dist": 300,                // 可选，数字框与锚点框最大间距 px，默认 300
+        "threshold": 0.3                // 可选，OCR 置信度，默认 0.3
+    }
+
+    ── Pipeline JSON ──
+    {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagepre",
+                "custom_recognition_param": { "expected": ["NONE", "CLEAR"] },
+                "roi": [400, 150, 460, 450]
+            }
+        }
+    }
+
+    ── 注意 ──
+    1. 锚点字段应选"每张关卡卡片上都会重复出现"的文字（锁定时 NONE、
+       已通关 CLEAR、Repeat 按钮等），随活动皮肤维护。
+    2. 节点被框架正常执行时就是普通锚点识别器（命中首个锚点框）；
+       仅被 stagenum/stagematch 的 "stagepre" 参数引用时不需挂进 next 链。
+    """
+
+    def analyze(
+        self,
+        context: Context,
+        argv: CustomRecognition.AnalyzeArg,
+    ) -> CustomRecognition.AnalyzeResult:
+        params = parse_params(argv.custom_recognition_param)
+        raw = params.get("expected", "")
+        fields = [str(v).strip() for v in (raw if isinstance(raw, list) else [raw])
+                  if str(v).strip()]
+        if not fields:
+            print("[stagepre] expected 缺失或为空（需要锚点字段，如 [\"NONE\", \"CLEAR\"]）")
+            return CustomRecognition.AnalyzeResult(box=None, detail={})
+        clamped = _clamp_roi(argv.image, argv.roi)
+        if clamped is None:
+            print(f"[stagepre] ROI 无效: {argv.roi}")
+            return CustomRecognition.AnalyzeResult(box=None, detail={})
+        x0, y0, _, _, crop = clamped
+        threshold = float(params.get("threshold", 0.3))
+        results = _reading_order(_ocr_texts(context, crop, threshold))
+        for text, score, (bx, by, bw, bh) in results:
+            low = (text or "").lower()
+            hit_field = next((f for f in fields if f.lower() in low), None)
+            if hit_field is not None:
+                orig = (x0 + bx, y0 + by, bw, bh)
+                print(f"[stagepre] ✅ 锚点命中 {hit_field!r}（OCR {text!r} "
+                      f"score={score:.2f}）→ {orig}")
+                return CustomRecognition.AnalyzeResult(
+                    box=orig, detail={"matched": text, "anchor": hit_field,
+                                      "score": score})
+        print(f"[stagepre] ❌ 锚点字段 {fields} 全部未命中"
+              f"（整图读数 {[t for t, _, _ in results] or '∅'}）")
+        return CustomRecognition.AnalyzeResult(box=None, detail={})
 
 
 def _fresh_screenshot(context: Context, fallback: np.ndarray) -> np.ndarray:
@@ -473,6 +690,8 @@ class StageMatch(CustomRecognition):
         "rounds": 2,                   // 可选，总轮数，默认 2
         "action_node": "xxx_swipe",    // 可选，一轮全空后手动执行的动作节点名
         "post_action_wait": 1000,      // 可选，动作后等待毫秒，默认 1000
+        "stagepre": "xxx_pre",         // 可选，stagepre 节点名；叠加锚点空间过滤
+                                       // 兜底（锚点未检出时降级无过滤原流程）
         // 其余 stagenum 引擎参数原样透传：threshold/variants/bright_min/dark_max
     }
 
@@ -529,6 +748,10 @@ class StageMatch(CustomRecognition):
         post_action_wait = int(params.get("post_action_wait", 1000))
         engine = _parse_engine_params(params)
 
+        anchor = _load_stagepre_cfg(context, params)
+        if anchor is False:
+            return CustomRecognition.AnalyzeResult(box=None, detail={})
+
         if _clamp_roi(argv.image, argv.roi) is None:
             print(f"[stagematch] ROI 无效: {argv.roi}")
             return CustomRecognition.AnalyzeResult(box=None, detail={})
@@ -557,7 +780,8 @@ class StageMatch(CustomRecognition):
             for field in pending:
                 for try_i in range(1, tries + 1):
                     img = _fresh_screenshot(context, img)
-                    hit = _recognize_one(context, img, argv.roi, field, **engine)
+                    hit = _recognize_one(context, img, argv.roi, field,
+                                         anchor=anchor, **engine)
                     if hit is not None:
                         box, info = hit
                         _db_mark(field)

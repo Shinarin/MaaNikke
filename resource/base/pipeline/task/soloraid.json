@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787785219118,
+            "lastSyncTime": 1787965179642,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\soloraid.json",
             "savedViewport": {
-                "x": -4953,
-                "y": 342,
-                "zoom": 0.76
+                "x": -5092,
+                "y": 756,
+                "zoom": 0.86
             },
             "filename": "soloraid",
-            "version": "v1.9.0"
+            "version": "v1.9.1"
         }
     },
     "$__mpe_anchor_soloraid_checksoloraid_anchor_soloraid": {
@@ -256,8 +256,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6635,
-                "y": -860
+                "x": 6638,
+                "y": -865
             }
         }
     },
@@ -265,8 +265,46 @@
         "max_hit": 5,
         "$__mpe_code": {
             "position": {
-                "x": 6162,
-                "y": 261
+                "x": 6191,
+                "y": 489
+            }
+        }
+    },
+    "soloraid_end": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    127,
+                    433
+                ],
+                "expected": [
+                    "单人突击最终排名",
+                    "最终排名",
+                    "RAID RESULT"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1081,
+                    288,
+                    24,
+                    130
+                ]
+            }
+        },
+        "next": [
+            "soloraid_exit"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6641,
+                "y": -646
             }
         }
     },
@@ -457,7 +495,8 @@
         "post_wait_freezes": 2000,
         "next": [
             "soloraid_checksoloraid2",
-            "soloraid_intosoloraid"
+            "soloraid_intosoloraid",
+            "soloraid_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -487,7 +526,8 @@
         "post_wait_freezes": 2000,
         "next": [
             "soloraid_checksoloraid2",
-            "soloraid_intosoloraid2"
+            "soloraid_intosoloraid2",
+            "soloraid_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -539,8 +579,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6293,
-                "y": 33
+                "x": 6233,
+                "y": 29
             }
         }
     },
@@ -833,6 +873,17 @@
             "position": {
                 "x": 9466,
                 "y": 1319
+            }
+        }
+    },
+    "soloraid_exit": {
+        "action": {
+            "type": "StopTask"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6951,
+                "y": -626
             }
         }
     }

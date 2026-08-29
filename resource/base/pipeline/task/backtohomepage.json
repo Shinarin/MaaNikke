@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787566919501,
+            "lastSyncTime": 1787966384316,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\backtohomepage.json",
             "savedViewport": {
-                "x": -336,
-                "y": -1445,
-                "zoom": 1.31
+                "x": -579,
+                "y": -909,
+                "zoom": 1.5
             },
             "filename": "backtohomepage",
-            "version": "v1.8.1"
+            "version": "v1.9.1"
         }
     },
     "$__mpe_external_clickstart_backtohomepage": {
@@ -411,6 +411,46 @@
             }
         }
     },
+    "goback_1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "返回",
+                    "关闭"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 942,
+                "y": -544
+            }
+        }
+    },
+    "goback_2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1,
+                    635,
+                    144,
+                    82
+                ],
+                "expected": [
+                    "返回",
+                    "关闭"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 948,
+                "y": -390
+            }
+        }
+    },
     "homepagebuttom": {
         "recognition": {
             "type": "TemplateMatch",
@@ -475,8 +515,11 @@
                 ],
                 "template": [
                     "fighting.png",
-                    "fighting2.png"
-                ]
+                    "fighting2.png",
+                    "fighting_gb.png",
+                    "fighting2_gb.png"
+                ],
+                "green_mask": true
             }
         },
         "$__mpe_code": {
@@ -589,46 +632,6 @@
             "position": {
                 "x": 1049,
                 "y": 511
-            }
-        }
-    },
-    "goback_1": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "返回",
-                    "关闭"
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 942,
-                "y": -544
-            }
-        }
-    },
-    "goback_2": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    1,
-                    635,
-                    144,
-                    82
-                ],
-                "expected": [
-                    "返回",
-                    "关闭"
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 948,
-                "y": -390
             }
         }
     }

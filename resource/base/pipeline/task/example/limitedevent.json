@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787698434951,
+            "lastSyncTime": 1787841573719,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\limitedevent.json",
             "savedViewport": {
-                "x": -10158,
-                "y": -198,
-                "zoom": 1
+                "x": -11122,
+                "y": 72,
+                "zoom": 1.13
             },
             "filename": "limitedevent",
             "version": "v1.9.0"
@@ -356,6 +356,36 @@
             "position": {
                 "x": 11055,
                 "y": 409
+            }
+        }
+    },
+    "limitedevent_stagepre": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagepre",
+                "custom_recognition_param": {
+                    "expected": [
+                        "CLEAR",
+                        "LEAR",
+                        "CLEA",
+                        "clear",
+                        "lear",
+                        "clea",
+                        "EVENT",
+                        "VENT",
+                        "EVEN",
+                        "event",
+                        "vent",
+                        "even"
+                    ]
+                }
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 11056,
+                "y": 165
             }
         }
     },

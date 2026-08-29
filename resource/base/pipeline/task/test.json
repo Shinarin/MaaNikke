@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787359635984,
+            "lastSyncTime": 1787842852717,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\test.json",
             "savedViewport": {
-                "x": -5601,
-                "y": 395,
-                "zoom": 0.76
+                "x": -5992,
+                "y": 715,
+                "zoom": 0.81
             },
             "filename": "test",
-            "version": "v1.8.0"
+            "version": "v1.9.0"
         }
     },
     "$__mpe_external_killthelord_test": {
@@ -20,6 +21,14 @@
             "position": {
                 "x": 8375,
                 "y": 1119
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_test": {
+        "$__mpe_code": {
+            "position": {
+                "x": 8523,
+                "y": -126
             }
         }
     },
@@ -230,13 +239,14 @@
         }
     },
     "test": {
+        "timeout": 300000,
         "next": [
-            "limitedeventshop_claim"
+            "p5_into11_副本3"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8193,
-                "y": -290
+                "x": 8005,
+                "y": -457
             }
         }
     },
@@ -305,6 +315,61 @@
             }
         }
     },
+    "testpre": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagepre",
+                "custom_recognition_param": {
+                    "expected": [
+                        "NONE",
+                        "CLEAR",
+                        "Repeat"
+                    ],
+                    "max_dist": 300
+                },
+                "roi": [
+                    300,
+                    150,
+                    700,
+                    500
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9500,
+                "y": 800
+            }
+        }
+    },
+    "teststagenum_pre": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagenum",
+                "custom_recognition_param": {
+                    "expected": "1-12",
+                    "stagepre": "testpre"
+                },
+                "roi": [
+                    300,
+                    150,
+                    700,
+                    500
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9500,
+                "y": 960
+            }
+        }
+    },
     "新建节点1": {
         "recognition": {
             "type": "OCR",
@@ -346,11 +411,74 @@
             }
         }
     },
-    "$__mpe_external_limitedeventshop_claim_test": {
+    "p5_canintoevent_副本2": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagematch",
+                "custom_recognition_param": {
+                    "action_node": "limitedevent_resweip",
+                    "expected": [
+                        "1-12",
+                        "1-11",
+                        "1-10",
+                        "1-9",
+                        "1-8",
+                        "1-7",
+                        "1-6",
+                        "1-5",
+                        "1-4",
+                        "1-3",
+                        "1-2",
+                        "1-1"
+                    ],
+                    "tries_per_field": 2,
+                    "stagepre": "limitedevent_stagepre"
+                },
+                "roi": [
+                    395,
+                    160,
+                    496,
+                    488
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
         "$__mpe_code": {
             "position": {
-                "x": 8523,
-                "y": -205
+                "x": 8498,
+                "y": -480
+            }
+        }
+    },
+    "p5_into11_副本3": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagenum",
+                "custom_recognition_param": {
+                    "expected": "1-1",
+                    "stagepre": "limitedevent_stagepre"
+                },
+                "roi": [
+                    412,
+                    215,
+                    465,
+                    400
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 8342,
+                "y": -782
             }
         }
     }
