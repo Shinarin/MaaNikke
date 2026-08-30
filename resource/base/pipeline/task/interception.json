@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1781278380293,
+            "lastSyncTime": 1788047557978,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\interception.json",
             "savedViewport": {
-                "x": -2674,
-                "y": 237,
-                "zoom": 0.6
+                "x": -7960,
+                "y": 39,
+                "zoom": 1.14
             },
             "filename": "interception",
-            "version": "v1.6.1"
+            "version": "v1.9.1"
         }
     },
     "$__mpe_external_backtohomepage_interception": {
@@ -20,14 +21,6 @@
             "position": {
                 "x": 7306,
                 "y": 737
-            }
-        }
-    },
-    "$__mpe_external_checkfight_interception": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7672,
-                "y": 260
             }
         }
     },
@@ -397,7 +390,7 @@
         "next": [
             "battleend",
             "[JumpBack]battling",
-            "[JumpBack]checkfight",
+            "[JumpBack]interception_checkfight",
             "[JumpBack]continuefightinterception"
         ],
         "$__mpe_code": {
@@ -642,6 +635,30 @@
             "position": {
                 "x": 6356,
                 "y": 256
+            }
+        }
+    },
+    "interception_checkfight": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    93,
+                    58
+                ],
+                "template": [
+                    "fighting.png",
+                    "fighting_gb.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7652,
+                "y": 264
             }
         }
     }

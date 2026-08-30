@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1785240579007,
+            "lastSyncTime": 1788044111356,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\simroom.json",
             "savedViewport": {
-                "x": -2719,
-                "y": 128,
-                "zoom": 0.66
+                "x": -862,
+                "y": 170,
+                "zoom": 0.33
             },
             "filename": "simroom",
-            "version": "v1.7.4"
+            "version": "v1.9.1"
         }
     },
     "$__mpe_external_backtohomepage_simroom": {
@@ -151,7 +152,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6170,
+                "x": 6533,
                 "y": 270
             }
         }
@@ -179,7 +180,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6460,
+                "x": 6823,
                 "y": 332
             }
         }
@@ -253,7 +254,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6186,
+                "x": 6549,
                 "y": 22
             }
         }
@@ -275,7 +276,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6179,
+                "x": 6542,
                 "y": -223
             }
         }
@@ -363,7 +364,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5609,
+                "x": 5972,
                 "y": 28
             }
         }
@@ -418,7 +419,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5883,
+                "x": 6246,
                 "y": 28
             }
         }
@@ -495,7 +496,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5894,
+                "x": 6257,
                 "y": -221
             }
         }
@@ -531,7 +532,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6456,
+                "x": 6819,
                 "y": 96
             }
         }
@@ -562,7 +563,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5887,
+                "x": 6250,
                 "y": 262
             }
         }
@@ -587,12 +588,43 @@
             "type": "Click"
         },
         "next": [
-            "quicksim"
+            "simroom_5c"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 5340,
                 "y": 9
+            }
+        }
+    },
+    "simroom_5c": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    326,
+                    198,
+                    672,
+                    362
+                ],
+                "template": [
+                    "simroom/simroom-5C.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "quicksim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5663,
+                "y": 11
             }
         }
     }

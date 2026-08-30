@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787235025962,
+            "lastSyncTime": 1788047446736,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\teambattle.json",
             "savedViewport": {
-                "x": 479,
-                "y": 435,
-                "zoom": 1.14
+                "x": -1564,
+                "y": 495,
+                "zoom": 0.86
             },
             "filename": "teambattle",
-            "version": "v1.7.6"
+            "version": "v1.9.1"
         }
     },
     "$__mpe_anchor_teambattlestart_teambattle": {
@@ -26,16 +27,8 @@
     "$__mpe_external_backtohomepage_teambattle": {
         "$__mpe_code": {
             "position": {
-                "x": 1598,
-                "y": 434
-            }
-        }
-    },
-    "$__mpe_external_checkfight_teambattle": {
-        "$__mpe_code": {
-            "position": {
-                "x": 3027,
-                "y": 1
+                "x": 1592,
+                "y": 891
             }
         }
     },
@@ -57,7 +50,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 3022,
-                "y": 85
+                "y": 329
             }
         }
     },
@@ -80,9 +73,9 @@
         },
         "anchor": "teambattlestart",
         "next": [
+            "teambattlepre",
             "notimetoteambattle",
             "[JumpBack]teambattlematching",
-            "teambattlepre",
             "[JumpBack]teambattlematch"
         ],
         "$__mpe_code": {
@@ -133,10 +126,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    569,
-                    437,
-                    189,
-                    26
+                    513,
+                    397,
+                    285,
+                    125
                 ],
                 "expected": [
                     "确认"
@@ -337,6 +330,31 @@
             }
         }
     },
+    "teambattle_morelimitedevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    112,
+                    214,
+                    278
+                ],
+                "expected": [
+                    "更多"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 363,
+                "y": 127
+            }
+        }
+    },
     "teambattleaccept": {
         "recognition": {
             "type": "OCR",
@@ -355,17 +373,10 @@
         "action": {
             "type": "Click"
         },
-        "timeout": 40000,
-        "next": [
-            "teambattleinfo"
-        ],
-        "on_error": [
-            "[Anchor]teambattlestart"
-        ],
         "$__mpe_code": {
             "position": {
-                "x": 1696,
-                "y": -248
+                "x": 1750,
+                "y": 92
             }
         }
     },
@@ -381,17 +392,10 @@
         "action": {
             "type": "Click"
         },
-        "timeout": 40000,
-        "next": [
-            "teambattleinfo"
-        ],
-        "on_error": [
-            "[Anchor]teambattlestart"
-        ],
         "$__mpe_code": {
             "position": {
-                "x": 1695,
-                "y": 76
+                "x": 1743,
+                "y": 367
             }
         }
     },
@@ -416,7 +420,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 2066,
-                "y": -246
+                "y": -243
             }
         }
     },
@@ -440,8 +444,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1022,
-                "y": -19
+                "x": 987,
+                "y": 3
             }
         }
     },
@@ -486,14 +490,16 @@
                 ]
             }
         },
+        "timeout": 60000,
         "next": [
-            "teambattleaccept",
-            "teambattleaccept2"
+            "teambattleinfo",
+            "[JumpBack]teambattleaccept",
+            "[JumpBack]teambattleaccept2"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1326,
-                "y": -145
+                "x": 1321,
+                "y": -160
             }
         }
     },
@@ -518,7 +524,7 @@
         "timeout": 120000,
         "next": [
             "exitteambattle",
-            "[JumpBack]checkfight",
+            "[JumpBack]teambattle_checkfight",
             "[JumpBack]checkinteambattleroom"
         ],
         "$__mpe_code": {
@@ -565,28 +571,27 @@
             }
         }
     },
-    "teambattle_morelimitedevent": {
+    "teambattle_checkfight": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    3,
-                    112,
-                    214,
-                    278
+                    0,
+                    0,
+                    93,
+                    58
                 ],
-                "expected": [
-                    "更多"
-                ]
+                "template": [
+                    "fighting.png",
+                    "fighting_gb.png"
+                ],
+                "green_mask": true
             }
-        },
-        "action": {
-            "type": "Click"
         },
         "$__mpe_code": {
             "position": {
-                "x": 363,
-                "y": 127
+                "x": 3030,
+                "y": 15
             }
         }
     }

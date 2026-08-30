@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787965179642,
+            "lastSyncTime": 1788050641776,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\soloraid.json",
             "savedViewport": {
-                "x": -5092,
-                "y": 756,
-                "zoom": 0.86
+                "x": -3347,
+                "y": 607,
+                "zoom": 0.66
             },
             "filename": "soloraid",
             "version": "v1.9.1"
@@ -275,10 +275,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    0,
-                    127,
-                    433
+                    344,
+                    109,
+                    620,
+                    507
                 ],
                 "expected": [
                     "单人突击最终排名",
@@ -299,12 +299,24 @@
             }
         },
         "next": [
-            "soloraid_exit"
+            "soloraid_exit",
+            "soloraid_end"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 6641,
                 "y": -646
+            }
+        }
+    },
+    "soloraid_exit": {
+        "action": {
+            "type": "StopTask"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6951,
+                "y": -626
             }
         }
     },
@@ -496,7 +508,8 @@
         "next": [
             "soloraid_checksoloraid2",
             "soloraid_intosoloraid",
-            "soloraid_end"
+            "soloraid_end",
+            "[JumpBack]soloraid_morelimitedevent"
         ],
         "$__mpe_code": {
             "position": {
@@ -527,7 +540,8 @@
         "next": [
             "soloraid_checksoloraid2",
             "soloraid_intosoloraid2",
-            "soloraid_end"
+            "soloraid_end",
+            "[JumpBack]soloraid_morelimitedevent"
         ],
         "$__mpe_code": {
             "position": {
@@ -579,8 +593,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6233,
-                "y": 29
+                "x": 6519,
+                "y": 212
             }
         }
     },
@@ -873,17 +887,6 @@
             "position": {
                 "x": 9466,
                 "y": 1319
-            }
-        }
-    },
-    "soloraid_exit": {
-        "action": {
-            "type": "StopTask"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 6951,
-                "y": -626
             }
         }
     }

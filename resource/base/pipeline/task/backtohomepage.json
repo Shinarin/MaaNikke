@@ -3,25 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787966384316,
+            "lastSyncTime": 1788047631640,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\backtohomepage.json",
             "savedViewport": {
-                "x": -579,
-                "y": -909,
-                "zoom": 1.5
+                "x": 921,
+                "y": 256,
+                "zoom": 0.22
             },
             "filename": "backtohomepage",
             "version": "v1.9.1"
-        }
-    },
-    "$__mpe_external_clickstart_backtohomepage": {
-        "$__mpe_code": {
-            "position": {
-                "x": 655,
-                "y": 1004
-            }
         }
     },
     "$__mpe_group_废弃_backtohomepage": {
@@ -74,9 +66,10 @@
             "nextto",
             "recruitpage",
             "[JumpBack]isfighting",
-            "clickstart",
+            "b2h_clickstart",
             "checkloginpage",
-            "clickclaim"
+            "clickclaim",
+            "soloraid_commonend"
         ],
         "$__mpe_code": {
             "position": {
@@ -632,6 +625,70 @@
             "position": {
                 "x": 1049,
                 "y": 511
+            }
+        }
+    },
+    "soloraid_commonend": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    344,
+                    109,
+                    620,
+                    507
+                ],
+                "expected": [
+                    "单人突击最终排名",
+                    "最终排名",
+                    "RAID RESULT"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1081,
+                    288,
+                    24,
+                    130
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 665,
+                "y": 1674
+            }
+        }
+    },
+    "b2h_clickstart": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    531,
+                    513,
+                    231,
+                    122
+                ],
+                "expected": [
+                    "点击开始",
+                    "点击",
+                    "开始"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 100,
+        "$__mpe_code": {
+            "position": {
+                "x": 962,
+                "y": 884
             }
         }
     }

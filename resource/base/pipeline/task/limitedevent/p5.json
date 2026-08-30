@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787967536398,
+            "lastSyncTime": 1788130316072,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\p5.json",
             "savedViewport": {
-                "x": -234,
-                "y": -96,
-                "zoom": 0.35
+                "x": 565,
+                "y": 236,
+                "zoom": 0.2
             },
             "filename": "p5",
-            "version": "v1.9.1"
+            "version": "v1.9.2"
         }
     },
     "$__mpe_anchor_anchor_p5_checklatestevent_p5": {
@@ -92,6 +92,104 @@
             ],
             "width": 400,
             "height": 381
+        }
+    },
+    "$__mpe_group_适配story2位置_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1943,
+                "y": 213
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_choosestory"
+            ],
+            "width": 278,
+            "height": 272
+        }
+    },
+    "$__mpe_group_适配关卡2按钮_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1188,
+                "y": -400
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_textstory2"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配商店_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1485,
+                "y": 1985
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_intoshop"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配困难按钮_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2593,
+                "y": 141
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_clickhard2"
+            ],
+            "width": 273,
+            "height": 356
+        }
+    },
+    "$__mpe_group_适配活动任务_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1570,
+                "y": 743
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "claimp5_qiandao"
+            ],
+            "width": 256,
+            "height": 290
+        }
+    },
+    "$__mpe_group_适配活动任务图标_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1598,
+                "y": 1068
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_rewards"
+            ],
+            "width": 297,
+            "height": 398
+        }
+    },
+    "$__mpe_group_适配活动图标_p5": {
+        "$__mpe_code": {
+            "position": {
+                "x": 452,
+                "y": -169
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "p5_into"
+            ],
+            "width": 400,
+            "height": 300
         }
     },
     "claimp5_claimrewards": {
@@ -517,8 +615,12 @@
                     49
                 ],
                 "template": [
-                    "fighting.png"
-                ]
+                    "fighting.png",
+                    "fighting2.png",
+                    "fighting_gb.png",
+                    "fighting2_gb.png"
+                ],
+                "green_mask": true
             }
         },
         "$__mpe_code": {
@@ -1581,8 +1683,11 @@
                 ],
                 "template": [
                     "fighting.png",
-                    "fighting2.png"
-                ]
+                    "fighting2.png",
+                    "fighting2_gb.png",
+                    "fighting_gb.png"
+                ],
+                "green_mask": true
             }
         },
         "$__mpe_code": {
@@ -2315,104 +2420,6 @@
                 "x": 1280,
                 "y": -365
             }
-        }
-    },
-    "$__mpe_group_适配活动图标_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 452,
-                "y": -169
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "p5_into"
-            ],
-            "width": 400,
-            "height": 300
-        }
-    },
-    "$__mpe_group_适配关卡2按钮_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1188,
-                "y": -400
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "p5_textstory2"
-            ],
-            "width": 400,
-            "height": 300
-        }
-    },
-    "$__mpe_group_适配story2位置_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1943,
-                "y": 213
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "p5_choosestory"
-            ],
-            "width": 278,
-            "height": 272
-        }
-    },
-    "$__mpe_group_适配困难按钮_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2593,
-                "y": 141
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "p5_clickhard2"
-            ],
-            "width": 273,
-            "height": 356
-        }
-    },
-    "$__mpe_group_适配活动任务_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1570,
-                "y": 743
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "claimp5_qiandao"
-            ],
-            "width": 256,
-            "height": 290
-        }
-    },
-    "$__mpe_group_适配活动任务图标_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1598,
-                "y": 1068
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "p5_rewards"
-            ],
-            "width": 297,
-            "height": 398
-        }
-    },
-    "$__mpe_group_适配商店_p5": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1485,
-                "y": 1985
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "p5_intoshop"
-            ],
-            "width": 400,
-            "height": 300
         }
     }
 }
