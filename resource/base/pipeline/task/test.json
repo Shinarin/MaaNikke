@@ -3,455 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787842852717,
+            "lastSyncTime": 1788359002921,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\test.json",
             "savedViewport": {
-                "x": -5992,
-                "y": 715,
-                "zoom": 0.81
+                "x": -11829,
+                "y": 909,
+                "zoom": 1.5
             },
             "filename": "test",
-            "version": "v1.9.0"
-        }
-    },
-    "$__mpe_external_killthelord_test": {
-        "$__mpe_code": {
-            "position": {
-                "x": 8375,
-                "y": 1119
-            }
-        }
-    },
-    "$__mpe_external_limitedeventshop_claim_test": {
-        "$__mpe_code": {
-            "position": {
-                "x": 8523,
-                "y": -126
-            }
-        }
-    },
-    "$__mpe_external_smallevent1_test": {
-        "$__mpe_code": {
-            "position": {
-                "x": 8677,
-                "y": 260
-            }
-        }
-    },
-    "StageLabelTextColor": {
-        "recognition": {
-            "type": "ColorMatch",
-            "param": {
-                "method": 4,
-                "lower": [
-                    [
-                        222,
-                        225,
-                        227
-                    ]
-                ],
-                "upper": [
-                    [
-                        255,
-                        255,
-                        255
-                    ]
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 9530,
-                "y": 467
-            }
-        }
-    },
-    "killthelord_into11_副本56": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "userecodatebase",
-                "custom_recognition_param": {
-                    "targetnode": "1-11"
-                },
-                "roi": [
-                    431,
-                    338,
-                    422,
-                    263
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 8584,
-                "y": 472
-            }
-        }
-    },
-    "p5_0item_count_副本2": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "RotatedOCR",
-                "custom_recognition_param": {
-                    "expected": "0/5",
-                    "threshold": 0.3
-                },
-                "roi": [
-                    398,
-                    3,
-                    517,
-                    715
-                ]
-            }
-        },
-        "inverse": true,
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 8267,
-                "y": -117
-            }
-        }
-    },
-    "smallevent1_canintoevent_副本54": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "recodatebase",
-                "custom_recognition_param": {
-                    "preprocess_scale": 3,
-                    "threshold": 0.3
-                },
-                "roi": [
-                    423,
-                    128,
-                    468,
-                    590
-                ]
-            }
-        },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    576,
-                    250,
-                    132,
-                    13
-                ],
-                "end": [
-                    [
-                        553,
-                        587,
-                        225,
-                        17
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "timeout": 60000,
-        "next": [
-            "smallevent1_intocanintoevent_副本55"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8682,
-                "y": 833
-            }
-        }
-    },
-    "smallevent1_intocanintoevent_副本55": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "userecodatebase",
-                "custom_recognition_param": {
-                    "preprocess_scale": 3,
-                    "threshold": 0.3
-                },
-                "roi": [
-                    429,
-                    127,
-                    428,
-                    592
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 9009,
-                "y": 909
-            }
-        }
-    },
-    "smallevent_canintoevent_副本7": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagematch",
-                "custom_recognition_param": {
-                    "action_node": "limitedevent_resweip",
-                    "expected": [
-                        "1-12",
-                        "1-11",
-                        "1-10",
-                        "1-9",
-                        "1-8",
-                        "1-7",
-                        "1-6",
-                        "1-5",
-                        "1-4",
-                        "1-3",
-                        "1-2",
-                        "1-1"
-                    ],
-                    "tries_per_field": 2
-                },
-                "roi": [
-                    423,
-                    128,
-                    468,
-                    590
-                ]
-            }
-        },
-        "timeout": 60000,
-        "$__mpe_code": {
-            "position": {
-                "x": 8819,
-                "y": -342
-            }
-        }
-    },
-    "test": {
-        "timeout": 300000,
-        "next": [
-            "p5_into11_副本3"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8005,
-                "y": -457
-            }
-        }
-    },
-    "test1": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    458,
-                    212,
-                    350,
-                    401
-                ],
-                "expected": [
-                    "EVENT"
-                ],
-                "color_filter": "StageLabelTextColor",
-                "order_by": "Vertical",
-                "index": 1
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 9186,
-                "y": 454
-            }
-        }
-    },
-    "test2": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7771,
-                "y": 599
-            }
-        }
-    },
-    "test3": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    580,
-                    217,
-                    122,
-                    59
-                ],
-                "expected": [
-                    "H"
-                ],
-                "replace": [
-                    [
-                        "origin",
-                        "target"
-                    ]
-                ],
-                "threshold": 0.3
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 8882,
-                "y": 467
-            }
-        }
-    },
-    "testpre": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagepre",
-                "custom_recognition_param": {
-                    "expected": [
-                        "NONE",
-                        "CLEAR",
-                        "Repeat"
-                    ],
-                    "max_dist": 300
-                },
-                "roi": [
-                    300,
-                    150,
-                    700,
-                    500
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 9500,
-                "y": 800
-            }
-        }
-    },
-    "teststagenum_pre": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagenum",
-                "custom_recognition_param": {
-                    "expected": "1-12",
-                    "stagepre": "testpre"
-                },
-                "roi": [
-                    300,
-                    150,
-                    700,
-                    500
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 9500,
-                "y": 960
-            }
-        }
-    },
-    "新建节点1": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    417,
-                    198,
-                    523,
-                    469
-                ],
-                "expected": [
-                    "1-11"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 7994,
-                "y": 451
-            }
-        }
-    },
-    "新建节点35": {
-        "action": {
-            "type": "ClickKey",
-            "param": {
-                "key": [
-                    27
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 8413,
-                "y": 900
-            }
-        }
-    },
-    "p5_canintoevent_副本2": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagematch",
-                "custom_recognition_param": {
-                    "action_node": "limitedevent_resweip",
-                    "expected": [
-                        "1-12",
-                        "1-11",
-                        "1-10",
-                        "1-9",
-                        "1-8",
-                        "1-7",
-                        "1-6",
-                        "1-5",
-                        "1-4",
-                        "1-3",
-                        "1-2",
-                        "1-1"
-                    ],
-                    "tries_per_field": 2,
-                    "stagepre": "limitedevent_stagepre"
-                },
-                "roi": [
-                    395,
-                    160,
-                    496,
-                    488
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay": 500,
-        "$__mpe_code": {
-            "position": {
-                "x": 8498,
-                "y": -480
-            }
+            "version": "v1.9.2"
         }
     },
     "p5_into11_副本3": {
@@ -479,6 +41,42 @@
             "position": {
                 "x": 8342,
                 "y": -782
+            }
+        }
+    },
+    "test": {
+        "timeout": 300000,
+        "next": [
+            "p5_into11_副本3"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 8005,
+                "y": -457
+            }
+        }
+    },
+    "新建节点1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    514,
+                    232,
+                    152,
+                    415
+                ],
+                "expected": [
+                    "CLEAR"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8456,
+                "y": -427
             }
         }
     }

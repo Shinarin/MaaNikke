@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787841573719,
+            "lastSyncTime": 1788305698840,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\limitedevent.json",
             "savedViewport": {
-                "x": -11122,
-                "y": 72,
-                "zoom": 1.13
+                "x": -8493,
+                "y": -1036,
+                "zoom": 0.99
             },
             "filename": "limitedevent",
-            "version": "v1.9.0"
+            "version": "v1.9.2"
         }
     },
     "$__mpe_anchor_limitedeventshop_claim_anchor_limitedevent": {
@@ -127,21 +127,6 @@
         }
     },
     "event_noteam": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    436,
-                    290,
-                    444,
-                    165
-                ],
-                "expected": [
-                    "未编队",
-                    "无法进入"
-                ]
-            }
-        },
         "next": [
             "event_noteam_addnikkes"
         ],

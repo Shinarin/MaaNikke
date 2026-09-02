@@ -12,18 +12,16 @@
 !agent/**
 !Assets/**
 !resource/**
-!interface.json
-!autoMaaNikke.bat
-!startnikke.ahk
-!MPEsimple.txt
-!README.md
-!DEVELOPMENT.md
-!DEVLOG.md
-!LICENSE
-!.gitignore
-!AGENTS.md
-!DEVELOPMENT.md
-!DEVLOG.md
+!/interface.json
+!/autoMaaNikke.bat
+!/startnikke.ahk
+!/MPEsimple.txt
+!/README.md
+!/DEVELOPMENT.md
+!/DEVLOG.md
+!/LICENSE
+!/.gitignore
+!/AGENTS.md
 
 # ---- 放行目录内仍要排除的 ----
 __pycache__/

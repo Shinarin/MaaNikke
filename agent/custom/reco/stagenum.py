@@ -75,10 +75,12 @@ def stages_equal_loose(candidate: str, expected: str) -> bool:
     数字串——**仅 ≥3 位保留数字串全等**（"HII"→"111"≡"1-11" 的整串字形
     误读兜底）。2 位纯数字不再走全等："11"/"12"/"10" 绝不中 1-1、"12"
     绝不中 1-2（丢分隔符形态与纯数字尾段形态文本层不可分，宁漏勿错；
-    空间消歧交给 stagepre 锚点过滤）。映射后残留其它字母直接出局。
+    空间消歧交给 stagepre 锚点过滤）。映射后残留其它字母直接出局；
+    映射后可严格解析的（"H-1"→"1-1"→(1,1)）按解析结果与 expected
+    比对，不进下方各兜底档。
 
-    尾段兜底（候选严格解析不出关卡号时才走，"1-1" 能严格解析走不到这里，
-    不会误中 "1-11"），两种形态：
+    尾段兜底（映射后仍解析不出关卡号时才走，"1-1"/"H-1" 能解析走不到
+    这里，不会误中 "1-11"），两种形态：
     1. 映射后带分隔符：数字串 int == expected 末段——兜底前导 "1" 被 det
        丢掉（选中行实测读作 "-11"/"-09"）；
     2. 整框纯数字（strip 后全是数字）且 ≥2 位：int == expected 末段——
@@ -91,11 +93,16 @@ def stages_equal_loose(candidate: str, expected: str) -> bool:
     if any(not (ch.isdigit() or ch.isspace() or ch in _LOOSE_SEP)
            for ch in mapped):
         return False
+    # 映射后可严格解析的按解析结果比对（"H-1"→"1-1"→(1,1)：只中 1-1，
+    # 不被尾段档的数字串 "11" 抢去 1-11）；真丢前导的 "-11" 映射后仍
+    # 不可解析，继续走下方尾段兜底
+    m_stage = parse_stage(mapped)
+    if m_stage is not None:
+        e_stage = parse_stage(expected)
+        return e_stage is not None and m_stage == e_stage
     a, b = _digits(mapped), _digits(expected)
     if a and b and len(a) >= 3 and a == b:      # 数字串全等仅 ≥3 位（"111"≡"1-11"）
         return True
-    if parse_stage(candidate) is not None:
-        return False
     tail = parse_stage(expected)
     if not a or tail is None:
         return False
@@ -312,7 +319,10 @@ def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
     stage-0 整图直配——对 roi 跑一次不带 expected 的框架 OCR，det 框 +
     rec 文本直接做归一化匹配（严格优先，宽松/尾段兜底）；
     stage-1 框内兜底——对没匹配上且含数字/形近字的框，紧裁剪（pad 3px）
-    先原图重读、再按 variants 顺序做提取图（黑字白底）重读。
+    先原图重读、再按 variants 顺序做提取图（黑字白底）重读；原始文本
+    可严格解析的框跳过（能严格解析却没在 stage-0 命中 ⇒ 解析值 ≠
+    expected，框属于别的关卡；重读丢信息会引入歧义——实机案例：粘连框
+    "CLEAR1-2" 重读丢横杠成 "12"，纯数字尾段档误中 1-12）。
     日志前缀 [stagenum]（引擎层日志）。命中返回 ((x,y,w,h), detail)；
     未命中返回 None。
 
@@ -322,7 +332,9 @@ def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
     ≤ max_dist）的框参与匹配与框内重读（防 "825/5" 这类杂散数字错配），
     且含锚点字段的框同时作为关卡号候选做"锚点尾段"匹配（剥字母数字串
     int==expected 尾段，1 位也认——EVENT x 关卡标题形态，尾段比对自带
-    消歧）；锚点全部未检出时**降级为无过滤原流程**（锚点是增强兜底而非
+    消歧），另放开"锚点单H"档：映射后为单 "1" 的邻近框可中 1-1（斜体
+    1-1 整串读作 H 的实测形态，无锚点时维持单位数不认防计数误中）；
+    锚点全部未检出时**降级为无过滤原流程**（锚点是增强兜底而非
     前置闸门，锚点字段 OCR 不稳的页面不会被卡死）。
     """
     clamped = _clamp_roi(image, roi)
@@ -358,23 +370,41 @@ def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
 
     def anchor_tail(text: str) -> bool:
         """锚点框数字尾段匹配：本帧锚点已检出、且文本含锚点字段时，该框
-        同时作为关卡号候选——剥字母后的数字串按 int==expected 尾段匹配
+        同时作为关卡号候选——取**最后一个数字组**按 int==expected 尾段匹配
         （1 位数字也认）。EVENT x 关卡标题形态：锚点字段本身即关卡号担保，
         不受"单位数纯数字防计数误中"限制；尾段比对自带消歧
-        （"EVENT 1"→1≠11 不中 1-11，"EVENT 12"→12 中 1-12）。"""
+        （"EVENT 1"→1≠11 不中 1-11，"EVENT 12"→12 中 1-12）。
+        取最后组而非全串拼接：防 "CLEAR1-2" 粘连框拼出 "12" 误中 1-12。"""
         if not anchor_fields_lower or expected_stage is None:
             return False
         low = (text or "").lower()
         if not any(f in low for f in anchor_fields_lower):
             return False
-        d = _digits(text)
-        return bool(d) and int(d) == expected_stage[1]
+        groups = re.findall(r"\d+", text or "")
+        return bool(groups) and int(groups[-1]) == expected_stage[1]
 
-    # stage-0：整图 OCR 结果直接匹配
-    for text, score, (bx, by, bw, bh) in results:
+    def anchor_single_one(text: str) -> bool:
+        """锚点担保的单字符 "1"：本帧锚点已检出时，映射后 strip 为单 "1"
+        的框（斜体 1-1 整串被读成 H 的实测形态——"1-1" 三笔画形似 H）
+        允许中 1-1。能走到这里的框已通过锚点过滤（邻近锚点），单字母
+        噪声由空间关系担保压住；无锚点/锚点未检出时维持"单位数纯数字
+        不认"（防 "5/5"、"6天8小时" 类计数误中）。"""
+        if not anchor_fields_lower or expected_stage != (1, 1):
+            return False
+        return (text or "").strip().translate(_CONFUSE_AS_ONE) == "1"
+
+    def full_match(text: str) -> str | None:
+        """全部档位统一入口（stage-0 整图 / stage-1 框内重读共用）。"""
         how = match(text)
         if not how and anchor_tail(text):
             how = "锚点尾段"
+        if not how and anchor_single_one(text):
+            how = "锚点单H"
+        return how
+
+    # stage-0：整图 OCR 结果直接匹配
+    for text, score, (bx, by, bw, bh) in results:
+        how = full_match(text)
         if how:
             orig = (x0 + bx, y0 + by, bw, bh)
             print(f"[stagenum] ✅ 命中 {expected}（整图/{how}，"
@@ -392,6 +422,13 @@ def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
     for text, score, (bx, by, bw, bh) in results:
         if not eligible(text):
             continue
+        # 否决：原始文本可严格解析 ⇒ 框属于解析出的那个关卡（能在 stage-0
+        # 严格命中当前 expected 的话根本走不到这里，所以解析值必然 ≠
+        # expected）；重读只会丢信息引入歧义——实机案例：粘连框
+        # "CLEAR1-2"（解析得 (1,2)）紧裁剪送提取图重读丢横杠读成 "12"，
+        # 纯数字尾段档误中 1-12
+        if parse_stage(text) is not None:
+            continue
         px0, py0 = max(0, bx - pad), max(0, by - pad)
         px1, py1 = min(img_w, bx + bw + pad), min(img_h, by + bh + pad)
         sub = roi_crop[py0:py1, px0:px1]
@@ -399,7 +436,7 @@ def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
             continue
         # 框内原图重读：紧裁剪上 det 重跑，偶发能拆开整图粘连的框
         for t2, s2, (cx, cy, cw, ch) in _ocr_texts(context, sub, threshold):
-            how = match(t2)
+            how = full_match(t2)
             if how:
                 orig = (x0 + px0 + cx, y0 + py0 + cy, cw, ch)
                 print(f"[stagenum] ✅ 命中 {expected}（框内原图/{how}，整图读 "
@@ -415,7 +452,7 @@ def _recognize_one(context: Context, image: np.ndarray, roi, expected: str, *,
                 continue
             bw3 = np.stack([np.where(mask, 0, 255).astype(np.uint8)] * 3, axis=-1)
             for t2, s2, (cx, cy, cw, ch) in _ocr_texts(context, bw3, threshold):
-                how = match(t2)
+                how = full_match(t2)
                 if how:
                     orig = (x0 + px0 + cx, y0 + py0 + cy, cw, ch)
                     print(f"[stagenum] ✅ 命中 {expected}（提取图({variant})/{how}，"

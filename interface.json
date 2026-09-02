@@ -2,7 +2,7 @@
   "interface_version": 2,
   "custom_title": "MaaNikke",
   "name": "MaaNikke",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "url": "https://github.com/Shinarin/MaaNikke",
 
 
@@ -203,8 +203,8 @@
       "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼"
     },
     {
-      "name": "限时活动(juveniledays)",
-      "entry": "juveniledays",
+      "name": "限时活动(absolute)",
+      "entry": "absolute",
       "default_check": true,
       "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼"
     },
