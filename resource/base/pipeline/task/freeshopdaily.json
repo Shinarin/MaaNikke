@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787145901830,
+            "lastSyncTime": 1788649656196,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\freeshopdaily.json",
             "savedViewport": {
-                "x": 851,
-                "y": -613,
-                "zoom": 0.43
+                "x": 1280,
+                "y": 928,
+                "zoom": 1
             },
             "filename": "freeshopdaily",
-            "version": "v1.7.6"
+            "version": "v1.9.3"
         }
     },
     "$__mpe_anchor_checkinmallanchor1_freeshopdaily": {
@@ -66,8 +67,8 @@
     "$__mpe_group_竞技场商店_freeshopdaily": {
         "$__mpe_code": {
             "position": {
-                "x": -224,
-                "y": 269
+                "x": -202,
+                "y": 267
             },
             "color": "green",
             "childrenLabels": [
@@ -149,7 +150,8 @@
                     177
                 ],
                 "expected": [
-                    "100%"
+                    "100%",
+                    "SALE"
                 ]
             }
         },
@@ -162,8 +164,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 640,
-                "y": -752
+                "x": 647,
+                "y": -756
             }
         }
     },
@@ -244,8 +246,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 902,
-                "y": 330
+                "x": 924,
+                "y": 328
             }
         }
     },
@@ -274,8 +276,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 906,
-                "y": 628
+                "x": 928,
+                "y": 626
             }
         }
     },
@@ -306,8 +308,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 912,
-                "y": 1228
+                "x": 934,
+                "y": 1226
             }
         }
     },
@@ -338,8 +340,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 907,
-                "y": 948
+                "x": 929,
+                "y": 946
             }
         }
     },
@@ -370,8 +372,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 919,
-                "y": 1562
+                "x": 941,
+                "y": 1560
             }
         }
     },
@@ -402,8 +404,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1226,
-                "y": 1461
+                "x": 1248,
+                "y": 1459
             }
         }
     },
@@ -416,8 +418,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": -184,
-                "y": 324
+                "x": -162,
+                "y": 322
             }
         }
     },
@@ -448,8 +450,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1222,
-                "y": 1052
+                "x": 1244,
+                "y": 1050
             }
         }
     },
@@ -676,8 +678,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 397,
-                "y": 348
+                "x": 419,
+                "y": 346
             }
         }
     },
@@ -785,8 +787,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": -653,
-                "y": -833
+                "x": -652,
+                "y": -817
             }
         }
     },
@@ -918,8 +920,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1288,
-                "y": 490
+                "x": 1310,
+                "y": 488
             }
         }
     },
@@ -946,8 +948,8 @@
         "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 1670,
-                "y": 485
+                "x": 1692,
+                "y": 483
             }
         }
     },
@@ -971,8 +973,8 @@
         "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 1665,
-                "y": 779
+                "x": 1687,
+                "y": 777
             }
         }
     },
@@ -1061,8 +1063,8 @@
     "endcheckinarenashop": {
         "$__mpe_code": {
             "position": {
-                "x": 387,
-                "y": 952
+                "x": 409,
+                "y": 950
             }
         }
     },
@@ -1070,8 +1072,8 @@
         "max_hit": 1,
         "$__mpe_code": {
             "position": {
-                "x": 516,
-                "y": 730
+                "x": 538,
+                "y": 728
             }
         }
     },
@@ -1194,8 +1196,8 @@
         "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 104,
-                "y": 529
+                "x": 126,
+                "y": 527
             }
         }
     },

@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788044111356,
+            "lastSyncTime": 1788650137910,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\simroom.json",
             "savedViewport": {
-                "x": -862,
-                "y": 170,
-                "zoom": 0.33
+                "x": -3016,
+                "y": 201,
+                "zoom": 0.65
             },
             "filename": "simroom",
-            "version": "v1.9.1"
+            "version": "v1.9.3"
         }
     },
     "$__mpe_external_backtohomepage_simroom": {
@@ -359,6 +359,7 @@
         },
         "next": [
             "simend",
+            "simroom_not_5c",
             "simhaddone",
             "skipbuffschoose"
         ],
@@ -515,6 +516,65 @@
             }
         }
     },
+    "simroom_5c": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    326,
+                    198,
+                    672,
+                    362
+                ],
+                "template": [
+                    "simroom/simroom-5C.png"
+                ],
+                "threshold": [
+                    0.95
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_wait_freezes": 200,
+        "next": [
+            "quicksim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5663,
+                "y": -95
+            }
+        }
+    },
+    "simroom_not_5c": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    458,
+                    280,
+                    354,
+                    149
+                ],
+                "expected": [
+                    "无法进行快速",
+                    "仅限5-C可以"
+                ]
+            }
+        },
+        "next": [
+            "simroom_5c"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6252,
+                "y": -404
+            }
+        }
+    },
     "simroomtohomepage": {
         "recognition": {
             "type": "TemplateMatch",
@@ -592,39 +652,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 5340,
-                "y": 9
-            }
-        }
-    },
-    "simroom_5c": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    326,
-                    198,
-                    672,
-                    362
-                ],
-                "template": [
-                    "simroom/simroom-5C.png"
-                ],
-                "threshold": [
-                    0.9
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "quicksim"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 5663,
-                "y": 11
+                "x": 5371,
+                "y": -13
             }
         }
     }
