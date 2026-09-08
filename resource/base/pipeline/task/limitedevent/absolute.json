@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788360056027,
+            "lastSyncTime": 1788908912471,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\absolute.json",
             "savedViewport": {
-                "x": -1674,
-                "y": 140,
-                "zoom": 0.75
+                "x": -1097,
+                "y": -1226,
+                "zoom": 1.31
             },
             "filename": "absolute",
-            "version": "v1.9.2"
+            "version": "v1.9.3"
         }
     },
     "$__mpe_anchor_absolute_stagestart_anchor_absolute": {
@@ -112,15 +112,16 @@
         "$__mpe_code": {
             "position": {
                 "x": 1037,
-                "y": 68
+                "y": -18
             },
             "color": "blue",
             "childrenLabels": [
                 "absolute_textstory2",
-                "absolute_textstory2_into"
+                "absolute_textstory2_into",
+                "absolute_textstory2_into_no"
             ],
-            "width": 735,
-            "height": 420
+            "width": 1104,
+            "height": 506
         }
     },
     "$__mpe_group_适配困难按钮_absolute": {
@@ -1430,6 +1431,7 @@
                     "ENTE",
                     "NTER",
                     "Ente",
+                    "nter",
                     "nter"
                 ]
             }
@@ -2050,7 +2052,9 @@
         "next": [
             "absolute_eventstage",
             "[JumpBack]absolute_intoeventstage",
-            "[JumpBack]absolute_intoerroreventstage"
+            "[JumpBack]absolute_intoerroreventstage",
+            "[JumpBack]absolute_eventstage_return_last",
+            "[JumpBack]absolute_eventstage_last"
         ],
         "$__mpe_code": {
             "position": {
@@ -2161,7 +2165,8 @@
             }
         },
         "next": [
-            "absolute_textstory2_into"
+            "absolute_textstory2_into",
+            "absolute_textstory2_into_no"
         ],
         "$__mpe_code": {
             "position": {
@@ -2195,9 +2200,90 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1450,
-                "y": 114
+                "x": 1458,
+                "y": 39
             }
+        }
+    },
+    "absolute_textstory2_into_no": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    244,
+                    93,
+                    170,
+                    111
+                ],
+                "template": [
+                    "limitedevent/absolute/absolute_story1_into.png"
+                ]
+            }
+        },
+        "next": [
+            "absolute_storyevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1728,
+                "y": 132
+            }
+        }
+    },
+    "absolute_eventstage_last": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    399,
+                    16,
+                    484,
+                    701
+                ],
+                "expected": [
+                    "加成奖励妮姬"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    5,
+                    -32,
+                    -13,
+                    2
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1165,
+                "y": 1272
+            }
+        }
+    },
+    "absolute_eventstage_return_last": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 1233,
+                "y": 993
+            }
+        }
+    },
+    "$__mpe_group_需适配enter点位_absolute": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1109,
+                "y": 1215
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "absolute_eventstage_last"
+            ],
+            "width": 400,
+            "height": 300
         }
     }
 }

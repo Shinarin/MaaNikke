@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1785856295180,
+            "lastSyncTime": 1788909941645,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\arena.json",
             "savedViewport": {
-                "x": -7437,
-                "y": 745,
-                "zoom": 1.06
+                "x": -4162,
+                "y": 363,
+                "zoom": 0.99
             },
             "filename": "arena",
-            "version": "v1.7.4"
+            "version": "v1.9.3"
         }
     },
     "$__mpe_anchor_arenafightagain_arena": {
@@ -193,7 +194,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 4993,
-                "y": 163
+                "y": 201
             }
         }
     },
@@ -513,8 +514,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 5312,
-                "y": -236
+                "x": 5300,
+                "y": -278
             }
         }
     },
@@ -642,14 +643,16 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 400,
         "next": [
+            "havenotopen",
             "arenafight",
-            "havenotopen"
+            "[JumpBack]newbiearena_re"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 4994,
-                "y": -446
+                "y": -454
             }
         }
     },
@@ -726,14 +729,68 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 400,
         "next": [
+            "havenotopen",
             "claimspecialarenareward",
-            "havenotopen"
+            "[JumpBack]specialarena_re"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4987,
-                "y": -142
+                "x": 4990,
+                "y": -124
+            }
+        }
+    },
+    "newbiearena_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    424,
+                    323,
+                    146,
+                    109
+                ],
+                "expected": [
+                    "新人竞技场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 400,
+        "$__mpe_code": {
+            "position": {
+                "x": 5315,
+                "y": -683
+            }
+        }
+    },
+    "specialarena_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    633,
+                    328,
+                    108,
+                    96
+                ],
+                "expected": [
+                    "特殊竞技场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 400,
+        "$__mpe_code": {
+            "position": {
+                "x": 5295,
+                "y": -104
             }
         }
     }

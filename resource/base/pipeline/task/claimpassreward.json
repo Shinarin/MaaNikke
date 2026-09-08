@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787567848491,
+            "lastSyncTime": 1788910019665,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
             "savedViewport": {
-                "x": 1260,
-                "y": 1443,
-                "zoom": 1.5
+                "x": 227,
+                "y": 764,
+                "zoom": 1.25
             },
             "filename": "claimpassreward",
-            "version": "v1.8.1"
+            "version": "v1.9.3"
         }
     },
     "$__mpe_anchor_claimpassreward_anchor_claimpassreward": {
