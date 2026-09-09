@@ -16,6 +16,13 @@
 
 ---
 
+## v2.3.0 - 2026-09-10
+
+- 2026-09-10 [文档] 新增 pipeline-task-rename skill：pipeline 任务文件派生改名流程、8 项覆盖清单、验收标准及可复用脚本，经子代理实操演练验证（涉及：.kimi-code/skills/pipeline-task-rename/、AGENTS.md）
+- 2026-09-10 [新增] colorless 任务由 absolute 派生：全量改名 absolute→colorless（节点/anchor/[Anchor] 引用/$__mpe_* 键/模板路径，保留 coordinateMode 的 absolute-v1），并复制模板图目录（涉及：resource/base/pipeline/task/limitedevent/colorless.json、resource/base/image/limitedevent/colorless/）
+
+---
+
 ## v2.2.9 - 2026-09-09
 
 ---

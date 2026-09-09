@@ -37,7 +37,7 @@ MaaNikke_dev/
 
 | 任务类型 | 必读内容 |
 |---|---|
-| 修改/新增 pipeline 节点 | DEVELOPMENT.md §5（节点协议）；pipeline-guide skill；批量改名前另读 §13 第 11/12 条 |
+| 修改/新增 pipeline 节点 | DEVELOPMENT.md §5（节点协议）；pipeline-guide skill；批量改名/活动派生用 pipeline-task-rename skill（另读 §13 第 11/12 条） |
 | 新增/修改 custom action/reco/sink | DEVELOPMENT.md §9（API 模板）、§8.3（注册机制）、§11（开发流程）；现有组件清单见 §10 |
 | 排查 agent 启动/依赖/参数问题 | DEVELOPMENT.md §8.1（启动链路）、§6.3（argv/环境变量真相）、§6.4（生命周期） |
 | 排查截图/识别/点击问题 | DEVELOPMENT.md §12（日志位置）、§13（坑点）；先排除 §13 第 13 条的环境现象 |
