@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788305698840,
+            "lastSyncTime": 1789179476503,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\example\\limitedevent.json",
             "savedViewport": {
-                "x": -8493,
-                "y": -1036,
-                "zoom": 0.99
+                "x": -13489,
+                "y": -118,
+                "zoom": 1.31
             },
             "filename": "limitedevent",
-            "version": "v1.9.2"
+            "version": "v1.10.0"
         }
     },
     "$__mpe_anchor_limitedeventshop_claim_anchor_limitedevent": {
@@ -362,7 +362,9 @@
                         "EVEN",
                         "event",
                         "vent",
-                        "even"
+                        "even",
+                        "Stage",
+                        "stage"
                     ]
                 }
             }

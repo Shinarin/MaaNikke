@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1786789423611,
+            "lastSyncTime": 1789180655481,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\startgame.json",
             "savedViewport": {
-                "x": 1067,
-                "y": 617,
-                "zoom": 1.5
+                "x": 711,
+                "y": 313,
+                "zoom": 0.75
             },
             "filename": "startgame",
-            "version": "v1.7.6"
+            "version": "v1.10.0"
         }
     },
     "$__mpe_external_backtohomepage_startgame": {

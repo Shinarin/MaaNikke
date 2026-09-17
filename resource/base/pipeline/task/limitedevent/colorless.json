@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788995529923,
+            "lastSyncTime": 1789655638579,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\colorless.json",
             "savedViewport": {
-                "x": -1241,
-                "y": -2057,
-                "zoom": 1.31
+                "x": -739,
+                "y": 126,
+                "zoom": 0.23
             },
             "filename": "colorless",
-            "version": "v1.9.3"
+            "version": "v1.10.1"
         }
     },
     "$__mpe_anchor_anchor_colorless_checklatestevent_colorless": {
@@ -83,15 +83,15 @@
     "$__mpe_group_兜底_colorless": {
         "$__mpe_code": {
             "position": {
-                "x": 3447,
-                "y": 1818
+                "x": 3224,
+                "y": 534
             },
             "color": "blue",
             "childrenLabels": [
-                "colorless_into11_error"
+                "colorless_canintoevent_error"
             ],
-            "width": 400,
-            "height": 381
+            "width": 348,
+            "height": 474
         }
     },
     "$__mpe_group_适配_colorless": {
@@ -219,9 +219,6 @@
         "inverse": true,
         "timeout": 40000,
         "next": [
-            "colorless_into11"
-        ],
-        "on_error": [
             "colorless_into11_intoerror"
         ],
         "$__mpe_code": {
@@ -256,11 +253,11 @@
             }
         },
         "timeout": 300000,
-        "next": [
-            "colorless_canintoevent_12-3"
-        ],
         "on_error": [
             "colorless_error"
+        ],
+        "next": [
+            "colorless_canintoevent_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -289,13 +286,10 @@
         "next": [
             "colorless_canintoevent_12-3"
         ],
-        "on_error": [
-            "colorless_error"
-        ],
         "$__mpe_code": {
             "position": {
-                "x": 3808,
-                "y": 54
+                "x": 3838,
+                "y": -517
             }
         }
     },
@@ -338,14 +332,13 @@
         "timeout": 300000,
         "next": [
             "colorless_cannot_re",
-            "colorless_intofightpage",
             "[JumpBack]colorless_canintoevent_return",
             "colorless_canintoevent_retry_12-3"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3165,
-                "y": 460
+                "x": 3195,
+                "y": -111
             }
         }
     },
@@ -367,8 +360,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3154,
-                "y": 98
+                "x": 3184,
+                "y": -473
             }
         }
     },
@@ -379,8 +372,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3508,
-                "y": -177
+                "x": 3538,
+                "y": -748
             }
         }
     },
@@ -398,8 +391,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 3784,
-                "y": -142
+                "x": 3814,
+                "y": -713
             }
         }
     },
@@ -423,13 +416,10 @@
         "next": [
             "colorless_addrecodatebase"
         ],
-        "on_error": [
-            "colorless_error"
-        ],
         "$__mpe_code": {
             "position": {
-                "x": 3516,
-                "y": 68
+                "x": 3546,
+                "y": -503
             }
         }
     },
@@ -884,13 +874,10 @@
                 "custom_action": "stagematchclear"
             }
         },
-        "next": [
-            "colorless_sweipdown"
-        ],
         "$__mpe_code": {
             "position": {
                 "x": 7904,
-                "y": 963
+                "y": 677
             }
         }
     },
@@ -1017,8 +1004,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3560,
-                "y": 1602
+                "x": 3345,
+                "y": 1524
             }
         }
     },
@@ -1353,12 +1340,15 @@
     },
     "colorless_into11_intoerror": {
         "next": [
-            "colorless_into11_error"
+            "colorless_into11_error_pic"
+        ],
+        "on_error": [
+            "colorless_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3141,
-                "y": 1895
+                "x": 3066,
+                "y": 1762
             }
         }
     },
@@ -1664,7 +1654,7 @@
         },
         "inverse": true,
         "next": [
-            "colorless_clearrecodatebase"
+            "colorless_sweipdown"
         ],
         "$__mpe_code": {
             "position": {
@@ -2132,7 +2122,7 @@
             "colorless_into11event"
         ],
         "on_error": [
-            "colorless_error"
+            "colorless_into11_intoerror"
         ],
         "$__mpe_code": {
             "position": {
@@ -2156,36 +2146,74 @@
                 ]
             }
         },
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    578,
-                    566,
-                    170,
-                    46
-                ],
-                "end": [
-                    [
-                        575,
-                        247,
-                        136,
-                        52
-                    ]
-                ],
-                "end_hold": [
-                    500
-                ]
-            }
-        },
-        "repeat": 3,
         "next": [
             "colorless_checklatestevent"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2204,
-                "y": 709
+                "x": 2202,
+                "y": 723
+            }
+        }
+    },
+    "colorless_into11_error_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    440,
+                    217,
+                    419,
+                    412
+                ],
+                "template": [
+                    "limitedevent/colorless/colorless_hard_replace.png"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "colorless_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3519,
+                "y": 2180
+            }
+        }
+    },
+    "colorless_canintoevent_error": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    420,
+                    141,
+                    449,
+                    501
+                ],
+                "template": [
+                    "limitedevent/colorless/colorless_hard_into.png"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "colorless_intofightpage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3292,
+                "y": 601
             }
         }
     }

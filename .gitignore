@@ -31,5 +31,13 @@ agent/.deps/
 # ---- 发版构建产物（文件夹与 zip 只留本地，不上传） ----
 MaaNikke-win-x86_64-v*/
 
+# ---- mpelb（MPE Local Bridge）本体及自管理依赖（只留本地，不上传） ----
+# 白名单机制下本已被默认忽略，显式列出防止误放行
+runtime/
+mpelb.exe
+maafw/
+# mpelb 专用 Python 环境（maafw 版本与 mpelb runtime 对齐，独立于项目主环境）
+.venv-mpe/
+
 # superpowers 技能工作区（临时产物，不入库）
 .superpowers/

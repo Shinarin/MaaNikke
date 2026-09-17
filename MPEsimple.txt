@@ -1,12 +1,18 @@
+MPE Local Bridge 速查（MaaPipelineEditor 本地服务，v1.10+）
 
-irm https://raw.githubusercontent.com/kqcoxn/MaaPipelineEditor/main/tools/install.ps1 | iex
+# 安装 / 更新 mpelb 本体（PowerShell 一行）
+irm https://raw.githubusercontent.com/kqcoxn/MaaPipelineEditor/main/scripts/install/install.ps1 | iex
 
-
-
+# 启动服务（在本项目根目录运行；因旁有 config/ 目录自动进入开发模式，配置写在 config/config.json）
 ./mpelb
 
-./mpelb --portable
+# 自带依赖：MaaFramework 与 OCR 由 MPE 自管理，固定装在 mpelb 旁的 runtime/ 目录
+# 注意：mpelb 只认 runtime/maafw，手动放的 maafw 目录或 config 里的 maafw.lib_dir 均不生效
+./mpelb deps reinstall        # 全部重装
+./mpelb deps reinstall mfw    # 只装 MaaFramework（含 MaaAgentBinary）
+./mpelb deps reinstall ocr    # 只装 OCR 模型
 
-./mpelb config set-lib maafw\bin
-
-./mpelb config set-resource resource\base
+# 其他
+./mpelb info                  # 查看运行模式与路径
+./mpelb config open           # 打开配置文件
+./mpelb config set-interface  # 设置 Project Interface 入口（留空恢复自动检索）

@@ -16,6 +16,14 @@
 
 ---
 
+## v2.3.1 - 2026-09-18
+
+- 2026-09-12 [修复] mpelb 唤起 agent 失败（AgentServer `Protocol version mismatch`）：mpelb runtime 的 MaaFramework v5.13.0 与项目主 Python 环境 pip maafw 5.12.3 协议不一致；降 runtime 至 5.12.3 被 mpelb 拒绝（其自身按 5.13.0 API 链接，报 "The specified procedure could not be found"），故反向新建 `.venv-mpe`（maafw==5.13.0 + numpy + pillow）专供 mpelb 唤起 agent，MPE 前端 agent 卡片"启动程序覆盖"指向 `.venv-mpe/Scripts/python.exe`；不影响 GUI 主链路（仍用主环境 5.12.3 对接 GUI 原生 5.10.2）（涉及：.venv-mpe/（新增，已入 .gitignore）、.gitignore）
+- 2026-09-12 [优化] .gitignore 显式列出 mpelb 相关本地路径（`runtime/`、`mpelb.exe`、根目录孤立 `maafw/`）：白名单机制下本已被默认忽略，显式排除防止后续误放行；git check-ignore 验证三条规则精确命中，`git status` 仅含预期改动（涉及：.gitignore）
+- 2026-09-12 [修复] mpelb（MPE Local Bridge v1.10.0）启动报"自带 MaaFramework 依赖缺失"：该版本固定使用 exe 旁 `runtime/maafw`（自管理依赖），不读 config 的 `maafw.lib_dir`，旧版 MPEsimple.txt 的 `config set-lib`/`set-resource` 子命令已不存在；此前按旧说明手动放在项目根 `maafw/` 的 MaaFramework 不被识别（根目录该文件夹无任何代码引用，属孤立残留）。执行 `mpelb deps reinstall mfw` + `ocr` 装好自管理依赖（版本恰同为 v5.13.0），启动验证全绿；MPEsimple.txt 重写为 v1.10 实际用法（涉及：runtime/（新增，.gitignore 白名单机制下自动忽略）、MPEsimple.txt）
+
+---
+
 ## v2.3.0 - 2026-09-10
 
 - 2026-09-10 [文档] 新增 pipeline-task-rename skill：pipeline 任务文件派生改名流程、8 项覆盖清单、验收标准及可复用脚本，经子代理实操演练验证（涉及：.kimi-code/skills/pipeline-task-rename/、AGENTS.md）
