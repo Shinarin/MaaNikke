@@ -2,7 +2,7 @@
   "interface_version": 2,
   "custom_title": "MaaNikke",
   "name": "MaaNikke",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "url": "https://github.com/Shinarin/MaaNikke",
 
 
@@ -200,13 +200,19 @@
       "name": "限时活动(colorless)",
       "entry": "colorless",
       "default_check": true,
-      "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼"
+      "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼",
+      "option":[
+        "选择需要兑换的道具"
+      ]
     },
     {
       "name": "限时活动(absolute)",
       "entry": "absolute",
       "default_check": true,
-      "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼"
+      "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼",
+      "option":[
+        "选择需要兑换的道具"
+      ]
     },
     {
       "name": "PASS奖励领取",
@@ -695,7 +701,60 @@
         }
       }
     ]
+  },
+
+
+
+
+
+
+
+  "选择需要兑换的道具":{
+    "type":"checkbox",
+    "description":"请选择需要兑换的道具，未选择的将不会兑换",
+    "default_case":[
+      "专票",
+      "普票",
+      "红眼盒子2h",
+      "红眼"
+    ],
+    "cases":[
+      {
+        "name":"专票",
+        "pipeline_override":{
+          "limitedeventshop_claim_premiumticket":{"enabled":true}
+        }
+      },
+      {
+        "name":"普票",
+        "pipeline_override":{
+          "limitedeventshop_claim_basicticket":{"enabled":true}
+        }
+      },
+      {
+        "name":"红眼盒子2h",
+        "pipeline_override":{
+          "limitedeventshop_claim_redeyesbox2h":{"enabled":true}
+        }
+      },
+      {
+        "name":"红眼",
+        "pipeline_override":{
+          "limitedeventshop_claim_redeyes":{"enabled":true}
+        }
+       },
+       {
+       "name":"信用点",
+        "pipeline_override":{
+          "limitedeventshop_claim_credit":{"enabled":true}
+        }
+       }
+    ]
   }
+
+
+
+
 
 
 

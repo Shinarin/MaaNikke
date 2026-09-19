@@ -3,33 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1789655638579,
+            "lastSyncTime": 1789808937528,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\colorless.json",
             "savedViewport": {
-                "x": -739,
-                "y": 126,
-                "zoom": 0.23
+                "x": 163,
+                "y": -394,
+                "zoom": 0.3
             },
             "filename": "colorless",
             "version": "v1.10.1"
-        }
-    },
-    "$__mpe_anchor_anchor_colorless_checklatestevent_colorless": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2476,
-                "y": 1053
-            }
-        }
-    },
-    "$__mpe_anchor_anchor_colorless_intofightpage_colorless": {
-        "$__mpe_code": {
-            "position": {
-                "x": 9008,
-                "y": 989
-            }
         }
     },
     "$__mpe_anchor_colorless_stagestart_anchor_colorless": {
@@ -43,8 +27,8 @@
     "$__mpe_anchor_colorlessanchor_colorless": {
         "$__mpe_code": {
             "position": {
-                "x": 7503,
-                "y": 388
+                "x": 7753,
+                "y": 405
             }
         }
     },
@@ -83,8 +67,8 @@
     "$__mpe_group_兜底_colorless": {
         "$__mpe_code": {
             "position": {
-                "x": 3224,
-                "y": 534
+                "x": 3292,
+                "y": 398
             },
             "color": "blue",
             "childrenLabels": [
@@ -187,8 +171,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7257,
-                "y": 1441
+                "x": 7477,
+                "y": 959
             }
         }
     },
@@ -217,14 +201,16 @@
             }
         },
         "inverse": true,
-        "timeout": 40000,
+        "on_error": [
+            "colorless_error"
+        ],
         "next": [
-            "colorless_into11_intoerror"
+            "colorless_into11_error_pic"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2798,
-                "y": 1239
+                "x": 2802,
+                "y": 1211
             }
         }
     },
@@ -252,12 +238,11 @@
                 ]
             }
         },
-        "timeout": 300000,
-        "on_error": [
-            "colorless_error"
-        ],
         "next": [
             "colorless_canintoevent_error"
+        ],
+        "on_error": [
+            "colorless_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -275,151 +260,34 @@
             }
         }
     },
-    "colorless_addrecodatebase": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "stagematchdel"
-            }
-        },
-        "timeout": 300000,
-        "next": [
-            "colorless_canintoevent_12-3"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3838,
-                "y": -517
-            }
-        }
-    },
-    "colorless_canintoevent_12-3": {
+    "colorless_canintoevent_error": {
         "recognition": {
-            "type": "Custom",
+            "type": "TemplateMatch",
             "param": {
-                "custom_recognition": "stagematch",
-                "custom_recognition_param": {
-                    "action_node": "limitedevent_resweip",
-                    "expected": [
-                        "1-12",
-                        "1-11",
-                        "1-10",
-                        "1-9",
-                        "1-8",
-                        "1-7",
-                        "1-6",
-                        "1-5",
-                        "1-4",
-                        "1-3",
-                        "1-2",
-                        "1-1"
-                    ],
-                    "stagepre": "limitedevent_stagepre",
-                    "tries_per_field": 2
-                },
                 "roi": [
-                    423,
-                    128,
-                    435,
-                    485
-                ]
+                    420,
+                    141,
+                    449,
+                    501
+                ],
+                "template": [
+                    "limitedevent/colorless/colorless_hard_into.png"
+                ],
+                "order_by": "Vertical",
+                "index": -1
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_delay": 500,
-        "timeout": 300000,
+        "post_wait_freezes": 500,
         "next": [
-            "colorless_cannot_re",
-            "[JumpBack]colorless_canintoevent_return",
-            "colorless_canintoevent_retry_12-3"
+            "colorless_intofightpage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3195,
-                "y": -111
-            }
-        }
-    },
-    "colorless_canintoevent_retry_12-3": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "ResetCount",
-                "custom_action_param": {
-                    "nodes": [
-                        "colorless_canintoevent_return"
-                    ]
-                }
-            }
-        },
-        "timeout": 300000,
-        "next": [
-            "colorless_canintoevent_12-3"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3184,
-                "y": -473
-            }
-        }
-    },
-    "colorless_canintoevent_return": {
-        "max_hit": 2,
-        "next": [
-            "colorless_canintoevent_return2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3538,
-                "y": -748
-            }
-        }
-    },
-    "colorless_canintoevent_return2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1116,
-                    312,
-                    63,
-                    124
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 3814,
-                "y": -713
-            }
-        }
-    },
-    "colorless_cannot_re": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    445,
-                    284,
-                    404,
-                    154
-                ],
-                "expected": [
-                    "无法重复",
-                    "重复通关",
-                    "解锁条件"
-                ]
-            }
-        },
-        "next": [
-            "colorless_addrecodatebase"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3546,
-                "y": -503
+                "x": 3360,
+                "y": 465
             }
         }
     },
@@ -635,34 +503,6 @@
             }
         }
     },
-    "colorless_checklatestevent": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    90,
-                    200
-                ],
-                "expected": [
-                    "活动关卡"
-                ]
-            }
-        },
-        "anchor": "anchor_colorless_checklatestevent",
-        "next": [
-            "colorless_12_no_end",
-            "[JumpBack]colorless_12_no_end_return",
-            "colorless_12_have_end"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2470,
-                "y": 730
-            }
-        }
-    },
     "colorless_checkmission1": {
         "recognition": {
             "type": "OCR",
@@ -843,15 +683,14 @@
         }
     },
     "colorless_claimshop": {
-        "max_hit": 1,
         "next": [
             "colorless_inshop",
             "[JumpBack]colorless_intoshop"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1282,
-                "y": 2238
+                "x": 1269,
+                "y": 2265
             }
         }
     },
@@ -864,20 +703,6 @@
             "position": {
                 "x": 1985,
                 "y": 2240
-            }
-        }
-    },
-    "colorless_clearrecodatebase": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "stagematchclear"
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 7904,
-                "y": 677
             }
         }
     },
@@ -907,8 +732,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1835,
-                "y": 507
+                "x": 1880,
+                "y": 514
             }
         }
     },
@@ -924,7 +749,7 @@
                 ]
             }
         },
-        "repeat": 5,
+        "repeat": 3,
         "repeat_delay": 500,
         "next": [
             "colorless_swipestage_re"
@@ -1004,8 +829,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3345,
-                "y": 1524
+                "x": 3133,
+                "y": 1773
             }
         }
     },
@@ -1069,7 +894,7 @@
         }
     },
     "colorless_eventstage_return_last": {
-        "max_hit": 5,
+        "max_hit": 2,
         "$__mpe_code": {
             "position": {
                 "x": 1233,
@@ -1277,52 +1102,21 @@
             }
         }
     },
-    "colorless_into11": {
+    "colorless_into11_error_pic": {
         "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagenum",
-                "custom_recognition_param": {
-                    "expected": "1-11",
-                    "stagepre": "limitedevent_stagepre"
-                },
-                "roi": [
-                    431,
-                    338,
-                    422,
-                    263
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "colorless_startquickfight",
-            "colorless_into11"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3685,
-                "y": 1264
-            }
-        }
-    },
-    "colorless_into11_error": {
-        "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    491,
-                    223,
-                    173,
-                    460
+                    440,
+                    217,
+                    419,
+                    412
                 ],
-                "expected": [
-                    "CLEAR"
+                "template": [
+                    "limitedevent/colorless/colorless_hard_replace.png"
                 ],
                 "order_by": "Vertical",
-                "index": -2
+                "index": -1
             }
         },
         "action": {
@@ -1333,52 +1127,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3535,
-                "y": 1858
-            }
-        }
-    },
-    "colorless_into11_intoerror": {
-        "next": [
-            "colorless_into11_error_pic"
-        ],
-        "on_error": [
-            "colorless_error"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3066,
-                "y": 1762
-            }
-        }
-    },
-    "colorless_into11event": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagenum",
-                "custom_recognition_param": {
-                    "expected": "1-11"
-                },
-                "roi": [
-                    421,
-                    436,
-                    444,
-                    198
-                ]
-            }
-        },
-        "pre_wait_freezes": 500,
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "[Anchor]anchor_colorless_intofightpage"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8683,
-                "y": 927
+                "x": 3370,
+                "y": 1190
             }
         }
     },
@@ -1524,7 +1274,6 @@
                 ]
             }
         },
-        "anchor": "anchor_colorless_intofightpage",
         "post_wait_freezes": 500,
         "next": [
             "colorless_startquickfight",
@@ -1532,8 +1281,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3879,
-                "y": 847
+                "x": 3868,
+                "y": 852
             }
         }
     },
@@ -1658,8 +1407,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7531,
-                "y": 943
+                "x": 7446,
+                "y": 1470
             }
         }
     },
@@ -2117,17 +1866,16 @@
             }
         },
         "repeat": 2,
-        "timeout": 40000,
         "next": [
-            "colorless_into11event"
+            "colorless_into11_error_pic"
         ],
         "on_error": [
-            "colorless_into11_intoerror"
+            "colorless_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8365,
-                "y": 909
+                "x": 7778,
+                "y": 1459
             }
         }
     },
@@ -2147,7 +1895,9 @@
             }
         },
         "next": [
-            "colorless_checklatestevent"
+            "colorless_12_no_end",
+            "[JumpBack]colorless_12_no_end_return",
+            "colorless_12_have_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -2156,65 +1906,18 @@
             }
         }
     },
-    "colorless_into11_error_pic": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    440,
-                    217,
-                    419,
-                    412
-                ],
-                "template": [
-                    "limitedevent/colorless/colorless_hard_replace.png"
-                ],
-                "order_by": "Vertical",
-                "index": -1
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "colorless_startquickfight"
-        ],
+    "$__mpe_group_event11_colorless": {
         "$__mpe_code": {
             "position": {
-                "x": 3519,
-                "y": 2180
-            }
-        }
-    },
-    "colorless_canintoevent_error": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    420,
-                    141,
-                    449,
-                    501
-                ],
-                "template": [
-                    "limitedevent/colorless/colorless_hard_into.png"
-                ],
-                "order_by": "Vertical",
-                "index": -1
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 500,
-        "next": [
-            "colorless_intofightpage"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3292,
-                "y": 601
-            }
+                "x": 3289,
+                "y": 1136
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "colorless_into11_error_pic"
+            ],
+            "width": 400,
+            "height": 447
         }
     }
 }

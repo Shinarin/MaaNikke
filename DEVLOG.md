@@ -16,6 +16,10 @@
 
 ---
 
+## v2.3.2 - 2026-09-19
+
+---
+
 ## v2.3.1 - 2026-09-18
 
 - 2026-09-12 [修复] mpelb 唤起 agent 失败（AgentServer `Protocol version mismatch`）：mpelb runtime 的 MaaFramework v5.13.0 与项目主 Python 环境 pip maafw 5.12.3 协议不一致；降 runtime 至 5.12.3 被 mpelb 拒绝（其自身按 5.13.0 API 链接，报 "The specified procedure could not be found"），故反向新建 `.venv-mpe`（maafw==5.13.0 + numpy + pillow）专供 mpelb 唤起 agent，MPE 前端 agent 卡片"启动程序覆盖"指向 `.venv-mpe/Scripts/python.exe`；不影响 GUI 主链路（仍用主环境 5.12.3 对接 GUI 原生 5.10.2）（涉及：.venv-mpe/（新增，已入 .gitignore）、.gitignore）

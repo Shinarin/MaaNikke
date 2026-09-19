@@ -3,24 +3,72 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1789654779527,
+            "lastSyncTime": 1789808966257,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\absolute.json",
             "savedViewport": {
-                "x": -2036,
-                "y": -108,
-                "zoom": 0.92
+                "x": 157,
+                "y": -686,
+                "zoom": 0.35
             },
             "filename": "absolute",
             "version": "v1.10.1"
         }
     },
-    "$__mpe_group_兜底_absolute": {
+    "$__mpe_anchor_absolute_stagestart_anchor_absolute": {
         "$__mpe_code": {
             "position": {
-                "x": 3136,
-                "y": 891
+                "x": 6513,
+                "y": 850
+            }
+        }
+    },
+    "$__mpe_anchor_absoluteanchor_absolute": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7503,
+                "y": 388
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_absolute": {
+        "$__mpe_code": {
+            "position": {
+                "x": 972,
+                "y": 3350
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_absolute": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2253,
+                "y": 3615
+            }
+        }
+    },
+    "$__mpe_external_event_noteam_absolute": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1941
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_absolute": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2307,
+                "y": 2296
+            }
+        }
+    },
+    "$__mpe_group_未通关_absolute": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3229,
+                "y": 398
             },
             "color": "blue",
             "childrenLabels": [
@@ -102,70 +150,6 @@
             "height": 351
         }
     },
-    "$__mpe_anchor_absolute_stagestart_anchor_absolute": {
-        "$__mpe_code": {
-            "position": {
-                "x": 6513,
-                "y": 850
-            }
-        }
-    },
-    "$__mpe_anchor_absoluteanchor_absolute": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7503,
-                "y": 388
-            }
-        }
-    },
-    "$__mpe_anchor_anchor_absolute_checklatestevent_absolute": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2476,
-                "y": 1053
-            }
-        }
-    },
-    "$__mpe_anchor_anchor_absolute_intofightpage_absolute": {
-        "$__mpe_code": {
-            "position": {
-                "x": 9008,
-                "y": 989
-            }
-        }
-    },
-    "$__mpe_external_backtohomepage_absolute": {
-        "$__mpe_code": {
-            "position": {
-                "x": 972,
-                "y": 3350
-            }
-        }
-    },
-    "$__mpe_external_claimpassreward_absolute": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2253,
-                "y": 3615
-            }
-        }
-    },
-    "$__mpe_external_event_noteam_absolute": {
-        "$__mpe_code": {
-            "position": {
-                "x": 5672,
-                "y": 1941
-            }
-        }
-    },
-    "$__mpe_external_limitedeventshop_claim_absolute": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2307,
-                "y": 2296
-            }
-        }
-    },
     "absolute": {
         "doc": "",
         "enabled": true,
@@ -203,8 +187,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7257,
-                "y": 1441
+                "x": 7514,
+                "y": 945
             }
         }
     },
@@ -234,8 +218,10 @@
         },
         "inverse": true,
         "next": [
-            "absolute_into11",
-            "absolute_into11_intoerror"
+            "absolute_into11_error_pic"
+        ],
+        "on_error": [
+            "absolute_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -268,9 +254,11 @@
                 ]
             }
         },
-        "timeout": 300000,
         "next": [
             "absolute_canintoevent_error"
+        ],
+        "on_error": [
+            "absolute_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -288,157 +276,35 @@
             }
         }
     },
-    "absolute_addrecodatebase": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "stagematchdel"
-            }
-        },
-        "timeout": 300000,
-        "next": [
-            "absolute_canintoevent"
-        ],
-        "on_error": [
-            "absolute_canintoevent_error"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3808,
-                "y": 54
-            }
-        }
-    },
-    "absolute_canintoevent": {
+    "absolute_canintoevent_error": {
         "recognition": {
-            "type": "Custom",
+            "type": "TemplateMatch",
             "param": {
-                "custom_recognition": "stagematch",
-                "custom_recognition_param": {
-                    "expected": [
-                        "1-12",
-                        "1-11",
-                        "1-10",
-                        "1-9",
-                        "1-8",
-                        "1-7",
-                        "1-6",
-                        "1-5",
-                        "1-4",
-                        "1-3",
-                        "1-2",
-                        "1-1"
-                    ],
-                    "stagepre": "limitedevent_stagepre",
-                    "tries_per_field": 2
-                },
                 "roi": [
-                    423,
-                    128,
-                    435,
-                    485
-                ]
+                    420,
+                    141,
+                    449,
+                    501
+                ],
+                "template": [
+                    "limitedevent/absolute/absolute_story2_into_hard.png"
+                ],
+                "order_by": "Vertical",
+                "index": -1
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_delay": 500,
-        "timeout": 300000,
+        "post_wait_freezes": 500,
         "next": [
-            "absolute_cannot_re",
             "absolute_intofightpage",
-            "[JumpBack]absolute_canintoevent_return",
-            "absolute_canintoevent_retry_12-3"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3165,
-                "y": 460
-            }
-        }
-    },
-    "absolute_canintoevent_retry_12-3": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "ResetCount",
-                "custom_action_param": {
-                    "nodes": [
-                        "absolute_canintoevent_return"
-                    ]
-                }
-            }
-        },
-        "timeout": 300000,
-        "next": [
-            "absolute_canintoevent"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3154,
-                "y": 98
-            }
-        }
-    },
-    "absolute_canintoevent_return": {
-        "max_hit": 2,
-        "next": [
-            "absolute_canintoevent_return2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3508,
-                "y": -177
-            }
-        }
-    },
-    "absolute_canintoevent_return2": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    1116,
-                    312,
-                    63,
-                    124
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 3784,
-                "y": -142
-            }
-        }
-    },
-    "absolute_cannot_re": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    445,
-                    284,
-                    404,
-                    154
-                ],
-                "expected": [
-                    "无法重复",
-                    "重复通关",
-                    "解锁条件"
-                ]
-            }
-        },
-        "next": [
-            "absolute_addrecodatebase"
-        ],
-        "on_error": [
             "absolute_canintoevent_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3516,
-                "y": 68
+                "x": 3280,
+                "y": 446
             }
         }
     },
@@ -654,34 +520,6 @@
             }
         }
     },
-    "absolute_checklatestevent": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    90,
-                    200
-                ],
-                "expected": [
-                    "活动关卡"
-                ]
-            }
-        },
-        "anchor": "anchor_absolute_checklatestevent",
-        "next": [
-            "absolute_12_no_end",
-            "[JumpBack]absolute_12_no_end_return",
-            "absolute_12_have_end"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2470,
-                "y": 730
-            }
-        }
-    },
     "absolute_checkmission1": {
         "recognition": {
             "type": "OCR",
@@ -862,15 +700,14 @@
         }
     },
     "absolute_claimshop": {
-        "max_hit": 1,
         "next": [
             "absolute_inshop",
             "[JumpBack]absolute_intoshop"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1282,
-                "y": 2238
+                "x": 1193,
+                "y": 2255
             }
         }
     },
@@ -883,23 +720,6 @@
             "position": {
                 "x": 1985,
                 "y": 2240
-            }
-        }
-    },
-    "absolute_clearrecodatebase": {
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "stagematchclear"
-            }
-        },
-        "next": [
-            "absolute_sweipdown"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7904,
-                "y": 963
             }
         }
     },
@@ -946,7 +766,7 @@
                 ]
             }
         },
-        "repeat": 5,
+        "repeat": 3,
         "repeat_delay": 500,
         "next": [
             "absolute_swipestage_re"
@@ -1081,7 +901,7 @@
         }
     },
     "absolute_eventstage_return_last": {
-        "max_hit": 5,
+        "max_hit": 2,
         "$__mpe_code": {
             "position": {
                 "x": 1233,
@@ -1289,67 +1109,6 @@
             }
         }
     },
-    "absolute_into11": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagenum",
-                "custom_recognition_param": {
-                    "expected": "1-11",
-                    "stagepre": "limitedevent_stagepre"
-                },
-                "roi": [
-                    439,
-                    196,
-                    435,
-                    495
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "absolute_startquickfight",
-            "absolute_into11"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3673,
-                "y": 1319
-            }
-        }
-    },
-    "absolute_into11_error_ocr": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    491,
-                    223,
-                    173,
-                    460
-                ],
-                "expected": [
-                    "CLEAR"
-                ],
-                "order_by": "Vertical",
-                "index": -2
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "absolute_startquickfight"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3530,
-                "y": 1852
-            }
-        }
-    },
     "absolute_into11_error_pic": {
         "recognition": {
             "type": "TemplateMatch",
@@ -1375,58 +1134,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3527,
-                "y": 2166
-            }
-        }
-    },
-    "absolute_into11_intoerror": {
-        "next": [
-            "absolute_into11_error_pic"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3154,
-                "y": 1690
-            }
-        }
-    },
-    "absolute_into11_renturn": {
-        "max_hit": 7,
-        "$__mpe_code": {
-            "position": {
-                "x": 3155,
-                "y": 1909
-            }
-        }
-    },
-    "absolute_into11event": {
-        "recognition": {
-            "type": "Custom",
-            "param": {
-                "custom_recognition": "stagenum",
-                "custom_recognition_param": {
-                    "expected": "1-11"
-                },
-                "roi": [
-                    421,
-                    436,
-                    444,
-                    198
-                ]
-            }
-        },
-        "pre_wait_freezes": 500,
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "[Anchor]anchor_absolute_intofightpage"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 8683,
-                "y": 927
+                "x": 3329,
+                "y": 1292
             }
         }
     },
@@ -1580,8 +1289,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3879,
-                "y": 847
+                "x": 3696,
+                "y": 802
             }
         }
     },
@@ -1702,12 +1411,12 @@
         },
         "inverse": true,
         "next": [
-            "absolute_clearrecodatebase"
+            "absolute_sweipdown"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7531,
-                "y": 943
+                "x": 7508,
+                "y": 1334
             }
         }
     },
@@ -2165,17 +1874,16 @@
             }
         },
         "repeat": 2,
-        "timeout": 40000,
         "next": [
-            "absolute_into11event"
+            "absolute_into11_error_pic"
         ],
         "on_error": [
-            "absolute_into11_intoerror"
+            "absolute_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 8365,
-                "y": 909
+                "x": 7848,
+                "y": 1337
             }
         }
     },
@@ -2195,7 +1903,9 @@
             }
         },
         "next": [
-            "absolute_checklatestevent"
+            "absolute_12_no_end",
+            "[JumpBack]absolute_12_no_end_return",
+            "absolute_12_have_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -2285,35 +1995,28 @@
             }
         }
     },
-    "absolute_canintoevent_error": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    420,
-                    141,
-                    449,
-                    501
-                ],
-                "template": [
-                    "limitedevent/absolute/absolute_story2_into_hard.png"
-                ],
-                "order_by": "Vertical",
-                "index": -1
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 500,
+    "$__mpe_group_event11_absolute": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3238,
+                "y": 1233
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "absolute_into11_error_pic"
+            ],
+            "width": 400,
+            "height": 451
+        }
+    },
+    "absolute_error": {
         "next": [
-            "absolute_intofightpage",
-            "absolute_canintoevent_error"
+            "[Anchor]absoluteanchor"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3205,
-                "y": 909
+                "x": 3074,
+                "y": 1904
             }
         }
     }
