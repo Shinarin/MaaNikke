@@ -1,0 +1,1923 @@
+{
+    "$__mpe_config_wisdomspring": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1789808937528,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\wisdomspring.json",
+            "savedViewport": {
+                "x": 163,
+                "y": -394,
+                "zoom": 0.3
+            },
+            "filename": "wisdomspring",
+            "version": "v1.10.1"
+        }
+    },
+    "$__mpe_anchor_wisdomspring_stagestart_anchor_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6513,
+                "y": 850
+            }
+        }
+    },
+    "$__mpe_anchor_wisdomspringanchor_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7753,
+                "y": 405
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 972,
+                "y": 3350
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2253,
+                "y": 3615
+            }
+        }
+    },
+    "$__mpe_external_event_noteam_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1941
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2307,
+                "y": 2296
+            }
+        }
+    },
+    "$__mpe_group_兜底_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3292,
+                "y": 398
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "wisdomspring_canintoevent_error"
+            ],
+            "width": 348,
+            "height": 474
+        }
+    },
+    "$__mpe_group_适配_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 158,
+                "y": 127
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "wisdomspring_into"
+            ],
+            "width": 437,
+            "height": 466
+        }
+    },
+    "$__mpe_group_适配困难按钮_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1841,
+                "y": 884
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "wisdomspring_clickhard2"
+            ],
+            "width": 290,
+            "height": 348
+        }
+    },
+    "$__mpe_group_适配活动任务_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1535,
+                "y": 2529
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "wisdomspring_intoshop"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_需适配enter点位_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1109,
+                "y": 1215
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "wisdomspring_eventstage_last"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "wisdomspring": {
+        "doc": "",
+        "enabled": true,
+        "anchor": "wisdomspringanchor",
+        "next": [
+            "wisdomspring_checkhomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -259,
+                "y": 650
+            }
+        }
+    },
+    "wisdomspring_0item_count": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
+                "roi": [
+                    398,
+                    3,
+                    517,
+                    715
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]wisdomspringanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7477,
+                "y": 959
+            }
+        }
+    },
+    "wisdomspring_12_have_end": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    453,
+                    234,
+                    387,
+                    428
+                ],
+                "expected": [
+                    "Access Denied",
+                    "Access",
+                    "Denied",
+                    "ACCESS DENIED",
+                    "ACCESS",
+                    "DENIED",
+                    "NONE",
+                    "None",
+                    "none",
+                    "\\?"
+                ]
+            }
+        },
+        "inverse": true,
+        "on_error": [
+            "wisdomspring_error"
+        ],
+        "next": [
+            "wisdomspring_into11_error_pic"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2802,
+                "y": 1211
+            }
+        }
+    },
+    "wisdomspring_12_no_end": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    128,
+                    479,
+                    566
+                ],
+                "expected": [
+                    "Access Denied",
+                    "Access",
+                    "Denied",
+                    "ACCESS DENIED",
+                    "ACCESS",
+                    "DENIED",
+                    "NONE",
+                    "None",
+                    "none",
+                    "\\?"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_canintoevent_error"
+        ],
+        "on_error": [
+            "wisdomspring_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2803,
+                "y": 493
+            }
+        }
+    },
+    "wisdomspring_12_no_end_return": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 2794,
+                "y": 879
+            }
+        }
+    },
+    "wisdomspring_canintoevent_error": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    420,
+                    141,
+                    449,
+                    501
+                ],
+                "template": [
+                    "limitedevent/wisdomspring/wisdomspring_hard_into.png"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "wisdomspring_intofightpage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3360,
+                "y": 465
+            }
+        }
+    },
+    "wisdomspring_challengefight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    623,
+                    579,
+                    243,
+                    140
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "wisdomspring_checkchallengefinish",
+            "[JumpBack]wisdomspring_challengeisfighting",
+            "wisdomspring_challengefight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2652,
+                "y": 2937
+            }
+        }
+    },
+    "wisdomspring_challengeisfighting": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    137,
+                    49
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 3022,
+                "y": 3261
+            }
+        }
+    },
+    "wisdomspring_checkchallengefinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    382,
+                    445,
+                    534,
+                    262
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "claimpassreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3015,
+                "y": 3011
+            }
+        }
+    },
+    "wisdomspring_checkeventpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "剧情活动",
+                    "剧情",
+                    "剧情"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_stage",
+            "wisdomspring_mission",
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 669,
+                "y": 668
+            }
+        }
+    },
+    "wisdomspring_checkeventpage1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "剧情活动",
+                    "剧情"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 662,
+                "y": 445
+            }
+        }
+    },
+    "wisdomspring_checkfinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    526,
+                    528,
+                    238,
+                    168
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_nextstage",
+            "[JumpBack]wisdomspring_nextstage_return",
+            "wisdomspring_no_nextstage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5894,
+                "y": 970
+            }
+        }
+    },
+    "wisdomspring_checkhomepage": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "homepagesign",
+                    "homepagesign2"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_checkeventpage",
+            "[JumpBack]wisdomspring_into",
+            "[JumpBack]wisdomspring_checkintoevent_skip",
+            "[JumpBack]wisdomspring_exchange"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 77,
+                "y": 671
+            }
+        }
+    },
+    "wisdomspring_checkintoevent_skip": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1178,
+                    4,
+                    98,
+                    100
+                ],
+                "expected": [
+                    "Skip",
+                    "skip",
+                    "SKIP"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 393,
+                "y": 867
+            }
+        }
+    },
+    "wisdomspring_checkmission1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "wisdomspring_claimrewards",
+            "wisdomspring_checkmission1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1540,
+                "y": 1476
+            }
+        }
+    },
+    "wisdomspring_checkmission2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "limitedevent/eventsmissionbuttom_greenbg.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "wisdomspring_claimrewards",
+            "wisdomspring_checkmission2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1543,
+                "y": 1747
+            }
+        }
+    },
+    "wisdomspring_cjeckeventpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    6,
+                    100,
+                    60
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_0item_count",
+            "wisdomspring_item_count"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7183,
+                "y": 961
+            }
+        }
+    },
+    "wisdomspring_claimrewards": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    417,
+                    504,
+                    477,
+                    200
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 10,
+        "repeat_delay": 500,
+        "next": [
+            "wisdomspring_claimrewardsdaily",
+            "wisdomspring_claimrewardsdailypage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1898,
+                "y": 1460
+            }
+        }
+    },
+    "wisdomspring_claimrewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    466,
+                    307,
+                    347,
+                    330
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励",
+                    "确认",
+                    "确定",
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "wisdomspring_claimrewardsdailypage",
+            "wisdomspring_claimrewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2228,
+                "y": 1489
+            }
+        }
+    },
+    "wisdomspring_claimrewardsdailypage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    450,
+                    30,
+                    376,
+                    576
+                ],
+                "expected": [
+                    "剩余时间",
+                    "每日任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    983,
+                    515,
+                    128,
+                    78
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "wisdomspring_findshopbuttom",
+            "wisdomspring_claimrewardsdailypage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2219,
+                "y": 1788
+            }
+        }
+    },
+    "wisdomspring_claimshop": {
+        "next": [
+            "wisdomspring_inshop",
+            "[JumpBack]wisdomspring_intoshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1269,
+                "y": 2265
+            }
+        }
+    },
+    "wisdomspring_claimshoprewards": {
+        "max_hit": 1,
+        "next": [
+            "limitedeventshop_claim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1985,
+                "y": 2240
+            }
+        }
+    },
+    "wisdomspring_clickhard1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    636,
+                    606,
+                    222,
+                    113
+                ],
+                "expected": [
+                    "Hard",
+                    "HARD"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "wisdomspring_swipestage_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1880,
+                "y": 514
+            }
+        }
+    },
+    "wisdomspring_clickhard2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    776,
+                    672,
+                    8,
+                    8
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "wisdomspring_swipestage_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1876,
+                "y": 935
+            }
+        }
+    },
+    "wisdomspring_comfirmchallenge": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "挑战关卡"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_havechalengechance",
+            "[JumpBack]wisdomspring_havechalengechance_return",
+            "claimpassreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1941,
+                "y": 2943
+            }
+        }
+    },
+    "wisdomspring_end": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "wisdomspring_intochallenge",
+            "wisdomspring_end"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2001,
+                "y": 2523
+            }
+        }
+    },
+    "wisdomspring_error": {
+        "next": [
+            "[Anchor]wisdomspringanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3133,
+                "y": 1773
+            }
+        }
+    },
+    "wisdomspring_eventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_clickhard1",
+            "wisdomspring_clickhard2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1562,
+                "y": 689
+            }
+        }
+    },
+    "wisdomspring_eventstage_last": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    263,
+                    6,
+                    741,
+                    693
+                ],
+                "expected": [
+                    "加成奖励妮姬"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    5,
+                    -32,
+                    -13,
+                    2
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1165,
+                "y": 1272
+            }
+        }
+    },
+    "wisdomspring_eventstage_return_last": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 1233,
+                "y": 993
+            }
+        }
+    },
+    "wisdomspring_exchange": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    904,
+                    580,
+                    132,
+                    98
+                ],
+                "template": [
+                    "limitedevent/eventsexchange.png"
+                ],
+                "threshold": [
+                    0.9
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 388,
+                "y": 1167
+            }
+        }
+    },
+    "wisdomspring_findshopbuttom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    249,
+                    247,
+                    655,
+                    455
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_claimshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2565,
+                "y": 1832
+            }
+        }
+    },
+    "wisdomspring_finish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    526,
+                    528,
+                    238,
+                    168
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步",
+                    "ESC"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "wisdomspring_cjeckeventpage",
+            "[JumpBack]wisdomspring_jumpstory",
+            "[JumpBack]wisdomspring_finish_click"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6866,
+                "y": 964
+            }
+        }
+    },
+    "wisdomspring_finish_click": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1007,
+                    285,
+                    44,
+                    21
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 6996,
+                "y": 1297
+            }
+        }
+    },
+    "wisdomspring_havechalengechance": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    399,
+                    168,
+                    474,
+                    538
+                ],
+                "expected": [
+                    "CHALLENGE STAGE",
+                    "CHALLENGE"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "wisdomspring_challengefight",
+            "wisdomspring_havechalengechance"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 2937
+            }
+        }
+    },
+    "wisdomspring_havechalengechance_return": {
+        "max_hit": 10,
+        "$__mpe_code": {
+            "position": {
+                "x": 2319,
+                "y": 3215
+            }
+        }
+    },
+    "wisdomspring_inshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]wisdomspring_claimshoprewards",
+            "wisdomspring_end"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1673,
+                "y": 2241
+            }
+        }
+    },
+    "wisdomspring_into": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    756,
+                    506,
+                    268,
+                    167
+                ],
+                "template": [
+                    "limitedevent/wisdomspring/wisdomspring_into.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "wisdomspring_checkeventpage1",
+            "[JumpBack]wisdomspring_intofirst",
+            "wisdomspring_into"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 300,
+                "y": 248
+            }
+        }
+    },
+    "wisdomspring_into11_error_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    440,
+                    217,
+                    419,
+                    412
+                ],
+                "template": [
+                    "limitedevent/wisdomspring/wisdomspring_hard_replace.png"
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "wisdomspring_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3370,
+                "y": 1190
+            }
+        }
+    },
+    "wisdomspring_intochallenge": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    331,
+                    1,
+                    579,
+                    717
+                ],
+                "expected": [
+                    "挑战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "wisdomspring_comfirmchallenge",
+            "wisdomspring_intochallenge"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1568,
+                "y": 2945
+            }
+        }
+    },
+    "wisdomspring_intoerroreventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    96,
+                    358,
+                    539
+                ],
+                "expected": [
+                    "帮助",
+                    "关于",
+                    "剧情活动",
+                    "奖励内容",
+                    "活动相薄"
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    27
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1554,
+                "y": 1230
+            }
+        }
+    },
+    "wisdomspring_intoeventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    356,
+                    28,
+                    577,
+                    671
+                ],
+                "expected": [
+                    "Enter",
+                    "ENTER",
+                    "ENTE",
+                    "NTER",
+                    "Ente",
+                    "nter",
+                    "nter"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1554,
+                "y": 968
+            }
+        }
+    },
+    "wisdomspring_intofight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    594,
+                    466,
+                    111
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "[JumpBack]wisdomspring_noteam",
+            "wisdomspring_nochance2",
+            "wisdomspring_intofight",
+            "wisdomspring_stagestart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5033,
+                "y": 962
+            }
+        }
+    },
+    "wisdomspring_intofightpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    626,
+                    583,
+                    263,
+                    135
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "wisdomspring_startquickfight",
+            "wisdomspring_no_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3868,
+                "y": 852
+            }
+        }
+    },
+    "wisdomspring_intofirst": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1005,
+                    1,
+                    266,
+                    100
+                ],
+                "expected": [
+                    "跳过",
+                    "skip"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 677,
+                "y": 201
+            }
+        }
+    },
+    "wisdomspring_intoshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    331,
+                    1,
+                    579,
+                    717
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1613,
+                "y": 2580
+            }
+        }
+    },
+    "wisdomspring_isfighting": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    137,
+                    49
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5901,
+                "y": 1225
+            }
+        }
+    },
+    "wisdomspring_isfighting2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    192,
+                    87
+                ],
+                "expected": [
+                    "LSHIFT",
+                    "LSHFT",
+                    "TAB"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5902,
+                "y": 1506
+            }
+        }
+    },
+    "wisdomspring_item_count": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
+                "roi": [
+                    398,
+                    3,
+                    517,
+                    715
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "wisdomspring_sweipdown"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7446,
+                "y": 1470
+            }
+        }
+    },
+    "wisdomspring_jumpstory": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1150,
+                    0,
+                    128,
+                    120
+                ],
+                "expected": [
+                    "跳过",
+                    "取消",
+                    "X",
+                    "x",
+                    "skip",
+                    "Skip",
+                    "SKIP"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5902,
+                "y": 1718
+            }
+        }
+    },
+    "wisdomspring_mission": {
+        "max_hit": 1,
+        "next": [
+            "wisdomspring_checkmission1",
+            "wisdomspring_checkmission2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1102,
+                "y": 1588
+            }
+        }
+    },
+    "wisdomspring_nextstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1069,
+                    604,
+                    208,
+                    108
+                ],
+                "expected": [
+                    "下一关卡",
+                    "下一",
+                    "关卡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "wisdomspring_nochance1",
+            "wisdomspring_nextstage",
+            "[Anchor]wisdomspring_stagestart_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6238,
+                "y": 966
+            }
+        }
+    },
+    "wisdomspring_nextstage_return": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 6241,
+                "y": 1238
+            }
+        }
+    },
+    "wisdomspring_no_nextstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1069,
+                    604,
+                    208,
+                    108
+                ],
+                "expected": [
+                    "下一关卡"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "wisdomspring_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6233,
+                "y": 1448
+            }
+        }
+    },
+    "wisdomspring_no_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "wisdomspring_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4304,
+                "y": 1133
+            }
+        }
+    },
+    "wisdomspring_nochance1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    444,
+                    280,
+                    436,
+                    143
+                ],
+                "expected": [
+                    "道具不足"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6534,
+                "y": 989
+            }
+        }
+    },
+    "wisdomspring_nochance2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    420,
+                    284,
+                    406,
+                    162
+                ],
+                "expected": [
+                    "道具不足"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]wisdomspringanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5349,
+                "y": 612
+            }
+        }
+    },
+    "wisdomspring_noquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    379,
+                    269,
+                    550,
+                    227
+                ],
+                "expected": [
+                    "首次通关",
+                    "首次"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4633,
+                "y": 864
+            }
+        }
+    },
+    "wisdomspring_noteam": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    436,
+                    290,
+                    444,
+                    165
+                ],
+                "expected": [
+                    "未编队",
+                    "无法进入"
+                ]
+            }
+        },
+        "next": [
+            "event_noteam"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5332,
+                "y": 1889
+            }
+        }
+    },
+    "wisdomspring_quickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    454,
+                    325,
+                    70
+                ],
+                "expected": [
+                    "MAX",
+                    "MA"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "next": [
+            "wisdomspring_startquickfightmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4714,
+                "y": 225
+            }
+        }
+    },
+    "wisdomspring_quickfightmaxconfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    538,
+                    590,
+                    207,
+                    89
+                ],
+                "expected": [
+                    "点击任意处",
+                    "任意处进行",
+                    "ESC"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "next": [
+            "[Anchor]wisdomspringanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5314,
+                "y": 218
+            }
+        }
+    },
+    "wisdomspring_stage": {
+        "max_hit": 1,
+        "next": [
+            "wisdomspring_storyevent"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 953,
+                "y": 690
+            }
+        }
+    },
+    "wisdomspring_stagestart": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "wisdomspring_isfighting",
+                    "wisdomspring_isfighting2",
+                    "wisdomspring_jumpstory"
+                ]
+            }
+        },
+        "anchor": "wisdomspring_stagestart_anchor",
+        "timeout": 60000,
+        "next": [
+            "wisdomspring_checkfinish",
+            "[JumpBack]wisdomspring_isfighting",
+            "[JumpBack]wisdomspring_isfighting2",
+            "[JumpBack]wisdomspring_jumpstory"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5569,
+                "y": 952
+            }
+        }
+    },
+    "wisdomspring_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "wisdomspring_noquickfight",
+            "wisdomspring_quickfightmax",
+            "wisdomspring_nochance2",
+            "wisdomspring_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4307,
+                "y": 858
+            }
+        }
+    },
+    "wisdomspring_startquickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    525,
+                    323,
+                    59
+                ],
+                "expected": [
+                    "进行战斗",
+                    "战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "wisdomspring_quickfightmaxconfirm",
+            "wisdomspring_startquickfightmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5002,
+                "y": 239
+            }
+        }
+    },
+    "wisdomspring_storyevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "剧情活动"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_eventstage",
+            "[JumpBack]wisdomspring_intoeventstage",
+            "[JumpBack]wisdomspring_intoerroreventstage",
+            "[JumpBack]wisdomspring_eventstage_return_last",
+            "[JumpBack]wisdomspring_eventstage_last"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1245,
+                "y": 674
+            }
+        }
+    },
+    "wisdomspring_sweipdown": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    528,
+                    552,
+                    235,
+                    21
+                ],
+                "end": [
+                    [
+                        552,
+                        282,
+                        198,
+                        11
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "repeat": 2,
+        "next": [
+            "wisdomspring_into11_error_pic"
+        ],
+        "on_error": [
+            "wisdomspring_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7778,
+                "y": 1459
+            }
+        }
+    },
+    "wisdomspring_swipestage_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "wisdomspring_12_no_end",
+            "[JumpBack]wisdomspring_12_no_end_return",
+            "wisdomspring_12_have_end"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2202,
+                "y": 723
+            }
+        }
+    },
+    "$__mpe_group_event11_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3289,
+                "y": 1136
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "wisdomspring_into11_error_pic"
+            ],
+            "width": 400,
+            "height": 447
+        }
+    }
+}

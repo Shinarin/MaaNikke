@@ -2,9 +2,10 @@
 """pipeline 任务文件全量改名（活动派生）。规则见同目录 SKILL.md。
 
 用法:
-    cd 项目根 && PYTHONIOENCODING=utf-8 python rename_task.py <目标json> <旧名> <新名> [--copy-images]
+    cd 项目根 && PYTHONIOENCODING=utf-8 python rename_task.py <目标json> <旧名> <新名> [--copy-images] [--update-interface]
 
-前置：目标 json 已由源文件复制产生。脚本做逐行正则替换 + 断言 + 可选的模板图目录复制。
+前置：目标 json 已由源文件复制产生。脚本做逐行正则替换 + 断言 + 可选的模板图目录复制
+与 interface.json 注册联动更新。
 """
 import argparse
 import json
@@ -14,6 +15,49 @@ import sys
 from pathlib import Path
 
 IMG_ROOT = Path("resource/base/image")
+INTERFACE = Path("interface.json")
+
+
+def update_interface(old, new, pat):
+    """把 interface.json 中 entry==旧名 的任务注册切换到新名（entry + name 的 (旧名) 后缀）。
+
+    逐行定点编辑，不重排整个文件；改完做合规断言。
+    """
+    with open(INTERFACE, encoding="utf-8", newline="") as fp:
+        src = fp.read()
+    data = json.loads(src)
+    hits = [t for t in data.get("task", []) if t.get("entry") == old]
+    assert len(hits) == 1, f"interface.json 中 entry=={old!r} 的任务有 {len(hits)} 个，期望恰好 1 个"
+
+    # 定点改 entry 行（必须全文唯一，防止误伤其他任务）
+    entry_pat = re.compile(rf'("entry"\s*:\s*"){re.escape(old)}(")')
+    assert len(entry_pat.findall(src)) == 1, f'"entry": "{old}" 行不唯一，拒绝自动修改'
+    dst = entry_pat.sub(rf"\g<1>{new}\g<2>", src)
+
+    # name 显示名的 (旧名) 后缀 → (新名)；没有该后缀则保持原样并告警
+    m = re.search(rf'"name"\s*:\s*"[^"]*\({re.escape(old)}\)', dst)
+    if m:
+        dst = dst[: m.start()] + m.group(0).replace(f"({old})", f"({new})") + dst[m.end() :]
+        print(f"interface name: ({old}) -> ({new})")
+    else:
+        print(f"[WARN] name 字段无 ({old}) 后缀，显示名保持原样")
+
+    # 合规断言：JSON 合法；新 entry 恰好 1 条；旧 entry 0 残留；option 引用存在
+    d2 = json.loads(dst)
+    task = [t for t in d2.get("task", []) if t.get("entry") == new]
+    assert len(task) == 1, f"改完后 entry=={new!r} 的任务应为 1 条，实际 {len(task)}"
+    assert not [t for t in d2.get("task", []) if t.get("entry") == old], "entry 仍残留旧名"
+    opts = d2.get("option", {})
+    for o in task[0].get("option", []):
+        assert o in opts, f"option {o!r} 未在 interface option 区定义"
+    leftover = pat.findall(dst)
+    if leftover:
+        print(f"[WARN] interface.json 其余位置仍有 {len(leftover)} 处 {old!r}（非本任务注册块，请人工确认归属）")
+
+    with open(INTERFACE, "w", encoding="utf-8", newline="") as fp:
+        fp.write(dst)
+    print(f"interface.json updated: entry {old} -> {new}")
+
 
 
 def main():
@@ -22,6 +66,7 @@ def main():
     ap.add_argument("old")
     ap.add_argument("new")
     ap.add_argument("--copy-images", action="store_true", help="复制 image/**/<旧名>/ 目录为 <新名>/ 并改文件名")
+    ap.add_argument("--update-interface", action="store_true", help="同步更新 interface.json 的任务注册（entry + name 后缀）")
     args = ap.parse_args()
 
     f = Path(args.file)
@@ -95,6 +140,9 @@ def main():
                 q = tgt / pat.sub(new, p.name)
                 shutil.copy2(p, q)
                 print(f"copy {p} -> {q}")
+
+    if args.update_interface:
+        update_interface(old, new, pat)
 
     # 断言 6：所有 template 路径在磁盘上存在
     missing = []

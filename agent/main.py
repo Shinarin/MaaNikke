@@ -73,15 +73,19 @@ def _check_installed_version(ver: str) -> tuple[bool, str]:
     """
     判断已安装的 maafw 版本是否可直接使用（验收放宽策略）。
 
-    依据：agent 与 GUI 间的 IPC 协议由 MaaAgentBinary 实现，其二进制自 2024-04
-    起冻结未再更新，maafw 5.10.2 ~ 5.12.x 全部依赖同一版本，跨 minor 握手无碍；
+    依据：agent 与 GUI 间的 IPC 协议由 MaaAgentBinary 实现。5.10 ~ 5.12 与 GUI
+    原生 5.10.2 跨 minor 握手无碍（生产环境实证）；5.13 起 agent 协议有变，
+    与 5.10.2 主进程握手实测报 Protocol version mismatch（mpelb 链路验证）。
     现存 custom 代码只用稳定核心 API，Python 层 API 漂移风险很低。
 
     返回 (是否接受, 附加提示):
       - 5.10.x              → 接受（同 minor，patch 级兼容）
-      - 其他 5.x            → 接受，但附"未实测"警告
+      - 5.11/5.12.x         → 接受（跨 minor 实证可握手）
+      - 5.13+ 的其他 5.x    → 接受，但附"协议已变"警告（仅与新版本主进程配对可用）
       - 4.x 及以下 / 6.x+ / 无法解析 → 不接受，需安装锁定版本
     """
+    # maafw 5.14.0 起 PyPI 元数据版本号带 "v" 前缀（如 "v5.14.0"），需先归一化
+    ver = ver.lstrip("vV")
     try:
         parts = tuple(int(p) for p in ver.split(".")[:3])
     except ValueError:
@@ -91,6 +95,8 @@ def _check_installed_version(ver: str) -> tuple[bool, str]:
     if parts[1] == 10:
         note = "（同 minor，patch 级兼容）" if ver != _MAAFW_REQUIRED_VERSION else ""
         return True, note
+    if parts[1] >= 13:
+        return True, "（⚠ 5.13+ 更改了 agent 协议，与 GUI 原生 5.10.2 握手预计失败，仅与新版本主进程配对可用）"
     return True, "（⚠ 非实测版本，如 Agent 行为异常请安装 5.10.2）"
 
 

@@ -25,9 +25,9 @@ MaaFramework 全局合并所有 pipeline JSON 到同一节点表，**节点名�
 - **`(?<![A-Za-z])` 负向后发断言**：旧名前是字母则不动，防误改连贯词（如 p5→x 时 `keep5` 保留）。字母粘连前缀（如 `claimp5`）需单独评估，不要一刀切。
 - **`(?!-v1)` 负向先行断言**：`"coordinateMode": "absolute-v1"` 是 MPE 协议枚举值，旧名为 absolute 时绝不能改成 `<新名>-v1`。
 - 只改目标文件本身；其他文件里指向源任务的引用**不要动**（它们引用的是源文件节点，新旧文件并存）。
-- `interface.json` 的入口注册是独立动作，改名流程不含；改完提醒用户即可。
+- `interface.json` 注册随流程一并切换（`--update-interface`），不再作为事后提醒事项。
 
-## 覆盖清单（8 项，逐项核对，漏一项即事故）
+## 覆盖清单（9 项，逐项核对，漏一项即事故）
 
 1. 顶层节点 key（含入口节点）。
 2. `next` / `on_error` 列表引用——**含 `[JumpBack]xxx`、`[Anchor]xxx` 前缀的重定向引用**（易漏）。
@@ -37,6 +37,9 @@ MaaFramework 全局合并所有 pipeline JSON 到同一节点表，**节点名�
 6. MPE config 内的 `filePath`（→ 新文件路径）和 `filename`（→ 新 stem）。
 7. `template` 图片路径（目录名 + 文件名都含旧名）。
 8. 模板图目录：`image/<分类>/<旧名>/` **复制**（不是移动，源任务还在用）为 `<新名>/`，内部文件同步改名。
+9. `interface.json` 任务注册：`entry` 旧名→新名、`name` 显示名的 `(旧名)` 后缀→新名（`description`/`option` 不动）。
+
+- 只改目标文件本身；其他 pipeline 文件里指向源任务的引用**不要动**（它们引用的是源文件节点，新旧文件并存）。
 
 ## 执行方式
 
@@ -44,10 +47,10 @@ MaaFramework 全局合并所有 pipeline JSON 到同一节点表，**节点名�
 
 ```bash
 cd 项目根 && PYTHONIOENCODING=utf-8 python .kimi-code/skills/pipeline-task-rename/rename_task.py \
-    resource/base/pipeline/task/<分类>/<新名>.json <旧名> <新名> --copy-images
+    resource/base/pipeline/task/<分类>/<新名>.json <旧名> <新名> --copy-images --update-interface
 ```
 
-前置：`<新名>.json` 已由源文件复制产生（`cp` 源文件 目标文件）。脚本要点：逐行 `re.sub`；`newline=""` 读写保持 LF 行尾；写回前断言无残留、JSON 合法、无重复 key、顶层 key 数不变、MPE config 自洽；`--copy-images` 复制模板图目录。
+前置：`<新名>.json` 已由源文件复制产生（`cp` 源文件 目标文件）。脚本要点：逐行 `re.sub`；`newline=""` 读写保持 LF 行尾；写回前断言无残留、JSON 合法、无重复 key、顶层 key 数不变、MPE config 自洽；`--copy-images` 复制模板图目录；`--update-interface` 定点更新 interface.json 注册并做合规断言（entry 唯一且已切换、旧 entry 0 残留、option 引用存在、JSON 合法，任一不满足则拒改不写盘）。GUI 里若无需保留旧任务入口就带上该开关；确实要新旧入口并存时才省略。
 
 ## 验收（全部通过才算完成）
 
@@ -57,7 +60,8 @@ cd 项目根 && PYTHONIOENCODING=utf-8 python .kimi-code/skills/pipeline-task-re
 4. **MPE 自洽**：verify 输出 `mpe config: filename='<新名>'`、`filePath exists on disk: True`，无 stale anchor key。
 5. **模板图存在**：无 `[IMG] missing template`；图片目录已复制且文件名已改。
 6. **行尾**：LF 保持，整文件不应炸红。文件未被 git 跟踪时 `git diff` 不可见，改用 `git diff --no-index 源文件 目标文件`（应只剩改名行差异；差异行数 ≤ 替换计数属正常，一行可含多处替换）或字节级检查（无 CRLF）。
-7. **DEVLOG 留痕**：`## [未发布]` 区顶部追加 `- YYYY-MM-DD [新增] ...（涉及：pipeline 文件、图目录）`。
+7. **interface 合规**（`--update-interface` 已带断言，此处复核）：interface.json JSON 合法；`entry==<新名>` 恰好 1 条、旧 entry 0 残留；该条目引用的 option 在 option 区已定义；`name` 后缀已换成 `(<新名>)`；脚本若 WARN "其余位置仍有旧名"，逐一确认归属（其他任务的合法引用不动）。
+8. **DEVLOG 留痕**：`## [未发布]` 区顶部追加 `- YYYY-MM-DD [新增] ...（涉及：pipeline 文件、图目录、interface.json）`。
 
 ## 常见错误
 
@@ -69,4 +73,5 @@ cd 项目根 && PYTHONIOENCODING=utf-8 python .kimi-code/skills/pipeline-task-re
 | 无 lookbehind 直接字符串替换 | `keep5` 类连贯词被误改 |
 | `coordinateMode` 的 `absolute-v1` 被改 | MPE 协议值损坏 |
 | 图片目录没复制 | TemplateMatch 找不到模板，运行时必炸 |
+| 漏改 interface.json 注册 | GUI 入口仍指向旧任务，新任务无入口 |
 | 改完不跑 verify_pipeline.py | 上述任何漏项都发现不了 |

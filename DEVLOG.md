@@ -16,6 +16,17 @@
 
 ---
 
+## v2.3.3 - 2026-09-26
+
+- 2026-09-26 [优化] pipeline-task-rename skill 纳入 interface.json 联动：rename_task.py 新增 `--update-interface`（定点切换 entry + name 的 `(旧名)` 后缀，写盘前断言 entry 唯一、旧 entry 0 残留、option 引用已定义、JSON 合法，任一不满足拒改）；SKILL.md 覆盖清单扩为 9 项、验收新增 interface 合规复核；temp 合成场景正/负向路径实测通过（涉及：.kimi-code/skills/pipeline-task-rename/rename_task.py、SKILL.md）
+- 2026-09-26 [优化] interface.json 限时活动入口由 colorless 切换为 wisdomspring（name/entry 同步改，option 不变）；JSON 合法、option 引用存在、pipeline 入口节点已确认（涉及：interface.json）
+- 2026-09-26 [修复] agent 版本守卫误判 maafw 5.14.0"不在兼容范围"并自动降级 5.10.2：5.14.0 起 PyPI 元数据版本号带 "v" 前缀（`version('maafw')` 返回 "v5.14.0"），`_check_installed_version` 的 `int("v5")` 解析失败按不兼容处理；修复为解析前 `lstrip("vV")` 归一化，并按 5.13 协议变更的实测结论更新验收策略注释（5.10~5.12 跨 minor 实证可握手，5.13+ 接受但附"与 GUI 原生 5.10.2 握手预计失败"警告），8 组版本用例验证通过（涉及：agent/main.py）
+- 2026-09-26 [调查] 系统 Python 环境 maafw 由 5.12.3 升至 5.14.0（pip 直接覆盖安装成功，agent 相关 import 冒烟通过）：目标是让 mpelb 链路与 GUI 链路共用默认 `python` 环境、消除 agent 卡片"启动程序覆盖"；mpelb 侧（runtime 5.14.0）版本已对齐，GUI 侧（原生 5.10.2 ↔ client 5.14.0）预期协议不匹配、待用户实测；回滚命令 `pip install maafw==5.12.3`（涉及：系统 Python 环境）
+- 2026-09-26 [修复] mpelb 升级 v2.0.1 后桌面版 MPE（协议 1.6.0）被拒连、后端自动退出，agent 卡片报"agent client connect failed"：根因为前后端协议不匹配（前端 1.6.0 vs 后端 2.0.1），需升级桌面版至 v2.0.1；v2.0.1 钉版 mfwVersion=5.14.0，但 GitHub 下载源当前不可用（curl SSL 失败 / gh 15 分钟未完成 / deps reinstall 10 分钟仅 5MB 且安装记录校验失败回滚），改用本地 .venv-mpe 的 maafw 5.14.0 wheel 手工构建 runtime/maafw（bin + share/MaaAgentBinary + .version），启动验证全绿；.venv-mpe 的 maafw 同步升至 5.14.0 保持 agent 协议对齐。备注：手工构建的 runtime 无 mpelb v2 安装记录，网络恢复后可删 runtime/maafw 再跑 `mpelb deps reinstall mfw` 重建正规记录（涉及：runtime/maafw、.venv-mpe）
+- 2026-09-26 [新增] 限时活动任务文件 wisdomspring.json 由 colorless.json 派生（198 处替换：节点/next/anchor/MPE 键/便签/template 路径），5 张模板图复制改名为 `image/limitedevent/wisdomspring/wisdomspring_*.png`；残留 0，verify_pipeline 全绿（68 节点，锚点 refs 与源文件一致）（涉及：resource/base/pipeline/task/limitedevent/wisdomspring.json、resource/base/image/limitedevent/wisdomspring/）
+
+---
+
 ## v2.3.2 - 2026-09-19
 
 ---
