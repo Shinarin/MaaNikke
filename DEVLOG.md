@@ -16,6 +16,12 @@
 
 ---
 
+## v2.3.4 - 2026-09-27
+
+- 2026-09-27 [文档] 版本基线刷新：MFAA v2.13.0 / MaaFramework 原生 v5.12.2 / maafw==5.12.2；全局 maafw 从 5.14.0 降回 5.12.2 修复 agent 协议不匹配（5.13+ 协议 8 vs 主进程协议 7）导致的启动失败；main.py 锁定版本常量与警告文案同步更新（放行逻辑不变）（涉及：AGENTS.md、DEVELOPMENT.md、agent/main.py）
+
+---
+
 ## v2.3.3 - 2026-09-26
 
 - 2026-09-26 [优化] pipeline-task-rename skill 纳入 interface.json 联动：rename_task.py 新增 `--update-interface`（定点切换 entry + name 的 `(旧名)` 后缀，写盘前断言 entry 唯一、旧 entry 0 残留、option 引用已定义、JSON 合法，任一不满足拒改）；SKILL.md 覆盖清单扩为 9 项、验收新增 interface 合规复核；temp 合成场景正/负向路径实测通过（涉及：.kimi-code/skills/pipeline-task-rename/rename_task.py、SKILL.md）

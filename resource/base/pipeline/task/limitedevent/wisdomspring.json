@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1789808937528,
+            "lastSyncTime": 1790482415992,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\wisdomspring.json",
+            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\wisdomspring.json",
             "savedViewport": {
-                "x": 163,
-                "y": -394,
-                "zoom": 0.3
+                "x": -1124,
+                "y": -309,
+                "zoom": 0.66
             },
             "filename": "wisdomspring",
-            "version": "v1.10.1"
+            "version": "v2.0.1"
         }
     },
     "$__mpe_anchor_wisdomspring_stagestart_anchor_wisdomspring": {
@@ -62,6 +62,20 @@
                 "x": 2307,
                 "y": 2296
             }
+        }
+    },
+    "$__mpe_group_event11_wisdomspring": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3289,
+                "y": 1136
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "wisdomspring_into11_error_pic"
+            ],
+            "width": 400,
+            "height": 447
         }
     },
     "$__mpe_group_兜底_wisdomspring": {
@@ -178,34 +192,20 @@
     },
     "wisdomspring_12_have_end": {
         "recognition": {
-            "type": "OCR",
+            "type": "Or",
             "param": {
-                "roi": [
-                    453,
-                    234,
-                    387,
-                    428
-                ],
-                "expected": [
-                    "Access Denied",
-                    "Access",
-                    "Denied",
-                    "ACCESS DENIED",
-                    "ACCESS",
-                    "DENIED",
-                    "NONE",
-                    "None",
-                    "none",
-                    "\\?"
+                "any_of": [
+                    "wisdomspring_12_no_end_pic",
+                    "wisdomspring_12_no_end_ocr"
                 ]
             }
         },
         "inverse": true,
-        "on_error": [
-            "wisdomspring_error"
-        ],
         "next": [
             "wisdomspring_into11_error_pic"
+        ],
+        "on_error": [
+            "wisdomspring_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -216,25 +216,11 @@
     },
     "wisdomspring_12_no_end": {
         "recognition": {
-            "type": "OCR",
+            "type": "Or",
             "param": {
-                "roi": [
-                    404,
-                    128,
-                    479,
-                    566
-                ],
-                "expected": [
-                    "Access Denied",
-                    "Access",
-                    "Denied",
-                    "ACCESS DENIED",
-                    "ACCESS",
-                    "DENIED",
-                    "NONE",
-                    "None",
-                    "none",
-                    "\\?"
+                "any_of": [
+                    "wisdomspring_12_no_end_ocr",
+                    "wisdomspring_12_no_end_pic"
                 ]
             }
         },
@@ -246,8 +232,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2803,
-                "y": 493
+                "x": 2794,
+                "y": 542
             }
         }
     },
@@ -271,7 +257,7 @@
                     501
                 ],
                 "template": [
-                    "limitedevent/wisdomspring/wisdomspring_hard_into.png"
+                    "limitedevent/wisdomspring/wisdomspring_normal_into.png"
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -725,7 +711,7 @@
         "action": {
             "type": "Click"
         },
-        "repeat": 5,
+        "repeat": 3,
         "repeat_delay": 500,
         "next": [
             "wisdomspring_swipestage_re"
@@ -1113,7 +1099,7 @@
                     412
                 ],
                 "template": [
-                    "limitedevent/wisdomspring/wisdomspring_hard_replace.png"
+                    "limitedevent/wisdomspring/wisdomspring_normal_replace.png"
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -1906,18 +1892,73 @@
             }
         }
     },
-    "$__mpe_group_event11_wisdomspring": {
+    "$__mpe_group_分组_wisdomspring": {
         "$__mpe_code": {
             "position": {
-                "x": 3289,
-                "y": 1136
+                "x": 2564,
+                "y": 195
             },
             "color": "blue",
             "childrenLabels": [
-                "wisdomspring_into11_error_pic"
+                "wisdomspring_12_no_end",
+                "wisdomspring_12_no_end_ocr",
+                "wisdomspring_12_no_end_pic"
             ],
-            "width": 400,
-            "height": 447
+            "width": 657,
+            "height": 617
+        }
+    },
+    "wisdomspring_12_no_end_ocr": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    128,
+                    479,
+                    566
+                ],
+                "expected": [
+                    "Access Denied",
+                    "Access",
+                    "Denied",
+                    "ACCESS DENIED",
+                    "ACCESS",
+                    "DENIED",
+                    "NONE",
+                    "None",
+                    "none",
+                    "\\?"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2634,
+                "y": 298
+            }
+        }
+    },
+    "wisdomspring_12_no_end_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    404,
+                    128,
+                    479,
+                    566
+                ],
+                "template": [
+                    "limitedevent/wisdomspring/wisdomspring_normal_acessdenied.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2964,
+                "y": 258
+            }
         }
     }
 }

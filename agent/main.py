@@ -12,7 +12,7 @@ maanikke_agent 启动入口
     1. 设定 CWD → 项目根目录
     2. 添加 sys.path → 确保内部模块可导入
     3. 初始化运行时路径 (config / resource / debug 目录映射)
-    4. 自动检测安装 maafw==5.10.2（锁定版本，与 GUI 匹配）
+    4. 自动检测安装 maafw==5.12.2（锁定版本，与 GUI 匹配）
     5. 调用 agent_runtime.run_agent() 启动 AgentServer
 """
 
@@ -62,8 +62,8 @@ configure_initial_runtime_paths(project_root_dir)
 # =====================================================================
 
 # 与 MaaNikke GUI 实际加载的 MaaFramework 原生库版本一致
-# 版本号来源于 GUI 日志: logs/log-*.log 中的 "MaaFramework 版本：v5.10.2"
-_MAAFW_REQUIRED_VERSION = "5.10.2"
+# 版本号来源于 GUI 日志: logs/log-*.log 中的 "MaaFramework 版本：v5.12.2"
+_MAAFW_REQUIRED_VERSION = "5.12.2"
 
 # pip 安装子进程硬超时（秒）：防止网络黑洞导致 pip 下载永久挂死
 _PIP_INSTALL_TIMEOUT = 300
@@ -73,15 +73,16 @@ def _check_installed_version(ver: str) -> tuple[bool, str]:
     """
     判断已安装的 maafw 版本是否可直接使用（验收放宽策略）。
 
-    依据：agent 与 GUI 间的 IPC 协议由 MaaAgentBinary 实现。5.10 ~ 5.12 与 GUI
-    原生 5.10.2 跨 minor 握手无碍（生产环境实证）；5.13 起 agent 协议有变，
-    与 5.10.2 主进程握手实测报 Protocol version mismatch（mpelb 链路验证）。
+    依据：agent 与 GUI 间的 IPC 协议由 MaaAgentBinary 实现。5.10 ~ 5.12 同为
+    agent 协议 7，与 GUI 原生 5.12.2 跨 minor 握手无碍（生产环境实证）；5.13 起
+    协议升至 8，与 5.12.x 主进程握手必失败（2026-09-27 本机实证：
+    Protocol version mismatch, req.protocol=7 vs kProtocolVersion=8）。
     现存 custom 代码只用稳定核心 API，Python 层 API 漂移风险很低。
 
     返回 (是否接受, 附加提示):
-      - 5.10.x              → 接受（同 minor，patch 级兼容）
-      - 5.11/5.12.x         → 接受（跨 minor 实证可握手）
-      - 5.13+ 的其他 5.x    → 接受，但附"协议已变"警告（仅与新版本主进程配对可用）
+      - 5.12.x              → 接受（同 minor，patch 级兼容）
+      - 5.10/5.11.x         → 接受（跨 minor 实证可握手，同为协议 7）
+      - 5.13+ 的其他 5.x    → 接受，但附"协议不匹配、握手必失败"警告（暂不拦截）
       - 4.x 及以下 / 6.x+ / 无法解析 → 不接受，需安装锁定版本
     """
     # maafw 5.14.0 起 PyPI 元数据版本号带 "v" 前缀（如 "v5.14.0"），需先归一化
@@ -92,12 +93,12 @@ def _check_installed_version(ver: str) -> tuple[bool, str]:
         return False, ""
     if len(parts) < 2 or parts[0] != 5:
         return False, ""
-    if parts[1] == 10:
+    if parts[1] == 12:
         note = "（同 minor，patch 级兼容）" if ver != _MAAFW_REQUIRED_VERSION else ""
         return True, note
     if parts[1] >= 13:
-        return True, "（⚠ 5.13+ 更改了 agent 协议，与 GUI 原生 5.10.2 握手预计失败，仅与新版本主进程配对可用）"
-    return True, "（⚠ 非实测版本，如 Agent 行为异常请安装 5.10.2）"
+        return True, "（⚠ 5.13+ 的 agent 协议为 8，与 GUI 原生 5.12.2（协议 7）握手必失败，请安装 5.12.2）"
+    return True, "（⚠ 5.10/5.11 跨 minor，同为协议 7 实证可握手；如 Agent 行为异常请安装 5.12.2）"
 
 
 def _ensure_maafw() -> bool:

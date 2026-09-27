@@ -11,12 +11,12 @@
 
 四个组成部分：
 
-- **GUI 壳**：MFAAvalonia（MFAA v2.12.1，Avalonia/.NET 10），即根目录 `MaaNikke.exe`；本项目不改其源码。
-- **决策引擎**：MaaFramework 原生库 **v5.10.2（锁定）**，`runtimes/win-x64/native` + `libs/`。
+- **GUI 壳**：MFAAvalonia（MFAA v2.13.0，Avalonia/.NET 10），即根目录 `MaaNikke.exe`；本项目不改其源码。
+- **决策引擎**：MaaFramework 原生库 **v5.12.2（锁定）**，`runtimes/win-x64/native` + `libs/`。
 - **业务主体**：Pipeline JSON，`resource/base/pipeline/`，21 个日常任务的声明式节点图。
 - **自定义扩展**：Python Agent（`agent/`），custom action/reco/sink 经 IPC 被主进程调用。
 
-版本基线：Python ≥ 3.10；pip 包 `maafw==5.10.2`（已装任意 5.x 则复用）；Pillow 任意近期版本。
+版本基线：Python ≥ 3.10；pip 包 `maafw==5.12.2`（已装任意 5.x 则复用）；Pillow 任意近期版本。
 资源版本号以 `interface.json` 的 `version` 字段为准（文档不写死）。
 
 ## 2. 目录结构速览
@@ -50,7 +50,7 @@ MaaNikke_dev/
 1. agent 子进程 argv 只有 `[脚本路径, socket_id]`；实例信息走 `MFA_INSTANCE_*` / `PI_*` 环境变量。
 2. custom param 到 Python 是 JSON 字符串，必须过 `parse_params`，直接当 dict 用会炸。
 3. pipeline 里 `custom_action_param` 直接写对象，不要写转义字符串（多一个逗号即非法 JSON）。
-4. `maafw==5.10.2` 锁定，与 GUI 原生库对齐；升 6.x 前必须重新评估。
+4. `maafw==5.12.2` 锁定，与 GUI 原生库对齐；5.13+ 把 agent IPC 协议升到 8，与 5.12.x 主进程（协议 7）握手必失败（2026-09-27 实证），main.py 目前对 5.13+ 仅警告不拦截；升 5.13+ 或 6.x 前必须重新评估。
 5. CWD 必须是项目根（截图/模板/相对路径都依赖），agent 里不要再 chdir。
 6. pipeline JSON 里的 `$__mpe_*` 键是 MPE 编辑器画布数据，框架忽略，**不要删**。
 7. AgentServer 进程内 Toolkit 不可用；日志/截图保存由主进程侧 `config/maa_option.json` 控制。

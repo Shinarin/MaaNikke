@@ -30,8 +30,8 @@
 
 **MaaNikke** 是《胜利女神：NIKKE》（国服桌面端）的每日任务自动化工具，基于 MaaFramework 生态构建：
 
-- **GUI 壳**：MFAAvalonia（MFAA，v2.12.1，Avalonia/.NET 10，通用 MaaFramework 图形界面），即根目录 `MaaNikke.exe`。
-- **决策引擎**：MaaFramework 原生库 v5.10.2（`runtimes/win-x64/native` + `libs/`），负责截图、识别、点击、管线流转。
+- **GUI 壳**：MFAAvalonia（MFAA，v2.13.0，Avalonia/.NET 10，通用 MaaFramework 图形界面），即根目录 `MaaNikke.exe`。
+- **决策引擎**：MaaFramework 原生库 v5.12.2（`runtimes/win-x64/native` + `libs/`），负责截图、识别、点击、管线流转。
 - **业务逻辑主体**：Pipeline JSON（`resource/base/pipeline/`），声明式节点图，覆盖 21 个日常任务。
 - **自定义扩展**：Python Agent（`agent/`），承载 Pipeline 难以表达的自定义识别/动作，经 IPC 被主进程调用。
 - **管线编辑器**：MaaPipelineEditor（`mpelb.exe`，`$__mpe_code` 元数据即其所写），见 `MPEsimple.txt`。
@@ -42,9 +42,9 @@
 
 | 组件 | 版本 | 说明 |
 |---|---|---|
-| MFAAvalonia (GUI) | v2.12.1（本地部署；上游最新 v2.13.x） | 日志 `logs/log-*.log` 中"程序版本" |
-| MaaFramework（原生运行时） | **v5.10.2**（锁定） | GUI 加载的原生库版本 |
-| Python 包 `maafw` | **==5.10.2**（锁定；已装任意 5.x 则复用） | `agent/main.py` 自动安装与校验 |
+| MFAAvalonia (GUI) | v2.13.0（本地部署） | 日志 `logs/log-*.log` 中"程序版本" |
+| MaaFramework（原生运行时） | **v5.12.2**（锁定） | GUI 加载的原生库版本 |
+| Python 包 `maafw` | **==5.12.2**（锁定；已装任意 5.x 则复用） | `agent/main.py` 自动安装与校验 |
 | Python | ≥ 3.10（代码使用 `str \| None` 等 3.10+ 语法） | 启动时强制检查 |
 | Pillow | 任意近期版本 | 仅 RotatedOCR 使用，启动时自动装 |
 | interface.json | `interface_version: 2`；资源版本以 `version` 字段为准（本文档不写死） | ProjectInterfaceV2 协议 |
@@ -131,7 +131,7 @@ Tasker.AppendTask(entry, pipeline_override) 逐个任务入队执行
 
 - **AgentClient**：住在主进程（MFAA）内。MFAA 调 `MaaAgentClientCreateV2(identifier)` 创建，identifier 即通信 socket 标识（未配置时随机生成 8 位字符串；多实例时追加 `_实例ID` 防冲突）。
 - **AgentServer**：住在 Python 子进程（本项目 `agent/`），注册并执行 custom 代码。
-- **IPC**：由独立的 `MaaAgentBinary` 原生库实现（Windows 上默认本地管道；identifier 传纯数字 1-65535 时退化为 TCP 127.0.0.1 端口模式）。**该二进制自 2024-04 起冻结**，因此 maafw 5.10~5.12 跨 minor 握手无碍——这是 `main.py` 版本验收放宽的依据。
+- **IPC**：由独立的 `MaaAgentBinary` 原生库实现（Windows 上默认本地管道；identifier 传纯数字 1-65535 时退化为 TCP 127.0.0.1 端口模式）。maafw **5.10~5.12 同为 agent 协议 7**，跨 minor 握手无碍——这是 `main.py` 版本验收放宽的依据；**5.13 起协议升至 8**，与 5.12.x 主进程握手必失败（2026-09-27 实证：`Protocol version mismatch, req.protocol=7 vs kProtocolVersion=8`）。
 - **握手方向**：Client 先监听 → 启动子进程并把 identifier 作为命令行参数传入 → 子进程 `AgentServer.start_up(socket_id)` 反向连接 Client。
 
 ### 6.2 interface.json 的 agent 字段（ProjectInterfaceV2）
@@ -182,7 +182,7 @@ MFAA: python -u ./agent/main.py <socket_id>
              agent/ 加入 sys.path
       阶段1: bootstrap.configure_initial_runtime_paths(project_root)
              → RuntimePaths{project_root, agent_dir, work_root, config_dir, resource_dir, debug_dir}
-      阶段2: _ensure_maafw()：已装任意 5.x 直接复用；否则 pip 安装 maafw==5.10.2
+      阶段2: _ensure_maafw()：已装任意 5.x 直接复用；否则 pip 安装 maafw==5.12.2
              （直连→清华镜像→--user 兜底，300s 硬超时，装后子进程校验版本，清 maa.* 模块缓存）
       阶段3: _ensure_custom_deps()：预检 _CUSTOM_DEPS 表（目前仅 Pillow → RotatedOCR 用），
              缺失自动装。新增依赖在此表追加。
@@ -364,7 +364,7 @@ class MyReco(CustomRecognition):
 1. **argv 真相**：子进程 argv 只有 `[脚本路径, socket_id]`；实例信息走 `MFA_INSTANCE_*` / `PI_*` 环境变量（§6.3）。`main.py` 兼容解析两种形式是防御性冗余。
 2. **custom param 是字符串**：绑定层把 param 序列化成 JSON 字符串传给 Python，必须 `parse_params`；直接 `argv.custom_action_param["k"]` 会炸。缺省 param 时框架传的是 JSON null（字符串 `"null"`），`parse_params` 已兼容为 `{}`。
 3. **内嵌字符串式 param 易出错**：pipeline 里 `custom_action_param` 也可以写成转义后的 JSON 字符串（而非对象），字符串里多一个逗号就是非法 JSON（smallevent1.json 曾因此导致 `ResetCount` 必败，已修复）。新增节点建议直接写对象形式。
-4. **版本锁定**：`maafw==5.10.2` 与 GUI 原生库对齐；验收放宽到任意 5.x 是因为 MaaAgentBinary IPC 协议冻结。升 6.x 前必须重新评估。
+4. **版本锁定**：`maafw==5.12.2` 与 GUI 原生库对齐；验收放宽到 5.10~5.12 是因为这些版本同为 agent 协议 7。5.13+ 协议升至 8，与 5.12.x 主进程握手必失败（2026-09-27 实证），main.py 目前对 5.13+ 仅警告不拦截——共享 Python 环境被其他项目升级 maafw 时会在此踩坑。升 5.13+ 或 6.x 前必须重新评估。
 5. **CWD 依赖**：MFAA 以项目根为 CWD 启动子进程，main.py 再次强制 `chdir` 到项目根；管线内相对路径、模板图加载都依赖这一点，不要在 agent 里再改 CWD。
 6. **`$__mpe_code` 元数据**：pipeline JSON 里的 `$__mpe_*` 键是 MaaPipelineEditor 的画布数据，框架忽略，**不要删**（编辑器要用）；手写节点无需加。
 7. **Toolkit 不可用**：AgentServer 进程内没有 Toolkit（§9.1）；日志、截图保存由主进程侧 `config/maa_option.json` 控制。
