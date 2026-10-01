@@ -232,7 +232,7 @@ ACTION_MODULES = ("my_actions", "你的新文件不含.py")
 | `AgentServer.shut_down()` | 关闭 |
 | `AgentServer.detach()` | 分离服务线程（本项目未用） |
 
-⚠ AgentServer 进程内 `Toolkit` 不可用（调 `Library.toolkit()` 抛 `ValueError`）——不能照搬官方 boilerplate 的 `Toolkit.init_option()`。
+⚠ AgentServer 进程内 `Toolkit` 不可用（调 `Library.toolkit()` 抛 `ValueError`）——不能照搬官方 boilerplate 的 `Toolkit.init_option()`。**创建 Controller 同样不可用**：绑定被路由到 MaaAgentServer stub 库，`Win32Controller(...)` 抛 `Failed to create Win32 controller.`（原生报 "MaaAgentServer Not implement this API"）；需要侧路控制器时用 ctypes 独立 WinDLL 加载真实 MaaFramework.dll 直调 C API（参考 esc action 的 `_load_framework_dll()`，另见 §13 第 16 条）。
 
 ### 9.2 CustomAction 模板
 
@@ -319,6 +319,8 @@ class MyReco(CustomRecognition):
 | `clearrecodatebase` | 日期临时字段重置为默认值 1-1（重置非删除，不留空缺） | 无 | — |
 | `NextBurst` | 挂在父节点 action 槽位的 next 突发扫描：next1 连试 `tries` 次（每次重截图）全空再扫 next2…；命中即把命中者提到 next 队首交还框架原生进入，一轮全空不 override、交还原生轮巡 | `tries`(5), `delay`(200), `nodes`(可选，默认读本节点 next) | 某试截图抛 RuntimeError 按当次未命中 continue，不掀桌 |
 
+| `esc` | 发送一次真实 ESC：AgentServer 进程内创建 Controller 不可用（绑定被路由到 stub 库，§13 第 16 条），故用 ctypes 独立 WinDLL 加载真实 MaaFramework.dll（pip maafw `maa/bin/` 优先，回退 `runtimes/win-x64/native/`）直调 C API 建 keyboard=Seize 控制器发 click_key(27)（框架自动强拉前台、发送带扫描码真实按键），发键后 AttachThreadInput 挂载法切回原前台窗口；游戏客户端更新后消息注入键盘全失效，仅 Seize 通道有效（排查与修复过程见 DEVLOG 2026-10-01） | 无 | 游戏瞬时前台（<1s）即发即回；找不到窗口/库加载失败/创建、连接或按键失败返回 False |
+
 共同约定：返回 `CustomAction.RunResult(success=...)`；掐断任务线统一用 `context.override_next(argv.node_name, [])`。
 
 ### 10.2 Recognition（`custom/reco/my_reco.py`、`custom/reco/stagenum.py`）
@@ -376,6 +378,7 @@ class MyReco(CustomRecognition):
 13. **游戏加载期"截图超时+全黑"是环境现象，不是代码 bug**（2026-08-07 实证）：游戏重启/启动后的加载阶段（黑屏、不 Present 新帧）被连接时，FramePool 拿不到新帧会等满约 2 秒帧超时并返回残留黑帧（MFAA 日志报 `截图用时过长：2008ms(FramePool)`），还可能误触发 PseudoMinimizeHelper 施加伪最小化；游戏加载完成后自愈（同一窗口恢复 23ms）。遇到时先确认游戏是否已进大厅再排查代码。另：不要多开 MaaNikke 实例（含 dev/release 两份同时跑），会造成热键互斥锁与配置文件锁冲突。
 14. **识别子结果的 box 是 list 不是 Rect**（2026-08-15 实证）：`RecognitionDetail.filtered_results` / `all_results` / `best_result` 里的结果项（如 OCRResult）由绑定层 `ResultType(**raw_result)` 构造，dataclass 不做类型转换，JSON 原样透传——其 `box` 字段实为 list `[x,y,w,h]`，`.x/.y` 访问会炸 `AttributeError: 'list' object has no attribute 'x'`（在 ctypes 回调里变成 "Exception ignored" 静默吞栈）。取 box 用 `stagenum.py` 的 `_box_xywh()` 兼容写法（同时支持 list 与 Rect 对象）。
 15. **`run_task` 内层任务不发 `Tasker.Task.*` 事件**（2026-08-22 实证）：`context.run_task` 启动的子任务有独立 task_id，节点级事件（PipelineNode/Recognition/Action，含完整 details JSON）照常全部进原生日志，但**没有 `Tasker.Task.Starting/Succeeded` 包装**（仅外层 posted 任务有；实测 debug/maafw.log 里 task 200000001/200000003 有、内层 200000002 无）。MaaLogAnalyzer 按任务分段展示，内层节点事件归不进任何任务 → 任务视图看不到子任务节点。这是**上游未实现的行为而非版本锁定问题**：上游 issue [MaaXYZ/MaaFramework#900](https://github.com/MaaXYZ/MaaFramework/issues/900)（2025-11-30 起 open，无修复进展）；main 分支（>5.13.0-beta.2）`Context::run_task` 源码仍无 Tasker 通知（注释自述"context 的子任务没有 Pending 状态，直接就是 Running"）。且运行时原生库随 MFAA 发布，非 pip 侧可升——即便上游修好也要等 MFAA 更新内置框架。排查子任务：用 GUI 日志 `[Node]`/`[SubTask]` 行（齐全），或 MaaLogAnalyzer 的全文搜索视图（全文索引不受任务分段影响）。要任务视图完整识别，子流程须改为 GUI 任务列表顺序勾选执行（每个都是完整 Tasker 任务）。
+16. **AgentServer 进程内创建 Controller 必败**（2026-10-01 实证）：AgentServer 模式下 maafw 绑定的 `Library.framework()` 返回 MaaAgentServer stub 库（`maa/library.py` 的 `is_agent_server()` 分支），`MaaWin32ControllerCreate` 等控制器 API 在 stub 里未实现（原生报 "MaaAgentServer Not implement this API, Please use MaaFramework"），`Win32Controller(...)` 抛 `RuntimeError: Failed to create Win32 controller.`。需要绕开主控制器配置单独发输入时（如 esc action），用 ctypes 独立 `WinDLL` 加载真实 `MaaFramework.dll`（pip maafw 自带 `maa/bin/`，与 stub 是不同 DLL 文件、互不干扰；`os.add_dll_directory` 解析同目录依赖）直调 C API——签名镜像 `maa/controller.py` 的 `_set_api_properties`，参考 esc 的 `_load_framework_dll()`。
 
 ## 14. 参考资料
 

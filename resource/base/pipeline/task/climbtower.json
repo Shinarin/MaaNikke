@@ -3,48 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787142150699,
+            "lastSyncTime": 1790825918385,
             "isModifiedExternally": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\climbtower.json",
+            "isDeleted": false,
+            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\climbtower.json",
             "savedViewport": {
-                "x": -7505,
-                "y": 506,
-                "zoom": 0.82
+                "x": -9892,
+                "y": 555,
+                "zoom": 1.06
             },
             "filename": "climbtower",
-            "version": "v1.7.6"
-        }
-    },
-    "$__mpe_anchor_choosetoweranchor2_climbtower": {
-        "$__mpe_code": {
-            "position": {
-                "x": 11471,
-                "y": -179
-            }
-        }
-    },
-    "$__mpe_anchor_choosetoweranchor_climbtower": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7650,
-                "y": -702
-            }
-        }
-    },
-    "$__mpe_anchor_climbtower_intofight_anchor_climbtower": {
-        "$__mpe_code": {
-            "position": {
-                "x": 10799,
-                "y": -1392
-            }
-        }
-    },
-    "$__mpe_external_backtohomepage_climbtower": {
-        "$__mpe_code": {
-            "position": {
-                "x": 10028,
-                "y": 117
-            }
+            "version": "v2.0.5"
         }
     },
     "$__mpe_group_菲比的坑爹商店_climbtower": {
@@ -78,6 +47,38 @@
             ],
             "width": 372,
             "height": 1096
+        }
+    },
+    "$__mpe_anchor_choosetoweranchor2_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 11471,
+                "y": -179
+            }
+        }
+    },
+    "$__mpe_anchor_choosetoweranchor_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7650,
+                "y": -702
+            }
+        }
+    },
+    "$__mpe_anchor_climbtower_intofight_anchor_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10799,
+                "y": -1392
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_climbtower": {
+        "$__mpe_code": {
+            "position": {
+                "x": 10028,
+                "y": 117
+            }
         }
     },
     "1timescoptower": {
@@ -453,27 +454,37 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9161,
-                "y": -495
+                "x": 9170,
+                "y": -470
             }
         }
     },
     "climbtowerfailedback": {
-        "action": {
-            "type": "ClickKey",
+        "recognition": {
+            "type": "OCR",
             "param": {
-                "key": [
-                    27
+                "roi": [
+                    8,
+                    605,
+                    159,
+                    109
+                ],
+                "expected": [
+                    "ESC",
+                    "返回"
                 ]
             }
+        },
+        "action": {
+            "type": "Click"
         },
         "next": [
             "nochancefighttower2"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9420,
-                "y": -365
+                "x": 9437,
+                "y": -349
             }
         }
     },
@@ -850,10 +861,13 @@
             }
         },
         "action": {
-            "type": "ClickKey",
+            "type": "Click",
             "param": {
-                "key": [
-                    27
+                "target": [
+                    42,
+                    674,
+                    28,
+                    12
                 ]
             }
         },
@@ -887,10 +901,13 @@
             }
         },
         "action": {
-            "type": "ClickKey",
+            "type": "Click",
             "param": {
-                "key": [
-                    27
+                "target": [
+                    42,
+                    674,
+                    28,
+                    12
                 ]
             }
         },
@@ -1326,8 +1343,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 9707,
-                "y": -439
+                "x": 9724,
+                "y": -444
             }
         }
     },

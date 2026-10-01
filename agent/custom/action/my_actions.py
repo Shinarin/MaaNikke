@@ -28,8 +28,13 @@ from maa.custom_action import CustomAction
 from utils.params import parse_params
 from custom.reco.my_reco import datebase_add, datebase_clear, datebase_get
 
+import ctypes
 import datetime
+import os
+import pathlib
 import time
+
+import maa
 
 
 # =====================================================================
@@ -889,3 +894,152 @@ def _resolve_next_entry(context: Context, entry) -> str | None:
             return context.get_anchor(str(name))
         return str(name)
     return None
+
+
+# =====================================================================
+# Action 13: esc —— 发送一次真实 ESC 按键（Seize 通道，瞬时前台）
+# =====================================================================
+@AgentServer.custom_action("esc")
+class Esc(CustomAction):
+    """
+    向游戏发送一次真实 ESC 按键。无参数。
+
+    背景：游戏客户端更新后不再处理消息注入的键盘输入（SendMessage/PostMessage
+    全家前后台均无效，一切后台欺骗手段实测全灭），仅真实输入（SendInput）
+    且游戏前台时有效。本 action 复用实测有效的 MAA Seize 通道（框架自动强拉
+    前台、发送带扫描码的真实按键），随后用 AttachThreadInput 挂载法把原前台
+    窗口切回去。效果：游戏瞬间闪到前台（<1s）发键即回，pipeline 其余操作的
+    后台配置不变。
+
+    实现要点：AgentServer 进程内 maafw 绑定被路由到 stub 库，控制器创建等
+    API 未实现（MaaAgentServerNotImpl），直接用绑定的 Win32Controller 会抛
+    "Failed to create Win32 controller."。因此用 ctypes 独立加载真正的
+    MaaFramework.dll（pip maafw 自带，与绑定的 stub 库互不干扰）直调 C API。
+
+    失败处理：找不到游戏窗口 / 框架库加载失败 / 控制器创建、连接或按键失败
+    → 返回 False（节点走 timeout/on_error）。日志前缀 [esc]。
+
+    Pipeline JSON 引用示例:
+    {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "esc"
+    }
+    """
+
+    def run(
+        self,
+        context: Context,
+        argv: CustomAction.RunArg,
+    ) -> CustomAction.RunResult:
+        hwnd = _find_game_hwnd()
+        if not hwnd:
+            print("[esc] 未找到游戏窗口（UnityWndClass / 胜利女神）")
+            return CustomAction.RunResult(success=False)
+        fw = _load_framework_dll()
+        if not fw:
+            print("[esc] MaaFramework.dll 加载失败")
+            return CustomAction.RunResult(success=False)
+        prev_fg = _user32.GetForegroundWindow()
+        # FramePool(2) 截图 / Seize(1) 鼠标 / Seize(1) 键盘
+        ctrl = fw.MaaWin32ControllerCreate(ctypes.c_void_p(hwnd), 2, 1, 1)
+        if not ctrl:
+            print("[esc] Seize 控制器创建失败")
+            return CustomAction.RunResult(success=False)
+        ok = False
+        try:
+            conn_id = fw.MaaControllerPostConnection(ctrl)
+            if fw.MaaControllerWait(ctrl, conn_id) != _STATUS_SUCCEEDED:
+                print("[esc] Seize 控制器连接失败")
+            else:
+                key_id = fw.MaaControllerPostClickKey(ctrl, 27)  # 27 = VK_ESCAPE
+                ok = fw.MaaControllerWait(ctrl, key_id) == _STATUS_SUCCEEDED
+        finally:
+            fw.MaaControllerDestroy(ctrl)
+        if prev_fg and prev_fg != hwnd:
+            _force_foreground(prev_fg)  # 切回原前台窗口
+        if not ok:
+            print("[esc] ESC 发送失败")
+            return CustomAction.RunResult(success=False)
+        print("[esc] ESC 已发送（Seize 真实按键）")
+        return CustomAction.RunResult(success=True)
+
+
+_user32 = ctypes.windll.user32
+_kernel32 = ctypes.windll.kernel32
+
+_STATUS_SUCCEEDED = 3000  # MaaStatusEnum.succeeded
+_fw_dll = None
+
+
+def _load_framework_dll():
+    """独立加载真正的 MaaFramework.dll（绕过 AgentServer stub 库）。
+
+    AgentServer 模式下 maafw 绑定的 Library.framework() 被路由到 stub
+    （MaaAgentServer），控制器创建等 API 未实现。这里用独立的 WinDLL
+    句柄加载真实框架库直调 C API，与绑定使用的 stub 库互不干扰。
+    函数签名镜像自 pip maafw 的 maa/controller.py。
+    """
+    global _fw_dll
+    if _fw_dll:
+        return _fw_dll
+    candidates = [
+        pathlib.Path(maa.__file__).parent / "bin" / "MaaFramework.dll",
+        pathlib.Path("runtimes/win-x64/native/MaaFramework.dll"),
+    ]
+    lib = None
+    for p in candidates:
+        if p.exists():
+            p = p.resolve()
+            os.add_dll_directory(str(p.parent))  # 让同目录依赖 DLL 可解析
+            lib = ctypes.WinDLL(str(p))
+            break
+    if not lib:
+        return None
+    lib.MaaWin32ControllerCreate.restype = ctypes.c_void_p
+    lib.MaaWin32ControllerCreate.argtypes = [
+        ctypes.c_void_p,
+        ctypes.c_uint64,
+        ctypes.c_uint64,
+        ctypes.c_uint64,
+    ]
+    lib.MaaControllerPostConnection.restype = ctypes.c_int64
+    lib.MaaControllerPostConnection.argtypes = [ctypes.c_void_p]
+    lib.MaaControllerWait.restype = ctypes.c_int32
+    lib.MaaControllerWait.argtypes = [ctypes.c_void_p, ctypes.c_int64]
+    lib.MaaControllerPostClickKey.restype = ctypes.c_int64
+    lib.MaaControllerPostClickKey.argtypes = [ctypes.c_void_p, ctypes.c_int32]
+    lib.MaaControllerDestroy.restype = None
+    lib.MaaControllerDestroy.argtypes = [ctypes.c_void_p]
+    _fw_dll = lib
+    return lib
+
+
+def _find_game_hwnd() -> int:
+    """按类名 UnityWndClass + 标题含"胜利女神"枚举游戏窗口句柄；找不到返回 0。"""
+    hwnd = _user32.FindWindowW("UnityWndClass", None)
+    while hwnd:
+        buf = ctypes.create_unicode_buffer(256)
+        _user32.GetWindowTextW(hwnd, buf, 256)
+        if "胜利女神" in buf.value:
+            return hwnd
+        hwnd = _user32.FindWindowExW(None, hwnd, "UnityWndClass", None)
+    return 0
+
+
+def _force_foreground(hwnd) -> None:
+    """AttachThreadInput 挂载法强拉前台（esc 用于发键后切回原前台窗口）。"""
+    fg = _user32.GetForegroundWindow()
+    cur = _kernel32.GetCurrentThreadId()
+    fg_tid = _user32.GetWindowThreadProcessId(fg, None)
+    tgt_tid = _user32.GetWindowThreadProcessId(hwnd, None)
+    _user32.AttachThreadInput(cur, fg_tid, True)
+    _user32.AttachThreadInput(cur, tgt_tid, True)
+    if _user32.IsIconic(hwnd):
+        # 仅最小化时才还原；对最大化窗口调 SW_RESTORE 会取消其最大化（等同点"向下还原"）
+        _user32.ShowWindow(hwnd, 9)  # SW_RESTORE
+    _user32.BringWindowToTop(hwnd)
+    _user32.SetForegroundWindow(hwnd)
+    _user32.SetFocus(hwnd)
+    _user32.AttachThreadInput(cur, tgt_tid, False)
+    _user32.AttachThreadInput(cur, fg_tid, False)

@@ -1,6 +1,6 @@
 ---
 name: maanikke-release
-description: MaaNikke 发版流程。当用户明确要求 push/发版/打包上传时执行完整流程（changelog = 用户给的内容优先 + DEVLOG 未发布区条目过滤改写合并，用户没给就只用 DEVLOG 总结 → 写入 Changelog.md → DEVLOG 封存新版本线、版本号 +1 → 复制模板打包 zip → 同步三件套到 C:\other\MaaNikke → git push → 创建 GitHub Release 并上传 zip）；用户只说 push 而无发版意图时，只做普通 git push，不触发本流程（DEVLOG 也不动）。
+description: MaaNikke 发版流程。当用户明确要求 push/发版/打包上传时执行完整流程（changelog = 用户给的内容优先 + DEVLOG 未发布区条目过滤改写合并，用户没给就只用 DEVLOG 总结 → 写入 Changelog.md → DEVLOG 封存新版本线、版本号 +1 → 复制模板打包 zip → 同步三件套到 C:\other\MaaNikke → git push → 创建 GitHub Release 并上传 zip → QQ 群全自动发送 changelog 文本与 zip）；用户只说 push 而无发版意图时，只做普通 git push，不触发本流程（DEVLOG 也不动）。
 whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、发版、release、打包上传时触发
 ---
 
@@ -8,7 +8,7 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
 
 ## 触发判定（最先做）
 
-- 用户明确要求 push/发版/打包上传 → 执行完整流程（第一至第五步）。changelog 来源：**用户给的内容优先**；用户没给 changelog 内容时，**只用 `DEVLOG.md` `[未发布]` 区条目的用户向改写总结**（过滤规则见第一步），不再因缺 changelog 而退化为普通 push。
+- 用户明确要求 push/发版/打包上传 → 执行完整流程（第一至第六步）。changelog 来源：**用户给的内容优先**；用户没给 changelog 内容时，**只用 `DEVLOG.md` `[未发布]` 区条目的用户向改写总结**（过滤规则见第一步），不再因缺 changelog 而退化为普通 push。
 - 用户只说 push、语境无发版意图 → 只做 `git add -A && git commit && git push`，**不要**改版本号、不要打包、不要发 Release，**也不要动 DEVLOG.md**（版本线封存只在发版时做）。
 
 ## 已验证的关键事实（直接采用，勿重复验证）
@@ -25,7 +25,7 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
 - 打包工具：Git Bash 的 tar 是 GNU tar，**造不了 zip**；用 Python zipfile（已实测）。
 - `.gitignore` 已含 `MaaNikke-win-x86_64-v*/` 排除规则（兜底，防止构建产物误入项目被提交）。
 - GitHub：仓库 `Shinarin/MaaNikke`，本机**无 gh CLI**；用 `git credential fill` 取 token 调 REST API（token 已验证有 `repo` scope，可建 Release）。token 严禁打印/写文件。
-- QQ 群发送步骤：用户已明确**取消**，不执行。
+- QQ 群发送：默认随完整流程执行（第六步，2026-09-27 实测定案）。QQ 为 NTQQ（Electron，路径 `C:\Program Files\Tencent\QQNT\QQ.exe`），**UIA 树为空**，用 kimi-cu-win「截图+坐标」操作；用户已设置 QQ 打开后自动登录，未运行时可启动帮登录。
 
 ## 第一步：changelog + DEVLOG 封存 + 版本号
 
@@ -118,9 +118,40 @@ curl -S -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
 
 4. 校验返回的 asset `size` 与本地 zip 字节数一致、`state` 为 `uploaded`。
 
+## 第六步：QQ 群发送 changelog + zip（默认执行）
+
+发版主流程完成后默认执行。QQ 未运行时启动 QQ（用户已设自动登录）；本步失败**停下报告，不影响已完成的发版**。
+
+工具：kimi-cu-win MCP（`mcp__plugin-kimi-cu-win_win__*`）。QQ 是 NTQQ（Electron），**UIA 树为空**，全程走「截图 + 坐标」模式：每步操作后 `get_app_state(app="QQ", mode="image")` 截图自检，与预期不符立即停下报告，**严禁脱离截图盲点坐标**（下列坐标为 1568x860 截图下的参考值，以当次截图为准）。
+
+1. **确认/启动 QQ**：`list_apps` 查 QQ 窗口。未运行则 `launch_app("C:\\Program Files\\Tencent\\QQNT\\QQ.exe")`，等 10~20 秒自动登录，截图确认主界面出现（左侧会话列表）。
+2. **进入 MaaNikke 群**：截图看聊天窗口标题是否「MaaNikke (人数)」。不是则：点搜索框（主界面左上，参考 (165,60)）→ `powershell Set-Clipboard -Value 'MaaNikke'` → `press_key Control_L+v` → 等 1~2 秒截图 → 点击搜索结果中的 MaaNikke 群 → 截图确认标题已切换。
+3. **发送 changelog 文本**：
+   - 文本写入剪贴板（changelog 的**纯文本版**：去掉 `##`/`**` 等 md 标记（QQ 不渲染），首行加 `MaaNikke vX.Y.Z 更新日志` 标题；先写临时文件，用 `powershell -NoProfile -Command "Get-Content -Raw -Encoding UTF8 '<文件>' | Set-Clipboard"`，避免命令行转义和 GBK 乱码）
+   - `click` 输入框（聊天窗口底部中央偏左空白区，参考 (850,750)）聚焦
+   - `press_key Control_L+v` → 截图确认文本已进入输入框
+   - `click` 右下角蓝色「发送」按钮（参考 (1333,831)）→ 截图确认消息已出现在聊天记录
+4. **发送 zip 文件**：
+   - PowerShell 设文件剪贴板：
+     ```powershell
+     Add-Type -AssemblyName System.Windows.Forms
+     $c = New-Object System.Collections.Specialized.StringCollection
+     $c.Add('F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-vX.Y.Z.zip') | Out-Null
+     [System.Windows.Forms.Clipboard]::SetFileDropList($c)
+     ```
+   - `click` 输入框聚焦 → `press_key Control_L+v` → 截图确认弹出「发送给 MaaNikke」对话框（文件卡片显示 zip 名与大小）
+   - `click` 对话框「发送(1)」按钮（参考 (784,564)）→ 截图确认对话框消失、文件消息出现在聊天记录
+   - 百余 MB 群文件上传由 QQ 后台继续，**不需等上传完成**，消息发出即算完成。
+5. 收尾：`turn_ended` 清理 Computer Use 状态。
+
+**实测要点（2026-09-27 验证）**：
+- ❌ 一体化 `type_text` 对 QQ 输入框会丢粘贴（paste dispatched 但不上屏）——必须用「PowerShell 设剪贴板 → click → Ctrl+V」分步法。
+- 发送动作全走按钮点击（用户 QQ 有独立「发送」按钮），不要按 Enter/Ctrl+Enter。
+- 安全闸：任一步截图与预期不符（弹窗干扰、界面未加载、标题不对、粘贴未上屏）→ 停下报告用户，不蛮点、不重复尝试发送。
+
 ## 汇报内容
 
-新版本号、changelog 条目预览、zip 大小、commit hash、Release 链接（`html_url`）。
+新版本号、changelog 条目预览、zip 大小、commit hash、Release 链接（`html_url`）、QQ 群发送结果。
 
 ## 通用注意
 

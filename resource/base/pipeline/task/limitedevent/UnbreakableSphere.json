@@ -1,122 +1,22 @@
 {
-    "$__mpe_config_wisdomspring": {
+    "$__mpe_config_UnbreakableSphere": {
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1790825374305,
+            "lastSyncTime": 1790830045622,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\wisdomspring.json",
+            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\UnbreakableSphere.json",
             "savedViewport": {
-                "x": 151,
-                "y": 64,
-                "zoom": 0.23
+                "x": -1070,
+                "y": -2619,
+                "zoom": 1.21
             },
-            "filename": "wisdomspring",
+            "filename": "UnbreakableSphere",
             "version": "v2.0.5"
         }
     },
-    "$__mpe_group_event11_wisdomspring": {
-        "$__mpe_code": {
-            "position": {
-                "x": 3289,
-                "y": 1136
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "wisdomspring_into11_pic"
-            ],
-            "width": 400,
-            "height": 447
-        }
-    },
-    "$__mpe_group_兜底_wisdomspring": {
-        "$__mpe_code": {
-            "position": {
-                "x": 3288,
-                "y": 395
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "wisdomspring_intoevent"
-            ],
-            "width": 348,
-            "height": 500
-        }
-    },
-    "$__mpe_group_分组_wisdomspring": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2564,
-                "y": 195
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "wisdomspring_12_no_end",
-                "wisdomspring_12_no_end_ocr",
-                "wisdomspring_12_no_end_pic"
-            ],
-            "width": 657,
-            "height": 617
-        }
-    },
-    "$__mpe_group_适配_wisdomspring": {
-        "$__mpe_code": {
-            "position": {
-                "x": 158,
-                "y": 127
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "wisdomspring_into"
-            ],
-            "width": 437,
-            "height": 466
-        }
-    },
-    "$__mpe_group_适配困难按钮_wisdomspring": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1841,
-                "y": 884
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "wisdomspring_clickhard2"
-            ],
-            "width": 290,
-            "height": 348
-        }
-    },
-    "$__mpe_group_适配活动任务_wisdomspring": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1535,
-                "y": 2529
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "wisdomspring_intoshop"
-            ],
-            "width": 400,
-            "height": 300
-        }
-    },
-    "$__mpe_group_需适配enter点位_wisdomspring": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1109,
-                "y": 1215
-            },
-            "color": "blue",
-            "childrenLabels": [
-                "wisdomspring_eventstage_last"
-            ],
-            "width": 400,
-            "height": 300
-        }
-    },
-    "$__mpe_anchor_wisdomspring_stagestart_anchor_wisdomspring": {
+    "$__mpe_anchor_UnbreakableSphere_stagestart_anchor_UnbreakableSphere": {
         "$__mpe_code": {
             "position": {
                 "x": 6513,
@@ -124,7 +24,7 @@
             }
         }
     },
-    "$__mpe_anchor_wisdomspringanchor_wisdomspring": {
+    "$__mpe_anchor_UnbreakableSphereanchor_UnbreakableSphere": {
         "$__mpe_code": {
             "position": {
                 "x": 7753,
@@ -132,54 +32,208 @@
             }
         }
     },
-    "$__mpe_external_backtohomepage_wisdomspring": {
+    "$__mpe_external_backtohomepage_UnbreakableSphere": {
         "$__mpe_code": {
             "position": {
-                "x": 972,
-                "y": 3350
+                "x": -705,
+                "y": 1206
             }
         }
     },
-    "$__mpe_external_claimpassreward_wisdomspring": {
+    "$__mpe_external_claimpassreward_UnbreakableSphere": {
         "$__mpe_code": {
             "position": {
-                "x": 2253,
-                "y": 3615
+                "x": 1734,
+                "y": 4154
             }
         }
     },
-    "$__mpe_external_event_noteam_wisdomspring": {
+    "$__mpe_external_event_noteam_UnbreakableSphere": {
         "$__mpe_code": {
             "position": {
                 "x": 5672,
-                "y": 1941
+                "y": 1945
             }
         }
     },
-    "$__mpe_external_limitedeventshop_claim_wisdomspring": {
+    "$__mpe_external_limitedeventshop_claim_UnbreakableSphere": {
         "$__mpe_code": {
             "position": {
-                "x": 2307,
-                "y": 2296
+                "x": 2023,
+                "y": 2889
             }
         }
     },
-    "wisdomspring": {
-        "doc": "",
-        "enabled": true,
-        "anchor": "wisdomspringanchor",
+    "$__mpe_group_event11_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3247,
+                "y": 1012
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_into11_error_pic"
+            ],
+            "width": 400,
+            "height": 447
+        }
+    },
+    "$__mpe_group_兜底_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3292,
+                "y": 314
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_canintoevent_error"
+            ],
+            "width": 348,
+            "height": 558
+        }
+    },
+    "$__mpe_group_分组_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2564,
+                "y": 195
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_12_no_end",
+                "UnbreakableSphere_12_no_end_ocr",
+                "UnbreakableSphere_12_no_end_pic"
+            ],
+            "width": 657,
+            "height": 617
+        }
+    },
+    "$__mpe_group_适配story2_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 410,
+                "y": 937
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_check_intostory2"
+            ],
+            "width": 279,
+            "height": 367
+        }
+    },
+    "$__mpe_group_适配商店_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1095,
+                "y": 3203
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_intoshop"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配困难按钮_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1841,
+                "y": 884
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_clickhard2"
+            ],
+            "width": 290,
+            "height": 348
+        }
+    },
+    "$__mpe_group_适配挑战_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 746,
+                "y": 3583
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_intochallenge"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配活动任务_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 833,
+                "y": 1840
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "claimUnbreakableSphere_qiandao"
+            ],
+            "width": 256,
+            "height": 290
+        }
+    },
+    "$__mpe_group_适配活动任务图标_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 991,
+                "y": 2149
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_rewards"
+            ],
+            "width": 297,
+            "height": 412
+        }
+    },
+    "$__mpe_group_适配活动图标_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": -463,
+                "y": 157
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_into"
+            ],
+            "width": 348,
+            "height": 411
+        }
+    },
+    "$__mpe_group_需适配enter点位_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 908,
+                "y": 1207
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "UnbreakableSphere_eventstage_last"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "UnbreakableSphere": {
+        "anchor": "UnbreakableSphereanchor",
         "next": [
-            "wisdomspring_checkhomepage",
+            "UnbreakableSphere_checkhomepage",
             "[JumpBack]backtohomepage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": -259,
-                "y": 650
+                "x": -969,
+                "y": 625
             }
         }
     },
-    "wisdomspring_0item_count": {
+    "UnbreakableSphere_0item_count": {
         "recognition": {
             "type": "Custom",
             "param": {
@@ -197,7 +251,7 @@
             }
         },
         "next": [
-            "[Anchor]wisdomspringanchor"
+            "[Anchor]UnbreakableSphereanchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -206,45 +260,45 @@
             }
         }
     },
-    "wisdomspring_12_have_end": {
+    "UnbreakableSphere_12_have_end": {
         "recognition": {
             "type": "Or",
             "param": {
                 "any_of": [
-                    "wisdomspring_12_no_end_pic",
-                    "wisdomspring_12_no_end_ocr"
+                    "UnbreakableSphere_12_no_end_pic",
+                    "UnbreakableSphere_12_no_end_ocr"
                 ]
             }
         },
         "inverse": true,
         "next": [
-            "wisdomspring_into11_pic"
+            "UnbreakableSphere_into11_error_pic"
         ],
         "on_error": [
-            "wisdomspring_error"
+            "UnbreakableSphere_error"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2802,
-                "y": 1211
+                "x": 2798,
+                "y": 1090
             }
         }
     },
-    "wisdomspring_12_no_end": {
+    "UnbreakableSphere_12_no_end": {
         "recognition": {
             "type": "Or",
             "param": {
                 "any_of": [
-                    "wisdomspring_12_no_end_ocr",
-                    "wisdomspring_12_no_end_pic"
+                    "UnbreakableSphere_12_no_end_ocr",
+                    "UnbreakableSphere_12_no_end_pic"
                 ]
             }
         },
         "next": [
-            "wisdomspring_intoevent"
+            "UnbreakableSphere_canintoevent_error"
         ],
         "on_error": [
-            "wisdomspring_error"
+            "UnbreakableSphere_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -253,7 +307,7 @@
             }
         }
     },
-    "wisdomspring_12_no_end_ocr": {
+    "UnbreakableSphere_12_no_end_ocr": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -284,7 +338,7 @@
             }
         }
     },
-    "wisdomspring_12_no_end_pic": {
+    "UnbreakableSphere_12_no_end_pic": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -295,8 +349,7 @@
                     566
                 ],
                 "template": [
-                    "limitedevent/wisdomspring/wisdomspring_normal_acessdenied.png",
-                    "limitedevent/wisdomspring/wisdomspring_hard_acessdenied.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_accessdenied.png"
                 ]
             }
         },
@@ -307,7 +360,7 @@
             }
         }
     },
-    "wisdomspring_12_no_end_return": {
+    "UnbreakableSphere_12_no_end_return": {
         "max_hit": 2,
         "$__mpe_code": {
             "position": {
@@ -316,19 +369,18 @@
             }
         }
     },
-    "wisdomspring_intoevent": {
+    "UnbreakableSphere_canintoevent_error": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    420,
-                    141,
-                    449,
-                    501
+                    382,
+                    20,
+                    511,
+                    696
                 ],
                 "template": [
-                    "limitedevent/wisdomspring/wisdomspring_hard_into.png",
-                    "limitedevent/wisdomspring/wisdomspring_normal_into.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_into.png"
                 ],
                 "threshold": [
                     0.85
@@ -342,16 +394,16 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "wisdomspring_intofightpage"
+            "UnbreakableSphere_intofightpage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3357,
-                "y": 448
+                "x": 3364,
+                "y": 402
             }
         }
     },
-    "wisdomspring_challengefight": {
+    "UnbreakableSphere_challengefight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -371,18 +423,18 @@
         },
         "timeout": 60000,
         "next": [
-            "wisdomspring_checkchallengefinish",
-            "[JumpBack]wisdomspring_challengeisfighting",
-            "wisdomspring_challengefight"
+            "UnbreakableSphere_checkchallengefinish",
+            "[JumpBack]UnbreakableSphere_challengeisfighting",
+            "UnbreakableSphere_challengefight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2652,
-                "y": 2937
+                "x": 2054,
+                "y": 3504
             }
         }
     },
-    "wisdomspring_challengeisfighting": {
+    "UnbreakableSphere_challengeisfighting": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -399,12 +451,101 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 3022,
-                "y": 3261
+                "x": 2711,
+                "y": 3782
             }
         }
     },
-    "wisdomspring_checkchallengefinish": {
+    "UnbreakableSphere_check_intostory1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    509,
+                    527,
+                    53,
+                    16
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 745,
+                "y": 974
+            }
+        }
+    },
+    "UnbreakableSphere_check_intostory2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    350,
+                    450,
+                    600,
+                    250
+                ],
+                "template": [
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_into_story2.png"
+                ],
+                "threshold": [
+                    0.85
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 434,
+                "y": 987
+            }
+        }
+    },
+    "UnbreakableSphere_check_story1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    361,
+                    233,
+                    596,
+                    247
+                ],
+                "expected": [
+                    "后开放",
+                    "需要通关"
+                ]
+            }
+        },
+        "next": [
+            "UnbreakableSphere_storyevent",
+            "[JumpBack]UnbreakableSphere_check_intostory1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 501,
+                "y": 661
+            }
+        }
+    },
+    "UnbreakableSphere_checkchallengefinish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -428,64 +569,12 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3015,
-                "y": 3011
+                "x": 2704,
+                "y": 3532
             }
         }
     },
-    "wisdomspring_checkeventpage": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    90,
-                    200
-                ],
-                "expected": [
-                    "剧情活动",
-                    "剧情",
-                    "剧情"
-                ]
-            }
-        },
-        "next": [
-            "wisdomspring_stage",
-            "wisdomspring_mission",
-            "backtohomepage"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 669,
-                "y": 668
-            }
-        }
-    },
-    "wisdomspring_checkeventpage1": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    0,
-                    0,
-                    90,
-                    200
-                ],
-                "expected": [
-                    "剧情活动",
-                    "剧情"
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 662,
-                "y": 445
-            }
-        }
-    },
-    "wisdomspring_checkfinish": {
+    "UnbreakableSphere_checkfinish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -502,9 +591,9 @@
             }
         },
         "next": [
-            "wisdomspring_nextstage",
-            "[JumpBack]wisdomspring_nextstage_return",
-            "wisdomspring_no_nextstage"
+            "UnbreakableSphere_nextstage",
+            "[JumpBack]UnbreakableSphere_nextstage_return",
+            "UnbreakableSphere_no_nextstage"
         ],
         "$__mpe_code": {
             "position": {
@@ -513,7 +602,7 @@
             }
         }
     },
-    "wisdomspring_checkhomepage": {
+    "UnbreakableSphere_checkhomepage": {
         "recognition": {
             "type": "And",
             "param": {
@@ -524,19 +613,82 @@
             }
         },
         "next": [
-            "wisdomspring_checkeventpage",
-            "[JumpBack]wisdomspring_into",
-            "[JumpBack]wisdomspring_checkintoevent_skip",
-            "[JumpBack]wisdomspring_exchange"
+            "UnbreakableSphere_checkintoevent",
+            "[JumpBack]UnbreakableSphere_into",
+            "[JumpBack]UnbreakableSphere_checkintoeventreturn"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 77,
-                "y": 671
+                "x": -688,
+                "y": 629
             }
         }
     },
-    "wisdomspring_checkintoevent_skip": {
+    "UnbreakableSphere_checkintoevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "UnbreakableSphere_checkintoeventreturn"
+                    ],
+                    "strict": false
+                }
+            }
+        },
+        "next": [
+            "UnbreakableSphere_intoevent",
+            "claimUnbreakableSphere_claimrewards",
+            "UnbreakableSphere_claimrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -387,
+                "y": 604
+            }
+        }
+    },
+    "UnbreakableSphere_checkintoevent2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "活动",
+                    "地区"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -37,
+                "y": 18
+            }
+        }
+    },
+    "UnbreakableSphere_checkintoevent_skip": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -544,7 +696,7 @@
                     1178,
                     4,
                     98,
-                    100
+                    49
                 ],
                 "expected": [
                     "Skip",
@@ -558,61 +710,68 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 393,
-                "y": 867
+                "x": -32,
+                "y": 220
             }
         }
     },
-    "wisdomspring_checkmission1": {
+    "UnbreakableSphere_checkintoevent_touch": {
         "recognition": {
             "type": "OCR",
             "param": {
+                "roi": [
+                    477,
+                    508,
+                    324,
+                    208
+                ],
                 "expected": [
-                    "任务"
+                    "TOUCH TO CONTINUE",
+                    "TOUCH",
+                    "CONTINUE"
                 ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500,
-        "next": [
-            "wisdomspring_claimrewards",
-            "wisdomspring_checkmission1"
-        ],
         "$__mpe_code": {
             "position": {
-                "x": 1537,
-                "y": 1469
+                "x": -32,
+                "y": 427
             }
         }
     },
-    "wisdomspring_checkmission2": {
+    "UnbreakableSphere_checkintoeventreturn": {
+        "max_hit": 5,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "template": [
-                    "limitedevent/eventsmissionbuttom_greenbg.png"
+                "roi": [
+                    774,
+                    553,
+                    247,
+                    121
                 ],
-                "green_mask": true
+                "template": [
+                    "exchange.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
             }
         },
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 500,
-        "next": [
-            "wisdomspring_claimrewards",
-            "wisdomspring_checkmission2"
-        ],
         "$__mpe_code": {
             "position": {
-                "x": 1543,
-                "y": 1747
+                "x": -383,
+                "y": 981
             }
         }
     },
-    "wisdomspring_cjeckeventpage": {
+    "UnbreakableSphere_cjeckeventpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -628,8 +787,8 @@
             }
         },
         "next": [
-            "wisdomspring_0item_count",
-            "wisdomspring_item_count"
+            "UnbreakableSphere_0item_count",
+            "UnbreakableSphere_item_count"
         ],
         "$__mpe_code": {
             "position": {
@@ -638,38 +797,20 @@
             }
         }
     },
-    "wisdomspring_claimrewards": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    417,
-                    504,
-                    477,
-                    200
-                ],
-                "expected": [
-                    "全部领取"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "repeat": 10,
-        "repeat_delay": 500,
+    "UnbreakableSphere_claimrewards": {
+        "max_hit": 1,
         "next": [
-            "wisdomspring_claimrewardsdaily",
-            "wisdomspring_claimrewardsdailypage"
+            "UnbreakableSphere_rewards",
+            "UnbreakableSphere_rewards2"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1898,
-                "y": 1460
+                "x": 710,
+                "y": 2396
             }
         }
     },
-    "wisdomspring_claimrewardsdaily": {
+    "UnbreakableSphere_claimrewardsdaily": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -693,17 +834,17 @@
             "type": "Click"
         },
         "next": [
-            "wisdomspring_claimrewardsdailypage",
-            "wisdomspring_claimrewardsdaily"
+            "UnbreakableSphere_claimrewardsdailypage",
+            "UnbreakableSphere_claimrewardsdaily"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2228,
-                "y": 1489
+                "x": 1690,
+                "y": 2525
             }
         }
     },
-    "wisdomspring_claimrewardsdailypage": {
+    "UnbreakableSphere_claimrewardsdailypage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -732,41 +873,42 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "wisdomspring_findshopbuttom",
-            "wisdomspring_claimrewardsdailypage"
+            "UnbreakableSphere_findshopbuttom",
+            "UnbreakableSphere_claimrewardsdailypage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2219,
-                "y": 1788
+                "x": 1981,
+                "y": 2320
             }
         }
     },
-    "wisdomspring_claimshop": {
+    "UnbreakableSphere_claimshop": {
+        "max_hit": 1,
         "next": [
-            "wisdomspring_inshop",
-            "[JumpBack]wisdomspring_intoshop"
+            "UnbreakableSphere_inshop",
+            "[JumpBack]UnbreakableSphere_intoshop"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1269,
-                "y": 2265
+                "x": 797,
+                "y": 3041
             }
         }
     },
-    "wisdomspring_claimshoprewards": {
+    "UnbreakableSphere_claimshoprewards": {
         "max_hit": 1,
         "next": [
             "limitedeventshop_claim"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1985,
-                "y": 2240
+                "x": 1680,
+                "y": 2838
             }
         }
     },
-    "wisdomspring_clickhard1": {
+    "UnbreakableSphere_clickhard1": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -788,7 +930,7 @@
         "repeat": 3,
         "repeat_delay": 500,
         "next": [
-            "wisdomspring_swipestage_re"
+            "UnbreakableSphere_swipestage_re"
         ],
         "$__mpe_code": {
             "position": {
@@ -797,7 +939,7 @@
             }
         }
     },
-    "wisdomspring_clickhard2": {
+    "UnbreakableSphere_clickhard2": {
         "action": {
             "type": "Click",
             "param": {
@@ -812,7 +954,7 @@
         "repeat": 3,
         "repeat_delay": 500,
         "next": [
-            "wisdomspring_swipestage_re"
+            "UnbreakableSphere_swipestage_re"
         ],
         "$__mpe_code": {
             "position": {
@@ -821,15 +963,15 @@
             }
         }
     },
-    "wisdomspring_comfirmchallenge": {
+    "UnbreakableSphere_comfirmchallenge": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    0,
-                    90,
-                    200
+                    3,
+                    6,
+                    97,
+                    56
                 ],
                 "expected": [
                     "挑战关卡"
@@ -837,26 +979,26 @@
             }
         },
         "next": [
-            "wisdomspring_havechalengechance",
-            "[JumpBack]wisdomspring_havechalengechance_return",
+            "UnbreakableSphere_havechalengechance2",
+            "[JumpBack]UnbreakableSphere_havechalengechance2_return",
             "claimpassreward"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1941,
-                "y": 2943
+                "x": 1240,
+                "y": 3619
             }
         }
     },
-    "wisdomspring_end": {
+    "UnbreakableSphere_end": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    0,
-                    90,
-                    200
+                    4,
+                    8,
+                    84,
+                    59
                 ],
                 "expected": [
                     "商店"
@@ -867,37 +1009,37 @@
             "type": "Click",
             "param": {
                 "target": [
-                    25,
-                    673,
-                    45,
-                    12
+                    24,
+                    672,
+                    46,
+                    14
                 ]
             }
         },
         "post_wait_freezes": 1000,
         "next": [
-            "wisdomspring_intochallenge",
-            "wisdomspring_end"
+            "UnbreakableSphere_intochallenge",
+            "UnbreakableSphere_end"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2001,
-                "y": 2523
+                "x": 1697,
+                "y": 3090
             }
         }
     },
-    "wisdomspring_error": {
+    "UnbreakableSphere_error": {
         "next": [
-            "[Anchor]wisdomspringanchor"
+            "[Anchor]UnbreakableSphereanchor"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3133,
-                "y": 1773
+                "x": 3117,
+                "y": 1506
             }
         }
     },
-    "wisdomspring_eventstage": {
+    "UnbreakableSphere_eventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -913,17 +1055,17 @@
             }
         },
         "next": [
-            "wisdomspring_clickhard1",
-            "wisdomspring_clickhard2"
+            "UnbreakableSphere_clickhard1",
+            "UnbreakableSphere_clickhard2"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1562,
-                "y": 689
+                "x": 1561,
+                "y": 666
             }
         }
     },
-    "wisdomspring_eventstage_last": {
+    "UnbreakableSphere_eventstage_last": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -934,7 +1076,7 @@
                     693
                 ],
                 "expected": [
-                    "加成奖励妮姬"
+                    "剩余时间"
                 ]
             }
         },
@@ -942,59 +1084,30 @@
             "type": "Click",
             "param": {
                 "target_offset": [
-                    5,
-                    -32,
-                    -13,
-                    2
+                    -4,
+                    -52,
+                    22,
+                    4
                 ]
             }
         },
         "$__mpe_code": {
             "position": {
-                "x": 1165,
-                "y": 1272
+                "x": 976,
+                "y": 1263
             }
         }
     },
-    "wisdomspring_eventstage_return_last": {
+    "UnbreakableSphere_eventstage_return_last": {
         "max_hit": 2,
         "$__mpe_code": {
             "position": {
-                "x": 1233,
-                "y": 993
+                "x": 990,
+                "y": 995
             }
         }
     },
-    "wisdomspring_exchange": {
-        "max_hit": 5,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    904,
-                    580,
-                    132,
-                    98
-                ],
-                "template": [
-                    "limitedevent/eventsexchange.png"
-                ],
-                "threshold": [
-                    0.9
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 388,
-                "y": 1167
-            }
-        }
-    },
-    "wisdomspring_findshopbuttom": {
+    "UnbreakableSphere_findshopbuttom": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1010,16 +1123,16 @@
             }
         },
         "next": [
-            "wisdomspring_claimshop"
+            "UnbreakableSphere_claimshop"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2565,
-                "y": 1832
+                "x": 2287,
+                "y": 2541
             }
         }
     },
-    "wisdomspring_finish": {
+    "UnbreakableSphere_finish": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1040,9 +1153,9 @@
             "type": "Click"
         },
         "next": [
-            "wisdomspring_cjeckeventpage",
-            "[JumpBack]wisdomspring_jumpstory",
-            "[JumpBack]wisdomspring_finish_click"
+            "UnbreakableSphere_cjeckeventpage",
+            "[JumpBack]UnbreakableSphere_jumpstory",
+            "[JumpBack]UnbreakableSphere_finish_click"
         ],
         "$__mpe_code": {
             "position": {
@@ -1051,7 +1164,7 @@
             }
         }
     },
-    "wisdomspring_finish_click": {
+    "UnbreakableSphere_finish_click": {
         "action": {
             "type": "Click",
             "param": {
@@ -1070,7 +1183,7 @@
             }
         }
     },
-    "wisdomspring_havechalengechance": {
+    "UnbreakableSphere_havechalengechance2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1090,34 +1203,33 @@
             "type": "Click"
         },
         "next": [
-            "wisdomspring_challengefight",
-            "wisdomspring_havechalengechance"
+            "UnbreakableSphere_challengefight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2320,
-                "y": 2937
+                "x": 1717,
+                "y": 3524
             }
         }
     },
-    "wisdomspring_havechalengechance_return": {
+    "UnbreakableSphere_havechalengechance2_return": {
         "max_hit": 10,
         "$__mpe_code": {
             "position": {
-                "x": 2319,
-                "y": 3215
+                "x": 1712,
+                "y": 3772
             }
         }
     },
-    "wisdomspring_inshop": {
+    "UnbreakableSphere_inshop": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    0,
-                    90,
-                    200
+                    4,
+                    8,
+                    84,
+                    59
                 ],
                 "expected": [
                     "商店"
@@ -1125,28 +1237,28 @@
             }
         },
         "next": [
-            "[JumpBack]wisdomspring_claimshoprewards",
-            "wisdomspring_end"
+            "[JumpBack]UnbreakableSphere_claimshoprewards",
+            "UnbreakableSphere_end"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1673,
-                "y": 2241
+                "x": 1181,
+                "y": 2941
             }
         }
     },
-    "wisdomspring_into": {
+    "UnbreakableSphere_into": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    756,
-                    506,
-                    268,
-                    167
+                    762,
+                    426,
+                    289,
+                    243
                 ],
                 "template": [
-                    "limitedevent/wisdomspring/wisdomspring_into.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere.png"
                 ]
             }
         },
@@ -1154,31 +1266,32 @@
             "type": "Click"
         },
         "next": [
-            "wisdomspring_checkeventpage1",
-            "[JumpBack]wisdomspring_intofirst",
-            "wisdomspring_into"
+            "UnbreakableSphere_checkintoevent2",
+            "[JumpBack]UnbreakableSphere_checkintoevent_skip",
+            "[JumpBack]UnbreakableSphere_checkintoevent_touch",
+            "UnbreakableSphere_into"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 300,
-                "y": 248
+                "x": -410,
+                "y": 223
             }
         }
     },
-    "wisdomspring_into11_pic": {
+    "UnbreakableSphere_into11_error_pic": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    440,
-                    217,
-                    419,
-                    412
+                    382,
+                    20,
+                    511,
+                    696
                 ],
                 "template": [
-                    "limitedevent/wisdomspring/wisdomspring_normal_replace.png",
-                    "limitedevent/wisdomspring/wisdomspring_hard_repeat.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_replace.png"
                 ],
+                "green_mask": true,
                 "order_by": "Vertical",
                 "index": -1
             }
@@ -1187,24 +1300,24 @@
             "type": "Click"
         },
         "next": [
-            "wisdomspring_startquickfight"
+            "UnbreakableSphere_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3370,
-                "y": 1190
+                "x": 3328,
+                "y": 1066
             }
         }
     },
-    "wisdomspring_intochallenge": {
+    "UnbreakableSphere_intochallenge": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    331,
-                    1,
-                    579,
-                    717
+                    406,
+                    463,
+                    479,
+                    225
                 ],
                 "expected": [
                     "挑战"
@@ -1215,17 +1328,17 @@
             "type": "Click"
         },
         "next": [
-            "wisdomspring_comfirmchallenge",
-            "wisdomspring_intochallenge"
+            "UnbreakableSphere_comfirmchallenge",
+            "UnbreakableSphere_intochallenge"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1568,
-                "y": 2945
+                "x": 849,
+                "y": 3625
             }
         }
     },
-    "wisdomspring_intoerroreventstage": {
+    "UnbreakableSphere_intoerroreventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1257,12 +1370,25 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1554,
-                "y": 1230
+                "x": 1353,
+                "y": 1222
             }
         }
     },
-    "wisdomspring_intoeventstage": {
+    "UnbreakableSphere_intoevent": {
+        "max_hit": 1,
+        "next": [
+            "UnbreakableSphere_check_story1",
+            "[JumpBack]UnbreakableSphere_check_intostory2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 62,
+                "y": 663
+            }
+        }
+    },
+    "UnbreakableSphere_intoeventstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1289,12 +1415,12 @@
         "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 1554,
-                "y": 968
+                "x": 1359,
+                "y": 944
             }
         }
     },
-    "wisdomspring_intofight": {
+    "UnbreakableSphere_intofight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1314,10 +1440,10 @@
         },
         "timeout": 60000,
         "next": [
-            "[JumpBack]wisdomspring_noteam",
-            "wisdomspring_nochance2",
-            "wisdomspring_intofight",
-            "wisdomspring_stagestart"
+            "[JumpBack]UnbreakableSphere_noteam",
+            "UnbreakableSphere_nochance2",
+            "UnbreakableSphere_intofight",
+            "UnbreakableSphere_stagestart"
         ],
         "$__mpe_code": {
             "position": {
@@ -1326,7 +1452,7 @@
             }
         }
     },
-    "wisdomspring_intofightpage": {
+    "UnbreakableSphere_intofightpage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1343,51 +1469,25 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "wisdomspring_startquickfight",
-            "wisdomspring_no_startquickfight"
+            "UnbreakableSphere_startquickfight",
+            "UnbreakableSphere_no_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3868,
-                "y": 852
+                "x": 3781,
+                "y": 721
             }
         }
     },
-    "wisdomspring_intofirst": {
+    "UnbreakableSphere_intoshop": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "roi": [
-                    1005,
-                    1,
-                    266,
-                    100
-                ],
-                "expected": [
-                    "跳过",
-                    "skip"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 677,
-                "y": 201
-            }
-        }
-    },
-    "wisdomspring_intoshop": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    331,
-                    1,
-                    579,
-                    717
+                    406,
+                    463,
+                    479,
+                    225
                 ],
                 "expected": [
                     "商店"
@@ -1400,12 +1500,12 @@
         "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 1613,
-                "y": 2580
+                "x": 1176,
+                "y": 3252
             }
         }
     },
-    "wisdomspring_isfighting": {
+    "UnbreakableSphere_isfighting": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -1427,7 +1527,7 @@
             }
         }
     },
-    "wisdomspring_isfighting2": {
+    "UnbreakableSphere_isfighting2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1451,7 +1551,7 @@
             }
         }
     },
-    "wisdomspring_item_count": {
+    "UnbreakableSphere_item_count": {
         "recognition": {
             "type": "Custom",
             "param": {
@@ -1470,7 +1570,7 @@
         },
         "inverse": true,
         "next": [
-            "wisdomspring_sweipdown"
+            "UnbreakableSphere_sweipdown"
         ],
         "$__mpe_code": {
             "position": {
@@ -1479,7 +1579,7 @@
             }
         }
     },
-    "wisdomspring_jumpstory": {
+    "UnbreakableSphere_jumpstory": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1510,20 +1610,7 @@
             }
         }
     },
-    "wisdomspring_mission": {
-        "max_hit": 1,
-        "next": [
-            "wisdomspring_checkmission1",
-            "wisdomspring_checkmission2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1102,
-                "y": 1588
-            }
-        }
-    },
-    "wisdomspring_nextstage": {
+    "UnbreakableSphere_nextstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1545,9 +1632,9 @@
         },
         "timeout": 60000,
         "next": [
-            "wisdomspring_nochance1",
-            "wisdomspring_nextstage",
-            "[Anchor]wisdomspring_stagestart_anchor"
+            "UnbreakableSphere_nochance1",
+            "UnbreakableSphere_nextstage",
+            "[Anchor]UnbreakableSphere_stagestart_anchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1556,7 +1643,7 @@
             }
         }
     },
-    "wisdomspring_nextstage_return": {
+    "UnbreakableSphere_nextstage_return": {
         "max_hit": 5,
         "$__mpe_code": {
             "position": {
@@ -1565,7 +1652,7 @@
             }
         }
     },
-    "wisdomspring_no_nextstage": {
+    "UnbreakableSphere_no_nextstage": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1582,7 +1669,7 @@
         },
         "inverse": true,
         "next": [
-            "wisdomspring_finish"
+            "UnbreakableSphere_finish"
         ],
         "$__mpe_code": {
             "position": {
@@ -1591,7 +1678,7 @@
             }
         }
     },
-    "wisdomspring_no_startquickfight": {
+    "UnbreakableSphere_no_startquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1608,16 +1695,16 @@
         },
         "inverse": true,
         "next": [
-            "wisdomspring_intofight"
+            "UnbreakableSphere_intofight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4304,
-                "y": 1133
+                "x": 4236,
+                "y": 1045
             }
         }
     },
-    "wisdomspring_nochance1": {
+    "UnbreakableSphere_nochance1": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1633,7 +1720,7 @@
             }
         },
         "next": [
-            "wisdomspring_finish"
+            "UnbreakableSphere_finish"
         ],
         "$__mpe_code": {
             "position": {
@@ -1642,7 +1729,7 @@
             }
         }
     },
-    "wisdomspring_nochance2": {
+    "UnbreakableSphere_nochance2": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1658,7 +1745,7 @@
             }
         },
         "next": [
-            "[Anchor]wisdomspringanchor"
+            "[Anchor]UnbreakableSphereanchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1667,7 +1754,7 @@
             }
         }
     },
-    "wisdomspring_noquickfight": {
+    "UnbreakableSphere_noquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1684,16 +1771,16 @@
             }
         },
         "next": [
-            "wisdomspring_intofight"
+            "UnbreakableSphere_intofight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4633,
-                "y": 864
+                "x": 4549,
+                "y": 813
             }
         }
     },
-    "wisdomspring_noteam": {
+    "UnbreakableSphere_noteam": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1719,7 +1806,7 @@
             }
         }
     },
-    "wisdomspring_quickfightmax": {
+    "UnbreakableSphere_quickfightmax": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1740,7 +1827,7 @@
         },
         "repeat": 3,
         "next": [
-            "wisdomspring_startquickfightmax"
+            "UnbreakableSphere_startquickfightmax"
         ],
         "$__mpe_code": {
             "position": {
@@ -1749,7 +1836,7 @@
             }
         }
     },
-    "wisdomspring_quickfightmaxconfirm": {
+    "UnbreakableSphere_quickfightmaxconfirm": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1772,7 +1859,7 @@
         },
         "repeat": 5,
         "next": [
-            "[Anchor]wisdomspringanchor"
+            "[Anchor]UnbreakableSphereanchor"
         ],
         "$__mpe_code": {
             "position": {
@@ -1781,45 +1868,126 @@
             }
         }
     },
-    "wisdomspring_stage": {
-        "max_hit": 1,
+    "UnbreakableSphere_rewards": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1181,
+                    89,
+                    98,
+                    128
+                ],
+                "template": [
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_mission.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
         "next": [
-            "wisdomspring_storyevent"
+            "UnbreakableSphere_rewardsdaily",
+            "UnbreakableSphere_rewards"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 953,
-                "y": 690
+                "x": 1030,
+                "y": 2196
             }
         }
     },
-    "wisdomspring_stagestart": {
+    "UnbreakableSphere_rewards2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1191,
+                    112,
+                    86,
+                    168
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "UnbreakableSphere_rewardsdaily",
+            "UnbreakableSphere_rewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1026,
+                "y": 2587
+            }
+        }
+    },
+    "UnbreakableSphere_rewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    451,
+                    589,
+                    377,
+                    93
+                ],
+                "expected": [
+                    "全部领取",
+                    "全部",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 8,
+        "repeat_delay": 500,
+        "next": [
+            "UnbreakableSphere_claimrewardsdailypage",
+            "UnbreakableSphere_claimrewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1386,
+                "y": 2345
+            }
+        }
+    },
+    "UnbreakableSphere_stagestart": {
         "recognition": {
             "type": "Or",
             "param": {
                 "any_of": [
-                    "wisdomspring_isfighting",
-                    "wisdomspring_isfighting2",
-                    "wisdomspring_jumpstory"
+                    "UnbreakableSphere_isfighting",
+                    "UnbreakableSphere_isfighting2",
+                    "UnbreakableSphere_jumpstory"
                 ]
             }
         },
-        "anchor": "wisdomspring_stagestart_anchor",
+        "anchor": "UnbreakableSphere_stagestart_anchor",
         "timeout": 60000,
         "next": [
-            "wisdomspring_checkfinish",
-            "[JumpBack]wisdomspring_isfighting",
-            "[JumpBack]wisdomspring_isfighting2",
-            "[JumpBack]wisdomspring_jumpstory"
+            "UnbreakableSphere_checkfinish",
+            "[JumpBack]UnbreakableSphere_isfighting",
+            "[JumpBack]UnbreakableSphere_isfighting2",
+            "[JumpBack]UnbreakableSphere_jumpstory"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 5569,
-                "y": 952
+                "y": 956
             }
         }
     },
-    "wisdomspring_startquickfight": {
+    "UnbreakableSphere_startquickfight": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1838,19 +2006,19 @@
             "type": "Click"
         },
         "next": [
-            "wisdomspring_noquickfight",
-            "wisdomspring_quickfightmax",
-            "wisdomspring_nochance2",
-            "wisdomspring_startquickfight"
+            "UnbreakableSphere_noquickfight",
+            "UnbreakableSphere_quickfightmax",
+            "UnbreakableSphere_nochance2",
+            "UnbreakableSphere_startquickfight"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 4307,
-                "y": 858
+                "x": 4227,
+                "y": 727
             }
         }
     },
-    "wisdomspring_startquickfightmax": {
+    "UnbreakableSphere_startquickfightmax": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1870,8 +2038,8 @@
             "type": "Click"
         },
         "next": [
-            "wisdomspring_quickfightmaxconfirm",
-            "wisdomspring_startquickfightmax"
+            "UnbreakableSphere_quickfightmaxconfirm",
+            "UnbreakableSphere_startquickfightmax"
         ],
         "$__mpe_code": {
             "position": {
@@ -1880,7 +2048,7 @@
             }
         }
     },
-    "wisdomspring_storyevent": {
+    "UnbreakableSphere_storyevent": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1896,20 +2064,20 @@
             }
         },
         "next": [
-            "wisdomspring_eventstage",
-            "[JumpBack]wisdomspring_intoeventstage",
-            "[JumpBack]wisdomspring_intoerroreventstage",
-            "[JumpBack]wisdomspring_eventstage_return_last",
-            "[JumpBack]wisdomspring_eventstage_last"
+            "UnbreakableSphere_eventstage",
+            "[JumpBack]UnbreakableSphere_intoeventstage",
+            "[JumpBack]UnbreakableSphere_intoerroreventstage",
+            "[JumpBack]UnbreakableSphere_eventstage_return_last",
+            "[JumpBack]UnbreakableSphere_eventstage_last"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1245,
-                "y": 674
+                "x": 1055,
+                "y": 662
             }
         }
     },
-    "wisdomspring_sweipdown": {
+    "UnbreakableSphere_sweipdown": {
         "action": {
             "type": "Swipe",
             "param": {
@@ -1934,10 +2102,10 @@
         },
         "repeat": 2,
         "next": [
-            "wisdomspring_into11_pic"
+            "UnbreakableSphere_into11_error_pic"
         ],
         "on_error": [
-            "wisdomspring_error"
+            "UnbreakableSphere_error"
         ],
         "$__mpe_code": {
             "position": {
@@ -1946,7 +2114,7 @@
             }
         }
     },
-    "wisdomspring_swipestage_re": {
+    "UnbreakableSphere_swipestage_re": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -1962,14 +2130,112 @@
             }
         },
         "next": [
-            "wisdomspring_12_no_end",
-            "[JumpBack]wisdomspring_12_no_end_return",
-            "wisdomspring_12_have_end"
+            "UnbreakableSphere_12_no_end",
+            "[JumpBack]UnbreakableSphere_12_no_end_return",
+            "UnbreakableSphere_12_have_end"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 2202,
                 "y": 723
+            }
+        }
+    },
+    "claimUnbreakableSphere_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "claimUnbreakableSphere_intoqiandao",
+            "[JumpBack]claimUnbreakableSphere_qiandao_wuchu",
+            "[JumpBack]claimUnbreakableSphere_qiandao"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 560,
+                "y": 1552
+            }
+        }
+    },
+    "claimUnbreakableSphere_intoqiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    280,
+                    9,
+                    730,
+                    706
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "[Anchor]UnbreakableSphereanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1462,
+                "y": 1536
+            }
+        }
+    },
+    "claimUnbreakableSphere_qiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    716,
+                    510,
+                    141,
+                    129
+                ],
+                "expected": [
+                    "签到印章",
+                    "签到印",
+                    "到印章"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 855,
+                "y": 1879
+            }
+        }
+    },
+    "claimUnbreakableSphere_qiandao_wuchu": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    339,
+                    503,
+                    365
+                ],
+                "expected": [
+                    "确定",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1183,
+                "y": 1736
             }
         }
     }

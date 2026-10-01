@@ -16,6 +16,30 @@
 
 ---
 
+## v2.3.5 - 2026-10-01
+
+- 2026-10-01 [修复] esc 触发时会把当前最大化的前台窗口"向下还原"（取消最大化）：`_force_foreground()` 恢复原前台窗口时无条件 `ShowWindow(SW_RESTORE)`，而 SW_RESTORE 对最大化窗口的官方语义即还原为原始大小，等同手动点"向下还原"；该行本意仅处理原窗口最小化的边角。修复：加 `IsIconic` 守卫，仅窗口最小化时才 SW_RESTORE，最大化/正常窗口只 BringWindowToTop + SetForegroundWindow（不改变最大化状态）（涉及：agent/custom/action/my_actions.py）
+
+- 2026-10-01 [修复] esc action 在真实 agent 进程内必然失败，根因查明并修复：AgentServer 模式下 maafw 绑定的 `Library.framework()` 被路由到 MaaAgentServer stub 库，`MaaWin32ControllerCreate` 等控制器 API 未实现（原生报 "MaaAgentServer Not implement this API"），原实现创建 Win32Controller 即抛 RuntimeError——当日实跑未暴露是因为 clickclaim 全程未命中、节点从未执行（92 次探测全 Failed）。修复：ctypes 独立 WinDLL 加载真正的 MaaFramework.dll（优先 pip maafw 自带 `maa/bin/`，回退 `runtimes/win-x64/native/`）直调 C API（Create→PostConnection→Wait→PostClickKey(27)→Wait→Destroy），签名镜像自 `maa/controller.py`，与绑定的 stub 库互不干扰；已实测 action 本体直调成功，游戏画面正确后退一屏（无限之塔主界面→塔选择界面）（涉及：agent/custom/action/my_actions.py、DEVELOPMENT.md、AGENTS.md）
+
+- 2026-10-01 [新增] esc custom action（无参数）：复用 MAA Seize 通道发真实 ESC——FindWindow 定位游戏窗口，临时创建 keyboard_method=Seize 的 Win32Controller 发 click_key(27)（框架自动强拉前台、发送带扫描码真实按键），发键后 AttachThreadInput 挂载法切回原前台窗口；游戏瞬时前台即发即回，pipeline 后台配置不变（涉及：agent/custom/action/my_actions.py、DEVELOPMENT.md）
+
+- 2026-10-01 [调查] 新增后台 ESC 消息欺骗实测脚本：WM_ACTIVATE/WM_SETFOCUS 伪造、AttachThreadInput 挂接 + PostMessage 三变体，附 PostMessage 阴性对照与前台 SendInput 阳性对照，纯 ctypes 无 maafw 依赖（接 9-30 键盘失效调查，已完结：4 个后台欺骗变体全无效，与 9-30 结论一致；对照 MaaFramework SeizeInput.cpp 源码给手写 SendInput 补齐扫描码（MapVirtualKeyW）、50ms 按下时长、TOPMOST 抖动后仍无效；MAA Seize 通道实测有效——截图证实大厅 ESC 呼出"结束游戏"确认框，esc action 据此实现）（涉及：temp/test_bg_esc_spoof.py、temp/test_seize_today.py）
+
+- 2026-09-30 [调查] ClickKey 27（ESC）失效根因查明（经用户指正与两轮实测修正）：**游戏客户端更新后不再处理消息注入的键盘输入（SendMessage/PostMessage 全家），前台后台均无效；仅真实输入（Seize/SendInput）且游戏前台时有效；鼠标注入点击不受影响**。证据链：① 9-29 凌晨 release 4 次 ESC（SendMessageA）全部生效，vision 截图证实页面切换（clicktoback 关 DAILY LOGIN 弹窗 04:39:48、exitfightarena×2 退 ROOKIE/SPECIAL ARENA、exittower 退无限之塔）；② 9-30 晚 dev 同 pipeline 的 exitfightarena/exittower×2 全部无效（页面不动，靠 checkarena_return/closeclimbingtower/backtohomepage 点击兜底恢复），wisdomspring_end 无兜底连按 79 次死循环；③ 对照实测（temp/test_esc_methods.py）：在 ESC 绑定已验证的页面、GetForegroundWindow 确认游戏前台的前提下，SendMessageWithCursorPos(32，项目配置)/SendMessage(2)/PostMessage(4) 全部无效，Seize(1) 有效；BackgroundManagedKeys（option 7，连接前设置）后台实测亦无效（temp/test_managed_keys2.py）；同日 21:35 日常全流程靠 PostMessage 点击正常跑完，仅键盘失效。配置与框架版本自 2026-05-10（d23071d）起未变，排除 MAA 侧回归；变化发生在 9-29 凌晨→9-30 晚之间，与新活动 wisdomspring 上线同步，指向游戏客户端补丁改了键盘输入处理（疑似改走 Raw Input/前台焦点轮询，注入消息不再产生按键事件）。修复方向：ESC 节点改点击各页「返回」按钮（与输入方式无关，最稳）；或 keyboard 换 Seize（仅前台有效且抢焦点）；Interception(512) 可后台真实输入但需装驱动（涉及：全部含 ClickKey 27 节点的 pipeline 文件）
+
+- 2026-09-30 [优化] UnbreakableSphere MPE 画布布局重排：60 个共有节点坐标对齐 wisdomspring，12 个独有节点（入口链/签到/挑战确认）安置到邻近空位；锚点/外部引用标记同步 ws 位置；分组框修复（兜底→canintoevent_error、新增 event11/分组/需适配enter点位，删除引用已删节点的 2 个失效分组）（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json）
+
+- 2026-09-30 [优化] UnbreakableSphere 流程重构对齐 wisdomspring 架构：关卡选择改用 `swipestage_re` + Or(OCR+Pic) 识别 12 关状态；简化进入关卡链路（删除冗余跳转和重试节点，改为 `canintoevent_error` 直进）；统一各种 `repeat`、`wait_freezes` 和超时参数（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json、resource/base/image/limitedevent/UnbreakableSphere/）
+
+- 2026-09-30 [优化] interface.json 移除「限时活动(absolute)」注册（release 副本 C:\other\MaaNikke 同步移除；absolute.json 与模板图目录保留作派生源，与 p5.json 同例）（涉及：interface.json）
+
+- 2026-09-30 [新增] 派生限时活动 UnbreakableSphere.json（自 p5.json，101 节点；含 claimp5_* 签到子流程一并改名 claimUnbreakableSphere_* 避免与 p5.json 节点键冲突；复制 4 张模板图；interface.json 新增「限时活动(UnbreakableSphere)」注册，沿用「选择需要兑换的道具」option）（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json、resource/base/image/limitedevent/UnbreakableSphere/、interface.json）
+
+- 2026-09-27 [新增] maanikke-release skill 新增第六步「QQ 群全自动发送」：发版完成后默认向 MaaNikke 群发送 changelog 文本与 zip 文件；kimi-cu-win「截图+坐标」操作 NTQQ（UIA 树为空），文本/文件均走「PowerShell 设剪贴板 → click 输入框 → Ctrl+V」分步法（一体化 type_text 实测丢粘贴），发送走按钮坐标点击，逐步截图自检、异常即停；QQ 未运行时启动（用户已设自动登录）；本步失败不影响发版主流程（涉及：.kimi-code/skills/maanikke-release/SKILL.md）
+
+---
+
 ## v2.3.4 - 2026-09-27
 
 - 2026-09-27 [文档] 版本基线刷新：MFAA v2.13.0 / MaaFramework 原生 v5.12.2 / maafw==5.12.2；全局 maafw 从 5.14.0 降回 5.12.2 修复 agent 协议不匹配（5.13+ 协议 8 vs 主进程协议 7）导致的启动失败；main.py 锁定版本常量与警告文案同步更新（放行逻辑不变）（涉及：AGENTS.md、DEVELOPMENT.md、agent/main.py）

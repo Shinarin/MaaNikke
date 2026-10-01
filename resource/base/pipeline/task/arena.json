@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788909941645,
+            "lastSyncTime": 1790828786679,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\arena.json",
+            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\arena.json",
             "savedViewport": {
-                "x": -4162,
-                "y": 363,
-                "zoom": 0.99
+                "x": -7622,
+                "y": 156,
+                "zoom": 1.06
             },
             "filename": "arena",
-            "version": "v1.9.3"
+            "version": "v2.0.5"
         }
     },
     "$__mpe_anchor_arenafightagain_arena": {
@@ -385,19 +385,26 @@
         }
     },
     "exitfightarena": {
-        "action": {
-            "type": "ClickKey",
+        "recognition": {
+            "type": "TemplateMatch",
             "param": {
-                "key": [
-                    27
+                "template": [
+                    "back.png"
                 ]
             }
         },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 1000,
+        "next": [
+            "arena_page",
+            "arena_R_S"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 7699,
-                "y": -11
+                "x": 7722,
+                "y": 0
             }
         }
     },
@@ -656,6 +663,32 @@
             }
         }
     },
+    "newbiearena_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    424,
+                    323,
+                    146,
+                    109
+                ],
+                "expected": [
+                    "新人竞技场"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 400,
+        "$__mpe_code": {
+            "position": {
+                "x": 5315,
+                "y": -683
+            }
+        }
+    },
     "nochance": {
         "recognition": {
             "type": "OCR",
@@ -677,8 +710,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 6804,
-                "y": 39
+                "x": 6822,
+                "y": 15
             }
         }
     },
@@ -742,32 +775,6 @@
             }
         }
     },
-    "newbiearena_re": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    424,
-                    323,
-                    146,
-                    109
-                ],
-                "expected": [
-                    "新人竞技场"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_delay": 400,
-        "$__mpe_code": {
-            "position": {
-                "x": 5315,
-                "y": -683
-            }
-        }
-    },
     "specialarena_re": {
         "recognition": {
             "type": "OCR",
@@ -791,6 +798,54 @@
             "position": {
                 "x": 5295,
                 "y": -104
+            }
+        }
+    },
+    "arena_page": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    524,
+                    158,
+                    241,
+                    101
+                ],
+                "expected": [
+                    "ARENA"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8082,
+                "y": 38
+            }
+        }
+    },
+    "arena_R_S": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    8,
+                    2,
+                    95,
+                    48
+                ],
+                "expected": [
+                    "新人",
+                    "特殊"
+                ]
+            }
+        },
+        "next": [
+            "exitfightarena"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7988,
+                "y": 335
             }
         }
     }

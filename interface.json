@@ -2,7 +2,7 @@
   "interface_version": 2,
   "custom_title": "MaaNikke",
   "name": "MaaNikke",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "url": "https://github.com/Shinarin/MaaNikke",
 
 
@@ -206,8 +206,8 @@
       ]
     },
     {
-      "name": "限时活动(absolute)",
-      "entry": "absolute",
+      "name": "限时活动(UnbreakableSphere)",
+      "entry": "UnbreakableSphere",
       "default_check": true,
       "description": "商店兑换暂定：专票、普票、红眼盒子2h、红眼",
       "option":[

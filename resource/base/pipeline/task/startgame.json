@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1789180655481,
+            "lastSyncTime": 1790820835992,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\startgame.json",
+            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\startgame.json",
             "savedViewport": {
-                "x": 711,
-                "y": 313,
-                "zoom": 0.75
+                "x": 730,
+                "y": 146,
+                "zoom": 0.72
             },
             "filename": "startgame",
-            "version": "v1.10.0"
+            "version": "v2.0.5"
         }
     },
     "$__mpe_external_backtohomepage_startgame": {
@@ -350,18 +350,28 @@
         }
     },
     "startgame_back": {
-        "action": {
-            "type": "ClickKey",
+        "recognition": {
+            "type": "TemplateMatch",
             "param": {
-                "key": [
-                    27
+                "template": [
+                    "back.png",
+                    "back2.png",
+                    "x.png",
+                    "x2.png",
+                    "dispatchboard/exitdispatch.png",
+                    "simroom/exitsimroom.png",
+                    "homebutton1.png",
+                    "homebutton2.png"
                 ]
             }
         },
+        "action": {
+            "type": "Click"
+        },
         "$__mpe_code": {
             "position": {
-                "x": 241,
-                "y": 851
+                "x": 224,
+                "y": 863
             }
         }
     },

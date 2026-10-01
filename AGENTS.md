@@ -53,7 +53,7 @@ MaaNikke_dev/
 4. `maafw==5.12.2` 锁定，与 GUI 原生库对齐；5.13+ 把 agent IPC 协议升到 8，与 5.12.x 主进程（协议 7）握手必失败（2026-09-27 实证），main.py 目前对 5.13+ 仅警告不拦截；升 5.13+ 或 6.x 前必须重新评估。
 5. CWD 必须是项目根（截图/模板/相对路径都依赖），agent 里不要再 chdir。
 6. pipeline JSON 里的 `$__mpe_*` 键是 MPE 编辑器画布数据，框架忽略，**不要删**。
-7. AgentServer 进程内 Toolkit 不可用；日志/截图保存由主进程侧 `config/maa_option.json` 控制。
+7. AgentServer 进程内 Toolkit 不可用；创建 Controller 也不可用（绑定被路由到 stub 库，须 ctypes 直载真实 MaaFramework.dll，参考 esc action）；日志/截图保存由主进程侧 `config/maa_option.json` 控制。
 8. LoopBack 用类变量计数、RetryTask 每次 clone 上下文，行为边界见 §13 第 8 条（设计如此）。
 9. GUI 需管理员运行；窗口标题须匹配 `胜利女神.*新的希望`；FramePool 对游戏画质设置敏感。
 10. 传给 `run_recognition` 的图像必须是 3 通道 uint8，否则原生层越界崩溃（access violation）。

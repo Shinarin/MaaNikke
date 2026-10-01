@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788910019665,
+            "lastSyncTime": 1790827600830,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
+            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\claimpassreward.json",
             "savedViewport": {
-                "x": 227,
-                "y": 764,
-                "zoom": 1.25
+                "x": 289,
+                "y": 657,
+                "zoom": 0.87
             },
             "filename": "claimpassreward",
-            "version": "v1.9.3"
+            "version": "v2.0.5"
         }
     },
     "$__mpe_anchor_claimpassreward_anchor_claimpassreward": {
@@ -376,32 +376,15 @@
             }
         }
     },
-    "checkexchangepass_back": {
-        "action": {
-            "type": "ClickKey",
-            "param": {
-                "key": [
-                    27
-                ]
-            }
-        },
-        "post_delay": 500,
-        "$__mpe_code": {
-            "position": {
-                "x": 609,
-                "y": -132
-            }
-        }
-    },
     "checkexchangepass_return": {
         "max_hit": 5,
         "next": [
-            "checkexchangepass_back"
+            "[JumpBack]backtohomepage"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 307,
-                "y": -134
+                "x": 321,
+                "y": -71
             }
         }
     },

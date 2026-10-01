@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1789181835189,
+            "lastSyncTime": 1790828293458,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\backtohomepage.json",
+            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\backtohomepage.json",
             "savedViewport": {
-                "x": 405,
-                "y": 166,
-                "zoom": 0.8
+                "x": 249,
+                "y": -429,
+                "zoom": 0.76
             },
             "filename": "backtohomepage",
-            "version": "v1.10.0"
+            "version": "v2.0.5"
         }
     },
     "$__mpe_group_废弃_backtohomepage": {
@@ -85,6 +85,7 @@
         "timeout": 60000,
         "next": [
             "homepagebuttom",
+            "clickclaim",
             "homepagebuttom2",
             "goback2",
             "feibifalshsale",
@@ -98,7 +99,6 @@
             "[JumpBack]isfighting",
             "b2h_clickstart",
             "checkloginpage",
-            "clickclaim",
             "soloraid_commonend"
         ],
         "$__mpe_code": {
@@ -281,11 +281,9 @@
     },
     "clickclaim_done_back": {
         "action": {
-            "type": "ClickKey",
+            "type": "Custom",
             "param": {
-                "key": [
-                    27
-                ]
+                "custom_action": "esc"
             }
         },
         "$__mpe_code": {
@@ -312,10 +310,13 @@
             }
         },
         "action": {
-            "type": "ClickKey",
+            "type": "Click",
             "param": {
-                "key": [
-                    27
+                "target": [
+                    1134,
+                    538,
+                    22,
+                    56
                 ]
             }
         },
