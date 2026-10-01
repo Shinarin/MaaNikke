@@ -149,6 +149,12 @@ curl -S -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
 - 发送动作全走按钮点击（用户 QQ 有独立「发送」按钮），不要按 Enter/Ctrl+Enter。
 - 安全闸：任一步截图与预期不符（弹窗干扰、界面未加载、标题不对、粘贴未上屏）→ 停下报告用户，不蛮点、不重复尝试发送。
 
+**实测要点（2026-10-01 验证）**：
+- ❌ **严禁用脚本 `ShowWindow` 强拉托盘隐藏的 QQ 主窗口**：NTQQ 被强制 SW_SHOW 后成"假死窗"——渲染冻结（WGC/PrintWindow 截图字节级不变）、不处理任何输入（连 X 关闭按钮都无效），minimize→restore 也救不回；表现就是"点击全部落空"。识别特征：连续两次截图附件哈希完全一致。
+- ❌ QQ 已运行时不要再 `launch_app` QQ.exe——会开出第二个实例的扫码登录窗，而不是唤醒已有窗口。
+- ✅ 正确恢复路径只有两个：让用户点一下托盘图标（首选），或结束进程重启 QQ。拿不准就问用户，别自己折腾窗口状态。
+- ✅ QQ 已登录但主窗口在托盘时，`get_app_state(app="QQ")` 可能报 "could not find a visible window"——先问用户/点托盘恢复，不要自己 ShowWindow。
+
 ## 汇报内容
 
 新版本号、changelog 条目预览、zip 大小、commit hash、Release 链接（`html_url`）、QQ 群发送结果。
