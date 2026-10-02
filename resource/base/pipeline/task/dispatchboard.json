@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1781277019657,
+            "lastSyncTime": 1790978796193,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\dispatchboard.json",
             "savedViewport": {
-                "x": 364,
-                "y": 125,
-                "zoom": 0.57
+                "x": 591,
+                "y": 1060,
+                "zoom": 1
             },
             "filename": "dispatchboard",
-            "version": "v1.6.1"
+            "version": "v2.0.6"
         }
     },
     "$__mpe_external_backtohomepage_dispatchboard": {
@@ -96,8 +97,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 313,
-                "y": -512
+                "x": 346,
+                "y": -452
             }
         }
     },
@@ -291,12 +292,13 @@
         "post_wait_freezes": 2000,
         "next": [
             "checkdispatchboard2",
+            "[JumpBack]feibifalshsale",
             "intodispatchboard"
         ],
         "$__mpe_code": {
             "position": {
-                "x": -130,
-                "y": -551
+                "x": 33,
+                "y": -655
             }
         }
     },
@@ -329,6 +331,7 @@
         "post_wait_freezes": 2000,
         "next": [
             "checkdispatchboard2",
+            "[JumpBack]feibifalshsale",
             "intodispatchboard2"
         ],
         "$__mpe_code": {
@@ -354,6 +357,14 @@
             "position": {
                 "x": 1506,
                 "y": 160
+            }
+        }
+    },
+    "$__mpe_external_feibifalshsale_dispatchboard": {
+        "$__mpe_code": {
+            "position": {
+                "x": 354,
+                "y": -206
             }
         }
     }

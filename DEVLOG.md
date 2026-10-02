@@ -16,6 +16,14 @@
 
 ---
 
+## v2.3.7 - 2026-10-03
+
+- 2026-10-03 [优化] 协同作战默认选择普通模式（涉及：resource/base/pipeline/task/teambattle.json）
+
+- 2026-10-03 [优化] 领取派遣公告栏奖励时冒出的菲比商店弹窗的关闭处理（涉及：resource/base/pipeline/task/dispatchboard.json）
+
+---
+
 ## v2.3.6 - 2026-10-02
 
 - 2026-10-02 [文档] maanikke-release skill 第六步定案变更：不再用 Computer Use 操作 QQ 发送，改为 changelog 纯文本复制到系统剪贴板 + 告知 zip 路径，由用户自行粘贴/拖拽发送（涉及：.kimi-code/skills/maanikke-release/SKILL.md）

@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788047446736,
+            "lastSyncTime": 1790951352738,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\teambattle.json",
             "savedViewport": {
-                "x": -1564,
-                "y": 495,
-                "zoom": 0.86
+                "x": 383,
+                "y": 488,
+                "zoom": 0.38
             },
             "filename": "teambattle",
-            "version": "v1.9.1"
+            "version": "v2.0.6"
         }
     },
     "$__mpe_anchor_teambattlestart_teambattle": {
@@ -73,15 +73,17 @@
         },
         "anchor": "teambattlestart",
         "next": [
-            "teambattlepre",
+            "teambattleinfo",
             "notimetoteambattle",
             "[JumpBack]teambattlematching",
-            "[JumpBack]teambattlematch"
+            "[JumpBack]teambattle_choosemod",
+            "[JumpBack]teambattlematch",
+            "[JumpBack]teambattlepre"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 676,
-                "y": -170
+                "x": 678,
+                "y": -265
             }
         }
     },
@@ -116,7 +118,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 233,
+                "x": 280,
                 "y": 355
             }
         }
@@ -141,8 +143,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1300,
-                "y": -385
+                "x": 1317,
+                "y": -377
             }
         }
     },
@@ -203,7 +205,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 315,
+                "x": 336,
                 "y": -511
             }
         }
@@ -233,8 +235,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 313,
-                "y": -805
+                "x": 332,
+                "y": -821
             }
         }
     },
@@ -300,8 +302,32 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": -338,
-                "y": -140
+                "x": -347,
+                "y": -129
+            }
+        }
+    },
+    "teambattle_checkfight": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    93,
+                    58
+                ],
+                "template": [
+                    "fighting.png",
+                    "fighting_gb.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 3030,
+                "y": 15
             }
         }
     },
@@ -325,7 +351,7 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": -7,
+                "x": 14,
                 "y": -162
             }
         }
@@ -375,8 +401,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1750,
-                "y": 92
+                "x": 1315,
+                "y": -131
             }
         }
     },
@@ -394,8 +420,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1743,
-                "y": 367
+                "x": 1316,
+                "y": 66
             }
         }
     },
@@ -404,13 +430,13 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    3,
-                    34,
-                    95,
-                    48
+                    550,
+                    30,
+                    201,
+                    114
                 ],
                 "expected": [
-                    "作战信息"
+                    "协同作战"
                 ]
             }
         },
@@ -444,8 +470,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 987,
-                "y": 3
+                "x": 984,
+                "y": 226
             }
         }
     },
@@ -492,14 +518,14 @@
         },
         "timeout": 60000,
         "next": [
-            "teambattleinfo",
-            "[JumpBack]teambattleaccept",
-            "[JumpBack]teambattleaccept2"
+            "teambattleaccept",
+            "teambattleaccept2",
+            "teambattleaccept_fail"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1321,
-                "y": -160
+                "x": 971,
+                "y": -131
             }
         }
     },
@@ -539,13 +565,13 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    3,
-                    34,
-                    95,
-                    48
+                    550,
+                    30,
+                    201,
+                    114
                 ],
                 "expected": [
-                    "作战信息"
+                    "协同作战"
                 ]
             }
         },
@@ -571,27 +597,90 @@
             }
         }
     },
-    "teambattle_checkfight": {
+    "teambattle_choosemod": {
         "recognition": {
-            "type": "TemplateMatch",
+            "type": "OCR",
             "param": {
                 "roi": [
-                    0,
-                    0,
-                    93,
-                    58
+                    391,
+                    202,
+                    514,
+                    336
                 ],
-                "template": [
-                    "fighting.png",
-                    "fighting_gb.png"
-                ],
-                "green_mask": true
+                "expected": [
+                    "选择匹配难度",
+                    "匹配难度"
+                ]
             }
+        },
+        "next": [
+            "teambattle_choosesimple"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 967,
+                "y": 416
+            }
+        }
+    },
+    "teambattle_choosesimple": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    399,
+                    192,
+                    525,
+                    360
+                ],
+                "expected": [
+                    "普通"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "teambattle_choosecomfirm"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1217,
+                "y": 414
+            }
+        }
+    },
+    "teambattle_choosecomfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    395,
+                    173,
+                    520,
+                    408
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
         },
         "$__mpe_code": {
             "position": {
-                "x": 3030,
-                "y": 15
+                "x": 1477,
+                "y": 429
+            }
+        }
+    },
+    "teambattleaccept_fail": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1316,
+                "y": 271
             }
         }
     }
