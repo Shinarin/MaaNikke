@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1790820693621,
+            "lastSyncTime": 1790893552219,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\loginrewards.json",
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\loginrewards.json",
             "savedViewport": {
-                "x": 236,
-                "y": 926,
-                "zoom": 0.86
+                "x": 376,
+                "y": 390,
+                "zoom": 0.99
             },
             "filename": "loginrewards",
-            "version": "v2.0.5"
+            "version": "v2.0.6"
         }
     },
     "$__mpe_external_backtohomepage_loginrewards": {
@@ -51,7 +51,8 @@
                 "clickclaimreward",
                 "clicktoback",
                 "logineventreward",
-                "logineventreward_return"
+                "logineventreward_return",
+                "logineventreward_reset"
             ],
             "width": 1617,
             "height": 1014
@@ -74,6 +75,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "clickclaimreward",
+            "[JumpBack]logineventreward_return",
             "clicktoback"
         ],
         "$__mpe_code": {
@@ -121,9 +123,12 @@
             "type": "Click"
         },
         "post_wait_freezes": 500,
+        "next": [
+            "loginrewardsreturn_reset"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 765,
+                "x": 731,
                 "y": -531
             }
         }
@@ -142,6 +147,9 @@
             "type": "Click"
         },
         "post_wait_freezes": 2000,
+        "next": [
+            "loginrewardsreturn_reset"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 776,
@@ -161,6 +169,9 @@
                 ]
             }
         },
+        "next": [
+            "logineventreward_reset"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 1483,
@@ -191,7 +202,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 410,
-                "y": -511
+                "y": -520
             }
         }
     },
@@ -231,8 +242,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 434,
-                "y": 874
+                "x": 418,
+                "y": 988
             }
         }
     },
@@ -249,10 +260,13 @@
             }
         },
         "post_wait_freezes": 500,
+        "next": [
+            "loginrewardsreturn_reset"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 778,
-                "y": 873
+                "x": 762,
+                "y": 967
             }
         }
     },
@@ -264,7 +278,10 @@
                 "expected": [
                     "活动期间",
                     "累计登录",
-                    "剩余时间"
+                    "剩余时间",
+                    "点击领取",
+                    "全部领取",
+                    "确定"
                 ]
             }
         },
@@ -286,8 +303,8 @@
         "max_hit": 2,
         "$__mpe_code": {
             "position": {
-                "x": 990,
-                "y": 45
+                "x": 984,
+                "y": -24
             }
         }
     },
@@ -324,6 +341,9 @@
         "action": {
             "type": "Click"
         },
+        "next": [
+            "loginrewardsreturn_reset"
+        ],
         "$__mpe_code": {
             "position": {
                 "x": 432,
@@ -358,6 +378,49 @@
             "position": {
                 "x": 440,
                 "y": -805
+            }
+        }
+    },
+    "logineventreward_reset": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "logineventreward_return"
+                    ],
+                    "strict": false
+                }
+            }
+        },
+        "next": [
+            "loginrewardsreturn_reset"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1760,
+                "y": 549
+            }
+        }
+    },
+    "loginrewardsreturn_reset": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "loginrewardsreturn"
+                    ],
+                    "strict": false
+                }
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2554,
+                "y": 869
             }
         }
     }

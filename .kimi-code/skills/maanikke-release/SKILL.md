@@ -1,6 +1,6 @@
 ---
 name: maanikke-release
-description: MaaNikke 发版流程。当用户明确要求 push/发版/打包上传时执行完整流程（changelog = 用户给的内容优先 + DEVLOG 未发布区条目过滤改写合并，用户没给就只用 DEVLOG 总结 → 写入 Changelog.md → DEVLOG 封存新版本线、版本号 +1 → 复制模板打包 zip → 同步三件套到 C:\other\MaaNikke → git push → 创建 GitHub Release 并上传 zip → QQ 群全自动发送 changelog 文本与 zip）；用户只说 push 而无发版意图时，只做普通 git push，不触发本流程（DEVLOG 也不动）。
+description: MaaNikke 发版流程。当用户明确要求 push/发版/打包上传时执行完整流程（changelog = 用户给的内容优先 + DEVLOG 未发布区条目过滤改写合并，用户没给就只用 DEVLOG 总结 → 写入 Changelog.md → DEVLOG 封存新版本线、版本号 +1 → 复制模板打包 zip → 同步三件套到 C:\other\MaaNikke → git push → 创建 GitHub Release 并上传 zip → 备好 QQ 群发送材料：changelog 纯文本复制到剪贴板、告知 zip 路径，由用户自行粘贴发送）；用户只说 push 而无发版意图时，只做普通 git push，不触发本流程（DEVLOG 也不动）。
 whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、发版、release、打包上传时触发
 ---
 
@@ -25,7 +25,7 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
 - 打包工具：Git Bash 的 tar 是 GNU tar，**造不了 zip**；用 Python zipfile（已实测）。
 - `.gitignore` 已含 `MaaNikke-win-x86_64-v*/` 排除规则（兜底，防止构建产物误入项目被提交）。
 - GitHub：仓库 `Shinarin/MaaNikke`，本机**无 gh CLI**；用 `git credential fill` 取 token 调 REST API（token 已验证有 `repo` scope，可建 Release）。token 严禁打印/写文件。
-- QQ 群发送：默认随完整流程执行（第六步，2026-09-27 实测定案）。QQ 为 NTQQ（Electron，路径 `C:\Program Files\Tencent\QQNT\QQ.exe`），**UIA 树为空**，用 kimi-cu-win「截图+坐标」操作；用户已设置 QQ 打开后自动登录，未运行时可启动帮登录。
+- QQ 群发送材料准备：默认随完整流程执行（第六步，2026-10-07 定案）。不再用 Computer Use 操作 QQ，改为把 changelog 纯文本复制到系统剪贴板、告知 zip 路径，由用户自行粘贴/拖拽发送到群。
 
 ## 第一步：changelog + DEVLOG 封存 + 版本号
 
@@ -118,42 +118,22 @@ curl -S -X POST -H "Authorization: token $TOKEN" -H "User-Agent: curl" \
 
 4. 校验返回的 asset `size` 与本地 zip 字节数一致、`state` 为 `uploaded`。
 
-## 第六步：QQ 群发送 changelog + zip（默认执行）
+## 第六步：备好 QQ 群发送材料，由用户自行粘贴发送（2026-10-07 定案）
 
-发版主流程完成后默认执行。QQ 未运行时启动 QQ（用户已设自动登录）；本步失败**停下报告，不影响已完成的发版**。
+发版主流程完成后默认执行。**不再用 Computer Use 操作 QQ**（NTQQ 无 UIA 树、坐标操作脆弱且踩过"假死窗"坑）；改为把材料准备好交给用户自己发：
 
-工具：kimi-cu-win MCP（`mcp__plugin-kimi-cu-win_win__*`）。QQ 是 NTQQ（Electron），**UIA 树为空**，全程走「截图 + 坐标」模式：每步操作后 `get_app_state(app="QQ", mode="image")` 截图自检，与预期不符立即停下报告，**严禁脱离截图盲点坐标**（下列坐标为 1568x860 截图下的参考值，以当次截图为准）。
+1. **changelog 纯文本写入系统剪贴板**：把 changelog 的**纯文本版**（去掉 `##`/`**` 等 md 标记（QQ 不渲染），首行加 `MaaNikke vX.Y.Z 更新日志` 标题）先写临时文件，再执行：
+   ```bash
+   powershell -NoProfile -Command "Get-Content -Raw -Encoding UTF8 '<临时文件>' | Set-Clipboard"
+   ```
+   避免命令行转义和 GBK 乱码。
+2. **告知用户**：剪贴板已复制 changelog 文本，到 MaaNikke 群直接 Ctrl+V 粘贴发送即可；zip 文件在 `F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-vX.Y.Z.zip`，由用户自行拖入群发送。
+3. 收尾：清理 temp 下的临时文件。
 
-1. **确认/启动 QQ**：`list_apps` 查 QQ 窗口。未运行则 `launch_app("C:\\Program Files\\Tencent\\QQNT\\QQ.exe")`，等 10~20 秒自动登录，截图确认主界面出现（左侧会话列表）。
-2. **进入 MaaNikke 群**：截图看聊天窗口标题是否「MaaNikke (人数)」。不是则：点搜索框（主界面左上，参考 (165,60)）→ `powershell Set-Clipboard -Value 'MaaNikke'` → `press_key Control_L+v` → 等 1~2 秒截图 → 点击搜索结果中的 MaaNikke 群 → 截图确认标题已切换。
-3. **发送 changelog 文本**：
-   - 文本写入剪贴板（changelog 的**纯文本版**：去掉 `##`/`**` 等 md 标记（QQ 不渲染），首行加 `MaaNikke vX.Y.Z 更新日志` 标题；先写临时文件，用 `powershell -NoProfile -Command "Get-Content -Raw -Encoding UTF8 '<文件>' | Set-Clipboard"`，避免命令行转义和 GBK 乱码）
-   - `click` 输入框（聊天窗口底部中央偏左空白区，参考 (850,750)）聚焦
-   - `press_key Control_L+v` → 截图确认文本已进入输入框
-   - `click` 右下角蓝色「发送」按钮（参考 (1333,831)）→ 截图确认消息已出现在聊天记录
-4. **发送 zip 文件**：
-   - PowerShell 设文件剪贴板：
-     ```powershell
-     Add-Type -AssemblyName System.Windows.Forms
-     $c = New-Object System.Collections.Specialized.StringCollection
-     $c.Add('F:\MaaNikke历史版本备份\MaaNikke-win-x86_64-vX.Y.Z.zip') | Out-Null
-     [System.Windows.Forms.Clipboard]::SetFileDropList($c)
-     ```
-   - `click` 输入框聚焦 → `press_key Control_L+v` → 截图确认弹出「发送给 MaaNikke」对话框（文件卡片显示 zip 名与大小）
-   - `click` 对话框「发送(1)」按钮（参考 (784,564)）→ 截图确认对话框消失、文件消息出现在聊天记录
-   - 百余 MB 群文件上传由 QQ 后台继续，**不需等上传完成**，消息发出即算完成。
-5. 收尾：`turn_ended` 清理 Computer Use 状态。
-
-**实测要点（2026-09-27 验证）**：
-- ❌ 一体化 `type_text` 对 QQ 输入框会丢粘贴（paste dispatched 但不上屏）——必须用「PowerShell 设剪贴板 → click → Ctrl+V」分步法。
-- 发送动作全走按钮点击（用户 QQ 有独立「发送」按钮），不要按 Enter/Ctrl+Enter。
-- 安全闸：任一步截图与预期不符（弹窗干扰、界面未加载、标题不对、粘贴未上屏）→ 停下报告用户，不蛮点、不重复尝试发送。
-
-**实测要点（2026-10-01 验证）**：
-- ❌ **严禁用脚本 `ShowWindow` 强拉托盘隐藏的 QQ 主窗口**：NTQQ 被强制 SW_SHOW 后成"假死窗"——渲染冻结（WGC/PrintWindow 截图字节级不变）、不处理任何输入（连 X 关闭按钮都无效），minimize→restore 也救不回；表现就是"点击全部落空"。识别特征：连续两次截图附件哈希完全一致。
-- ❌ QQ 已运行时不要再 `launch_app` QQ.exe——会开出第二个实例的扫码登录窗，而不是唤醒已有窗口。
-- ✅ 正确恢复路径只有两个：让用户点一下托盘图标（首选），或结束进程重启 QQ。拿不准就问用户，别自己折腾窗口状态。
-- ✅ QQ 已登录但主窗口在托盘时，`get_app_state(app="QQ")` 可能报 "could not find a visible window"——先问用户/点托盘恢复，不要自己 ShowWindow。
+**历史教训（旧 Computer Use 方案 2026-10-01 存档，仅备查勿复用）**：
+- ❌ 严禁用脚本 `ShowWindow` 强拉托盘隐藏的 QQ 主窗口：NTQQ 被强制 SW_SHOW 后成"假死窗"——渲染冻结、不处理任何输入，minimize→restore 也救不回。
+- ❌ QQ 已运行时不要再 `launch_app` QQ.exe——会开出第二个实例的扫码登录窗。
+- 如需恢复自动操作 QQ，必须走 kimi-cu-win「截图 + 坐标」模式并每步截图自检（NTQQ 的 UIA 树为空）。
 
 ## 汇报内容
 

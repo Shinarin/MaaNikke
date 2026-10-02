@@ -3,65 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1790830045622,
+            "lastSyncTime": 1790894947651,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\UnbreakableSphere.json",
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\UnbreakableSphere.json",
             "savedViewport": {
-                "x": -1070,
-                "y": -2619,
-                "zoom": 1.21
+                "x": -4358,
+                "y": -593,
+                "zoom": 0.76
             },
             "filename": "UnbreakableSphere",
-            "version": "v2.0.5"
-        }
-    },
-    "$__mpe_anchor_UnbreakableSphere_stagestart_anchor_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 6513,
-                "y": 850
-            }
-        }
-    },
-    "$__mpe_anchor_UnbreakableSphereanchor_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7753,
-                "y": 405
-            }
-        }
-    },
-    "$__mpe_external_backtohomepage_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": -705,
-                "y": 1206
-            }
-        }
-    },
-    "$__mpe_external_claimpassreward_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1734,
-                "y": 4154
-            }
-        }
-    },
-    "$__mpe_external_event_noteam_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 5672,
-                "y": 1945
-            }
-        }
-    },
-    "$__mpe_external_limitedeventshop_claim_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2023,
-                "y": 2889
-            }
+            "version": "v2.0.6"
         }
     },
     "$__mpe_group_event11_UnbreakableSphere": {
@@ -220,6 +172,54 @@
             "height": 300
         }
     },
+    "$__mpe_anchor_UnbreakableSphere_stagestart_anchor_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6513,
+                "y": 850
+            }
+        }
+    },
+    "$__mpe_anchor_UnbreakableSphereanchor_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7753,
+                "y": 405
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": -705,
+                "y": 1206
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1734,
+                "y": 4154
+            }
+        }
+    },
+    "$__mpe_external_event_noteam_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1945
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2023,
+                "y": 2889
+            }
+        }
+    },
     "UnbreakableSphere": {
         "anchor": "UnbreakableSphereanchor",
         "next": [
@@ -255,8 +255,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 7477,
-                "y": 959
+                "x": 7487,
+                "y": 941
             }
         }
     },
@@ -1155,6 +1155,7 @@
         "next": [
             "UnbreakableSphere_cjeckeventpage",
             "[JumpBack]UnbreakableSphere_jumpstory",
+            "[JumpBack]UnbreakableSphere_newspace",
             "[JumpBack]UnbreakableSphere_finish_click"
         ],
         "$__mpe_code": {
@@ -1178,8 +1179,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 6996,
-                "y": 1297
+                "x": 7137,
+                "y": 1495
             }
         }
     },
@@ -2236,6 +2237,32 @@
             "position": {
                 "x": 1183,
                 "y": 1736
+            }
+        }
+    },
+    "UnbreakableSphere_newspace": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    374,
+                    193,
+                    543,
+                    260
+                ],
+                "expected": [
+                    "前往区域"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 7148,
+                "y": 1237
             }
         }
     }

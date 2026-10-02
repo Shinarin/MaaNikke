@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1789181461744,
+            "lastSyncTime": 1790893452457,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\payshop.json",
             "savedViewport": {
-                "x": 729,
-                "y": 904,
-                "zoom": 0.99
+                "x": 468,
+                "y": 745,
+                "zoom": 0.51
             },
             "filename": "payshop",
-            "version": "v1.10.0"
+            "version": "v2.0.6"
         }
     },
     "$__mpe_external_backtohomepage_payshop": {
@@ -21,6 +21,14 @@
             "position": {
                 "x": 2683,
                 "y": 26
+            }
+        }
+    },
+    "$__mpe_external_logineventreward_payshop": {
+        "$__mpe_code": {
+            "position": {
+                "x": 286,
+                "y": -235
             }
         }
     },
@@ -383,6 +391,18 @@
             }
         }
     },
+    "payshop": {
+        "next": [
+            "payshop_checkhomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -728,
+                "y": -242
+            }
+        }
+    },
     "payshop_checkhomepage": {
         "doc": "领取钻石礼包",
         "recognition": {
@@ -461,26 +481,6 @@
             "position": {
                 "x": 1799,
                 "y": -598
-            }
-        }
-    },
-    "payshop": {
-        "next": [
-            "payshop_checkhomepage",
-            "[JumpBack]backtohomepage"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": -728,
-                "y": -242
-            }
-        }
-    },
-    "$__mpe_external_logineventreward_payshop": {
-        "$__mpe_code": {
-            "position": {
-                "x": 286,
-                "y": -235
             }
         }
     }

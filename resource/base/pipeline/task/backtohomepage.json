@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1790828293458,
+            "lastSyncTime": 1790893540496,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\backtohomepage.json",
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\backtohomepage.json",
             "savedViewport": {
-                "x": 249,
-                "y": -429,
-                "zoom": 0.76
+                "x": -8,
+                "y": -628,
+                "zoom": 0.99
             },
             "filename": "backtohomepage",
-            "version": "v2.0.5"
+            "version": "v2.0.6"
         }
     },
     "$__mpe_group_废弃_backtohomepage": {
@@ -153,7 +153,7 @@
         "action": {
             "type": "Click"
         },
-        "repeat": 2,
+        "repeat": 1,
         "repeat_delay": 500,
         "next": [
             "clickclaim_do_none",

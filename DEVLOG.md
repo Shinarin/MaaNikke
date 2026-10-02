@@ -14,6 +14,12 @@
 
 ## [未发布]
 
+---
+
+## v2.3.6 - 2026-10-02
+
+- 2026-10-02 [文档] maanikke-release skill 第六步定案变更：不再用 Computer Use 操作 QQ 发送，改为 changelog 纯文本复制到系统剪贴板 + 告知 zip 路径，由用户自行粘贴/拖拽发送（涉及：.kimi-code/skills/maanikke-release/SKILL.md）
+
 - 2026-10-01 [文档] maanikke-release skill 第六步补充坑点：严禁脚本 ShowWindow 强拉托盘隐藏的 NTQQ 主窗口（假死窗：截图字节级不变、不处理任何输入，minimize/restore 无效）；QQ 运行时勿重复 launch（会开第二实例扫码登录窗）；正确恢复路径=用户点托盘图标或重启 QQ（涉及：.kimi-code/skills/maanikke-release/SKILL.md）
 
 ---
