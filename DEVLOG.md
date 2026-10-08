@@ -16,6 +16,18 @@
 
 ---
 
+## v2.3.8 - 2026-10-09
+
+- 2026-10-09 [新增] UnbreakableSphere 适配 story2 部分关卡（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json、resource/base/image/limitedevent/UnbreakableSphere/）
+
+- 2026-10-09 [优化] interface 移除已结束的 wisdomspring 限时活动任务（涉及：interface.json）
+
+- 2026-10-06 [调查] 爬塔（企业塔）流程反复失败根因查明（用户提供的 D:\MaaNikke_win_v2.0.0_beta1 日志，10-03 起每 1-2 天一次，最新 10-06 10:59）：战斗结束后 confirmfightend 连续 6 次命中并点击「点击任意处进行下一步」过结算页，但游戏未返回塔页面而是直接进入下一场战斗（疑似胜利页「自动挑战」处于勾选状态，pipeline 无任何节点操作该开关）；confirmfightend 的 next 列表没有战斗中兜底分支且 timeout 仅 8s，识别空转超时 → climbtower 任务失败。当前 dev 版该节点设计与 beta1 完全相同，缺陷仍存在。修复方向：用户侧在塔页面取消勾选「自动挑战」；或 pipeline 侧给 confirmfightend 的 next 末尾加战斗中分支（参照 confirmfightendoage → confirmfightend_inverse → [Anchor]climbtower_intofight_anchor 的既有模式，或 JumpBack 到战斗等待节点 climbtower_intofight_Node）（涉及：resource/base/pipeline/task/climbtower.json）
+
+- 2026-10-04 [优化] 将 create-maa-project 与 maa-mcp 两个 MCP 服务器从全局 `~/.kimi-code/mcp.json` 迁移至项目级 `.kimi-code/mcp.json`，仅在本项目会话中加载，其他项目不再加载（全局侧已备份并移除，playwright 保留全局）；`.kimi-code/mcp.json` 加入 `.gitignore` 不提交（涉及：.kimi-code/mcp.json、.gitignore）
+
+---
+
 ## v2.3.7 - 2026-10-03
 
 - 2026-10-03 [优化] 协同作战默认选择普通模式（涉及：resource/base/pipeline/task/teambattle.json）

@@ -3,17 +3,65 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1790894947651,
+            "lastSyncTime": 1791457633459,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\UnbreakableSphere.json",
             "savedViewport": {
-                "x": -4358,
-                "y": -593,
-                "zoom": 0.76
+                "x": 295,
+                "y": 53,
+                "zoom": 0.21
             },
             "filename": "UnbreakableSphere",
-            "version": "v2.0.6"
+            "version": "v2.0.7"
+        }
+    },
+    "$__mpe_anchor_UnbreakableSphere_stagestart_anchor_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6513,
+                "y": 850
+            }
+        }
+    },
+    "$__mpe_anchor_UnbreakableSphereanchor_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7753,
+                "y": 405
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": -705,
+                "y": 1206
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1734,
+                "y": 4154
+            }
+        }
+    },
+    "$__mpe_external_event_noteam_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1945
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2023,
+                "y": 2889
+            }
         }
     },
     "$__mpe_group_event11_UnbreakableSphere": {
@@ -22,7 +70,7 @@
                 "x": 3247,
                 "y": 1012
             },
-            "color": "blue",
+            "color": "green",
             "childrenLabels": [
                 "UnbreakableSphere_into11_error_pic"
             ],
@@ -36,7 +84,7 @@
                 "x": 3292,
                 "y": 314
             },
-            "color": "blue",
+            "color": "green",
             "childrenLabels": [
                 "UnbreakableSphere_canintoevent_error"
             ],
@@ -50,7 +98,7 @@
                 "x": 2564,
                 "y": 195
             },
-            "color": "blue",
+            "color": "green",
             "childrenLabels": [
                 "UnbreakableSphere_12_no_end",
                 "UnbreakableSphere_12_no_end_ocr",
@@ -66,7 +114,7 @@
                 "x": 410,
                 "y": 937
             },
-            "color": "blue",
+            "color": "green",
             "childrenLabels": [
                 "UnbreakableSphere_check_intostory2"
             ],
@@ -170,54 +218,6 @@
             ],
             "width": 400,
             "height": 300
-        }
-    },
-    "$__mpe_anchor_UnbreakableSphere_stagestart_anchor_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 6513,
-                "y": 850
-            }
-        }
-    },
-    "$__mpe_anchor_UnbreakableSphereanchor_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7753,
-                "y": 405
-            }
-        }
-    },
-    "$__mpe_external_backtohomepage_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": -705,
-                "y": 1206
-            }
-        }
-    },
-    "$__mpe_external_claimpassreward_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1734,
-                "y": 4154
-            }
-        }
-    },
-    "$__mpe_external_event_noteam_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 5672,
-                "y": 1945
-            }
-        }
-    },
-    "$__mpe_external_limitedeventshop_claim_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2023,
-                "y": 2889
-            }
         }
     },
     "UnbreakableSphere": {
@@ -349,7 +349,8 @@
                     566
                 ],
                 "template": [
-                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_accessdenied.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_accessdenied.png",
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_accessdenied.png"
                 ]
             }
         },
@@ -380,7 +381,8 @@
                     696
                 ],
                 "template": [
-                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_into.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_into.png",
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_into.png"
                 ],
                 "threshold": [
                     0.85
@@ -495,16 +497,16 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    350,
-                    450,
-                    600,
-                    250
+                    400,
+                    543,
+                    217,
+                    98
                 ],
                 "template": [
                     "limitedevent/UnbreakableSphere/UnbreakableSphere_into_story2.png"
                 ],
                 "threshold": [
-                    0.85
+                    0.6
                 ]
             }
         },
@@ -540,8 +542,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 501,
-                "y": 661
+                "x": 434,
+                "y": 400
             }
         }
     },
@@ -1290,7 +1292,8 @@
                     696
                 ],
                 "template": [
-                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_replace.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_replace.png",
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_replace.png"
                 ],
                 "green_mask": true,
                 "order_by": "Vertical",
@@ -1380,12 +1383,13 @@
         "max_hit": 1,
         "next": [
             "UnbreakableSphere_check_story1",
+            "UnbreakableSphere_storyevent",
             "[JumpBack]UnbreakableSphere_check_intostory2"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 62,
-                "y": 663
+                "x": 57,
+                "y": 643
             }
         }
     },
@@ -1608,6 +1612,32 @@
             "position": {
                 "x": 5902,
                 "y": 1718
+            }
+        }
+    },
+    "UnbreakableSphere_newspace": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    374,
+                    193,
+                    543,
+                    260
+                ],
+                "expected": [
+                    "前往区域"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 7148,
+                "y": 1237
             }
         }
     },
@@ -2237,32 +2267,6 @@
             "position": {
                 "x": 1183,
                 "y": 1736
-            }
-        }
-    },
-    "UnbreakableSphere_newspace": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    374,
-                    193,
-                    543,
-                    260
-                ],
-                "expected": [
-                    "前往区域"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 1000,
-        "$__mpe_code": {
-            "position": {
-                "x": 7148,
-                "y": 1237
             }
         }
     }

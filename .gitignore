@@ -27,6 +27,7 @@
 __pycache__/
 *.py[cod]
 agent/.deps/
+.kimi-code/mcp.json
 
 # ---- 发版构建产物（文件夹与 zip 只留本地，不上传） ----
 MaaNikke-win-x86_64-v*/
