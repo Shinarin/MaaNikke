@@ -16,6 +16,16 @@
 
 ---
 
+## v2.3.9 - 2026-10-13
+
+- 2026-10-13 [新增] UnbreakableSphere 适配 hard 部分关卡（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json、resource/base/image/limitedevent/UnbreakableSphere/）
+
+- 2026-10-13 [优化] 模拟室 5C 关卡识别范围与阈值调整（涉及：resource/base/pipeline/task/simroom.json）
+
+- 2026-10-10 [调查] UnbreakableSphere（限时活动）清完 STORY 末关后死循环 50 分钟根因查明（用户提供的 release 版 `C:\other\MaaNikke` 日志，task_id=200000022）：04:59:52 启动 → 05:00:31 起连打两个**首次通关**关卡（`_noquickfight` 命中"在首次通关该关卡后，即可进行快速战斗。"，两场真实战斗 05:00:49/05:01:39）→ 05:01:57 结算页（"1-12 故事"）无"下一关卡"按钮，`_no_nextstage` 命中 → `_finish` 点击结算页 → 游戏播剧情回到 **"活动地区"世界地图页**，而 `_finish` 的 next 链（`cjeckeventpage` 只认"活动关卡"、`jumpstory` 认右上角 X、`newspace` 认"前往区域"、`finish_click` 为 DirectHit）无任何分支识别该页 → 死循环。循环实况（05:02:00–05:52:33）：共点击 3633 次 = `finish_click` 2123（固定点 1029,297 空点）+ `jumpstory` 1509（OCR 把右上角**邮件+九宫格菜单图标**读成 "X"/"XO"，0.86–0.96，反复点 ≈1260,20，把 SUB MENU 弹窗点开又点掉，05:09 起弹窗反复出现），`_finish` 进入 3636 次，最终由用户 05:52:33 手动停止（任务耗时 3161.9s）。机制层根因：① `_finish` 的 next 列表无次数闸门，`[JumpBack]finish_click` 是 DirectHit（恒定命中）+ JumpBack 回跳后框架**只重跑 next 列表、不重跑 `_finish` 自身识别**（实证：PipelineNode.Starting 3636 次 vs Recognition.Starting 仅 2 次），节点永不失败 ⇒ 画面不变即无限循环；② 退出唯一出口 `cjeckeventpage` 认"活动关卡"（关卡列表页），而本次落到"活动地区"页的**具体路径**是：清掉章末关（结算页显示"1-12 故事"且**无「下一关卡」按钮**——对照 1-11 结算页有该按钮且票数 4/5，非缺票所致）→ 章节收尾剧情（05:02:01 `jumpstory` 命中"跳过"并点掉）→ 游戏弹 **"FIELD CHANGED"区域切换页**（按钮「前往区域」，注明"不消耗入场券"）→ pipeline 自身的 `newspace` 节点命中"前往区域"（05:02:04.258，score 1.0，box [607,416,50,13]）点击 (618,424) → LOADING → **活动地区**。`newspace` 与整条 `_finish` 链**自 v2.3.6 起未变**，属长期潜伏缺陷，本次是首次走到章末（此前 10-09 等日票券耗尽卡在中段关，`newspace` 历史命中 0 次）；③ 10-09 同位置卡 ~28s 是因为当天"下一关卡"被拒（`_nochance1` 命中"…道具不足。"）游戏留在关卡列表页、中段关剧情结束回"活动关卡"而自愈。修复方向：`_finish` 的 next 链补计数闸门（仿既有 `_nextstage_return` max_hit=5 / `_eventstage_return_last` max_hit=2 / `_12_no_end_return` max_hit=2）；`finish_click` 加识别条件或 max_hit，避免"DirectHit 兜底 + JumpBack"必死组合；**补一条认"活动地区"的分支**（`newspace` 点完「前往区域」后/或 `_finish` 的 next 里识别"活动地区"，点 STORY/挑战 回关卡列表，或直接 JumpBack 到 `claimrewards`/`_end` 收尾——这是章末收尾的正解去向）；`jumpstory` 的 ROI [1150,0,128,120] 与 expected "X" 需收紧/锚定，避免误读右上角图标（该 ROI 原为剧情页「记录跳过」文字按钮设计，命中框 [1150,9,104,19] s=0.9997；活动地区页同 ROI 里是邮件+九宫格菜单图标+红点，被 OCR 读成 "X"/"XO"/"文X"（1176/332/1 次，s=0.55–0.96）；**注意单纯提高 threshold 无效**——误读最高 0.96 高于任何常用阈值，且该节点未写 threshold 走默认 0.3，需改特征：删单字符 expected + 同帧锚定"跳过/TAB 提示"或改 TemplateMatch 跳过按钮）（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json）
+
+---
+
 ## v2.3.8 - 2026-10-09
 
 - 2026-10-09 [新增] UnbreakableSphere 适配 story2 部分关卡（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json、resource/base/image/limitedevent/UnbreakableSphere/）

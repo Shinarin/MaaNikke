@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788650137910,
+            "lastSyncTime": 1791903568407,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\simroom.json",
             "savedViewport": {
-                "x": -3016,
-                "y": 201,
-                "zoom": 0.65
+                "x": -3910,
+                "y": 239,
+                "zoom": 0.84
             },
             "filename": "simroom",
-            "version": "v1.9.3"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_external_backtohomepage_simroom": {
@@ -521,16 +521,16 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    326,
-                    198,
-                    672,
-                    362
+                    678,
+                    261,
+                    181,
+                    272
                 ],
                 "template": [
                     "simroom/simroom-5C.png"
                 ],
                 "threshold": [
-                    0.95
+                    0.9
                 ]
             }
         },

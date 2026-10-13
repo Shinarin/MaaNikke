@@ -3,65 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1791457633459,
+            "lastSyncTime": 1791904504643,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\UnbreakableSphere.json",
             "savedViewport": {
-                "x": 295,
-                "y": 53,
-                "zoom": 0.21
+                "x": 255,
+                "y": -1272,
+                "zoom": 0.49
             },
             "filename": "UnbreakableSphere",
-            "version": "v2.0.7"
-        }
-    },
-    "$__mpe_anchor_UnbreakableSphere_stagestart_anchor_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 6513,
-                "y": 850
-            }
-        }
-    },
-    "$__mpe_anchor_UnbreakableSphereanchor_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 7753,
-                "y": 405
-            }
-        }
-    },
-    "$__mpe_external_backtohomepage_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": -705,
-                "y": 1206
-            }
-        }
-    },
-    "$__mpe_external_claimpassreward_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1734,
-                "y": 4154
-            }
-        }
-    },
-    "$__mpe_external_event_noteam_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 5672,
-                "y": 1945
-            }
-        }
-    },
-    "$__mpe_external_limitedeventshop_claim_UnbreakableSphere": {
-        "$__mpe_code": {
-            "position": {
-                "x": 2023,
-                "y": 2889
-            }
+            "version": "v2.1.0"
         }
     },
     "$__mpe_group_event11_UnbreakableSphere": {
@@ -95,8 +47,8 @@
     "$__mpe_group_分组_UnbreakableSphere": {
         "$__mpe_code": {
             "position": {
-                "x": 2564,
-                "y": 195
+                "x": 2494,
+                "y": 193
             },
             "color": "green",
             "childrenLabels": [
@@ -104,7 +56,7 @@
                 "UnbreakableSphere_12_no_end_ocr",
                 "UnbreakableSphere_12_no_end_pic"
             ],
-            "width": 657,
+            "width": 533,
             "height": 617
         }
     },
@@ -220,6 +172,54 @@
             "height": 300
         }
     },
+    "$__mpe_anchor_UnbreakableSphere_stagestart_anchor_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6513,
+                "y": 850
+            }
+        }
+    },
+    "$__mpe_anchor_UnbreakableSphereanchor_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7753,
+                "y": 405
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": -705,
+                "y": 1206
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1734,
+                "y": 4154
+            }
+        }
+    },
+    "$__mpe_external_event_noteam_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1945
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2023,
+                "y": 2889
+            }
+        }
+    },
     "UnbreakableSphere": {
         "anchor": "UnbreakableSphereanchor",
         "next": [
@@ -302,8 +302,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 2794,
-                "y": 542
+                "x": 2543,
+                "y": 571
             }
         }
     },
@@ -333,8 +333,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 2634,
-                "y": 298
+                "x": 2529,
+                "y": 290
             }
         }
     },
@@ -350,14 +350,15 @@
                 ],
                 "template": [
                     "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_accessdenied.png",
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_accessdenied.png",
                     "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_accessdenied.png"
                 ]
             }
         },
         "$__mpe_code": {
             "position": {
-                "x": 2964,
-                "y": 258
+                "x": 2775,
+                "y": 282
             }
         }
     },
@@ -382,7 +383,8 @@
                 ],
                 "template": [
                     "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_into.png",
-                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_into.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_into.png",
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_hard_into.png"
                 ],
                 "threshold": [
                     0.85
@@ -1157,7 +1159,7 @@
         "next": [
             "UnbreakableSphere_cjeckeventpage",
             "[JumpBack]UnbreakableSphere_jumpstory",
-            "[JumpBack]UnbreakableSphere_newspace",
+            "UnbreakableSphere_newspace",
             "[JumpBack]UnbreakableSphere_finish_click"
         ],
         "$__mpe_code": {
@@ -1181,8 +1183,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 7137,
-                "y": 1495
+                "x": 7176,
+                "y": 1290
             }
         }
     },
@@ -1293,7 +1295,8 @@
                 ],
                 "template": [
                     "limitedevent/UnbreakableSphere/UnbreakableSphere_story1_replace.png",
-                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_replace.png"
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_replace.png",
+                    "limitedevent/UnbreakableSphere/UnbreakableSphere_story2_hard_replace.png"
                 ],
                 "green_mask": true,
                 "order_by": "Vertical",
@@ -1379,8 +1382,9 @@
             }
         }
     },
-    "UnbreakableSphere_intoevent": {
+    "UnbreakableSphere_intoevent_re": {
         "max_hit": 1,
+        "anchor": "UnbreakableSphere_intoevent_re_anchor",
         "next": [
             "UnbreakableSphere_check_story1",
             "UnbreakableSphere_storyevent",
@@ -1388,8 +1392,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 57,
-                "y": 643
+                "x": 171,
+                "y": 634
             }
         }
     },
@@ -1634,10 +1638,13 @@
             "type": "Click"
         },
         "post_wait_freezes": 1000,
+        "next": [
+            "[Anchor]UnbreakableSphere_intoevent_re_anchor"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 7148,
-                "y": 1237
+                "x": 7198,
+                "y": 1808
             }
         }
     },
@@ -2267,6 +2274,26 @@
             "position": {
                 "x": 1183,
                 "y": 1736
+            }
+        }
+    },
+    "UnbreakableSphere_intoevent": {
+        "max_hit": 1,
+        "next": [
+            "UnbreakableSphere_intoevent_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -91,
+                "y": 645
+            }
+        }
+    },
+    "$__mpe_anchor_UnbreakableSphere_intoevent_re_anchor_UnbreakableSphere": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7492,
+                "y": 1884
             }
         }
     }
