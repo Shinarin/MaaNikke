@@ -1,6 +1,6 @@
 ---
 name: maanikke-release
-description: MaaNikke 发版流程。当用户明确要求 push/发版/打包上传时执行完整流程（changelog = 用户给的内容优先 + DEVLOG 未发布区条目过滤改写合并，用户没给就只用 DEVLOG 总结 → 写入 Changelog.md → DEVLOG 封存新版本线、版本号 +1 → 复制模板打包 zip → 同步三件套到 C:\other\MaaNikke → git push → 创建 GitHub Release 并上传 zip → 备好 QQ 群发送材料：changelog 纯文本复制到剪贴板、告知 zip 路径，由用户自行粘贴发送）；用户只说 push 而无发版意图时，只做普通 git push，不触发本流程（DEVLOG 也不动）。
+description: MaaNikke 发版流程。当用户明确要求 push/发版/打包上传时执行完整流程（先从 git 记录补全 DEVLOG 未发布区缺失条目；changelog = 用户给的内容优先 + DEVLOG 未发布区条目过滤改写合并，用户没给就只用 DEVLOG 总结 → 写入 Changelog.md → DEVLOG 封存新版本线、版本号 +1 → 复制模板打包 zip → 同步三件套到 C:\other\MaaNikke → git push → 创建 GitHub Release 并上传 zip → 备好 QQ 群发送材料：changelog 纯文本复制到剪贴板、告知 zip 路径，由用户自行粘贴发送）；用户只说 push 而无发版意图时，只做普通 git push，不触发本流程（DEVLOG 也不动）。
 whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、发版、release、打包上传时触发
 ---
 
@@ -30,15 +30,26 @@ whenToUse: 用户给出本次更新内容（changelog）并明确要求 push、�
 ## 第一步：changelog + DEVLOG 封存 + 版本号
 
 1. 读 `interface.json` 的 `version`，末位 +1；每段只能 0-9，逢 9 向左进位：`2.1.9→2.2.0`、`2.9.9→3.0.0`。
-2. Changelog.md 条目 = **用户给的 changelog 内容 + DEVLOG.md `[未发布]` 区条目的用户向改写**，两者合并去重后，插到 `Changelog.md` 顶部第一个 `---` 之后（即最新条目位置）：
+2. **DEVLOG 未发布区补全（从 git 记录，2026-10-13 定案）**：用户自己改项目时往往不会随手记 DEVLOG，发版时先从 git 记录补齐：
+   ```bash
+   git log -1 --format=%H --grep="chore: release"   # 上个发版 commit
+   git status --porcelain                            # 未提交/未跟踪改动
+   git diff --stat <上个release commit> -- agent resource interface.json
+   ```
+   （工作区对上个 release commit 的 diff 同时覆盖已提交和未提交的改动；新增的未跟踪文件靠 `git status` 的 `??` 行发现。）
+   - 对照 DEVLOG `## [未发布]` 区已有条目：**条目里已提及的文件跳过**，未覆盖的改动按 diff 内容推断补写条目，追加在未发布区（新上旧下），格式 `- YYYY-MM-DD [类型] 简述（涉及：文件）`，日期用真实当前日期。
+   - 类型推断参考：新增任务/模板图 → `[新增]`；阈值/ROI/识别参数/节点链调整 → `[优化]`；能从 diff 明确看出修死循环/误触 → `[修复]`。推断只能描述"改了什么"，**简述保持客观，不要编造动机**（拿不准就写"调整 xx 节点/参数"）。
+   - 内部文件（`.kimi-code/`、`DEVLOG.md`、`.gitignore`、`temp/`、`docs/` 等）不补写。
+   - 补写的条目与原有条目一样参与下一步的 changelog 过滤合并。
+3. Changelog.md 条目 = **用户给的 changelog 内容 + DEVLOG.md `[未发布]` 区条目的用户向改写**，两者合并去重后，插到 `Changelog.md` 顶部第一个 `---` 之后（即最新条目位置）：
    - DEVLOG 过滤规则：剔除 `[文档]`/`[调查]` 条目和纯内部改动（重构、注释、skill、脚本、配置等用户无感知的）；只保留**用户可感知**的新增/修复/优化，用用户语言重写——**不要出现代码细节、文件名、内部机制**。
    - 用户给的内容优先；DEVLOG 改写条目与其重复时以用户表述为准。
    - 版本标题：`## [vX.Y.Z] - YYYY-MM-DD`（日期用 `date +%F` 取真实当前日期，别信会话时间）
    - 分类小节按内容选用：`### 🚀 新增 & 优化` / `### 🔧 优化` / `### 🐛 修复`
    - 条目格式：`- <emoji> **加粗标题**  `（两空格换行）+ 缩进的一句描述
    - 条目之间空行；新旧版本块之间以 `---` 分隔
-3. DEVLOG.md 封存：把 `## [未发布]` 标题改为 `## vX.Y.Z - YYYY-MM-DD`（条目原样保留在线下，不删不改），并在头部规则说明之后重建空的 `## [未发布]` 区（保留 `---` 分隔结构，新上旧下）。
-4. `interface.json` 的 `version` 同步改为新版本号。
+4. DEVLOG.md 封存：把 `## [未发布]` 标题改为 `## vX.Y.Z - YYYY-MM-DD`（条目原样保留在线下，不删不改），并在头部规则说明之后重建空的 `## [未发布]` 区（保留 `---` 分隔结构，新上旧下）。
+5. `interface.json` 的 `version` 同步改为新版本号。
 
 ## 第二步：在 F 盘备份目录复制模板并改名
 

@@ -1,4 +1,4 @@
-MPE Local Bridge 速查（MaaPipelineEditor 本地服务，v1.10+）
+MPE Local Bridge 速查（MaaPipelineEditor 本地服务，v2.1.0）
 
 # 安装 / 更新 mpelb 本体（PowerShell 一行）
 irm https://raw.githubusercontent.com/kqcoxn/MaaPipelineEditor/main/scripts/install/install.ps1 | iex
@@ -6,13 +6,24 @@ irm https://raw.githubusercontent.com/kqcoxn/MaaPipelineEditor/main/scripts/inst
 # 启动服务（在本项目根目录运行；因旁有 config/ 目录自动进入开发模式，配置写在 config/config.json）
 ./mpelb
 
-# 自带依赖：MaaFramework 与 OCR 由 MPE 自管理，固定装在 mpelb 旁的 runtime/ 目录
-# 注意：mpelb 只认 runtime/maafw，手动放的 maafw 目录或 config 里的 maafw.lib_dir 均不生效
+# 自带依赖（v2.1.0）：MaaFramework 与 OCR 由 MPE 自管理，装在 %LOCALAPPDATA%\mpelb\runtime
+# 注意：v1.10 时代用的是 exe 旁 runtime/maafw；项目根那个手工构建的 runtime/maafw（5.14.0）已不被读取，可删
 ./mpelb deps reinstall        # 全部重装
 ./mpelb deps reinstall mfw    # 只装 MaaFramework（含 MaaAgentBinary）
 ./mpelb deps reinstall ocr    # 只装 OCR 模型
+./mpelb env check             # 检查全局 MPE 环境
+
+# agent 链路（2026-10-16 实证，两条链各用各的 Python，互不迁就）
+# - MPE 前端 agent 卡片"启动程序"必须指向 .venv-mpe/Scripts/python.exe。
+#   系统默认 python 是 maafw 5.12.2（协议 7），专供 MFAA GUI 链；mpelb 主进程是协议 8，
+#   用系统 python 握手必失败（agent client connect failed）。
+# - .venv-mpe 的 maafw 必须与 mpelb 钉版 mfwVersion 精确同版（当前 5.14.3）。
+#   跨 minor（如 5.14.0↔5.14.3）会在 maafw 层握手成功后被 mpelb 断开，报同样的错。
+#   mfwVersion 查 %APPDATA%\site.codax.mpe.desktop\versions.json。
+# - mpelb 开了 autoUpdate；升级后若 agent 突然拉不起来，先同步版本：
+#   .venv-mpe/Scripts/python.exe -m pip install maafw==<mfwVersion>
 
 # 其他
 ./mpelb info                  # 查看运行模式与路径
 ./mpelb config open           # 打开配置文件
-./mpelb config set-interface  # 设置 Project Interface 入口（留空恢复自动检索）
+./mpelb config set-interface  # 设置 Project Interface V2 入口（留空恢复自动检索）

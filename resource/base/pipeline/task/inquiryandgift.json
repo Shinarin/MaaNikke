@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787612717077,
+            "lastSyncTime": 1792101010943,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\inquiryandgift.json",
             "savedViewport": {
-                "x": -770,
-                "y": -914,
-                "zoom": 0.87
+                "x": -482,
+                "y": -746,
+                "zoom": 1.13
             },
             "filename": "inquiryandgift",
-            "version": "v1.8.1"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_anchor_startinquirygift_inquiryandgift": {
@@ -862,7 +862,8 @@
         "post_wait_freezes": 1000,
         "next": [
             "quickinquiry",
-            "baseinquiry"
+            "baseinquiry",
+            "nikke1"
         ],
         "$__mpe_code": {
             "position": {
@@ -887,7 +888,8 @@
         "post_wait_freezes": 1000,
         "next": [
             "quickinquiry",
-            "baseinquiry"
+            "baseinquiry",
+            "nikke2"
         ],
         "$__mpe_code": {
             "position": {
@@ -912,7 +914,8 @@
         "post_wait_freezes": 1000,
         "next": [
             "quickinquiry",
-            "baseinquiry"
+            "baseinquiry",
+            "nikke3"
         ],
         "$__mpe_code": {
             "position": {

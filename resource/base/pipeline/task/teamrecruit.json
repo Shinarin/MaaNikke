@@ -3,16 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1784155786271,
+            "lastSyncTime": 1792101280224,
             "isModifiedExternally": false,
+            "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\teamrecruit.json",
             "savedViewport": {
-                "x": -83,
-                "y": 849,
-                "zoom": 1
+                "x": -796,
+                "y": 666,
+                "zoom": 0.85
             },
             "filename": "teamrecruit",
-            "version": "v1.7.4"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_external_backtohomepage_teamrecruit": {
@@ -386,6 +387,7 @@
                 }
             }
         },
+        "timeout": 120000,
         "next": [
             "jumprecruit"
         ],

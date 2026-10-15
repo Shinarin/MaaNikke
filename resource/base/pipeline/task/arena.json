@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1790828786679,
+            "lastSyncTime": 1792101359970,
             "isModifiedExternally": false,
             "isDeleted": false,
-            "filePath": "\\\\?\\C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\arena.json",
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\arena.json",
             "savedViewport": {
-                "x": -7622,
-                "y": 156,
-                "zoom": 1.06
+                "x": -5726,
+                "y": 590,
+                "zoom": 0.85
             },
             "filename": "arena",
-            "version": "v2.0.5"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_anchor_arenafightagain_arena": {
@@ -43,6 +43,54 @@
             "position": {
                 "x": 3743,
                 "y": -352
+            }
+        }
+    },
+    "arena_R_S": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    8,
+                    2,
+                    95,
+                    48
+                ],
+                "expected": [
+                    "新人",
+                    "特殊"
+                ]
+            }
+        },
+        "next": [
+            "exitfightarena"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7988,
+                "y": 335
+            }
+        }
+    },
+    "arena_page": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    524,
+                    158,
+                    241,
+                    101
+                ],
+                "expected": [
+                    "ARENA"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 8082,
+                "y": 38
             }
         }
     },
@@ -448,10 +496,11 @@
                 ]
             }
         },
-        "pre_wait_freezes": 500,
+        "pre_wait_freezes": 300000,
         "action": {
             "type": "Click"
         },
+        "timeout": 20000,
         "next": [
             "arenafight_end",
             "finishfight"
@@ -476,8 +525,8 @@
         "inverse": true,
         "$__mpe_code": {
             "position": {
-                "x": 7937,
-                "y": -211
+                "x": 7930,
+                "y": -188
             }
         }
     },
@@ -798,54 +847,6 @@
             "position": {
                 "x": 5295,
                 "y": -104
-            }
-        }
-    },
-    "arena_page": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    524,
-                    158,
-                    241,
-                    101
-                ],
-                "expected": [
-                    "ARENA"
-                ]
-            }
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 8082,
-                "y": 38
-            }
-        }
-    },
-    "arena_R_S": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    8,
-                    2,
-                    95,
-                    48
-                ],
-                "expected": [
-                    "新人",
-                    "特殊"
-                ]
-            }
-        },
-        "next": [
-            "exitfightarena"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 7988,
-                "y": 335
             }
         }
     }

@@ -16,6 +16,34 @@
 
 ---
 
+## v2.4.0 - 2026-10-16
+
+- 2026-10-16 [优化] 竞技场 finishfight 节点 pre_wait_freezes 500→300000、新增 timeout 20000（战斗结算等待画面冻结延长至 5 分钟）（涉及：resource/base/pipeline/task/arena.json）
+
+- 2026-10-16 [优化] 爬塔 climbtower_intofight_Node 节点 timeout 60000→300000（进入战斗等待超时延长，缓解战斗结束直接连战导致的识别空转超时）（涉及：resource/base/pipeline/task/climbtower.json）
+
+- 2026-10-16 [优化] 咨询妮姬 nikke1/2/3 点击节点 next 增加自我引用重试分支（涉及：resource/base/pipeline/task/inquiryandgift.json）
+
+- 2026-10-16 [优化] 团队招募 recruitswiepResetCount 节点新增 timeout 120000（涉及：resource/base/pipeline/task/teamrecruit.json）
+
+- 2026-10-16 [优化] UnbreakableSphere 限时活动节点整理：into11_error_pic→into11_pic、canintoevent_error→canintoevent、end→endshop、checkintoeventreturn→exchange 改名；SKIP expected 补"跳过"；多处 ROI 调整为 [0,0,90,200]；新增 threshold 0.85；stagestart timeout 60000→180000；into11_pic 新增 timeout 180000（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json）
+
+- 2026-10-16 [优化] maanikke-release skill 第一步新增"DEVLOG 未发布区从 git 记录补全"：发版时对上个 release commit 做 diff（含未提交改动），对照已有条目去重后按 diff 推断补写缺失留痕，再参与 changelog 过滤合并（涉及：.kimi-code/skills/maanikke-release/SKILL.md）
+
+- 2026-10-16 [文档] MPEsimple.txt 重写至 v2.1.0 现实：自管理依赖改在 %LOCALAPPDATA%\mpelb\runtime（项目根 runtime/maafw 已不被读取）；新增 agent 链路小节（卡片"启动程序"指向 .venv-mpe、maafw 须与 mpelb 钉版 mfwVersion 精确同版、升级后同步命令）（涉及：MPEsimple.txt）
+
+- 2026-10-16 [修复] .venv-mpe 的 maafw 5.14.0 → 5.14.3，与 mpelb v2.1.0 自带 MaaFW（钉版 mfwVersion=5.14.3）精确对齐：卡片"启动程序"已在 .venv-mpe 时 maafw 层握手成功（start_up=True、打印"Agent 就绪"），但 mpelb 随后断开连接报"agent client connect failed"——历史上 MPE 链可用期均为两侧精确同版，跨 minor（5.14.0↔5.14.3）不被接受；stderr 乱码为卡片编码显示问题（内容是"等待任务调度"正常消息），非异常；已经用户实测恢复；GUI 链不受影响（涉及：.venv-mpe（gitignored）；agent_runtime.py:55-56 佐证）
+
+- 2026-10-16 [调查] MPE 拉起 agent 失败（前端 agent 卡片报"Agent 握手失败: agent client connect fail"）根因：mpelb 自升 v2.1.0（10-13）后自带 MaaFW 为 v5.14.3（协议 8，装在 %LOCALAPPDATA%\mpelb\runtime，不再用项目 runtime/maafw），而 agent 子进程走系统默认 python（maafw 5.12.2，协议 7）——9-27 系统 maafw 降回 5.12.2 修 GUI 链后 MPE 链即断；修法：MPE agent 卡片"启动程序"指回 .venv-mpe/Scripts/python.exe（maafw 5.14.0，协议 8）；GUI 链不受影响（项目文件未改动）
+
+- 2026-10-16 [优化] interface.json 移除 wisdomspring 注册（活动已结束）；pipeline 文件与模板图目录保留作派生源（涉及：interface.json）
+
+- 2026-10-16 [新增] interface.json 加回 wisdomspring 限时活动注册块（涉及：interface.json）
+
+- 2026-10-16 [新增] 自 wisdomspring.json 派生新限时活动任务 newflavor.json（216 处替换，含 anchor/MPE/便签），模板图目录复制为 image/limitedevent/newflavor/（10 张），interface.json 新增 newflavor 注册（涉及：resource/base/pipeline/task/limitedevent/newflavor.json、resource/base/image/limitedevent/newflavor/、interface.json）
+
+---
+
 ## v2.3.9 - 2026-10-13
 
 - 2026-10-13 [新增] UnbreakableSphere 适配 hard 部分关卡（涉及：resource/base/pipeline/task/limitedevent/UnbreakableSphere.json、resource/base/image/limitedevent/UnbreakableSphere/）
