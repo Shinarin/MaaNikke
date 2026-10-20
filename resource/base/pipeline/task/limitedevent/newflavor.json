@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792105863507,
+            "lastSyncTime": 1792534794198,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\newflavor.json",
             "savedViewport": {
-                "x": -2423,
-                "y": -632,
-                "zoom": 1.04
+                "x": 151,
+                "y": 64,
+                "zoom": 0.23
             },
             "filename": "newflavor",
             "version": "v2.1.0"
@@ -22,7 +22,7 @@
                 "x": 3289,
                 "y": 1136
             },
-            "color": "blue",
+            "color": "green",
             "childrenLabels": [
                 "newflavor_into11_pic"
             ],
@@ -36,7 +36,7 @@
                 "x": 3288,
                 "y": 395
             },
-            "color": "blue",
+            "color": "green",
             "childrenLabels": [
                 "newflavor_canintoevent"
             ],
@@ -50,7 +50,7 @@
                 "x": 2564,
                 "y": 195
             },
-            "color": "blue",
+            "color": "green",
             "childrenLabels": [
                 "newflavor_12_no_end",
                 "newflavor_12_no_end_ocr",
@@ -316,6 +316,41 @@
             "position": {
                 "x": 2794,
                 "y": 879
+            }
+        }
+    },
+    "newflavor_canintoevent": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    420,
+                    141,
+                    449,
+                    501
+                ],
+                "template": [
+                    "limitedevent/newflavor/newflavor_normal_into.png",
+                    "limitedevent/newflavor/newflavor_hard_into.png"
+                ],
+                "threshold": [
+                    0.85
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "newflavor_intofightpage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3357,
+                "y": 448
             }
         }
     },
@@ -1145,7 +1180,8 @@
                     412
                 ],
                 "template": [
-                    "limitedevent/newflavor/newflavor_normal_repeat.png"
+                    "limitedevent/newflavor/newflavor_normal_repeat.png",
+                    "limitedevent/newflavor/newflavor_hard_repeat.png"
                 ],
                 "order_by": "Vertical",
                 "index": -1
@@ -1227,40 +1263,6 @@
             "position": {
                 "x": 1554,
                 "y": 1230
-            }
-        }
-    },
-    "newflavor_canintoevent": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    420,
-                    141,
-                    449,
-                    501
-                ],
-                "template": [
-                    "limitedevent/newflavor/newflavor_normal_into.png"
-                ],
-                "threshold": [
-                    0.85
-                ],
-                "order_by": "Vertical",
-                "index": -1
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "post_wait_freezes": 500,
-        "next": [
-            "newflavor_intofightpage"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3357,
-                "y": 448
             }
         }
     },

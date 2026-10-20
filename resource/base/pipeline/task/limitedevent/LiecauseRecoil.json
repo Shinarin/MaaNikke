@@ -1,0 +1,2357 @@
+{
+    "$__mpe_config_LiecauseRecoil": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1792538755887,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\LiecauseRecoil.json",
+            "savedViewport": {
+                "x": 182,
+                "y": -1472,
+                "zoom": 0.8
+            },
+            "filename": "LiecauseRecoil",
+            "version": "v2.1.0"
+        }
+    },
+    "$__mpe_anchor_LiecauseRecoil_intoevent_re_anchor_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7492,
+                "y": 1884
+            }
+        }
+    },
+    "$__mpe_anchor_LiecauseRecoil_stagestart_anchor_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6513,
+                "y": 850
+            }
+        }
+    },
+    "$__mpe_anchor_LiecauseRecoilanchor_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7753,
+                "y": 405
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": -705,
+                "y": 1206
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1734,
+                "y": 4154
+            }
+        }
+    },
+    "$__mpe_external_event_noteam_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1945
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2023,
+                "y": 2889
+            }
+        }
+    },
+    "$__mpe_group_event11_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3247,
+                "y": 1012
+            },
+            "color": "green",
+            "childrenLabels": [
+                "LiecauseRecoil_into11_pic"
+            ],
+            "width": 400,
+            "height": 447
+        }
+    },
+    "$__mpe_group_兜底_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3242,
+                "y": -206
+            },
+            "color": "green",
+            "childrenLabels": [
+                "LiecauseRecoil_canintoevent",
+                "LiecauseRecoil_canintoevent2",
+                "LiecauseRecoil_canintoevent_return"
+            ],
+            "width": 348,
+            "height": 1134
+        }
+    },
+    "$__mpe_group_分组_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2494,
+                "y": 193
+            },
+            "color": "green",
+            "childrenLabels": [
+                "LiecauseRecoil_12_no_end",
+                "LiecauseRecoil_12_no_end_ocr",
+                "LiecauseRecoil_12_no_end_pic"
+            ],
+            "width": 533,
+            "height": 617
+        }
+    },
+    "$__mpe_group_适配story2_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 377,
+                "y": 937
+            },
+            "color": "green",
+            "childrenLabels": [
+                "LiecauseRecoil_check_intostory1",
+                "LiecauseRecoil_check_intostory2"
+            ],
+            "width": 606,
+            "height": 367
+        }
+    },
+    "$__mpe_group_适配商店_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1095,
+                "y": 3203
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "LiecauseRecoil_intoshop"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配困难按钮_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1841,
+                "y": 884
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "LiecauseRecoil_clickhard2"
+            ],
+            "width": 290,
+            "height": 348
+        }
+    },
+    "$__mpe_group_适配挑战_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 746,
+                "y": 3583
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "LiecauseRecoil_intochallenge"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配活动任务_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 833,
+                "y": 1840
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "claimLiecauseRecoil_qiandao"
+            ],
+            "width": 256,
+            "height": 290
+        }
+    },
+    "$__mpe_group_适配活动任务图标_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 991,
+                "y": 2149
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "LiecauseRecoil_rewards"
+            ],
+            "width": 297,
+            "height": 412
+        }
+    },
+    "$__mpe_group_适配活动图标_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": -465,
+                "y": 157
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "LiecauseRecoil_into"
+            ],
+            "width": 348,
+            "height": 411
+        }
+    },
+    "$__mpe_group_需适配enter点位_LiecauseRecoil": {
+        "$__mpe_code": {
+            "position": {
+                "x": 908,
+                "y": 1207
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "LiecauseRecoil_eventstage_last"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "LiecauseRecoil": {
+        "anchor": "LiecauseRecoilanchor",
+        "next": [
+            "LiecauseRecoil_checkhomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -969,
+                "y": 625
+            }
+        }
+    },
+    "LiecauseRecoil_0item_count": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
+                "roi": [
+                    398,
+                    3,
+                    517,
+                    715
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]LiecauseRecoilanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7487,
+                "y": 941
+            }
+        }
+    },
+    "LiecauseRecoil_12_have_end": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "LiecauseRecoil_12_no_end_pic",
+                    "LiecauseRecoil_12_no_end_ocr"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "LiecauseRecoil_into11_pic"
+        ],
+        "on_error": [
+            "LiecauseRecoil_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2798,
+                "y": 1090
+            }
+        }
+    },
+    "LiecauseRecoil_12_no_end": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "LiecauseRecoil_12_no_end_ocr",
+                    "LiecauseRecoil_12_no_end_pic"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_canintoevent",
+            "[JumpBack]LiecauseRecoil_canintoevent_return",
+            "LiecauseRecoil_canintoevent2"
+        ],
+        "on_error": [
+            "LiecauseRecoil_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2543,
+                "y": 571
+            }
+        }
+    },
+    "LiecauseRecoil_12_no_end_ocr": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    128,
+                    479,
+                    566
+                ],
+                "expected": [
+                    "Access Denied",
+                    "Access",
+                    "Denied",
+                    "ACCESS DENIED",
+                    "ACCESS",
+                    "DENIED",
+                    "NONE",
+                    "None",
+                    "none",
+                    "\\?"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2529,
+                "y": 290
+            }
+        }
+    },
+    "LiecauseRecoil_12_no_end_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    404,
+                    128,
+                    479,
+                    566
+                ],
+                "template": [
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_story1_accessdenied.png",
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_story2_accessdenied.png",
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_story2_accessdenied.png"
+                ],
+                "threshold": [
+                    0.85
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2775,
+                "y": 282
+            }
+        }
+    },
+    "LiecauseRecoil_12_no_end_return": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 2794,
+                "y": 879
+            }
+        }
+    },
+    "LiecauseRecoil_canintoevent": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    382,
+                    20,
+                    511,
+                    696
+                ],
+                "template": [
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_hard_into.png",
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_hard_into.png"
+                ],
+                "threshold": [
+                    0.85
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "LiecauseRecoil_intofightpage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3309,
+                "y": -123
+            }
+        }
+    },
+    "LiecauseRecoil_challengefight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    623,
+                    579,
+                    243,
+                    140
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "LiecauseRecoil_checkchallengefinish",
+            "[JumpBack]LiecauseRecoil_challengeisfighting",
+            "LiecauseRecoil_challengefight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2054,
+                "y": 3504
+            }
+        }
+    },
+    "LiecauseRecoil_challengeisfighting": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    137,
+                    49
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2711,
+                "y": 3782
+            }
+        }
+    },
+    "LiecauseRecoil_check_intostory1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    490,
+                    553,
+                    48,
+                    13
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 702,
+                "y": 998
+            }
+        }
+    },
+    "LiecauseRecoil_check_intostory2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    489,
+                    587,
+                    52,
+                    10
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 412,
+                "y": 1003
+            }
+        }
+    },
+    "LiecauseRecoil_check_story1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    361,
+                    233,
+                    596,
+                    247
+                ],
+                "expected": [
+                    "后开放",
+                    "需要通关"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_storyevent",
+            "[JumpBack]LiecauseRecoil_check_intostory1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 434,
+                "y": 400
+            }
+        }
+    },
+    "LiecauseRecoil_checkchallengefinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    382,
+                    445,
+                    534,
+                    262
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "claimpassreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2704,
+                "y": 3532
+            }
+        }
+    },
+    "LiecauseRecoil_checkfinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    526,
+                    528,
+                    238,
+                    168
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_nextstage",
+            "[JumpBack]LiecauseRecoil_nextstage_return",
+            "LiecauseRecoil_no_nextstage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5894,
+                "y": 970
+            }
+        }
+    },
+    "LiecauseRecoil_checkhomepage": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "homepagesign",
+                    "homepagesign2"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_checkintoevent",
+            "[JumpBack]LiecauseRecoil_into",
+            "[JumpBack]LiecauseRecoil_exchange"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -688,
+                "y": 629
+            }
+        }
+    },
+    "LiecauseRecoil_checkintoevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "LiecauseRecoil_checkintoeventreturn"
+                    ],
+                    "strict": false
+                }
+            }
+        },
+        "next": [
+            "LiecauseRecoil_intoevent",
+            "claimLiecauseRecoil_claimrewards",
+            "LiecauseRecoil_claimrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -387,
+                "y": 604
+            }
+        }
+    },
+    "LiecauseRecoil_checkintoevent2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "活动",
+                    "地区"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -37,
+                "y": 18
+            }
+        }
+    },
+    "LiecauseRecoil_checkintoevent_skip": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1178,
+                    4,
+                    98,
+                    49
+                ],
+                "expected": [
+                    "Skip",
+                    "skip",
+                    "SKIP",
+                    "跳过"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -32,
+                "y": 220
+            }
+        }
+    },
+    "LiecauseRecoil_checkintoevent_touch": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    477,
+                    508,
+                    324,
+                    208
+                ],
+                "expected": [
+                    "TOUCH TO CONTINUE",
+                    "TOUCH",
+                    "CONTINUE"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -32,
+                "y": 427
+            }
+        }
+    },
+    "LiecauseRecoil_cjeckeventpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    6,
+                    100,
+                    60
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_0item_count",
+            "LiecauseRecoil_item_count"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7183,
+                "y": 961
+            }
+        }
+    },
+    "LiecauseRecoil_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "LiecauseRecoil_rewards",
+            "LiecauseRecoil_rewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 710,
+                "y": 2396
+            }
+        }
+    },
+    "LiecauseRecoil_claimrewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    466,
+                    307,
+                    347,
+                    330
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励",
+                    "确认",
+                    "确定",
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "LiecauseRecoil_claimrewardsdailypage",
+            "LiecauseRecoil_claimrewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1690,
+                "y": 2525
+            }
+        }
+    },
+    "LiecauseRecoil_claimrewardsdailypage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    450,
+                    30,
+                    376,
+                    576
+                ],
+                "expected": [
+                    "剩余时间",
+                    "每日任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    983,
+                    515,
+                    128,
+                    78
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "LiecauseRecoil_findshopbuttom",
+            "LiecauseRecoil_claimrewardsdailypage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1981,
+                "y": 2320
+            }
+        }
+    },
+    "LiecauseRecoil_claimshop": {
+        "next": [
+            "LiecauseRecoil_inshop",
+            "[JumpBack]LiecauseRecoil_intoshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 797,
+                "y": 3041
+            }
+        }
+    },
+    "LiecauseRecoil_claimshoprewards": {
+        "max_hit": 1,
+        "next": [
+            "limitedeventshop_claim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1680,
+                "y": 2838
+            }
+        }
+    },
+    "LiecauseRecoil_clickhard1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    636,
+                    606,
+                    222,
+                    113
+                ],
+                "expected": [
+                    "Hard",
+                    "HARD"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "LiecauseRecoil_swipestage_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1880,
+                "y": 514
+            }
+        }
+    },
+    "LiecauseRecoil_clickhard2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    776,
+                    672,
+                    8,
+                    8
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "LiecauseRecoil_swipestage_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1876,
+                "y": 935
+            }
+        }
+    },
+    "LiecauseRecoil_comfirmchallenge": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "挑战关卡"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_havechalengechance2",
+            "[JumpBack]LiecauseRecoil_havechalengechance2_return",
+            "claimpassreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1240,
+                "y": 3619
+            }
+        }
+    },
+    "LiecauseRecoil_endshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    24,
+                    672,
+                    46,
+                    14
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "LiecauseRecoil_intochallenge",
+            "LiecauseRecoil_endshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1697,
+                "y": 3090
+            }
+        }
+    },
+    "LiecauseRecoil_error": {
+        "next": [
+            "[Anchor]LiecauseRecoilanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3117,
+                "y": 1506
+            }
+        }
+    },
+    "LiecauseRecoil_eventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_clickhard1",
+            "LiecauseRecoil_clickhard2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1561,
+                "y": 666
+            }
+        }
+    },
+    "LiecauseRecoil_eventstage_last": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    263,
+                    6,
+                    741,
+                    693
+                ],
+                "expected": [
+                    "剩余时间"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 976,
+                "y": 1263
+            }
+        }
+    },
+    "LiecauseRecoil_eventstage_return_last": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 990,
+                "y": 995
+            }
+        }
+    },
+    "LiecauseRecoil_exchange": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    774,
+                    553,
+                    247,
+                    121
+                ],
+                "template": [
+                    "exchange.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -383,
+                "y": 981
+            }
+        }
+    },
+    "LiecauseRecoil_findshopbuttom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    249,
+                    247,
+                    655,
+                    455
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_claimshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2287,
+                "y": 2541
+            }
+        }
+    },
+    "LiecauseRecoil_finish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    526,
+                    528,
+                    238,
+                    168
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步",
+                    "ESC"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "LiecauseRecoil_cjeckeventpage",
+            "[JumpBack]LiecauseRecoil_jumpstory",
+            "LiecauseRecoil_newspace",
+            "[JumpBack]LiecauseRecoil_finish_click"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6866,
+                "y": 964
+            }
+        }
+    },
+    "LiecauseRecoil_finish_click": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1007,
+                    285,
+                    44,
+                    21
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7176,
+                "y": 1290
+            }
+        }
+    },
+    "LiecauseRecoil_havechalengechance2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    399,
+                    168,
+                    474,
+                    538
+                ],
+                "expected": [
+                    "CHALLENGE STAGE",
+                    "CHALLENGE"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "LiecauseRecoil_challengefight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1717,
+                "y": 3524
+            }
+        }
+    },
+    "LiecauseRecoil_havechalengechance2_return": {
+        "max_hit": 10,
+        "$__mpe_code": {
+            "position": {
+                "x": 1712,
+                "y": 3772
+            }
+        }
+    },
+    "LiecauseRecoil_inshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]LiecauseRecoil_claimshoprewards",
+            "LiecauseRecoil_endshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1181,
+                "y": 2941
+            }
+        }
+    },
+    "LiecauseRecoil_into": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    762,
+                    426,
+                    289,
+                    243
+                ],
+                "template": [
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 180000,
+        "next": [
+            "LiecauseRecoil_checkintoevent2",
+            "[JumpBack]LiecauseRecoil_checkintoevent_skip",
+            "[JumpBack]LiecauseRecoil_checkintoevent_touch",
+            "LiecauseRecoil_into"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -397,
+                "y": 188
+            }
+        }
+    },
+    "LiecauseRecoil_into11_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    382,
+                    20,
+                    511,
+                    696
+                ],
+                "template": [
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_story1_replace.png",
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_story2_replace.png",
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_story2_hard_replace.png"
+                ],
+                "green_mask": true,
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "LiecauseRecoil_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3328,
+                "y": 1066
+            }
+        }
+    },
+    "LiecauseRecoil_intochallenge": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    463,
+                    479,
+                    225
+                ],
+                "expected": [
+                    "挑战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "LiecauseRecoil_comfirmchallenge",
+            "LiecauseRecoil_intochallenge"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 849,
+                "y": 3625
+            }
+        }
+    },
+    "LiecauseRecoil_intoerroreventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    461,
+                    96,
+                    358,
+                    539
+                ],
+                "expected": [
+                    "帮助",
+                    "关于",
+                    "剧情活动",
+                    "奖励内容",
+                    "活动相薄"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    883,
+                    430,
+                    43,
+                    114
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1353,
+                "y": 1222
+            }
+        }
+    },
+    "LiecauseRecoil_intoevent": {
+        "max_hit": 1,
+        "next": [
+            "LiecauseRecoil_intoevent_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -91,
+                "y": 645
+            }
+        }
+    },
+    "LiecauseRecoil_intoevent_re": {
+        "anchor": "LiecauseRecoil_intoevent_re_anchor",
+        "next": [
+            "LiecauseRecoil_check_story1",
+            "LiecauseRecoil_storyevent",
+            "[JumpBack]LiecauseRecoil_check_intostory2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 173,
+                "y": 642
+            }
+        }
+    },
+    "LiecauseRecoil_intoeventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    356,
+                    28,
+                    577,
+                    671
+                ],
+                "expected": [
+                    "Enter",
+                    "ENTER",
+                    "ENTE",
+                    "NTER",
+                    "Ente",
+                    "nter",
+                    "nter"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1359,
+                "y": 944
+            }
+        }
+    },
+    "LiecauseRecoil_intofight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    594,
+                    466,
+                    111
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "[JumpBack]LiecauseRecoil_noteam",
+            "LiecauseRecoil_nochance2",
+            "LiecauseRecoil_intofight",
+            "LiecauseRecoil_stagestart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5033,
+                "y": 962
+            }
+        }
+    },
+    "LiecauseRecoil_intofightpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    626,
+                    583,
+                    263,
+                    135
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "LiecauseRecoil_startquickfight",
+            "LiecauseRecoil_no_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3781,
+                "y": 721
+            }
+        }
+    },
+    "LiecauseRecoil_intoshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    463,
+                    479,
+                    225
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1176,
+                "y": 3252
+            }
+        }
+    },
+    "LiecauseRecoil_isfighting": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    137,
+                    49
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5901,
+                "y": 1225
+            }
+        }
+    },
+    "LiecauseRecoil_isfighting2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    192,
+                    87
+                ],
+                "expected": [
+                    "LSHIFT",
+                    "LSHFT",
+                    "TAB"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5902,
+                "y": 1506
+            }
+        }
+    },
+    "LiecauseRecoil_item_count": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
+                "roi": [
+                    398,
+                    3,
+                    517,
+                    715
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "LiecauseRecoil_sweipdown"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7446,
+                "y": 1470
+            }
+        }
+    },
+    "LiecauseRecoil_jumpstory": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1150,
+                    0,
+                    128,
+                    120
+                ],
+                "expected": [
+                    "跳过",
+                    "取消",
+                    "X",
+                    "x",
+                    "skip",
+                    "Skip",
+                    "SKIP"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5902,
+                "y": 1718
+            }
+        }
+    },
+    "LiecauseRecoil_newspace": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    374,
+                    193,
+                    543,
+                    260
+                ],
+                "expected": [
+                    "前往区域"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "[Anchor]LiecauseRecoil_intoevent_re_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7198,
+                "y": 1808
+            }
+        }
+    },
+    "LiecauseRecoil_nextstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1069,
+                    604,
+                    208,
+                    108
+                ],
+                "expected": [
+                    "下一关卡",
+                    "下一",
+                    "关卡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "LiecauseRecoil_nochance1",
+            "LiecauseRecoil_nextstage",
+            "[Anchor]LiecauseRecoil_stagestart_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6238,
+                "y": 966
+            }
+        }
+    },
+    "LiecauseRecoil_nextstage_return": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 6241,
+                "y": 1238
+            }
+        }
+    },
+    "LiecauseRecoil_no_nextstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1069,
+                    604,
+                    208,
+                    108
+                ],
+                "expected": [
+                    "下一关卡"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "LiecauseRecoil_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6233,
+                "y": 1448
+            }
+        }
+    },
+    "LiecauseRecoil_no_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "LiecauseRecoil_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4236,
+                "y": 1045
+            }
+        }
+    },
+    "LiecauseRecoil_nochance1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    444,
+                    280,
+                    436,
+                    143
+                ],
+                "expected": [
+                    "道具不足"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6534,
+                "y": 989
+            }
+        }
+    },
+    "LiecauseRecoil_nochance2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    420,
+                    284,
+                    406,
+                    162
+                ],
+                "expected": [
+                    "道具不足"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]LiecauseRecoilanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5349,
+                "y": 612
+            }
+        }
+    },
+    "LiecauseRecoil_noquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    379,
+                    269,
+                    550,
+                    227
+                ],
+                "expected": [
+                    "首次通关",
+                    "首次"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4549,
+                "y": 813
+            }
+        }
+    },
+    "LiecauseRecoil_noteam": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    436,
+                    290,
+                    444,
+                    165
+                ],
+                "expected": [
+                    "未编队",
+                    "无法进入"
+                ]
+            }
+        },
+        "next": [
+            "event_noteam"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5332,
+                "y": 1889
+            }
+        }
+    },
+    "LiecauseRecoil_quickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    454,
+                    325,
+                    70
+                ],
+                "expected": [
+                    "MAX",
+                    "MA"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "next": [
+            "LiecauseRecoil_startquickfightmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4714,
+                "y": 225
+            }
+        }
+    },
+    "LiecauseRecoil_quickfightmaxconfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    538,
+                    590,
+                    207,
+                    89
+                ],
+                "expected": [
+                    "点击任意处",
+                    "任意处进行",
+                    "ESC"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "next": [
+            "[Anchor]LiecauseRecoilanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5314,
+                "y": 218
+            }
+        }
+    },
+    "LiecauseRecoil_rewards": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1181,
+                    89,
+                    98,
+                    128
+                ],
+                "template": [
+                    "limitedevent/LiecauseRecoil/LiecauseRecoil_mission.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "LiecauseRecoil_rewardsdaily",
+            "LiecauseRecoil_rewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1030,
+                "y": 2196
+            }
+        }
+    },
+    "LiecauseRecoil_rewards2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1191,
+                    112,
+                    86,
+                    168
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "LiecauseRecoil_rewardsdaily",
+            "LiecauseRecoil_rewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1026,
+                "y": 2587
+            }
+        }
+    },
+    "LiecauseRecoil_rewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    451,
+                    589,
+                    377,
+                    93
+                ],
+                "expected": [
+                    "全部领取",
+                    "全部",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 8,
+        "repeat_delay": 500,
+        "next": [
+            "LiecauseRecoil_claimrewardsdailypage",
+            "LiecauseRecoil_claimrewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1386,
+                "y": 2345
+            }
+        }
+    },
+    "LiecauseRecoil_stagestart": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "LiecauseRecoil_isfighting",
+                    "LiecauseRecoil_isfighting2",
+                    "LiecauseRecoil_jumpstory"
+                ]
+            }
+        },
+        "anchor": "LiecauseRecoil_stagestart_anchor",
+        "timeout": 180000,
+        "next": [
+            "LiecauseRecoil_checkfinish",
+            "[JumpBack]LiecauseRecoil_isfighting",
+            "[JumpBack]LiecauseRecoil_isfighting2",
+            "[JumpBack]LiecauseRecoil_jumpstory",
+            "LiecauseRecoil_newspace"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5569,
+                "y": 956
+            }
+        }
+    },
+    "LiecauseRecoil_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "LiecauseRecoil_noquickfight",
+            "LiecauseRecoil_quickfightmax",
+            "LiecauseRecoil_nochance2",
+            "LiecauseRecoil_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4227,
+                "y": 727
+            }
+        }
+    },
+    "LiecauseRecoil_startquickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    525,
+                    323,
+                    59
+                ],
+                "expected": [
+                    "进行战斗",
+                    "战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "LiecauseRecoil_quickfightmaxconfirm",
+            "LiecauseRecoil_startquickfightmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5002,
+                "y": 239
+            }
+        }
+    },
+    "LiecauseRecoil_storyevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "剧情活动"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_eventstage",
+            "[JumpBack]LiecauseRecoil_intoeventstage",
+            "[JumpBack]LiecauseRecoil_intoerroreventstage",
+            "[JumpBack]LiecauseRecoil_eventstage_return_last",
+            "[JumpBack]LiecauseRecoil_eventstage_last"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1055,
+                "y": 662
+            }
+        }
+    },
+    "LiecauseRecoil_sweipdown": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    528,
+                    552,
+                    235,
+                    21
+                ],
+                "end": [
+                    [
+                        552,
+                        282,
+                        198,
+                        11
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "repeat": 2,
+        "next": [
+            "LiecauseRecoil_into11_pic"
+        ],
+        "on_error": [
+            "LiecauseRecoil_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7778,
+                "y": 1459
+            }
+        }
+    },
+    "LiecauseRecoil_swipestage_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "LiecauseRecoil_12_no_end",
+            "[JumpBack]LiecauseRecoil_12_no_end_return",
+            "LiecauseRecoil_12_have_end"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2202,
+                "y": 723
+            }
+        }
+    },
+    "claimLiecauseRecoil_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "claimLiecauseRecoil_intoqiandao",
+            "[JumpBack]claimLiecauseRecoil_qiandao_wuchu",
+            "[JumpBack]claimLiecauseRecoil_qiandao"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 560,
+                "y": 1552
+            }
+        }
+    },
+    "claimLiecauseRecoil_intoqiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    280,
+                    9,
+                    730,
+                    706
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "[Anchor]LiecauseRecoilanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1462,
+                "y": 1536
+            }
+        }
+    },
+    "claimLiecauseRecoil_qiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    716,
+                    510,
+                    141,
+                    129
+                ],
+                "expected": [
+                    "签到印章",
+                    "签到印",
+                    "到印章"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 855,
+                "y": 1879
+            }
+        }
+    },
+    "claimLiecauseRecoil_qiandao_wuchu": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    339,
+                    503,
+                    365
+                ],
+                "expected": [
+                    "确定",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1183,
+                "y": 1736
+            }
+        }
+    },
+    "LiecauseRecoil_canintoevent2": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagematch",
+                "custom_recognition_param": {
+                    "expected": [
+                        "1-11",
+                        "1-10",
+                        "1-9",
+                        "1-8",
+                        "1-7",
+                        "1-6",
+                        "1-5",
+                        "1-4",
+                        "1-3",
+                        "1-2",
+                        "1-1"
+                    ]
+                },
+                "roi": [
+                    361,
+                    134,
+                    566,
+                    530
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "LiecauseRecoil_intofightpage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3315,
+                "y": 587
+            }
+        }
+    },
+    "LiecauseRecoil_canintoevent_return": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 3316,
+                "y": 374
+            }
+        }
+    }
+}

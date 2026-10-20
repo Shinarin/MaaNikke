@@ -16,6 +16,15 @@
 
 ---
 
+## v2.4.1 - 2026-10-21
+
+- 2026-10-21 [优化] newflavor 限时活动适配 hard 难度关卡：canintoevent 模板补 newflavor_hard_into.png、repeat 模板补 newflavor_hard_repeat.png，hard 进入/重复/无权限 3 张模板图更新（涉及：resource/base/pipeline/task/limitedevent/newflavor.json、resource/base/image/limitedevent/newflavor/）
+- 2026-10-21 [优化] stagematch 关卡号匹配范围由 1-10/1-11 扩展至 1-1~1-11（涉及：agent/custom/reco/stagenum.py）
+- 2026-10-21 [新增] 由 UnbreakableSphere.json 派生 LiecauseRecoil.json：全量改名 258 处（rename_task.py 249 处 + claim 粘连节点名单独替换 9 处），复制模板图 13 张，interface.json 注册切换为「限时活动(LiecauseRecoil)」，verify_pipeline 双文件对比全绿（涉及：resource/base/pipeline/task/limitedevent/LiecauseRecoil.json、resource/base/image/limitedevent/LiecauseRecoil/、interface.json）
+- 2026-10-17 [调查] 用户报"更新 2.4.0 后弹缺 VC++ 运行库、回退 2.3.9 正常"：两版 zip 全部 175 个 exe/dll 逐字节相同（仅三件套差异），弹窗是 MFAAvalonia 启动时 Maa 原生库加载异常的兜底猜测（App.axaml.cs `DiagnoseWindowsStartupDependencyIssue`），非真实 VC++ 检测；用户侧 0x80070666 证明运行库已装。根因在覆盖更新过程（文件占用/杀软拦截/MOTW），建议全新目录解压
+
+---
+
 ## v2.4.0 - 2026-10-16
 
 - 2026-10-16 [优化] 竞技场 finishfight 节点 pre_wait_freezes 500→300000、新增 timeout 20000（战斗结算等待画面冻结延长至 5 分钟）（涉及：resource/base/pipeline/task/arena.json）
