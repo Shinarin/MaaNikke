@@ -477,7 +477,8 @@
         },
         "post_wait_freezes": 500,
         "next": [
-            "exitfightarena"
+            "exitfightarena",
+            "backtohomepage"
         ],
         "$__mpe_code": {
             "position": {
@@ -496,7 +497,6 @@
                 ]
             }
         },
-        "pre_wait_freezes": 300000,
         "action": {
             "type": "Click"
         },
