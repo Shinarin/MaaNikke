@@ -16,6 +16,22 @@
 
 ---
 
+## v2.4.2 - 2026-11-18
+
+- 2026-11-18 [优化] 单人突击新增 soloraid_event_end 节点（识别活动结束图回主页）与 soloraid_finish_comfirm 结算确认兜底分支，新增模板图 soloraid_event_end.png（涉及：resource/base/pipeline/task/soloraid.json、resource/base/image/soloraid/soloraid_event_end.png）
+- 2026-11-18 [优化] 协同作战匹配节点 next 顺序调整（teambattlepre 优先于 teambattlematch），teambattleaccept_fail 增加 post_wait_freezes 1000（涉及：resource/base/pipeline/task/teambattle.json）
+- 2026-11-18 [优化] 每日商店免费领取确认节点 next 增加 confirm0zuanpay 兜底分支（涉及：resource/base/pipeline/task/freeshopdaily.json）
+- 2026-11-18 [优化] 爬塔战斗节点 timeout 8000→300000，无限之塔入口 OCR/模板识别 ROI 调整（涉及：resource/base/pipeline/task/climbtower.json）
+- 2026-11-18 [优化] 竞技场入口「竞技场」OCR 与 intoarena 模板识别 ROI 调整（涉及：resource/base/pipeline/task/arena.json）
+- 2026-11-18 [优化] 模拟室节点识别 ROI 微调（涉及：resource/base/pipeline/task/simroom.json）
+- 2026-11-18 [优化] LiecauseRecoil 活动关卡进入与奖励领取节点调整：story2 进入模板替换、新增 stagematch 关卡号识别进入节点、claimrewards 补角色确认弹窗分支、点击偏移与 ROI 调整（涉及：resource/base/pipeline/task/limitedevent/LiecauseRecoil.json、resource/base/image/limitedevent/LiecauseRecoil/）
+- 2026-11-18 [优化] startnikke.ahk 新增 #SingleInstance Ignore（脚本已运行时静默忽略重复启动）（涉及：startnikke.ahk）
+- 2026-11-18 [优化] interface.json 移除「限时活动(newflavor)」注册，限时活动只保留「限时活动(GoddessFall)」（活动结束）（涉及：interface.json）
+- 2026-11-18 [新增] 由 LiecauseRecoil.json 派生 GoddessFall.json：全量改名 265 处（rename_task.py 256 处 + claim 粘连节点名单独替换 9 处），复制模板图 9 张，interface.json 注册切换为「限时活动(GoddessFall)」，verify_pipeline 双文件对比全绿（82 节点、锚点 refs 一一对应）（涉及：resource/base/pipeline/task/limitedevent/GoddessFall.json、resource/base/image/limitedevent/GoddessFall/、interface.json）
+- 2026-10-24 [优化] 整理资源包：将未被 Interface 任务/option 及保留 Pipeline 引用的 10 个历史/示例 JSON 与 82 张未引用图片归档至 temp/resource_archive_20261024_103328（保留原相对路径及 SHA-256 清单），保留 28 个 JSON、108 张图片；引用/模板/Custom 映射、图片解码与 MaaFramework 5.12.2 资源加载校验通过，并补齐临时校验器的 repeat_wait_freezes 官方字段白名单（涉及：resource/base/pipeline/、resource/base/image/、temp/verify_pipeline.py）
+
+---
+
 ## v2.4.1 - 2026-10-21
 
 - 2026-10-21 [优化] newflavor 限时活动适配 hard 难度关卡：canintoevent 模板补 newflavor_hard_into.png、repeat 模板补 newflavor_hard_repeat.png，hard 进入/重复/无权限 3 张模板图更新（涉及：resource/base/pipeline/task/limitedevent/newflavor.json、resource/base/image/limitedevent/newflavor/）

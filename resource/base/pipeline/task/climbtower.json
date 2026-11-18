@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792101413987,
+            "lastSyncTime": 1795010809618,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\climbtower.json",
             "savedViewport": {
-                "x": -6993,
-                "y": 649,
-                "zoom": 0.85
+                "x": -3221,
+                "y": 829,
+                "zoom": 0.62
             },
             "filename": "climbtower",
-            "version": "v2.1.0"
+            "version": "v2.1.3"
         }
     },
     "$__mpe_anchor_choosetoweranchor2_climbtower": {
@@ -612,7 +612,7 @@
             "type": "Click"
         },
         "post_wait_freezes": 2000,
-        "timeout": 8000,
+        "timeout": 300000,
         "next": [
             "[JumpBack]flashsale",
             "nochancefighttower",
@@ -1116,10 +1116,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    705,
-                    288,
-                    127,
-                    49
+                    657,
+                    232,
+                    159,
+                    82
                 ],
                 "expected": [
                     "无限之塔"
@@ -1145,10 +1145,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    693,
-                    160,
-                    136,
-                    190
+                    659,
+                    116,
+                    146,
+                    203
                 ],
                 "template": [
                     "tower/tower.png"

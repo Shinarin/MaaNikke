@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1789181529219,
+            "lastSyncTime": 1793521128489,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\freeshopdaily.json",
             "savedViewport": {
-                "x": 1080,
-                "y": 690,
-                "zoom": 0.65
+                "x": -284,
+                "y": 1184,
+                "zoom": 0.88
             },
             "filename": "freeshopdaily",
-            "version": "v1.10.0"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_anchor_checkinmallanchor1_freeshopdaily": {
@@ -40,11 +40,19 @@
             }
         }
     },
+    "$__mpe_external_logineventreward_freeshopdaily": {
+        "$__mpe_code": {
+            "position": {
+                "x": -671,
+                "y": -587
+            }
+        }
+    },
     "$__mpe_group_普通商店_freeshopdaily": {
         "$__mpe_code": {
             "position": {
-                "x": -273,
-                "y": -1549
+                "x": -278,
+                "y": -1748
             },
             "color": "blue",
             "childrenLabels": [
@@ -61,7 +69,7 @@
                 "intobasicshop"
             ],
             "width": 2426,
-            "height": 1051
+            "height": 1221
         }
     },
     "$__mpe_group_竞技场商店_freeshopdaily": {
@@ -164,8 +172,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 647,
-                "y": -756
+                "x": 642,
+                "y": -832
             }
         }
     },
@@ -192,8 +200,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 552,
-                "y": -1106
+                "x": 519,
+                "y": -1242
             }
         }
     },
@@ -216,8 +224,8 @@
         "rate_limit": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 1615,
-                "y": -1100
+                "x": 1610,
+                "y": -1176
             }
         }
     },
@@ -464,8 +472,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": -239,
-                "y": -1086
+                "x": -244,
+                "y": -1162
             }
         }
     },
@@ -704,8 +712,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 164,
-                "y": -1087
+                "x": 159,
+                "y": -1163
             }
         }
     },
@@ -836,12 +844,13 @@
             "type": "Click"
         },
         "next": [
-            "confirm0zuanpay2"
+            "confirm0zuanpay2",
+            "confirm0zuanpay"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 948,
-                "y": -760
+                "x": 943,
+                "y": -851
             }
         }
     },
@@ -860,8 +869,8 @@
         },
         "$__mpe_code": {
             "position": {
-                "x": 1253,
-                "y": -726
+                "x": 1248,
+                "y": -802
             }
         }
     },
@@ -891,8 +900,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1261,
-                "y": -1104
+                "x": 1256,
+                "y": -1180
             }
         }
     },
@@ -1145,8 +1154,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 892,
-                "y": -1130
+                "x": 863,
+                "y": -1272
             }
         }
     },
@@ -1171,8 +1180,8 @@
         "inverse": true,
         "$__mpe_code": {
             "position": {
-                "x": 881,
-                "y": -1498
+                "x": 856,
+                "y": -1677
             }
         }
     },
@@ -1223,8 +1232,8 @@
         "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 47,
-                "y": -852
+                "x": 42,
+                "y": -928
             }
         }
     },
@@ -1476,14 +1485,6 @@
             "position": {
                 "x": -178,
                 "y": 2084
-            }
-        }
-    },
-    "$__mpe_external_logineventreward_freeshopdaily": {
-        "$__mpe_code": {
-            "position": {
-                "x": -671,
-                "y": -587
             }
         }
     }

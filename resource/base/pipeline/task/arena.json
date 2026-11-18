@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1792101359970,
+            "lastSyncTime": 1795010853272,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\arena.json",
             "savedViewport": {
-                "x": -5726,
-                "y": 590,
-                "zoom": 0.85
+                "x": -2191,
+                "y": 545,
+                "zoom": 0.62
             },
             "filename": "arena",
-            "version": "v2.1.0"
+            "version": "v2.1.3"
         }
     },
     "$__mpe_anchor_arenafightagain_arena": {
@@ -580,10 +580,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    672,
-                    480,
-                    157,
-                    97
+                    650,
+                    297,
+                    216,
+                    254
                 ],
                 "expected": [
                     "竞技场"
@@ -605,10 +605,10 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    631,
-                    325,
-                    208,
-                    274
+                    650,
+                    297,
+                    216,
+                    254
                 ],
                 "template": [
                     "arena/intoarena.png"

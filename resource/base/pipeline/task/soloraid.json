@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1789656708757,
+            "lastSyncTime": 1795011567642,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\soloraid.json",
             "savedViewport": {
-                "x": -4349,
-                "y": 239,
-                "zoom": 0.64
+                "x": -605,
+                "y": 499,
+                "zoom": 0.2
             },
             "filename": "soloraid",
-            "version": "v1.10.1"
+            "version": "v2.1.3"
         }
     },
     "$__mpe_anchor_soloraid_checksoloraid_anchor_soloraid": {
@@ -27,8 +27,8 @@
     "$__mpe_external_backtohomepage_soloraid": {
         "$__mpe_code": {
             "position": {
-                "x": 7405,
-                "y": 348
+                "x": 7399,
+                "y": 440
             }
         }
     },
@@ -227,7 +227,8 @@
         "next": [
             "soloraid_quickfight",
             "[JumpBack]soloraid_challenge_win",
-            "soloraid_fightpage"
+            "soloraid_fightpage",
+            "soloraid_event_end"
         ],
         "$__mpe_code": {
             "position": {
@@ -364,8 +365,10 @@
         "action": {
             "type": "Click"
         },
+        "timeout": 120000,
         "next": [
-            "[Anchor]soloraid_checksoloraid_anchor"
+            "[Anchor]soloraid_checksoloraid_anchor",
+            "[JumpBack]soloraid_finish_comfirm"
         ],
         "$__mpe_code": {
             "position": {
@@ -886,6 +889,50 @@
             "position": {
                 "x": 9466,
                 "y": 1319
+            }
+        }
+    },
+    "soloraid_event_end": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "soloraid/soloraid_event_end.png"
+                ]
+            }
+        },
+        "next": [
+            "backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7029,
+                "y": 65
+            }
+        }
+    },
+    "soloraid_finish_comfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    317,
+                    132,
+                    672,
+                    449
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9838,
+                "y": 11
             }
         }
     }

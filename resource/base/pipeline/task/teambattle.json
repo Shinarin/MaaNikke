@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1790951352738,
+            "lastSyncTime": 1793524206457,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\teambattle.json",
             "savedViewport": {
-                "x": 383,
-                "y": 488,
-                "zoom": 0.38
+                "x": -238,
+                "y": 335,
+                "zoom": 0.86
             },
             "filename": "teambattle",
-            "version": "v2.0.6"
+            "version": "v2.1.0"
         }
     },
     "$__mpe_anchor_teambattlestart_teambattle": {
@@ -77,8 +77,8 @@
             "notimetoteambattle",
             "[JumpBack]teambattlematching",
             "[JumpBack]teambattle_choosemod",
-            "[JumpBack]teambattlematch",
-            "[JumpBack]teambattlepre"
+            "[JumpBack]teambattlepre",
+            "[JumpBack]teambattlematch"
         ],
         "$__mpe_code": {
             "position": {
@@ -356,6 +356,85 @@
             }
         }
     },
+    "teambattle_choosecomfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    395,
+                    173,
+                    520,
+                    408
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1526,
+                "y": 426
+            }
+        }
+    },
+    "teambattle_choosemod": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    391,
+                    202,
+                    514,
+                    336
+                ],
+                "expected": [
+                    "选择匹配难度",
+                    "匹配难度"
+                ]
+            }
+        },
+        "next": [
+            "teambattle_choosesimple"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 955,
+                "y": 355
+            }
+        }
+    },
+    "teambattle_choosesimple": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    399,
+                    192,
+                    525,
+                    360
+                ],
+                "expected": [
+                    "普通"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "teambattle_choosecomfirm"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1249,
+                "y": 416
+            }
+        }
+    },
     "teambattle_morelimitedevent": {
         "recognition": {
             "type": "OCR",
@@ -425,6 +504,14 @@
             }
         }
     },
+    "teambattleaccept_fail": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1316,
+                "y": 271
+            }
+        }
+    },
     "teambattleinfo": {
         "recognition": {
             "type": "OCR",
@@ -468,10 +555,11 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 1000,
         "$__mpe_code": {
             "position": {
-                "x": 984,
-                "y": 226
+                "x": 879,
+                "y": 635
             }
         }
     },
@@ -524,8 +612,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 971,
-                "y": -131
+                "x": 979,
+                "y": -136
             }
         }
     },
@@ -594,93 +682,6 @@
             "position": {
                 "x": 2396,
                 "y": -274
-            }
-        }
-    },
-    "teambattle_choosemod": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    391,
-                    202,
-                    514,
-                    336
-                ],
-                "expected": [
-                    "选择匹配难度",
-                    "匹配难度"
-                ]
-            }
-        },
-        "next": [
-            "teambattle_choosesimple"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 967,
-                "y": 416
-            }
-        }
-    },
-    "teambattle_choosesimple": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    399,
-                    192,
-                    525,
-                    360
-                ],
-                "expected": [
-                    "普通"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "teambattle_choosecomfirm"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1217,
-                "y": 414
-            }
-        }
-    },
-    "teambattle_choosecomfirm": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    395,
-                    173,
-                    520,
-                    408
-                ],
-                "expected": [
-                    "确认"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "$__mpe_code": {
-            "position": {
-                "x": 1477,
-                "y": 429
-            }
-        }
-    },
-    "teambattleaccept_fail": {
-        "$__mpe_code": {
-            "position": {
-                "x": 1316,
-                "y": 271
             }
         }
     }

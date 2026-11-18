@@ -1,0 +1,2403 @@
+{
+    "$__mpe_config_GoddessFall": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1795011604023,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "C:\\other\\MaaNikke_dev\\resource\\base\\pipeline\\task\\limitedevent\\GoddessFall.json",
+            "savedViewport": {
+                "x": 298,
+                "y": -784,
+                "zoom": 0.35
+            },
+            "filename": "GoddessFall",
+            "version": "v2.1.3"
+        }
+    },
+    "$__mpe_anchor_GoddessFall_intoevent_re_anchor_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7492,
+                "y": 1884
+            }
+        }
+    },
+    "$__mpe_anchor_GoddessFall_stagestart_anchor_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 6545,
+                "y": 850
+            }
+        }
+    },
+    "$__mpe_anchor_GoddessFallanchor_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 7753,
+                "y": 405
+            }
+        }
+    },
+    "$__mpe_external_backtohomepage_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": -705,
+                "y": 1206
+            }
+        }
+    },
+    "$__mpe_external_claimpassreward_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1734,
+                "y": 4154
+            }
+        }
+    },
+    "$__mpe_external_event_noteam_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 5672,
+                "y": 1945
+            }
+        }
+    },
+    "$__mpe_external_limitedeventshop_claim_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2023,
+                "y": 2889
+            }
+        }
+    },
+    "$__mpe_group_event11_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3247,
+                "y": 1012
+            },
+            "color": "green",
+            "childrenLabels": [
+                "GoddessFall_into11_pic"
+            ],
+            "width": 400,
+            "height": 447
+        }
+    },
+    "$__mpe_group_兜底_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3242,
+                "y": -206
+            },
+            "color": "green",
+            "childrenLabels": [
+                "GoddessFall_canintoevent",
+                "GoddessFall_canintoevent2",
+                "GoddessFall_canintoevent_return"
+            ],
+            "width": 348,
+            "height": 1134
+        }
+    },
+    "$__mpe_group_分组_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2494,
+                "y": 193
+            },
+            "color": "green",
+            "childrenLabels": [
+                "GoddessFall_12_no_end",
+                "GoddessFall_12_no_end_ocr",
+                "GoddessFall_12_no_end_pic"
+            ],
+            "width": 533,
+            "height": 617
+        }
+    },
+    "$__mpe_group_适配story2_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 377,
+                "y": 937
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "GoddessFall_check_intostory1",
+                "GoddessFall_check_intostory2"
+            ],
+            "width": 606,
+            "height": 367
+        }
+    },
+    "$__mpe_group_适配商店_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1095,
+                "y": 3203
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "GoddessFall_intoshop"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配困难按钮_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1841,
+                "y": 884
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "GoddessFall_clickhard2"
+            ],
+            "width": 290,
+            "height": 348
+        }
+    },
+    "$__mpe_group_适配挑战_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 746,
+                "y": 3583
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "GoddessFall_intochallenge"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "$__mpe_group_适配活动任务_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 833,
+                "y": 1840
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "claimGoddessFall_qiandao"
+            ],
+            "width": 256,
+            "height": 290
+        }
+    },
+    "$__mpe_group_适配活动任务图标_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 991,
+                "y": 2149
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "GoddessFall_rewards"
+            ],
+            "width": 297,
+            "height": 412
+        }
+    },
+    "$__mpe_group_适配活动图标_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": -465,
+                "y": 157
+            },
+            "color": "blue",
+            "childrenLabels": [
+                "GoddessFall_into"
+            ],
+            "width": 348,
+            "height": 411
+        }
+    },
+    "$__mpe_group_需适配enter点位_GoddessFall": {
+        "$__mpe_code": {
+            "position": {
+                "x": 908,
+                "y": 1207
+            },
+            "color": "green",
+            "childrenLabels": [
+                "GoddessFall_eventstage_last"
+            ],
+            "width": 400,
+            "height": 300
+        }
+    },
+    "GoddessFall": {
+        "anchor": "GoddessFallanchor",
+        "next": [
+            "GoddessFall_checkhomepage",
+            "[JumpBack]backtohomepage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -969,
+                "y": 625
+            }
+        }
+    },
+    "GoddessFall_0item_count": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
+                "roi": [
+                    398,
+                    3,
+                    517,
+                    715
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]GoddessFallanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7487,
+                "y": 941
+            }
+        }
+    },
+    "GoddessFall_12_have_end": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "GoddessFall_12_no_end_pic",
+                    "GoddessFall_12_no_end_ocr"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "GoddessFall_into11_pic"
+        ],
+        "on_error": [
+            "GoddessFall_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2798,
+                "y": 1090
+            }
+        }
+    },
+    "GoddessFall_12_no_end": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "GoddessFall_12_no_end_ocr",
+                    "GoddessFall_12_no_end_pic"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_canintoevent",
+            "[JumpBack]GoddessFall_canintoevent_return",
+            "GoddessFall_canintoevent2"
+        ],
+        "on_error": [
+            "GoddessFall_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2543,
+                "y": 571
+            }
+        }
+    },
+    "GoddessFall_12_no_end_ocr": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    128,
+                    479,
+                    566
+                ],
+                "expected": [
+                    "Access Denied",
+                    "Access",
+                    "Denied",
+                    "ACCESS DENIED",
+                    "ACCESS",
+                    "DENIED",
+                    "NONE",
+                    "None",
+                    "none",
+                    "\\?"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2529,
+                "y": 290
+            }
+        }
+    },
+    "GoddessFall_12_no_end_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    404,
+                    128,
+                    479,
+                    566
+                ],
+                "template": [
+                    "limitedevent/GoddessFall/GoddessFall_story1_accessdenied.png",
+                    "limitedevent/GoddessFall/GoddessFall_story2_accessdenied.png",
+                    "limitedevent/GoddessFall/GoddessFall_story2_accessdenied.png"
+                ],
+                "threshold": [
+                    0.85
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2775,
+                "y": 282
+            }
+        }
+    },
+    "GoddessFall_12_no_end_return": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 2794,
+                "y": 879
+            }
+        }
+    },
+    "GoddessFall_canintoevent": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    382,
+                    20,
+                    511,
+                    696
+                ],
+                "template": [
+                    "limitedevent/GoddessFall/GoddessFall_story1_into.png",
+                    "limitedevent/GoddessFall/GoddessFall_hard_into.png",
+                    "limitedevent/GoddessFall/GoddessFall_hard_into.png"
+                ],
+                "threshold": [
+                    0.85
+                ],
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "GoddessFall_intofightpage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3309,
+                "y": -123
+            }
+        }
+    },
+    "GoddessFall_canintoevent2": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "stagematch",
+                "custom_recognition_param": {
+                    "expected": [
+                        "1-11",
+                        "1-10",
+                        "1-9",
+                        "1-8",
+                        "1-7",
+                        "1-6",
+                        "1-5",
+                        "1-4",
+                        "1-3",
+                        "1-2",
+                        "1-1"
+                    ]
+                },
+                "roi": [
+                    361,
+                    134,
+                    566,
+                    530
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "GoddessFall_intofightpage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3315,
+                "y": 587
+            }
+        }
+    },
+    "GoddessFall_canintoevent_return": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 3316,
+                "y": 374
+            }
+        }
+    },
+    "GoddessFall_challenge_choose": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "SELECT"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_challengefight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2069,
+                "y": 3540
+            }
+        }
+    },
+    "GoddessFall_challengefight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    623,
+                    579,
+                    243,
+                    140
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "GoddessFall_checkchallengefinish",
+            "[JumpBack]GoddessFall_challengeisfighting",
+            "GoddessFall_challengefight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2408,
+                "y": 3504
+            }
+        }
+    },
+    "GoddessFall_challengeisfighting": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    137,
+                    49
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2711,
+                "y": 3782
+            }
+        }
+    },
+    "GoddessFall_check_intostory1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    487,
+                    526,
+                    59,
+                    16
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 702,
+                "y": 998
+            }
+        }
+    },
+    "GoddessFall_check_intostory2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    485,
+                    558,
+                    70,
+                    12
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 412,
+                "y": 1003
+            }
+        }
+    },
+    "GoddessFall_check_story1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    361,
+                    233,
+                    596,
+                    247
+                ],
+                "expected": [
+                    "后开放",
+                    "需要通关"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_storyevent",
+            "[JumpBack]GoddessFall_check_intostory1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 434,
+                "y": 400
+            }
+        }
+    },
+    "GoddessFall_checkchallengefinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    382,
+                    445,
+                    534,
+                    262
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "claimpassreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2704,
+                "y": 3532
+            }
+        }
+    },
+    "GoddessFall_checkfinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    526,
+                    528,
+                    238,
+                    168
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_nextstage",
+            "[JumpBack]GoddessFall_nextstage_return",
+            "GoddessFall_no_nextstage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5894,
+                "y": 970
+            }
+        }
+    },
+    "GoddessFall_checkhomepage": {
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "homepagesign",
+                    "homepagesign2"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_checkintoevent",
+            "[JumpBack]GoddessFall_into",
+            "[JumpBack]GoddessFall_exchange"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -688,
+                "y": 629
+            }
+        }
+    },
+    "GoddessFall_checkintoevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "地区"
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ResetCount",
+                "custom_action_param": {
+                    "nodes": [
+                        "GoddessFall_checkintoeventreturn"
+                    ],
+                    "strict": false
+                }
+            }
+        },
+        "next": [
+            "GoddessFall_intoevent",
+            "claimGoddessFall_claimrewards",
+            "GoddessFall_claimrewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -387,
+                "y": 604
+            }
+        }
+    },
+    "GoddessFall_checkintoevent2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    6,
+                    102,
+                    39
+                ],
+                "expected": [
+                    "活动地区",
+                    "活动",
+                    "地区"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -37,
+                "y": 18
+            }
+        }
+    },
+    "GoddessFall_checkintoevent_skip": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1178,
+                    4,
+                    98,
+                    49
+                ],
+                "expected": [
+                    "Skip",
+                    "skip",
+                    "SKIP",
+                    "跳过"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -32,
+                "y": 220
+            }
+        }
+    },
+    "GoddessFall_checkintoevent_touch": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    477,
+                    508,
+                    324,
+                    208
+                ],
+                "expected": [
+                    "TOUCH TO CONTINUE",
+                    "TOUCH",
+                    "CONTINUE"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -32,
+                "y": 427
+            }
+        }
+    },
+    "GoddessFall_cjeckeventpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    3,
+                    6,
+                    100,
+                    60
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_0item_count",
+            "GoddessFall_item_count"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7183,
+                "y": 961
+            }
+        }
+    },
+    "GoddessFall_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "GoddessFall_rewards",
+            "GoddessFall_rewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 710,
+                "y": 2396
+            }
+        }
+    },
+    "GoddessFall_claimrewards_juese": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1679,
+                "y": 2184
+            }
+        }
+    },
+    "GoddessFall_claimrewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    466,
+                    307,
+                    347,
+                    330
+                ],
+                "expected": [
+                    "点击领取奖励",
+                    "点击领取",
+                    "领取奖励",
+                    "确认",
+                    "确定",
+                    "取消"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "GoddessFall_claimrewardsdailypage",
+            "GoddessFall_claimrewardsdaily"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1690,
+                "y": 2525
+            }
+        }
+    },
+    "GoddessFall_claimrewardsdailypage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    450,
+                    30,
+                    376,
+                    576
+                ],
+                "expected": [
+                    "剩余时间",
+                    "每日任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    983,
+                    515,
+                    128,
+                    78
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "GoddessFall_findshopbuttom",
+            "GoddessFall_claimrewardsdailypage"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1981,
+                "y": 2320
+            }
+        }
+    },
+    "GoddessFall_claimshop": {
+        "next": [
+            "GoddessFall_inshop",
+            "[JumpBack]GoddessFall_intoshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 797,
+                "y": 3041
+            }
+        }
+    },
+    "GoddessFall_claimshoprewards": {
+        "max_hit": 1,
+        "next": [
+            "limitedeventshop_claim"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1680,
+                "y": 2838
+            }
+        }
+    },
+    "GoddessFall_clickhard1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    636,
+                    606,
+                    222,
+                    113
+                ],
+                "expected": [
+                    "Hard",
+                    "HARD"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "GoddessFall_swipestage_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1880,
+                "y": 514
+            }
+        }
+    },
+    "GoddessFall_clickhard2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    776,
+                    672,
+                    8,
+                    8
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 500,
+        "next": [
+            "GoddessFall_swipestage_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1876,
+                "y": 935
+            }
+        }
+    },
+    "GoddessFall_comfirmchallenge": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "挑战关卡"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_havechalengechance2",
+            "[JumpBack]GoddessFall_havechalengechance2_return",
+            "claimpassreward"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1240,
+                "y": 3619
+            }
+        }
+    },
+    "GoddessFall_endshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    24,
+                    672,
+                    46,
+                    14
+                ]
+            }
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "GoddessFall_intochallenge",
+            "GoddessFall_endshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1697,
+                "y": 3090
+            }
+        }
+    },
+    "GoddessFall_error": {
+        "next": [
+            "[Anchor]GoddessFallanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3117,
+                "y": 1506
+            }
+        }
+    },
+    "GoddessFall_eventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_clickhard1",
+            "GoddessFall_clickhard2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1561,
+                "y": 666
+            }
+        }
+    },
+    "GoddessFall_eventstage_last": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    263,
+                    6,
+                    741,
+                    693
+                ],
+                "expected": [
+                    "剩余时间"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -3,
+                    -36,
+                    38,
+                    -2
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 976,
+                "y": 1263
+            }
+        }
+    },
+    "GoddessFall_eventstage_return_last": {
+        "max_hit": 2,
+        "$__mpe_code": {
+            "position": {
+                "x": 990,
+                "y": 995
+            }
+        }
+    },
+    "GoddessFall_exchange": {
+        "max_hit": 5,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    774,
+                    553,
+                    247,
+                    121
+                ],
+                "template": [
+                    "exchange.png"
+                ],
+                "threshold": [
+                    0.8
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": -383,
+                "y": 981
+            }
+        }
+    },
+    "GoddessFall_findshopbuttom": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    249,
+                    247,
+                    655,
+                    455
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_claimshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2287,
+                "y": 2541
+            }
+        }
+    },
+    "GoddessFall_finish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    526,
+                    528,
+                    238,
+                    168
+                ],
+                "expected": [
+                    "点击任意处",
+                    "进行下一步",
+                    "ESC"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "GoddessFall_cjeckeventpage",
+            "[JumpBack]GoddessFall_jumpstory",
+            "GoddessFall_newspace",
+            "[JumpBack]GoddessFall_finish_click"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6865,
+                "y": 983
+            }
+        }
+    },
+    "GoddessFall_finish_click": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1007,
+                    285,
+                    44,
+                    21
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 7176,
+                "y": 1290
+            }
+        }
+    },
+    "GoddessFall_havechalengechance2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    399,
+                    168,
+                    474,
+                    538
+                ],
+                "expected": [
+                    "CHALLENGE STAGE",
+                    "CHALLENGE"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "GoddessFall_challenge_choose",
+            "GoddessFall_havechalengechance2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1717,
+                "y": 3524
+            }
+        }
+    },
+    "GoddessFall_havechalengechance2_return": {
+        "max_hit": 10,
+        "$__mpe_code": {
+            "position": {
+                "x": 1712,
+                "y": 3772
+            }
+        }
+    },
+    "GoddessFall_inshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]GoddessFall_claimshoprewards",
+            "GoddessFall_endshop"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1181,
+                "y": 2941
+            }
+        }
+    },
+    "GoddessFall_into": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    762,
+                    426,
+                    289,
+                    243
+                ],
+                "template": [
+                    "limitedevent/GoddessFall/GoddessFall.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 180000,
+        "next": [
+            "GoddessFall_checkintoevent2",
+            "[JumpBack]GoddessFall_checkintoevent_skip",
+            "[JumpBack]GoddessFall_checkintoevent_touch",
+            "GoddessFall_into"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -397,
+                "y": 188
+            }
+        }
+    },
+    "GoddessFall_into11_pic": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    382,
+                    20,
+                    511,
+                    696
+                ],
+                "template": [
+                    "limitedevent/GoddessFall/GoddessFall_story1_replace.png",
+                    "limitedevent/GoddessFall/GoddessFall_story2_replace.png",
+                    "limitedevent/GoddessFall/GoddessFall_story2_hard_replace.png"
+                ],
+                "green_mask": true,
+                "order_by": "Vertical",
+                "index": -1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "GoddessFall_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3328,
+                "y": 1066
+            }
+        }
+    },
+    "GoddessFall_intochallenge": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    463,
+                    479,
+                    225
+                ],
+                "expected": [
+                    "挑战"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "GoddessFall_comfirmchallenge",
+            "GoddessFall_intochallenge"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 849,
+                "y": 3625
+            }
+        }
+    },
+    "GoddessFall_intoerroreventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    439,
+                    54,
+                    406,
+                    626
+                ],
+                "expected": [
+                    "帮助",
+                    "关于",
+                    "剧情活动",
+                    "奖励内容",
+                    "活动相薄"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    39,
+                    670,
+                    37,
+                    20
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1353,
+                "y": 1222
+            }
+        }
+    },
+    "GoddessFall_intoevent": {
+        "max_hit": 1,
+        "next": [
+            "GoddessFall_intoevent_re"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -91,
+                "y": 645
+            }
+        }
+    },
+    "GoddessFall_intoevent_re": {
+        "anchor": "GoddessFall_intoevent_re_anchor",
+        "next": [
+            "GoddessFall_check_story1",
+            "GoddessFall_storyevent",
+            "[JumpBack]GoddessFall_check_intostory2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 173,
+                "y": 642
+            }
+        }
+    },
+    "GoddessFall_intoeventstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    356,
+                    28,
+                    577,
+                    671
+                ],
+                "expected": [
+                    "Enter",
+                    "ENTER",
+                    "ENTE",
+                    "NTER",
+                    "Ente",
+                    "nter",
+                    "nter"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1359,
+                "y": 944
+            }
+        }
+    },
+    "GoddessFall_intofight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    594,
+                    466,
+                    111
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "[JumpBack]GoddessFall_noteam",
+            "GoddessFall_nochance2",
+            "GoddessFall_intofight",
+            "GoddessFall_stagestart"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5033,
+                "y": 962
+            }
+        }
+    },
+    "GoddessFall_intofightpage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    626,
+                    583,
+                    263,
+                    135
+                ],
+                "expected": [
+                    "进入战斗"
+                ]
+            }
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "GoddessFall_startquickfight",
+            "GoddessFall_no_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3781,
+                "y": 721
+            }
+        }
+    },
+    "GoddessFall_intoshop": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    463,
+                    479,
+                    225
+                ],
+                "expected": [
+                    "商店"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1176,
+                "y": 3252
+            }
+        }
+    },
+    "GoddessFall_isfighting": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    137,
+                    49
+                ],
+                "template": [
+                    "fighting.png"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5901,
+                "y": 1225
+            }
+        }
+    },
+    "GoddessFall_isfighting2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    192,
+                    87
+                ],
+                "expected": [
+                    "LSHIFT",
+                    "LSHFT",
+                    "TAB"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5902,
+                "y": 1506
+            }
+        }
+    },
+    "GoddessFall_item_count": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "RotatedOCR",
+                "custom_recognition_param": {
+                    "expected": "0/5",
+                    "threshold": 0.3
+                },
+                "roi": [
+                    398,
+                    3,
+                    517,
+                    715
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "GoddessFall_sweipdown"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7446,
+                "y": 1470
+            }
+        }
+    },
+    "GoddessFall_jumpstory": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1150,
+                    0,
+                    128,
+                    120
+                ],
+                "expected": [
+                    "跳过",
+                    "取消",
+                    "X",
+                    "x",
+                    "skip",
+                    "Skip",
+                    "SKIP"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 5902,
+                "y": 1718
+            }
+        }
+    },
+    "GoddessFall_newspace": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    374,
+                    193,
+                    543,
+                    260
+                ],
+                "expected": [
+                    "前往区域"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "[Anchor]GoddessFall_intoevent_re_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7131,
+                "y": 1811
+            }
+        }
+    },
+    "GoddessFall_nextstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1069,
+                    604,
+                    208,
+                    108
+                ],
+                "expected": [
+                    "下一关卡",
+                    "下一",
+                    "关卡"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "timeout": 60000,
+        "next": [
+            "GoddessFall_nochance1",
+            "GoddessFall_nextstage",
+            "[Anchor]GoddessFall_stagestart_anchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6238,
+                "y": 966
+            }
+        }
+    },
+    "GoddessFall_nextstage_return": {
+        "max_hit": 5,
+        "$__mpe_code": {
+            "position": {
+                "x": 6241,
+                "y": 1238
+            }
+        }
+    },
+    "GoddessFall_no_nextstage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1069,
+                    604,
+                    208,
+                    108
+                ],
+                "expected": [
+                    "下一关卡"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "GoddessFall_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6233,
+                "y": 1448
+            }
+        }
+    },
+    "GoddessFall_no_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "inverse": true,
+        "next": [
+            "GoddessFall_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4236,
+                "y": 1045
+            }
+        }
+    },
+    "GoddessFall_nochance1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    444,
+                    280,
+                    436,
+                    143
+                ],
+                "expected": [
+                    "道具不足"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_finish"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 6534,
+                "y": 989
+            }
+        }
+    },
+    "GoddessFall_nochance2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    420,
+                    284,
+                    406,
+                    162
+                ],
+                "expected": [
+                    "道具不足"
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]GoddessFallanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5349,
+                "y": 612
+            }
+        }
+    },
+    "GoddessFall_noquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    379,
+                    269,
+                    550,
+                    227
+                ],
+                "expected": [
+                    "首次通关",
+                    "首次"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_intofight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4549,
+                "y": 813
+            }
+        }
+    },
+    "GoddessFall_noteam": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    436,
+                    290,
+                    444,
+                    165
+                ],
+                "expected": [
+                    "未编队",
+                    "无法进入"
+                ]
+            }
+        },
+        "next": [
+            "event_noteam"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5332,
+                "y": 1889
+            }
+        }
+    },
+    "GoddessFall_quickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    454,
+                    325,
+                    70
+                ],
+                "expected": [
+                    "MAX",
+                    "MA"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 3,
+        "next": [
+            "GoddessFall_startquickfightmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4714,
+                "y": 225
+            }
+        }
+    },
+    "GoddessFall_quickfightmaxconfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    538,
+                    590,
+                    207,
+                    89
+                ],
+                "expected": [
+                    "点击任意处",
+                    "任意处进行",
+                    "ESC"
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "next": [
+            "[Anchor]GoddessFallanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5314,
+                "y": 218
+            }
+        }
+    },
+    "GoddessFall_rewards": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1181,
+                    89,
+                    98,
+                    128
+                ],
+                "template": [
+                    "limitedevent/GoddessFall/GoddessFall_mission.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "GoddessFall_rewardsdaily",
+            "GoddessFall_rewards"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1030,
+                "y": 2196
+            }
+        }
+    },
+    "GoddessFall_rewards2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1191,
+                    112,
+                    86,
+                    168
+                ],
+                "expected": [
+                    "任务"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 1000,
+        "next": [
+            "GoddessFall_rewardsdaily",
+            "GoddessFall_rewards2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1026,
+                "y": 2587
+            }
+        }
+    },
+    "GoddessFall_rewardsdaily": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    451,
+                    589,
+                    377,
+                    93
+                ],
+                "expected": [
+                    "全部领取",
+                    "全部",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 8,
+        "repeat_delay": 500,
+        "next": [
+            "GoddessFall_claimrewardsdailypage",
+            "GoddessFall_claimrewardsdaily",
+            "[JumpBack]GoddessFall_claimrewards_juese"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1386,
+                "y": 2345
+            }
+        }
+    },
+    "GoddessFall_stagestart": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    "GoddessFall_isfighting",
+                    "GoddessFall_isfighting2",
+                    "GoddessFall_jumpstory"
+                ]
+            }
+        },
+        "anchor": "GoddessFall_stagestart_anchor",
+        "timeout": 180000,
+        "next": [
+            "GoddessFall_checkfinish",
+            "[JumpBack]GoddessFall_isfighting",
+            "[JumpBack]GoddessFall_isfighting2",
+            "[JumpBack]GoddessFall_jumpstory",
+            "GoddessFall_newspace"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5569,
+                "y": 956
+            }
+        }
+    },
+    "GoddessFall_startquickfight": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    649,
+                    574,
+                    221,
+                    87
+                ],
+                "expected": [
+                    "快速战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "GoddessFall_noquickfight",
+            "GoddessFall_quickfightmax",
+            "GoddessFall_nochance2",
+            "GoddessFall_startquickfight"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 4227,
+                "y": 727
+            }
+        }
+    },
+    "GoddessFall_startquickfightmax": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    479,
+                    525,
+                    323,
+                    59
+                ],
+                "expected": [
+                    "进行战斗",
+                    "战斗"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "GoddessFall_quickfightmaxconfirm",
+            "GoddessFall_startquickfightmax"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5002,
+                "y": 239
+            }
+        }
+    },
+    "GoddessFall_storyevent": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "剧情活动"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_eventstage",
+            "[JumpBack]GoddessFall_intoeventstage",
+            "[JumpBack]GoddessFall_intoerroreventstage",
+            "[JumpBack]GoddessFall_eventstage_return_last",
+            "[JumpBack]GoddessFall_eventstage_last"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1055,
+                "y": 662
+            }
+        }
+    },
+    "GoddessFall_sweipdown": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    528,
+                    552,
+                    235,
+                    21
+                ],
+                "end": [
+                    [
+                        552,
+                        282,
+                        198,
+                        11
+                    ]
+                ],
+                "end_hold": [
+                    500
+                ]
+            }
+        },
+        "repeat": 2,
+        "next": [
+            "GoddessFall_into11_pic"
+        ],
+        "on_error": [
+            "GoddessFall_error"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 7778,
+                "y": 1459
+            }
+        }
+    },
+    "GoddessFall_swipestage_re": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    90,
+                    200
+                ],
+                "expected": [
+                    "活动关卡"
+                ]
+            }
+        },
+        "next": [
+            "GoddessFall_12_no_end",
+            "[JumpBack]GoddessFall_12_no_end_return",
+            "GoddessFall_12_have_end"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2202,
+                "y": 723
+            }
+        }
+    },
+    "claimGoddessFall_claimrewards": {
+        "max_hit": 1,
+        "next": [
+            "claimGoddessFall_intoqiandao",
+            "[JumpBack]claimGoddessFall_qiandao_wuchu",
+            "[JumpBack]claimGoddessFall_qiandao"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 560,
+                "y": 1552
+            }
+        }
+    },
+    "claimGoddessFall_intoqiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    280,
+                    9,
+                    730,
+                    706
+                ],
+                "expected": [
+                    "全部领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "repeat": 5,
+        "repeat_delay": 500,
+        "next": [
+            "[Anchor]GoddessFallanchor"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1462,
+                "y": 1536
+            }
+        }
+    },
+    "claimGoddessFall_qiandao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    716,
+                    510,
+                    141,
+                    129
+                ],
+                "expected": [
+                    "签到印章",
+                    "签到印",
+                    "到印章"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 500,
+        "$__mpe_code": {
+            "position": {
+                "x": 855,
+                "y": 1879
+            }
+        }
+    },
+    "claimGoddessFall_qiandao_wuchu": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    406,
+                    339,
+                    503,
+                    365
+                ],
+                "expected": [
+                    "确定",
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1183,
+                "y": 1736
+            }
+        }
+    }
+}
