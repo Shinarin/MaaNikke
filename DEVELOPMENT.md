@@ -68,7 +68,6 @@ MaaNikke_dev/
 │       └── runtime_paths.py  #   RuntimePaths：config/resource/debug 目录映射
 ├── resource/base/            # 资源包（interface.json "resource" 指向）
 │   ├── pipeline/
-│   │   ├── default_pipeline.json  # 全局默认（Default.post_wait_freezes=1000）
 │   │   └── task/*.json       # 21 个任务的管线节点定义（与 interface.json task.entry 对应）
 │   ├── image/                # 模板匹配图片资源
 │   └── model/                # OCR 模型
@@ -111,7 +110,7 @@ Tasker.AppendTask(entry, pipeline_override) 逐个任务入队执行
 - **Controller**：设备抽象。本项目只有 Win32 控制器：`class_regex=UnityWndClass`、`window_regex=胜利女神.*新的希望`，截图 FramePool，键鼠 SendMessageWithCursorPos（后台输入，不抢前台焦点）。
 - **Tasker**：任务执行器。`AppendTask(入口节点名, pipeline_override)` 从入口节点开始跑节点图。
 - **Pipeline 节点生命周期**（3.1 任务流水线协议）：
-  `pre_wait_freezes → pre_delay → 执行本节点 action（可 repeat/max_hit 限制）→ post_delay → 截图 → 按序识别 next 列表 → 命中进入子节点`；识别超时进 `on_error`；`next` 为空/超时/外部停止时该任务线终止。`default_pipeline.json` 的 `Default` 节点给所有节点提供默认值（本项目设了 `post_wait_freezes: 1000`，即每节点执行后等待画面静止 1 秒）。
+  `pre_wait_freezes → pre_delay → 执行本节点 action（可 repeat/max_hit 限制）→ post_delay → 截图 → 按序识别 next 列表 → 命中进入子节点`；识别超时进 `on_error`；`next` 为空/超时/外部停止时该任务线终止。全局默认文件 `default_pipeline.json` 需放在资源包根目录（`resource/base/`）才会被框架加载；本项目历史上误放在 `pipeline/` 下，从未生效，已移除。需要「动作后等待画面静止」请在节点上显式配置 `post_wait_freezes`。
 - **本项目 pipeline 使用新版嵌套格式**（非旧平铺式）：
   ```jsonc
   "节点名": {
